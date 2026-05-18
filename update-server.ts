@@ -41,6 +41,7 @@ async function update() {
     await unzipServer();
     copyFiles(newVersion);
     await startServer();
+    cleanup();
 
     process.exitCode = 0;
     process.exit();
@@ -50,13 +51,22 @@ function prepare() {
     logger.debug("Stopping server...");
     // stop the server if it's running 
     spawnSync("pkill", ["-f", "bedrock_server"], { stdio: "inherit" });
+    commitChanges("Commiting before server update", false);
+}
 
+function cleanup() {
+    commitChanges("Server update completed", true);
+}
+
+function commitChanges(message: string, push: boolean) {
     logger.debug("Committing changes...");
     // commit any uncommitted changes to avoid losing them
     spawnSync("git", ["add", "-A"], { stdio: "inherit" });
-    spawnSync("git", ["commit", "-m", "Update server software"], { stdio: "inherit" });
+    spawnSync("git", ["commit", "-m", message], { stdio: "inherit" });
+    if (push) {
+        spawnSync("git", ["push"], { stdio: "inherit" });
+    }
 }
-
 function validateEnv() {
     process.chdir(import.meta.dirname);
 

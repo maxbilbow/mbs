@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./App/server/start.ts",
+    "prestart": "npm run build",
     "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --outdir=./App/www/js"
   },
   "author": "Max Bilbow",
