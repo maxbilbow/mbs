@@ -1,19 +1,26 @@
-bedrock_server
-bedrock_server_how_to.html
 nohup.*
-profanity_filter.wlist
-release-notes.txt
-premium_cache
-definitions
-treatments
-resource_packs
-behavior_packs
 **/.DS_Store
 .tmp
 node_modules
-/worlds
-/minecraftpe
 /.idea
 /logs
+
+# Stuff that is too big:
+/worlds
+
+# MBS Stuff we aren't configuring:
 /config
 /data
+/packet-statistics.txt
+/packetlimitconfig.json
+/profanity_filter.wlist
+/bedrock_server
+/bedrock_server_how_to.html
+/release-notes.txt
+/premium_cache
+/definitions
+/treatments
+/resource_packs
+/behavior_packs
+/minecraftpe
+/Dedicated_Server.txt
