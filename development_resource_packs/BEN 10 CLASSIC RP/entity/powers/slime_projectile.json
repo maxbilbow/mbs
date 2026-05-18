@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:slime_projectile",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/powers/slime_projectile"
+			},
+			"geometry": {
+				"default": "geometry.slime_projectile"
+			},
+			"animations": {
+				"general": "animation.slime_projectile"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			]
+		}
+	}
+}

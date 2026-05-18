@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:udindindindun_madindindindun",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/udindindindunmadindindindun"
+			},
+			"geometry": {
+				"default": "geometry.udindindindunmadindindindun"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.udindindindunmadindindindun.walk",
+				"idle": "animation.udindindindunmadindindindun.idle",
+				"attack": "animation.udindindindunmadindindindun.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.udindindindun_madindindindun.attack",
+				"controller_base": "controller.animation.udindindindun_madindindindun.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#e96d03",
+				"overlay_color": "#b85000"
+			}
+		}
+	}
+}

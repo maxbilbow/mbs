@@ -1,0 +1,23 @@
+//bridge-file-version: #391
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:mini-mini-arbol"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:mini-mini-arbol",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

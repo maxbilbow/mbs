@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:swampy_plains"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.9,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.8
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "noise"
+				},
+				"foliage": "#6a7039"
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "default"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:mud",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:mud",
+					"top_material": "minecraft:mud",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"monster",
+					"overworld",
+					"spawns_slimes_on_surface",
+					"plains",
+					"bee_habitat",
+					"swampy_plains"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:plains"
+						],
+						"amount": 0.275,
+						"noise_frequency_scale": 0.385
+					}
+				]
+			}
+		}
+	}
+}

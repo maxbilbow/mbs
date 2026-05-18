@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:birch_savanna_mutated/birch_savanna_mutated_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_leaf_litter_feature",
+				10
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_dry_grass_feature",
+				12
+			],
+			[
+				"vanilla_biomes_expansion:sbe_tall_dry_grass_feature",
+				17
+			],
+			[
+				"vanilla_biomes_expansion:birch_savanna/birch_savanna_plants_placement_feature",
+				26
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				15
+			]
+		]
+	}
+}

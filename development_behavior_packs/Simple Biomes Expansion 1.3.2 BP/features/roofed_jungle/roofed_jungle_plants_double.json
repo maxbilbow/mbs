@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_jungle/roofed_jungle_plants_double"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_lilac_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_peony_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_rose_bush_feature",
+				4
+			]
+		]
+	}
+}

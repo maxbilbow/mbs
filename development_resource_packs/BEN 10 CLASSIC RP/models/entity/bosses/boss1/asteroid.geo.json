@@ -1,0 +1,456 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.oberon_asteroid",
+				"texture_width": 512,
+				"texture_height": 512,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 7,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "main",
+					"parent": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "stone1",
+					"parent": "main",
+					"pivot": [
+						-20.55,
+						-2.13,
+						5.43
+					],
+					"cubes": [
+						{
+							"origin": [
+								-50.55,
+								-32.13,
+								-24.57
+							],
+							"size": [
+								60,
+								60,
+								60
+							],
+							"uv": [
+								180,
+								180
+							]
+						}
+					],
+					"locators": {
+						"locator": [
+							-41,
+							54,
+							34
+						]
+					}
+				},
+				{
+					"name": "stone2",
+					"parent": "main",
+					"pivot": [
+						0.87,
+						28.19,
+						-5.91
+					],
+					"cubes": [
+						{
+							"origin": [
+								-29.13,
+								8.19,
+								-35.91
+							],
+							"size": [
+								60,
+								40,
+								60
+							],
+							"uv": [
+								0,
+								240
+							]
+						}
+					],
+					"locators": {
+						"locator2": [
+							-10,
+							50,
+							-6
+						]
+					}
+				},
+				{
+					"name": "stone3",
+					"parent": "main",
+					"pivot": [
+						-7.95,
+						-9.69,
+						-13.47
+					],
+					"cubes": [
+						{
+							"origin": [
+								-37.95,
+								-39.69,
+								-43.47
+							],
+							"size": [
+								60,
+								60,
+								60
+							],
+							"uv": [
+								0,
+								120
+							]
+						}
+					],
+					"locators": {
+						"locator3": [
+							-36,
+							21,
+							-42
+						]
+					}
+				},
+				{
+					"name": "stone4",
+					"parent": "main",
+					"pivot": [
+						7.17,
+						-5.91,
+						0.39
+					],
+					"cubes": [
+						{
+							"origin": [
+								-22.83,
+								-35.91,
+								-29.61
+							],
+							"size": [
+								60,
+								60,
+								60
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					],
+					"locators": {
+						"locator4": [
+							-47,
+							27,
+							6
+						]
+					}
+				},
+				{
+					"name": "stone5",
+					"parent": "main",
+					"pivot": [
+						25.95,
+						21.93,
+						-33.51
+					],
+					"cubes": [
+						{
+							"origin": [
+								10.95,
+								6.93,
+								-48.51
+							],
+							"size": [
+								30,
+								30,
+								30
+							],
+							"uv": [
+								0,
+								340
+							]
+						}
+					],
+					"locators": {
+						"locator5": [
+							39,
+							33,
+							-33
+						]
+					}
+				},
+				{
+					"name": "stone6",
+					"parent": "main",
+					"pivot": [
+						-29.75,
+						38.31,
+						23.53
+					],
+					"cubes": [
+						{
+							"origin": [
+								-44.75,
+								23.31,
+								8.53
+							],
+							"size": [
+								30,
+								30,
+								30
+							],
+							"uv": [
+								330,
+								330
+							]
+						}
+					],
+					"locators": {
+						"locator6": [
+							-27,
+							54,
+							19
+						]
+					}
+				},
+				{
+					"name": "stone7",
+					"parent": "main",
+					"pivot": [
+						27.21,
+						-27.21,
+						23.19
+					],
+					"cubes": [
+						{
+							"origin": [
+								12.21,
+								-42.21,
+								8.19
+							],
+							"size": [
+								30,
+								30,
+								30
+							],
+							"uv": [
+								240,
+								300
+							]
+						}
+					],
+					"locators": {
+						"locator7": [
+							38,
+							-30,
+							34
+						]
+					}
+				},
+				{
+					"name": "stone8",
+					"parent": "main",
+					"pivot": [
+						-29.49,
+						-27.21,
+						-34.77
+					],
+					"cubes": [
+						{
+							"origin": [
+								-44.49,
+								-42.21,
+								-49.77
+							],
+							"size": [
+								30,
+								30,
+								30
+							],
+							"uv": [
+								300,
+								0
+							]
+						}
+					],
+					"locators": {
+						"locator8": [
+							-39,
+							-13,
+							-47
+						]
+					}
+				},
+				{
+					"name": "stone9",
+					"parent": "main",
+					"pivot": [
+						32.19,
+						23.25,
+						25.77
+					],
+					"cubes": [
+						{
+							"origin": [
+								24.69,
+								15.75,
+								18.27
+							],
+							"size": [
+								15,
+								15,
+								15
+							],
+							"uv": [
+								0,
+								150
+							]
+						}
+					],
+					"locators": {
+						"locator9": [
+							34,
+							30,
+							28
+						]
+					}
+				},
+				{
+					"name": "stone10",
+					"parent": "main",
+					"pivot": [
+						-36.56,
+						28.29,
+						-22.11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-44.06,
+								20.29,
+								-29.485
+							],
+							"size": [
+								15,
+								15,
+								15
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					],
+					"locators": {
+						"locator10": [
+							-41,
+							34,
+							-28
+						]
+					}
+				},
+				{
+					"name": "stone11",
+					"parent": "main",
+					"pivot": [
+						37.29,
+						-8.31,
+						-23.43
+					],
+					"cubes": [
+						{
+							"origin": [
+								22.29,
+								-23.31,
+								-38.43
+							],
+							"size": [
+								30,
+								30,
+								30
+							],
+							"uv": [
+								180,
+								0
+							]
+						}
+					],
+					"locators": {
+						"locator11": [
+							49,
+							5,
+							-27
+						]
+					}
+				},
+				{
+					"name": "stone12",
+					"parent": "main",
+					"pivot": [
+						-10.47,
+						9.21,
+						15.51
+					],
+					"cubes": [
+						{
+							"origin": [
+								-40.47,
+								-20.79,
+								-14.49
+							],
+							"size": [
+								60,
+								60,
+								60
+							],
+							"uv": [
+								180,
+								60
+							]
+						}
+					],
+					"locators": {
+						"locator12": [
+							8,
+							39,
+							34
+						],
+						"locator13": [
+							16,
+							47,
+							-26
+						],
+						"locator14": [
+							15,
+							-32,
+							-41
+						]
+					}
+				}
+			]
+		}
+	]
+}

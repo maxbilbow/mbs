@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sbe_tall_grass_feature"
+		},
+		"structure_name": "mystructure:sbe_tall_grass",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:pale_moss_carpet"
+				]
+			}
+		}
+	}
+}

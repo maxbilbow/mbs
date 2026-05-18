@@ -1,0 +1,167 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "player:waybig_height",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"wb_get_rider",
+					"wb_if_rider_lefts",
+					"wb_ground_break",
+					"wb_on_death"
+				]
+			},
+			"animations": {
+				"wb_get_rider": "controller.animation.wb_get_rider",
+				"wb_if_rider_lefts": "controller.animation.wb_if_rider_lefts",
+				"wb_ground_break": "controller.animation.wb_ground_break",
+				"wb_on_death": "controller.animation.wb_on_death"
+			}
+		},
+		"component_groups": {
+			"reset": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"despawn": {
+				"minecraft:despawn": {}
+			},
+			"wb_stomp": {
+				"minecraft:timer": {
+					"time": 0.3,
+					"looping": false,
+					"time_down_event": {
+						"event": "wb_ground_break",
+						"target": "self"
+					}
+				}
+			},
+			"wb_ground_break": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"player",
+					"omnitrix",
+					"waybig"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 2.4
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.08
+			},
+			"minecraft:can_power_jump": {},
+			"minecraft:scale": {
+				"value": 5.9
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:horse.jump_strength": {
+				"value": 2.5
+			},
+			"minecraft:health": {
+				"value": 160,
+				"max": 160
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "wb_ground_break"
+									}
+								]
+							},
+							"event": "reset"
+						},
+						"deals_damage": false
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"crouching_skip_interact": true,
+				"interact_text": "Waybig",
+				"family_types": [
+					"waybig"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0,
+							3.5,
+							0.65
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0
+					}
+				]
+			},
+			"minecraft:input_ground_controlled": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"reset": {
+				"add": {
+					"component_groups": [
+						"reset"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"wb_stomp": {
+				"add": {
+					"component_groups": [
+						"wb_stomp"
+					]
+				}
+			},
+			"wb_ground_break": {
+				"add": {
+					"component_groups": [
+						"wb_ground_break"
+					]
+				}
+			}
+		}
+	}
+}

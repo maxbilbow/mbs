@@ -1,0 +1,23 @@
+//bridge-file-version: #465
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:andamio-claro"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:andamio-claro",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

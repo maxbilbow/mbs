@@ -1,0 +1,416 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "omni:ditto_clone",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"cmd:hostile": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "villain"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									}
+								]
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:monsters": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "monster"
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:passives": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "cow"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "sheep"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "pig"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "chicken"
+									}
+								]
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:players": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ditto"
+									}
+								]
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:all": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ditto_clone_entity"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ditto"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "omnitrix"
+									}
+								]
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:effect_all": {
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 25,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ditto_clone_entity"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ditto"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "omnitrix"
+									}
+								]
+							},
+							"max_dist": 25
+						}
+					],
+					"must_see": true
+				}
+			},
+			"cmd:stay": {
+				"minecraft:movement": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"omnitrix",
+					"ditto_clone_entity"
+				]
+			},
+			"minecraft:variant": {
+				"value": 18
+			},
+			"minecraft:scale": {
+				"value": 0.71
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.6
+			},
+			"minecraft:health": {
+				"value": 40,
+				"max": 40
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "ditto_clone_entity"
+						}
+					},
+					"deals_damage": false
+				}
+			},
+			"minecraft:attack": {
+				"damage": 4
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 2,
+				"speed_multiplier": 1.5,
+				"track_target": true
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 8
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"cmd:hostile"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"cmd:hostile": {
+				"remove": {
+					"component_groups": [
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:hostile"
+					]
+				}
+			},
+			"cmd:monsters": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:monsters"
+					]
+				}
+			},
+			"cmd:passives": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:passives"
+					]
+				}
+			},
+			"cmd:players": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:players"
+					]
+				}
+			},
+			"cmd:all": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:all"
+					]
+				}
+			},
+			"cmd:effect_all": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:effect_all"
+					]
+				}
+			},
+			"cmd:stay": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:stay"
+					]
+				}
+			}
+		}
+	}
+}

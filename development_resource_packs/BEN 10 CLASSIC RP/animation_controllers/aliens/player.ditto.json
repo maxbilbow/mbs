@@ -1,0 +1,127 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ditto_clone.move": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"moving": "query.is_moving"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.ditto_clone.attack": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"attacking": "variable.attack_time>0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.ditto_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==18"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ditto_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ditto_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==18"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ditto_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ditto_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"ditto_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==18"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.ditto_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"ditto_jumping": "!variable.is_first_person&&query.variant==18"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

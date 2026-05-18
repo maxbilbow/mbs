@@ -1,0 +1,122 @@
+//bridge-file-version: #50
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"encendido",
+					"apagado"		
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:lamparamodernablanca",
+			"is_experimental": false
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'encendido'",
+				"components": {
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'apagado'",
+				"components": {
+					"minecraft:light_emission": 0
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+
+				"content_mf:on_click_light_rotation"
+			],
+			
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "lamparablanca"
+				}
+			},
+			"minecraft:geometry": "geometry.lamparamoderna",
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-4,
+					0,
+					-8
+				],
+				"size": [
+					8,
+					16,
+					16
+				]
+			},
+			"minecraft:light_emission": 15
+		}
+	},
+	"format_version": "1.20.20"
+}

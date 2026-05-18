@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.obeball.spin": {
+			"loop": true,
+			"animation_length": 2.25,
+			"bones": {
+				"obeball": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.75": {
+							"pre": [
+								360,
+								360,
+								0
+							],
+							"post": [
+								360,
+								360,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								720,
+								360,
+								360
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.25": [
+							720,
+							720,
+							720
+						]
+					}
+				}
+			}
+		}
+	}
+}

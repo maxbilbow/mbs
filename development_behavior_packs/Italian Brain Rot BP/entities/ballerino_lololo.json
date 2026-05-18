@@ -1,0 +1,238 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "eu:ballerino_lololo",
+			"properties": {
+				"eu:is_special_attacking": {
+					"type": "bool",
+					"default": false,
+					"client_sync": true
+				}
+			},
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"eu:special_attacking": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 1.9,
+					"time_down_event": {
+						"event": "eu:end_special_attack"
+					}
+				}
+			},
+			"eu:hostile": {
+				"minecraft:attack": {
+					"damage": 15
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"track_target": true
+				},
+				"minecraft:follow_range": {
+					"value": 48
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"must_see_forget_duration": 40,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "italian_brain_rot"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "ballerino_lololo"
+									}
+								]
+							},
+							"max_dist": 20
+						}
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": [
+								{
+									"all_of": [
+										{
+											"test": "target_distance",
+											"operator": ">=",
+											"value": 6
+										},
+										{
+											"test": "bool_property",
+											"domain": "eu:is_special_attacking",
+											"operator": "!=",
+											"value": true
+										},
+										//mientras que mas alto sea el valor es menos probable que se cumpla al parecer
+										{
+											"test": "random_chance",
+											"operator": "<=",
+											"value": 200
+										}
+									]
+								}
+							],
+							"event": "eu:start_special_attack"
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"italian_brain_rot",
+					"ballerino_lololo",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:collision_box": {
+				"width": 1.0,
+				"height": 2.3
+			},
+			"minecraft:nameable": {},
+			"minecraft:health": {
+				"value": 500,
+				"max": 500
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.0
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 2,
+				"speed_multiplier": 1.5,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 0.8
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:leashable": {
+				"soft_distance": 4,
+				"hard_distance": 6,
+				"max_distance": 10
+			},
+			"minecraft:balloonable": {},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"eu:hostile"
+					]
+				}
+			},
+			"eu:start_special_attack": {
+				"add": {
+					"component_groups": [
+						"eu:special_attacking"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"eu:hostile"
+					]
+				},
+				"set_property": {
+					"eu:is_special_attacking": true
+				} /* ,
+				"queue_command": {
+					"command": [
+						"say inicio"
+					]
+				} */
+			},
+			"eu:end_special_attack": {
+				"add": {
+					"component_groups": [
+						"eu:hostile"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"eu:special_attacking"
+					]
+				},
+				"set_property": {
+					"eu:is_special_attacking": false
+				} /* ,
+				"queue_command": {
+					"command": [
+						"say termino"
+					]
+				} */
+			}
+		}
+	}
+}

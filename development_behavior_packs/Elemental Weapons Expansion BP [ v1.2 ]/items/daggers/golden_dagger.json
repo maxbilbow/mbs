@@ -1,0 +1,44 @@
+{
+  "format_version": "1.21.120",
+  "minecraft:item": {
+    "description": {
+      "identifier": "bca:golden_dagger",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.dagger"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": ["minecraft:golden_tier"]
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": ["minecraft:gold_ingot"],
+            "repair_amount": "math.floor(q.max_durability * 0.25)"
+          }
+        ]
+      },
+      "minecraft:enchantable": {
+        "slot": "sword",
+        "value": 22
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:damage": 3,
+      "minecraft:durability": {
+        "max_durability": 33,
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "minecraft:hand_equipped": true,
+      "minecraft:display_name": {
+        "value": "Golden Dagger"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "bca:golden_dagger"
+    }
+  }
+}

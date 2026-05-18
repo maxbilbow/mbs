@@ -1,0 +1,131 @@
+
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"normal",
+					"hundido"		
+				]
+			},
+			"menu_category": {
+				"category": "items",
+				"group": "trampolines"
+			},
+			"identifier": "f:trampolin2"
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'hundido'",
+				"components": {
+					"minecraft:geometry": "geometry.trampolin2-hundido"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'normal'",
+				"components": {
+					"minecraft:geometry": "geometry.trampolin2-normal"
+					
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:trampoline"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "trampolin",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.trampolin2-normal",
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					10,
+					16
+				]
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}

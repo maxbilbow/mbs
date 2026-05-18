@@ -1,0 +1,287 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bn:book",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"bridge_execute_commands"
+				]
+			},
+			"animations": {
+				"bridge_execute_commands": "controller.animation.bridge_pixel_smile_book.execute_commands"
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "entity_attack",
+						"deals_damage": false,
+						"on_damage": {
+							"event": "death_anim"
+						}
+					},
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 3,
+				"height": 4
+			},
+			"minecraft:scale": {
+				"value": 0.5
+			}
+		},
+		"component_groups": {
+			"pixel_smile:page_0": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"target": "self",
+								"event": "pixel_smile:page_1"
+							},
+							"swing": true,
+							"play_sounds": [
+								"page_turn"
+							],
+							"vibration": "entity_act",
+							"interact_text": "Turn Page"
+						}
+					]
+				}
+			},
+			"pixel_smile:page_1": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"target": "self",
+								"event": "pixel_smile:page_2"
+							},
+							"swing": true,
+							"interact_text": "Turn Page"
+						}
+					]
+				}
+			},
+			"pixel_smile:page_2": {
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"target": "self",
+								"event": "pixel_smile:page_3"
+							},
+							"swing": true,
+							"interact_text": "Turn Page"
+						}
+					]
+				}
+			},
+			"pixel_smile:page_3": {
+				"minecraft:variant": {
+					"value": 3
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"target": "self",
+								"event": "pixel_smile:page_0"
+							},
+							"swing": true,
+							"interact_text": "Turn Page"
+						}
+					]
+				}
+			},
+			"drop": {
+				"minecraft:instant_despawn": {},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"num_to_spawn": 1,
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_item": "bn:book_spawn_egg",
+							"single_use": true
+						}
+					]
+				}
+			},
+			"death": {
+				"minecraft:variant": {
+					"value": 20
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time_down_event": {
+						"event": "drop"
+					},
+					"time": 1
+				}
+			},
+			"bridge:execute_command_id_1": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"bridge:execute_no_command": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"pixel_smile:page_0"
+							]
+						}
+					}
+				]
+			},
+			"drop": {
+				"add": {
+					"component_groups": [
+						"drop"
+					]
+				}
+			},
+			"death_anim": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"death"
+							]
+						}
+					}
+				]
+			},
+			"pixel_smile:page_0": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"pixel_smile:page_0"
+							]
+						}
+					}
+				]
+			},
+			"pixel_smile:page_1": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"pixel_smile:page_1"
+							]
+						}
+					}
+				]
+			},
+			"pixel_smile:page_2": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"pixel_smile:page_2"
+							]
+						}
+					}
+				]
+			},
+			"pixel_smile:page_3": {
+				"sequence": [
+					{
+						"trigger": {
+							"event": "play_sound"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"pixel_smile:page_3"
+							]
+						}
+					}
+				]
+			},
+			"play_sound": {
+				"add": {
+					"component_groups": [
+						"bridge:execute_command_id_1"
+					]
+				}
+			},
+			"bridge:remove_command_id_1": {
+				"add": {
+					"component_groups": [
+						"bridge:execute_no_command"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"bridge:execute_command_id_1"
+					]
+				}
+			}
+		}
+	}
+}

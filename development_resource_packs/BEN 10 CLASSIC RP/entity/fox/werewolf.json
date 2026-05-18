@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "l8:werewolf",
+			"materials": {
+				"default": "entity_alphatest",
+				"glow": "enderman"
+			},
+			"textures": {
+				"werewolf": "textures/entity/fox/werewolf"
+			},
+			"geometry": {
+				"werewolf": "geometry.werewolf"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"howl": "controller.animation.werewolf_howl",
+				"howling": "animation.werewolf_howling",
+				"move": "controller.animation.werewolf_move",
+				"moving": "animation.werewolf_sprinting",
+				"idle": "controller.animation.werewolf_idle",
+				"idleing": "animation.werewolf_idle",
+				"attack": "controller.animation.werewolf_attack",
+				"attacking": "animation.werewolf_attacking"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					"howl",
+					"move",
+					"idle",
+					"attack"
+				]
+			},
+			"render_controllers": [
+				"controller.render.werewolf"
+			],
+			"spawn_egg": {
+				"texture": "werewolf"
+			}
+		}
+	}
+}

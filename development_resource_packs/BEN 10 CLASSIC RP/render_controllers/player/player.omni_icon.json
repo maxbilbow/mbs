@@ -1,0 +1,341 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.omni.heatblast_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.heatblast_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 101 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.wildmutt_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wildmutt_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 102 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.diamondhead_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.diamondhead_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 103 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.xlr8_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.xlr8_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 104 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.greymatter_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.greymatter_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 105 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.fourarms_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.fourarms_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 106 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.stinkfly_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.stinkfly_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 107 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.ripjaws_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ripjaws_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 108 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.upgrade_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upgrade_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 109 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.ghostfreak_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ghostfreak_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 110 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.cannonbolt_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cannonbolt_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 111 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.ditto_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ditto_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 112 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.waybig_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.waybig_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 113 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.arctiguana_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.arctiguana_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 114 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.clockwork_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.clockwork_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 115 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.benvictor_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benvictor_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 116 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.upchuck_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upchuck_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 117 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.benwolf_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benwolf_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 118 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.benmummy_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benmummy_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 119 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.wildvine_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wildvine_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 120 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.eyeguy_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.eyeguy_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 121 && variable.holding_omni_icon"
+				}
+			]
+		}
+	}
+}

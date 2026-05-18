@@ -1,0 +1,71 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Rohan"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "BEN 10 CLASSIC",
+		"description": "Please Subscribe [MCPE Addon & Mods] on YouTube for more addons.",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "c6df96be-de1f-4ab5-baf7-b132a8c2e37d",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "bea9d903-4776-4941-b3ab-19b2381ad0f6",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "656021d5-d485-458d-b2d3-af064723f0b1",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "3349d3d3-ea90-4b73-a86b-80fe55d8e461",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.14.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.3.0"
+		}
+	]
+}

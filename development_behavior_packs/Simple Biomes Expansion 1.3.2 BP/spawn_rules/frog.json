@@ -1,0 +1,85 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "minecraft:frog",
+			"population_control": "animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:weight": {
+					"default": 10
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 5
+				},
+				"minecraft:biome_filter": {
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "swampy_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "swampy_taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "swampy_plains"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "roofed_swamp"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "muddy_swamp"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "mega_swampy_taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "mangrove_jungle"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "swamp"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "mangrove_swamp"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ancient_wetwood"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ancient_wetwood_mega_pine"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ancient_wetwood_mega_spruce"
+						}
+					]
+				}
+			}
+		]
+	}
+}

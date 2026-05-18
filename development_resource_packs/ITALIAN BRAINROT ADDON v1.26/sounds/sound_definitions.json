@@ -1,0 +1,581 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"tralalero_tralala_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/tralalero"
+			]
+		},
+		"tungtung_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/tungtungsahur"
+			]
+		},
+		"capucino_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/capucino"
+			]
+		},
+		"ballerina_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/balerinacapuchina"
+			]
+		},
+		"lirila_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/lirila"
+			]
+		},
+		"patapim_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/patapim"
+			]
+		},
+		"bombadiro_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/crocodilo"
+			]
+		},
+		"vaca_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/vacasaturno"
+			]
+		},
+		"bambini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BambiniCrostini"
+			]
+		},
+		"dolphin_banana_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BananaDolphin"
+			]
+		},
+		"elephant_banana_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BananaElephant"
+			]
+		},
+		"bandito_bobritto_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BanditoBobritto"
+			]
+		},
+		"boneca_ambalabu_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Boneca ambalabu"
+			]
+		},
+		"bribri_bicus_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/bri bri bicis de dicus"
+			]
+		},
+		"bombini_gusini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Bombombini Gusini"
+			]
+		},
+		"bluberini_octopusini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Bluberini Octopussini"
+			]
+		},
+		"brr_potato_potate_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BrrPotatoPotate"
+			]
+		},
+		"bulbito_tractorito_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BulbitoBanditoTractorito"
+			]
+		},
+		"burbaloni_luliloli_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BurbaloniLuliloli"
+			]
+		},
+		"caballo_virtuoso_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/CaballoVirtuoso"
+			]
+		},
+		"cacto_hipopotamo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/CactoHipopotamo"
+			]
+		},
+		"chef_crabracadabra_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/ChefCrabracadabra"
+			]
+		},
+		"chicletera_bicicletera_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/ChicleteiraBicicleteira"
+			]
+		},
+		"odin_dindindun_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/OdinDinDinDun"
+			]
+		},
+		"chimpanzini_bananini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/ChimpanziniBananini"
+			]
+		},
+		"coco_fanto_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Cocofantosoundele"
+			]
+		},
+		"cocosini_mama_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/CocosiniMama"
+			]
+		},
+		"dardirdurrdorr_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/DarDirDurrDorrTelurDadar"
+			]
+		},
+		"kid_patapim_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/patapim"
+			]
+		},
+		"kid_tung_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/tungtungsahur"
+			]
+		},
+		"kid_crocodilo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/crocodilo"
+			]
+		},
+		"kid_los_tralaleritos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/tralalero"
+			]
+		},
+		"kid_ballerina_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/balerinacapuchina"
+			]
+		},
+		"kid_capuccino_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/capucino"
+			]
+		},
+		"kid_chimpanzini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/ChimpanziniBananini"
+			]
+		},
+		"kid_lirili_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/lirila"
+			]
+		},
+		"kid_trumilero_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/TrulimeroTrulichina"
+			]
+		},
+		"trulimero_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/TrulimeroTrulichina"
+			]
+		},
+		"espresso_signora_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/EspressoSignora"
+			]
+		},
+		"garamaran_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/GaramaMadundung"
+			]
+		},
+		"giraffa_celeste_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/GiraffaCeleste"
+			]
+		},
+		"la_esok_sekolah_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LaEsokSekolah"
+			]
+		},
+		"noobini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/NoobiniPizzanini"
+			]
+		},
+		"orangutini_ananasini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/OrangutiniAnanasini"
+			]
+		},
+		"agarrini_palini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Agarrinilapalini"
+			]
+		},
+		"titit_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Ti_Sahu"
+			]
+		},
+		"tata_sahur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Tatatatatatatatatatsahur"
+			]
+		},
+		"orcalero_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Orcaleroorcala"
+			]
+		},
+		"jobjob_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/J0bj0bj0bsahur"
+			]
+		},
+		"los_job_jobcitos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LosJobcitosSound"
+			]
+		},
+		"mateo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Matteo"
+			]
+		},
+		"glorbo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Glorbosound"
+			]
+		},
+		"avocadini_guffo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/AvocadiniGuffo"
+			]
+		},
+		"ballerino_lololo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BallerinoLololo"
+			]
+		},
+		"dragon_canelloni_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/DragonCanelloni"
+			]
+		},
+		"anomali_gin_gin_login_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/AnomaliGinGinLogin"
+			]
+		},
+		"67_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/67"
+			]
+		},
+		"fritzolini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/fritzolini"
+			]
+		},
+		"fruli_frula_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/fruli_frula"
+			]
+		},
+		"ganganzelli_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/ganganzelli"
+			]
+		},
+		"gorilo_watermelondrilo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/GoriloWatermelondrilo"
+			]
+		},
+		"graipuss_medussi_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/GraipussMedussi"
+			]
+		},
+		"grunkle_blibbo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/GrunkleBlibbo"
+			]
+		},
+		"sacro_cabrospaghetti_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/SacroCabrospaghetti"
+			]
+		},
+		"bigmo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Bigmo"
+			]
+		},
+		"bus_telotet_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/BusTelotet"
+			]
+		},
+		"denis_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Denis"
+			]
+		},
+		"dikasih_ujianmatematika_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/DikasihUjianMatematika"
+			]
+		},
+		"jokominto_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Jokominto"
+			]
+		},
+		"mastodontico_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/IlMastodonticoTelepiedonePlanetario"
+			]
+		},
+		"chachechichachachachi_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Chachechichachachachi"
+			]
+		},
+		"karkerkar_anomaly_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KarkerkarAnomaly"
+			]
+		},
+		"karkerkar_kurkur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KarkerkarKurkur"
+			]
+		},
+		"karkerkarkurkur_greatgrandfather_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KarkerkarKurkurGreatGrandFather"
+			]
+		},
+		"krakrakrakrakrake_qurinakrarina_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Krakrakrakrakrakequrinakrarina"
+			]
+		},
+		"kukarakirikur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Kukarakirikur"
+			]
+		},
+		"poltronaplastica_classicobianco_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/PoltronaPlasticaClassicoBianco"
+			]
+		},
+		"prapambanrr_jatmatungg_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/PrapambanrrJatmatungg"
+			]
+		},
+		"rarerorirararol_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Rarerorirararol"
+			]
+		},
+		"rulrilrelralrulrul_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Rulrilrelralrulrul"
+			]
+		},
+		"kecum_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KecumCukilSerem"
+			]
+		},
+		"ketchuru_and_musturu_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KetchuruAndMusturu"
+			]
+		},
+		"ketupat_kepatprekupat_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KetupatKepatPrekupat"
+			]
+		},
+		"kid_fusion_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KidFusion"
+			]
+		},
+		"kid_las_tralaleritas_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KidLasTralaleritas"
+			]
+		},
+		"kid_los_orcaleritos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/KidLosOrcaleritos"
+			]
+		},
+		"kid_orcaleritos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Orcaleritos"
+			]
+		},
+		"la_sahur_combinasion_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LaSahurCombinasion"
+			]
+		},
+		"lionel_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LionelCactuseli"
+			]
+		},
+		"los_lirilitos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LosLirilitos"
+			]
+		},
+		"los_spijuniritos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LosSpijuniritos"
+			]
+		},
+		"los_tungtungcitos_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/LosTungTungCitos"
+			]
+		},
+		"nuclearo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/NuclearoDinossauro"
+			]
+		},
+		"og_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/Og"
+			]
+		},
+		"opor_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/OporKampretGuys"
+			]
+		},
+		"pakrah_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/PakrahMatmamat"
+			]
+		}
+	}
+}

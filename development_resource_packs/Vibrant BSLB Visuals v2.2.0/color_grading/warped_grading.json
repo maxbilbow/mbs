@@ -1,0 +1,37 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:color_grading_settings": {
+    "description": {
+      "identifier": "va:nether_warped_grading"
+    },
+
+    "color_grading": {
+      "midtones": {
+        "midtonesMax": 60,
+        "contrast": [1.25, 1.25, 1.25],
+        "saturation": [0.95, 1.10, 1.15],
+        "gain": [0.95, 1.10, 1.20],
+        "offset": [-0.02, 0.02, 0.04],
+        "gamma": [2.2, 2.2, 2.2]
+      },
+
+      "highlights": {
+        "enabled": true,
+        "highlightsMin": 14,
+        "contrast": [1.05, 1.05, 1.05],
+        "gain": [0.95, 1.10, 1.20],
+        "offset": [-0.01, 0.01, 0.03],
+        "gamma": [2.2, 2.2, 2.2],
+        "saturation": [0.95, 1.10, 1.15]
+      },
+
+      "shadows": {
+        "enabled": false
+      }
+    },
+
+    "tone_mapping": {
+      "operator": "hable"
+    }
+  }
+}

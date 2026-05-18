@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_1_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_2_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_3_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_4_feature",
+				1
+			]
+		]
+	}
+}

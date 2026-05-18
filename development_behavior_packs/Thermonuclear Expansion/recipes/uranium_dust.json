@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:uranium_dust"
+		},
+		"tags": [
+			"blast_furnace",
+			"furnace"
+		],
+		"input": "minecraft:redstone_block",
+		"output": "kaboom:uranium_dust"
+	}
+}

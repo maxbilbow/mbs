@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "honkit26113_lost_explorer",
+		"metalness_emissive_roughness": "honkit26113_lost_explorer_mer",
+		"heightmap": "honkit26113_lost_explorer_heightmap"
+	}
+}

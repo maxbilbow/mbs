@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.hb_flamethrower_pose": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"hb_rightarm": {
+					"rotation": [
+						"-90+query.target_x_rotation",
+						0,
+						0
+					]
+				},
+				"hb_leftarm": {
+					"rotation": [
+						"-90+query.target_x_rotation",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

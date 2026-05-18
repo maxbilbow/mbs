@@ -1,0 +1,12 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:aggregate_feature": {
+      "description": {
+        "identifier": "wypnt_mss:cemetery_2_with_graves_feature"
+      },
+      "features": [
+        "wypnt_mss:cemetery_2_feature_mcstructure",
+        "wypnt_mss:scatter_grave_feature"
+      ]
+    }
+  }

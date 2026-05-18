@@ -1,0 +1,16 @@
+bedrock_server
+nohup.*
+profanity_filter.wlist
+release-notes.txt
+premium_cache
+definitions
+treatments
+resource_packs
+behavior_packs
+**/.DS_Store
+.tmp
+node_modules
+/worlds
+/minecraftpe
+/.idea
+/logs

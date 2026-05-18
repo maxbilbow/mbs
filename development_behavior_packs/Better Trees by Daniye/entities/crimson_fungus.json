@@ -1,0 +1,109 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "daniye:crimson_fungus",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"daniye:component_group_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.5,
+				"time_down_event": {
+					"event": "daniye:events_despawn"
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"tree"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false,
+				"push_towards_closest_space": false
+			}
+		},
+		"events": {
+			"daniye:instant_tree": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_01 ~-5~~-4 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_02 ~-7~~-5 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_03 ~-3~~-5 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_04 ~-3~~-3 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_05 ~-3~~-3 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:crimson_fungus_06 ~-3~~-3 0_degrees none block_by_block 1 false"
+							]
+						}
+					}
+				]
+			},
+			"daniye:events_despawn": {
+				"add": {
+					"component_groups": [
+						"daniye:component_group_despawn"
+					]
+				}
+			}
+		}
+	}
+}

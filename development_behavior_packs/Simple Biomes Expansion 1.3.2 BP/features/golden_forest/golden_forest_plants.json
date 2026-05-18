@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:golden_forest/golden_forest_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_dandelion_feature",
+				19
+			],
+			[
+				"vanilla_biomes_expansion:sbe_oxeye_daisy_feature",
+				12
+			],
+			[
+				"vanilla_biomes_expansion:sbe_azure_bluet_feature",
+				8
+			],
+			[
+				"vanilla_biomes_expansion:golden_forest/golden_forest_plants_placement_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				30
+			]
+		]
+	}
+}

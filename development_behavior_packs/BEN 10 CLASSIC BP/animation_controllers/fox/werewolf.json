@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.30",
+	"animation_controllers": {
+		"controller.animation.werewolf_howl_bp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"howling": "query.property('l8:werewolf_state')=='howling'"
+						}
+					]
+				},
+				"howling": {
+					"transitions": [
+						{
+							"default": "query.property('l8:werewolf_state')=='default'"
+						}
+					],
+					"on_entry": [
+						"/playsound werewolf_howl @a[r=20]"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.estantemodern",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7, 0, 2], "size": [1, 1, 6], "uv": [19, 40]},
+						{"origin": [6, 0, 2], "size": [1, 1, 6], "uv": [20, 37]},
+						{"origin": [-8, 3, 0], "size": [16, 1, 8], "uv": [58, 109]},
+						{"origin": [6, 0, 1], "size": [1, 14, 1], "uv": [20, 37]},
+						{"origin": [4, 4, 2], "size": [2, 6, 5], "uv": [1, 117]},
+						{"origin": [2, 4, 3], "size": [2, 6, 5], "uv": [2, 105]},
+						{"origin": [4, -1, 1], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [12.5, 0, -90], "uv": [4, 86]},
+						{"origin": [-8, 10, 0], "size": [16, 1, 8], "uv": [58, 109]},
+						{"origin": [6, 13, 2], "size": [1, 1, 6], "uv": [20, 37]},
+						{"origin": [-6, 11, 3], "size": [2, 6, 5], "uv": [3, 75]},
+						{"origin": [-7, 0, 1], "size": [1, 14, 1], "uv": [19, 40]},
+						{"origin": [1.7, 10.9, 3], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [0, 0, -12.5], "uv": [4, 86]},
+						{"origin": [-4, 11, 2], "size": [2, 6, 5], "uv": [2, 105]},
+						{"origin": [-7, 13, 2], "size": [1, 1, 6], "uv": [19, 40]}
+					]
+				}
+			]
+		}
+	]
+}

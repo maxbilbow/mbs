@@ -1,0 +1,23 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"kaboom:explode": {
+			"category": "neutral",
+			"sounds": [
+				{
+					"name": "sounds/huge-explosion",
+					"volume": 50
+				}
+			]
+		},
+		"kaboom:launch": {
+			"category": "neutral",
+			"sounds": [
+				{
+					"name": "sounds/rocket_launch",
+					"volume": 50
+				}
+			]
+		}
+	}
+}

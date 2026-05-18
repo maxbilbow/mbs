@@ -1,0 +1,56 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "rg:cherry"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.9078,
+        "fog_end": 0.9712,
+        "fog_color": "#ADD1FF",
+        "render_distance_type": "render"
+      },
+      "water": {
+        "fog_start": 0.6737,
+        "fog_end": 0.7939,
+        "fog_color": "#1E2A3D",
+        "render_distance_type": "render"
+      },
+      "weather": {
+        "fog_start": 1.0,
+        "fog_end": 1.0,
+        "fog_color": "#322F31",
+        "render_distance_type": "render"
+      }
+    },
+    "volumetric": {
+      "density": {
+        "air": {
+          "max_density": 0.2039,
+          "uniform": false,
+          "max_density_height": 94.4354,
+          "zero_density_height": 228.6634
+        },
+        "water": {
+          "max_density": 0.0029,
+          "uniform": true
+        },
+        "weather": {
+          "max_density": 0.645,
+          "uniform": true
+        }
+      },
+      "media_coefficients": {
+        "air": {
+          "scattering": [0.0372, 0.029, 0.0348],
+          "absorption": [0.0, 0.0236, 0.0059]
+        },
+        "water": {
+          "scattering": [0.0, 0.003, 0.0063],
+          "absorption": [0.9679, 0.0238, 0.0428]
+        }
+      }
+    }
+  }
+}

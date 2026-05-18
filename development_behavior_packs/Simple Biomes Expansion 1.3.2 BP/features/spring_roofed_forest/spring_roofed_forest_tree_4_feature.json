@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spring_roofed_forest/spring_roofed_forest_tree_4_feature"
+		},
+		"structure_name": "mystructure:spring_roofed_forest_tree4",
+		"adjustment_radius": 2,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:cherry_leaves"
+				]
+			}
+		}
+	}
+}

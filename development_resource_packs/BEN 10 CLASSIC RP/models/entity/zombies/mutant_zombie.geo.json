@@ -1,0 +1,364 @@
+{
+	"format_version": "1.10.0",
+	"geometry.mutant_zombie": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 3,
+		"visible_bounds_offset": [
+			0,
+			1.5,
+			0
+		],
+		"bones": [
+			{
+				"name": "entire",
+				"pivot": [
+					0,
+					0,
+					0
+				]
+			},
+			{
+				"name": "rarm",
+				"parent": "entire",
+				"pivot": [
+					-12,
+					24,
+					2
+				],
+				"rotation": [
+					25,
+					0,
+					10
+				],
+				"cubes": [
+					{
+						"origin": [
+							-16,
+							11,
+							0
+						],
+						"size": [
+							6,
+							15,
+							6
+						],
+						"uv": [
+							104,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "rarm2",
+				"parent": "rarm",
+				"pivot": [
+					-12,
+					14,
+					5
+				],
+				"rotation": [
+					-55,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-16,
+							-3,
+							3
+						],
+						"size": [
+							6,
+							15,
+							6
+						],
+						"uv": [
+							104,
+							22
+						]
+					}
+				]
+			},
+			{
+				"name": "head",
+				"parent": "entire",
+				"pivot": [
+					0,
+					28,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-4,
+							28,
+							-4
+						],
+						"size": [
+							8,
+							8,
+							8
+						],
+						"uv": [
+							0,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "body",
+				"parent": "entire",
+				"pivot": [
+					0,
+					0,
+					0
+				]
+			},
+			{
+				"name": "body1",
+				"parent": "body",
+				"pivot": [
+					0,
+					20,
+					0
+				],
+				"rotation": [
+					20,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-12,
+							17,
+							-4
+						],
+						"size": [
+							24,
+							12,
+							16
+						],
+						"uv": [
+							0,
+							16
+						]
+					}
+				]
+			},
+			{
+				"name": "body2",
+				"parent": "body",
+				"pivot": [
+					0,
+					15,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-7,
+							10,
+							-2
+						],
+						"size": [
+							14,
+							15,
+							12
+						],
+						"uv": [
+							0,
+							44
+						]
+					}
+				]
+			},
+			{
+				"name": "rleg2",
+				"parent": "entire",
+				"pivot": [
+					0,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-8,
+							0,
+							-4
+						],
+						"size": [
+							6,
+							6,
+							6
+						],
+						"uv": [
+							80,
+							18
+						]
+					}
+				]
+			},
+			{
+				"name": "lleg2",
+				"parent": "entire",
+				"pivot": [
+					0,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							2,
+							0,
+							-4
+						],
+						"size": [
+							6,
+							6,
+							6
+						],
+						"uv": [
+							80,
+							18
+						]
+					}
+				]
+			},
+			{
+				"name": "lleg",
+				"parent": "entire",
+				"pivot": [
+					0,
+					10,
+					3
+				],
+				"rotation": [
+					-40,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							2,
+							3,
+							0
+						],
+						"size": [
+							6,
+							11,
+							6
+						],
+						"uv": [
+							80,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "rleg",
+				"parent": "entire",
+				"pivot": [
+					0,
+					10,
+					3
+				],
+				"rotation": [
+					-40,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-8,
+							3,
+							0
+						],
+						"size": [
+							6,
+							11,
+							6
+						],
+						"uv": [
+							80,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "larm",
+				"pivot": [
+					12,
+					24,
+					2
+				],
+				"rotation": [
+					25,
+					0,
+					-10
+				],
+				"cubes": [
+					{
+						"origin": [
+							10,
+							11,
+							0
+						],
+						"size": [
+							6,
+							15,
+							6
+						],
+						"uv": [
+							104,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "larm2",
+				"parent": "larm",
+				"pivot": [
+					12,
+					14,
+					5
+				],
+				"rotation": [
+					-55,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							10,
+							-3,
+							3
+						],
+						"size": [
+							6,
+							15,
+							6
+						],
+						"uv": [
+							104,
+							22
+						]
+					}
+				]
+			}
+		]
+	}
+}

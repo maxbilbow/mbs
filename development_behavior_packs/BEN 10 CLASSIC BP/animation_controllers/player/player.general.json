@@ -1,0 +1,880 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player_normal": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"cleanup_phase_1": "query.variant==0"
+						}
+					]
+				},
+				"cleanup_phase_1": {
+					"transitions": [
+						{
+							"default": "query.variant!=0"
+						},
+						{
+							"cleanup_phase_2": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/effect @s[tag=alien] clear",
+						"/ability @s[m=c] mayfly true",
+						"/ability @s[m=s] mayfly false",
+						"/ability @s[m=a] mayfly false",
+						"/clear @s omni:omni_icon",
+						"/clear @s omni:omni_off",
+						"/clear @s omni:omni_master",
+						"/execute as @s[family=omnitrix,tag=!master_control] at @s run scriptevent omni:equip_power 0 omni:omni_icon",
+						"/execute as @s[family=omnitrix,tag=master_control] at @s run scriptevent omni:equip_power 8 omni:omni_master",
+						"/tag @s[family=!omni_inuse] remove omni_using",
+						"/tag @s[scores={aliens=1..}] remove aliens_locked",
+						"/tag @s remove alien",
+						"/clear @s power:fire_ball",
+						"/clear @s power:hb_flamethrower",
+						"/clear @s power:dh_crystal",
+						"/clear @s power:dh_spikes",
+						"/clear @s power:sf_slime",
+						"/clear @s power:dt_clone",
+						"/clear @s power:dt_command",
+						"/clear @s power:wb_stomp",
+						"/clear @s power:wb_ray",
+						"/clear @s power:flight_activator",
+						"/clear @s power:gf_intangibility",
+						"/clear @s power:gf_possession",
+						"/clear @s power:arc_ice",
+						"/clear @s power:arc_frost_walker",
+						"/clear @s power:arc_armor",
+						"/clear @s power:arc_chill",
+						"/clear @s power:clock_beam",
+						"/clear @s power:clock_stop",
+						"/clear @s power:clock_time",
+						"/clear @s power:clock_rewind",
+						"/clear @s power:bv_lightning",
+						"/clear @s power:wv_plant",
+						"/clear @s power:wv_seeds",
+						"/clear @s power:wv_stretch",
+						"/clear @s power:bw_howl",
+						"/clear @s power:bm_stretch",
+						"/clear @s power:bm_grapple",
+						"/clear @s power:eyelaser",
+						"/clear @s power:eyefire",
+						"/clear @s power:eyeice",
+						"/clear @s power:up_tongue",
+						"/clear @s power:up_menu",
+						"/clear @s power:bv_electrokinesis",
+						"/gamemode creative @s[m=spectator,tag=was_creative]",
+						"/gamemode adventure @s[m=spectator,tag=was_adventure]",
+						"/gamemode survival @s[m=spectator,tag=!was_creative,tag=!was_adventure]",
+						"/tag @s remove was_creative",
+						"/tag @s remove was_adventure",
+						"/tag @s remove ditto_owner",
+						"/execute as @s at @s run kill @e[type=power:slime,r=50]"
+					]
+				},
+				"cleanup_phase_2": {
+					"transitions": [
+						{
+							"default": "query.variant!=0"
+						}
+					],
+					"on_entry": [
+						"/effect @s[tag=alien] clear",
+						"/ability @s[m=c] mayfly true",
+						"/ability @s[m=s] mayfly false",
+						"/ability @s[m=a] mayfly false",
+						"/clear @s omni:omni_icon",
+						"/clear @s omni:omni_off",
+						"/clear @s omni:omni_master",
+						"/execute as @s[family=omnitrix,tag=!master_control] at @s run scriptevent omni:equip_power 0 omni:omni_icon",
+						"/execute as @s[family=omnitrix,tag=master_control] at @s run scriptevent omni:equip_power 8 omni:omni_master",
+						"/tag @s[family=!omni_inuse] remove omni_using",
+						"/tag @s[scores={aliens=1..}] remove aliens_locked",
+						"/tag @s remove alien",
+						"/clear @s power:fire_ball",
+						"/clear @s power:hb_flamethrower",
+						"/clear @s power:dh_crystal",
+						"/clear @s power:dh_spikes",
+						"/clear @s power:sf_slime",
+						"/clear @s power:dt_clone",
+						"/clear @s power:dt_command",
+						"/clear @s power:wb_stomp",
+						"/clear @s power:wb_ray",
+						"/clear @s power:flight_activator",
+						"/clear @s power:gf_intangibility",
+						"/clear @s power:gf_possession",
+						"/clear @s power:arc_ice",
+						"/clear @s power:arc_frost_walker",
+						"/clear @s power:arc_armor",
+						"/clear @s power:arc_chill",
+						"/clear @s power:clock_beam",
+						"/clear @s power:clock_stop",
+						"/clear @s power:clock_time",
+						"/clear @s power:clock_rewind",
+						"/clear @s power:bv_lightning",
+						"/clear @s power:bv_electrokinesis",
+						"/clear @s power:wv_plant",
+						"/clear @s power:wv_seeds",
+						"/clear @s power:wv_stretch",
+						"/clear @s power:bw_howl",
+						"/clear @s power:bm_stretch",
+						"/clear @s power:bm_grapple",
+						"/clear @s power:eyelaser",
+						"/clear @s power:eyefire",
+						"/clear @s power:eyeice",
+						"/clear @s power:up_tongue",
+						"/clear @s power:up_menu",
+						"/gamemode creative @s[m=spectator,tag=was_creative]",
+						"/gamemode adventure @s[m=spectator,tag=was_adventure]",
+						"/gamemode survival @s[m=spectator,tag=!was_creative,tag=!was_adventure]",
+						"/tag @s remove was_creative",
+						"/tag @s remove was_adventure",
+						"/tag @s remove ditto_owner",
+						"/execute as @s at @s run kill @e[type=power:slime,r=50]"
+					]
+				}
+			}
+		},
+		"controller.animation.player_on_death": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"on_death": "query.health<=0"
+						}
+					]
+				},
+				"on_death": {
+					"on_entry": [],
+					"transitions": [
+						{
+							"default": "query.health>0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.stopped_riding": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ride": "!query.is_riding"
+						}
+					]
+				},
+				"ride": {
+					"on_entry": [
+						"/execute as @s[family=waybig] at @s run function omni/off"
+					],
+					"transitions": [
+						{
+							"default": "query.is_riding"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.sneaked": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneaked": "query.is_sneaking"
+						}
+					]
+				},
+				"sneaked": {
+					"on_entry": [
+						"/event entity @s[family=ghostfreak,family=!invisible] ghostfreak_invisible",
+						"/execute as @s[family=ghostfreak] at @s run effect @e[family=monster,r=15] blindness 1 1 true",
+						"/effect @s[family=ghostfreak] invisibility 1 0 true"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						},
+						{
+							"sneaked": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.on_air": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"on_air": "!query.is_on_ground"
+						}
+					]
+				},
+				"on_air": {
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.on_ground": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"on_ground": "query.is_on_ground&&!query.is_in_water"
+						}
+					]
+				},
+				"on_ground": {
+					"transitions": [
+						{
+							"default": "!query.is_on_ground||query.is_in_water"
+						}
+					],
+					"on_entry": [
+						"/tag @s remove flying",
+						"/event entity @s[family=water_ripjaws] ripjaws"
+					]
+				}
+			}
+		},
+		"controller.animation.in_water": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_water": "query.is_in_water"
+						}
+					]
+				},
+				"in_water": {
+					"transitions": [
+						{
+							"default": "!query.is_in_water"
+						}
+					],
+					"on_entry": [
+						"/event entity @s[family=ripjaws,family=!water_ripjaws] water_ripjaws"
+					]
+				}
+			}
+		},
+		"controller.animation.climb": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"climb": "query.is_jumping&&query.variant==6"
+						}
+					]
+				},
+				"climb": {
+					"transitions": [
+						{
+							"default": "query.is_jumping&&query.variant==6"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s if block ~ ~1 ~-1 air run tag @s add s1",
+						"/execute as @s at @s if block ~1 ~1 ~0 air run tag @s add s2",
+						"/execute as @s at @s if block ~ ~1 ~1 air run tag @s add s3",
+						"/execute as @s at @s if block ~-1 ~1 ~0 air run tag @s add s4",
+						"/tag @s[tag=s1,tag=s2,tag=s3,tag=s4] add cant_climb",
+						"/tag @s remove s1",
+						"/tag @s remove s2",
+						"/tag @s remove s3",
+						"/tag @s remove s4",
+						"/effect @s[tag=!cant_climb] levitation 1 2 true",
+						"/tag @s remove cant_climb"
+					]
+				}
+			}
+		},
+		"controller.animation.jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "query.is_jumping"
+						}
+					]
+				},
+				"jump": {
+					"transitions": [
+						{
+							"default": "!query.is_jumping"
+						}
+					],
+					"on_entry": [
+						"/effect @s[family=heatblast] levitation 1 5 true",
+						"/effect @s[family=ghostfreak] levitation 1 5 true",
+						"/effect @s[family=stinkfly] levitation 1 5 true",
+						"/effect @s[family=stinkfly] speed 8 10 true",
+						"/tag @s[family=can_fly] add flying"
+					]
+				}
+			}
+		},
+		"controller.animation.sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sprint": "query.is_sprinting"
+						}
+					]
+				},
+				"sprint": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting"
+						},
+						{
+							"loop_reset": "query.state_time>=0.05"
+						}
+					],
+					"on_entry": [
+						"/effect @s[family=xlr8] speed 1 22 true",
+						"/effect @s[family=cannonbolt_ball] speed 1 7 true",
+						"/effect @s[family=stinkfly] speed 1 5 true",
+						"/effect @s[family=cannonbolt_ball] jump_boost 1 5 true",
+						"/execute as @s[family=xlr8] at @s run particle minecraft:soul_particle ~ ~0.2 ~",
+						"/execute as @s[family=xlr8] at @s run particle minecraft:basic_smoke_particle ~ ~0.2 ~"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting"
+						},
+						{
+							"sprint": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.no_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"no_sprint": "!query.is_sprinting"
+						}
+					]
+				},
+				"no_sprint": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting"
+						}
+					],
+					"on_entry": [
+						"/event entity @s[family=xlr8_sprint] xlr8",
+						"/event entity @s[family=cannonbolt_ball] cannonbolt"
+					]
+				}
+			}
+		},
+		"controller.animation.sneak": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					]
+				},
+				"sneak": {
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/tag @s add sneaking",
+						"/effect @s[tag=flying] slow_falling 1 0 true"
+					]
+				}
+			}
+		},
+		"controller.animation.stand": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"stand": "!query.is_sneaking"
+						}
+					]
+				},
+				"stand": {
+					"transitions": [
+						{
+							"default": "query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/execute as @s[family=omni_inuse,tag=sneaking,tag=!omni_menu,hasitem={item=omni:omni_icon,location=slot.weapon.mainhand}] at @s run event entity @s omnitrix_use",
+						"/execute as @s[family=omni_inuse,tag=sneaking,tag=!omni_menu,hasitem={item=omni:omni_master,location=slot.weapon.mainhand}] at @s run event entity @s omnitrix_use",
+						"/execute as @s[scores={omni_menu_option=1}] at @s run scriptevent rz:toggle_failsafe",
+						"/execute as @s[scores={omni_menu_option=2}] at @s run scriptevent rz:sos_beacon",
+						"/execute as @s[scores={omni_menu_option=3,aliens=22..}] at @s run scriptevent rz:menu_feedback §cAll aliens already unlocked!",
+						"/execute as @s[scores={omni_menu_option=3,aliens=..21}] at @s run scriptevent rz:menu_feedback §c10 Levels required to unlock a new alien!",
+						"/tag @s[scores={omni_menu_option=3,aliens=..21},lm=10] add unlocked_one",
+						"/xp -10L @s[tag=unlocked_one]",
+						"/scoreboard players add @s[tag=unlocked_one] aliens 1",
+						"/execute as @s[tag=unlocked_one] at @s run scriptevent rz:menu_feedback §eNew Alien Unlocked!",
+						"/tag @s remove unlocked_one",
+						"/execute as @s[scores={omni_menu_option=4,aliens=22..}] at @s run scriptevent rz:menu_feedback §cAll aliens already unlocked!",
+						"/execute as @s[scores={omni_menu_option=4,aliens=9}] at @s run scriptevent rz:menu_feedback §c130 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=9},lm=130] add unlocked_all",
+						"/xp -130L @s[tag=unlocked_all,scores={aliens=9}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=10}] at @s run scriptevent rz:menu_feedback §c120 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=10},lm=120] add unlocked_all",
+						"/xp -120L @s[tag=unlocked_all,scores={aliens=10}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=11}] at @s run scriptevent rz:menu_feedback §c110 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=11},lm=110] add unlocked_all",
+						"/xp -110L @s[tag=unlocked_all,scores={aliens=11}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=12}] at @s run scriptevent rz:menu_feedback §c100 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=12},lm=100] add unlocked_all",
+						"/xp -100L @s[tag=unlocked_all,scores={aliens=12}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=13}] at @s run scriptevent rz:menu_feedback §c90 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=13},lm=90] add unlocked_all",
+						"/xp -90L @s[tag=unlocked_all,scores={aliens=13}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=14}] at @s run scriptevent rz:menu_feedback §c80 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=14},lm=80] add unlocked_all",
+						"/xp -80L @s[tag=unlocked_all,scores={aliens=14}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=15}] at @s run scriptevent rz:menu_feedback §c70 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=15},lm=70] add unlocked_all",
+						"/xp -70L @s[tag=unlocked_all,scores={aliens=15}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=16}] at @s run scriptevent rz:menu_feedback §c60 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=16},lm=60] add unlocked_all",
+						"/xp -60L @s[tag=unlocked_all,scores={aliens=16}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=17}] at @s run scriptevent rz:menu_feedback §c50 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=17},lm=50] add unlocked_all",
+						"/xp -50L @s[tag=unlocked_all,scores={aliens=17}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=18}] at @s run scriptevent rz:menu_feedback §c40 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=18},lm=40] add unlocked_all",
+						"/xp -40L @s[tag=unlocked_all,scores={aliens=18}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=19}] at @s run scriptevent rz:menu_feedback §c30 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=19},lm=30] add unlocked_all",
+						"/xp -30L @s[tag=unlocked_all,scores={aliens=19}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=20}] at @s run scriptevent rz:menu_feedback §c20 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=20},lm=20] add unlocked_all",
+						"/xp -20L @s[tag=unlocked_all,scores={aliens=20}]",
+						"/execute as @s[scores={omni_menu_option=4,aliens=21}] at @s run scriptevent rz:menu_feedback §c10 Levels required to unlock all aliens!",
+						"/tag @s[scores={omni_menu_option=4,aliens=21},lm=10] add unlocked_all",
+						"/xp -10L @s[tag=unlocked_all,scores={aliens=21}]",
+						"/execute as @s[tag=unlocked_all] at @s run scriptevent rz:menu_feedback §eAll Aliens Unlocked Successfully!",
+						"/scoreboard players set @s[tag=unlocked_all] aliens 22",
+						"/tag @s remove unlocked_all",
+						"/execute as @s[scores={omni_menu_option=5}] at @s run scriptevent rz:menu_feedback §cOmnitrix removed from inventory",
+						"/execute as @s[scores={omni_menu_option=5}] at @s run function reset",
+						"/give @s[scores={omni_menu_option=5}] omni:omnitrix",
+						"/clear @s[scores={omni_menu_option=5}] omni:omni_icon",
+						"/clear @s[scores={omni_menu_option=5}] omni:omni_master",
+						"/execute as @s[scores={omni_menu_option=6}] at @s run scriptevent rz:menu_feedback §aOmnitrix Reset: 9 Starter Aliens Active!",
+						"/scoreboard players set @s[scores={omni_menu_option=6}] aliens 9",
+						"/tag @s[scores={omni_menu_option=6}] remove aliens_locked",
+						"/execute as @s[scores={omni_menu_option=7}] at @s run function omni/destruct",
+						"/execute as @s[scores={omni_menu_option=8},tag=!mc_unlocked] at @s run scriptevent rz:menu_feedback §c50 Levels required for Master Control!",
+						"/tag @s[scores={omni_menu_option=8},lm=50,tag=!mc_unlocked] add unlock_mc",
+						"/xp -50L @s[tag=unlock_mc]",
+						"/execute as @s[tag=unlock_mc] at @s run scriptevent rz:menu_feedback §aMaster Control UNLOCKED PERMANENTLY!",
+						"/tag @s[tag=unlock_mc] add mc_unlocked",
+						"/execute as @s[scores={omni_menu_option=8},tag=mc_unlocked,tag=!master_control,tag=!unlock_mc] at @s run scriptevent rz:menu_feedback §aMaster Control ACTIVATED!",
+						"/execute as @s[scores={omni_menu_option=8},tag=mc_unlocked,tag=master_control,tag=!unlock_mc] at @s run scriptevent rz:menu_feedback §cMaster Control DEACTIVATED!",
+						"/tag @s[scores={omni_menu_option=8},tag=mc_unlocked,tag=master_control,tag=!unlock_mc] add remove_mc_temp",
+						"/tag @s[scores={omni_menu_option=8},tag=mc_unlocked,tag=!remove_mc_temp,tag=!unlock_mc] add master_control",
+						"/tag @s[tag=remove_mc_temp] remove master_control",
+						"/tag @s[tag=remove_mc_temp] remove remove_mc_temp",
+						"/clear @s[scores={omni_menu_option=8}] omni:omni_icon",
+						"/clear @s[scores={omni_menu_option=8}] omni:omni_master",
+						"/execute as @s[scores={omni_menu_option=8},tag=!master_control] at @s run scriptevent omni:equip_power 0 omni:omni_icon",
+						"/execute as @s[scores={omni_menu_option=8},tag=master_control] at @s run scriptevent omni:equip_power 8 omni:omni_master",
+						"/tag @s remove unlock_mc",
+						"/execute as @s[scores={omni_menu_option=9}] at @s run spawnpoint @s ~ ~ ~",
+						"/execute as @s[scores={omni_menu_option=9}] at @s run scriptevent rz:menu_feedback §aSpawnpoint Set Successfully!",
+						"/execute as @s[scores={omni_menu_option=10}] at @s run scriptevent power:omni_status",
+						"/execute as @s[scores={omni_menu_option=11}] at @s run scriptevent rz:check_friends",
+						"/playsound random.click @s[scores={omni_menu_option=0}] ~ ~ ~ 1.0 1.5",
+						"/execute as @s[scores={omni_menu_option=0}] at @s run scriptevent rz:menu_feedback §eMenu Closed",
+						"/playsound omni.opt_change @s[scores={omni_menu_option=1..}] ~ ~ ~ 1.0 1.5",
+						"/scoreboard players reset @s omni_menu_option",
+						"/tag @s remove sneaking",
+						"/tag @s remove omni_menu"
+					]
+				}
+			}
+		},
+		"controller.animation.transform_sounds": {
+			"initial_state": "human",
+			"states": {
+				"human": {
+					"transitions": [
+						{
+							"heatblast": "query.variant==1"
+						},
+						{
+							"wildmutt": "query.variant==2"
+						},
+						{
+							"diamondhead": "query.variant==3"
+						},
+						{
+							"xlr8": "query.variant==4"
+						},
+						{
+							"cannonbolt": "query.variant==5"
+						},
+						{
+							"greymatter": "query.variant==6"
+						},
+						{
+							"fourarms": "query.variant==7"
+						},
+						{
+							"stinkfly": "query.variant==8"
+						},
+						{
+							"ripjaws": "query.variant==9"
+						},
+						{
+							"ghostfreak": "query.variant==11"
+						},
+						{
+							"upchuck": "query.variant==17"
+						}
+					]
+				},
+				"heatblast": {
+					"on_entry": [
+						"/playsound mob.blaze.breathe @s ~ ~ ~ 1 0.8",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=1"
+						}
+					]
+				},
+				"wildmutt": {
+					"on_entry": [
+						"/playsound mob.wolf.growl @s ~ ~ ~ 1 0.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=2"
+						}
+					]
+				},
+				"diamondhead": {
+					"on_entry": [
+						"/playsound random.glass @s ~ ~ ~ 1 0.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=3"
+						}
+					]
+				},
+				"xlr8": {
+					"on_entry": [
+						"/playsound item.trident.throw @s ~ ~ ~ 1 1.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=4"
+						}
+					]
+				},
+				"cannonbolt": {
+					"on_entry": [
+						"/playsound item.shield.block @s ~ ~ ~ 1 0.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=5"
+						}
+					]
+				},
+				"greymatter": {
+					"on_entry": [
+						"/playsound random.pop @s ~ ~ ~ 1 1.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~0.5 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~0.5 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=6"
+						}
+					]
+				},
+				"fourarms": {
+					"on_entry": [
+						"/playsound mob.irongolem.death @s ~ ~ ~ 1 0.8",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=7"
+						}
+					]
+				},
+				"stinkfly": {
+					"on_entry": [
+						"/playsound mob.bee.loop @s ~ ~ ~ 1 1.0",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=8"
+						}
+					]
+				},
+				"ripjaws": {
+					"on_entry": [
+						"/playsound random.splash @s ~ ~ ~ 1 1.0",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=9"
+						}
+					]
+				},
+				"ghostfreak": {
+					"on_entry": [
+						"/playsound mob.ghast.moan @s ~ ~ ~ 1 0.5",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=11"
+						}
+					]
+				},
+				"upchuck": {
+					"on_entry": [
+						"/playsound mob.slime.attack @s ~ ~ ~ 1 0.8",
+						"/execute as @s at @s run particle minecraft:totem_particle ~ ~1 ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					],
+					"transitions": [
+						{
+							"human": "query.variant!=17"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.click": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"click": "variable.attack_time>0.6"
+						}
+					]
+				},
+				"click": {
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0.6"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.alien_passives": {
+			"initial_state": "loop",
+			"states": {
+				"loop": {
+					"on_entry": [
+						"/effect @s[family=fourarms] haste 15 1 true",
+						"/effect @s[family=water_ripjaws] speed 15 2 true",
+						"/effect @s[family=water_ripjaws] conduit_power 15 0 true",
+						"/effect @s[family=waybig] jump_boost 15 20 true"
+					],
+					"transitions": [
+						{
+							"ghostfreak_sun": "query.variant==11&&query.time_of_day<0.5"
+						},
+						{
+							"reset": "query.state_time>=0.5"
+						}
+					]
+				},
+				"ghostfreak_sun": {
+					"on_entry": [],
+					"transitions": [
+						{
+							"loop": "query.state_time>=0.5"
+						}
+					]
+				},
+				"reset": {
+					"transitions": [
+						{
+							"loop": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omnitrix_failsafe": {
+			"initial_state": "monitor",
+			"states": {
+				"monitor": {
+					"transitions": [
+						{
+							"activate": "query.variant==0&&query.health<=10&&query.health>0&&query.scoreboard('rz_failsafe')!=1&&query.scoreboard('aliens')>=9"
+						}
+					]
+				},
+				"activate": {
+					"transitions": [
+						{
+							"cooldown": "query.variant!=0"
+						},
+						{
+							"monitor": "query.health>10"
+						}
+					],
+					"on_entry": [
+						"/effect @s resistance 5 255 true",
+						"/effect @s instant_health 1 10 true",
+						"/effect @s absorption 10 4 true",
+						"/playsound random.totem @a[r=10] ~ ~ ~ 1 0.8",
+						"/particle minecraft:totem_particle ~ ~1 ~",
+						"/particle minecraft:huge_explosion_emitter ~ ~1 ~",
+						"/titleraw @s title {\"rawtext\":[{\"text\":\"§l§a> FAILSAFE ACTIVATED <\"}]}",
+						"/execute as @s at @s run damage @e[r=5,family=monster] 5 entity_attack entity @s",
+						"/function omni/smart_failsafe"
+					]
+				},
+				"cooldown": {
+					"transitions": [
+						{
+							"heal_human": "query.variant==0"
+						}
+					]
+				},
+				"heal_human": {
+					"transitions": [
+						{
+							"monitor": "query.health>7"
+						}
+					],
+					"on_entry": [
+						"/effect @s instant_health 2 10 true",
+						"/effect @s regeneration 2 255 true"
+					]
+				}
+			}
+		},
+		"controller.animation.omni_destruct_blink": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"blink1": "query.skin_id==50||query.skin_id==51"
+						}
+					]
+				},
+				"blink1": {
+					"transitions": [
+						{
+							"default": "query.skin_id!=50&&query.skin_id!=51"
+						},
+						{
+							"blink2": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @s omni_destruct_blink1",
+						"/playsound random.click @a[r=10] ~ ~ ~ 1 1.0"
+					]
+				},
+				"blink2": {
+					"transitions": [
+						{
+							"default": "query.skin_id!=50&&query.skin_id!=51"
+						},
+						{
+							"blink1": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @s omni_destruct_blink2",
+						"/playsound random.click @a[r=10] ~ ~ ~ 1 1.5"
+					]
+				}
+			}
+		},
+		"controller.animation.omnitrix_battery": {
+			"initial_state": "loop",
+			"states": {
+				"loop": {
+					"on_entry": [
+						"/execute as @s[family=omnitrix] at @s run function omni/battery"
+					],
+					"transitions": [
+						{
+							"reset": "query.state_time>=0"
+						}
+					]
+				},
+				"reset": {
+					"transitions": [
+						{
+							"loop": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

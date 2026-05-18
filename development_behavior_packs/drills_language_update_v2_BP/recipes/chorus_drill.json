@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "drills:chorus_drill_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"CCC",
+			"RER"
+		],
+		"key": {
+			"C": {
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			"R": {
+				"item": "minecraft:redstone_block"
+			},
+			"E": {
+				"item": "minecraft:end_rod"
+			}
+		},
+		"result": {
+			"item": "drills:chorus_drill",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "lush_caves"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:default_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#3F7F6B"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#2E3A2F"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "daniye:rock_weighted_random_feature"
+		},
+		"features": [
+			[
+				"daniye:rock_01_mcstructure",
+				1
+			],
+			[
+				"daniye:rock_02_mcstructure",
+				1
+			],
+			[
+				"daniye:rock_03_mcstructure",
+				1
+			],
+			[
+				"daniye:rock_04_mcstructure",
+				1
+			],
+			[
+				"daniye:rock_05_mcstructure",
+				1
+			]
+		]
+	}
+}

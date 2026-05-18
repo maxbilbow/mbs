@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.book_ad",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main2",
+					"pivot": [-1.46757, 4.99655, -1.89526],
+					"rotation": [91.38508, -26.79698, -78.51116],
+					"cubes": [
+						{"origin": [-2.96757, 0.99655, -4.89526], "size": [3, 8, 6], "pivot": [-1.46757, 4.99655, -1.89526], "rotation": [-179.10212, -69.68256, -111.96027], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

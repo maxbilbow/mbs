@@ -1,0 +1,23 @@
+//bridge-file-version: #309
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bladrillosdiorita_escalera"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bladrillosdiorita_escalera",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

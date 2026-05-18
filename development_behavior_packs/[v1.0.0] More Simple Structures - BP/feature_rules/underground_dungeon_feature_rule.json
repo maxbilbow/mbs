@@ -1,0 +1,52 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "wypnt_mss:underground_dungeon_feature_rule",
+            "places_feature": "wypnt_mss:select_underground_dungeon_feature"
+        },
+        "conditions": {
+            "placement_pass": "underground_pass",
+            "minecraft:biome_filter": [
+                {
+                    "all_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "!=",
+                            "value": "ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "!=",
+                            "value": "river"
+                        },
+                        {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "operator": "==",
+                                    "value": "overworld"
+                                },
+                                {
+                                    "test": "has_biome_tag",
+                                    "operator": "==",
+                                    "value": "overworld_generation"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "distribution": {
+            "iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 25
+			},
+            "x": 0,
+            "y": "variable.random = (Math.random(-50, 50)); return variable.random > (query.above_top_solid(variable.worldx, variable.worldz) - 2) ? 10 : variable.random;",
+            "z": 0
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "minecraft:tall_mangrove_tree_with_beenest_feature"
+		},
+		"structure_name": "mystructure:random_mangrove_tree",
+		"facing_direction": "random",
+		"adjustment_radius": 0,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

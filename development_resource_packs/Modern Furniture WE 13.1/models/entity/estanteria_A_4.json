@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.estanteriaa4",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5, 8, 1], "size": [15, 1, 7], "uv": [46, 0]},
+						{"origin": [0, 1, 1], "size": [15, 1, 7], "uv": [47, 0]},
+						{"origin": [-13, 17, 1], "size": [6, 1, 7], "uv": [60, 108]},
+						{"origin": [-7, 1, 1], "size": [1, 17, 7], "uv": [66, 98]},
+						{"origin": [-14, 1, 1], "size": [1, 17, 7], "uv": [66, 98]},
+						{"origin": [-13, 1, 1], "size": [6, 1, 7], "uv": [60, 109]},
+						{"origin": [-11, 2, 3], "size": [2, 6, 5], "uv": [4, 86]},
+						{"origin": [2, 2, 2], "size": [2, 6, 5], "uv": [2, 105]},
+						{"origin": [3, 11, 3], "size": [2, 6, 5], "pivot": [3, 11, 4.5], "rotation": [30, 0, 90], "uv": [3, 75]},
+						{"origin": [4, 2, 3], "size": [2, 6, 5], "uv": [1, 117]},
+						{"origin": [-13, 2, 2], "size": [2, 6, 5], "uv": [3, 75]}
+					]
+				},
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0]
+				}
+			]
+		}
+	]
+}

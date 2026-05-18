@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:bobrito_bandito",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bobritobandito"
+			},
+			"geometry": {
+				"default": "geometry.bobritobandito"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.bobritobandito.walk",
+				"idle": "animation.bobritobandito.idle",
+				"attack": "animation.bobritobandito.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.bobrito_bandito.attack",
+				"controller_base": "controller.animation.bobrito_bandito.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#4c3321",
+				"overlay_color": "#2b1d1d"
+			}
+		}
+	}
+}

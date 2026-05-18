@@ -1,0 +1,65 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"kaboom:refiner": {
+		"sound": "stone",
+		"textures": "kaboom_refiner"
+	},
+	"kaboom:uranium_block": {
+		"sound": "stone",
+		"textures": "kaboom_uranium_block"
+	},
+	"kaboom:nuclear_reactor": {
+		"sound": "stone",
+		"textures": "kaboom_nuclear_reactor"
+	},
+	"kaboom:plutonium": {
+		"sound": "stone",
+		"textures": "kaboom_plutonium"
+	},
+	"kaboom:neptunium_block": {
+		"sound": "stone",
+		"textures": "kaboom_neptunium_block"
+	},
+	"kaboom:uranium_fuel_rods": {
+		"sound": "stone"
+	},
+	"kaboom:deuterium_casing": {
+		"sound": "glass"
+	},
+	"kaboom:deuterium_casing_full": {
+		"sound": "glass"
+	},
+	"kaboom:polystyrene_foam": {
+		"sound": "cactus_flower",
+		"textures": "kaboom_polystyrene_foam"
+	},
+	"kaboom:radiation_sign": {
+		"sound": "stone"
+	},
+	"kaboom:dummy_block": {
+		"sound": "stone",
+		"textures": "kaboom_dummy_block"
+	},
+	"kaboom:trinitite": {
+		"sound": "stone",
+		"textures": "kaboom_trinitite"
+	},
+	"kaboom:launchpad_block": {
+		"sound": "stone",
+		"textures": {
+			"up": "kaboom_launchpad_block",
+			"down": "kaboom_launchpad_block",
+			"side": "kaboom_launchpad_block_side"
+		}
+	},
+	"kaboom:warhead_tier_2": {
+		"sound": "stone"
+	},
+	"kaboom:missile_engine": {
+		"sound": "stone"
+	}
+}

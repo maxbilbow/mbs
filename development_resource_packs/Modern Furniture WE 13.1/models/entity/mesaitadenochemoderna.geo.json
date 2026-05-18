@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mesitadenochemoderna",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-6, 0, -6], "size": [1, 1, 12], "uv": [89, 31]},
+						{"origin": [5, 1, 5], "size": [1, 13, 1], "uv": [37, 37]},
+						{"origin": [5, 14, -6], "size": [1, 1, 12], "uv": [41, 48]},
+						{"origin": [5, 1, -6], "size": [1, 13, 1], "uv": [41, 37]},
+						{"origin": [5, 0, -6], "size": [1, 1, 12], "uv": [71, 48]},
+						{"origin": [-7, 3, -7], "size": [14, 1, 14], "uv": [50, 104]},
+						{"origin": [-6, 1, 5], "size": [1, 13, 1], "uv": [45, 37]},
+						{"origin": [2, 3.6, -3], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [0, 0, -17.5], "uv": [2, 105]},
+						{"origin": [-3, 4, -4], "size": [2, 6, 5], "uv": [3, 75]},
+						{"origin": [-5, 4, -5], "size": [2, 6, 5], "uv": [1, 117]},
+						{"origin": [-6, 1, -6], "size": [1, 13, 1], "uv": [49, 37]},
+						{"origin": [-7, 11, -7], "size": [14, 1, 14], "uv": [51, 103]},
+						{"origin": [-6, 14, -6], "size": [1, 1, 12], "uv": [87, 49]},
+						{"origin": [12, -4, -2], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [-25, 0, -90], "uv": [4, 86]}
+					]
+				}
+			]
+		}
+	]
+}

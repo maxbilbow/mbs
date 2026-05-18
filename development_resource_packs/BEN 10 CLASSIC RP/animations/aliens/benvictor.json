@@ -1,0 +1,1148 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.benvictor_walk": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"override_previous_animation": true,
+			"bones": {
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							20,
+							0,
+							0
+						],
+						"0.3333": [
+							-30,
+							0,
+							0
+						],
+						"0.6667": [
+							20,
+							0,
+							0
+						]
+					}
+				},
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							5,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							0
+						],
+						"0.6667": [
+							5,
+							0,
+							0
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							-30,
+							0,
+							0
+						],
+						"0.3333": [
+							20,
+							0,
+							0
+						],
+						"0.6667": [
+							-30,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							-30,
+							0,
+							0
+						],
+						"0.3333": [
+							25,
+							0,
+							0
+						],
+						"0.6667": [
+							-30,
+							0,
+							0
+						]
+					}
+				},
+				"leftleg2": {
+					"rotation": [
+						10,
+						0,
+						0
+					]
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							25,
+							0,
+							0
+						],
+						"0.3333": [
+							-30,
+							0,
+							0
+						],
+						"0.6667": [
+							25,
+							0,
+							0
+						]
+					}
+				},
+				"rightleg2": {
+					"rotation": [
+						10,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.benvictor_sprint": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							-40,
+							0,
+							0
+						],
+						"0.25": [
+							30,
+							0,
+							0
+						],
+						"0.5": [
+							-40,
+							0,
+							0
+						]
+					}
+				},
+				"upperbody": {
+					"rotation": [
+						10,
+						0,
+						0
+					]
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							30,
+							0,
+							0
+						],
+						"0.25": [
+							-40,
+							0,
+							0
+						],
+						"0.5": [
+							30,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							40,
+							0,
+							0
+						],
+						"0.25": [
+							-50,
+							0,
+							0
+						],
+						"0.5": [
+							40,
+							0,
+							0
+						]
+					}
+				},
+				"leftleg2": {
+					"rotation": [
+						20,
+						0,
+						0
+					]
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							-50,
+							0,
+							0
+						],
+						"0.25": [
+							40,
+							0,
+							0
+						],
+						"0.5": [
+							-50,
+							0,
+							0
+						]
+					}
+				},
+				"rightleg2": {
+					"rotation": [
+						20,
+						0,
+						0
+					]
+				},
+				"rightarm2": {
+					"rotation": [
+						-12.5,
+						0,
+						0
+					]
+				},
+				"leftarm2": {
+					"rotation": [
+						-12.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.bv_lightning": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"rightaim": {
+					"rotation": [
+						"query.target_x_rotation-this",
+						0,
+						0
+					]
+				},
+				"fullbody2": {
+					"rotation": [
+						0,
+						"query.target_y_rotation-this",
+						0
+					]
+				},
+				"arm1": {
+					"rotation": [
+						-95,
+						2.5,
+						0
+					]
+				},
+				"rightarm2": {
+					"rotation": [
+						0,
+						-90,
+						5
+					],
+					"position": [
+						-2.45,
+						0,
+						-0.65
+					]
+				},
+				"finger3": {
+					"rotation": [
+						10.29362,
+						12.19908,
+						70.24715
+					],
+					"position": [
+						-0.1,
+						0,
+						0
+					]
+				},
+				"finger4": {
+					"rotation": [
+						-72.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.bv_electrokinesis": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.1667,
+			"override_previous_animation": true,
+			"bones": {
+				"fullbody2": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							0,
+							-7,
+							0
+						]
+					}
+				},
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							62.5,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"rightarm2": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"finger3": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							10,
+							12.5,
+							75
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"finger4": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftarm2": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"finger": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							10,
+							-12.5,
+							-75
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"finger2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-5,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftleg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							62.49,
+							0,
+							0
+						],
+						"0.1667": [
+							85,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-72.5,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"rightleg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							72.5,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.bv_lightning2": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"rightaim": {
+					"rotation": [
+						"query.target_x_rotation-this",
+						0,
+						0
+					]
+				},
+				"leftaim": {
+					"rotation": [
+						"query.target_x_rotation-this",
+						0,
+						0
+					]
+				},
+				"fullbody2": {
+					"rotation": [
+						0,
+						"query.target_y_rotation-this",
+						0
+					]
+				},
+				"arm1": {
+					"rotation": [
+						-95,
+						-2.5,
+						0
+					]
+				},
+				"rightarm2": {
+					"rotation": [
+						0,
+						-90,
+						5
+					],
+					"position": [
+						-2.45,
+						0,
+						-0.65
+					]
+				},
+				"finger3": {
+					"rotation": [
+						10.29362,
+						12.19908,
+						70.24715
+					],
+					"position": [
+						-0.1,
+						0,
+						0
+					]
+				},
+				"finger4": {
+					"rotation": [
+						-72.5,
+						0,
+						0
+					]
+				},
+				"arm2": {
+					"rotation": [
+						-92.49762,
+						2.49762,
+						0.10912
+					]
+				},
+				"leftarm2": {
+					"rotation": [
+						-87.50238,
+						89.78197,
+						-92.49762
+					],
+					"position": [
+						1.5,
+						0,
+						-1.55
+					]
+				},
+				"finger": {
+					"rotation": [
+						7.5,
+						-12.5,
+						-67.5
+					]
+				},
+				"finger2": {
+					"rotation": [
+						-72.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.benvictor": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"fullbody": {
+					"scale": 0.7
+				},
+				"raiou": {
+					"rotation": [
+						17.5,
+						0,
+						0
+					]
+				},
+				"raiozi": {
+					"rotation": [
+						17.5,
+						0,
+						0
+					]
+				},
+				"roll2": {
+					"rotation": [
+						20.01856,
+						-7.49839,
+						0.15647
+					],
+					"position": [
+						0,
+						-1,
+						0.9
+					]
+				},
+				"rolo": {
+					"position": [
+						0,
+						0,
+						0.5
+					]
+				},
+				"ci": {
+					"position": [
+						-1,
+						-0.6,
+						0
+					]
+				},
+				"oxCccc": {
+					"position": [
+						1,
+						-0.6,
+						0
+					]
+				},
+				"ox": {
+					"rotation": [
+						20.01856,
+						7.49839,
+						-0.15647
+					],
+					"position": [
+						0,
+						-1,
+						0.9
+					]
+				},
+				"leftarm_fp": {
+					"scale": 0.5
+				},
+				"size": {
+					"scale": 0.5
+				}
+			}
+		},
+		"animation.bv_lightning_fp": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"rightarm_fp": {
+					"rotation": [
+						36,
+						1.35924,
+						-13
+					]
+				},
+				"finger3": {
+					"rotation": [
+						10,
+						12.5,
+						82.5
+					]
+				},
+				"finger4": {
+					"rotation": [
+						-67.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.bv_lightning2_fp": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"rightarm_fp": {
+					"rotation": [
+						10,
+						0,
+						0
+					]
+				},
+				"finger3": {
+					"rotation": [
+						10,
+						12.5,
+						82.5
+					]
+				},
+				"finger4": {
+					"rotation": [
+						-67.5,
+						0,
+						0
+					]
+				},
+				"leftarm": {
+					"rotation": [
+						7.5,
+						0,
+						0
+					]
+				},
+				"finger": {
+					"rotation": [
+						7.5,
+						-12.5,
+						-65
+					]
+				},
+				"finger2": {
+					"rotation": [
+						-70,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.benvictor_attack_fp": {
+			"loop": true,
+			"animation_length": 0.33333,
+			"override_previous_animation": true,
+			"bones": {
+				"rightarm_fp": {
+					"rotation": {
+						"0.0": [
+							-15,
+							-20,
+							45
+						],
+						"0.1667": [
+							0,
+							5,
+							-7.5
+						]
+					},
+					"position": {
+						"0.0": [
+							1,
+							1,
+							-1
+						],
+						"0.1667": [
+							0,
+							-5,
+							-1
+						],
+						"0.3333": [
+							0,
+							-5,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.benvictor_jump": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.33333,
+			"override_previous_animation": true,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							10,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightarm_fp": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							17.5,
+							0,
+							27.5
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"rightarm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftarm_fp": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							17.5,
+							0,
+							-27.5
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftarm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							-60,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							-19.5623,
+							-4.2453,
+							-11.76782
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftleg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							50,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							-19.5623,
+							4.2453,
+							11.76782
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"rightleg2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							50,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							30
+						]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							0,
+							0,
+							-30
+						]
+					}
+				}
+			}
+		},
+		"animation.benvictor_attack": {
+			"loop": true,
+			"animation_length": 0.33333,
+			"override_previous_animation": true,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.2083": [
+							2.52889,
+							-9.99519,
+							-0.22118
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-37.29135,
+							7.83348,
+							54.07705
+						],
+						"0.25": [
+							-92.97405,
+							-24.37888,
+							38.582
+						]
+					}
+				},
+				"rightarm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-12.5,
+							0,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": [
+						17.84334,
+						4.01039,
+						-9.86759
+					]
+				},
+				"leftarm2": {
+					"rotation": {
+						"0.0": [
+							-15,
+							0,
+							0
+						],
+						"0.1667": [
+							-15,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

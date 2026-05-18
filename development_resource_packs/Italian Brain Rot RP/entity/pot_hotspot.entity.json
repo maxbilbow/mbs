@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:pot_hotspot",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/pothotspot"
+			},
+			"geometry": {
+				"default": "geometry.pothotspot"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base"
+					//"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.pothotspot.walk",
+				"idle": "animation.pothotspot.idle",
+				"attack": "animation.pothotspot.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				//"controller_attack": "controller.animation.pot_hotspot.attack",
+				"controller_base": "controller.animation.pot_hotspot.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#009898",
+				"overlay_color": "#022626"
+			}
+		}
+	}
+}

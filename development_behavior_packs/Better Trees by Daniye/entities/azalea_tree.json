@@ -1,0 +1,133 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "daniye:azalea_tree",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"daniye:component_group_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.5,
+				"time_down_event": {
+					"event": "daniye:events_despawn"
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"tree"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false,
+				"push_towards_closest_space": false
+			}
+		},
+		"events": {
+			"daniye:instant_tree": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_01 ~-3~~-1 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_02 ~-1~~-3 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_03 ~-3~~-6 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_04 ~-3~~-1 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_05 ~-2~~-3 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_06 ~-3~~-6 0_degrees none block_by_block 1 false"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_07 ~-5~~-5 0_degrees none block_by_block 1 false"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_08 ~-6~~-7 0_degrees none block_by_block 1 false"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"fill ~1~~1 ~~~ air",
+								"structure load mystructure:azalea_tree_09 ~-10~~-10 0_degrees none block_by_block 1 false"
+							]
+						}
+					}
+				]
+			},
+			"daniye:events_despawn": {
+				"add": {
+					"component_groups": [
+						"daniye:component_group_despawn"
+					]
+				}
+			}
+		}
+	}
+}

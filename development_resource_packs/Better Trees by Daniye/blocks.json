@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.10",
+	"mangrove_start": {
+		"sound": "grass"
+	},
+	"cherry_start": {
+		"sound": "grass"
+	},
+	"dark_oak_start": {
+		"sound": "grass"
+	},
+	"acacia_start": {
+		"sound": "grass"
+	},
+	"big_spruce_start": {
+		"sound": "grass"
+	},
+	"big_jungle_start": {
+		"sound": "grass"
+	},
+	"jungle_start": {
+		"sound": "grass"
+	},
+	"spruce_start": {
+		"sound": "grass"
+	},
+	"birch_start": {
+		"sound": "grass"
+	},
+	"oak_start": {
+		"sound": "grass"
+	},
+	"pale_oak_start": {
+		"sound": "grass"
+	}
+}

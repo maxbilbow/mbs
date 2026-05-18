@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:acacia_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/acacia_tree"
+			},
+			"geometry": {
+				"default": "geometry.acacia_tree"
+			},
+			"render_controllers": [
+				"controller.render.acacia_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_acacia_tree"
+			}
+		}
+	}
+}

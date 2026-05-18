@@ -1,0 +1,36 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.omni.scale": {
+			"loop": true,
+			"bones": {
+				"omnitrix": {
+					"position": [
+						0,
+						-5,
+						0
+					],
+					"scale": [
+						0.4,
+						0.4,
+						0.5
+					]
+				},
+				"dial": {
+					"position": [
+						0,
+						0,
+						1.4
+					]
+				},
+				"base": {
+					"scale": [
+						1,
+						1,
+						0.8
+					]
+				}
+			}
+		}
+	}
+}

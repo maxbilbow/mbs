@@ -1,0 +1,1 @@
+execute as @a[tag=instakill] run tellraw @a {"rawtext":[{"selector":"@s"},{"text":" §cwas eaten by Oberon!§r"}]}

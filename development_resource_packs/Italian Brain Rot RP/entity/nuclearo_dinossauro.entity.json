@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:nuclearo_dinossauro",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/nuclearodinossauro"
+				//"glow": "textures/entity/nuclearodinossauro_glow"
+			},
+			"geometry": {
+				"default": "geometry.nuclearodinossauro"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.nuclearodinossauro.walk",
+				"idle": "animation.nuclearodinossauro.idle",
+				"attack": "animation.nuclearodinossauro.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.nuclearo_dinossauro.attack",
+				"controller_base": "controller.animation.nuclearo_dinossauro.general"
+				//"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#1e1d1b",
+				"overlay_color": "#0f0c00"
+			}
+		}
+	}
+}

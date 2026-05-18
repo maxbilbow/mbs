@@ -1,0 +1,20 @@
+{
+   "format_version": 2,
+   "header": {
+      "description": "By Raiyon",
+      "name": "Tree Chopper §c[V2.5.0] §f1.21-v26+",
+      "uuid": "217ce6fa-b038-43bc-8581-59e33493718a",
+      "version": [2, 5, 0],
+      "min_engine_version": [1, 13, 0]
+   },
+   "modules": [
+      {
+         "type": "resources",
+         "uuid": "44016f91-f5bb-4037-853e-d8215bc56903",
+         "version": [2, 5, 0]
+      }
+   ],
+   "metadata": {
+      "product_type": "addon"
+   }
+}

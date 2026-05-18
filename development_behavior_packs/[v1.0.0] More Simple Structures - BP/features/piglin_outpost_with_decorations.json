@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "wypnt_mss:piglin_outpost_with_decorations"
+		},
+		"early_out": "none",
+		"features": [
+			"wypnt_mss:piglin_outpost_feature_mcstructure",
+			"wypnt_mss:piglin_outpost_lanterns_scatter"
+		]
+	}
+}

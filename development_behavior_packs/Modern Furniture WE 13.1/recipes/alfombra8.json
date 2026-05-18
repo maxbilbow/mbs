@@ -1,0 +1,23 @@
+//bridge-file-version: #27
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:alfombra8"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajaalfombra"
+			}
+		],
+		"result": [
+			{
+				"item": "f:alfombra8",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

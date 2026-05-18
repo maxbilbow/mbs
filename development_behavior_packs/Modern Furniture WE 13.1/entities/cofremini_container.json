@@ -1,0 +1,49 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "f:cofremini_container",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:inventory": {
+				"container_size": 27,
+				"container_type": "container",
+				"private": false,
+				"restrict_to_owner": false,
+				"can_be_siphoned_from": true
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 0.6
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": false
+			}
+		}
+	}
+}

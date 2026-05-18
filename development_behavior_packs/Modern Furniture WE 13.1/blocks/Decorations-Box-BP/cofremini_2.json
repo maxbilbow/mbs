@@ -1,0 +1,111 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:cofremini"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:geometry": "geometry.cofremini",
+			"minecraft:custom_components": [
+				"content_mf:open_container"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-4
+				],
+				"size": [
+					14,
+					8,
+					8
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-4
+				],
+				"size": [
+					14,
+					8,
+					8
+				]
+			},
+			"minecraft:light_dampening": 15,
+			"minecraft:material_instances": {
+					"*": {
+					"texture": "mesamadera",
+					"render_method": "opaque",
+					"ambient_occlusion": false
+					
+				}
+			}
+
+		}
+	}
+}

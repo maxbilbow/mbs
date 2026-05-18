@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ghostfreak_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==11"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ghostfreak_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ghostfreak_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==11"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ghostfreak_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

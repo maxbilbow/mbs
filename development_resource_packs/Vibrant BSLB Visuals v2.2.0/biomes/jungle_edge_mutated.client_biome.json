@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "jungle_edge_mutated"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:jungle_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#3F7F75"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#6A7FC9"
+      }
+    }
+  }
+}

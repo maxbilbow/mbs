@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_sphinx_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:sphinx_1_feature_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:sphinx_2_feature_mcstructure",
+				4
+			],
+			[
+				"wypnt_mss:sphinx_3_feature_mcstructure",
+				4
+			]
+		]
+	}
+}

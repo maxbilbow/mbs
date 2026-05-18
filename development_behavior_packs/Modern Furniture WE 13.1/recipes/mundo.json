@@ -1,0 +1,23 @@
+//bridge-file-version: #56
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:mundo"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:mundo",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

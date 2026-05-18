@@ -1,0 +1,48 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "wypnt_mss:cave_camp_feature_rule",
+			"places_feature": "wypnt_mss:cave_camp_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				},
+				{
+					"none_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "deep_dark"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 4
+			},
+			"z": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-30,
+					30
+				]
+			},
+			"x": 0
+		}
+	}
+}

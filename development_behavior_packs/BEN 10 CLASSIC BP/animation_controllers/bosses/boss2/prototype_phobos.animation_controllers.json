@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cso.prototype_phobos.restart_timer": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"delayed_attack": "q.is_delayed_attacking"
+						}
+					]
+				},
+				"delayed_attack": {
+					"animations": [
+						"restart_timer"
+					],
+					"transitions": [
+						{
+							"default": "!q.is_delayed_attacking"
+						}
+					]
+				}
+			}
+		}
+	}
+}

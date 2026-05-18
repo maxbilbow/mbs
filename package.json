@@ -1,0 +1,35 @@
+{
+  "name": "max-mbs",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node ./App/server/start.ts",
+    "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --outdir=./App/www/js"
+  },
+  "author": "Max Bilbow",
+  "license": "ISC",
+  "imports": {
+    "#bedrock_server": "./bedrock_server",
+    "#current_version.txt": "./current_version.txt"
+  },
+  "devDependencies": {
+    "@minecraft/common": "^1.2.0",
+    "@minecraft/diagnostics": "^1.0.0-beta.1.21.70-preview.22",
+    "@minecraft/server": "^2.6.0",
+    "@minecraft/server-ui": "^2.0.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/semver": "^7.7.1",
+    "esbuild": "^0.28.0",
+    "express": "^5.2.1",
+    "prettier": "3.8.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "semver": "^7.7.4",
+    "tslog": "^4.10.2",
+    "typescript": "^6.0.2"
+  }
+}

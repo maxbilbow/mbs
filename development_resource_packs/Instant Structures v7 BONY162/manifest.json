@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"BONY162"
+		]
+	},
+	"header": {
+		"name": "[RP] Instant Structures v7 1.21+",
+		"description": "By: BONY162 <-YouTube",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "00599f8d-0fba-406a-a74b-e7443a528c48",
+		"version": [
+			7,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d172ec77-025b-49a2-816b-ea8814709e7a",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "ae9a6dc5-7d28-4803-b5cb-f8d7ecf3858f",
+			"version": [
+				7,
+				0,
+				0
+			]
+		}
+	]
+}

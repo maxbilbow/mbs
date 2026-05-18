@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:swampy_taiga/water_swampy_taiga_pine_3_feature"
+		},
+		"structure_name": "mystructure:water_swampy_taiga_pine3",
+		"adjustment_radius": 1,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:water"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:savanna_plains_tree_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:savanna_plains/savanna_plains_tree_weighted"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"value": "savanna_plains"
+			}
+		},
+		"distribution": {
+			"iterations": "math.random_integer(0, 5)",
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": "query.heightmap(v.worldx, v.worldz)",
+			"z": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:frigo_cammello",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/frigocammello"
+			},
+			"geometry": {
+				"default": "geometry.frigo_cammello"
+			},
+			"spawn_egg": {
+				"base_color": "#ccb8ad",
+				"overlay_color": "#54392a"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.frigo_cammello.walk",
+				"idle": "animation.frigo_cammello.idle",
+				"attack": "animation.frigo_cammello.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.frigo_cammello.attack",
+				"controller_base": "controller.animation.frigo_cammello.general"
+				//"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

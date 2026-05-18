@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.villager.baby_transform": {
+			"loop": true
+		},
+		"animation.villager.fat_sleep": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [-14.23351, 19.18582, -26.82948]
+				},
+				"arm": {
+					"rotation": [0, 52.5, 0]
+				},
+				"arm2": {
+					"rotation": [-25.22029, -48.76067, -29.68963]
+				},
+				"mob": {
+					"rotation": [-37.5, 0, -90],
+					"position": [4, 15, -10]
+				}
+			}
+		},
+		"animation.villager.render_arms": {
+			"loop": true,
+			"bones": {
+				"arms": {
+					"rotation": [-45, 0, 0],
+					"position": [0, -1, -1]
+				}
+			}
+		}
+	}
+}

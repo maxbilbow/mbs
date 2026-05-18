@@ -1,0 +1,71 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:arid_birch_savanna"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 2
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "lowlands"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:sand",
+					"top_material": "minecraft:sand",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"desert",
+					"monster",
+					"overworld",
+					"spawns_gold_rabbits",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"spawns_savanna_mobs",
+					"arid_birch_savanna"
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"mid_material": "minecraft:coarse_dirt",
+							"top_material": "minecraft:coarse_dirt"
+						},
+						"noise_frequency_scale": 0.03,
+						"noise_range": [
+							0.15,
+							1.2
+						]
+					}
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:savanna"
+						],
+						"amount": 0.17,
+						"noise_frequency_scale": 0.39
+					}
+				]
+			}
+		}
+	}
+}

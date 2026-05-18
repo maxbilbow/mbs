@@ -1,0 +1,61 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "wypnt_mss:spider_web",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:collision_box": {
+			  "width": 0.3,
+			  "height": 0.3
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+					  "damage": 4,
+					  "knockback": true,
+					  "should_bounce": true
+					},
+					"mob_effect": {
+					  "effect": "slowness",
+					  "durationeasy": 120,
+					  "durationnormal": 140,
+					  "durationhard": 200,
+					  "amplifier": 2
+					},
+					"remove_on_hit": {
+					},
+					"particle_on_hit": {
+					  "particle_type": "largeexplode",
+					  "on_other_hit": true
+					}
+				  },
+			  "power": 1.5,
+			  "gravity": 0.1,
+			  "inertia": 1,
+			  "uncertainty_base": 3,
+			  "uncertainty_multiplier": 1,
+			  "anchor": 2,
+			  "offset": [ 0, 1, 1 ],
+			  "reflect_on_hurt": false,
+			  "potion_effect": 2
+			},
+			  "minecraft:physics": {
+			},
+			"minecraft:pushable": {
+			  "is_pushable": true,
+			  "is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+			  "default_values": {
+				"max_optimized_distance": 80.0,
+				"max_dropped_ticks": 7,
+				"use_motion_prediction_hints": true
+			  }
+			}
+		  }
+		}
+	  }

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:snap_to_surface_feature": {
+        "description": {
+            "identifier": "wypnt_mss:piglin_outpost_snap_feature"
+        },
+        "feature_to_snap": "wypnt_mss:piglin_outpost_with_decorations",
+        "surface": "floor",
+        "vertical_search_range": 3,
+        "allow_air_placement": true,
+        "allow_underwater_placement": true,
+        "allowed_surface_blocks": [
+            {
+                "name": "minecraft:netherrack"
+            },
+            {
+                "name": "minecraft:crimson_nylium"
+            },
+            {
+                "name": "minecraft:warped_nylium"
+            },
+            {
+                "name": "minecraft:soul_sand"
+            },
+            {
+                "name": "minecraft:soul_soil"
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:tung_tung_tung_sahur",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "vindicator"
+			},
+			"textures": {
+				"default": "textures/entity/tungtungtungsahur"
+			},
+			"geometry": {
+				"default": "geometry.tung_tung_tung_sahur"
+			},
+			"spawn_egg": {
+				"base_color": "#644934",
+				"overlay_color": "#3d1a0b"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.tung_tung_tung_sahur.walk",
+				"angry_walk": "animation.tung_tung_tung_sahur.angry_walk",
+				"idle": "animation.tung_tung_tung_sahur.idle",
+				"attack": "animation.tung_tung_tung_sahur.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.tung_tung_tung_sahur.attack",
+				"controller_base": "controller.animation.tung_tung_tung_sahur.general"
+				//"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"enable_attachables": true
+		}
+	}
+}

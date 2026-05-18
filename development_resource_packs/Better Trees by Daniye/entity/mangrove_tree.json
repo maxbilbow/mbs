@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:mangrove_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/mangrove_tree"
+			},
+			"geometry": {
+				"default": "geometry.mangrove_tree"
+			},
+			"render_controllers": [
+				"controller.render.mangrove_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_mangrove_tree"
+			}
+		}
+	}
+}

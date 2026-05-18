@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "luz_led_1",
+		"metalness_emissive_roughness": "luz_led_1_mer"
+	}
+}

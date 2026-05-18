@@ -1,0 +1,29 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/pale_hanging_moss_scatter"
+		},
+		"iterations": 22,
+		"x": {
+			"extent": [
+				-32,
+				32
+			],
+			"distribution": "gaussian"
+		},
+		"z": {
+			"extent": [
+				-32,
+				32
+			],
+			"distribution": "gaussian"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:pale_caves/pale_hanging_moss_snap_to_ceiling_feature",
+		"scatter_chance": {
+			"numerator": 1,
+			"denominator": 8
+		}
+	}
+}

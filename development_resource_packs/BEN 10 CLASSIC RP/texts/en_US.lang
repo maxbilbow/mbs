@@ -1,0 +1,22 @@
+item.spawn_egg.entity.omni:ben10.name=Spawn Ben 10
+item.spawn_egg.entity.omni:omni_capsule.name=Spawn §aOmnitrix capsule
+item.spawn_egg.entity.omni:omnitrix.name=Spawn §aOmnitrix
+entity.alien:fire_ball.name=Fire ball
+entity.alien:dh_crystal.name=Crystal
+entity.omni:falling_omni_capsule.name=Omnitrix capsule
+entity.omni:ben10.name=Ben 10
+entity.omni:omni_capsule.name=Omnitrix capsule
+entity.omni:omnitrix.name=Omnitrix
+entity.omni:heatblast.name=Heatblast
+entity.cso:oberon.name=Oberon
+entity.cso:obeball.name=Oberon's Balls
+entity.cso:oberon_asteroid_explode.name=asteroid explosion
+entity.cso:prototype_phobos.name=Prototype Phobos
+item.spawn_egg.entity.cso:prototype_phobos.name=Prototype Phobos Spawn Egg
+item.spawn_egg.entity.cso:oberon.name=Spawn Oberon
+item.spawn_egg.entity.l8:werewolf.name=Spawn §l§fWerewolf
+entity.l8:mad_wolf.name=Mad Wolf
+entity.l8:werewolf.name=Werewolf
+
+
+accessibility.chat.howtoopen=§l§e>>  §r§fAddon by: §6MCPE ADDON & MODS

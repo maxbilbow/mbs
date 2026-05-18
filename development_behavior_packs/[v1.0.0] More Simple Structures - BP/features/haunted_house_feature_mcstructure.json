@@ -1,0 +1,26 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "wypnt_mss:haunted_house_feature_mcstructure"
+        },
+        "structure_name": "wypnt_mss:haunted_house_1",
+        "adjustment_radius": 8,
+        "facing_direction": "south",
+        "constraints": {
+            "grounded": {},
+            "block_intersection": {
+                "block_allowlist": [
+                    "minecraft:air",
+                    "minecraft:grass",
+                    "minecraft:tall_grass",
+                    "minecraft:leaves",
+                    "minecraft:leaves2",
+                    "minecraft:pale_oak_leaves",
+                    "minecraft:cherry_leaves",
+                    "minecraft:mangrove_leaves"        
+                ]
+            }
+        }
+    }
+}

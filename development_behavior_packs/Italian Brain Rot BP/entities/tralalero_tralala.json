@@ -1,0 +1,234 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "eu:tralalero_tralala",
+			//"runtime_identifier": "minecraft:dolphin",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"custom_delfin_adult": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"track_target": true
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 2
+			},
+			/* 			"minecraft:behavior.mount_pathing": {
+				"priority": 2,
+				"speed_multiplier": 1.5,
+				"target_dist": 4.0,
+				"track_target": true
+			}, */
+			//si esta montado ya no se mueve solo
+			//sin este componente va a atacar a su target
+			"minecraft:behavior.player_ride_tamed": {},
+			"minecraft:input_ground_controlled": {},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"player"
+				],
+				"interact_text": "action.interact.ride.horse",
+				"seats": {
+					"position": [
+						0.0,
+						0.7,
+						-0.2
+					]
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"italian_brain_rot",
+					"tralalero_tralala",
+					"dolphin",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1.5,
+				"height": 0.8
+			},
+			"minecraft:health": {
+				"value": 40,
+				"max": 40
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 48,
+				"max": 48
+			},
+			"minecraft:breathable": {
+				"total_supply": 240,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": false,
+				"generates_bubbles": false
+			},
+			/* 			
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			}, */
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:movement": {
+				"value": 0.35
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": true,
+				"can_path_over_water": true,
+				"can_swim": true,
+				"can_walk": true,
+				"can_breach": true,
+				"can_sink": false
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.15
+			},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "italian_brain_rot"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "tralalero_tralala"
+								}
+							]
+						},
+						"max_dist": 20
+					}
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "guardian_elder"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "guardian"
+								}
+							]
+						},
+						"max_dist": 8,
+						"walk_speed_multiplier": 1,
+						"sprint_speed_multiplier": 1
+					}
+				],
+				"probability_per_strength": 0.14
+			},
+			"minecraft:behavior.move_to_water": {
+				"priority": 1,
+				"search_range": 15,
+				"search_height": 5
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:flocking": {
+				"in_water": false,
+				"match_variants": false,
+				"use_center_of_mass": false,
+				"low_flock_limit": 4,
+				"high_flock_limit": 8,
+				"goal_weight": 2,
+				"loner_chance": 0.1,
+				"influence_radius": 6,
+				"breach_influence": 0,
+				"separation_weight": 1.75,
+				"separation_threshold": 3,
+				"cohesion_weight": 1.85,
+				"cohesion_threshold": 6.5,
+				"innner_cohesion_threshold": 3.5,
+				"min_height": 4,
+				"max_height": 4,
+				"block_distance": 1,
+				"block_weight": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:leashable": {
+				"soft_distance": 4,
+				"hard_distance": 6,
+				"max_distance": 10
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"custom_delfin_adult"
+					]
+				}
+			}
+		}
+	}
+}

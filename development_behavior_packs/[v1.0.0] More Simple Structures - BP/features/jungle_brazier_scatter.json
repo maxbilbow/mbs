@@ -1,0 +1,33 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "wypnt_mss:jungle_brazier_scatter"
+		},
+		"iterations": 4,
+		"x": {
+			"extent": [
+				-8,
+				8
+			],
+			"distribution": "inverse_gaussian"
+		},
+		"y": {
+			"extent": [
+				-1,
+				0
+			],
+			"distribution": "inverse_gaussian"
+		},
+		"z": {
+			"extent": [
+				-8,
+				8
+			],
+			"distribution": "inverse_gaussian"
+		},
+		"coordinate_eval_order": "zyx",
+		"project_input_to_floor": true,
+		"places_feature": "wypnt_mss:jungle_brazier_feature_mcstructure"
+	}
+}

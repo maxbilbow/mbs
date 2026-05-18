@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_jungle/roofed_jungle_mega_tree_1_feature"
+		},
+		"structure_name": "mystructure:roofed_jungle_mega_tree1",
+		"adjustment_radius": 3,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:dark_oak_leaves",
+					"minecraft:vine"
+				]
+			}
+		}
+	}
+}

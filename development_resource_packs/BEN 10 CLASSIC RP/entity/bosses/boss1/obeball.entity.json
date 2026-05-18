@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "cso:obeball",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bosses/boss1/entity/obeball"
+			},
+			"geometry": {
+				"default": "geometry.obeball"
+			},
+			"scripts": {
+				"animate": [
+					"spin"
+				]
+			},
+			"animations": {
+				"spin": "animation.obeball.spin"
+			},
+			"render_controllers": [
+				"controller.render.oberon.obeball"
+			]
+		}
+	}
+}

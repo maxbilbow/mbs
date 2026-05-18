@@ -1,0 +1,1 @@
+playanimation @s animation.player.attack.positions none 0 "1" wiki:sleep

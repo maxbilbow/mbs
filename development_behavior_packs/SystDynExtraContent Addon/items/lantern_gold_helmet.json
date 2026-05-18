@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "new:lantern_gold_helmet",
+      "menu_category":{
+        "category": "equipment",
+				"group": "itemGroup.name.helmet"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:display_name": {},
+      "minecraft:wearable": {
+        "slot": "slot.armor.head",
+        "protection": 2
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_head",
+        "value": 10
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:trimmable_armors",
+          "minecraft:golden_helmet",
+          "minecraft:golden_tier"
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 78
+      },
+      "minecraft:repairable":{
+          "repair_items": [
+              {
+                  "items":[
+                      "minecraft:gold_ingot",
+                      "minecraft:golden_helmet",
+                      "new:lantern_gold_helmet"
+                  ],
+                  "repair_amount": "math.min(q.remaining_durability + c.other->q.remaining_durability + math.floor(q.max_durability /20), c.other->q.max_durability)"
+              }
+          ]
+      },
+      "minecraft:icon": "lantern_gold_helmet"
+    }
+  }
+}

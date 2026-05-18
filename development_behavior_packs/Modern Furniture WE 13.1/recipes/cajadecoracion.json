@@ -1,0 +1,23 @@
+//bridge-file-version: #34
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cajadecoracion"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:clay_ball"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cajadecoracion",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

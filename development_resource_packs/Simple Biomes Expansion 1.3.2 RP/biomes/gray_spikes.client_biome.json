@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:gray_spikes"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "minecraft:fog_pale_garden"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#3F76E4"
+			},
+			"minecraft:atmosphere_identifier": {
+				"atmosphere_identifier": "minecraft:basalt_deltas_atmospherics"
+			},
+			"minecraft:color_grading_identifier": {
+				"color_grading_identifier": "minecraft:pale_garden_color_grading"
+			},
+			"minecraft:lighting_identifier": {
+				"lighting_identifier": "minecraft:pale_garden_lighting"
+			},
+			"minecraft:water_identifier": {
+				"water_identifier": "minecraft:default_water"
+			},
+			"minecraft:precipitation": {
+				"white_ash": 1
+			},
+			"minecraft:ambient_sounds": {
+				"addition": "ambient.basalt_deltas.additions"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 0
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#b9b9b9"
+			}
+		}
+	}
+}

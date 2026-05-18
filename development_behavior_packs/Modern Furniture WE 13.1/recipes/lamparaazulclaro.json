@@ -1,0 +1,23 @@
+//bridge-file-version: #353
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:lamparaazulclaro"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalampara"
+			}
+		],
+		"result": [
+			{
+				"item": "f:lamparaazulclaro",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

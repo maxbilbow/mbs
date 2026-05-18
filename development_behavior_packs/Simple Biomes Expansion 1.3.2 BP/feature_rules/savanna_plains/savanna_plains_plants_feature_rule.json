@@ -1,0 +1,38 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:savanna_plains_plants_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:savanna_plains/savanna_plains_plants_scatter"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "savanna_plains"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 145,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": "query.heightmap(v.worldx, v.worldz) + -1",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"scatter_chance": 20
+		}
+	}
+}

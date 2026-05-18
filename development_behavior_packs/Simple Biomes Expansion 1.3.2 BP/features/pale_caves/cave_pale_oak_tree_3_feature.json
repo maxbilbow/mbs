@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/cave_pale_oak_tree_3_feature"
+		},
+		"structure_name": "mystructure:cave_pale_oak_tree3",
+		"adjustment_radius": 2,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:short_grass",
+					"minecraft:pale_moss_carpet",
+					"minecraft:grass_block",
+					"minecraft:closed_eyeblossom",
+					"minecraft:open_eyeblossom",
+					"minecraft:pale_hanging_moss",
+					"minecraft:tall_grass"
+				]
+			}
+		}
+	}
+}

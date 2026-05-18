@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "daniye:dry_rock_02_mcstructure"
+		},
+		"structure_name": "mystructure:dry_rock_02",
+		"facing_direction": "random",
+		"adjustment_radius": 0,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

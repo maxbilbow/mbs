@@ -1,0 +1,46 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:crafting_items_catalog": {
+		"categories": [
+			{
+				"category_name": "items",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "kaboom:uranium_dust",
+							"name": "kaboom:thermonuclear_expansion"
+						},
+						"items": [
+							"kaboom:uranium_dust",
+							"kaboom:fissile_uranium",
+							"kaboom:steel_ingot",
+							"kaboom:graphite",
+							"kaboom:melted_polymer",
+							"kaboom:activated_carbon",
+							"kaboom:uranium_block",
+							"kaboom:neptunium_block",
+							"kaboom:plutonium",
+							"kaboom:trinitite",
+							"kaboom:uranium_fuel_rods",
+							"kaboom:deuterium_casing",
+							"kaboom:deuterium_casing_full",
+							"kaboom:polystyrene_foam",
+							"kaboom:refiner",
+							"kaboom:radiation_sign",
+							"kaboom:warhead",
+							"kaboom:fuselage",
+							"kaboom:nuke",
+							"kaboom:thermonuclear_missile_item",
+							"kaboom:launchpad_block",
+							"kaboom:missile_engine",
+							"kaboom:dummy_block",
+							"kaboom:warhead_tier_0",
+							"kaboom:warhead_tier_1",
+							"kaboom:warhead_tier_2"
+						]
+					}
+				]
+			}
+		]
+	}
+}

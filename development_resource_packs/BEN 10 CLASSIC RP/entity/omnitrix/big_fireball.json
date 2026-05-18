@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:falling_omni_capsule",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/powers/fire_ball"
+			},
+			"geometry": {
+				"default": "geometry.big_fireball"
+			},
+			"animations": {
+				"general": "animation.falling_omni_capsule"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			]
+		}
+	}
+}

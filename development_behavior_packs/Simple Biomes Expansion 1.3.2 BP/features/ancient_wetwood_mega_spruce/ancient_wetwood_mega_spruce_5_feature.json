@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:ancient_wetwood_mega_spruce/ancient_wetwood_mega_spruce_5_feature"
+		},
+		"structure_name": "mystructure:ancient_wetwood_mega_spruce5",
+		"adjustment_radius": 3,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:mangrove_leaves",
+					"minecraft:vine"
+				]
+			}
+		}
+	}
+}

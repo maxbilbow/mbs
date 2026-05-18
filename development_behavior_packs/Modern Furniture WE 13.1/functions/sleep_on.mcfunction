@@ -1,0 +1,1 @@
+playanimation @s animation.player.sleeping none 0 "0" wiki:sleep

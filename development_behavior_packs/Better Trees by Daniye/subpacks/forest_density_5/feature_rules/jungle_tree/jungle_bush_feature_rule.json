@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:jungle_bush_feature_rule",
+			"places_feature": "daniye:jungle_bush_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "equals",
+					"value": "jungle"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 6,
+			"x": 0,
+			"y": "q.heightmap(v.worldx, v.worldz)",
+			"z": 0
+		}
+	}
+}

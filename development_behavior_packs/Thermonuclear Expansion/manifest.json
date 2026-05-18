@@ -1,0 +1,74 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"BigManIsak"
+		]
+	},
+	"header": {
+		"name": "Thermonuclear Expansion",
+		"description": "§5Developed By BigManIsak",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "988fb5dc-be59-43ad-a43f-1540f6d20403",
+		"version": [
+			1,
+			1,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "48ec730f-bad6-477c-a432-a14c5d270a3c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "main.js",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"uuid": "c270b816-69f1-4be6-8571-4f682c1ec668"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "170e37ca-a6f8-41f2-b9c2-4e92b433b49c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": [
+				2,
+				2,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": [
+				2,
+				0,
+				0
+			]
+		}
+	],
+	"capabilities": [
+		"script_eval"
+	]
+}

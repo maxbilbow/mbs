@@ -1,0 +1,80 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "rg:mangrove"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.8862,
+        "fog_end": 0.9858,
+        "fog_color": "#ADD1FF",
+        "render_distance_type": "render"
+      },
+      "water": {
+        "fog_start": 0.7121,
+        "fog_end": 0.8251,
+        "fog_color": "#1E2A3D",
+        "render_distance_type": "render"
+      },
+      "weather": {
+        "fog_start": 0.9539,
+        "fog_end": 1,
+        "fog_color": "#322F31",
+        "render_distance_type": "render"
+      }
+    },
+    "volumetric": {
+      "density": {
+        "air": {
+          "max_density": 0.2425,
+          "uniform": false,
+          "max_density_height": 69.8619,
+          "zero_density_height": 94.6863
+        },
+        "water": {
+          "max_density": 0.003,
+          "uniform": true
+        }
+      },
+      "media_coefficients": {
+        "air": {
+          "scattering": [
+            0.0356,
+            0.0417,
+            0.0328
+          ],
+          "absorption": [
+            0.0193,
+            0.0,
+            0.0238
+          ]
+        },
+        "water": {
+          "scattering": [
+            0.009,
+            0.0062,
+            0.0052
+          ],
+          "absorption": [
+            0.1561,
+            0.1585,
+            0.1991
+          ]
+        },
+        "cloud": {
+          "scattering": [
+            1.0472,
+            1.0277,
+            1.031
+          ],
+          "absorption": [
+            0.9969,
+            0.9592,
+            1.0354
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:fuselage_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"D": {
+				"item": "kaboom:deuterium_casing_full"
+			}
+		},
+		"pattern": [
+			"IDI",
+			"IDI",
+			"IDI"
+		],
+		"result": {
+			"item": "kaboom:dummy_block"
+		},
+		"unlock": [
+			{
+				"item": "minecraft:raw_iron"
+			}
+		]
+	}
+}

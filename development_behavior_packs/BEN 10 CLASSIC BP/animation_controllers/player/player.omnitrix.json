@@ -1,0 +1,430 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.wear_omnitrix": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wear_omnitrix": "query.get_equipped_item_name('main_hand')=='omnitrix'&&(query.is_using_item||variable.attack_time>0.6)"
+						}
+					]
+				},
+				"wear_omnitrix": {
+					"transitions": [
+						{
+							"default": "!(query.get_equipped_item_name('main_hand')=='omnitrix'&&(query.is_using_item||variable.attack_time>0.6))"
+						}
+					],
+					"on_entry": [
+						"/function wear/omnitrix",
+						"/execute as @s[tag=!master_control] at @s run scriptevent omni:equip_power 0 omni:omni_icon",
+						"/execute as @s[tag=master_control] at @s run scriptevent omni:equip_power 8 omni:omni_master"
+					]
+				}
+			}
+		},
+		"controller.animation.omni_inuse": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_inuse": "(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')&&query.skin_id>0"
+						}
+					]
+				},
+				"omni_inuse": {
+					"transitions": [
+						{
+							"default": "(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')&&query.skin_id>0"
+						}
+					],
+					"on_entry": [
+						"/execute as @s[family=omni_inuse] at @s run function omni/display_alien_name"
+					]
+				}
+			}
+		},
+		"controller.animation.omni_menu": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_menu": "query.get_equipped_item_name('main_hand')=='omni_icon'&&query.is_sneaking&&query.skin_id==1"
+						}
+					]
+				},
+				"omni_menu": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/tag @s add omni_menu",
+						"/scoreboard objectives add omni_menu_option dummy",
+						"/scoreboard players add @s omni_menu_option 0"
+					]
+				}
+			}
+		},
+		"controller.animation.omni_menu_click": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"click": "query.get_equipped_item_name('main_hand')=='omni_icon'&&query.is_sneaking&&query.is_using_item&&query.skin_id==1"
+						}
+					]
+				},
+				"click": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"auto_scroll": "query.state_time>=0.3"
+						}
+					],
+					"on_entry": [
+						"/scoreboard players add @s omni_menu_option 1",
+						"/scoreboard players set @s[scores={omni_menu_option=12..}] omni_menu_option 0",
+						"/playsound omni.opt_change @s ~ ~ ~ 1.0 1.5"
+					]
+				},
+				"auto_scroll": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"click": "query.state_time>=0.15"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omni_menu_click_reverse": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"click": "query.get_equipped_item_name('main_hand')=='omni_icon'&&query.is_sneaking&&variable.attack_time>0&&query.skin_id==1"
+						}
+					]
+				},
+				"click": {
+					"transitions": [
+						{
+							"default": "variable.attack_time==0"
+						},
+						{
+							"auto_scroll": "query.state_time>=0.3"
+						}
+					],
+					"on_entry": [
+						"/scoreboard players remove @s omni_menu_option 1",
+						"/scoreboard players set @s[scores={omni_menu_option=..-1}] omni_menu_option 11",
+						"/playsound omni.opt_change @s ~ ~ ~ 1.0 1.5"
+					]
+				},
+				"auto_scroll": {
+					"transitions": [
+						{
+							"default": "variable.attack_time==0"
+						},
+						{
+							"click": "query.state_time>=0.15"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omni_icon_change": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_icon_change": "(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')&&query.is_using_item&&(!query.is_sneaking||query.skin_id>1)"
+						}
+					]
+				},
+				"omni_icon_change": {
+					"transitions": [
+						{
+							"wait_release": "query.state_time>=0.25"
+						}
+					],
+					"on_entry": [
+						"/playsound omni.opt_change @s[family=omnitrix,family=!alien]",
+						"/event entity @s[family=omni_waybig] omnitrix",
+						"/event entity @s[scores={aliens=..21},family=omni_clockwork] omnitrix",
+						"/event entity @s[scores={aliens=22..},family=omni_clockwork] omni_waybig",
+						"/event entity @s[scores={aliens=..20},family=omni_arctiguana] omnitrix",
+						"/event entity @s[scores={aliens=21..},family=omni_arctiguana] omni_clockwork",
+						"/event entity @s[scores={aliens=..19},family=omni_eyeguy] omnitrix",
+						"/event entity @s[scores={aliens=20..},family=omni_eyeguy] omni_arctiguana",
+						"/event entity @s[scores={aliens=..18},family=omni_ditto] omnitrix",
+						"/event entity @s[scores={aliens=19..},family=omni_ditto] omni_eyeguy",
+						"/event entity @s[scores={aliens=..17},family=omni_upchuck] omnitrix",
+						"/event entity @s[scores={aliens=18..},family=omni_upchuck] omni_ditto",
+						"/event entity @s[scores={aliens=..16},family=omni_benvictor] omnitrix",
+						"/event entity @s[scores={aliens=17..},family=omni_benvictor] omni_upchuck",
+						"/event entity @s[scores={aliens=..15},family=omni_benmummy] omnitrix",
+						"/event entity @s[scores={aliens=16..},family=omni_benmummy] omni_benvictor",
+						"/event entity @s[scores={aliens=..14},family=omni_benwolf] omnitrix",
+						"/event entity @s[scores={aliens=15..},family=omni_benwolf] omni_benmummy",
+						"/event entity @s[scores={aliens=..13},family=omni_wildvine] omnitrix",
+						"/event entity @s[scores={aliens=14..},family=omni_wildvine] omni_benwolf",
+						"/event entity @s[scores={aliens=..12},family=omni_cannonbolt] omnitrix",
+						"/event entity @s[scores={aliens=13..},family=omni_cannonbolt] omni_wildvine",
+						"/event entity @s[scores={aliens=..11},family=omni_upgrade] omnitrix",
+						"/event entity @s[scores={aliens=12..},family=omni_upgrade] omni_cannonbolt",
+						"/event entity @s[scores={aliens=..10},family=omni_ghostfreak] omnitrix",
+						"/event entity @s[scores={aliens=11..},family=omni_ghostfreak] omni_upgrade",
+						"/event entity @s[scores={aliens=..9},family=omni_ripjaws] omnitrix",
+						"/event entity @s[scores={aliens=10..},family=omni_ripjaws] omni_ghostfreak",
+						"/event entity @s[scores={aliens=..8},family=omni_stinkfly] omnitrix",
+						"/event entity @s[scores={aliens=9..},family=omni_stinkfly] omni_ripjaws",
+						"/event entity @s[scores={aliens=..7},family=omni_fourarms] omnitrix",
+						"/event entity @s[scores={aliens=8..},family=omni_fourarms] omni_stinkfly",
+						"/event entity @s[scores={aliens=..6},family=omni_greymatter] omnitrix",
+						"/event entity @s[scores={aliens=7..},family=omni_greymatter] omni_fourarms",
+						"/event entity @s[scores={aliens=..5},family=omni_xlr8] omnitrix",
+						"/event entity @s[scores={aliens=6..},family=omni_xlr8] omni_greymatter",
+						"/event entity @s[scores={aliens=..4},family=omni_diamondhead] omnitrix",
+						"/event entity @s[scores={aliens=5..},family=omni_diamondhead] omni_xlr8",
+						"/event entity @s[scores={aliens=..3},family=omni_wildmutt] omnitrix",
+						"/event entity @s[scores={aliens=4..},family=omni_wildmutt] omni_diamondhead",
+						"/event entity @s[scores={aliens=..2},family=omni_heatblast] omnitrix",
+						"/event entity @s[scores={aliens=3..},family=omni_heatblast] omni_wildmutt",
+						"/event entity @s[scores={aliens=..1},family=omni_unused] omnitrix",
+						"/event entity @s[scores={aliens=2..},family=omni_unused] omni_heatblast",
+						"/title @s[tag=aliens_locked,family=omni_unused] actionbar §r§cAliens are locked"
+					]
+				},
+				"wait_release": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omni_icon_change_reverse": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_icon_change_reverse": "(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')&&variable.attack_time>0&&(!query.is_sneaking||query.skin_id>1)"
+						}
+					]
+				},
+				"omni_icon_change_reverse": {
+					"transitions": [
+						{
+							"wait_release": "query.state_time>=0.25"
+						}
+					],
+					"on_entry": [
+						"/playsound omni.opt_change @s[family=omnitrix,family=!alien]",
+						"/event entity @s[family=omni_heatblast] omnitrix",
+						"/event entity @s[family=omni_wildmutt] omni_heatblast",
+						"/event entity @s[family=omni_diamondhead] omni_wildmutt",
+						"/event entity @s[family=omni_xlr8] omni_diamondhead",
+						"/event entity @s[family=omni_greymatter] omni_xlr8",
+						"/event entity @s[family=omni_fourarms] omni_greymatter",
+						"/event entity @s[family=omni_stinkfly] omni_fourarms",
+						"/event entity @s[family=omni_ripjaws] omni_stinkfly",
+						"/event entity @s[family=omni_ghostfreak] omni_ripjaws",
+						"/event entity @s[family=omni_upgrade] omni_ghostfreak",
+						"/event entity @s[family=omni_cannonbolt] omni_upgrade",
+						"/event entity @s[family=omni_wildvine] omni_cannonbolt",
+						"/event entity @s[family=omni_benwolf] omni_wildvine",
+						"/event entity @s[family=omni_benmummy] omni_benwolf",
+						"/event entity @s[family=omni_benvictor] omni_benmummy",
+						"/event entity @s[family=omni_upchuck] omni_benvictor",
+						"/event entity @s[family=omni_ditto] omni_upchuck",
+						"/event entity @s[family=omni_eyeguy] omni_ditto",
+						"/event entity @s[family=omni_arctiguana] omni_eyeguy",
+						"/event entity @s[family=omni_clockwork] omni_arctiguana",
+						"/event entity @s[family=omni_waybig] omni_clockwork",
+						"/event entity @s[scores={aliens=22..},family=omni_unused] omni_waybig",
+						"/event entity @s[scores={aliens=21},family=omni_unused] omni_clockwork",
+						"/event entity @s[scores={aliens=20},family=omni_unused] omni_arctiguana",
+						"/event entity @s[scores={aliens=19},family=omni_unused] omni_eyeguy",
+						"/event entity @s[scores={aliens=18},family=omni_unused] omni_ditto",
+						"/event entity @s[scores={aliens=17},family=omni_unused] omni_upchuck",
+						"/event entity @s[scores={aliens=16},family=omni_unused] omni_benvictor",
+						"/event entity @s[scores={aliens=15},family=omni_unused] omni_benmummy",
+						"/event entity @s[scores={aliens=14},family=omni_unused] omni_benwolf",
+						"/event entity @s[scores={aliens=13},family=omni_unused] omni_wildvine",
+						"/event entity @s[scores={aliens=12},family=omni_unused] omni_cannonbolt",
+						"/event entity @s[scores={aliens=11},family=omni_unused] omni_upgrade",
+						"/event entity @s[scores={aliens=10},family=omni_unused] omni_ghostfreak",
+						"/event entity @s[scores={aliens=9},family=omni_unused] omni_ripjaws",
+						"/event entity @s[scores={aliens=8},family=omni_unused] omni_stinkfly",
+						"/event entity @s[scores={aliens=7},family=omni_unused] omni_fourarms",
+						"/event entity @s[scores={aliens=6},family=omni_unused] omni_greymatter",
+						"/event entity @s[scores={aliens=5},family=omni_unused] omni_xlr8",
+						"/event entity @s[scores={aliens=4},family=omni_unused] omni_diamondhead",
+						"/event entity @s[scores={aliens=3},family=omni_unused] omni_wildmutt",
+						"/event entity @s[scores={aliens=2},family=omni_unused] omni_heatblast",
+						"/event entity @s[scores={aliens=..1},family=omni_unused] omnitrix"
+					]
+				},
+				"wait_release": {
+					"transitions": [
+						{
+							"default": "variable.attack_time==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omni_using": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_using": "query.skin_id==5"
+						}
+					]
+				},
+				"omni_using": {
+					"transitions": [
+						{
+							"default": "query.skin_id!=5"
+						}
+					],
+					"on_entry": [
+						"/playsound omni.used @s[tag=!omni_using]",
+						"/tag @s add omni_using"
+					]
+				}
+			}
+		},
+		"controller.animation.player_transform": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"player_transform": "query.skin_id==6"
+						}
+					]
+				},
+				"player_transform": {
+					"transitions": [
+						{
+							"default": "query.skin_id==6"
+						}
+					],
+					"on_entry": [
+						"/tag @s remove omni_using",
+						"/clear @s omni:omni_icon",
+						"/clear @s omni:omni_master",
+						"/particle minecraft:totem_particle ~ ~1 ~",
+						"/particle minecraft:totem_particle ~ ~1 ~",
+						"/event entity @s[family=omni_benvictor,tag=!master_control] benvictor",
+						"/event entity @s[family=omni_clockwork,tag=!master_control] clockwork",
+						"/event entity @s[family=omni_upchuck,tag=!master_control] upchuck",
+						"/event entity @s[family=omni_arctiguana,tag=!master_control] arctiguana",
+						"/event entity @s[family=omni_wildvine,tag=!master_control] wildvine",
+						"/event entity @s[family=omni_benwolf,tag=!master_control] benwolf",
+						"/event entity @s[family=omni_benmummy,tag=!master_control] benmummy",
+						"/event entity @s[family=omni_eyeguy,tag=!master_control] eyeguy",
+						"/event entity @s[family=omni_waybig,tag=!master_control] waybig",
+						"/event entity @s[family=omni_ditto,tag=!master_control] ditto",
+						"/event entity @s[family=omni_cannonbolt,tag=!master_control] cannonbolt",
+						"/event entity @s[family=omni_ghostfreak,tag=!master_control] ghostfreak",
+						"/event entity @s[family=omni_upgrade,tag=!master_control] upgrade",
+						"/event entity @s[family=omni_ripjaws,tag=!master_control] ripjaws",
+						"/event entity @s[family=omni_stinkfly,tag=!master_control] stinkfly",
+						"/event entity @s[family=omni_fourarms,tag=!master_control] fourarms",
+						"/event entity @s[family=omni_greymatter,tag=!master_control] greymatter",
+						"/event entity @s[family=omni_xlr8,tag=!master_control] xlr8",
+						"/event entity @s[family=omni_diamondhead,tag=!master_control] diamondhead",
+						"/event entity @s[family=omni_wildmutt,tag=!master_control] wildmutt",
+						"/event entity @s[family=omni_heatblast,tag=!master_control] heatblast",
+						"/execute as @s[tag=master_control] at @s run function omni/random_transform",
+						"/scoreboard objectives add ripjaws dummy",
+						"/scoreboard objectives add omni_off dummy",
+						"/scoreboard players add @s omni_off 0",
+						"/scoreboard objectives add omni_charge dummy"
+					]
+				}
+			}
+		},
+		"controller.animation.omnitrix_active_beep": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/stopsound @a omni.idle"
+					],
+					"transitions": [
+						{
+							"beep": "(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')&&query.skin_id>2&&query.skin_id!=5&&query.skin_id!=6&&query.skin_id<50"
+						}
+					]
+				},
+				"beep": {
+					"transitions": [
+						{
+							"default": "!(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')||query.skin_id<=2||query.skin_id==5||query.skin_id==6||query.skin_id>=50"
+						},
+						{
+							"wait": "query.state_time>=0"
+						}
+					],
+					"on_entry": [
+						"/playsound omni.idle @a[r=8] ~ ~ ~ 0.3 1.0"
+					]
+				},
+				"wait": {
+					"transitions": [
+						{
+							"default": "!(query.get_equipped_item_name('main_hand')=='omni_icon'||query.get_equipped_item_name('main_hand')=='omni_master')||query.skin_id<=2||query.skin_id==5||query.skin_id==6||query.skin_id>=50"
+						},
+						{
+							"beep": "query.state_time>=1.5"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.omni_off": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_off": "query.get_equipped_item_name('main_hand')=='omni_off'&&query.is_using_item"
+						}
+					]
+				},
+				"omni_off": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/tag @s remove master_control",
+						"/function omni/off"
+					]
+				}
+			}
+		}
+	}
+}

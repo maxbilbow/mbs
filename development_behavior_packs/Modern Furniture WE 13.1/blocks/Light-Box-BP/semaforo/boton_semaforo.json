@@ -1,0 +1,132 @@
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"normal",
+					"pulsado"		
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:boton_semaforo",
+			"is_experimental": false
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'pulsado'",
+				"components": {
+					"minecraft:geometry": "geometry.semaforo_boton_pulsado",
+					"minecraft:selection_box": {
+						"origin": [
+							0,
+							0,
+							0
+						],
+						"size": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'normal'",
+				"components": {
+						"minecraft:geometry": "geometry.semaforo_boton",
+						"minecraft:custom_components": [
+							"content_mf:boton_semaforo"
+						]
+				}
+			}
+		
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "semaforo",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false
+				}
+			},
+			"minecraft:geometry": "geometry.semaforo_boton",
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					3,
+					5
+				],
+				"size": [
+					4,
+					6,
+					3
+				]
+			},
+			"minecraft:collision_box": false
+		}
+	},
+	"format_version": "1.20.20"
+}

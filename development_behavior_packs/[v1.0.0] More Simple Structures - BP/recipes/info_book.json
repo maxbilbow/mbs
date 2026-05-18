@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "wypnt_mss:info_book"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:dirt"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		],
+		"result": {
+			"item": "wypnt_mss:info_book",
+			"count": 1
+		},
+		"unlock": [
+			{
+			  "item": "minecraft:dirt"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		  ]
+	}
+}

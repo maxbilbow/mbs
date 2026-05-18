@@ -1,0 +1,221 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.bm_stretch_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&query.get_equipped_item_name('main_hand')=='bm_stretch'&&variable.is_first_person&&query.is_using_item||variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"bm_stretch_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||query.get_equipped_item_name('main_hand')!='bm_stretch'||!variable.is_first_person||!query.is_using_item&&variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.bm_stretch": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&query.get_equipped_item_name('main_hand')=='bm_stretch'&&!variable.is_first_person&&query.is_using_item||variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"bm_stretch"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||query.get_equipped_item_name('main_hand')!='bm_stretch'||variable.is_first_person||!query.is_using_item&&variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.bm_stretch2_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&query.get_equipped_item_name('main_hand')=='bm_grapple'&&variable.is_first_person&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"bm_stretch2_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||query.get_equipped_item_name('main_hand')!='bm_grapple'||!variable.is_first_person||!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.bm_stretch2": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&query.get_equipped_item_name('main_hand')=='bm_grapple'&&!variable.is_first_person&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"bm_stretch2"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||query.get_equipped_item_name('main_hand')!='bm_grapple'||variable.is_first_person||!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benmummy_attack_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benmummy_attack_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benmummy_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==21&&!variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benmummy_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=21||variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benmummy_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==21&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benmummy_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=21||!query.is_moving||query.is_sprinting||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benmummy_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==21&&query.is_sprinting&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benmummy_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=21||!query.is_sprinting||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benmummy_jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.on_ground&&query.variant==21&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benmummy_jump"
+					],
+					"transitions": [
+						{
+							"default": "variable.on_ground||query.variant!=21||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

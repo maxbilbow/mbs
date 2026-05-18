@@ -1,0 +1,23 @@
+//bridge-file-version: #367
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:pumpking_plate"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:pumpking_plate",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

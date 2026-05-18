@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:white_caves/deepslate_iron_ore_feature"
+		},
+		"count": 13,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:deepslate_iron_ore",
+				"may_replace": [
+					"minecraft:diorite",
+					"minecraft:calcite"
+				]
+			}
+		]
+	}
+}

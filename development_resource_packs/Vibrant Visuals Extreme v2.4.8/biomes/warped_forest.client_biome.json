@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "warped_forest"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "rg:warped"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#925858"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#54609C"
+      }
+    }
+  }
+}

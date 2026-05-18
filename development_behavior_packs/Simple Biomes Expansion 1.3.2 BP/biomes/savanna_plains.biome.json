@@ -1,0 +1,56 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:savanna_plains"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 1.2
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "lowlands"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:dirt",
+					"top_material": "minecraft:grass_block",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"monster",
+					"overworld",
+					"plains",
+					"bee_habitat",
+					"spawns_savanna_mobs",
+					"savanna_plains"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:savanna",
+							"minecraft:plains"
+						],
+						"amount": 0.195,
+						"noise_frequency_scale": 0.44
+					}
+				]
+			}
+		}
+	}
+}

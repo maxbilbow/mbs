@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_fishing_hut_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:fishing_hut_feature_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:fishing_hut_ruin_1_feature_mcstructure",
+				1
+			]
+		]
+	}
+}

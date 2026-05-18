@@ -1,0 +1,40 @@
+
+
+//bridge-file-version: #139
+{
+	"minecraft:block": {
+		"description": {
+			"identifier": "f:chim6-2",
+			"is_experimental": false,
+			"menu_category": {
+				"category": "none"
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "chim5"
+				}
+			},
+			"minecraft:geometry": "geometry.chim-top1",
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:custom_components": [
+				"content_mf:mf_chim_on"
+			]
+		}
+
+	},
+	"format_version": "1.20.20"
+}

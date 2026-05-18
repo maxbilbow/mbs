@@ -1,0 +1,83 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:basalt_spikes"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 2
+			},
+			"minecraft:overworld_height": {
+				"noise_params": [
+					0.375,
+					0.85
+				]
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 9,
+					"sea_floor_material": "minecraft:basalt",
+					"foundation_material": "minecraft:basalt",
+					"mid_material": "minecraft:basalt",
+					"top_material": "minecraft:basalt",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"basalt_spikes",
+					"monster",
+					"overworld",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs"
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:blackstone",
+							"sea_floor_material": "minecraft:blackstone"
+						},
+						"noise_frequency_scale": 0.045,
+						"noise_range": [
+							-1,
+							-0.4
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:magma"
+						},
+						"noise_frequency_scale": 0.15,
+						"noise_range": [
+							0.4,
+							1
+						]
+					}
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:desert",
+							"minecraft:mesa_bryce",
+							"minecraft:savanna_mutated"
+						],
+						"amount": 0.25,
+						"noise_frequency_scale": 0.28
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #79
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:lamparatechoamarillo"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalampara"
+			}
+		],
+		"result": [
+			{
+				"item": "f:lamparatechoamarillo",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

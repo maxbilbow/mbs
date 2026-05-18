@@ -1,0 +1,370 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "omni:ben10",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"ben10_transform"
+				]
+			},
+			"animations": {
+				"ben10_transform": "controller.animation.ben10_transform"
+			}
+		},
+		"component_groups": {
+			"omnitrix": {
+				"minecraft:type_family": {
+					"family": [
+						"ben10",
+						"omnitrix",
+						"player"
+					]
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"within_radius": 16,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "enemy"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									}
+								]
+							},
+							"max_dist": 16
+						}
+					],
+					"must_see": false
+				}
+			},
+			"omnitrix_unused": {
+				"minecraft:type_family": {
+					"family": [
+						"ben10",
+						"omnitrix",
+						"omni_unused",
+						"player"
+					]
+				}
+			},
+			"omnitrix_use": {
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:timer": {
+					"time": 0.66667,
+					"looping": false,
+					"time_down_event": {
+						"event": "ben10_transform",
+						"target": "self"
+					}
+				}
+			},
+			"diamondhead": {
+				"minecraft:transformation": {
+					"into": "omni:heatblast_npc"
+				}
+			},
+			"wildmutt": {
+				"minecraft:transformation": {
+					"into": "omni:heatblast_npc"
+				}
+			},
+			"heatblast": {
+				"minecraft:transformation": {
+					"into": "omni:heatblast_npc"
+				}
+			},
+			"reset": {
+				"minecraft:type_family": {
+					"family": [
+						"ben10",
+						"no_omnitrix",
+						"player"
+					]
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "has_target",
+							"subject": "self",
+							"value": true
+						},
+						"event": "omnitrix_use"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"within_radius": 16,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "enemy"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "omni_entity"
+									}
+								]
+							},
+							"max_dist": 16
+						}
+					],
+					"must_see": true
+				}
+			},
+			"despawn": {
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"ben10",
+					"no_omnitrix",
+					"player"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:health": {
+				"value": 40,
+				"max": 40
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:behavior.leap_at_target": {
+				"priority": 4,
+				"target_dist": 0.4
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"within_radius": 15,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "enemy"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "monster"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "omni_entity"
+								}
+							]
+						},
+						"max_dist": 35
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 3,
+				"speed_multiplier": 1,
+				"track_target": false
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"target_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 1,
+				"speed_multiplier": 1.25,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"test": "has_equipment",
+								"subject": "other",
+								"domain": "hand",
+								"value": "omni:omnitrix"
+							},
+							"event": "omnitrix",
+							"target": "self"
+						},
+						"use_item": false,
+						"interact_text": "§aGive Omnitrix",
+						"play_sounds": "armor.equip_chain"
+					}
+				]
+			}
+		},
+		"events": {
+			"omnitrix": {
+				"add": {
+					"component_groups": [
+						"omnitrix"
+					]
+				}
+			},
+			"omnitrix_unused": {
+				"add": {
+					"component_groups": [
+						"omnitrix_unused"
+					]
+				}
+			},
+			"omnitrix_use": {
+				"add": {
+					"component_groups": [
+						"omnitrix_use"
+					]
+				}
+			},
+			"ben10_transform": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 10,
+								"add": {
+									"component_groups": [
+										"diamondhead"
+									]
+								}
+							},
+							{
+								"weight": 10,
+								"add": {
+									"component_groups": [
+										"wildmutt"
+									]
+								}
+							},
+							{
+								"weight": 10,
+								"add": {
+									"component_groups": [
+										"heatblast"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"reset": {
+				"add": {
+					"component_groups": [
+						"reset"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

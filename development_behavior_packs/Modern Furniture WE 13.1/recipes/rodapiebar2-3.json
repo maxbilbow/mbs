@@ -1,0 +1,23 @@
+//bridge-file-version: #180
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:rodapiebar2-3"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:rodapiebar2-3",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

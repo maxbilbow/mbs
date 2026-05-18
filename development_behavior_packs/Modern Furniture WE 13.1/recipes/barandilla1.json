@@ -1,0 +1,23 @@
+//bridge-file-version: #162
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:barandilla1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:barandilla1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

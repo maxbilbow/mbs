@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.gf_timer": {
+			"animation_length": 10,
+			"timeline": {
+				"0.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§b10s\"}]}"
+				],
+				"1.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§b9s\"}]}"
+				],
+				"2.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§b8s\"}]}"
+				],
+				"3.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§b7s\"}]}"
+				],
+				"4.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§b6s\"}]}"
+				],
+				"5.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§e5s\"}]}"
+				],
+				"6.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§e4s\"}]}"
+				],
+				"7.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§c3s\"}]}"
+				],
+				"8.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§c2s\"}]}"
+				],
+				"9.0": [
+					"/titleraw @s title {\"rawtext\":[{\"text\":\"§41s\"}]}",
+					"/playsound note.harp @s ~ ~ ~ 1 2"
+				]
+			}
+		}
+	}
+}

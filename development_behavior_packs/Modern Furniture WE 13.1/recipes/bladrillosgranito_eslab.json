@@ -1,0 +1,23 @@
+//bridge-file-version: #306
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bladrillosgranito_eslab"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bladrillosgranito_eslab",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

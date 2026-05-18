@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "mangrove_swamp"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "rg:mangrove"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#3C796B"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#54609C"
+      }
+    }
+  }
+}

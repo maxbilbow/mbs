@@ -1,0 +1,59 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:growing_plant_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tuff_caves/tuff_spike_floor_feature"
+		},
+		"height_distribution": [
+			[
+				{
+					"range_min": 2,
+					"range_max": 5
+				},
+				1
+			],
+			[
+				{
+					"range_min": 3,
+					"range_max": 6
+				},
+				1
+			],
+			[
+				{
+					"range_min": 4,
+					"range_max": 7
+				},
+				1
+			],
+			[
+				{
+					"range_min": 5,
+					"range_max": 8
+				},
+				1
+			]
+		],
+		"growth_direction": "UP",
+		"body_blocks": [
+			[
+				{
+					"name": "minecraft:tuff"
+				},
+				6
+			]
+		],
+		"head_blocks": [
+			[
+				{
+					"name": "minecraft:tuff"
+				},
+				6
+			]
+		],
+		"age": {
+			"range_min": 2,
+			"range_max": 8
+		}
+	}
+}

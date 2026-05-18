@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "mesa_plateau_stone_mutated"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:mesa_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5F7F7A"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#E6B36A"
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "f:wall_modular_sofa_orange",
+			"states": {
+				"custom:module": [
+					"preview",
+					"middle_connector",
+					"right_armrest",
+					"left_armrest",
+					"double_armrest",
+					"inner_corner",
+					"outer_corner",
+					"chaise"
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"content_mf:modular_sofa",
+				"content_mf:sit_2"
+			],
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.modular_sofa_wall",
+				"bone_visibility": {
+					"preview": "True",
+					"middle_connector": "False",
+					"left_armrest": "False",
+					"right_armrest": "False",
+					"double_armrest": "False",
+					"outer_corner": "False",
+					"inner_corner": "False",
+					"chaise": "False"
+				}
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "sofasa2",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:flammable": false
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'middle_connector'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "True",
+							"left_armrest": "False",
+							"right_armrest": "False",
+							"double_armrest": "False",
+							"outer_corner": "False",
+							"inner_corner": "False",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'left_armrest'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "True",
+							"right_armrest": "False",
+							"double_armrest": "False",
+							"outer_corner": "False",
+							"inner_corner": "False",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'double_armrest'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "False",
+							"right_armrest": "False",
+							"double_armrest": "True",
+							"outer_corner": "False",
+							"inner_corner": "False",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+						{
+				"condition": "q.block_state('custom:module') == 'right_armrest'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "False",
+							"right_armrest": "True",
+							"double_armrest": "False",
+							"outer_corner": "False",
+							"inner_corner": "False",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'outer_corner'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "False",
+							"right_armrest": "False",
+							"double_armrest": "False",
+							"outer_corner": "True",
+							"inner_corner": "False",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'inner_corner'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "False",
+							"right_armrest": "False",
+							"double_armrest": "False",
+							"outer_corner": "False",
+							"inner_corner": "True",
+							"chaise": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:module') == 'chaise'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.modular_sofa_wall",
+						"bone_visibility": {
+							"preview": "False",
+							"middle_connector": "False",
+							"left_armrest": "False",
+							"right_armrest": "False",
+							"double_armrest": "False",
+							"outer_corner": "False",
+							"inner_corner": "False",
+							"chaise": "True"
+						}
+					}
+				}
+			}
+		]
+	}
+}

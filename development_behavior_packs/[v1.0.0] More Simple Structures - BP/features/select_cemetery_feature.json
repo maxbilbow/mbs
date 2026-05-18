@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_cemetery_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:cemetery_1_feature_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:cemetery_2_feature_mcstructure",
+				3
+			],
+			[
+				"wypnt_mss:cemetery_2_with_graves_feature",
+				1
+			]
+		]
+	}
+}

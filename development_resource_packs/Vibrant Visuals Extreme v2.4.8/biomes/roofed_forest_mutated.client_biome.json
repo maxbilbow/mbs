@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "roofed_forest_mutated"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "rg:dark"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#46AEF6"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#625F61"
+      }
+    }
+  }
+}

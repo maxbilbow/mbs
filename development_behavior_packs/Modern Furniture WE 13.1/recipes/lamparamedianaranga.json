@@ -1,0 +1,23 @@
+//bridge-file-version: #75
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:lamparamedianaranga"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalampara"
+			}
+		],
+		"result": [
+			{
+				"item": "f:lamparamedianaranga",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

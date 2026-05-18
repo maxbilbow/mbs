@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_forest/pale_forest_tree_fancy_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:pale_forest/pale_forest_tree_fancy_weighted",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:pale_forest/pale_forest_tree_fancy_c_weighted",
+				1
+			]
+		]
+	}
+}

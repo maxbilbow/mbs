@@ -1,0 +1,79 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Thermonuclear Expansion",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"kaboom_refiner": {
+			"textures": "textures/blocks/refiner"
+		},
+		"kaboom_uranium_block": {
+			"textures": "textures/blocks/uranium_block"
+		},
+		"kaboom_nuclear_reactor": {
+			"textures": {
+				"path": "textures/blocks/nuclear_reactor/nuclear_reactor"
+			}
+		},
+		"kaboom_plutonium": {
+			"textures": "textures/blocks/plutonium_block"
+		},
+		"kaboom_neptunium_block": {
+			"textures": "textures/blocks/neptunium_block"
+		},
+		"kaboom_uranium_fuel_rods": {
+			"textures": {
+				"path": "textures/blocks/uranium_fuel_rods"
+			}
+		},
+		"kaboom_uranium_fuel_rods_critical": {
+			"textures": {
+				"path": "textures/blocks/uranium_fuel_rods_critical"
+			}
+		},
+		"kaboom_deuterium_casing": {
+			"textures": "textures/blocks/deuterium_casing"
+		},
+		"kaboom_deuterium_casing_full": {
+			"textures": "textures/blocks/deuterium_full"
+		},
+		"kaboom_polystyrene_foam": {
+			"textures": "textures/blocks/polystyrene_foam"
+		},
+		"kaboom_radiation_sign": {
+			"textures": "textures/blocks/radiation_sign"
+		},
+		"kaboom_dummy_block": {
+			"textures": "textures/blocks/fuselage_block"
+		},
+		"kaboom_trinitite": {
+			"textures": "textures/blocks/trinitite"
+		},
+		"kaboom_launchpad_block": {
+			"textures": "textures/blocks/launchpad_block"
+		},
+		"kaboom_warhead_tier_2": {
+			"textures": "textures/blocks/warhead_thermonuclear"
+		},
+		"kaboom_missile_engine": {
+			"textures": "textures/blocks/missile_engine_new"
+		},
+		"nuclear_bomb_block": {
+			"textures": {
+				"path": "textures/entity/nuclear_bomb_entity"
+			}
+		},
+		"kaboom_block": {
+			"textures": "textures/blocks/block"
+		},
+		"kaboom_warhead_tier_1": {
+			"textures": "textures/blocks/warhead_nuclear"
+		},
+		"kaboom_launchpad_block_side": {
+			"textures": "textures/blocks/launchpad_block_side"
+		},
+		"kaboom_warhead_tier_0": {
+			"textures": "textures/blocks/warhead_conventional"
+		}
+	}
+}

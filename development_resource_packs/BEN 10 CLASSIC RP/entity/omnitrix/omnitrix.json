@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:omnitrix",
+			"materials": {
+				"default": "enderman"
+			},
+			"textures": {
+				"default": "textures/omnitrix/omnitrix_default"
+			},
+			"geometry": {
+				"default": "geometry.omnitrix_entity"
+			},
+			"animations": {
+				"scale": "animation.omni.scale"
+			},
+			"scripts": {
+				"animate": [
+					"scale"
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			],
+			"spawn_egg": {
+				"texture": "omnitrix"
+			}
+		}
+	}
+}

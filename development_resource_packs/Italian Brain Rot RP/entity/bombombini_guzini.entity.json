@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:bombombini_guzini",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "vindicator"
+			},
+			"textures": {
+				"default": "textures/entity/bombombiniguzini"
+			},
+			"geometry": {
+				"default": "geometry.bombombiniguzini"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.bombombiniguzini.walk",
+				"angry_walk": "animation.bombombiniguzini.angry_walk",
+				"idle": "animation.bombombiniguzini.idle",
+				"attack": "animation.bombombiniguzini.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.bombombini_guzini.attack",
+				"controller_base": "controller.animation.bombombini_guzini.general"
+				//"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#e9d2d2",
+				"overlay_color": "#1b1f18"
+			}
+		}
+	}
+}

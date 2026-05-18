@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_caves/weighted_amethyst_block_vegetation"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:amethyst_caves/large_amethyst_bud_feature",
+				2
+			],
+			[
+				"vanilla_biomes_expansion:amethyst_caves/small_amethyst_bud_feature",
+				10
+			],
+			[
+				"vanilla_biomes_expansion:amethyst_caves/medium_amethyst_bud_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:amethyst_caves/amethyst_cluster_feature",
+				1
+			]
+		]
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:red_ocean"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.45,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.75
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "ocean"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"monster",
+					"ocean",
+					"overworld",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs"
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#aea42a"
+				},
+				"foliage": "#90814d"
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:ocean"
+						],
+						"amount": 0.24,
+						"noise_frequency_scale": 0.23
+					}
+				]
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:red_sand",
+					"foundation_material": "minecraft:red_sandstone",
+					"mid_material": "minecraft:hardened_clay",
+					"top_material": "minecraft:red_sand",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:creature_spawn_probability": {
+				"probability": 0.03
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"sea_floor_material": "minecraft:red_sandstone",
+							"top_material": "minecraft:red_sandstone",
+							"mid_material": "minecraft:red_sandstone"
+						},
+						"noise_frequency_scale": 0.022,
+						"noise_range": [
+							0.12,
+							0.42
+						]
+					},
+					{
+						"materials": {
+							"sea_floor_material": "minecraft:hardened_clay"
+						},
+						"noise_frequency_scale": 0.0065,
+						"noise_range": [
+							0.08,
+							0.14
+						]
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"resource_pack_name": "Thermonuclear Expansion",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"kaboom_uranium_dust": {
+			"textures": "textures/items/uranium_dust"
+		},
+		"kaboom_nuke": {
+			"textures": "textures/items/nuke"
+		},
+		"kaboom_fissile_uranium": {
+			"textures": "textures/items/fissile_uranium"
+		},
+		"kaboom_graphite": {
+			"textures": "textures/items/graphite"
+		},
+		"kaboom_thermonuclear_missile_item": {
+			"textures": "textures/items/thermonuclear_missile_item"
+		},
+		"kaboom_hazmat_helmet": {
+			"textures": "textures/items/hazmat_helmet"
+		},
+		"kaboom_hazmat_chestplate": {
+			"textures": "textures/items/hazmat_chestplate"
+		},
+		"kaboom_hazmat_leggings": {
+			"textures": "textures/items/hazmat_leggings"
+		},
+		"kaboom_hazmat_boots": {
+			"textures": "textures/items/hazmat_boots"
+		},
+		"kaboom_activated_carbon": {
+			"textures": "textures/items/activated_carbon"
+		},
+		"kaboom_melted_polymer": {
+			"textures": "textures/items/melted_polymer"
+		},
+		"kaboom_warhead": {
+			"textures": "textures/items/warhead"
+		},
+		"kaboom_fuselage": {
+			"textures": "textures/items/fuselage"
+		},
+		"kaboom_steel_ingot": {
+			"textures": "textures/items/steel_ingot"
+		}
+	}
+}

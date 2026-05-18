@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "kaboom:thermonuclear_missile"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "kaboom:fuselage"
+			},
+			{
+				"item": "kaboom:warhead"
+			}
+		],
+		"result": {
+			"item": "kaboom:thermonuclear_missile_item"
+		}
+	}
+}

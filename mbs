@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+import { spawn, spawnSync } from "node:child_process";
+import path from "node:path";
+import { setTimeout } from "node:timers/promises";
+import { Logger } from "tslog";
+const logger = new Logger({ name: "UpdateBedrockServer", stylePrettyLogs: false });
+
+export default {
+    start,
+    stop,
+}
+
+const [cmd] = process.argv.splice(2);
+
+if (cmd === "start") {
+    await start();
+} else if (cmd === "stop") {
+    stop();
+} else if (cmd === "restart") {
+    stop();
+    await start();
+} else {
+    logger.error("Invalid command. Use 'start' or 'stop'.");
+    process.exitCode = 1;
+}
+
+async function start() {
+    const server = spawn(path.join(import.meta.dirname, "bedrock_server"), [], { detached: true, stdio: "inherit" });
+    server.unref();
+
+    // allow the server some time to start before exiting the script
+    await setTimeout(10_000);
+    process.exit();
+}
+
+function stop() {
+    logger.debug("Stopping server...");
+    // stop the server if it's running 
+    spawnSync("pkill", ["-f", "bedrock_server"], { stdio: "inherit" });
+}
+

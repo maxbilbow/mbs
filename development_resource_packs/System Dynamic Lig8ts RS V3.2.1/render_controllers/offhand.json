@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.offhand": {
+      "is_hurt_color":{
+        "a": 0
+      },
+      "geometry": "Geometry.offhand",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "a773e3cd-1cf4-4464-88c5-d00185c2ccef",
+    "version": [1, 1, 7],
+    "min_engine_version": [1, 21, 113]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "1d8001cd-2001-4f67-8c15-51578636f81c",
+      "version": [1, 1, 7]
+    },
+    {
+      "description": "GameTest API",
+      "type": "script",
+      "language": "javascript",
+      "uuid": "01ae1ff5-c862-4f5a-a618-559519af2a26",
+      "version": [1, 0, 0],
+      "entry": "scripts/run.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    }
+  ]
+}

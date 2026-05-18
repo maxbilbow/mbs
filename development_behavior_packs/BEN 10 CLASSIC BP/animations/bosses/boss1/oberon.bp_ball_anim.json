@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.oberon.obeball_dummy": {
+			"animation_length": 8,
+			"loop": false,
+			"timeline": {
+				"2.5": [
+					"/playsound entity.oberon.bombard @a ~~~ 6"
+				],
+				"5.0": [
+					"/playsound entity.oberon.bombard @a ~~~ 6"
+				],
+				"7.5": [
+					"/playsound entity.oberon.bombard @a ~~~ 6"
+				]
+			}
+		}
+	}
+}

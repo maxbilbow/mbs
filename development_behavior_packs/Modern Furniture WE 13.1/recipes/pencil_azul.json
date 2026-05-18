@@ -1,0 +1,28 @@
+//bridge-file-version: #62
+{
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "f:pencil_azul"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:iron_ingot"
+			},
+			"B": {
+				"item": "minecraft:blue_dye"
+			}
+		},
+		"result": {
+			"item": "f:pencil_azul",
+			"count": 1
+		}
+	},
+	"format_version": "1.17.0"
+}

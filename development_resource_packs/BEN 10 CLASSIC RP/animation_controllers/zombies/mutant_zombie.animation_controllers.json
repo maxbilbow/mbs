@@ -1,0 +1,77 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.mutant_zombie.general": {
+			"states": {
+				"default": {
+					"parameters": [
+						"query.modified_move_speed"
+					],
+					"animations": [
+						{
+							"look_at_target": []
+						},
+						{
+							"move": [
+								{
+									"0.0": 0,
+									"1.0": 1
+								}
+							]
+						}
+					],
+					"transitions": [
+						{
+							"casting": "query.is_casting"
+						},
+						{
+							"attacking": "query.is_delayed_attacking==1"
+						},
+						{
+							"fall": "query.is_stunned==1"
+						}
+					]
+				},
+				"attacking": {
+					"animations": [
+						{
+							"look_at_target": []
+						},
+						{
+							"attack": []
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_delayed_attacking==0"
+						}
+					]
+				},
+				"fall": {
+					"animations": [
+						{
+							"fall": []
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_stunned==0"
+						}
+					]
+				},
+				"casting": {
+					"animations": [
+						{
+							"casting": []
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					]
+				}
+			}
+		}
+	}
+}

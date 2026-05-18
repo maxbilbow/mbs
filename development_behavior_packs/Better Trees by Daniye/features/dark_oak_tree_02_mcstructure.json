@@ -1,0 +1,37 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "daniye:dark_oak_tree_02_mcstructure"
+		},
+		"structure_name": "mystructure:dark_oak_tree_02",
+		"facing_direction": "random",
+		"adjustment_radius": 10,
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:air"
+					},
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:dark_oak_log"
+					},
+					{
+						"name": "minecraft:dark_oak_leaves"
+					},
+					{
+						"name": "minecraft:vine"
+					},
+					{
+						"name": "minecraft:leaf_litter"
+					}
+				]
+			}
+		}
+	}
+}

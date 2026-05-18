@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:bri_bri_bicus_dicus_debicus_dedicus",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bribribicusdicusdebicusdedicus"
+			},
+			"geometry": {
+				"default": "geometry.bribribicusdicusdebicusdedicus"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.bri_bri_bicus_dicus_debicus_dedicus.walk",
+				"idle": "animation.bri_bri_bicus_dicus_debicus_dedicus.idle",
+				"attack": "animation.bri_bri_bicus_dicus_debicus_dedicus.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.bri_bri_bicus_dicus_debicus_dedicus.attack",
+				"controller_base": "controller.animation.bri_bri_bicus_dicus_debicus_dedicus.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#0f0f0f",
+				"overlay_color": "#5c1b28"
+			}
+		}
+	}
+}

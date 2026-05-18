@@ -1,0 +1,12 @@
+{
+	"resource_pack_name": "Italian Brain Rot",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"eu_brainrot_bomb": {
+			"textures": "textures/items/brainrot_bomb"
+		},
+		"eu_honey_projectile": {
+			"textures": "textures/items/honey_projectile"
+		}
+	}
+}

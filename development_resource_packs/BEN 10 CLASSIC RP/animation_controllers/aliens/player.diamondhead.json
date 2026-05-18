@@ -1,0 +1,153 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.diamondhead_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==3"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"diamondhead_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.diamondhead_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==3"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"diamondhead_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.diamondhead_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"diamondhead_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==3"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.diamondhead_sneak2": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_using_item"
+						}
+					],
+					"blend_transition": 0.175
+				},
+				"sneak": {
+					"animations": [
+						{
+							"diamondhead_sneaking2": "!variable.is_first_person&&query.variant==3&&query.get_equipped_item_name('main_hand')=='dh_spikes'"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.175
+				}
+			}
+		},
+		"controller.animation.diamondhead_movement": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"swimming": "query.variant==3&&query.is_in_water&&query.is_sprinting"
+						}
+					]
+				},
+				"swimming": {
+					"animations": [
+						"diamondhead_swimming"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=3||!query.is_in_water||!query.is_sprinting"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		},
+		"controller.animation.diamondhead_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"diamondhead_jumping": "!variable.is_first_person&&query.variant==3"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

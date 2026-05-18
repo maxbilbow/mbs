@@ -1,0 +1,40 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:water_swampy_savanna_tree_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:swampy_savanna/water_swampy_savanna_tree_selected_weighted"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"value": "swampy_savanna"
+			}
+		},
+		"distribution": {
+			"iterations": "math.random_integer(0, 5)",
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"z": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": {
+				"extent": [
+					59,
+					63
+				],
+				"distribution": "uniform"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "deep_warm_ocean"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "vrd:plains"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5993ff"
+      },
+      "minecraft:sky_color": {
+                "sky_color": "#52619b"
+            }
+    }
+  }
+}

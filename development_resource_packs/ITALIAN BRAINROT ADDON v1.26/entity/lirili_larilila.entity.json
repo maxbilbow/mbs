@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "italian:lirili_larilila",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/lirili_larilila",
+				"gold": "textures/entity/lirili_larilila_gold",
+				"rainbow": "textures/entity/lirili_larilila_rainbow"
+			},
+			"geometry": {
+				"default": "geometry.lirili_larilila"
+			},
+			"scripts": {
+				"animate": [
+					//"controller_look_at_target",
+					"controller_base"
+				]
+			},
+			"animations": {
+				"walk": "animation.lirili_larilila.walk",
+				"idle": "animation.lirili_larilila.idle",
+				"attack": "animation.lirili_larilila.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_base": "controller.animation.entity.generic_melee_attack"
+			},
+			"render_controllers": [
+				"controller.render.lirili_larilila"
+			],
+			"spawn_egg": {
+				"base_color": "#505050",
+				"overlay_color": "#30AC36"
+			}
+		}
+	}
+}

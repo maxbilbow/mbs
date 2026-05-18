@@ -1,0 +1,71 @@
+
+{
+	"minecraft:block": {
+		"description": {
+
+			"states": {
+				"custom:geometry": [
+					"encendido",
+					"apagado"		
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:luz3",
+			"is_experimental": false
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'encendido'",
+				"components": {
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'apagado'",
+				"components": {
+					"minecraft:light_emission": 0,
+					"minecraft:material_instances": {
+						"*": {
+							"render_method": "opaque",
+							"texture": "luz3_apagado"
+						}
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:on_click_light"
+			],
+			
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "luz3"
+				}
+			},
+			"minecraft:geometry": "geometry.luz3",
+			"minecraft:collision_box": false,
+			"minecraft:light_emission": 15,
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}
+

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "daniye:red_mushroom_placer",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "instant_red_mushroom",
+			"minecraft:entity_placer": {
+				"entity": "daniye:huge_red_mushroom"
+			},
+			"minecraft:glint": {
+				"value": true
+			}
+		}
+	}
+}

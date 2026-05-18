@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:arc_ice2",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/powers/eyeice"
+			},
+			"geometry": {
+				"default": "geometry.eyeice2"
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			]
+		}
+	}
+}

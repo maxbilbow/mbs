@@ -1,0 +1,23 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:flame_beam",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/powers/fire_ball"
+			},
+			"geometry": {
+				"default": "geometry.hb_fire_ball"
+			},
+			"scripts": {
+				"scale": 1.5
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

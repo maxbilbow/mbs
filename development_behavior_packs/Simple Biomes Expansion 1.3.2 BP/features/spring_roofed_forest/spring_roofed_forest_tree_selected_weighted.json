@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spring_roofed_forest/spring_roofed_forest_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:spring_roofed_forest/spring_roofed_forest_tree_weighted",
+				20
+			],
+			[
+				"vanilla_biomes_expansion:spring_forest/spring_forest_tree_weighted",
+				2
+			],
+			[
+				"vanilla_biomes_expansion:spring_birch_forest/spring_birch_forest_tree_weighted",
+				1
+			]
+		]
+	}
+}

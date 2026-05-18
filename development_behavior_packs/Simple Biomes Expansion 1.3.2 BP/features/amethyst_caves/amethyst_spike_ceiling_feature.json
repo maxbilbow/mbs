@@ -1,0 +1,89 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:growing_plant_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_caves/amethyst_spike_ceiling_feature"
+		},
+		"height_distribution": [
+			[
+				{
+					"range_min": 1,
+					"range_max": 2
+				},
+				1
+			],
+			[
+				{
+					"range_min": 2,
+					"range_max": 4
+				},
+				1
+			],
+			[
+				{
+					"range_min": 3,
+					"range_max": 5
+				},
+				1
+			],
+			[
+				{
+					"range_min": 4,
+					"range_max": 9
+				},
+				1
+			]
+		],
+		"growth_direction": "DOWN",
+		"body_blocks": [
+			[
+				{
+					"name": "minecraft:amethyst_block"
+				},
+				6
+			]
+		],
+		"head_blocks": [
+			[
+				{
+					"name": "minecraft:amethyst_cluster",
+					"states": {
+						"minecraft:block_face": "down"
+					}
+				},
+				1
+			],
+			[
+				{
+					"name": "minecraft:medium_amethyst_bud",
+					"states": {
+						"minecraft:block_face": "down"
+					}
+				},
+				1
+			],
+			[
+				{
+					"name": "minecraft:small_amethyst_bud",
+					"states": {
+						"minecraft:block_face": "down"
+					}
+				},
+				1
+			],
+			[
+				{
+					"name": "minecraft:large_amethyst_bud",
+					"states": {
+						"minecraft:block_face": "down"
+					}
+				},
+				1
+			]
+		],
+		"age": {
+			"range_min": 4,
+			"range_max": 11
+		}
+	}
+}

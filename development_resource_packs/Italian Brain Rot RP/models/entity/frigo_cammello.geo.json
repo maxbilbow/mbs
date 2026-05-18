@@ -1,0 +1,91 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.frigo_cammello",
+				"texture_width": 250,
+				"texture_height": 250,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "all",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "front_right_leg",
+					"parent": "all",
+					"pivot": [-3.9, 23, 1],
+					"cubes": [
+						{"origin": [-6.3, 1, -1], "size": [3, 20, 3], "uv": [4, 2], "mirror": true},
+						{"origin": [-7.3, 0, -8], "size": [5, 4, 11], "uv": [214, 52], "mirror": true},
+						{"origin": [-7.3, 4, -2], "size": [5, 3, 5], "uv": [226, 95], "mirror": true}
+					]
+				},
+				{
+					"name": "front_left_leg",
+					"parent": "all",
+					"pivot": [3.9, 23, 1],
+					"cubes": [
+						{"origin": [3.3, 1, -1], "size": [3, 20, 3], "uv": [4, 2]},
+						{"origin": [2.3, 0, -8], "size": [5, 4, 11], "uv": [214, 52]},
+						{"origin": [2.3, 4, -2], "size": [5, 3, 5], "uv": [226, 95]}
+					]
+				},
+				{
+					"name": "torso",
+					"parent": "all",
+					"pivot": [0, 13, 0]
+				},
+				{
+					"name": "tail",
+					"parent": "torso",
+					"pivot": [0, 19, 6.5],
+					"rotation": [5, 0, 0],
+					"cubes": [
+						{"origin": [-1.5, 5, 6.5], "size": [3, 14, 0], "uv": [122, 0]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "torso",
+					"pivot": [0, 26, 0.5],
+					"cubes": [
+						{"origin": [-7.5, 20, -13], "size": [15, 12, 27], "pivot": [0, 26, 0.5], "rotation": [90, 0, 0], "uv": [0, 25]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "torso",
+					"pivot": [0, 23, -9],
+					"cubes": [
+						{"origin": [-2.5, 39, -30], "size": [5, 5, 6], "uv": [50, 0]},
+						{"origin": [-3.5, 30, -24], "size": [7, 14, 7], "uv": [21, 0]},
+						{"origin": [-3.5, 22, -24], "size": [7, 8, 19], "uv": [60, 24]}
+					]
+				},
+				{
+					"name": "right_ear",
+					"parent": "head",
+					"pivot": [-3, 44, -18.5],
+					"rotation": [0, 0, 45],
+					"cubes": [
+						{"origin": [-5.5, 42.5, -19.5], "size": [3, 1, 2], "uv": [67, 0]}
+					]
+				},
+				{
+					"name": "left_ear",
+					"parent": "head",
+					"pivot": [3, 44, -18.5],
+					"rotation": [0, 0, -45],
+					"cubes": [
+						{"origin": [2.5, 42.5, -19.5], "size": [3, 1, 2], "uv": [45, 0]}
+					]
+				}
+			]
+		}
+	]
+}

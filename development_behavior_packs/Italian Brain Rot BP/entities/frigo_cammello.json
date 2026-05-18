@@ -1,0 +1,159 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "eu:frigo_cammello",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 1.0,
+				"height": 2.5
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+			},
+			"minecraft:behavior.player_ride_tamed": {},
+			"minecraft:input_ground_controlled": {},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"player"
+				],
+				"interact_text": "action.interact.ride.horse",
+				"seats": {
+					"position": [
+						0.0,
+						2.2,
+						0.0
+					]
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:leashable": {
+				"soft_distance": 4,
+				"hard_distance": 6,
+				"max_distance": 10
+			},
+			"minecraft:balloonable": {},
+			"minecraft:type_family": {
+				"family": [
+					"italian_brain_rot",
+					"frigo_cammello",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:health": {
+				"value": 40
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:physics": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 2
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"target_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:follow_range": {
+				"value": 48,
+				"max": 48
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "italian_brain_rot"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "frigo_cammello"
+								}
+							]
+						},
+						"max_dist": 20
+					}
+				]
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 3,
+				"track_target": true
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 8
+			},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"controlled_value": 1.5625,
+				"jump_prevented_value": 0.5625
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {}
+		}
+	}
+}

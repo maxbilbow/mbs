@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cso:oberon_asteroid_explode",
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:snowball",
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"oberon"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:health": {
+				"value": 1000000000,
+				"max": 10000000000
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 2,
+				"height": 2
+			},
+			"minecraft:explode": {
+				"fuseLength": 0,
+				"fuseLit": true,
+				"power": 25,
+				"causesFire": true,
+				"fire_affected_by_griefing": true,
+				"destroy_affected_by_griefing": true
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

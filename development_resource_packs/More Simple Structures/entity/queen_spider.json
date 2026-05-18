@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "wypnt_mss:queen_spider",
+			"materials": {
+				"default": "spider",
+				"invisible": "spider_invisible"
+			},
+			"textures": {
+				"default": "textures/coreblockstudios/moresimplestructures/entity/spider/queen_spider"
+			},
+			"geometry": {
+				"default": "geometry.coreblockstudios_mss.queenspider"
+			},
+			"particle_effects": {
+				"summon": "wypnt_mss:spider_summon"
+			},
+			"sound_effects": {
+				"summon": "wypnt_mss:mob.queenspider.summon"
+			},
+			"animations": {
+				"leg_setup": "animation.coreblockstudios_mss.queenspider.leg_setup",
+				"look_at_target": "animation.spider.look_at_target",
+				"walk": "animation.coreblockstudios_mss.queenspider.walk",
+				"shoot": "animation.coreblockstudios_mss.queenspider.shoot",
+				"bob": "animation.coreblockstudios_mss.queenspider.bob",
+				"summon": "animation.coreblockstudios_mss.queenspider.summon"
+			},
+			"animation_controllers": [
+				{
+					"move": "controller.animation.coreblockstudios_mss.queenspider.move"
+				},
+				{
+					"shoot": "controller.animation.coreblockstudios_mss.queenspider.attack"
+				}
+			],
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "wypnt_mss:spawn_egg_queenspider"
+			}
+		}
+	}
+}

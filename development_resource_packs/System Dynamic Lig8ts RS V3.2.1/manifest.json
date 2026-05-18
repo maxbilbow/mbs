@@ -1,0 +1,26 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "System Dynamic Lights Addon V3.2.2 §9Resources Pack",
+    "description": "§3§lMade by SystemTv Twitter@SystemTv_",
+    "uuid": "9662b34a-9a6c-47dc-b1ce-7541c8bbda91",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 20, 30 ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "cbf8045f-8b2c-48e7-92ad-eed6f78749db",
+      "version": [ 1, 0, 0 ]
+    }
+  ],
+  "metadata": {
+      "product_type": "addon"
+  },
+  "dependencies": [
+    {
+      "uuid": "4af7083a-0b1e-423b-8ba9-8bd56397eafa",
+      "version": [ 1, 0, 0 ]
+    }
+  ]
+}

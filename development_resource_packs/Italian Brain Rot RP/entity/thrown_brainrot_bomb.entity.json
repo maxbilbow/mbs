@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:thrown_brainrot_bomb",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bomb"
+			},
+			"geometry": {
+				"default": "geometry.brainrot_bomb"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			] /* ,
+			"animations": {
+				"move": "animation.wither_skull.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			} */
+		}
+	}
+}

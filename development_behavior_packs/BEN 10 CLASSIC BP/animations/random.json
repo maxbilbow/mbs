@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.random.tag": {
+			"animation_length": 10,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/tag @s remove random"
+				],
+				"7.0": [
+					"/tag @s add random"
+				]
+			}
+		},
+		"animation.ripjaws.land": {
+			"animation_length": 2,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/scoreboard players add @s ripjaws 1"
+				]
+			}
+		}
+	}
+}

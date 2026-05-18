@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bony:structure"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": [
+			{
+				"count": 1,
+				"item": "bony:structures",
+				"data": 0
+			}
+		],
+		"pattern": [
+			"XOX",
+			"XOO",
+			"OXX"
+		],
+		"key": {
+			"O": {
+				"item": "minecraft:iron_ingot",
+				"data": 0
+			}
+		}
+	}
+}

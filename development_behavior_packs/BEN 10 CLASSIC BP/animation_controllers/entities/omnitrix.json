@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.omni_attach": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_attach": "query.variant==1"
+						}
+					]
+				},
+				"omni_attach": {
+					"on_entry": [
+						"/tag @e[family=no_omnitrix,c=1] add omni_attach",
+						"/event entity @e[tag=omni_attach,type=omni:ben10] omnitrix",
+						"/execute as @e[tag=omni_attach,type=player] at @s run function wear/omnitrix",
+						"/execute as @e[tag=omni_attach,type=player,tag=!master_control] at @s run replaceitem entity @s slot.hotbar 0 omni:omni_icon 1 0 {\"keep_on_death\": {},\"item_lock\": {\"mode\": \"lock_in_slot\"}}",
+						"/execute as @e[tag=omni_attach,type=player,tag=master_control] at @s run replaceitem entity @s slot.hotbar 8 omni:omni_master 1 0 {\"keep_on_death\": {},\"item_lock\": {\"mode\": \"lock_in_slot\"}}",
+						"/tag @e remove omni_attach",
+						"/event entity @s despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:flame_beam",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 0,
+						"knockback": false,
+						"catch_fire": true
+					}
+				},
+				"hit_sound": "none",
+				"gravity": 1,
+				"power": 0
+			},
+			"minecraft:timer": {
+				"time": 0.5,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

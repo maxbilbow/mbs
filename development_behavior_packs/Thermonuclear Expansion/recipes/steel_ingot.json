@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:steel_ingot"
+		},
+		"tags": [
+			"blast_furnace"
+		],
+		"input": "iron_ingot",
+		"output": "kaboom:steel_ingot"
+	}
+}

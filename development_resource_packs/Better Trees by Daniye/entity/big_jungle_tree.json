@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:big_jungle_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/big_jungle_tree"
+			},
+			"geometry": {
+				"default": "geometry.big_jungle_tree"
+			},
+			"render_controllers": [
+				"controller.render.big_jungle_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_jungle_tree"
+			}
+		}
+	}
+}

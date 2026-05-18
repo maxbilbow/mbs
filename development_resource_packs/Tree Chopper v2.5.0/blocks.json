@@ -1,0 +1,36 @@
+{
+   "format_version": [1, 1, 0],
+   "rtc:oak_log": {
+      "sound": "wood"
+   },
+   "rtc:spruce_log": {
+      "sound": "wood"
+   },
+   "rtc:birch_log": {
+      "sound": "wood"
+   },
+   "rtc:acacia_log": {
+      "sound": "wood"
+   },
+   "rtc:jungle_log": {
+      "sound": "wood"
+   },
+   "rtc:cherry_log": {
+      "sound": "wood"
+   },
+   "rtc:mangrove_log": {
+      "sound": "wood"
+   },
+   "rtc:dark_oak_log": {
+      "sound": "wood"
+   },
+   "rtc:pale_oak_log": {
+      "sound": "wood"
+   },
+   "rtc:crimson_stem": {
+      "sound": "nether_wood"
+   },
+   "rtc:warped_stem": {
+      "sound": "nether_wood"
+   }
+}

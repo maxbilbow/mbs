@@ -1,0 +1,27 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "System Dynamic §9Extra Content",
+    "description": "§3§lMade by SystemTv Twitter@SystemTv_",
+    "uuid": "22f37830-cf3b-44bb-9412-a47943239e34",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 20, 30 ]
+  },
+  "metadata": {
+      "product_type": "addon"
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "1e5fa6da-c876-4874-bbf7-cda47987851a",
+      "version": [ 1, 0, 0 ]
+    }
+  ],
+  "capabilities": [ "script_eval" ],
+  "dependencies": [
+    {
+      "uuid": "4af7083a-0b1e-423b-8ba9-8bd56397eafa",
+      "version": [ 1, 0, 0 ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:cherry_tree_feature_rule",
+			"places_feature": "daniye:cherry_tree_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "equals",
+					"value": "cherry_grove"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"y": "q.heightmap(v.worldx, v.worldz)",
+			"z": 0,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 80
+			}
+		}
+	}
+}

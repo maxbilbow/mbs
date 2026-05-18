@@ -1,0 +1,34 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:frosted_badlands"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "vanilla_biomes_expansion:frosted_badlands_fog_setting"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#35A0F0"
+			},
+			"minecraft:atmosphere_identifier": {
+				"atmosphere_identifier": "minecraft:default_atmospherics"
+			},
+			"minecraft:color_grading_identifier": {
+				"color_grading_identifier": "minecraft:cold_color_grading"
+			},
+			"minecraft:lighting_identifier": {
+				"lighting_identifier": "minecraft:cold_lighting"
+			},
+			"minecraft:water_identifier": {
+				"water_identifier": "minecraft:default_water"
+			},
+			"minecraft:biome_music": {
+				"music_definition": "frozen_peaks"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#B8D4F2"
+			}
+		}
+	}
+}

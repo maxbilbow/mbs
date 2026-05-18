@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.test": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"test": "query.health>0"
+						}
+					]
+				},
+				"test": {
+					"on_entry": [
+						"/"
+					],
+					"transitions": [
+						{
+							"default": "!query.health>0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

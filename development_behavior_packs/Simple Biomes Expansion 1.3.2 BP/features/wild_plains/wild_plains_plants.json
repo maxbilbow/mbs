@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:wild_plains/wild_plains_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_bush_feature",
+				3
+			],
+			[
+				"vanilla_biomes_expansion:sbe_firefly_bush_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:wild_plains/wild_plains_plants_placement_feature",
+				32
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				9
+			],
+			[
+				"vanilla_biomes_expansion:sbe_fern_feature",
+				6
+			]
+		]
+	}
+}

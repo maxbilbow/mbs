@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_abandoned_house_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:abandoned_house_ruin3_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:abandoned_house_1_mcstructure",
+				4
+			],
+			[
+				"wypnt_mss:abandoned_house_ruin2_mcstructure",
+				4
+			],
+			[
+				"wypnt_mss:abandoned_house_ruin1_mcstructure",
+				4
+			]
+		]
+	}
+}

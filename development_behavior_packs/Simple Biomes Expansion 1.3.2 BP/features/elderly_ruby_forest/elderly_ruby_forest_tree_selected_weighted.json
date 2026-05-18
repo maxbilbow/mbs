@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_tree_weighted",
+				3
+			],
+			[
+				"vanilla_biomes_expansion:ruby_forest/ruby_forest_tree_weighted",
+				1
+			]
+		]
+	}
+}

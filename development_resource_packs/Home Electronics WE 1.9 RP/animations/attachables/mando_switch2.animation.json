@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mando_switch2.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [73.45211, -55.27998, -225.24806],
+					"position": [2, 21, 2]
+				}
+			}
+		},
+		"animation.mando_switch2.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [-32.5, 0, 0],
+					"position": [0, 19, -5.5],
+					"scale": 0.85
+				}
+			}
+		}
+	}
+}

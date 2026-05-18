@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "birch_forest_hills"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:birch_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5F8FDB"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#7A8FE0"
+      }
+    }
+  }
+}

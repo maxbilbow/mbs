@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "cso:oberon_asteroid",
+			"materials": {
+				"default": "zombie"
+			},
+			"scripts": {
+				"animate": [
+					"fall",
+					"particles",
+					{
+						"impact": "query.is_powered"
+					}
+				]
+			},
+			"animations": {
+				"fall": "animation.asteroid.falling",
+				"particles": "animation.asteroid.particles",
+				"impact": "animation.asteroid.impact"
+			},
+			"particle_effects": {
+				"asteroid": "cso:asteroid",
+				"flame": "gun:salamander"
+			},
+			"textures": {
+				"default": "textures/entity/bosses/boss1/entity/asteroid"
+			},
+			"geometry": {
+				"default": "geometry.oberon_asteroid"
+			},
+			"render_controllers": [
+				"controller.render.iron_golem"
+			]
+		}
+	}
+}

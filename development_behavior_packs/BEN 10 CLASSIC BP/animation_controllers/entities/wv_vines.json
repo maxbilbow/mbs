@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.wv_vines": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wv_vines": "query.skin_id==0"
+						}
+					]
+				},
+				"wv_vines": {
+					"transitions": [
+						{
+							"default": "query.skin_id==0"
+						}
+					],
+					"on_entry": [
+						"/event entity @s wv_vines:spawmed"
+					]
+				}
+			}
+		},
+		"controller.animation.wv_vines_attk": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"use": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @e[type=!power:wv_vines,family=!wildvine,r=2] slowness 2 6 true",
+						"/effect @e[type=!power:wv_vines,family=!wildvine,r=2] wither 1 4 true"
+					]
+				},
+				"use": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @e[type=!power:wv_vines,family=!wildvine,r=2] slowness 2 6 true",
+						"/effect @e[type=!power:wv_vines,family=!wildvine,r=2] wither 1 4 true"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+{
+  "mob.villager.death": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/death",
+      "sounds/mob/villager/death1"
+    ]
+  },
+  "mob.villager.handsome": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/handsome"
+    ]
+  },
+  "mob.villager.mean": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/the_way",
+      "sounds/mob/villager/stink_head",
+      "sounds/mob/villager/no1",
+      "sounds/mob/villager/no2",
+      "sounds/mob/villager/no3"
+    ]
+  },
+  "mob.villager.mean_no": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/no4",
+      "sounds/mob/villager/no5",
+      "sounds/mob/villager/no6"
+    ]
+  },
+  "mob.villager.derp": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/ahh",
+      "sounds/mob/villager/aahh"
+    ]
+  },
+  "mob.villager.dumb": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/skibidi"
+    ]
+  },
+  "mob.villager.sad": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/cheating"
+    ]
+  },
+  "mob.villager.horny": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/handsome",
+      "sounds/mob/villager/moan",
+      "sounds/mob/villager/mommy"
+    ]
+  },
+  "mob.villager.obese": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/villager/fat1",
+      "sounds/mob/villager/fat2"
+    ]
+  },
+  "mob.zombie.infect": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/mob/zombie/infect"
+    ]
+  },
+  "player.death": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "sounds/mob/ooh/ooh1",
+        "volume": 1.5,
+        "load_on_low_memory": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "daniye:acacia_tree",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"daniye:component_group_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.5,
+				"time_down_event": {
+					"event": "daniye:events_despawn"
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"tree"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false,
+				"push_towards_closest_space": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			}
+		},
+		"events": {
+			"daniye:instant_tree": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_01 ~-7~~-5 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_02 ~-6~~-11 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_03 ~-6~~-7 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_04 ~-4~~-9 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_05 ~-10~~-12 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_06 ~-5~~-7 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_07 ~-5~~-5 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_08 ~-6~~-7 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_09 ~-7~~-8 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_10 ~-5~~-15 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_11 ~-12~~-11 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_12 ~-6~~-3 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_13 ~-8~~-12 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_14 ~-13~~-13 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_15 ~-10~~-7 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_16 ~-10~~-10 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_17 ~-7~~-5 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_18 ~-6~~-6 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_19 ~-6~~-11 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_20 ~-7~~-6 0_degrees none block_by_block 1"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"structure load mystructure:acacia_tree_21 ~-7~~-7 0_degrees none block_by_block 1"
+							]
+						}
+					}
+				]
+			},
+			"daniye:events_despawn": {
+				"add": {
+					"component_groups": [
+						"daniye:component_group_despawn"
+					]
+				}
+			}
+		}
+	}
+}

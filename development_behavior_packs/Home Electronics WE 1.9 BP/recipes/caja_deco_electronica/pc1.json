@@ -1,0 +1,23 @@
+//bridge-file-version: #34
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "he:pc1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "he:caja_deco_electronica"
+			}
+		],
+		"result": [
+			{
+				"item": "he:pc1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

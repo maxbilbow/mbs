@@ -1,0 +1,34 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sofa4",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [3.2, 0, 3.10855], "size": [1.5, 5, 1.5], "uv": [0, 0]},
+						{"origin": [-8, 4, -6], "size": [4, 1, 2], "uv": [45, 0]},
+						{"origin": [-6, 4, -8], "size": [2, 1, 2], "uv": [43, 2]},
+						{"origin": [-8, 4, 3], "size": [13, 1, 2], "uv": [42, 2]},
+						{"origin": [3, 4, 0], "size": [2, 1, 3], "uv": [52, 0]},
+						{"origin": [3, 4, -3], "size": [2, 1, 3], "uv": [52, 0]},
+						{"origin": [3, 4, -8], "size": [2, 1, 5], "uv": [52, 0]},
+						{"origin": [-8, 5, -8], "size": [14.5, 2, 14.5], "uv": [0, 17]},
+						{"origin": [5.3, 8.68, -8], "size": [3, 11, 15], "pivot": [0.75, 12.5, 7], "rotation": [0, 0, 15], "uv": [0, 17]},
+						{"origin": [-7.75, 7, -7.75], "size": [14.25, 2, 14], "uv": [0, 0]},
+						{"origin": [-8, 7, 5.5], "size": [15.2, 11, 3], "pivot": [0.75, 12.5, 7], "rotation": [-15, 0, 0], "uv": [32, 31]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:missile_engine"
+		},
+		"components": {
+			"minecraft:geometry": "geometry.missile_engine_new",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_missile_engine",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:kaboom:dummy": {},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"kaboom:launchpad_block"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/missile_engine.json"
+		}
+	}
+}

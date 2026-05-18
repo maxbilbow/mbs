@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:warhead"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_block"
+			},
+			"F": {
+				"item": "kaboom:polystyrene_foam"
+			},
+			"U": {
+				"item": "kaboom:fissile_uranium"
+			},
+			"P": {
+				"item": "kaboom:plutonium"
+			}
+		},
+		"pattern": [
+			"III",
+			"FUF",
+			"FPF"
+		],
+		"result": {
+			"item": "kaboom:warhead"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:plutonium"
+			}
+		]
+	}
+}

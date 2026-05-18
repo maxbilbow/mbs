@@ -1,0 +1,46 @@
+{
+	"texture_data": {
+		"instant_oak_tree": {
+			"textures": "textures/items/instant_oak"
+		},
+		"instant_birch_tree": {
+			"textures": "textures/items/instant_birch"
+		},
+		"instant_spruce_tree": {
+			"textures": "textures/items/instant_spruce"
+		},
+		"instant_acacia_tree": {
+			"textures": "textures/items/instant_acacia"
+		},
+		"instant_jungle_tree": {
+			"textures": "textures/items/instant_jungle"
+		},
+		"instant_dark_oak_tree": {
+			"textures": "textures/items/instant_dark_oak"
+		},
+		"instant_cherry_tree": {
+			"textures": "textures/items/instant_cherry"
+		},
+		"instant_mangrove_tree": {
+			"textures": "textures/items/instant_mangrove"
+		},
+		"instant_pale_oak_tree": {
+			"textures": "textures/items/instant_pale_oak"
+		},
+		"instant_red_mushroom": {
+			"textures": "textures/items/instant_red_mushroom"
+		},
+		"instant_brown_mushroom": {
+			"textures": "textures/items/instant_brown_mushroom"
+		},
+		"instant_crimson_fungus": {
+			"textures": "textures/items/instant_crimson"
+		},
+		"instant_warped_fungus": {
+			"textures": "textures/items/instant_warped"
+		},
+		"instant_azalea_tree": {
+			"textures": "textures/items/instant_azalea"
+		}
+	}
+}

@@ -1,0 +1,64 @@
+
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.coreblockstudios_mss.mummy.move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move": "query.modified_move_speed"
+						},
+						{
+							"bob": "query.is_alive&&!query.is_emerging"
+						}
+					],
+					"transitions": [
+						{
+							"spawn": "query.is_emerging&&!query.is_baby"
+						},
+						{
+							"has_target": "query.has_target"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"spawn": {
+					"animations": [
+						"spawn"
+					],
+					"transitions": [
+						{
+							"has_target": "query.has_target&&!query.is_emerging"
+						},
+						{
+							"default": "!query.is_emerging"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"has_target": {
+					"animations": [
+						"zombie_attack_bare_hand",
+						{
+							"move": "query.modified_move_speed"
+						},
+						{
+							"bob": "query.is_alive&&!query.is_emerging"
+						}
+					],
+					"transitions": [
+						{
+							"spawn": "query.is_emerging&&!query.has_target"
+						},
+						{
+							"default": "!query.has_target"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		}
+	}
+}

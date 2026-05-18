@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:omni_capsule",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/omni_capsule"
+			},
+			"geometry": {
+				"default": "geometry.omni_capsule"
+			},
+			"animations": {
+				"open": "animation.omni_capsule.open",
+				"start_open": "controller.animation.omni_capsule_open"
+			},
+			"scripts": {
+				"animate": [
+					"start_open"
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg_omni_capsule"
+			}
+		}
+	}
+}

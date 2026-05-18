@@ -1,0 +1,36 @@
+{
+	"resource_pack-name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"torch": {
+			"textures": "textures/torch.png"
+		},
+		"soul_torch": {
+			"textures": "textures/soul_torch.png"
+		},
+		"redstone_torch": {
+			"textures": "textures/redstone_torch.png"
+		},
+		"sea_pickle": {
+			"textures": "textures/sea_pickle.png"
+		},
+		"lantern_iron_helmet": {
+			"textures": "textures/lantern_iron_helmet.png"
+		},
+		"lantern_diamond_helmet": {
+			"textures": "textures/lantern_diamond_helmet.png"
+		},
+		"lantern_copper_helmet": {
+			"textures": "textures/lantern_copper_helmet.png"
+		},
+		"lantern_netherite_helmet": {
+			"textures": "textures/lantern_netherite_helmet.png"
+		},
+		"lantern_chainmain_helmet": {
+			"textures": "textures/lantern_chainmain_helmet.png"
+		},
+		"lantern_gold_helmet": {
+			"textures": "textures/lantern_gold_helmet.png"
+		}
+	}
+}

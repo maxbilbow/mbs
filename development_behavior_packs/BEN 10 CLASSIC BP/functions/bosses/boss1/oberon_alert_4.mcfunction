@@ -1,0 +1,1 @@
+tellraw @a {"rawtext":[{"text":"§4§lAlert§r ✇ §cEVACUATE THE AREA!"}]}

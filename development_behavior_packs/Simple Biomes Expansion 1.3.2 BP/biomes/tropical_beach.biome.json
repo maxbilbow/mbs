@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tropical_beach"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.4,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.8
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "swamp"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:swamp",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:mud",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:mud",
+					"top_material": "minecraft:moss_block",
+					"sea_material": "minecraft:water",
+					"max_puddle_depth_below_sea_level": 7
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"beach",
+					"monster",
+					"overworld",
+					"forest",
+					"lush_caves",
+					"swamp",
+					"tropical_beach"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:beach"
+						],
+						"amount": 0.31,
+						"noise_frequency_scale": 0.2
+					}
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:sand",
+							"sea_floor_material": "minecraft:sand"
+						},
+						"noise_frequency_scale": 0.03,
+						"noise_range": [
+							0.4,
+							1
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:mud",
+							"sea_floor_material": "minecraft:mud"
+						},
+						"noise_frequency_scale": 0.22,
+						"noise_range": [
+							0.4,
+							1
+						]
+					}
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#b6db61"
+				},
+				"foliage": "#b6db61"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:black_caves/deepslate_diamond_ore_feature"
+		},
+		"count": 11,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:deepslate_diamond_ore",
+				"may_replace": [
+					"minecraft:black_concrete",
+					"minecraft:black_concrete_powder",
+					"minecraft:blackstone"
+				]
+			}
+		]
+	}
+}

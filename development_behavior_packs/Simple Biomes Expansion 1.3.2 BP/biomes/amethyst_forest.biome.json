@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_forest"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.8,
+				"snow_accumulation": [
+					0,
+					0.25
+				],
+				"temperature": 0.3
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "default"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:dirt",
+					"top_material": "minecraft:grass_block",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"monster",
+					"overworld",
+					"amethyst_forest",
+					"spawns_cold_variant_farm_animals"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:birch_forest",
+							"minecraft:forest"
+						],
+						"amount": 0.0375,
+						"noise_frequency_scale": 0.335
+					}
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#AF85EA"
+				},
+				"foliage": "#A876E1"
+			}
+		}
+	}
+}

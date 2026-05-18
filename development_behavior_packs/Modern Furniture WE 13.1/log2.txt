@@ -1,0 +1,236 @@
+[Recipes][error]-recipes/tragasol.json | f:tragasol | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/trampolin.json | f:trampolin | The Item: f:trampolin is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/trampolin.json | f:trampolin | Recipe result malformed
+
+
+[Recipes][error]-recipes/trampolin.json | f:trampolin | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | The Item: f:trampolin2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/tridente1.json | f:tridente1 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/trofeo.json | f:trofeo | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/tuberia1.json | f:tuberia1 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/tuberia2.json | f:tuberia2 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/valla1.json | f:valla1 | The Item: f:valla1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/valla1.json | f:valla1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/valla1.json | f:valla1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/vallablanca1.json | f:vallablanca1 | The Item: f:vallablanca1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/vallablanca1.json | f:vallablanca1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/vallablanca1.json | f:vallablanca1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/wall_modular_sofa_black.json | f:wall_modular_sofa_black | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_blue.json | f:wall_modular_sofa_blue | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_blue_light.json | f:wall_modular_sofa_blue_light | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_gray.json | f:wall_modular_sofa_gray | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_lime.json | f:wall_modular_sofa_lime | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_orange.json | f:wall_modular_sofa_orange | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_pink.json | f:wall_modular_sofa_pink | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_red.json | f:wall_modular_sofa_red | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_violet.json | f:wall_modular_sofa_violet | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_white.json | f:wall_modular_sofa_white | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wall_modular_sofa_yellow.json | f:wall_modular_sofa_yellow | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wc1.json | f:wc1 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/wc2.json | f:wc2 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yconducto1.json | f:yconducto1 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yconducto2.json | f:yconducto2 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yconducto3.json | f:yconducto3 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yconducto4.json | f:yconducto4 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yconducto5.json | f:yconducto5 | 1.20+ Recipes require unlock data
+
+
+[Recipes][error]-recipes/yeti.json | f:yeti | 1.20+ Recipes require unlock data
+
+
+[Scripting][warning]-Block custom component 'content_mf:pumpkin_stacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:interruptor_lv_2' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:modular_sofa' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:micro' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:spotlight' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_modular_fence' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:modular_table' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_cierre_z' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:disc_stand' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:trampoline' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:boton_semaforo' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:flower_pot' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:close_open' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:interact_air' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:close_open_vent' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_apertura_z' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:close_open_curtain' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:on_place_stair' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mirror' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:sit_1' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:sit_2' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:sit_3' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:interruptor_lv_3' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:fireplace2' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:sit_4' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:fireplace' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_doormat' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:calendar' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:trush' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_chim_on' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:interruptor_lv_1' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:on_click_light' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:open_container' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:slab' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:on_click_light_rotation' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_lever' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_inicial' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_cierre_x' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_apertura_x' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_breadstacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:timbre2' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:timbre' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_piano' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:stair' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:bookcase' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:pipe' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:board' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:railing' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:elevator_garaje' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_applestacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_watermelonstacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_rendija_piscina' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_cookiestacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_write_board' is not being used by a block
+
+[Commands][warning]-Function sit failed to load correctly with error(s):
+
+[Commands][warning]-Error on line 1: command failed to parse with error 'Syntax error: Unexpected "f:sit": at "summon >>f:sit<< ~ ~0.1 ~"'
+
+[Commands][warning]-Error on line 2: command failed to parse with error 'Syntax error: Unexpected "f:sit": at "g @e[type=>>f:sit<<,c=1] tele"'
+
+[Json][error]- -> categories[0] -> groups[9] -> group_identifier -> icon:  Missing referenced asset f:vallablanca1
+
+[Json][error]- -> categories[0] -> groups[9] -> items[0]:  Missing referenced asset f:valla1
+
+[Json][error]- -> categories[0] -> groups[9] -> items[1]:  Missing referenced asset f:vallablanca1
+
+[Json][error]- -> categories[0] -> groups[9] -> items[2]:  Missing referenced asset f:modern-fence3
+
+[Json][error]- -> categories[0] -> groups[9] -> items[3]:  Missing referenced asset f:modular_fence_modern1
+
+[Item][warning]-Item item.f:manual requires either an icon atlas or icon texture.
+
+[Item][warning]-Item item.f:llave_inglesa requires either an icon atlas or icon texture.
+

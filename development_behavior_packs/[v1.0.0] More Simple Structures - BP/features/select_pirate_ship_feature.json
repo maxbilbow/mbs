@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_pirate_ship_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:pirate_ship_1_s_feature_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:pirate_ship_1_e_feature_mcstructure",
+				3
+			]
+		]
+	}
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:atmosphere_settings": {
+    "description": {
+      "identifier": "va:basalt_atmosphere"
+    },
+
+    "sky_zenith_color": {
+      "0.0": [90, 88, 96],
+      "1.0": [90, 88, 96]
+    },
+
+    "sky_horizon_color": {
+      "0.0": [160, 120, 90],
+      "1.0": [160, 120, 90]
+    },
+
+    "horizon_blend_stops": {
+      "min": 0.15,
+      "start": 0.68,
+      "mie_start": 0.88,
+      "max": 0.65
+    },
+
+    "rayleigh_strength": {
+      "0.0": 0.18,
+      "1.0": 0.18
+    }
+  }
+}

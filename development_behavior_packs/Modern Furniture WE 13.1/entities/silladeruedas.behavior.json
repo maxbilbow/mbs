@@ -1,0 +1,74 @@
+
+{
+  "format_version": "1.20.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "f:silladeruedas",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      
+      "animation_controllers": {
+        "controller.silladeruedas": {
+          "initial_state": "default",
+          "states": {
+            "default": {
+              "animations": ["animation.silladeruedas.drive"],
+              "transitions": [
+                {
+                  "state": "ride",
+                  "condition": "query.has_player_rider == 1"
+                }
+              ]
+            },
+            "ride": {
+              "animations": ["animation.silladeruedas.ride"],
+              "transitions": [
+                {
+                  "state": "default",
+                  "condition": "query.has_player_rider == 0"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:collision_box": {
+        "height": 1,
+        "width": 1.2
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.generic": {},
+      "minecraft:input_ground_controlled": {},
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "seats": [
+          {
+            "position": [0, 0.25, 0]
+          }
+        ]
+      },
+      "minecraft:variable_max_auto_step": {
+        "base_value": 1.2,
+        "controlled_value": 1.2
+      }
+    },
+    "component_groups": {},
+    "events": {}
+  }
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.book_menu": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.textures[query.variant]"
+			],
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"texture.page_0",
+						"texture.page_1",
+						"texture.page_2",
+						"texture.page_3"
+					]
+				}
+			}
+		}
+	}
+}

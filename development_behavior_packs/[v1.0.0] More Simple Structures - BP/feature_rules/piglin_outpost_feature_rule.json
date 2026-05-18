@@ -1,0 +1,70 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "wypnt_mss:piglin_outpost_feature_rule",
+			"places_feature": "wypnt_mss:piglin_outpost_snap_feature"
+		},
+		"conditions": {
+			"placement_pass": "final_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "crimson_forest"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "warped_forest"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "soulsand_valley"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "hell"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 6
+			},
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": {
+				"extent": [
+					28,
+					95
+				],
+				"distribution": "uniform"
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "[BP] Instant Structures v7 1.21+ BONY162",
+		"description": "Subscribe for more addons! and tutorials YT BONY162",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "ae9a6dc5-7d28-4803-b5cb-f8d7ecf3858f",
+		"version": [
+			7,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "a06bb11a-9710-4be4-aebb-9223bfee2699",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "57c90724-ee51-4a20-b35f-833f8ef5ae40",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "00599f8d-0fba-406a-a74b-e7443a528c48",
+			"version": [
+				7,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.11.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.1.0"
+		}
+	]
+}

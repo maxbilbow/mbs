@@ -1,0 +1,1122 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.shoot_fire_ball": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_fire_ball": "query.get_equipped_item_name('main_hand')=='fire_ball'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot_fire_ball": {
+					"transitions": [
+						{
+							"default": "query.state_time>=0.3||!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:fire_ball"
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_sf_slime": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_sf_slime": "query.get_equipped_item_name('main_hand')=='sf_slime'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot_sf_slime": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='sf_slime'&&query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:slime_projectile"
+					]
+				}
+			}
+		},
+		"controller.animation.summon_dh_spike": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"summon_dh_spike_sneak": "!query.is_moving&&query.is_on_ground&&query.get_equipped_item_name('main_hand')=='dh_spikes'&&query.is_using_item&&query.is_sneaking"
+						},
+						{
+							"summon_dh_spike_stand": "!query.is_moving&&query.is_on_ground&&query.get_equipped_item_name('main_hand')=='dh_spikes'&&query.is_using_item&&!query.is_sneaking"
+						}
+					]
+				},
+				"summon_dh_spike_sneak": {
+					"transitions": [
+						{
+							"cooldown": "0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @e[r=6,type=power:dh_spike] despawn",
+						"/summon power:dh_spike ~1 ~0 ~0",
+						"/summon power:dh_spike ~-1 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~1",
+						"/summon power:dh_spike ~0 ~0 ~-1",
+						"/summon power:dh_spike ~2 ~0 ~0",
+						"/summon power:dh_spike ~-2 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~2",
+						"/summon power:dh_spike ~0 ~0 ~-2",
+						"/summon power:dh_spike ~1 ~0 ~1",
+						"/summon power:dh_spike ~-1 ~0 ~-1",
+						"/summon power:dh_spike ~1 ~0 ~-1",
+						"/summon power:dh_spike ~-1 ~0 ~1",
+						"/summon power:dh_spike ~3 ~0 ~0",
+						"/summon power:dh_spike ~-3 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~3",
+						"/summon power:dh_spike ~0 ~0 ~-3",
+						"/summon power:dh_spike ~2 ~0 ~2",
+						"/summon power:dh_spike ~-2 ~0 ~-2",
+						"/summon power:dh_spike ~2 ~0 ~-2",
+						"/summon power:dh_spike ~-2 ~0 ~2",
+						"/fill ~-3 ~ ~-3 ~3 ~2 ~3 air [] destroy",
+						"/execute as @e[r=6,family=!diamondhead,type=!power:dh_spike,type=!item,family=!npc,family=!villager,family=!axolotl] at @s run summon power:dh_spike ~ ~ ~",
+						"/execute as @e[r=6,family=!diamondhead,type=!power:dh_spike,type=!item,family=!npc,family=!villager,family=!axolotl] at @s run fill ~-1 ~ ~-1 ~1 ~2 ~1 air [] destroy"
+					]
+				},
+				"summon_dh_spike_stand": {
+					"transitions": [
+						{
+							"cooldown": "0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @e[r=6,type=power:dh_spike] despawn",
+						"/summon power:dh_spike ~1 ~0 ~0",
+						"/summon power:dh_spike ~-1 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~1",
+						"/summon power:dh_spike ~0 ~0 ~-1",
+						"/summon power:dh_spike ~2 ~0 ~0",
+						"/summon power:dh_spike ~-2 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~2",
+						"/summon power:dh_spike ~0 ~0 ~-2",
+						"/summon power:dh_spike ~1 ~0 ~1",
+						"/summon power:dh_spike ~-1 ~0 ~-1",
+						"/summon power:dh_spike ~1 ~0 ~-1",
+						"/summon power:dh_spike ~-1 ~0 ~1",
+						"/summon power:dh_spike ~3 ~0 ~0",
+						"/summon power:dh_spike ~-3 ~0 ~0",
+						"/summon power:dh_spike ~0 ~0 ~3",
+						"/summon power:dh_spike ~0 ~0 ~-3",
+						"/summon power:dh_spike ~2 ~0 ~2",
+						"/summon power:dh_spike ~-2 ~0 ~-2",
+						"/summon power:dh_spike ~2 ~0 ~-2",
+						"/summon power:dh_spike ~-2 ~0 ~2",
+						"/execute as @e[r=6,family=!diamondhead,type=!power:dh_spike,type=!item,family=!npc,family=!villager,family=!axolotl] at @s run summon power:dh_spike ~ ~ ~"
+					]
+				},
+				"cooldown": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.up_tongue": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.variant==17&&query.get_equipped_item_name('main_hand')=='up_tongue'&&(query.is_using_item||variable.attack_time>0)"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.variant!=17||query.get_equipped_item_name('main_hand')!='up_tongue'||(!query.is_using_item&&variable.attack_time<=0)"
+						},
+						{
+							"shoot": "query.variant!=17||query.get_equipped_item_name('main_hand')!='up_tongue'||(!query.is_using_item&&variable.attack_time<=0)"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/function player/tongue",
+						"/scriptevent power:up_devour"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.up_eat": {
+			"initial_state": "base",
+			"states": {
+				"base": {
+					"transitions": [
+						{
+							"eat_normal": "query.variant==17&&query.is_sneaking&&query.get_equipped_item_name('main_hand')!=''&&query.get_equipped_item_name('main_hand')!='tnt'&&query.get_equipped_item_name('main_hand')!='slime'&&query.get_equipped_item_name('main_hand')!='slime_ball'&&query.get_equipped_item_name('main_hand')!='up_tongue'&&query.get_equipped_item_name('main_hand')!='up_menu'&&query.get_equipped_item_name('main_hand')!='omni_off'"
+						},
+						{
+							"eat_bomb": "query.variant==17&&query.is_sneaking&&query.get_equipped_item_name('main_hand')=='tnt'"
+						},
+						{
+							"eat_slime": "query.variant==17&&query.is_sneaking&&(query.get_equipped_item_name('main_hand')=='slime'||query.get_equipped_item_name('main_hand')=='slime_ball')"
+						},
+						{
+							"spit_normal": "query.variant==17&&!query.is_sneaking&&query.skin_id==98"
+						},
+						{
+							"spit_bomb": "query.variant==17&&!query.is_sneaking&&query.skin_id==99"
+						},
+						{
+							"spit_slime": "query.variant==17&&!query.is_sneaking&&query.skin_id==100"
+						}
+					]
+				},
+				"eat_normal": {
+					"transitions": [
+						{
+							"base": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/replaceitem entity @s slot.weapon.mainhand 0 air 1 0",
+						"/event entity @s upchuck_eat",
+						"/playanimation @s animation.up_eat"
+					]
+				},
+				"spit_normal": {
+					"transitions": [
+						{
+							"base": "query.is_sneaking||query.skin_id!=98"
+						}
+					],
+					"on_entry": [
+						"/event entity @s spit_normal",
+						"/playanimation @s animation.up_spit",
+						"/scriptevent power:up_spit"
+					]
+				},
+				"eat_bomb": {
+					"transitions": [
+						{
+							"base": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/replaceitem entity @s slot.weapon.mainhand 0 air 1 0",
+						"/event entity @s upchuck_eat2",
+						"/playanimation @s animation.up_eat"
+					]
+				},
+				"spit_bomb": {
+					"transitions": [
+						{
+							"base": "query.is_sneaking||query.skin_id!=99"
+						}
+					],
+					"on_entry": [
+						"/event entity @s spit_bomb",
+						"/playanimation @s animation.up_spit",
+						"/scriptevent power:up_spit"
+					]
+				},
+				"eat_slime": {
+					"transitions": [
+						{
+							"base": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/replaceitem entity @s slot.weapon.mainhand 0 air 1 0",
+						"/event entity @s upchuck_eat3",
+						"/playanimation @s animation.up_eat"
+					]
+				},
+				"spit_slime": {
+					"transitions": [
+						{
+							"base": "query.is_sneaking||query.skin_id!=100"
+						}
+					],
+					"on_entry": [
+						"/event entity @s spit_slime",
+						"/playanimation @s animation.up_spit",
+						"/scriptevent power:up_spit"
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_wb_ray": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_wb_ray": "query.get_equipped_item_name('main_hand')=='wb_ray'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot_wb_ray": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='wb_ray'&&query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:wb_ray"
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_dh_crystal": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_dh_crystal": "query.get_equipped_item_name('main_hand')=='dh_crystal'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot_dh_crystal": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='dh_crystal'&&query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:dh_crystal"
+					]
+				}
+			}
+		},
+		"controller.animation.clock_beam": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='clock_beam'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='clock_beam'&&query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:clock_beam"
+					]
+				}
+			}
+		},
+		"controller.animation.clock_stop": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='clock_stop'"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='clock_stop'"
+						}
+					],
+					"on_entry": [
+						"/function player/clock_stop"
+					]
+				}
+			}
+		},
+		"controller.animation.clock_time": {
+			"states": {
+				"base": {
+					"transitions": [
+						{
+							"time1": "query.get_equipped_item_name('main_hand')=='clock_time'&&query.is_using_item&&!query.is_sneaking"
+						},
+						{
+							"time2": "query.get_equipped_item_name('main_hand')=='clock_time'&&query.is_using_item&&query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"0"
+					]
+				},
+				"time1": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/time add 100"
+					]
+				},
+				"time2": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/time add -100"
+					]
+				}
+			}
+		},
+		"controller.animation.clock_stop2": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name(0)=='clock_stop'"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.get_equipped_item_name(0)!='clock_stop'"
+						},
+						{
+							"shoot": "query.get_equipped_item_name(0)!='clock_stop'"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/playanimation @s animation.clock_stop"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_bv_lightning": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bv_lightning'&&query.is_using_item&&!query.is_sneaking"
+						},
+						{
+							"shoot_heavy": "query.get_equipped_item_name('main_hand')=='bv_lightning'&&query.is_using_item&&query.is_sneaking"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='bv_lightning'||!query.is_using_item||query.is_sneaking"
+						},
+						{
+							"loop_reset": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/scriptevent power:bv_light_light"
+					]
+				},
+				"shoot_heavy": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='bv_lightning'||!query.is_using_item||!query.is_sneaking"
+						},
+						{
+							"loop_reset": "query.state_time>=0.8"
+						}
+					],
+					"on_entry": [
+						"/weather thunder",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run execute as @e[r=40,family=monster,c=1] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^40 run effect @e[r=40,family=monster] wither 4 2 true",
+						"/scriptevent power:bv_light_heavy"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.bv_electrokinesis": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_heavy": "query.get_equipped_item_name('main_hand')=='bv_electrokinesis'&&query.is_using_item&&query.is_sneaking"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bv_electrokinesis'&&query.is_using_item&&!query.is_sneaking"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='bv_electrokinesis'||!query.is_using_item||query.is_sneaking"
+						},
+						{
+							"loop_reset": "query.state_time>=1.5"
+						}
+					],
+					"on_entry": [
+						"/effect @s resistance 2 4 true",
+						"/effect @s regeneration 2 2 true",
+						"/playsound mob.wither.spawn @a ~ ~ ~ 1 0.8",
+						"/execute as @e[r=40,family=monster] at @s run effect @s levitation 1 8 true",
+						"/execute as @e[r=40,family=monster] at @s run effect @s slowness 3 255 true",
+						"/execute as @e[r=40,family=monster] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @e[r=40,family=monster] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @e[r=40,family=monster] at @s run summon tnt ~ ~1 ~",
+						"/scriptevent power:bv_electro",
+						"/execute as @e[r=40,family=monster] at @s run setblock ~ ~ ~ fire"
+					]
+				},
+				"shoot_heavy": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='bv_electrokinesis'||!query.is_using_item||!query.is_sneaking"
+						},
+						{
+							"loop_reset": "query.state_time>=1.5"
+						}
+					],
+					"on_entry": [
+						"/weather thunder",
+						"/effect @s resistance 2 4 true",
+						"/effect @s regeneration 2 2 true",
+						"/playsound mob.wither.spawn @a ~ ~ ~ 1 0.8",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run effect @s levitation 1 8 true",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run effect @s slowness 3 255 true",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run summon lightning_bolt ~ ~ ~",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run summon tnt ~ ~1 ~",
+						"/scriptevent power:bv_electro",
+						"/execute as @e[type=!player,type=!item,r=40] at @s run setblock ~ ~ ~ fire"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.arc_frost_walker": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"active": "query.get_equipped_item_name('main_hand')=='arc_frost_walker'&&query.is_moving"
+						}
+					]
+				},
+				"active": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='arc_frost_walker'||!query.is_moving"
+						},
+						{
+							"loop": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 frosted_ice replace water",
+						"/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 frosted_ice replace flowing_water"
+					]
+				},
+				"loop": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='arc_frost_walker'||!query.is_moving"
+						},
+						{
+							"active": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.arc_chill": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"active": "query.get_equipped_item_name('main_hand')=='arc_chill'&&query.is_moving"
+						}
+					]
+				},
+				"active": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='arc_chill'||!query.is_moving"
+						},
+						{
+							"loop": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/fill ~-3 ~-2 ~-3 ~3 ~2 ~3 obsidian replace lava",
+						"/fill ~-3 ~-2 ~-3 ~3 ~2 ~3 cobblestone replace flowing_lava",
+						"/fill ~-3 ~-2 ~-3 ~3 ~2 ~3 air replace fire",
+						"/fill ~-3 ~-2 ~-3 ~3 ~2 ~3 air replace soul_fire",
+						"/particle minecraft:snowballpoof ~ ~1 ~"
+					]
+				},
+				"loop": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='arc_chill'||!query.is_moving"
+						},
+						{
+							"active": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.arc_armor": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+					"transitions": [
+						{
+							"active": "query.get_equipped_item_name('main_hand')=='arc_armor'"
+						}
+					]
+				},
+				"active": {
+					"on_entry": [
+						"/effect @s resistance 2 2 true",
+						"/effect @s fire_resistance 2 0 true",
+						"/effect @s absorption 2 1 true",
+						"/effect @s regeneration 2 1 true"
+					],
+					"transitions": [
+						{
+							"inactive": "query.get_equipped_item_name('main_hand')!='arc_armor'"
+						},
+						{
+							"wait": "1"
+						}
+					]
+				},
+				"wait": {
+					"transitions": [
+						{
+							"inactive": "query.get_equipped_item_name('main_hand')!='arc_armor'"
+						},
+						{
+							"active": "query.state_time>=1"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_arc_ice": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"aoe_shoot": "query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item&&query.is_sneaking"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item&&!query.is_sneaking"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:arc_ice",
+						"/playsound random.fizz @s ~ ~ ~ 1 0.8"
+					]
+				},
+				"aoe_shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=1.5"
+						}
+					],
+					"on_entry": [
+						"/playsound random.glass @s ~ ~ ~ 1 0.5",
+						"/playsound random.explode @s ~ ~ ~ 1 1.2",
+						"/execute as @s at @s run fill ~-5 ~-2 ~-5 ~5 ~1 ~5 ice replace water",
+						"/execute as @s at @s run fill ~-5 ~-2 ~-5 ~5 ~1 ~5 ice replace flowing_water",
+						"/execute as @s at @s run execute as @e[r=30,rm=0.1,family=!arctiguana,family=!npc,type=!item,c=30] at @s run summon power:arc_ice2 ~ ~ ~",
+						"/execute as @s at @s run particle minecraft:huge_explosion_emitter ~ ~1 ~"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"aoe_shoot": "query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item&&query.is_sneaking&&query.state_time>=0"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item&&!query.is_sneaking&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.wv_plant": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='wv_plant'&&query.is_using_item&&!query.is_sneaking"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.get_equipped_item_name('main_hand')!='wv_plant'||!query.is_using_item||query.is_sneaking"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')!='wv_plant'||!query.is_using_item||query.is_sneaking"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/event entity @s shoot:wv_plant"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.wv_vines": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='wv_plant_disabled'&&query.is_using_item&&query.is_sneaking"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.get_equipped_item_name('main_hand')!='wv_plant_disabled'||!query.is_using_item||!query.is_sneaking"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')!='wv_plant_disabled'||!query.is_using_item||!query.is_sneaking"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/event entity @e[r=8,type=power:wv_vines] despawn",
+						"/execute as @e[r=8,family=!wildvine,family=!npc,family=!villager,type=!item] at @s run summon power:wv_vines"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.wv_seeds": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='wv_seeds'&&query.is_using_item"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.get_equipped_item_name('main_hand')!='wv_seeds'||!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')!='wv_seeds'||!query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/event entity @s shoot:wv_seed"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.wv_stretch": {
+			"initial_state": "preshoot",
+			"states": {
+				"preshoot": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='wv_stretch'&&query.is_using_item"
+						}
+					]
+				},
+				"shooting": {
+					"on_entry": [
+						"variable.delaytime=query.life_time;"
+					],
+					"transitions": [
+						{
+							"preshoot": "query.get_equipped_item_name('main_hand')!='wv_stretch'||!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')!='wv_stretch'||!query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"on_entry": [
+						"/event entity @s shoot:wv_stretch",
+						"/effect @s resistance 2 255 true"
+					],
+					"transitions": [
+						{
+							"shooting": "1"
+						}
+					],
+					"on_exit": [
+						"variable.bullet_fire=query.life_time;"
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_bw_howl": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bw_howl'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:bw_howl"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bw_howl'&&query.is_using_item&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_bm_stretch": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bm_stretch'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:bm_stretch"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bm_stretch'&&query.is_using_item&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_bm_grapple": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bm_grapple'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.5"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:bm_grapple"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='bm_grapple'&&query.is_using_item&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_eyelaser": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_eyelaser2": "query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&query.is_sneaking"
+						},
+						{
+							"shoot_eyelaser": "query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&!query.is_sneaking"
+						}
+					]
+				},
+				"shoot_eyelaser": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:eyelaser"
+					]
+				},
+				"shoot_eyelaser2": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=1"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:eyelaser2"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot_eyelaser": "query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&!query.is_sneaking"
+						},
+						{
+							"shoot_eyelaser2": "query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&query.is_sneaking"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_eyefire": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='eyefire'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:eyefire"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='eyefire'&&query.is_using_item&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shoot_eyeice": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.2"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:arc_ice",
+						"/playsound random.fizz @s ~ ~ ~ 1 0.8"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item&&query.state_time>=0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

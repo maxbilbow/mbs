@@ -1,0 +1,103 @@
+//bridge-file-version: #86
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:arena5",
+			"is_experimental": false
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "arena",
+					"ambient_occlusion": false,
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.arena5",
+			"minecraft:selection_box": {
+				"origin": [
+					-4,
+					0,
+					-8
+				],
+				"size": [
+					12,
+					13,
+					12
+				]
+			},
+			"minecraft:collision_box": false
+
+
+		}
+	},
+	"format_version": "1.20.20"
+}

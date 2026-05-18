@@ -1,0 +1,59 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Euforia"
+		]
+	},
+	"header": {
+		"name": "Not Enough Golems",
+		"description": "Have fun!",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "fbaa7cdd-d421-47e6-92b0-89d11de3f3cf",
+		"version": [
+			1,
+			2,
+			10
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "5c31cec9-7161-455d-815d-013585ca4e12",
+			"version": [
+				1,
+				2,
+				10
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "40aebe11-6e79-41d0-8f40-8cbca2d59fb2",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				2,
+				10
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "9eb639b4-1580-4fdd-9488-9713e101652c",
+			"version": [
+				1,
+				2,
+				10
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.7.0-beta"
+		}
+	]
+}

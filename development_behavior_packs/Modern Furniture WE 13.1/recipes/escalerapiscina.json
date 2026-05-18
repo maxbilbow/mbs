@@ -1,0 +1,23 @@
+//bridge-file-version: #339
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:escalerapiscina"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:escalerapiscina",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

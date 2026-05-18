@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:crimson_fungus_feature_rule",
+			"places_feature": "daniye:crimson_fungus_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "equals",
+					"value": "crimson_forest"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 32,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					32,
+					120
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

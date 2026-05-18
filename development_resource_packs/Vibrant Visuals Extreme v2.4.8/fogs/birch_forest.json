@@ -1,0 +1,56 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "rg:birch_forest"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.7629,
+        "fog_end": 0.99,
+        "fog_color": "#ADD1FF",
+        "render_distance_type": "render"
+      },
+      "water": {
+        "fog_start": 0.6769,
+        "fog_end": 0.8329,
+        "fog_color": "#1E2A3D",
+        "render_distance_type": "render"
+      },
+      "weather": {
+        "fog_start": 0.9736,
+        "fog_end": 0.99,
+        "fog_color": "#322F31",
+        "render_distance_type": "render"
+      }
+    },
+    "volumetric": {
+      "density": {
+        "air": {
+          "max_density": 0.1982,
+          "uniform": false,
+          "max_density_height": 70.4698,
+          "zero_density_height": 96.478
+        },
+        "water": {
+          "max_density": 0.3705,
+          "uniform": true
+        },
+        "weather": {
+          "max_density": 0.6051,
+          "uniform": true
+        }
+      },
+      "media_coefficients": {
+        "air": {
+          "scattering": [0.0403, 0.04, 0.0392],
+          "absorption": [0.0864, 0.0836, 0.0816]
+        },
+        "water": {
+          "scattering": [0.0096, 0.0607, 0.0309],
+          "absorption": [0.0155, 0.0, 0.0049]
+        }
+      }
+    }
+  }
+}

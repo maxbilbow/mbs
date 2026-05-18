@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spired_jungle/spired_jungle_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:spired_jungle/spired_jungle_spruce_weighted",
+				2
+			],
+			[
+				"vanilla_biomes_expansion:spired_jungle/spired_jungle_pine_weighted",
+				8
+			]
+		]
+	}
+}

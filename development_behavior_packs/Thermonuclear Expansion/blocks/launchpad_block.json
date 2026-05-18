@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:launchpad_block",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:display_name": "Launchpad Block",
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1000
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 1
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/launchpad_block.json"
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.alfombra",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-15, 0, -15],
+							"size": [30, 1, 30],
+							"uv": {
+								"north": {"uv": [49, 38], "uv_size": [30, 1]},
+								"east": {"uv": [50, 8], "uv_size": [-1, 30], "uv_rotation": 270},
+								"south": {"uv": [49, 7], "uv_size": [30, 1], "uv_rotation": 180},
+								"west": {"uv": [78, 8], "uv_size": [1, 30], "uv_rotation": 90},
+								"up": {"uv": [49, 8], "uv_size": [30, 30]},
+								"down": {"uv": [85, 30], "uv_size": [30, -30]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

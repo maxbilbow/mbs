@@ -1,0 +1,92 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "eu:thrown_brainrot_bomb",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:thrown_trident"
+		},
+		"component_groups": {
+			"eu:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"eu:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"breaks_blocks": false,
+					"fuse_lit": true,
+					"power": 1,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							5,
+							10
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": true
+					}
+					//"definition_event": {
+					//	"affect_projectile": true,
+					//	"event_trigger": {
+					//		"event": "eu:explode",
+					//		"target": "self"
+					//	}
+					//},
+					//"remove_on_hit": {},
+					/*Ahora las particulas las genero mediante scripts 					
+					"particle_on_hit": {
+						"particle_type": "hugeexplosion",
+						"num_particles": 1,
+						"on_entity_hit": true,
+						"on_other_hit": true
+					} */
+				},
+				"anchor": 1,
+				"power": 1.5,
+				"gravity": 0.03,
+				"destroy_on_hurt": true,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"eu:thrown_bomb": {
+				"add": {
+					"component_groups": [
+						"eu:instant_despawn"
+					]
+				}
+			},
+			"eu:explode": {
+				"add": {
+					"component_groups": [
+						"eu:exploding"
+					]
+				}
+			}
+		}
+	}
+}

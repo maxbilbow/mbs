@@ -1,0 +1,23 @@
+//bridge-file-version: #106
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:gasolina_azul"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajagaraje"
+			}
+		],
+		"result": [
+			{
+				"item": "f:gasolina_azul",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

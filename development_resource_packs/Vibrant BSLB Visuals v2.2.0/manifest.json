@@ -1,0 +1,43 @@
+﻿{
+  "format_version": 2,
+  "header": {
+    "name": "BSL Shaders Bedrock - Classic v2.2",
+    "description": "BSL Shaders is a Vibrant Visuals Pack for Minecraft Bedrock.",
+    "uuid": "bf3ba58b-1caa-4746-806e-6195b6bd785d",
+    "version": [2, 2, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "BSL Shaders Bedrock - Classic (Vibrant Visuals) Module",
+      "type": "resources",
+      "uuid": "7ab89cff-cf4e-4fb4-9a5f-0b365cac3c6a",
+      "version": [2, 2, 0]
+    }
+  ],
+  "capabilities": [
+    "pbr"
+  ],
+  "subpacks": [
+    {
+      "folder_name": "bl",
+      "name": "BLOCKY Clouds[RESOLUTION LOW]",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "bh",
+      "name": "BLOCKY Clouds[RESOLUTION HIGH]",
+      "memory_tier": 2
+    },
+    {
+      "folder_name": "vl",
+      "name": "VANILLA Clouds[RESOLUTION LOW]",
+      "memory_tier": 3
+    },
+    {
+      "folder_name": "vh",
+      "name": "VANILLA Clouds[RESOLUTION HIGH]",
+      "memory_tier": 4
+    }
+  ]
+}

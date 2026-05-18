@@ -1,0 +1,25 @@
+//bridge-file-version: #54
+{
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "f:manual"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			" A"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:paper"
+			}
+		},
+		"result": {
+			"item": "f:manual",
+			"count": 1
+		}
+	},
+	"format_version": "1.17.0"
+}

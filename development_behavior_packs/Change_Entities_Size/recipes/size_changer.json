@@ -1,0 +1,39 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "douarmc_change_entities_size:size_changer"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [
+            "BEB",
+            "ERE",
+            "BEB"
+        ],
+        "key": {
+            "B": {
+                "item": "minecraft:quartz_block"
+            },
+            "E": {
+                "item": "minecraft:emerald"
+            },
+            "R": {
+                "item": "minecraft:redstone"
+            }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:quartz_block"
+            },
+            {
+                "item": "minecraft:emerald"
+            },
+            {
+                "item": "minecraft:redstone"
+            }
+        ],
+        "result": {
+            "item": "douarmc_change_entities_size:size_changer"
+        }
+    }
+}

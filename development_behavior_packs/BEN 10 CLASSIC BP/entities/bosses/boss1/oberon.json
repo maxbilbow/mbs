@@ -1,0 +1,1488 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cso:oberon",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"scripts": {
+				"animate": [
+					"root",
+					"test",
+					"not_walk",
+					"walk",
+					"hurt"
+				]
+			},
+			"animations": {
+				"root": "controller.animation.oberon.root",
+				"test": "controller.animation.oberon.test",
+				"walk": "controller.animation.oberon.walk",
+				"not_walk": "controller.animation.oberon.not_walk",
+				"obeball_dummy": "animation.oberon.obeball_dummy",
+				"oberon_bite": "animation.oberon.bite",
+				"oberon_clap": "animation.oberon.clap"
+			},
+			"properties": {
+				"cso:state": {
+					"client_sync": true,
+					"type": "enum",
+					"values": [
+						"spawning",
+						"spawned",
+						"dying"
+					],
+					"default": "spawning"
+				},
+				"cso:attack_state": {
+					"client_sync": true,
+					"type": "enum",
+					"values": [
+						"backfist",
+						"instakill",
+						"ground_smash",
+						"charge_spin",
+						"jump_slam",
+						"cannon_ball",
+						"cooldown"
+					],
+					"default": "backfist"
+				},
+				"cso:rage_state": {
+					"client_sync": true,
+					"type": "enum",
+					"values": [
+						"none",
+						"raging",
+						"raged"
+					],
+					"default": "none"
+				}
+			}
+		},
+		"component_groups": {
+			"cso:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"cso:oberon.spawning": {
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.ai",
+						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "fire_resistance",
+							"amplifier": 255,
+							"duration": 30,
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.ai": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "ball"
+								}
+							},
+							"deals_damage": false
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "!=",
+											"value": "warden"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "!=",
+											"value": "irongolem"
+										}
+									]
+								},
+								"event": "cso:oberon.blood",
+								"target": "self"
+							}
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_damage",
+											"operator": "==",
+											"value": "void"
+										}
+									]
+								},
+								"event": "cso:oberon.blood",
+								"target": "self"
+							},
+							"damage_multiplier": 10
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "==",
+											"value": "warden"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "==",
+											"value": "irongolem"
+										}
+									]
+								},
+								"event": "cso:oberon.blood",
+								"target": "self"
+							},
+							"damage_multiplier": 0.3
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "!=",
+											"value": "boss1"
+										},
+										{
+											"test": "has_damage",
+											"operator": "!=",
+											"value": "fatal"
+										}
+									]
+								},
+								"event": "cso:oberon.blood",
+								"target": "self"
+							}
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"test": "enum_property",
+									"domain": "cso:attack_state",
+									"value": "cannon_ball"
+								}
+							},
+							"deals_damage": false
+						},
+						{
+							"cause": "fall",
+							"deals_damage": false
+						},
+						{
+							"cause": "drowning",
+							"deals_damage": false
+						},
+						{
+							"cause": "suffocation",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:behavior.move_towards_target": {
+					"priority": 2,
+					"speed_multiplier": 1.25,
+					"within_radius": 350
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 3,
+					"speed_multiplier": 0.6,
+					"xz_dist": 16
+				},
+				"minecraft:behavior.look_at_player": {
+					"priority": 7,
+					"look_distance": 6,
+					"probability": 0.02
+				},
+				"minecraft:movement": {
+					"value": 0.5
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.4
+				},
+				"minecraft:lava_movement": {
+					"value": 0.2
+				},
+				"minecraft:movement.amphibious": {},
+				"minecraft:max_auto_step": {
+					"value": 2.5
+				},
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_float": true,
+					"can_path_over_lava": false,
+					"can_path_over_water": true,
+					"can_path_from_air": true,
+					"can_swim": true,
+					"can_walk": true,
+					"can_breach": true,
+					"can_sink": true,
+					"can_walk_in_lava": true,
+					"can_open_doors": true,
+					"can_open_iron_doors": true,
+					"can_pass_doors": true,
+					"avoid_damage_blocks": true
+				},
+				"minecraft:jump.static": {
+					"jump_power": 0.5
+				},
+				"minecraft:can_climb": {},
+				"minecraft:follow_range": {
+					"value": 350,
+					"max": 350
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 0,
+					"alert_same_type": false,
+					"hurt_owner": false,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "boss1"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "monster"
+									}
+								]
+							}
+						}
+					]
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"reselect_targets": true,
+					"must_see": false,
+					"must_see_forget_duration": 9999,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "alien"
+											}
+										]
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "boss1"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "monster"
+									}
+								]
+							},
+							"max_dist": 350
+						}
+					]
+				},
+				"minecraft:breathable": {
+					"total_supply": 240,
+					"suffocate_time": 0,
+					"breathes_air": true,
+					"breathes_water": true,
+					"generates_bubbles": false
+				}
+			},
+			"cso:oberon.attack.backfist.rage": {
+				"minecraft:collision_box": {
+					"width": 3,
+					"height": 6
+				},
+				"minecraft:attack": {
+					"damage": 19,
+					"effect_name": "wither",
+					"effect_duration": 10
+				},
+				"minecraft:movement": {
+					"value": 0.38
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 24
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 1,
+					"attack_duration": 0.8,
+					"hit_delay_pct": 0.25,
+					"attack_once": false,
+					"reach_multiplier": 2.8,
+					"require_complete_path": false,
+					"track_target": true,
+					"min_path_time": 1,
+					"max_path_time": 2
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 6,
+					"outside_range": 150,
+					"must_see": false,
+					"on_outside_range": {
+						"event": "cso:oberon.switch_to_jump_slam_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"time": [
+						1.5,
+						3
+					],
+					"looping": true,
+					"randomInterval": true,
+					"time_down_event": {
+						"filters": {
+							"test": "has_target",
+							"subject": "self",
+							"value": true
+						},
+						"event": "cso:oberon.switch_to_random_attack_raged",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": [
+						"slowness"
+					]
+				}
+			},
+			"cso:oberon.attack.backfist": {
+				"minecraft:collision_box": {
+					"width": 3,
+					"height": 6
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "enum_property",
+										"domain": "cso:rage_state",
+										"value": "raged"
+									}
+								]
+							},
+							"event": "cso:oberon.switch_to_backfist.rage"
+						}
+					]
+				},
+				"minecraft:attack": {
+					"damage": 13
+				},
+				"minecraft:movement": {
+					"value": 0.38
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 24
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 1,
+					"attack_duration": 0.9,
+					"hit_delay_pct": 0.25,
+					"attack_once": false,
+					"reach_multiplier": 2.5,
+					"require_complete_path": false,
+					"track_target": true,
+					"min_path_time": 1,
+					"max_path_time": 2
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 6,
+					"outside_range": 150,
+					"must_see": false,
+					"on_outside_range": {
+						"event": "cso:oberon.switch_to_jump_slam_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"time": [
+						2,
+						4
+					],
+					"looping": true,
+					"randomInterval": true,
+					"time_down_event": {
+						"filters": {
+							"test": "has_target",
+							"subject": "self",
+							"value": true
+						},
+						"event": "cso:oberon.switch_to_random_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": [
+						"slowness"
+					]
+				}
+			},
+			"cso:oberon.attack.ground_smash": {
+				"minecraft:timer": {
+					"time": 2.5,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 0
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 1,
+					"cooldown_time": 8,
+					"duration": 1,
+					"knockback_range": 5,
+					"knockback_damage": 27,
+					"knockback_horizontal_strength": 4,
+					"knockback_vertical_strength": 4,
+					"knockback_height_cap": 5,
+					"on_roar_end": {
+						"event": "cso:oberon.attack.ground_smash_particle"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.attack.uppercut": {
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:timer": {
+					"time": 2.7,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 0
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.5,
+					"cooldown_time": 8,
+					"duration": 1.65,
+					"knockback_range": 3,
+					"knockback_damage": 15,
+					"knockback_horizontal_strength": 0.99,
+					"knockback_vertical_strength": 3.96,
+					"knockback_filters": {
+						"test": "has_tag",
+						"subject": "other",
+						"operator": "==",
+						"value": "uppercut"
+					},
+					"knockback_height_cap": 3.96,
+					"on_roar_end": {
+						"event": "cso:oberon.attack.uppercut_particle"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.attack.instakill": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 2.7,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 0
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.5,
+					"cooldown_time": 8,
+					"duration": 1.3,
+					"knockback_range": 3,
+					"knockback_damage": 0,
+					"knockback_horizontal_strength": -1.7,
+					"knockback_vertical_strength": 3.7,
+					"knockback_filters": {
+						"test": "has_tag",
+						"subject": "other",
+						"operator": "==",
+						"value": "instakill"
+					},
+					"knockback_height_cap": 3.7,
+					"on_roar_end": {
+						"event": "cso:oberon.attack.instakill_particle"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.attack.cannon_ball": {
+				"minecraft:movement.generic": {
+					"max_turn": 1
+				},
+				"minecraft:timer": {
+					"time": 9.46,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:collision_box": {
+					"width": 3,
+					"height": 6
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				},
+				"minecraft:shooter": {
+					"def": "cso:obeball"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 2.35,
+					"attack_radius": 64,
+					"burst_shots": 6
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 64,
+					"outside_range": 65,
+					"must_see": false
+				}
+			},
+			"cso:oberon.attack.charge_spin_start": {
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.attack.charge_spin_end",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 0.5,
+					"attack_time": 0.1,
+					"knockback_damage": 0,
+					"knockback_horizontal_strength": -5,
+					"knockback_vertical_strength": -3,
+					"knockback_range": 150,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "boss1"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "monster"
+							}
+						]
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.attack.charge_spin_end": {
+				"minecraft:timer": {
+					"time": 1.75,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 2,
+					"attack_time": 0.1,
+					"knockback_damage": 25,
+					"knockback_horizontal_strength": 7,
+					"knockback_vertical_strength": 10,
+					"knockback_range": 30,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "boss1"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "monster"
+							}
+						]
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.attack.jump_slam_start": {
+				"minecraft:timer": {
+					"time": 2.2,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.attack.jump_slam_end",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 1
+				},
+				"minecraft:movement": {
+					"value": 0
+				}
+			},
+			"cso:oberon.attack.jump_slam_end": {
+				"minecraft:timer": {
+					"time": 1.4,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.switch_to_backfist",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.1,
+					"cooldown_time": 0,
+					"duration": 1.4,
+					"knockback_range": 13,
+					"knockback_horizontal_strength": 7,
+					"knockback_vertical_strength": 6,
+					"knockback_height_cap": 10
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 1
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.is_dying": {
+				"minecraft:type_family": {
+					"family": [
+						"none"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 3,
+					"height": 6
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0.3,
+							"max_wait_time": 0.3,
+							"single_use": false,
+							"spawn_entity": "xp_orb",
+							"num_to_spawn": 35
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 12,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:instant_despawn",
+						"target": "self"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 0
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"amplifier": 255,
+							"duration": 99999,
+							"effect": "slowness",
+							"visible": false
+						}
+					]
+				}
+			},
+			"cso:oberon.start_rage": {
+				"minecraft:timer": {
+					"time": 8.6,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:oberon.is_raged",
+						"target": "self"
+					}
+				},
+				"minecraft:movement.generic": {
+					"max_turn": 1
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "ball"
+								}
+							},
+							"deals_damage": false
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"test": "enum_property",
+									"domain": "cso:attack_state",
+									"value": "cannon_ball"
+								}
+							},
+							"deals_damage": false
+						},
+						{
+							"cause": "fall",
+							"deals_damage": false
+						},
+						{
+							"cause": "all",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "regeneration",
+							"amplifier": 150,
+							"duration": 8.5,
+							"visible": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:loot": {
+				"table": "loot_tables/entities/hostile/oberon.json"
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_difficulty",
+									"operator": "==",
+									"value": "peaceful"
+								}
+							]
+						},
+						"event": "cso:instant_despawn_diff"
+					}
+				]
+			},
+			"minecraft:boss": {
+				"hud_range": 64,
+				"name": "Oberon",
+				"should_darken_sky": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"hostile",
+					"monster",
+					"oberon",
+					"zombie",
+					"alien",
+					"cso",
+					"mob",
+					"boss1"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 3,
+				"height": 6
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 5,
+						"height": 7,
+						"pivot": [
+							0,
+							3.5,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:health": {
+				"value": 30001,
+				"max": 30001,
+				"min": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:tick_world": {
+				"never_despawn": true,
+				"radius": 2
+			}
+		},
+		"events": {
+			"cso:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"cso:instant_despawn"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"fog @a remove red",
+						"music stop"
+					]
+				}
+			},
+			"cso:instant_despawn_diff": {
+				"add": {
+					"component_groups": [
+						"cso:instant_despawn"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"fog @a remove red",
+						"music stop"
+					]
+				}
+			},
+			"cso:oberon.pre_ai": {
+				"set_property": {
+					"cso:state": "'spawning'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.spawning"
+					]
+				}
+			},
+			"cso:oberon.ai": {
+				"set_property": {
+					"cso:state": "'spawned'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.ai",
+						"cso:oberon.attack.backfist"
+					]
+				}
+			},
+			"cso:oberon.is_dying": {
+				"set_property": {
+					"cso:state": "'dying'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.is_dying"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.ai",
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.cannon_ball",
+						"cso:oberon.attack.jump_slam_start",
+						"cso:oberon.attack.jump_slam_end",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				}
+			},
+			"cso:oberon.switch_to_random_attack_raged": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"operator": "<",
+									"value": 3
+								},
+								{
+									"test": "is_family",
+									"subject": "target",
+									"operator": "==",
+									"value": "player"
+								}
+							]
+						},
+						"randomize": [
+							{
+								"weight": 100,
+								"trigger": "cso:oberon.switch_to_instakill"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					},
+					{
+						"filters": {
+							"test": "target_distance",
+							"operator": ">",
+							"value": 4
+						},
+						"randomize": [
+							{
+								"weight": 40,
+								"trigger": "cso:oberon.switch_to_ground_smash"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:oberon.attack.charge_spin_start"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					},
+					{
+						"filters": {
+							"test": "target_distance",
+							"operator": ">=",
+							"value": 8
+						},
+						"randomize": [
+							{
+								"weight": 50,
+								"trigger": "cso:oberon.switch_to_cannon_ball"
+							},
+							{
+								"weight": 8,
+								"trigger": "cso:oberon.attack.charge_spin_start"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					}
+				]
+			},
+			"cso:oberon.switch_to_random_attack": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"operator": "<",
+									"value": 3
+								},
+								{
+									"test": "is_family",
+									"subject": "target",
+									"operator": "==",
+									"value": "player"
+								}
+							]
+						},
+						"randomize": [
+							{
+								"weight": 100,
+								"trigger": "cso:oberon.switch_to_uppercut"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					},
+					{
+						"filters": {
+							"test": "target_distance",
+							"operator": ">",
+							"value": 4
+						},
+						"randomize": [
+							{
+								"weight": 40,
+								"trigger": "cso:oberon.switch_to_ground_smash"
+							},
+							{
+								"weight": 10,
+								"trigger": "cso:oberon.attack.charge_spin_start"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					},
+					{
+						"filters": {
+							"test": "target_distance",
+							"operator": ">=",
+							"value": 8
+						},
+						"randomize": [
+							{
+								"weight": 50,
+								"trigger": "cso:oberon.switch_to_cannon_ball"
+							},
+							{
+								"weight": 8,
+								"trigger": "cso:oberon.attack.charge_spin_start"
+							},
+							{
+								"weight": 5,
+								"trigger": "cso:empty"
+							}
+						]
+					}
+				]
+			},
+			"cso:oberon.switch_to_cooldown": {
+				"set_property": {
+					"cso:attack_state": "'cooldown'"
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.cannon_ball",
+						"cso:oberon.attack.jump_slam_start",
+						"cso:oberon.attack.jump_slam_end",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				}
+			},
+			"cso:oberon.switch_to_backfist": {
+				"set_property": {
+					"cso:attack_state": "'backfist'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.backfist"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.cannon_ball"
+					]
+				}
+			},
+			"cso:oberon.switch_to_backfist.rage": {
+				"set_property": {
+					"cso:attack_state": "'backfist'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.backfist.rage"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.cannon_ball"
+					]
+				}
+			},
+			"cso:oberon.switch_to_ground_smash": {
+				"set_property": {
+					"cso:attack_state": "'ground_smash'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.ground_smash"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.cannon_ball",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				}
+			},
+			"cso:oberon.switch_to_instakill": {
+				"set_property": {
+					"cso:attack_state": "'instakill'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.instakill"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.cannon_ball",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"tag @a[r=4,c=1] add instakill"
+					]
+				}
+			},
+			"cso:oberon.switch_to_uppercut": {
+				"set_property": {
+					"cso:attack_state": "'instakill'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.uppercut"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.cannon_ball",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"tag @a[r=4,c=1] add uppercut"
+					]
+				}
+			},
+			"cso:oberon.blood": {
+				"queue_command": {
+					"command": [
+						"particle azoz:blood ~~4~"
+					]
+				}
+			},
+			"cso:oberon.attack.ground_smash_particle": {
+				"queue_command": {
+					"command": [
+						"particle oberon:hit2 ^-1.3^^3.3",
+						"playsound entity.oberon.smashing @a ~~~ 4.5",
+						"camerashake add @a[r=13] 0.8 4 positional",
+						"scoreboard players random @a[r=8] oberon 1 5",
+						"execute as @a[scores={oberon=5},r=8] run replaceitem entity @s slot.weapon.mainhand 1 air",
+						"execute as @a[scores={oberon=5},r=8] run scoreboard players set @s oberon 0"
+					]
+				}
+			},
+			"cso:oberon.attack.instakill_particle": {
+				"queue_command": {
+					"command": [
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"execute at @a[tag=instakill] run particle azoz:blood ~~~",
+						"function oberon_eat_death",
+						"kill @a[tag=instakill]",
+						"tag @a remove instakill"
+					]
+				}
+			},
+			"cso:oberon.attack.uppercut_particle": {
+				"queue_command": {
+					"command": [
+						"execute as @p[tag=uppercut] run camerashake add @s 0.34 8 rotational",
+						"execute as @p[tag=uppercut] run effect @s nausea 10 24",
+						"execute at @p[tag=uppercut] run particle oberon:clap ~~~",
+						"execute at @p[tag=uppercut] run particle azoz:blood ~~~",
+						"execute at @p[tag=uppercut] run particle azoz:blood ~~~",
+						"execute at @p[tag=uppercut] run particle azoz:blood ~~~",
+						"damage @p[tag=uppercut] 25 none",
+						"tag @a remove uppercut"
+					]
+				}
+			},
+			"cso:oberon.switch_to_cannon_ball": {
+				"set_property": {
+					"cso:attack_state": "'cannon_ball'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.cannon_ball"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.jump_slam_start",
+						"cso:oberon.attack.jump_slam_end",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				}
+			},
+			"cso:oberon.switch_to_jump_slam_attack": {
+				"set_property": {
+					"cso:attack_state": "'jump_slam'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.jump_slam_start"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.charge_spin_start",
+						"cso:oberon.attack.charge_spin_end"
+					]
+				}
+			},
+			"cso:oberon.attack.jump_slam_end": {
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.jump_slam_end"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.jump_slam_start"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"damage @e[family=!boss1,family=!monster,rm=16,r=30] 48 entity_attack entity @s",
+						"damage @e[family=!boss1,family=!monster,r=15] 96 entity_attack entity @s",
+						"particle oberon:hit ^^0.1^3",
+						"camerashake add @a[r=13] 0.4 6 rotational",
+						"camerashake add @a[r=25,rm=13.1] 0.8 6 positional",
+						"playsound entity.oberon.super_smash @a ~~~ 10",
+						"tag @a remove jump_slam_target"
+					]
+				}
+			},
+			"cso:oberon.attack.charge_spin_start": {
+				"set_property": {
+					"cso:attack_state": "'charge_spin'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.charge_spin_start"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.backfist",
+						"cso:oberon.attack.backfist.rage",
+						"cso:oberon.attack.ground_smash",
+						"cso:oberon.attack.instakill",
+						"cso:oberon.attack.uppercut",
+						"cso:oberon.attack.charge_spin_end",
+						"cso:oberon.attack.jump_slam_end"
+					]
+				}
+			},
+			"cso:oberon.attack.charge_spin_end": {
+				"add": {
+					"component_groups": [
+						"cso:oberon.attack.charge_spin_end"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.attack.charge_spin_start"
+					]
+				}
+			},
+			"cso:oberon.start_rage": {
+				"set_property": {
+					"cso:rage_state": "'raging'"
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.start_rage"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.ai"
+					]
+				}
+			},
+			"cso:oberon.is_raged": {
+				"set_property": {
+					"cso:rage_state": "'raged'"
+				},
+				"remove": {
+					"component_groups": [
+						"cso:oberon.start_rage"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cso:oberon.ai"
+					]
+				}
+			}
+		}
+	}
+}

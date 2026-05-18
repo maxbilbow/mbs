@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:white_caves/white_caves_biome_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:white_caves/diorite_patch",
+			"vanilla_biomes_expansion:white_caves/diorite_ceiling_patch",
+			"vanilla_biomes_expansion:white_caves/calcite_scatter",
+			"vanilla_biomes_expansion:white_caves/calcite_ceiling_scatter"
+		],
+		"early_out": "none"
+	}
+}

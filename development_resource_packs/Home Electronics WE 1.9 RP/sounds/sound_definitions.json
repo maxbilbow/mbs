@@ -1,0 +1,11 @@
+{
+  "ui.toast.notification": {
+    "category": "ui",
+    "sounds": [
+     {
+        "name": "sounds/ui/toast/notification",
+        "load_on_low_memory": false
+      }
+    ]
+  }
+}

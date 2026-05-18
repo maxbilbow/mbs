@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "trinitite",
+		"metalness_emissive_roughness": "trinitite_mer",
+		"normal": "trinitite_normal"
+	}
+}

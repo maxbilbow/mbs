@@ -1,0 +1,65 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.arc_ice_hit": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"hit": "query.variant==1||query.is_in_water"
+						}
+					]
+				},
+				"hit": {
+					"on_entry": [
+						"/event entity @e[r=3,type=power:arc_ice2] despawn",
+						"/fill ~-3 ~-2 ~-3 ~3 ~4 ~3 ice replace water",
+						"/fill ~-3 ~-2 ~-3 ~3 ~4 ~3 ice replace flowing_water",
+						"/execute as @e[r=4,type=!power:arc_ice,type=!power:arc_ice2,family=!arctiguana,family=!npc,type=!item,c=1] at @s run summon power:arc_ice2 ~ ~ ~",
+						"/event entity @s despawn_event"
+					]
+				}
+			}
+		},
+		"controller.animation.arc_ice2_attk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melt": "query.variant==2"
+						},
+						{
+							"use": "1"
+						}
+					],
+					"on_entry": [
+						"/tp @e[type=!power:arc_ice2,family=!arctiguana,r=1.5,c=1] ~ ~ ~",
+						"/effect @e[type=!power:arc_ice2,family=!arctiguana,r=1.5,c=1] slowness 3 255 true",
+						"/effect @e[type=!power:arc_ice2,family=!arctiguana,r=1.5,c=1] wither 1 4 true"
+					]
+				},
+				"use": {
+					"transitions": [
+						{
+							"melt": "query.variant==2"
+						},
+						{
+							"default": "query.state_time>=1"
+						}
+					]
+				},
+				"melt": {
+					"on_entry": [
+						"/damage @e[type=!power:arc_ice2,family=!arctiguana,r=2,c=1] 15 entity_attack",
+						"/setblock ~ ~ ~ water",
+						"/playsound random.glass @a[r=5] ~ ~ ~ 1 1.2",
+						"/particle minecraft:snowballpoof ~ ~1 ~",
+						"/event entity @s despawn"
+					]
+				}
+			}
+		}
+	}
+}

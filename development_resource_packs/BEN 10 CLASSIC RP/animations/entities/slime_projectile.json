@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.slime_projectile": {
+			"loop": true,
+			"animation_length": 0.4,
+			"override_previous_animation": true,
+			"bones": {
+				"object": {
+					"scale": 0.5,
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							360,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

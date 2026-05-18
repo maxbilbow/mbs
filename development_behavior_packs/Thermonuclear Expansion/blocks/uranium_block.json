@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:uranium_block",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:light_emission": 4,
+			"minecraft:display_name": "Uranium Block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_uranium_block"
+				}
+			},
+			"minecraft:item_visual": {
+				"material_instances": {
+					"*": {
+						"texture": "kaboom_uranium_block",
+						"render_method": "opaque"
+					}
+				},
+				"geometry": {
+					"identifier": "minecraft:geometry.full_block"
+				}
+			},
+			"minecraft:geometry": {
+				"identifier": "minecraft:geometry.full_block"
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 1
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/uranium_block_loot.json"
+		}
+	}
+}

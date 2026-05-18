@@ -1,0 +1,54 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "bca:wooden_katana": {
+      "textures": "textures/items/moreweapons/wooden_katana"
+    },
+    "bca:golden_katana": {
+      "textures": "textures/items/moreweapons/golden_katana"
+    },
+    "bca:copper_katana": {
+      "textures": "textures/items/moreweapons/copper_katana"
+    },
+    "bca:emerald_katana": {
+      "textures": "textures/items/moreweapons/emerald_katana"
+    },
+    "bca:eclipse_katana": {
+      "textures": "textures/items/moreweapons/eclipse_katana"
+    },
+    "bca:stone_katana": {
+      "textures": "textures/items/moreweapons/stone_katana"
+    },
+    "bca:iron_katana": {
+      "textures": "textures/items/moreweapons/iron_katana"
+    },
+    "bca:diamond_katana": {
+      "textures": "textures/items/moreweapons/diamond_katana"
+    },
+    "bca:netherite_katana": {
+      "textures": "textures/items/moreweapons/netherite_katana"
+    },
+    "bca:wooden_dagger": {
+      "textures": "textures/items/moreweapons/wooden_dagger"
+    },
+    "bca:golden_dagger": {
+      "textures": "textures/items/moreweapons/golden_dagger"
+    },
+    "bca:copper_dagger": {
+      "textures": "textures/items/moreweapons/copper_dagger"
+    },
+    "bca:stone_dagger": {
+      "textures": "textures/items/moreweapons/stone_dagger"
+    },
+    "bca:iron_dagger": {
+      "textures": "textures/items/moreweapons/iron_dagger"
+    },
+    "bca:diamond_dagger": {
+      "textures": "textures/items/moreweapons/diamond_dagger"
+    },
+    "bca:netherite_dagger": {
+      "textures": "textures/items/moreweapons/netherite_dagger"
+    }
+  }
+}

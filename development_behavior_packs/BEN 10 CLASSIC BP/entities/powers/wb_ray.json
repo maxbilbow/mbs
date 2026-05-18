@@ -1,0 +1,54 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:wb_ray",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+			"scripts": {
+				"animate": [
+					"in_water"
+				]
+			},
+			"animations": {
+				"in_water": "controller.animation.in_water"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"projectile"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 2,
+				"height": 2
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"remove_on_hit": {}
+				},
+				"power": 1.5,
+				"gravity": 0,
+				"angleoffset": 0
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

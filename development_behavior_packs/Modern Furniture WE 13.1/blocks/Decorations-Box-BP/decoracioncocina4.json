@@ -1,0 +1,127 @@
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:decoracioncocina4",
+			"states": {
+				"custom:geometry": [
+					"full_1",
+					"empty"
+				]
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "cocina1"
+				}
+			},
+			"minecraft:geometry": "geometry.decoracioncocina4",
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-6
+				],
+				"size": [
+					16,
+					4,
+					12
+				]
+			},
+			"minecraft:custom_components": [
+				"content_mf:mf_breadstacker"
+			],
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'empty'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.decoracioncocina4",
+						"bone_visibility": {
+							"item_1": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_1'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.decoracioncocina4",
+						"bone_visibility": {
+							"item_1": "True"
+							
+						}
+					}
+				}
+			},
+			
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		]
+	},
+	"format_version": "1.20.20"
+}

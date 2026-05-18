@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "daniye:leaf_litters_feature"
+		},
+		"places_block": [
+			{
+				"block": {
+					"name": "minecraft:leaf_litter",
+					"states": {
+						"growth": 0
+					}
+				},
+				"weight": 1
+			},
+			{
+				"block": {
+					"name": "minecraft:leaf_litter",
+					"states": {
+						"growth": 1
+					}
+				},
+				"weight": 1
+			},
+			{
+				"block": {
+					"name": "minecraft:leaf_litter",
+					"states": {
+						"growth": 2
+					}
+				},
+				"weight": 1
+			},
+			{
+				"block": {
+					"name": "minecraft:leaf_litter",
+					"states": {
+						"growth": 3
+					}
+				},
+				"weight": 1
+			}
+		],
+		"randomize_rotation": true,
+		"enforce_survivability_rules": true,
+		"enforce_placement_rules": true,
+		"may_replace": [
+			"minecraft:air"
+		]
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pak_rahmat_ma_mat.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"attack": "variable.attack_time > 0.0"
+						}
+					]
+				},
+				"attack": {
+					"blend_transition": 0.2,
+					"on_entry": [
+						"v.random=math.random_integer(1,2);"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time <= 0.0"
+						}
+					],
+					"animations": [
+						{
+							"attack": "v.random==1"
+						},
+						{
+							"attack2": "v.random==2"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.pak_rahmat_ma_mat.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"moving": "query.ground_speed>=0.1"
+						}
+					],
+					"animations": [
+						"idle"
+					]
+				},
+				"moving": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.ground_speed<0.1"
+						}
+					],
+					"animations": [
+						"walk"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,366 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.oberon.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"spawning": "q.property('cso:state')=='spawning'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'"
+						},
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"spawning": {
+					"animations": [
+						"spawn"
+					],
+					"transitions": [
+						{
+							"idle": "q.any_animation_finished&&q.property('cso:state')=='spawned'"
+						},
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle": {
+					"animations": [
+						{
+							"idle": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_idle": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"backfist_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.is_delayed_attacking"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"walking": "v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"walking": {
+					"animations": [
+						{
+							"walking": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_walking": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"backfist_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.is_delayed_attacking"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"idle": "!v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"backfist_attack": {
+					"animations": [
+						{
+							"swing": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_attack1": "q.property('cso:rage_state')=='raged'&&v.claw_attack"
+						},
+						{
+							"claw_attack2": "q.property('cso:rage_state')=='raged'&&!v.claw_attack"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.any_animation_finished&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.any_animation_finished&&v.is_walking"
+						}
+					],
+					"on_entry": [
+						"v.claw_attack=(v.claw_attack??0)>=1?0:1;"
+					],
+					"blend_transition": 0.1
+				},
+				"ground_smash_attack": {
+					"animations": [
+						{
+							"smashing": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_smashing": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='ground_smash'&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='ground_smash'&&v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"instakill_attack": {
+					"animations": [
+						{
+							"instakill_attack": "q.property('cso:rage_state')=='raged'"
+						},
+						{
+							"instakill_attack2": "q.property('cso:rage_state')!='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='instakill'&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='instakill'&&v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"charge_spin_attack": {
+					"animations": [
+						{
+							"spin": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_spin": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='charge_spin'&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='charge_spin'&&v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"jump_slam_attack": {
+					"animations": [
+						{
+							"super_smash": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_super_smash": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"cannon_ball_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='jump_slam'&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='jump_slam'&&v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"cannon_ball_attack": {
+					"animations": [
+						{
+							"bombard": "q.property('cso:rage_state')!='raged'"
+						},
+						{
+							"claw_bombard": "q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"transitions": [
+						{
+							"dying": "q.property('cso:state')=='dying'"
+						},
+						{
+							"rage": "q.property('cso:state')=='spawned'&&q.property('cso:rage_state')=='raging'"
+						},
+						{
+							"ground_smash_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='ground_smash'"
+						},
+						{
+							"instakill_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='instakill'"
+						},
+						{
+							"charge_spin_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"jump_slam_attack": "q.property('cso:state')=='spawned'&&q.has_target&&q.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"idle": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='cannon_ball'&&!v.is_walking"
+						},
+						{
+							"walking": "q.property('cso:state')=='spawned'&&q.property('cso:attack_state')!='cannon_ball'&&v.is_walking"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"rage": {
+					"animations": [
+						"claw"
+					],
+					"transitions": [
+						{
+							"idle": "q.all_animations_finished&&q.property('cso:rage_state')=='raged'"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"dying": {
+					"animations": [
+						"death"
+					],
+					"blend_transition": 0.1
+				}
+			}
+		}
+	}
+}

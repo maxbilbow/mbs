@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.fire": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": [
+						"/particle minecraft:mobflame_single ~ ~ ~",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace leaves",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace leaves2",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace tallgrass"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/particle minecraft:mobflame_single ~ ~ ~",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace leaves",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace leaves2",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 fire [] replace tallgrass"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.book2.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [25, 0, 0],
+					"position": [0.5, 19, -2.5],
+					"scale": 0.85
+				}
+			}
+		},
+		"animation.book2.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [25.9913, 44.23243, -116.05091],
+					"position": [-3, 24, -1]
+				}
+			}
+		}
+	}
+}

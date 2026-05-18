@@ -1,0 +1,23 @@
+//bridge-file-version: #34
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "he:nintendo_ds4"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "he:caja_consola"
+			}
+		],
+		"result": [
+			{
+				"item": "he:nintendo_ds4",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

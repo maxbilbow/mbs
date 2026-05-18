@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Rohan"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "BEN 10 CLASSIC",
+		"description": "Please Subscribe [MCPE Addon & Mods] on YouTube for more addons.",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "3349d3d3-ea90-4b73-a86b-80fe55d8e461",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "a85a340f-63cb-4eb7-aa0a-39b1c5be538e",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "c6df96be-de1f-4ab5-baf7-b132a8c2e37d",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

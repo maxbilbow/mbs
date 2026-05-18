@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spired_jungle/spired_jungle_spruce_3_feature"
+		},
+		"structure_name": "mystructure:spired_jungle_spruce3",
+		"adjustment_radius": 1,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:jungle_leaves",
+					"minecraft:vine"
+				]
+			}
+		}
+	}
+}

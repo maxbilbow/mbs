@@ -1,0 +1,969 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:crafting_items_catalog": {
+      "categories": [
+         {
+            "category_name": "construction",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "f:brnegro",
+                     "name": "f:itemGroup.name.blocks"
+                  },
+                  "items": [
+                     "f:bladrillosnegro",
+                     "f:bladrillosblanco",
+                     "f:bladrillosblancocontraste",
+                     "f:bcuarzonegro",
+                     "f:brnegro",
+                     "f:bloquecuarzo",
+                     "f:bnegro",
+                     "f:bladrillosdiorita",
+                     "f:bladrillosgranito",
+                     "f:bladrillosandesita",
+                     "f:bmosaico",
+                     "f:azulejos",
+                     "f:bladrillos_marron_blanco",
+                     "f:bloquecuarzo-verde",
+                     "f:bloquecuarzo-azul",
+                     "f:bloquecuarzo-naranja",
+                     "f:bloquecuadros",
+                     "f:bmadera1",
+                     "f:bmadera2",
+                     "f:bmadera3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:brnegro_escalera",
+                     "name": "f:itemGroup.name.stairs"
+                  },
+                  "items": [
+                     "f:bladrillosnegro_escalera",
+                     "f:bladrillosblanco_escalera",
+                     "f:bladrillosblancocontraste_escalera",
+                     "f:bcuarzonegro_escalera",
+                     "f:brnegro_escalera",
+                     "f:bloquecuarzo_escalera",
+                     "f:bnegro_escalera",
+                     "f:bladrillosdiorita_escalera",
+                     "f:bladrillosgranito_escalera",
+                     "f:bladrillosandesita_escalera",
+                     "f:bmosaico_escalera",
+                     "f:bladrillos_marron_blanco_escalera"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:brnegro_eslab",
+                     "name": "f:itemGroup.name.slabs"
+                  },
+                  "items": [
+                     "f:bladrillosnegro_eslab",
+                     "f:bladrillosblanco_eslab",
+                     "f:bladrillosblancocontraste_eslab",
+                     "f:bcuarzonegro_eslab",
+                     "f:brnegro_eslab",
+                     "f:bloquecuarzo_eslab",
+                     "f:bnegro_eslab",
+                     "f:bladrillosdiorita_eslab",
+                     "f:bladrillosgranito_eslab",
+                     "f:bladrillosandesita_eslab",
+                     "f:bmosaico_eslab",
+                     "f:bladrillos_marron_blanco_eslab"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:palos1-2",
+                     "name": "f:itemGroup.name.divididores"
+                  },
+                  "items": [
+                     "f:palos1-2",
+                     "f:palos2-1",
+                     "f:palos3-2",
+                     "f:palos1-1",
+                     "f:palos2-2",
+                     "f:palos3-1"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:cocina5",
+                     "name": "f:itemGroup.name.cocinas"
+                  },
+                  "items": [
+                     "f:cocina5",
+                     "f:cocina4",
+                     "f:cocina6",
+                     "f:cocina7",
+                     "f:cocina8",
+                     "f:cocina9",
+                     "f:cocina12",
+                     "f:cocina14",
+                     "f:cocina15",
+                     "f:cocina17",
+                     "f:cocina18",
+                     "f:cocina19",
+                     "f:cocina21"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:pbarra_bano_rojo",
+                     "name": "f:itemGroup.name.banos"
+                  },
+                  "items": [
+                     "f:pbarra_bano_rojo",
+                     "f:puerta_bano_rojo",
+                     "f:pbarra_bano_azul",
+                     "f:puerta_bano_azul",
+                     "f:pbarra_bano_negro",
+                     "f:puerta_bano_negro"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:chim1",
+                     "name": "f:itemGroup.name.fireplace"
+                  },
+                  "items": [
+                     "f:chim1",
+                     "f:chim2",
+                     "f:chim3",
+                     "f:chim4",
+                     "f:chim5",
+                     "f:chim6"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:chim1-2-off",
+                     "name": "f:itemGroup.name.chimney_off"
+                  },
+                  "items": [
+                     "f:chim1-2-off",
+                     "f:chim2-2-off",
+                     "f:chim3-2-off",
+                     "f:chim4-2-off",
+                     "f:chim5-2-off",
+                     "f:chim6-2-off"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:chim1-3",
+                     "name": "f:itemGroup.name.grill"
+                  },
+                  "items": [
+                     "f:chim1-3",
+                     "f:chim2-3",
+                     "f:chim3-3",
+                     "f:chim4-3",
+                     "f:chim5-3",
+                     "f:chim6-3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:vallablanca1",
+                     "name": "f:itemGroup.name.vallas"
+                  },
+                  "items": [
+                     "f:valla1",
+                     "f:vallablanca1",
+                     "f:modern-fence3",
+                     "f:modular_fence_modern1"
+                     
+                  ]
+               }
+            ]
+         },
+         {
+            "category_name": "items",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "f:cajamesa",
+                     "name": "f:itemGroup.name.boxes"
+                  },
+                  "items": [
+                     "f:cajaalfombra",
+                     "f:cajalampara",
+                     "f:cajalibreria",
+                     "f:cajamesa",
+                     "f:cajacocina",
+                     "f:cajaconducto",
+                     "f:cajasilla",
+                     "f:cajabloque",
+                     "f:cajacuadro",
+                     "f:cajabano",
+                     "f:cajadecoracion",
+                     "f:cajafestiva",
+                     "f:cajasofa",
+                     "f:cajagaraje"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:regalo_grande_1",
+                     "name": "f:itemGroup.name.gifts"
+                  },
+                  "items": [
+                     "f:regalo_negro",
+                     "f:regalo_amarillo",
+                     "f:regalo_morado",
+                     "f:regalo_mora",
+                     "f:regalo_azul",
+                     "f:regalo_rojo",
+                     "f:regalo_blanco",
+                     "f:regalo_naranja",
+                     "f:regalo_grande_1",
+                     "f:regalo_grande_2",
+                     "f:regalo_grande_3",
+                     "f:regalo_grande_4"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:conducto1",
+                     "name": "f:itemGroup.name.ventilation"
+                  },
+                  "items": [
+                     "f:conducto1",
+                     "f:conducto10",
+                     "f:conducto11",
+                     "f:conducto12",
+                     "f:conducto2",
+                     "f:conducto3",
+                     "f:conducto4",
+                     "f:conducto5",
+                     "f:conducto6",
+                     "f:conducto7",
+                     "f:conducto8",
+                     "f:conducto9",
+                     "f:rendija1",
+                     "f:rendija2",
+                     "f:rendija3",
+                     "f:yconducto1",
+                     "f:yconducto2",
+                     "f:yconducto3",
+                     "f:yconducto4",
+                     "f:yconducto5",
+                     "f:tuberiados",
+                     "f:tuberia1",
+                     "f:tuberia2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:cuadro10",
+                     "name": "f:itemGroup.name.cuadros"
+                  },
+                  "items": [
+                     "f:cuadro1",
+                     "f:cuadro2",
+                     "f:cuadro3",
+                     "f:cuadro4",
+                     "f:cuadro5",
+                     "f:cuadro6",
+                     "f:cuadro7",
+                     "f:cuadro8",
+                     "f:cuadro9",
+                     "f:cuadro10",
+                     "f:cuadro11",
+                     "f:cuadro12",
+                     "f:cuadro13",
+                     "f:cuadro14",
+                     "f:cuadro15",
+                     "f:cuadro16",
+                     "f:cuadro17",
+                     "f:cuadro18",
+                     "f:cuadro19",
+                     "f:cuadro20",
+                     "f:cuadro21",
+                     "f:cuadro22",
+                     "f:cuadro23",
+                     "f:cuadro24",
+                     "f:cuadro25",
+                     "f:cuadro26",
+                     "f:cuadro27",
+                     "f:cuadro28",
+                     "f:cuadro29",
+                     "f:cuadro30",
+                     "f:cuadro31",
+                     "f:cuadro32",
+                     "f:cuadro33",
+                     "f:cuadro34",
+                     "f:cuadro35",
+                     "f:cuadro36",
+                     "f:cuadro37",
+                     "f:cuadro38",
+                     "f:cuadro39",
+                     "f:cuadro40",
+                     "f:cuadro41",
+                     "f:cuadro42",
+                     "f:cuadro2patreon",
+                     "f:cuadro3patreon",
+                     "f:cuadro4patreon",
+                     "f:cuadro6patreon",
+                     "f:cuadro7patreon",
+                     "f:cuadro8patreon",
+                     "f:cuadro9patreon",
+                     "f:cuadro10patreon",
+                     "f:cuadro11patreon",
+                     "f:cuadro12patreon",
+                     "f:cuadro5patreon"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:lampararoja",
+                     "name": "f:itemGroup.name.lampara_floor"
+                  },
+                  "items": [
+                     "f:lamparablanca",
+                     "f:lamparanegra",
+                     "f:lamparagris",
+                     "f:lampararoja",
+                     "f:lamparanaranga",
+                     "f:lamparaamarillo",
+                     "f:lamparalima",
+                     "f:lamparaazul",
+                     "f:lamparaazulclaro",
+                     "f:lamparaazulcian",
+                     "f:lamparamorado",
+                     "f:lampararosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:lamparamediaroja",
+                     "name": "f:itemGroup.name.lampara_desk"
+                  },
+                  "items": [
+                     "f:lamparamediablanca",
+                     "f:lamparamedianegra",
+                     "f:lamparamediagris",
+                     "f:lamparamediaroja",
+                     "f:lamparamedianaranga",
+                     "f:lamparamediaamarillo",
+                     "f:lamparamedialima",
+                     "f:lamparamediaazul",
+                     "f:lamparamediaazulclaro",
+                     "f:lamparamediaazulcian",
+                     "f:lamparamediamorado",
+                     "f:lamparamediarosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:lamparatechoroja",
+                     "name": "f:itemGroup.name.lampara_ceiling"
+                  },
+                  "items": [
+                     "f:lamparatechoblanca",
+                     "f:lamparatechonegra",
+                     "f:lamparatechogris",
+                     "f:lamparatechoroja",
+                     "f:lamparatechonaranga",
+                     "f:lamparatechoamarillo",
+                     "f:lamparatecholima",
+                     "f:lamparatechoazul",
+                     "f:lamparatechoazulclaro",
+                     "f:lamparatechoazulcian",
+                     "f:lamparatechomorado",
+                     "f:lamparatechorosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:lamparamodernaroja",
+                     "name": "f:itemGroup.name.lampara_modern_floor"
+                  },
+                  "items": [
+                     "f:lamparamodernablanca",
+                     "f:lamparamodernanegra",
+                     "f:lamparamodernagris",
+                     "f:lamparamodernaroja",
+                     "f:lamparamodernanaranga",
+                     "f:lamparamodernaamarillo",
+                     "f:lamparamodernalima",
+                     "f:lamparamodernaazul",
+                     "f:lamparamodernaazulclaro",
+                     "f:lamparamodernaazulcian",
+                     "f:lamparamodernamorado",
+                     "f:lamparamodernarosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:cortina_rojo",
+                     "name": "f:itemGroup.name.curtains"
+                  },
+                  "items": [
+                     "f:cortina_blanco",
+                     "f:cortina_negro",
+                     "f:cortina_gris",
+                     "f:cortina_rojo",
+                     "f:cortina_naranja",
+                     "f:cortina_amarillo",
+                     "f:cortina_lima",
+                     "f:cortina_azul",
+                     "f:cortina_azul_claro",
+                     "f:cortina_azul_cian",
+                     "f:cortina_morado",
+                     "f:cortina_rosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:rodapie1-1",
+                     "name": "f:itemGroup.name.rodapie1"
+                  },
+                  "items": [
+                     "f:rodapie1-1",
+                     "f:rodapie2-1",
+                     "f:rodapie1-2",
+                     "f:rodapie2-2",
+                     "f:rodapie1-3",
+                     "f:rodapie2-3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:rodapiebar1-1",
+                     "name": "f:itemGroup.name.rodapie_bar1"
+                  },
+                  "items": [
+                     "f:rodapiebar1-1",
+                     "f:rodapiebar2-1",
+                     "f:rodapiebar1-2",
+                     "f:rodapiebar2-2",
+                     "f:rodapiebar1-3",
+                     "f:rodapiebar2-3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:taburete",
+                     "name": "f:itemGroup.name.taburetes"
+                  },
+                  "items": [
+                     "f:taburete",
+                     "f:taburete1",
+                     "f:taburete2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:taburetemoderno1",
+                     "name": "f:itemGroup.name.taburetesmoderno"
+                  },
+                  "items": [
+                     "f:taburetemoderno1",
+                     "f:taburetemoderno2",
+                     "f:taburetemoderno3",
+                     "f:taburetemoderno2b",
+                     "f:taburetemoderno2n",
+                     "f:taburetemoderno2g",
+                     "f:taburetemoderno2r",
+                     "f:taburetemoderno2na",
+                     "f:taburetemoderno2a",
+                     "f:taburetemoderno2l",
+                     "f:taburetemoderno2az",
+                     "f:taburetemoderno2ac",
+                     "f:taburetemoderno2cian",
+                     "f:taburetemoderno2m",
+                     "f:taburetemoderno2ro"
+                     
+                     
+                      
+                     
+                     
+                     
+                    
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:sillagris",
+                     "name": "f:itemGroup.name.sillas"
+                  },
+                  "items": [
+                     "f:sillagris",
+                     "f:sillablanca",
+                     "f:sillanegro"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:sillaofisgris",
+                     "name": "f:itemGroup.name.sillasofis"
+                  },
+                  "items": [
+                     "f:sillaofisgris",
+                     "f:sillaofisblanca",
+                     "f:sillaofisnegro"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:canalon1",
+                     "name": "f:itemGroup.name.canalon"
+                  },
+                  "items": [
+                     "f:canalon1",
+                     "f:canalon2",
+                     "f:canalon3",
+                     "f:canalon4",
+                     "f:canalon5",
+                     "f:canalon6",
+                     "f:canalon8",
+                     "f:canalon9"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:galletas",
+                     "name": "f:itemGroup.name.decocomida"
+                  },
+                  "items": [
+                     "f:caja_pizza",
+                     "f:sushi1",
+                     "f:sushi2",
+                     "f:sandia1",
+                     "f:apple1",
+                     "f:galletas",
+                     "f:pumpking_plate",
+                     "f:decoracioncocina4"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:decoracioncocina1",
+                     "name": "f:itemGroup.name.decococina"
+                  },
+                  "items": [
+                     "f:decoracioncocina1",
+                     "f:decoracioncocina3",
+                     "f:decoracioncocina",
+                     "f:libro_cocina1",
+                     "f:frutero_moderno",
+                     "f:rollodepapel2",
+                     "f:rollodepapel1",
+                     "f:cafejarra",
+                     "f:botes1",
+                     "f:botes2",
+                     "f:cafes",
+                     "f:taza"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:sillonblanco",
+                     "name": "f:itemGroup.name.armchair"
+                  },
+                  "items": [
+                     "f:sillonblanco",
+                     "f:sillonnegro",
+                     "f:sillongris",
+                     "f:sillonrojo",
+                     "f:sillonnaranja",
+                     "f:sillonamarillo",
+                     "f:sillonlima",
+                     "f:sillonazul",
+                     "f:sillonazulclaro",
+                     "f:sillonmorado",
+                     "f:sillonrosa"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:modular_sofa_white",
+                     "name": "f:itemGroup.name.sofa"
+                  },
+                  "items": [
+                     "f:modular_sofa_white",
+                     "f:modular_sofa_black",
+                     "f:modular_sofa_gray",
+                     "f:modular_sofa_red",
+                     "f:modular_sofa_orange",
+                     "f:modular_sofa_yellow",
+                     "f:modular_sofa_lime",
+                     "f:modular_sofa_blue",
+                     "f:modular_sofa_blue_light",
+                     "f:modular_sofa_blue_cyan",
+                     "f:modular_sofa_violet",
+                     "f:modular_sofa_pink"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:wall_modular_sofa_white",
+                     "name": "f:itemGroup.name.wall_sofa"
+                  },
+                  "items": [
+                     "f:wall_modular_sofa_white",
+                     "f:wall_modular_sofa_black",
+                     "f:wall_modular_sofa_gray",
+                     "f:wall_modular_sofa_red",
+                     "f:wall_modular_sofa_orange",
+                     "f:wall_modular_sofa_yellow",
+                     "f:wall_modular_sofa_lime",
+                     "f:wall_modular_sofa_blue",
+                     "f:wall_modular_sofa_blue_light",
+                     "f:wall_modular_sofa_blue_cyan",
+                     "f:wall_modular_sofa_violet",
+                     "f:wall_modular_sofa_pink"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:butaca6",
+                     "name": "f:itemGroup.name.butacas"
+                  },
+                  "items": [
+                     "f:butaca6",
+                     "f:butaca5",
+                     "f:butaca7",
+                     "f:butaca8",
+                     "f:butaca3",
+                     "f:butaca2",
+                     "f:butaca1",
+                     "f:butaca9",
+                     "f:butaca11",
+                     "f:butaca4",
+                     "f:butaca10"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:semaforo1_1",
+                     "name": "f:itemGroup.name.semaforos"
+                  },
+                  "items": [
+                     "f:semaforo1_1",
+                     "f:semaforo_peaton1_1",
+                     "f:boton_semaforo"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:alfombra5",
+                     "name": "f:itemGroup.name.alfombras"
+                  },
+                  "items": [
+                     "f:alfombra5",
+                     "f:alfombra2",
+                     "f:alfombra3",
+                     "f:alfombra4",
+                     "f:alfombra",
+                     "f:alfombra6",
+                     "f:alfombra7",
+                     "f:alfombra8",
+                     "f:alfombra9",
+                     "f:alfombra10",
+                     "f:alfombra11",
+                     "f:celpudo"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:mesa",
+                     "name": "f:itemGroup.name.mesacristal"
+                  },
+                  "items": [
+                     "f:mesa",
+                     "f:mesa1",
+                     "f:mesa2",
+                     "f:mesasalon"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:mesamod1",
+                     "name": "f:itemGroup.name.mesitamoderna1"
+                  },
+                  "items": [
+                     "f:mesamod1",
+                     "f:mesamod2",
+                     "f:mesamod1m",
+                     "f:mesamod2m"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:mesamodernada2",
+                     "name": "f:itemGroup.name.mesitamoderna2"
+                  },
+                  "items": [
+                     "f:mesamodernada2",
+                     "f:mesamodernada1",
+                     "f:mesamodernada3",
+                     "f:mesamodernada4"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:mesamadera",
+                     "name": "f:itemGroup.name.mesasmadera"
+                  },
+                  "items": [
+                     "f:mesamadera",
+                     "f:mesamadera4",
+                     "f:mesamaderagrande",
+                     "f:mesa3",
+                     "f:mesa_plegable",
+                     "f:mesademadera",
+                     "f:mesademadera1",
+                     "f:mesademadera2",
+                     "f:mesasalonr1",
+                     "f:mesasalonr"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:luz",
+                     "name": "f:itemGroup.name.leds"
+                  },
+                  "items": [
+                     "f:luz",
+                     "f:luz1",
+                     "f:luz3",
+                     "f:foco"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:timbre3",
+                     "name": "f:itemGroup.name.timbre"
+                  },
+                  "items": [
+                     "f:timbre1",
+                     "f:timbre2",
+                     "f:timbre3",
+                     "f:timbre-servicio-1",
+                     "f:timbre-servicio-2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:interruptor1",
+                     "name": "f:itemGroup.name.interruptores"
+                  },
+                  "items": [
+                     "f:interruptor1",
+                     "f:interruptor2",
+                     "f:interruptor3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:estant1",
+                     "name": "f:itemGroup.name.estantes"
+                  },
+                  "items": [
+                     "f:estant1",
+                     "f:estant2",
+                     "f:estant3",
+                     "f:estant4",
+                     "f:estant5",
+                     "f:estanteria_A_1",
+                     "f:estanteria_A_2",
+                     "f:estanteria_A_3",
+                     "f:estanteriacatalogo",
+                     "f:estanteriacatalogo2",
+                     "f:estanteriamodernana2",
+                     "f:mesamodernada5",
+                     "f:mesamadera2",
+                     "f:mesamadera3",
+                     "f:estanteriamadera",
+                     "f:mesitamoderna1",
+                     "f:libreriamoderna2",
+                     "f:libreriamoderna1",
+                     "f:libreriamoderna3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:estanteria_moderna5",
+                     "name": "f:itemGroup.name.estantesblancos"
+                  },
+                  "items": [
+                     "f:estanteria_A_4",
+                     "f:estanteria_A_5",
+                     "f:estanteria_moderna",
+                     "f:estanteria_moderna2",
+                     "f:estanteria_moderna3",
+                     "f:estanteria_moderna4",
+                     "f:estanteria_moderna5",
+                     "f:estanteria_moderna6",
+                     "f:estanteria_moderna7"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:libreria2",
+                     "name": "f:itemGroup.name.librerias"
+                  },
+                  "items": [
+                     "f:libreria2",
+                     "f:libreria",
+                     "f:libreriamod1",
+                     "f:libreriamod2",
+                     "f:estanteriamodernana1",
+                     "f:libre2m",
+                     "f:librem",
+                     "f:libreriarust1",
+                     "f:libreriarust2",
+                     "f:libreriar1",
+                     "f:libreriar2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:arbol2",
+                     "name": "f:itemGroup.name.decoNavidad"
+                  },
+                  "items": [
+                     "f:arbol",
+                     "f:arbol2",
+                     "f:arbol_blanco",
+                     "f:arbol2_blanco",
+                     "f:mini-mini-arbol",
+                     "f:campanas_navidad",
+                     "f:decoracionnavidad1",
+                     "f:decoracionnavidad2",
+                     "f:decoracionnavidad3",
+                     "f:decoracionnavidad4",
+                     "f:luces_navidad",
+                     "f:yeti",
+                     "f:calcetin_rojo",
+                     "f:calcetin_verde",
+                     "f:paleta"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:banderita1",
+                     "name": "f:itemGroup.name.decofestiva"
+                  },
+                  "items": [
+                     "f:globos1",
+                     "f:globos2",
+                     "f:globos3",
+                     "f:banderita1",
+                     "f:banderita2",
+                     "f:banderita3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:arena2",
+                     "name": "f:itemGroup.name.decoplaya"
+                  },
+                  "items": [
+                     "f:boya_amarillo",
+                     "f:boya_amarillo2",
+                     "f:boya_roja",
+                     "f:boya_roja2",
+                     "f:boya_verde",
+                     "f:boya_verde2",
+                     "f:boya_mina",
+                     "f:arena1",
+                     "f:arena2",
+                     "f:arena3",
+                     "f:arena4",
+                     "f:arena5"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:estanteria_bano3",
+                     "name": "f:itemGroup.name.decobanio"
+                  },
+                  "items": [
+                     "f:estanteria_bano3",
+                     "f:estanteria_bano1",
+                     "f:estanteria_bano2",
+                     "f:estanteria_bano4",
+                     "f:estanteria_bano5",
+                     "f:estanteria_bano6",
+                     "f:estanteria_bano7",
+                     "f:bano1",
+                     "f:bano2",
+                     "f:bano3",
+                     "f:bano4",
+                     "f:wc1",
+                     "f:wc2",
+                     "f:toalla",
+                     "f:ducha"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:gasolina_rojo",
+                     "name": "f:itemGroup.name.decogaraje"
+                  },
+                  "items": [
+                     "f:gasolina_rojo",
+                     "f:gasolina_azul",
+                     "f:gasolina_verde",
+                     "f:oil",
+                     "f:decoraciongaraje1",
+                     "f:decoraciongaraje2",
+                     "f:mesagaraje",
+                     "f:almacenneumatico",
+                     "f:piladerueda",
+                     "f:piladeruedasit",
+                     "f:rail1",
+                     "f:rail2",
+                     "f:rail3",
+                     "f:boton",
+                     "f:puerta_garaje"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:papelera2",
+                     "name": "f:itemGroup.name.papeleras"
+                  },
+                  "items": [
+                     "f:papelera",
+                     "f:papelera2",
+                     "f:papelera_madera"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:maceta2",
+                     "name": "f:itemGroup.name.decoplantas"
+                  },
+                  "items": [
+                     "f:maceta1",
+                     "f:maceta2",
+                     "f:bonsay",
+                     "f:paredyerba"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "f:cuaderno1",
+                     "name": "f:itemGroup.name.decooficina"
+                  },
+                  "items": [
+                     "f:cuaderno1",
+                     "f:cuaderno2",
+                     "f:organizadordehojas",
+                     "f:organizadordehojas2",
+                     "f:hojas1",
+                     "f:hojas2",
+                     "f:calendario1"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

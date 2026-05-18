@@ -1,0 +1,23 @@
+//bridge-file-version: #135
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:azulejos"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:azulejos",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

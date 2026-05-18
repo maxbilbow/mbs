@@ -1,0 +1,120 @@
+//bridge-file-version: #63
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"color1",
+					"color2"
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:luces_navidad"
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'color1'",
+				"components": {
+					"minecraft:geometry": "geometry.luces_navidad2"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'color2'",
+				"components": {
+					"minecraft:geometry": "geometry.luces_navidad1"
+					
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "arbol2",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.luces_navidad1",
+			
+
+			"minecraft:collision_box": false,
+			
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					3,
+					5
+				],
+				"size": [
+					16,
+					5,
+					2
+				]
+			},
+			"minecraft:light_emission": 15
+		}
+	},
+	"format_version": "1.20.20"
+}

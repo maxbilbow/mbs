@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "wypnt_mss:scatter_hanging_webs_feature"
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "wypnt_mss:hanging_webs_snap_feature",
+		"z": {
+			"distribution": "gaussian",
+			"extent": [
+				-32,
+				32
+			]
+		},
+		"x": {
+			"distribution": "gaussian",
+			"extent": [
+				-32,
+				32
+			]
+		},
+		"y": {
+			"distribution": "gaussian",
+			"extent": [
+				-8,
+				8
+			]
+		},
+		"iterations": 256
+	}
+}

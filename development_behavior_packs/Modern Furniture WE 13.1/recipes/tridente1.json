@@ -1,0 +1,22 @@
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:tridente1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:tridente1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:thrown_honey_projectile",
+			"materials": {
+				"default": "snowball"
+			},
+			"textures": {
+				"default": "textures/entity/honey_projectile"
+			},
+			"geometry": {
+				"default": "geometry.honey_projectile"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+			/* 			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			} */
+		}
+	}
+}

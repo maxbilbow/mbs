@@ -1,0 +1,23 @@
+//bridge-file-version: #101
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:libreriamoderna1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalibreria"
+			}
+		],
+		"result": [
+			{
+				"item": "f:libreriamoderna1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

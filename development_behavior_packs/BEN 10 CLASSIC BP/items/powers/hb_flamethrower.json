@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:hb_flamethrower",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "power_hb_flamethrower"
+			},
+			"minecraft:display_name": {
+				"value": "§cFlamethrower"
+			},
+			"minecraft:use_duration": 99999,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "crossbow"
+		}
+	}
+}

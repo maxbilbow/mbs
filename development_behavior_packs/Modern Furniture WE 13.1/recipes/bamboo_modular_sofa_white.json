@@ -1,0 +1,23 @@
+//bridge-file-version: #432
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bamboo_modular_sofa_white"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajasofa"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bamboo_modular_sofa_white",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,61 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Euforia",
+			"soyHerios"
+		],
+		"product_type": "addon"
+	},
+	"header": {
+		"name": "Italian Brain Rot",
+		"description": "Add more than 12 creatures from the ITALIAN BRAIN ROT!",
+		"min_engine_version": [
+			1,
+			21,
+			70
+		],
+		"uuid": "b967e633-e631-4068-9031-57c57111deb9",
+		"version": [
+			10,
+			0,
+			3
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "04e3ad53-d705-4d33-9363-8bf31378c5ff",
+			"version": [
+				10,
+				0,
+				3
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "5211a41d-24ec-493f-80a8-d532b4f116ce",
+			"entry": "scripts/main.js",
+			"version": [
+				10,
+				0,
+				3
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "e91b2310-4179-4e2b-95d9-44beeddae65f",
+			"version": [
+				10,
+				0,
+				3
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.6.0-beta"
+		}
+	]
+}

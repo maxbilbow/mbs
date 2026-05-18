@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "daniye:crimson_fungus_01_mcstructure"
+		},
+		"structure_name": "mystructure:crimson_fungus_01",
+		"facing_direction": "random",
+		"adjustment_radius": 1,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

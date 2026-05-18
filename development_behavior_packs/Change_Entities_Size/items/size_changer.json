@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "douarmc_change_entities_size:size_changer",
+            "menu_category": {
+                "category": "equipment", 
+                "is_hidden_in_commands": false 
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "douarmc_change_entities_size:size_changer"
+                }
+            },
+            "minecraft:custom_components": [
+                "douarmc_change_entities_size:size_changer"
+            ]
+        }
+    }
+}

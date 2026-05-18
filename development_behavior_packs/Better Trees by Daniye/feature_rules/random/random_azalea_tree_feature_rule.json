@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:random_azalea_tree_feature_rule",
+			"places_feature": "minecraft:azalea_tree_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "equals",
+					"value": "overworld"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 0,
+			"x": 0,
+			"y": "q.heightmap(v.worldx, v.worldz)",
+			"z": 0
+		}
+	}
+}

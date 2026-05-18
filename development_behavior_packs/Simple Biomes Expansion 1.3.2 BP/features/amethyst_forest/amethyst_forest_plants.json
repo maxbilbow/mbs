@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_forest/amethyst_forest_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_allium_feature",
+				18
+			],
+			[
+				"vanilla_biomes_expansion:amethyst_forest/amethyst_forest_plants_placement_feature",
+				8
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				22
+			]
+		]
+	}
+}

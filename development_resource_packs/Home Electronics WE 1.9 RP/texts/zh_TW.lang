@@ -1,0 +1,192 @@
+midgameTips.61=想讓作物在你睡覺時成長嗎？下載 Better Beds 從 §lTRMC-ADDONS.COM
+midgameTips.62=喜歡電子產品嗎？下載 Home Electronics 從 §lTRMC-ADDONS.COM
+midgameTips.63=想要可鎖的箱子嗎？下載 Locked Chests 從 §lTRMC-ADDONS.COM
+midgameTips.64=喜歡田園風格裝飾嗎？下載 Feudal Furniture 從 §lTRMC-ADDONS.COM
+midgameTips.65=喜歡動物嗎？下載 Pet Furniture 從 §lTRMC-ADDONS.COM
+midgameTips.66=是裝飾大師嗎？下載 Modern Furniture 從 §lTRMC-ADDONS.COM
+midgameTips.67=想為物品加入背景故事嗎？下載 Lore Anvil 從 §lTRMC-ADDONS.COM
+midgameTips.68=想要睡袋嗎？下載 Sleeping Bags 從 §lTRMC-ADDONS.COM
+midgameTips.69=想要更多附加元件嗎？訪問 §lTRMC-ADDONS.COM§r 獲取各種免費內容！
+
+tips.creative.1=想要更多附加元件嗎？訪問 §lTRMC-ADDONS.COM§r 獲取各種免費內容！
+tips.creative.2=喜歡田園風格裝飾嗎？下載 Feudal Furniture 從 §lTRMC-ADDONS.COM
+tips.creative.3=喜歡動物嗎？下載 Pet Furniture 從 §lTRMC-ADDONS.COM
+tips.creative.4=是裝飾大師嗎？下載 Modern Furniture 從 §lTRMC-ADDONS.COM
+tips.creative.5=想為物品加入背景故事嗎？下載 Lore Anvil 從 §lTRMC-ADDONS.COM
+tips.creative.6=想要睡袋嗎？下載 Sleeping Bags 從 §lTRMC-ADDONS.COM
+tips.creative.7=想要可鎖的箱子嗎？下載 Locked Chests 從 §lTRMC-ADDONS.COM
+tips.creative.8=喜歡電子產品嗎？下載 Home Electronics 從 §lTRMC-ADDONS.COM
+tips.creative.9=想讓作物在你睡覺時成長嗎？下載 Better Beds 從 §lTRMC-ADDONS.COM
+
+pack.discover_more_addons=在 TRMC-ADDONS.COM 探索更多附加元件
+
+pack.modern_doors_text_1=Modern Doors 增加了全新設計的門，帶有鎖定功能、獨特設計和紅石支援，每扇門有 14 種風格！
+pack.modern_doors_text_2=蹲下並與門互動來訪問鎖定菜單。設置代碼，製作鑰匙，並用無法破壞的門保護你的基地。
+
+pack.modern_furniture_text_1=Modern Furniture 增加了 800 多件物品來裝飾你的 Minecraft 世界，包括沙發、架子、燈具、畫作等！
+pack.modern_furniture_text_2=使用石匠製作它們。簡單、乾淨的設計，完美融入 Minecraft 的原始風格。
+
+pack.locked_chests_text_1=Locked Chests 增加了 80 多個新容器，具有鑰匙和擁有者保護，提供全面的安全性。
+pack.locked_chests_text_2=自定義你的鑰匙外觀和標籤。沒有正確的鑰匙或擁有者，箱子將保持鎖定！
+
+pack.sleeping_bags_text_1=Sleeping Bags 讓你隨時隨地睡覺，甚至在下界或末地！
+pack.sleeping_bags_text_2=加速時間、設置重生點，並在冒險中使用多人友好的睡眠機制。
+
+pack.feudal_furniture_text_1=Feudal Furniture 帶來 800 多件中世紀風格的物品，適合村莊、城堡和地牢。
+pack.feudal_furniture_text_2=包括每種木材類型的箱子，並支援如坐下、點燃火堆等功能。
+
+pack.lore_anvil_text_1=使用 Lore Anvil，你可以為任何物品或方塊添加彩色描述和圖示。
+pack.lore_anvil_text_2=添加背景故事、符號或註釋來自訂並組織你的裝備，所有操作都可以通過一個自訂的鐵砧完成！
+
+pack.home_electronics_text_1=Home Electronics 增加了遊戲機、電腦、電視和家用電器，完美適用於現代室內裝潢。
+pack.home_electronics_text_2=開啟筆記型電腦、在鋼琴上彈奏音符，並用海報、燈光和遊戲裝備來裝飾。
+
+pack.pet_furniture_text_1=Pet Furniture 增加了貓屋、餵食器和動物友好的裝飾，適合你的家和花園。
+pack.pet_furniture_text_2=包括預製和模組化的貓籠，完全支持 Minecraft 1.21+ 和所有附加元件。
+
+pack.better_beds_text_1=Better Beds 增加了具有時間控制、重生點選項並可在任何維度睡覺的新床！
+pack.better_beds_text_2=支持伺服器，具有動畫效果，並讓你自動堆疊床鋪以創建上下鋪。
+
+midgameTips.15=使用睡袋不會修改你的重生點。要進行設置，你需要在菜單中選擇它。
+midgameTips.16=使用睡袋時，作物會根據經過的時間成長！
+midgameTips.17=你可以隨時跳躍以脫離睡袋。
+midgameTips.18=即使你在睡袋中設置了重生點，摧毀它也不會重置你的重生點。
+
+tips.creative.10=你可以使用睡袋設置物品（僅在創意模式中可用）來自訂附加元件的行為。
+
+sbun.toast.header.he=§eHome Electronics 有新更新可用！§r
+sbun.toast.body.001=查看暫停畫面！
+
+pack.addon_update= 附加元件更新可用
+pack.trmc_store= 獲取免費附加元件
+
+pack.new_update_available=有新更新可用！
+
+pack.he_update_text=Home Electronics 1.4 版本新增 6 個新方塊！
+pack.he_update_trmc=要訪問此更新，請訪問 §aTRMC-ADDONS.COM.§r 你也可以掃描下面的 §aQR 碼§r 直接進入網站並下載新版本。
+
+pack.he_store_text=訪問 §aTRMC-ADDONS.COM.§r 來選擇各種免費的附加元件！無論你是裝飾家想要更多家具，還是希望通過新機制提升生存體驗，§aTRMC-ADDONS.COM§r 都有適合你的附加元件！
+pack.he_store_trmc=你也可以掃描下面的 §aQR 碼§r 直接進入網站。
+
+he:itemGroup.name.consoles=遊戲機
+he:itemGroup.name.antena=天線
+he:itemGroup.name.router=路由器
+he:itemGroup.name.pc=電腦
+he:itemGroup.name.monitor=顯示器
+he:itemGroup.name.enchufes=插頭與電源
+he:itemGroup.name.ventilador=風扇
+he:itemGroup.name.silla=椅子
+he:itemGroup.name.impresora=打印機
+he:itemGroup.name.gaming=遊戲與街機
+he:itemGroup.name.disc_frame=音樂唱片框
+he:itemGroup.name.poster=海報
+he:itemGroup.name.portatil=筆記型電腦
+he:itemGroup.name.tv=電視
+he:itemGroup.name.phonestablets=手機與平板
+
+action.hint.exit.he:sit=§lShift §ror §lSPACE §r起身
+item.he:mando_wii=Wii 控制器
+item.he:mando_swhitch=Switch 控制器
+item.he:mando_switch2=Switch 控制器
+
+tile.he:antena1.name=衛星碟
+tile.he:antena2.name=衛星碟
+tile.he:silla1.name=黑色辦公椅 §h[ §a座位§h ]
+tile.he:silla2.name=白色辦公椅 §h[ §a座位§h ]
+
+tile.he:piano_red_1.name=紅色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_red_2.name=紅色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_green_1.name=綠色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_green_2.name=綠色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_blue_1.name=藍色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_blue_2.name=藍色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_purple_1.name=紫色鋼琴 §h[ §a互動式§h ]
+tile.he:piano_purple_2.name=紫色鋼琴 §h[ §a互動式§h ]
+tile.he:micro1.name=桌面麥克風
+tile.he:tostadora1.name=烤麵包機
+tile.he:enchufe1.name=插頭
+tile.he:regleta1.name=電源延長線
+tile.he:poster1.name=海報
+tile.he:poster2.name=海報
+tile.he:poster3.name=海報
+tile.he:poster4.name=海報
+tile.he:poster5.name=海報
+tile.he:poster6.name=海報
+tile.he:poster7.name=海報
+tile.he:poster8.name=海報
+tile.he:tv1.name=電視
+tile.he:tv2.name=電視
+tile.he:game_deco1.name=街機箱
+tile.he:game_deco2.name=街機箱
+tile.he:joystick.name=操縱桿
+tile.he:pc1.name=辦公電腦
+tile.he:pc2.name=辦公電腦
+tile.he:router1.name=路由器
+tile.he:wii.name=白色 Wii
+tile.he:wii_black.name=黑色 Wii
+tile.he:wii_red.name=紅色 Wii
+tile.he:switch.name=Switch
+tile.he:gamecube.name=Gamecube §h[ §a互動式§h ]
+tile.he:ps1.name=PS1 §h[ §a互動式§h ]
+tile.he:nes.name=NES §h[ §a互動式§h ]
+
+tile.he:soporte-monitor1.name=帶支架的顯示器
+tile.he:soporte-monitor2.name=雙顯示器支架
+tile.he:soporte-monitor-pared2.name=帶牆壁支架的顯示器
+tile.he:soporte-monitor-pared1.name=帶牆壁支架的雙顯示器
+tile.he:monitor1.name=顯示器
+tile.he:monitor2.name=雙顯示器
+tile.he:telefonillo1.name=模擬對講機
+tile.he:portatil1.name=黑色筆記型電腦 §h[ §a互動式§h ]
+tile.he:portatil2.name=白色筆記型電腦 §h[ §a互動式§h ]
+tile.he:hub1.name=黑色以太網交換機
+tile.he:hub2.name=白色以太網交換機
+tile.he:impresora1.name=黑色打印機
+tile.he:impresora2.name=白色打印機
+tile.he:deco_disco1.name=音樂唱片框
+tile.he:deco_disco2.name=音樂唱片框
+tile.he:deco_disco3.name=音樂唱片框
+tile.he:deco_disco4.name=音樂唱片框
+
+tile.he:caja_setup.name=§l[§3HE§f] §r§f設置箱
+tile.he:caja_poster.name=§l[§3HE§f] §r§f海報箱
+tile.he:caja_consola.name=§l[§3HE§f] §r§f遊戲機箱
+tile.he:caja_deco_retro.name=§l[§3HE§f] §r§f復古裝飾箱
+tile.he:caja_deco_electronica.name=§l[§3HE§f] §r§f電子裝飾箱
+
+tile.he:switch_lite1.name=Switch Lite
+tile.he:switch_lite2.name=Switch Lite
+tile.he:switch_lite3.name=Switch Lite
+tile.he:switch_lite4.name=Switch Lite
+tile.he:switch_lite5.name=Switch Lite
+
+tile.he:ventilador1.name=黑色桌面風扇
+tile.he:ventilador2.name=白色桌面風扇
+
+tile.he:ventilador2-1.name=黑色風扇
+tile.he:ventilador2-2.name=白色風扇
+
+tile.he:gameboy1.name=Gameboy
+tile.he:gameboy2.name=Gameboy
+
+tile.he:butaca1.name=黑色鐵製凳子 §h[ §a座位§h ]
+tile.he:butaca2.name=白色鐵製凳子 §h[ §a座位§h ]
+
+tile.he:soporte-monitor3.name=附支架的曲面螢幕
+tile.he:soporte-monitor-pared3.name=壁掛式曲面螢幕
+tile.he:monitor3.name=曲面螢幕
+tile.he:tablet1.name=黑色平板
+tile.he:tablet2.name=白色平板
+
+
+tile.he:nintendo_ds1.name=Nintendo DS 1 黑色 §h[ §a互動式§h ]
+tile.he:nintendo_ds2.name=Nintendo DS 1 白色 §h[ §a互動式§h ]
+tile.he:nintendo_ds3.name=Nintendo DS 1 紅色 §h[ §a互動式§h ]
+tile.he:nintendo_ds4.name=Nintendo DS 1 卡其色 §h[ §a互動式§h ]
+tile.he:nintendo_ds5.name=Nintendo DS 1 粉紅色 §h[ §a互動式§h ]
+
+tile.he:luz.name=LED §h[ §a明亮§h ]
+tile.he:luz2.name=燈條 §h[ §a明亮§h ]
+
+tile.he:bateria1.name=汽車電池
+tile.he:air_fryer.name=氣炸鍋

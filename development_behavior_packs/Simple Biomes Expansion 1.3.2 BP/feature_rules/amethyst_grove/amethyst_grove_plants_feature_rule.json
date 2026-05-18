@@ -1,0 +1,35 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_grove_plants_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:amethyst_grove/amethyst_grove_plants_scatter"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"value": "amethyst_grove"
+			}
+		},
+		"distribution": {
+			"iterations": 165,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": "query.heightmap(v.worldx, v.worldz) + -1",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"scatter_chance": 125
+		}
+	}
+}

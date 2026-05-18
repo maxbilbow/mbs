@@ -1,0 +1,198 @@
+pack.discover_more_addons=Descubre más addons en TRMC-ADDONS.COM
+
+pack.modern_doors_text_1=Modern Doors añade puertas nuevas con cerraduras, diseños únicos y soporte para Redstone, ¡con 14 estilos por puerta!
+pack.modern_doors_text_2=Agáchate e interactúa para acceder al menú de cerradura. Establece códigos, crea llaves y protege tu base con puertas irrompibles.
+
+pack.modern_furniture_text_1=Modern Furniture añade más de 800 muebles para decorar tu mundo de Minecraft, ¡incluyendo sofás, estanterías, luces, cuadros y más!
+pack.modern_furniture_text_2=Fabrícalos usando arcilla en la cortadora de piedra. Diseño simple y limpio que encaja perfectamente con el estilo vanilla.
+
+pack.locked_chests_text_1=Locked Chests añade más de 80 contenedores nuevos con llaves y protección por propietario para máxima seguridad.
+pack.locked_chests_text_2=Personaliza la apariencia y etiqueta de tus llaves. ¡Sin la llave correcta o si no eres el dueño, los cofres permanecerán cerrados!
+
+pack.sleeping_bags_text_1=Sleeping Bags te permite dormir en cualquier momento y lugar, ¡incluso en el Nether o el End!
+pack.sleeping_bags_text_2=Acelera el tiempo, establece punto de reaparición y usa mecánicas de sueño compatibles con multijugador en tus aventuras.
+
+pack.feudal_furniture_text_1=Feudal Furniture trae más de 800 objetos de estilo medieval para pueblos, castillos y mazmorras.
+pack.feudal_furniture_text_2=Incluye cajas para cada tipo de madera y funciones como sentarse, encender fuego ¡y mucho más!
+
+pack.lore_anvil_text_1=Con Lore Anvil puedes añadir descripciones a color e íconos a cualquier objeto o bloque.
+pack.lore_anvil_text_2=Añade historia, símbolos o comentarios para personalizar y organizar tu equipamiento, ¡todo con un yunque personalizado!
+
+pack.home_electronics_text_1=Home Electronics añade consolas, ordenadores, televisores y electrodomésticos, perfectos para interiores modernos.
+pack.home_electronics_text_2=Abre portátiles, toca notas en pianos y decora con carteles, luces y equipos gamer.
+
+pack.pet_furniture_text_1=Pet Furniture añade casas para gatos, comederos y decoración amigable con los animales para tu hogar y jardín.
+pack.pet_furniture_text_2=Incluye prefabricados y recintos modulares para gatos, compatibles totalmente con Minecraft 1.21+ y todos los Add-Ons.
+
+pack.better_beds_text_1=Better Beds añade nuevas camas con control del tiempo, opciones de reaparición y la posibilidad de dormir en cualquier dimensión.
+pack.better_beds_text_2=Compatible con servidores, tiene animaciones y te permite apilar camas para crear literas automáticamente.
+
+midgameTips.15=Usar un saco de dormir no modifica tu punto de reaparición. Para ello, debes seleccionarlo en el menú.
+midgameTips.16=¡Cuando usas un saco de dormir, los cultivos crecen según el tiempo que pasa!
+midgameTips.17=Puedes salir del saco de dormir saltando en cualquier momento.
+midgameTips.18=Aunque establezcas un punto de reaparición en un saco de dormir, destruirlo no reiniciará tu punto.
+
+tips.creative.10=Puedes usar el objeto Configuración del Saco de Dormir (solo disponible en creativo) para personalizar el comportamiento del addon.
+
+midgameTips.61=¿Quieres que los cultivos crezcan mientras duermes? Descarga Better Beds desde §lTRMC-ADDONS.COM
+midgameTips.62=¿Te gustan los electrónicos? Descarga Home Electronics desde §lTRMC-ADDONS.COM
+midgameTips.63=¿Quieres cofres con cerradura? Descarga Locked Chests desde §lTRMC-ADDONS.COM
+midgameTips.64=¿Te gusta la decoración rústica? Descarga Feudal Furniture desde §lTRMC-ADDONS.COM
+midgameTips.65=¿Amas a los animales? Descarga Pet Furniture desde §lTRMC-ADDONS.COM
+midgameTips.66=¿Eres un maestro de la decoración? Descarga Modern Furniture desde §lTRMC-ADDONS.COM
+midgameTips.67=¿Quieres añadir historia a tus objetos? Descarga Lore Anvil desde §lTRMC-ADDONS.COM
+midgameTips.68=¿Quieres sacos de dormir? Descarga Sleeping Bags desde §lTRMC-ADDONS.COM
+midgameTips.69=¿Quieres más addons? Visita §lTRMC-ADDONS.COM§r para todo tipo de contenido gratuito.
+
+tips.creative.1=¿Quieres más addons? Visita §lTRMC-ADDONS.COM§r para todo tipo de contenido gratuito.
+tips.creative.2=¿Te gusta la decoración rústica? Descarga Feudal Furniture desde §lTRMC-ADDONS.COM
+tips.creative.3=¿Amas a los animales? Descarga Pet Furniture desde §lTRMC-ADDONS.COM
+tips.creative.4=¿Eres un maestro de la decoración? Descarga Modern Furniture desde §lTRMC-ADDONS.COM
+tips.creative.5=¿Quieres añadir historia a tus objetos? Descarga Lore Anvil desde §lTRMC-ADDONS.COM
+tips.creative.6=¿Quieres sacos de dormir? Descarga Sleeping Bags desde §lTRMC-ADDONS.COM
+tips.creative.7=¿Quieres cofres con cerradura? Descarga Locked Chests desde §lTRMC-ADDONS.COM
+tips.creative.8=¿Te gustan los electrónicos? Descarga Home Electronics desde §lTRMC-ADDONS.COM
+tips.creative.9=¿Quieres que los cultivos crezcan mientras duermes? Descarga Better Beds desde §lTRMC-ADDONS.COM
+
+sbun.toast.header.he=§e¡Nueva actualización disponible para Home Electronics!§r
+sbun.toast.body.001=¡Consulta la pantalla de pausa!
+
+pack.addon_update= ¡Actualización de Add-On disponible!
+pack.trmc_store= Consigue Add-Ons Gratis
+
+pack.new_update_available=¡NUEVA ACTUALIZACIÓN DISPONIBLE!
+
+pack.he_update_text=¡La actualización 1.4 de Home Electronics añade 6 nuevos bloques!
+pack.he_update_trmc=Para acceder a la actualización, visita §aTRMC-ADDONS.COM.§r También puedes escanear el §acódigo QR§r abajo para ir directamente al sitio web y descargar la nueva versión del addon.
+
+pack.he_store_text=¡Visita §aTRMC-ADDONS.COM.§r para una gran selección de Add-Ons gratuitos! Ya seas un decorador que quiere más muebles o quieras mejorar tu experiencia de supervivencia, ¡§aTRMC-ADDONS.COM§r tiene un addon para ti!
+pack.he_store_trmc=También puedes escanear el §acódigo QR§r abajo para ir directamente al sitio web.
+
+
+
+he:itemGroup.name.consoles=Consolas
+he:itemGroup.name.antena=Antenas
+he:itemGroup.name.router=Ruteadores
+he:itemGroup.name.pc=Ordenadores
+he:itemGroup.name.monitor=Monitores
+he:itemGroup.name.enchufes=Enchufes y Electricidad
+he:itemGroup.name.ventilador=Ventiladores
+he:itemGroup.name.silla=Sillas
+he:itemGroup.name.impresora=Impresoras
+he:itemGroup.name.gaming=Juegos y Arcade
+he:itemGroup.name.disc_frame=Marcos de Discos de Música
+he:itemGroup.name.poster=Pósteres
+he:itemGroup.name.portatil=Portátiles
+he:itemGroup.name.tv=Televisores
+he:itemGroup.name.phonestablets=Teléfonos y Tablets
+
+action.hint.exit.he:sit=§lShift §ro §lESPACIO §rpara levantarte
+item.he:mando_wii=Mando de Wii
+item.he:mando_swhitch=Mando de Swhitch
+item.he:mando_switch2=Mando de Swhitch
+
+tile.he:antena1.name=Antena parabólica
+tile.he:antena2.name=Antena parabólica
+tile.he:silla1.name=Silla de oficina negra §h[ §aSentarse§h ]
+tile.he:silla2.name=Silla de oficina blanca §h[ §aSentarse§h ]
+
+tile.he:piano_red_1.name=Piano rojo §h[ §aInteractivo§h ]
+tile.he:piano_red_2.name=Piano rojo §h[ §aInteractivo§h ]
+tile.he:piano_green_1.name=Piano verde §h[ §aInteractivo§h ]
+tile.he:piano_green_2.name=Piano verde §h[ §aInteractivo§h ]
+tile.he:piano_blue_1.name=Piano azul §h[ §aInteractivo§h ]
+tile.he:piano_blue_2.name=Piano azul §h[ §aInteractivo§h ]
+tile.he:piano_purple_1.name=Piano morado §h[ §aInteractivo§h ]
+tile.he:piano_purple_2.name=Piano morado §h[ §aInteractivo§h ]
+tile.he:micro1.name=Micrófono de escritorio
+tile.he:tostadora1.name=Tostadora
+tile.he:enchufe1.name=Enchufe
+tile.he:regleta1.name=Regleta eléctrica
+tile.he:poster1.name=Póster
+tile.he:poster2.name=Póster
+tile.he:poster3.name=Póster
+tile.he:poster4.name=Póster
+tile.he:poster5.name=Póster
+tile.he:poster6.name=Póster
+tile.he:poster7.name=Póster
+tile.he:poster8.name=Póster
+tile.he:poster9.name=Póster
+tile.he:poster10.name=Póster
+tile.he:poster11.name=Póster
+tile.he:poster12.name=Póster
+tile.he:tv1.name=Televisor
+tile.he:tv2.name=Televisor
+tile.he:game_deco1.name=Máquina arcade
+tile.he:game_deco2.name=Máquina arcade
+tile.he:joystick.name=Joysticks
+tile.he:pc1.name=Ordenador de oficina
+tile.he:pc2.name=Ordenador de oficina
+tile.he:router1.name=Router
+tile.he:wii.name=Wii Blanca
+tile.he:wii_black.name=Wii Negra
+tile.he:wii_red.name=Wii Roja
+tile.he:switch.name=Switch
+tile.he:gamecube.name=Gamecube §h[ §aInteractivo§h ]
+tile.he:ps1.name=PS1 §h[ §aInteractivo§h ]
+tile.he:nes.name=NES §h[ §aInteractivo§h ]
+
+tile.he:soporte-monitor1.name=Monitor con soporte
+tile.he:soporte-monitor2.name=Monitor dual con soporte
+tile.he:soporte-monitor-pared2.name=Monitor con soporte de pared
+tile.he:soporte-monitor-pared1.name=Monitor doble con soporte de pared
+tile.he:monitor1.name=Monitor
+tile.he:monitor2.name=Monitor dual
+tile.he:telefonillo1.name=Portero automático analógico
+tile.he:portatil1.name=Portátil negro §h[ §aInteractivo§h ]
+tile.he:portatil2.name=Portátil blanco §h[ §aInteractivo§h ]
+tile.he:hub1.name=Switch ethernet negro
+tile.he:hub2.name=Switch ethernet blanco
+tile.he:impresora1.name=Impresora negra
+tile.he:impresora2.name=Impresora blanca
+tile.he:deco_disco1.name=Marco para disco de música
+tile.he:deco_disco2.name=Marco para disco de música
+tile.he:deco_disco3.name=Marco para disco de música
+tile.he:deco_disco4.name=Marco para disco de música
+
+tile.he:caja_setup.name=§l[§3HE§f] §r§fCaja de setup
+tile.he:caja_poster.name=§l[§3HE§f] §r§fCaja de pósteres
+tile.he:caja_consola.name=§l[§3HE§f] §r§fCaja de consolas
+tile.he:caja_deco_retro.name=§l[§3HE§f] §r§fCaja de decoración retro
+tile.he:caja_deco_electronica.name=§l[§3HE§f] §r§fCaja de decoración electrónica
+
+tile.he:switch_lite1.name=Switch Lite
+tile.he:switch_lite2.name=Switch Lite
+tile.he:switch_lite3.name=Switch Lite
+tile.he:switch_lite4.name=Switch Lite
+tile.he:switch_lite5.name=Switch Lite
+
+tile.he:ventilador1.name=Ventilador de escritorio negro
+tile.he:ventilador2.name=Ventilador de escritorio blanco
+
+tile.he:gameboy1.name=Gameboy
+tile.he:gameboy2.name=Gameboy
+
+tile.he:butaca1.name=Taburete de hierro negro §h[ §aAsiento§h ]
+tile.he:butaca2.name=Taburete de hierro blanco §h[ §aAsiento§h ]
+
+tile.he:soporte-monitor3.name=Monitor curvo con soporte
+tile.he:soporte-monitor-pared3.name=Monitor curvo con montaje en pared
+tile.he:monitor3.name=Monitor curvo
+
+tile.he:tablet1.name=Tablet negra
+tile.he:tablet2.name=Tablet blanca
+
+tile.he:ps2.name=PS2 Fina
+tile.he:ps5.name=PS5
+
+tile.he:nintendo_ds1.name=Nintendo DS 1 Negra §h[ §aInteractivo§h ]
+tile.he:nintendo_ds2.name=Nintendo DS 1 Blanca §h[ §aInteractivo§h ]
+tile.he:nintendo_ds3.name=Nintendo DS 1 Roja §h[ §aInteractivo§h ]
+tile.he:nintendo_ds4.name=Nintendo DS 1 Kaki §h[ §aInteractivo§h ]
+tile.he:nintendo_ds5.name=Nintendo DS 1 Rosa §h[ §aInteractivo§h ]
+
+tile.he:luz.name=LED §h[ §aBrillante§h ]
+tile.he:luz2.name=Barras de luz §h[ §aBrillante§h ]
+
+tile.he:bateria1.name=Batería de coche
+tile.he:air_fryer.name=Freidora de aire

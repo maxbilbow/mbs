@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:vegetation_patch_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tuff_caves/tuff_patch"
+		},
+		"ground_block": "minecraft:tuff",
+		"vegetation_feature": "vanilla_biomes_expansion:pale_caves/scatter_pale_moss_vegetation_feature",
+		"surface": "floor",
+		"depth": {
+			"range_min": 4,
+			"range_max": 10
+		},
+		"vertical_range": 35,
+		"vegetation_chance": 0.19,
+		"horizontal_radius": {
+			"range_min": 15,
+			"range_max": 26
+		},
+		"extra_edge_column_chance": 0.5,
+		"replaceable_blocks": [
+			"minecraft:stone",
+			"minecraft:gravel",
+			"minecraft:diorite",
+			"minecraft:granite",
+			"minecraft:andesite",
+			"minecraft:dripstone_block",
+			"minecraft:pointed_dripstone",
+			"minecraft:deepslate"
+		]
+	}
+}

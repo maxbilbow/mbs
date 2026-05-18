@@ -1,0 +1,115 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:glacial_peaks"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 1,
+				"snow_accumulation": [
+					0.5,
+					1
+				],
+				"temperature": -2
+			},
+			"minecraft:mountain_parameters": {
+				"steep_material_adjustment": {
+					"material": "minecraft:packed_ice",
+					"north_slopes": true,
+					"west_slopes": true
+				}
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:ice",
+					"foundation_material": "minecraft:ice",
+					"mid_material": "minecraft:packed_ice",
+					"top_material": "minecraft:blue_ice",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"mountains",
+					"monster",
+					"overworld",
+					"frozen",
+					"frozen_peaks",
+					"spawns_cold_variant_farm_animals",
+					"spawns_cold_variant_frogs",
+					"spawns_snow_foxes",
+					"spawns_white_rabbits",
+					"spawns_polar_bears_on_alternate_blocks",
+					"ice_plains",
+					"mutated"
+				]
+			},
+			"minecraft:overworld_height": {
+				"noise_params": [
+					0.2625,
+					2.925
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:frozen_peaks",
+							"minecraft:jagged_peaks"
+						],
+						"amount": 0.52,
+						"noise_frequency_scale": 0.16
+					}
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"mid_material": "minecraft:blue_ice"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							-0.5,
+							0.2
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:packed_ice"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							0,
+							0.2
+						]
+					},
+					{
+						"materials": {
+							"mid_material": "minecraft:ice"
+						},
+						"noise_frequency_scale": 0.5,
+						"noise_range": [
+							-0.0625,
+							0.025
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:ice"
+						},
+						"noise_frequency_scale": 0.5,
+						"noise_range": [
+							0,
+							0.025
+						]
+					}
+				]
+			}
+		}
+	}
+}

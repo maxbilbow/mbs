@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "crimson_forest"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "rg:crimson"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5B92FF"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#7285DC"
+      }
+    }
+  }
+}

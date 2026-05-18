@@ -1,0 +1,47 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"BigManIsak"
+		]
+	},
+	"header": {
+		"name": "Thermonuclear Expansion",
+		"description": "§5Developed By BigManIsak",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "170e37ca-a6f8-41f2-b9c2-4e92b433b49c",
+		"version": [
+			1,
+			1,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d9c77bcc-dda3-4cb8-989f-66daaea76e2a",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "988fb5dc-be59-43ad-a43f-1540f6d20403",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"capabilities": [
+		"pbr"
+	]
+}

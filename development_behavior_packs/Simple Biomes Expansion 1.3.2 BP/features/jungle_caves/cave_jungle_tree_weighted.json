@@ -1,0 +1,38 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_1_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_2_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_3_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_4_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_bush_1_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_bush_2_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_bush_3_feature",
+				1
+			]
+		]
+	}
+}

@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "minecraft:campfire_fire_particle",
+      "basic_render_parameters": {
+        "material": "particles_add",
+        "texture": "textures/particle/glowing"
+      }
+    },
+    "components": {
+
+      "minecraft:emitter_rate_steady": {
+        "spawn_rate": 14,
+        "max_particles": 60
+      },
+      "minecraft:emitter_lifetime_expression": {
+        "activation_expression": 1,
+        "expiration_expression": 0
+      },
+      "minecraft:emitter_shape_disc": {
+        "radius": 0.22,
+        "direction": [ 0.0, 1.0, 0.0 ]
+      },
+
+      "minecraft:particle_initial_speed": "math.random(1.2, 3.5)",
+
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "math.random(0.4, 1.4)"
+      },
+
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [
+          "(v.particle_random_1 * 2.0 - 1.0) * 0.6",
+          "math.random(1.5, 3.5)",
+          "(v.particle_random_2 * 2.0 - 1.0) * 0.6"
+        ],
+        "linear_drag_coefficient": 2.8
+      },
+
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          "math.lerp(0.10 + v.particle_random_3 * 0.10, 0.01, math.pow(math.clamp(v.particle_age / v.particle_lifetime, 0, 1), 1.8))",
+          "math.lerp(0.10 + v.particle_random_3 * 0.10, 0.01, math.pow(math.clamp(v.particle_age / v.particle_lifetime, 0, 1), 1.8))"
+        ],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 16,
+          "texture_height": 16,
+          "uv": [ 0, 0 ],
+          "uv_size": [ 16, 16 ]
+        }
+      },
+
+      "minecraft:particle_appearance_tinting": {
+        "color": [
+          1.0,
+          "math.lerp(0.95, 0.05, math.pow(math.clamp(v.particle_age / v.particle_lifetime, 0, 1), 1.1))",
+          "math.lerp(0.55, 0.0,  math.pow(math.clamp(v.particle_age / v.particle_lifetime, 0, 1), 0.7))",
+          "math.lerp(1.0,  0.0,  math.pow(math.clamp(v.particle_age / v.particle_lifetime, 0, 1), 2.2)) * math.clamp(v.particle_age / 0.04, 0, 1)"
+        ]
+      }
+
+    }
+  }
+}

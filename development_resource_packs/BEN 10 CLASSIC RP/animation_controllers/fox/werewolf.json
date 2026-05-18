@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.werewolf_howl": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"howling": "query.property('l8:werewolf_state')=='howling'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.werewolf_move": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"moving": "query.is_moving"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.werewolf_idle": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"idleing": "!query.is_moving"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.werewolf_attack": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"attacking": "variable.attack_time>0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

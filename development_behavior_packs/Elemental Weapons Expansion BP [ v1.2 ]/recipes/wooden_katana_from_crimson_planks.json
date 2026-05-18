@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bca:wooden_katana_from_crimson_planks"
+    },
+
+    "tags": ["crafting_table"],
+    "pattern": ["  X", " X ", "#  "],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:crimson_planks"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:stick"
+      }
+    ],
+    "result": {
+      "item": "bca:wooden_katana"
+    }
+  }
+}

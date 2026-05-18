@@ -1,0 +1,88 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.omni_fall": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"omni_fall": "query.is_moving&&!query.is_jumping"
+						}
+					]
+				},
+				"omni_fall": {
+					"transitions": [
+						{
+							"default": "!query.is_moving||query.is_jumping"
+						}
+					],
+					"on_entry": [
+						"/execute as @e[tag=!omni_fallen,type=player] at @s positioned ^ ^ ^15 run summon omni:falling_omni_capsule ~ ~100 ~",
+						"/execute as @e[tag=!omni_fallen,type=player] run tag @e[type=omni:omni_capsule] add falling",
+						"/execute as @e[tag=!omni_fallen,type=player] run tellraw @a {\"rawtext\":[{\"text\":\"§r§eSomething's falling from the sky!\"}]}",
+						"/tag @a add omni_fallen"
+					]
+				}
+			}
+		},
+		"controller.animation.omni_fallen": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"check_ground": "query.is_on_ground"
+						}
+					]
+				},
+				"check_ground": {
+					"transitions": [
+						{
+							"default": "!query.is_on_ground"
+						},
+						{
+							"omni_fallen": "query.state_time>=0.1"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air [] replace leaves",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air [] replace leaves2",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air [] replace log",
+						"/execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air [] replace log2"
+					]
+				},
+				"omni_fallen": {
+					"transitions": [
+						{
+							"default": "!query.is_on_ground"
+						}
+					],
+					"on_entry": [
+						"/playsound omni.falling_omni @a[r=50]",
+						"/camerashake add @a[r=50] 0.7 2 positional",
+						"/particle minecraft:huge_explosion_emitter ~ ~ ~",
+						"/fill ~-8 ~-7 ~-8 ~8 ~-2 ~8 dirt",
+						"/fill ~-7 ~-1 ~-7 ~7 ~-1 ~7 obsidian",
+						"/fill ~-6 ~-1 ~-6 ~6 ~15 ~6 air",
+						"/fill ~-6 ~-2 ~-6 ~6 ~-2 ~6 obsidian",
+						"/fill ~-5 ~-2 ~-5 ~5 ~-2 ~5 air",
+						"/fill ~-5 ~-3 ~-5 ~5 ~-3 ~5 obsidian",
+						"/fill ~-4 ~-3 ~-4 ~4 ~-3 ~4 air",
+						"/fill ~-4 ~-4 ~-4 ~4 ~-4 ~4 obsidian",
+						"/fill ~-3 ~-4 ~-3 ~3 ~-4 ~3 air",
+						"/fill ~-3 ~-6 ~-3 ~3 ~-5 ~3 obsidian",
+						"/fill ~-2 ~-5 ~-2 ~2 ~-5 ~2 air",
+						"/fill ~-1 ~-6 ~-1 ~1 ~-6 ~1 magma",
+						"/setblock ~2 ~-5 ~ fire",
+						"/setblock ~-2 ~-5 ~ fire",
+						"/setblock ~ ~-5 ~2 fire",
+						"/setblock ~ ~-5 ~-2 fire",
+						"/summon omni:omni_capsule ~ ~-5 ~",
+						"/event entity @s despawn"
+					]
+				}
+			}
+		}
+	}
+}

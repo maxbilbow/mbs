@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.item3d": {
+      "arrays": {
+        "geometries": {
+          "array.geos": [
+            "Geometry.shulker_shield",
+            "Geometry.ender_shield",
+            "Geometry.wither_shield",
+            "Geometry.magma_shield",
+            "Geometry.glowstone_shield",
+            "Geometry.mushroom_shield",
+            "Geometry.slime_shield",
+            "Geometry.dripstone_shield"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.shulker_shield",
+            "Texture.ender_shield",
+            "Texture.wither_shield",
+            "Texture.magma_shield",
+            "Texture.glowstone_shield",
+            "Texture.mushroom_shield",
+            "Texture.slime_shield",
+            "Texture.dripstone_shield"
+          ]
+        }
+      },
+      "geometry": "Array.geos[query.mark_variant]",
+      "materials": [ { "*": "query.mark_variant == 7 ? Material.slime : Material.default" } ],
+      "textures": [ "Array.skins[query.mark_variant]" ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #130
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bloquecuarzo"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bloquecuarzo",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

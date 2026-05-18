@@ -1,0 +1,26 @@
+
+
+
+This addon is closed-source.
+All files in this pack were created and are owned by sirob ©.
+Obfuscated using the "sirobfuscator" software, version 8.0.0.
+The "Sirobfuscator" software was created and is owned by sirob ©.
+
+Creator contacts:
+- Mcpedl profile: https://mcpedl.com/user/robingoodlighting/
+- CurseForge profile: https://curseforge.com/members/sirob/
+- Discord: sirob.js or sirob#9112
+- Website: https://sirobaddons.com/
+
+
+Usage Conditions:
+
+You are permitted to:
+- Use the add-on packs as you see fit in-game.
+- Re-distribute the add-on packs or works elsewhere, with approval of the author.
+
+You are NOT permitted to:
+- Examine the code and works to learn more about the creation and development of add-ons.
+- Negate the accreditation of the original author.
+- Paste the direct download link, negating the MCPEDL page.
+- Take the author's code, works, and textures just to republish them as your own.

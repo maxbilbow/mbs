@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.custom_golem_cracks": {
+      "arrays": {
+        "textures": {
+          "Array.cracks": [
+            "Texture.cracked_high",
+            "Texture.cracked_med",
+            "Texture.cracked_low",
+            "Texture.cracked_none"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "textures": [
+        //no era tan complicada la expresion molang XD
+        "Array.cracks[math.clamp((query.health / query.max_health) * 4, 0, 3)]"
+      ]
+    }
+  }
+}
+//con esto puedes invertir el orden del array de texturas e igualmente funcionara
+//        "Array.cracks[math.clamp((query.max_health - query.health) / (query.max_health / 4), 0, 3)]"

@@ -1,0 +1,18 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "daniye:azalea_tree_placer",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "instant_azalea_tree",
+			"minecraft:entity_placer": {
+				"entity": "daniye:azalea_tree"
+			},
+			"minecraft:glint": true
+		}
+	}
+}

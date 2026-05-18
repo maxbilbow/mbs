@@ -1,0 +1,13 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sapphire_forest/sapphire_forest_plants_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:sapphire_forest/sapphire_forest_plants_condition_feature",
+			"vanilla_biomes_expansion:sapphire_forest/sbe_pitcher_plant_feature"
+		],
+		"early_out": "first_failure"
+	}
+}

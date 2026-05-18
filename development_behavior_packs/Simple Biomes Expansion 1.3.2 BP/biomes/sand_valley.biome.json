@@ -1,0 +1,80 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sand_valley"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 2
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "lowlands"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 4,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:sand",
+					"top_material": "minecraft:sand",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"desert",
+					"monster",
+					"overworld",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"sand_valley"
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:sandstone",
+							"sea_floor_material": "minecraft:sandstone"
+						},
+						"noise_frequency_scale": 0.1,
+						"noise_range": [
+							0.4,
+							1
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:gravel",
+							"sea_floor_material": "minecraft:gravel"
+						},
+						"noise_frequency_scale": 0.1,
+						"noise_range": [
+							0.4,
+							1
+						]
+					}
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:desert"
+						],
+						"amount": 0.295,
+						"noise_frequency_scale": 0.27
+					}
+				]
+			}
+		}
+	}
+}

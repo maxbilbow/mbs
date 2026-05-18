@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bca:stone_katana_from_blackstone"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["  X", " X ", "#  "],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:blackstone"
+      }
+    },
+    "unlock": [
+      {
+        "tag": "minecraft:stone_tool_materials"
+      }
+    ],
+    "result": {
+      "item": "bca:stone_katana"
+    },
+    "priority": -1
+  }
+}

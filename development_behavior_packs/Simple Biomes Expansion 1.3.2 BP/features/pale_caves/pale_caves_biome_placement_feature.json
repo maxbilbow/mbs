@@ -1,0 +1,16 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/pale_caves_biome_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:pale_caves/dirt_patch",
+			"vanilla_biomes_expansion:pale_caves/pale_moss_ceiling_patch",
+			"vanilla_biomes_expansion:pale_caves/pale_hanging_moss_scatter",
+			"vanilla_biomes_expansion:pale_caves/grass_block_patch",
+			"vanilla_biomes_expansion:pale_caves/pale_moss_scatter"
+		],
+		"early_out": "none"
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #323
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cortina_gris"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajaalfombra"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cortina_gris",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

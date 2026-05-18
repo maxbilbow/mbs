@@ -1,0 +1,127 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:zombie_d",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"getUp": {
+				"minecraft:transformation": {
+					"into": "mutant:mutant_zombie",
+					"delay": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:scale": {
+				"value": 0
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"getUp"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_transformed": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"getUp"
+							]
+						}
+					}
+				]
+			},
+			"up1": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {
+							"component_groups": [
+								"down1",
+								"notDown"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"up1",
+								"melee_attack"
+							]
+						}
+					}
+				]
+			},
+			"down1": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {
+							"component_groups": [
+								"summon_attack",
+								"notDown",
+								"melee_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"downed"
+							]
+						}
+					}
+				]
+			},
+			"switch_mode": {
+				"randomize": [
+					{
+						"weight": 100,
+						"remove": {
+							"component_groups": [
+								"summon_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"melee_attack"
+							]
+						}
+					},
+					{
+						"weight": 20,
+						"remove": {
+							"component_groups": [
+								"melee_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"summon_attack"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

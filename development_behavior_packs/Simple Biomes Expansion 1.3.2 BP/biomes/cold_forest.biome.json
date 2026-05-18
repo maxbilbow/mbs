@@ -1,0 +1,82 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:cold_forest"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.8,
+				"snow_accumulation": [
+					0.125,
+					0.25
+				],
+				"temperature": -0.15
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "default"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:dirt",
+					"top_material": "minecraft:grass_block",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"forest",
+					"monster",
+					"overworld",
+					"bee_habitat",
+					"cold",
+					"spawns_cold_variant_farm_animals",
+					"spawns_cold_variant_frogs"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:ice_plains",
+							"minecraft:snowy_slopes",
+							"minecraft:grove"
+						],
+						"amount": 0.365,
+						"noise_frequency_scale": 0.23
+					}
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:powder_snow"
+						},
+						"noise_frequency_scale": 0.1,
+						"noise_range": [
+							0.35,
+							0.6
+						]
+					},
+					{
+						"materials": {
+							"mid_material": "minecraft:powder_snow"
+						},
+						"noise_frequency_scale": 0.1,
+						"noise_range": [
+							0.45,
+							0.58
+						]
+					}
+				]
+			}
+		}
+	}
+}

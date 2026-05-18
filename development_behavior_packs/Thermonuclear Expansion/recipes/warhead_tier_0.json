@@ -1,0 +1,38 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:warhead_tier_0"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_block"
+			},
+			"P": {
+				"item": "kaboom:polystyrene_foam"
+			},
+			"T": {
+				"item": "minecraft:tnt"
+			}
+		},
+		"pattern": [
+			"III",
+			"PTP",
+			"PTP"
+		],
+		"result": {
+			"item": "kaboom:warhead_tier_0"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:fissile_uranium"
+			},
+			{
+				"item": "kaboom:uranium_dust"
+			}
+		]
+	}
+}

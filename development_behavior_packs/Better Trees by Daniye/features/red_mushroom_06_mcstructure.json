@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "daniye:red_mushroom_06_mcstructure"
+		},
+		"structure_name": "mystructure:red_mushroom_06",
+		"facing_direction": "random",
+		"adjustment_radius": 5,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

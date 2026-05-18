@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "wypnt_mss:piglin_boat_feature_proxy"
+		},
+		"places_feature": "wypnt_mss:piglin_boat_feature",
+		"iterations": 1,
+		"x": -16,
+		"z": -16,
+		"y": 0
+	}
+}

@@ -1,0 +1,85 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.silladeruedas.drive": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"wheel_front_right": {
+					"rotation": ["query.modified_distance_moved * 20", "variable.steering / 3", 0]
+				},
+				"wheel_back_right": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [180, 0, 0],
+						"4.0": [360, 0, 0]
+					},
+					"position": [1.5, 0, -13]
+				},
+				"wheel_back_left": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [180, 0, 0],
+						"4.0": [360, 0, 0]
+					},
+					"position": [-1.4, 0, -12]
+				},
+				"steering_wheel": {
+					"rotation": [0, 0, "variable.steering * -0.6"]
+				}
+			}
+		},
+		"animation.silladeruedas.ride": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"wheel_front_right": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [180, 0, 0],
+						"4.0": [360, 0, 0]
+					}
+				},
+				"wheel_back_right": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [180, 0, 0],
+						"4.0": [360, 0, 0]
+					},
+					"position": [1.5, 0, -13]
+				},
+				"wheel_back_left": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [180, 0, 0],
+						"4.0": [360, 0, 0]
+					},
+					"position": [-1.4, 0, -12]
+				},
+				"steering_wheel": {
+					"rotation": [0, 0, 0]
+				}
+			}
+		},
+		"animation.silladeruedas.stand": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"wheel_front_right": {
+					"rotation": ["query.modified_distance_moved * 20", "variable.steering / 3", 0]
+				},
+				"wheel_back_right": {
+					"rotation": [0, 0, 0],
+					"position": [1.5, 0, -13]
+				},
+				"wheel_back_left": {
+					"rotation": [0, 0, 0],
+					"position": [-1.4, 0, -12]
+				},
+				"steering_wheel": {
+					"rotation": [0, 0, "variable.steering * -0.6"]
+				}
+			}
+		}
+	}
+}

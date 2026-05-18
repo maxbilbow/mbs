@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.coreblockstudios_mss.spirit": {
+			"arrays": {
+				"textures": {
+					"Array.base": [
+						"Texture.coreblockstudios_mss.spirit.spirit_1",
+						"Texture.coreblockstudios_mss.spirit.spirit_2",
+						"Texture.coreblockstudios_mss.spirit.spirit_3",
+						"Texture.coreblockstudios_mss.spirit.spirit_4",
+						"Texture.coreblockstudios_mss.spirit.spirit_5"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.base[query.variant]"
+			]
+		}
+	}
+}

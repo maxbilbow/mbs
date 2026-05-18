@@ -1,0 +1,131 @@
+[
+    {
+        "name": "Turbo Commands @1.1.25",
+        "bp": "e7d80eb9-c1d7-4338-a808-6bb65a1caae2",
+        "rp": "7e76edea-b15b-4483-a528-eb5eed8cf511",
+        "order": 0
+    },
+    {
+        "name": "Meme Addon @1.0.0",
+        "bp": "fab2979a-e26b-4d1e-b041-3be334d11081",
+        "rp": "5796608c-ff19-4cc9-91d9-d81f5dce1270",
+        "order": 0
+    },
+    {
+        "name": "Better Trees by Daniye @2.0.50",
+        "bp": "4487ffac-2100-4536-b719-2df0aba4c9ed",
+        "rp": "2de69d15-1330-484e-b511-d37e8f32f819",
+        "order": 0
+    },
+    {
+        "name": "Connected Glass @1.1.7",
+        "bp": "a773e3cd-1cf4-4464-88c5-d00185c2ccef",
+        "rp": "d189dfc0-c7d1-4fb1-b2f9-0b406b4043fc",
+        "order": 0
+    },
+    {
+        "name": "Italian Brain Rot @10.0.3",
+        "bp": "b967e633-e631-4068-9031-57c57111deb9",
+        "rp": "e91b2310-4179-4e2b-95d9-44beeddae65f",
+        "order": 0
+    },
+    {
+        "name": "ITALIAN BRAINROT ADDON @1.26.0",
+        "bp": "a3b46eb4-20c7-4d5e-8998-5011eaa77ffb",
+        "rp": "50554cdd-5083-4f2f-805e-10ed7bfa19b4",
+        "order": 0
+    },
+    {
+        "name": "Not Enough Golems @1.2.10",
+        "bp": "fbaa7cdd-d421-47e6-92b0-89d11de3f3cf",
+        "rp": "9eb639b4-1580-4fdd-9488-9713e101652c",
+        "order": 0
+    },
+    {
+        "name": "Thermonuclear Expansion @1.1.0",
+        "bp": "988fb5dc-be59-43ad-a43f-1540f6d20403",
+        "rp": "170e37ca-a6f8-41f2-b9c2-4e92b433b49c",
+        "order": 0
+    },
+    {
+        "name": "Tree Chopper @2.5.0",
+        "bp": "f4d3949e-b290-482c-b8b4-931b21107ed7",
+        "rp": "217ce6fa-b038-43bc-8581-59e33493718a",
+        "order": 0
+    },
+    {
+        "name": "System Dynamic Lights Addon V3.2.2 @1.0.0",
+        "bp": "4af7083a-0b1e-423b-8ba9-8bd56397eafa",
+        "rp": "9662b34a-9a6c-47dc-b1ce-7541c8bbda91",
+        "order": 0
+    },
+    {
+        "name": "More Simple Structures @1.0.1",
+        "bp": "885d2238-e587-4063-b0a9-044f4ab0c893",
+        "rp": "d904de8e-b5cc-4639-92c0-2a4b20d31b84",
+        "order": 0
+    },
+    {
+        "name": "drills_language_update_v2_@1.2.0",
+        "bp": "5fdf43ea-deae-40bc-b7ee-9051e763a0dc",
+        "rp": "61e5cf7d-c8a7-44b2-89c9-a82e9db91cbb",
+        "order": 0
+    },
+    {
+        "name": "Elemental Weapons Expansion [ v1.1 ]@1.0.0",
+        "bp": "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f",
+        "rp": "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b",
+        "order": 0
+    },
+    {
+        "name": "Home Electronics WE 1.9 @1.0.1",
+        "bp": "b642a8c0-23de-4125-99df-64bfcf390574",
+        "rp": "168d0c2c-a591-4b47-abf6-278a02bda973",
+        "order": 0
+    },
+    {
+        "name": "Modern Furniture WE 13.1 @1.0.1",
+        "bp": "e13a0da6-5187-49fd-896a-7075b847d728",
+        "rp": "2b516aa8-2b8c-4fa1-ae00-741632c64b6c",
+        "order": 0
+    },
+    {
+        "name": "Simple Biomes Expansion @1.3.2",
+        "bp": "fda53131-5b2c-479d-94c6-b3fd96e6c255",
+        "rp": "cad5ed87-3a2c-4988-9d62-edd796fa9cf0",
+        "order": 0
+    },
+    {
+        "name": "Change Entities Size @1.0.8",
+        "bp": "4f2c6a2f-d774-46af-a1f3-5a5d0b4ef23c",
+        "rp": "6b511c5c-dfee-4303-b3b2-26fac4cf8b8c",
+        "order": 0
+    },
+    {
+        "name": "Instant Structures @7.0.0",
+        "bp": "ae9a6dc5-7d28-4803-b5cb-f8d7ecf3858f",
+        "rp": "00599f8d-0fba-406a-a74b-e7443a528c48",
+        "order": 0
+    },
+    {
+        "name": "Max's Shit",
+        "bp": "00972561-1dc7-4a3a-a4f6-cb34571b642a",
+        "rp": "019d97dc-ae90-7742-88e4-c77f60e0cfdf",
+        "order": 0
+    },
+    {
+        "name": "Vibrant Visuals Extreme",
+        "rp": "abe088da-90f4-4248-aa98-4869e5e8c9de",
+        "order": -1
+    },
+    {
+        "name": "BSL Shaders Bedrock - Classic",
+        "rp": "bf3ba58b-1caa-4746-806e-6195b6bd785d",
+        "order": -1
+    },
+    {
+        "name": "Revolution Vibrant Visual - Realistic'",
+        "rp": "917aab9c-5273-1000-ba5e-087a4328aa6b",
+        "order": -1
+    }
+]

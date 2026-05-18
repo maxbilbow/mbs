@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "cold_taiga_mutated"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "ale:cold_taiga"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5993ff"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#1F6EFF"
+
+            },
+            "minecraft:atmosphere_identifier": {
+              "atmosphere_identifier": "ale:cold_atmosphere"
+            },
+            "minecraft:lighting_identifier": {
+              "lighting_identifier": "ale:cold_lighting"
+            }
+    }
+  }
+}

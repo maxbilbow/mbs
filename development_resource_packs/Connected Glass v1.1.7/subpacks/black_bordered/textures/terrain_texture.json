@@ -1,0 +1,6133 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"null": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blank"
+				}
+			]
+		},
+		"regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/0"
+				}
+			]
+		},
+		"left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/1"
+				}
+			]
+		},
+		"middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/2"
+				}
+			]
+		},
+		"right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/3"
+				}
+			]
+		},
+		"top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/12"
+				}
+			]
+		},
+		"corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/13"
+				}
+			]
+		},
+		"top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/14"
+				}
+			]
+		},
+		"corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/15"
+				}
+			]
+		},
+		"middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/24"
+				}
+			]
+		},
+		"left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/25"
+				}
+			]
+		},
+		"plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/26"
+				}
+			]
+		},
+		"right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/27"
+				}
+			]
+		},
+		"down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/36"
+				}
+			]
+		},
+		"corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/37"
+				}
+			]
+		},
+		"down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/38"
+				}
+			]
+		},
+		"corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/39"
+				}
+			]
+		},
+		"00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/44"
+				}
+			]
+		},
+		"00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/45"
+				}
+			]
+		},
+		"00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/22"
+				}
+			]
+		},
+		"00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/33"
+				}
+			]
+		},
+		"00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/35"
+				}
+			]
+		},
+		"00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/23"
+				}
+			]
+		},
+		"00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/9"
+				}
+			]
+		},
+		"top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/31"
+				}
+			]
+		},
+		"left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/28"
+				}
+			]
+		},
+		"01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/32"
+				}
+			]
+		},
+		"01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/10"
+				}
+			]
+		},
+		"01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/34"
+				}
+			]
+		},
+		"01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/21"
+				}
+			]
+		},
+		"top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/29"
+				}
+			]
+		},
+		"01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/11"
+				}
+			]
+		},
+		"01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/20"
+				}
+			]
+		},
+		"01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/8"
+				}
+			]
+		},
+		"01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/46"
+				}
+			]
+		},
+		"top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/7"
+				}
+			]
+		},
+		"left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/30"
+				}
+			]
+		},
+		"left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/6"
+				}
+			]
+		},
+		"corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/4"
+				}
+			]
+		},
+		"down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/42"
+				}
+			]
+		},
+		"down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/40"
+				}
+			]
+		},
+		"down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/18"
+				}
+			]
+		},
+		"corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/16"
+				}
+			]
+		},
+		"right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/41"
+				}
+			]
+		},
+		"corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/5"
+				}
+			]
+		},
+		"right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/19"
+				}
+			]
+		},
+		"corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/17"
+				}
+			]
+		},
+		"right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/default/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		"white_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/0"
+				}
+			]
+		},
+		"white_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/1"
+				}
+			]
+		},
+		"white_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/2"
+				}
+			]
+		},
+		"white_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/3"
+				}
+			]
+		},
+		"white_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/12"
+				}
+			]
+		},
+		"white_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/13"
+				}
+			]
+		},
+		"white_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/14"
+				}
+			]
+		},
+		"white_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/15"
+				}
+			]
+		},
+		"white_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/24"
+				}
+			]
+		},
+		"white_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/25"
+				}
+			]
+		},
+		"white_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/26"
+				}
+			]
+		},
+		"white_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/27"
+				}
+			]
+		},
+		"white_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/36"
+				}
+			]
+		},
+		"white_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/37"
+				}
+			]
+		},
+		"white_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/38"
+				}
+			]
+		},
+		"white_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/39"
+				}
+			]
+		},
+		"white_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/44"
+				}
+			]
+		},
+		"white_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/45"
+				}
+			]
+		},
+		"white_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/22"
+				}
+			]
+		},
+		"white_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/33"
+				}
+			]
+		},
+		"white_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/35"
+				}
+			]
+		},
+		"white_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/23"
+				}
+			]
+		},
+		"white_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/9"
+				}
+			]
+		},
+		"white_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/31"
+				}
+			]
+		},
+		"white_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/28"
+				}
+			]
+		},
+		"white_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/32"
+				}
+			]
+		},
+		"white_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/10"
+				}
+			]
+		},
+		"white_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/34"
+				}
+			]
+		},
+		"white_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/21"
+				}
+			]
+		},
+		"white_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/29"
+				}
+			]
+		},
+		"white_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/11"
+				}
+			]
+		},
+		"white_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/20"
+				}
+			]
+		},
+		"white_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/8"
+				}
+			]
+		},
+		"white_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/46"
+				}
+			]
+		},
+		"white_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/7"
+				}
+			]
+		},
+		"white_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/30"
+				}
+			]
+		},
+		"white_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/6"
+				}
+			]
+		},
+		"white_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/4"
+				}
+			]
+		},
+		"white_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/42"
+				}
+			]
+		},
+		"white_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/40"
+				}
+			]
+		},
+		"white_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/18"
+				}
+			]
+		},
+		"white_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/16"
+				}
+			]
+		},
+		"white_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/41"
+				}
+			]
+		},
+		"white_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/5"
+				}
+			]
+		},
+		"white_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/19"
+				}
+			]
+		},
+		"white_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/17"
+				}
+			]
+		},
+		"white_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/white/43"
+				}
+			]
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		"silver_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/0"
+				}
+			]
+		},
+		"silver_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/1"
+				}
+			]
+		},
+		"silver_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/2"
+				}
+			]
+		},
+		"silver_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/3"
+				}
+			]
+		},
+		"silver_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/12"
+				}
+			]
+		},
+		"silver_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/13"
+				}
+			]
+		},
+		"silver_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/14"
+				}
+			]
+		},
+		"silver_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/15"
+				}
+			]
+		},
+		"silver_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/24"
+				}
+			]
+		},
+		"silver_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/25"
+				}
+			]
+		},
+		"silver_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/26"
+				}
+			]
+		},
+		"silver_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/27"
+				}
+			]
+		},
+		"silver_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/36"
+				}
+			]
+		},
+		"silver_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/37"
+				}
+			]
+		},
+		"silver_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/38"
+				}
+			]
+		},
+		"silver_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/39"
+				}
+			]
+		},
+		"silver_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/44"
+				}
+			]
+		},
+		"silver_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/45"
+				}
+			]
+		},
+		"silver_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/22"
+				}
+			]
+		},
+		"silver_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/33"
+				}
+			]
+		},
+		"silver_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/35"
+				}
+			]
+		},
+		"silver_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/23"
+				}
+			]
+		},
+		"silver_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/9"
+				}
+			]
+		},
+		"silver_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/31"
+				}
+			]
+		},
+		"silver_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/28"
+				}
+			]
+		},
+		"silver_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/32"
+				}
+			]
+		},
+		"silver_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/10"
+				}
+			]
+		},
+		"silver_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/34"
+				}
+			]
+		},
+		"silver_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/21"
+				}
+			]
+		},
+		"silver_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/29"
+				}
+			]
+		},
+		"silver_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/11"
+				}
+			]
+		},
+		"silver_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/20"
+				}
+			]
+		},
+		"silver_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/8"
+				}
+			]
+		},
+		"silver_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/46"
+				}
+			]
+		},
+		"silver_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/7"
+				}
+			]
+		},
+		"silver_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/30"
+				}
+			]
+		},
+		"silver_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/6"
+				}
+			]
+		},
+		"silver_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/4"
+				}
+			]
+		},
+		"silver_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/42"
+				}
+			]
+		},
+		"silver_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/40"
+				}
+			]
+		},
+		"silver_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/18"
+				}
+			]
+		},
+		"silver_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/16"
+				}
+			]
+		},
+		"silver_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/41"
+				}
+			]
+		},
+		"silver_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/5"
+				}
+			]
+		},
+		"silver_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/19"
+				}
+			]
+		},
+		"silver_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/17"
+				}
+			]
+		},
+		"silver_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/silver/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		"gray_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/0"
+				}
+			]
+		},
+		"gray_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/1"
+				}
+			]
+		},
+		"gray_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/2"
+				}
+			]
+		},
+		"gray_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/3"
+				}
+			]
+		},
+		"gray_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/12"
+				}
+			]
+		},
+		"gray_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/13"
+				}
+			]
+		},
+		"gray_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/14"
+				}
+			]
+		},
+		"gray_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/15"
+				}
+			]
+		},
+		"gray_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/24"
+				}
+			]
+		},
+		"gray_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/25"
+				}
+			]
+		},
+		"gray_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/26"
+				}
+			]
+		},
+		"gray_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/27"
+				}
+			]
+		},
+		"gray_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/36"
+				}
+			]
+		},
+		"gray_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/37"
+				}
+			]
+		},
+		"gray_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/38"
+				}
+			]
+		},
+		"gray_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/39"
+				}
+			]
+		},
+		"gray_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/44"
+				}
+			]
+		},
+		"gray_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/45"
+				}
+			]
+		},
+		"gray_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/22"
+				}
+			]
+		},
+		"gray_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/33"
+				}
+			]
+		},
+		"gray_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/35"
+				}
+			]
+		},
+		"gray_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/23"
+				}
+			]
+		},
+		"gray_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/9"
+				}
+			]
+		},
+		"gray_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/31"
+				}
+			]
+		},
+		"gray_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/28"
+				}
+			]
+		},
+		"gray_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/32"
+				}
+			]
+		},
+		"gray_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/10"
+				}
+			]
+		},
+		"gray_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/34"
+				}
+			]
+		},
+		"gray_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/21"
+				}
+			]
+		},
+		"gray_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/29"
+				}
+			]
+		},
+		"gray_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/11"
+				}
+			]
+		},
+		"gray_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/20"
+				}
+			]
+		},
+		"gray_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/8"
+				}
+			]
+		},
+		"gray_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/46"
+				}
+			]
+		},
+		"gray_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/7"
+				}
+			]
+		},
+		"gray_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/30"
+				}
+			]
+		},
+		"gray_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/6"
+				}
+			]
+		},
+		"gray_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/4"
+				}
+			]
+		},
+		"gray_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/42"
+				}
+			]
+		},
+		"gray_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/40"
+				}
+			]
+		},
+		"gray_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/18"
+				}
+			]
+		},
+		"gray_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/16"
+				}
+			]
+		},
+		"gray_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/41"
+				}
+			]
+		},
+		"gray_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/5"
+				}
+			]
+		},
+		"gray_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/19"
+				}
+			]
+		},
+		"gray_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/17"
+				}
+			]
+		},
+		"gray_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/gray/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		"black_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/0"
+				}
+			]
+		},
+		"black_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/1"
+				}
+			]
+		},
+		"black_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/2"
+				}
+			]
+		},
+		"black_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/3"
+				}
+			]
+		},
+		"black_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/12"
+				}
+			]
+		},
+		"black_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/13"
+				}
+			]
+		},
+		"black_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/14"
+				}
+			]
+		},
+		"black_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/15"
+				}
+			]
+		},
+		"black_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/24"
+				}
+			]
+		},
+		"black_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/25"
+				}
+			]
+		},
+		"black_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/26"
+				}
+			]
+		},
+		"black_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/27"
+				}
+			]
+		},
+		"black_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/36"
+				}
+			]
+		},
+		"black_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/37"
+				}
+			]
+		},
+		"black_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/38"
+				}
+			]
+		},
+		"black_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/39"
+				}
+			]
+		},
+		"black_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/44"
+				}
+			]
+		},
+		"black_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/45"
+				}
+			]
+		},
+		"black_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/22"
+				}
+			]
+		},
+		"black_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/33"
+				}
+			]
+		},
+		"black_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/35"
+				}
+			]
+		},
+		"black_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/23"
+				}
+			]
+		},
+		"black_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/9"
+				}
+			]
+		},
+		"black_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/31"
+				}
+			]
+		},
+		"black_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/28"
+				}
+			]
+		},
+		"black_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/32"
+				}
+			]
+		},
+		"black_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/10"
+				}
+			]
+		},
+		"black_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/34"
+				}
+			]
+		},
+		"black_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/21"
+				}
+			]
+		},
+		"black_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/29"
+				}
+			]
+		},
+		"black_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/11"
+				}
+			]
+		},
+		"black_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/20"
+				}
+			]
+		},
+		"black_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/8"
+				}
+			]
+		},
+		"black_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/46"
+				}
+			]
+		},
+		"black_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/7"
+				}
+			]
+		},
+		"black_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/30"
+				}
+			]
+		},
+		"black_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/6"
+				}
+			]
+		},
+		"black_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/4"
+				}
+			]
+		},
+		"black_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/42"
+				}
+			]
+		},
+		"black_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/40"
+				}
+			]
+		},
+		"black_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/18"
+				}
+			]
+		},
+		"black_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/16"
+				}
+			]
+		},
+		"black_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/41"
+				}
+			]
+		},
+		"black_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/5"
+				}
+			]
+		},
+		"black_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/19"
+				}
+			]
+		},
+		"black_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/17"
+				}
+			]
+		},
+		"black_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/black/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"brown_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/0"
+				}
+			]
+		},
+		"brown_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/1"
+				}
+			]
+		},
+		"brown_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/2"
+				}
+			]
+		},
+		"brown_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/3"
+				}
+			]
+		},
+		"brown_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/12"
+				}
+			]
+		},
+		"brown_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/13"
+				}
+			]
+		},
+		"brown_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/14"
+				}
+			]
+		},
+		"brown_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/15"
+				}
+			]
+		},
+		"brown_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/24"
+				}
+			]
+		},
+		"brown_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/25"
+				}
+			]
+		},
+		"brown_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/26"
+				}
+			]
+		},
+		"brown_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/27"
+				}
+			]
+		},
+		"brown_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/36"
+				}
+			]
+		},
+		"brown_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/37"
+				}
+			]
+		},
+		"brown_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/38"
+				}
+			]
+		},
+		"brown_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/39"
+				}
+			]
+		},
+		"brown_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/44"
+				}
+			]
+		},
+		"brown_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/45"
+				}
+			]
+		},
+		"brown_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/22"
+				}
+			]
+		},
+		"brown_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/33"
+				}
+			]
+		},
+		"brown_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/35"
+				}
+			]
+		},
+		"brown_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/23"
+				}
+			]
+		},
+		"brown_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/9"
+				}
+			]
+		},
+		"brown_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/31"
+				}
+			]
+		},
+		"brown_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/28"
+				}
+			]
+		},
+		"brown_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/32"
+				}
+			]
+		},
+		"brown_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/10"
+				}
+			]
+		},
+		"brown_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/34"
+				}
+			]
+		},
+		"brown_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/21"
+				}
+			]
+		},
+		"brown_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/29"
+				}
+			]
+		},
+		"brown_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/11"
+				}
+			]
+		},
+		"brown_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/20"
+				}
+			]
+		},
+		"brown_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/8"
+				}
+			]
+		},
+		"brown_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/46"
+				}
+			]
+		},
+		"brown_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/7"
+				}
+			]
+		},
+		"brown_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/30"
+				}
+			]
+		},
+		"brown_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/6"
+				}
+			]
+		},
+		"brown_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/4"
+				}
+			]
+		},
+		"brown_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/42"
+				}
+			]
+		},
+		"brown_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/40"
+				}
+			]
+		},
+		"brown_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/18"
+				}
+			]
+		},
+		"brown_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/16"
+				}
+			]
+		},
+		"brown_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/41"
+				}
+			]
+		},
+		"brown_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/5"
+				}
+			]
+		},
+		"brown_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/19"
+				}
+			]
+		},
+		"brown_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/17"
+				}
+			]
+		},
+		"brown_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/brown/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		"red_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/0"
+				}
+			]
+		},
+		"red_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/1"
+				}
+			]
+		},
+		"red_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/2"
+				}
+			]
+		},
+		"red_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/3"
+				}
+			]
+		},
+		"red_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/12"
+				}
+			]
+		},
+		"red_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/13"
+				}
+			]
+		},
+		"red_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/14"
+				}
+			]
+		},
+		"red_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/15"
+				}
+			]
+		},
+		"red_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/24"
+				}
+			]
+		},
+		"red_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/25"
+				}
+			]
+		},
+		"red_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/26"
+				}
+			]
+		},
+		"red_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/27"
+				}
+			]
+		},
+		"red_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/36"
+				}
+			]
+		},
+		"red_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/37"
+				}
+			]
+		},
+		"red_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/38"
+				}
+			]
+		},
+		"red_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/39"
+				}
+			]
+		},
+		"red_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/44"
+				}
+			]
+		},
+		"red_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/45"
+				}
+			]
+		},
+		"red_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/22"
+				}
+			]
+		},
+		"red_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/33"
+				}
+			]
+		},
+		"red_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/35"
+				}
+			]
+		},
+		"red_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/23"
+				}
+			]
+		},
+		"red_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/9"
+				}
+			]
+		},
+		"red_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/31"
+				}
+			]
+		},
+		"red_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/28"
+				}
+			]
+		},
+		"red_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/32"
+				}
+			]
+		},
+		"red_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/10"
+				}
+			]
+		},
+		"red_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/34"
+				}
+			]
+		},
+		"red_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/21"
+				}
+			]
+		},
+		"red_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/29"
+				}
+			]
+		},
+		"red_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/11"
+				}
+			]
+		},
+		"red_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/20"
+				}
+			]
+		},
+		"red_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/8"
+				}
+			]
+		},
+		"red_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/46"
+				}
+			]
+		},
+		"red_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/7"
+				}
+			]
+		},
+		"red_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/30"
+				}
+			]
+		},
+		"red_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/6"
+				}
+			]
+		},
+		"red_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/4"
+				}
+			]
+		},
+		"red_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/42"
+				}
+			]
+		},
+		"red_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/40"
+				}
+			]
+		},
+		"red_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/18"
+				}
+			]
+		},
+		"red_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/16"
+				}
+			]
+		},
+		"red_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/41"
+				}
+			]
+		},
+		"red_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/5"
+				}
+			]
+		},
+		"red_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/19"
+				}
+			]
+		},
+		"red_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/17"
+				}
+			]
+		},
+		"red_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/red/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"orange_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/0"
+				}
+			]
+		},
+		"orange_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/1"
+				}
+			]
+		},
+		"orange_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/2"
+				}
+			]
+		},
+		"orange_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/3"
+				}
+			]
+		},
+		"orange_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/12"
+				}
+			]
+		},
+		"orange_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/13"
+				}
+			]
+		},
+		"orange_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/14"
+				}
+			]
+		},
+		"orange_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/15"
+				}
+			]
+		},
+		"orange_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/24"
+				}
+			]
+		},
+		"orange_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/25"
+				}
+			]
+		},
+		"orange_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/26"
+				}
+			]
+		},
+		"orange_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/27"
+				}
+			]
+		},
+		"orange_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/36"
+				}
+			]
+		},
+		"orange_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/37"
+				}
+			]
+		},
+		"orange_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/38"
+				}
+			]
+		},
+		"orange_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/39"
+				}
+			]
+		},
+		"orange_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/44"
+				}
+			]
+		},
+		"orange_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/45"
+				}
+			]
+		},
+		"orange_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/22"
+				}
+			]
+		},
+		"orange_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/33"
+				}
+			]
+		},
+		"orange_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/35"
+				}
+			]
+		},
+		"orange_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/23"
+				}
+			]
+		},
+		"orange_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/9"
+				}
+			]
+		},
+		"orange_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/31"
+				}
+			]
+		},
+		"orange_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/28"
+				}
+			]
+		},
+		"orange_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/32"
+				}
+			]
+		},
+		"orange_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/10"
+				}
+			]
+		},
+		"orange_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/34"
+				}
+			]
+		},
+		"orange_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/21"
+				}
+			]
+		},
+		"orange_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/29"
+				}
+			]
+		},
+		"orange_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/11"
+				}
+			]
+		},
+		"orange_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/20"
+				}
+			]
+		},
+		"orange_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/8"
+				}
+			]
+		},
+		"orange_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/46"
+				}
+			]
+		},
+		"orange_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/7"
+				}
+			]
+		},
+		"orange_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/30"
+				}
+			]
+		},
+		"orange_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/6"
+				}
+			]
+		},
+		"orange_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/4"
+				}
+			]
+		},
+		"orange_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/42"
+				}
+			]
+		},
+		"orange_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/40"
+				}
+			]
+		},
+		"orange_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/18"
+				}
+			]
+		},
+		"orange_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/16"
+				}
+			]
+		},
+		"orange_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/41"
+				}
+			]
+		},
+		"orange_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/5"
+				}
+			]
+		},
+		"orange_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/19"
+				}
+			]
+		},
+		"orange_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/17"
+				}
+			]
+		},
+		"orange_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/orange/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"yellow_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/0"
+				}
+			]
+		},
+		"yellow_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/1"
+				}
+			]
+		},
+		"yellow_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/2"
+				}
+			]
+		},
+		"yellow_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/3"
+				}
+			]
+		},
+		"yellow_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/12"
+				}
+			]
+		},
+		"yellow_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/13"
+				}
+			]
+		},
+		"yellow_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/14"
+				}
+			]
+		},
+		"yellow_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/15"
+				}
+			]
+		},
+		"yellow_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/24"
+				}
+			]
+		},
+		"yellow_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/25"
+				}
+			]
+		},
+		"yellow_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/26"
+				}
+			]
+		},
+		"yellow_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/27"
+				}
+			]
+		},
+		"yellow_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/36"
+				}
+			]
+		},
+		"yellow_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/37"
+				}
+			]
+		},
+		"yellow_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/38"
+				}
+			]
+		},
+		"yellow_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/39"
+				}
+			]
+		},
+		"yellow_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/44"
+				}
+			]
+		},
+		"yellow_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/45"
+				}
+			]
+		},
+		"yellow_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/22"
+				}
+			]
+		},
+		"yellow_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/33"
+				}
+			]
+		},
+		"yellow_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/35"
+				}
+			]
+		},
+		"yellow_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/23"
+				}
+			]
+		},
+		"yellow_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/9"
+				}
+			]
+		},
+		"yellow_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/31"
+				}
+			]
+		},
+		"yellow_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/28"
+				}
+			]
+		},
+		"yellow_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/32"
+				}
+			]
+		},
+		"yellow_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/10"
+				}
+			]
+		},
+		"yellow_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/34"
+				}
+			]
+		},
+		"yellow_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/21"
+				}
+			]
+		},
+		"yellow_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/29"
+				}
+			]
+		},
+		"yellow_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/11"
+				}
+			]
+		},
+		"yellow_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/20"
+				}
+			]
+		},
+		"yellow_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/8"
+				}
+			]
+		},
+		"yellow_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/46"
+				}
+			]
+		},
+		"yellow_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/7"
+				}
+			]
+		},
+		"yellow_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/30"
+				}
+			]
+		},
+		"yellow_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/6"
+				}
+			]
+		},
+		"yellow_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/4"
+				}
+			]
+		},
+		"yellow_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/42"
+				}
+			]
+		},
+		"yellow_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/40"
+				}
+			]
+		},
+		"yellow_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/18"
+				}
+			]
+		},
+		"yellow_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/16"
+				}
+			]
+		},
+		"yellow_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/41"
+				}
+			]
+		},
+		"yellow_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/5"
+				}
+			]
+		},
+		"yellow_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/19"
+				}
+			]
+		},
+		"yellow_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/17"
+				}
+			]
+		},
+		"yellow_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/yellow/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"lime_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/0"
+				}
+			]
+		},
+		"lime_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/1"
+				}
+			]
+		},
+		"lime_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/2"
+				}
+			]
+		},
+		"lime_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/3"
+				}
+			]
+		},
+		"lime_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/12"
+				}
+			]
+		},
+		"lime_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/13"
+				}
+			]
+		},
+		"lime_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/14"
+				}
+			]
+		},
+		"lime_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/15"
+				}
+			]
+		},
+		"lime_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/24"
+				}
+			]
+		},
+		"lime_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/25"
+				}
+			]
+		},
+		"lime_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/26"
+				}
+			]
+		},
+		"lime_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/27"
+				}
+			]
+		},
+		"lime_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/36"
+				}
+			]
+		},
+		"lime_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/37"
+				}
+			]
+		},
+		"lime_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/38"
+				}
+			]
+		},
+		"lime_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/39"
+				}
+			]
+		},
+		"lime_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/44"
+				}
+			]
+		},
+		"lime_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/45"
+				}
+			]
+		},
+		"lime_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/22"
+				}
+			]
+		},
+		"lime_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/33"
+				}
+			]
+		},
+		"lime_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/35"
+				}
+			]
+		},
+		"lime_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/23"
+				}
+			]
+		},
+		"lime_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/9"
+				}
+			]
+		},
+		"lime_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/31"
+				}
+			]
+		},
+		"lime_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/28"
+				}
+			]
+		},
+		"lime_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/32"
+				}
+			]
+		},
+		"lime_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/10"
+				}
+			]
+		},
+		"lime_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/34"
+				}
+			]
+		},
+		"lime_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/21"
+				}
+			]
+		},
+		"lime_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/29"
+				}
+			]
+		},
+		"lime_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/11"
+				}
+			]
+		},
+		"lime_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/20"
+				}
+			]
+		},
+		"lime_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/8"
+				}
+			]
+		},
+		"lime_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/46"
+				}
+			]
+		},
+		"lime_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/7"
+				}
+			]
+		},
+		"lime_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/30"
+				}
+			]
+		},
+		"lime_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/6"
+				}
+			]
+		},
+		"lime_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/4"
+				}
+			]
+		},
+		"lime_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/42"
+				}
+			]
+		},
+		"lime_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/40"
+				}
+			]
+		},
+		"lime_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/18"
+				}
+			]
+		},
+		"lime_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/16"
+				}
+			]
+		},
+		"lime_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/41"
+				}
+			]
+		},
+		"lime_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/5"
+				}
+			]
+		},
+		"lime_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/19"
+				}
+			]
+		},
+		"lime_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/17"
+				}
+			]
+		},
+		"lime_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/lime/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"green_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/0"
+				}
+			]
+		},
+		"green_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/1"
+				}
+			]
+		},
+		"green_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/2"
+				}
+			]
+		},
+		"green_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/3"
+				}
+			]
+		},
+		"green_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/12"
+				}
+			]
+		},
+		"green_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/13"
+				}
+			]
+		},
+		"green_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/14"
+				}
+			]
+		},
+		"green_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/15"
+				}
+			]
+		},
+		"green_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/24"
+				}
+			]
+		},
+		"green_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/25"
+				}
+			]
+		},
+		"green_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/26"
+				}
+			]
+		},
+		"green_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/27"
+				}
+			]
+		},
+		"green_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/36"
+				}
+			]
+		},
+		"green_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/37"
+				}
+			]
+		},
+		"green_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/38"
+				}
+			]
+		},
+		"green_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/39"
+				}
+			]
+		},
+		"green_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/44"
+				}
+			]
+		},
+		"green_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/45"
+				}
+			]
+		},
+		"green_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/22"
+				}
+			]
+		},
+		"green_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/33"
+				}
+			]
+		},
+		"green_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/35"
+				}
+			]
+		},
+		"green_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/23"
+				}
+			]
+		},
+		"green_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/9"
+				}
+			]
+		},
+		"green_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/31"
+				}
+			]
+		},
+		"green_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/28"
+				}
+			]
+		},
+		"green_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/32"
+				}
+			]
+		},
+		"green_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/10"
+				}
+			]
+		},
+		"green_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/34"
+				}
+			]
+		},
+		"green_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/21"
+				}
+			]
+		},
+		"green_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/29"
+				}
+			]
+		},
+		"green_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/11"
+				}
+			]
+		},
+		"green_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/20"
+				}
+			]
+		},
+		"green_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/8"
+				}
+			]
+		},
+		"green_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/46"
+				}
+			]
+		},
+		"green_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/7"
+				}
+			]
+		},
+		"green_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/30"
+				}
+			]
+		},
+		"green_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/6"
+				}
+			]
+		},
+		"green_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/4"
+				}
+			]
+		},
+		"green_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/42"
+				}
+			]
+		},
+		"green_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/40"
+				}
+			]
+		},
+		"green_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/18"
+				}
+			]
+		},
+		"green_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/16"
+				}
+			]
+		},
+		"green_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/41"
+				}
+			]
+		},
+		"green_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/5"
+				}
+			]
+		},
+		"green_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/19"
+				}
+			]
+		},
+		"green_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/17"
+				}
+			]
+		},
+		"green_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/green/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"cyan_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/0"
+				}
+			]
+		},
+		"cyan_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/1"
+				}
+			]
+		},
+		"cyan_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/2"
+				}
+			]
+		},
+		"cyan_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/3"
+				}
+			]
+		},
+		"cyan_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/12"
+				}
+			]
+		},
+		"cyan_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/13"
+				}
+			]
+		},
+		"cyan_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/14"
+				}
+			]
+		},
+		"cyan_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/15"
+				}
+			]
+		},
+		"cyan_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/24"
+				}
+			]
+		},
+		"cyan_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/25"
+				}
+			]
+		},
+		"cyan_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/26"
+				}
+			]
+		},
+		"cyan_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/27"
+				}
+			]
+		},
+		"cyan_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/36"
+				}
+			]
+		},
+		"cyan_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/37"
+				}
+			]
+		},
+		"cyan_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/38"
+				}
+			]
+		},
+		"cyan_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/39"
+				}
+			]
+		},
+		"cyan_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/44"
+				}
+			]
+		},
+		"cyan_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/45"
+				}
+			]
+		},
+		"cyan_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/22"
+				}
+			]
+		},
+		"cyan_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/33"
+				}
+			]
+		},
+		"cyan_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/35"
+				}
+			]
+		},
+		"cyan_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/23"
+				}
+			]
+		},
+		"cyan_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/9"
+				}
+			]
+		},
+		"cyan_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/31"
+				}
+			]
+		},
+		"cyan_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/28"
+				}
+			]
+		},
+		"cyan_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/32"
+				}
+			]
+		},
+		"cyan_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/10"
+				}
+			]
+		},
+		"cyan_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/34"
+				}
+			]
+		},
+		"cyan_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/21"
+				}
+			]
+		},
+		"cyan_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/29"
+				}
+			]
+		},
+		"cyan_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/11"
+				}
+			]
+		},
+		"cyan_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/20"
+				}
+			]
+		},
+		"cyan_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/8"
+				}
+			]
+		},
+		"cyan_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/46"
+				}
+			]
+		},
+		"cyan_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/7"
+				}
+			]
+		},
+		"cyan_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/30"
+				}
+			]
+		},
+		"cyan_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/6"
+				}
+			]
+		},
+		"cyan_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/4"
+				}
+			]
+		},
+		"cyan_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/42"
+				}
+			]
+		},
+		"cyan_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/40"
+				}
+			]
+		},
+		"cyan_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/18"
+				}
+			]
+		},
+		"cyan_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/16"
+				}
+			]
+		},
+		"cyan_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/41"
+				}
+			]
+		},
+		"cyan_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/5"
+				}
+			]
+		},
+		"cyan_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/19"
+				}
+			]
+		},
+		"cyan_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/17"
+				}
+			]
+		},
+		"cyan_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/cyan/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"light_blue_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/0"
+				}
+			]
+		},
+		"light_blue_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/1"
+				}
+			]
+		},
+		"light_blue_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/2"
+				}
+			]
+		},
+		"light_blue_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/3"
+				}
+			]
+		},
+		"light_blue_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/12"
+				}
+			]
+		},
+		"light_blue_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/13"
+				}
+			]
+		},
+		"light_blue_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/14"
+				}
+			]
+		},
+		"light_blue_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/15"
+				}
+			]
+		},
+		"light_blue_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/24"
+				}
+			]
+		},
+		"light_blue_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/25"
+				}
+			]
+		},
+		"light_blue_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/26"
+				}
+			]
+		},
+		"light_blue_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/27"
+				}
+			]
+		},
+		"light_blue_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/36"
+				}
+			]
+		},
+		"light_blue_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/37"
+				}
+			]
+		},
+		"light_blue_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/38"
+				}
+			]
+		},
+		"light_blue_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/39"
+				}
+			]
+		},
+		"light_blue_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/44"
+				}
+			]
+		},
+		"light_blue_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/45"
+				}
+			]
+		},
+		"light_blue_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/22"
+				}
+			]
+		},
+		"light_blue_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/33"
+				}
+			]
+		},
+		"light_blue_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/35"
+				}
+			]
+		},
+		"light_blue_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/23"
+				}
+			]
+		},
+		"light_blue_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/9"
+				}
+			]
+		},
+		"light_blue_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/31"
+				}
+			]
+		},
+		"light_blue_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/28"
+				}
+			]
+		},
+		"light_blue_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/32"
+				}
+			]
+		},
+		"light_blue_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/10"
+				}
+			]
+		},
+		"light_blue_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/34"
+				}
+			]
+		},
+		"light_blue_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/21"
+				}
+			]
+		},
+		"light_blue_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/29"
+				}
+			]
+		},
+		"light_blue_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/11"
+				}
+			]
+		},
+		"light_blue_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/20"
+				}
+			]
+		},
+		"light_blue_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/8"
+				}
+			]
+		},
+		"light_blue_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/46"
+				}
+			]
+		},
+		"light_blue_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/7"
+				}
+			]
+		},
+		"light_blue_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/30"
+				}
+			]
+		},
+		"light_blue_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/6"
+				}
+			]
+		},
+		"light_blue_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/4"
+				}
+			]
+		},
+		"light_blue_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/42"
+				}
+			]
+		},
+		"light_blue_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/40"
+				}
+			]
+		},
+		"light_blue_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/18"
+				}
+			]
+		},
+		"light_blue_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/16"
+				}
+			]
+		},
+		"light_blue_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/41"
+				}
+			]
+		},
+		"light_blue_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/5"
+				}
+			]
+		},
+		"light_blue_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/19"
+				}
+			]
+		},
+		"light_blue_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/17"
+				}
+			]
+		},
+		"light_blue_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/light_blue/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"blue_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/0"
+				}
+			]
+		},
+		"blue_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/1"
+				}
+			]
+		},
+		"blue_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/2"
+				}
+			]
+		},
+		"blue_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/3"
+				}
+			]
+		},
+		"blue_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/12"
+				}
+			]
+		},
+		"blue_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/13"
+				}
+			]
+		},
+		"blue_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/14"
+				}
+			]
+		},
+		"blue_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/15"
+				}
+			]
+		},
+		"blue_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/24"
+				}
+			]
+		},
+		"blue_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/25"
+				}
+			]
+		},
+		"blue_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/26"
+				}
+			]
+		},
+		"blue_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/27"
+				}
+			]
+		},
+		"blue_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/36"
+				}
+			]
+		},
+		"blue_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/37"
+				}
+			]
+		},
+		"blue_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/38"
+				}
+			]
+		},
+		"blue_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/39"
+				}
+			]
+		},
+		"blue_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/44"
+				}
+			]
+		},
+		"blue_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/45"
+				}
+			]
+		},
+		"blue_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/22"
+				}
+			]
+		},
+		"blue_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/33"
+				}
+			]
+		},
+		"blue_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/35"
+				}
+			]
+		},
+		"blue_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/23"
+				}
+			]
+		},
+		"blue_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/9"
+				}
+			]
+		},
+		"blue_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/31"
+				}
+			]
+		},
+		"blue_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/28"
+				}
+			]
+		},
+		"blue_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/32"
+				}
+			]
+		},
+		"blue_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/10"
+				}
+			]
+		},
+		"blue_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/34"
+				}
+			]
+		},
+		"blue_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/21"
+				}
+			]
+		},
+		"blue_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/29"
+				}
+			]
+		},
+		"blue_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/11"
+				}
+			]
+		},
+		"blue_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/20"
+				}
+			]
+		},
+		"blue_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/8"
+				}
+			]
+		},
+		"blue_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/46"
+				}
+			]
+		},
+		"blue_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/7"
+				}
+			]
+		},
+		"blue_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/30"
+				}
+			]
+		},
+		"blue_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/6"
+				}
+			]
+		},
+		"blue_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/4"
+				}
+			]
+		},
+		"blue_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/42"
+				}
+			]
+		},
+		"blue_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/40"
+				}
+			]
+		},
+		"blue_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/18"
+				}
+			]
+		},
+		"blue_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/16"
+				}
+			]
+		},
+		"blue_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/41"
+				}
+			]
+		},
+		"blue_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/5"
+				}
+			]
+		},
+		"blue_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/19"
+				}
+			]
+		},
+		"blue_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/17"
+				}
+			]
+		},
+		"blue_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/blue/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"purple_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/0"
+				}
+			]
+		},
+		"purple_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/1"
+				}
+			]
+		},
+		"purple_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/2"
+				}
+			]
+		},
+		"purple_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/3"
+				}
+			]
+		},
+		"purple_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/12"
+				}
+			]
+		},
+		"purple_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/13"
+				}
+			]
+		},
+		"purple_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/14"
+				}
+			]
+		},
+		"purple_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/15"
+				}
+			]
+		},
+		"purple_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/24"
+				}
+			]
+		},
+		"purple_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/25"
+				}
+			]
+		},
+		"purple_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/26"
+				}
+			]
+		},
+		"purple_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/27"
+				}
+			]
+		},
+		"purple_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/36"
+				}
+			]
+		},
+		"purple_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/37"
+				}
+			]
+		},
+		"purple_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/38"
+				}
+			]
+		},
+		"purple_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/39"
+				}
+			]
+		},
+		"purple_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/44"
+				}
+			]
+		},
+		"purple_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/45"
+				}
+			]
+		},
+		"purple_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/22"
+				}
+			]
+		},
+		"purple_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/33"
+				}
+			]
+		},
+		"purple_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/35"
+				}
+			]
+		},
+		"purple_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/23"
+				}
+			]
+		},
+		"purple_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/9"
+				}
+			]
+		},
+		"purple_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/31"
+				}
+			]
+		},
+		"purple_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/28"
+				}
+			]
+		},
+		"purple_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/32"
+				}
+			]
+		},
+		"purple_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/10"
+				}
+			]
+		},
+		"purple_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/34"
+				}
+			]
+		},
+		"purple_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/21"
+				}
+			]
+		},
+		"purple_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/29"
+				}
+			]
+		},
+		"purple_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/11"
+				}
+			]
+		},
+		"purple_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/20"
+				}
+			]
+		},
+		"purple_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/8"
+				}
+			]
+		},
+		"purple_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/46"
+				}
+			]
+		},
+		"purple_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/7"
+				}
+			]
+		},
+		"purple_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/30"
+				}
+			]
+		},
+		"purple_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/6"
+				}
+			]
+		},
+		"purple_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/4"
+				}
+			]
+		},
+		"purple_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/42"
+				}
+			]
+		},
+		"purple_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/40"
+				}
+			]
+		},
+		"purple_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/18"
+				}
+			]
+		},
+		"purple_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/16"
+				}
+			]
+		},
+		"purple_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/41"
+				}
+			]
+		},
+		"purple_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/5"
+				}
+			]
+		},
+		"purple_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/19"
+				}
+			]
+		},
+		"purple_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/17"
+				}
+			]
+		},
+		"purple_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/purple/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"magenta_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/0"
+				}
+			]
+		},
+		"magenta_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/1"
+				}
+			]
+		},
+		"magenta_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/2"
+				}
+			]
+		},
+		"magenta_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/3"
+				}
+			]
+		},
+		"magenta_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/12"
+				}
+			]
+		},
+		"magenta_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/13"
+				}
+			]
+		},
+		"magenta_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/14"
+				}
+			]
+		},
+		"magenta_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/15"
+				}
+			]
+		},
+		"magenta_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/24"
+				}
+			]
+		},
+		"magenta_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/25"
+				}
+			]
+		},
+		"magenta_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/26"
+				}
+			]
+		},
+		"magenta_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/27"
+				}
+			]
+		},
+		"magenta_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/36"
+				}
+			]
+		},
+		"magenta_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/37"
+				}
+			]
+		},
+		"magenta_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/38"
+				}
+			]
+		},
+		"magenta_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/39"
+				}
+			]
+		},
+		"magenta_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/44"
+				}
+			]
+		},
+		"magenta_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/45"
+				}
+			]
+		},
+		"magenta_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/22"
+				}
+			]
+		},
+		"magenta_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/33"
+				}
+			]
+		},
+		"magenta_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/35"
+				}
+			]
+		},
+		"magenta_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/23"
+				}
+			]
+		},
+		"magenta_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/9"
+				}
+			]
+		},
+		"magenta_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/31"
+				}
+			]
+		},
+		"magenta_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/28"
+				}
+			]
+		},
+		"magenta_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/32"
+				}
+			]
+		},
+		"magenta_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/10"
+				}
+			]
+		},
+		"magenta_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/34"
+				}
+			]
+		},
+		"magenta_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/21"
+				}
+			]
+		},
+		"magenta_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/29"
+				}
+			]
+		},
+		"magenta_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/11"
+				}
+			]
+		},
+		"magenta_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/20"
+				}
+			]
+		},
+		"magenta_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/8"
+				}
+			]
+		},
+		"magenta_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/46"
+				}
+			]
+		},
+		"magenta_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/7"
+				}
+			]
+		},
+		"magenta_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/30"
+				}
+			]
+		},
+		"magenta_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/6"
+				}
+			]
+		},
+		"magenta_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/4"
+				}
+			]
+		},
+		"magenta_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/42"
+				}
+			]
+		},
+		"magenta_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/40"
+				}
+			]
+		},
+		"magenta_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/18"
+				}
+			]
+		},
+		"magenta_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/16"
+				}
+			]
+		},
+		"magenta_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/41"
+				}
+			]
+		},
+		"magenta_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/5"
+				}
+			]
+		},
+		"magenta_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/19"
+				}
+			]
+		},
+		"magenta_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/17"
+				}
+			]
+		},
+		"magenta_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/magenta/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"pink_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/0"
+				}
+			]
+		},
+		"pink_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/1"
+				}
+			]
+		},
+		"pink_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/2"
+				}
+			]
+		},
+		"pink_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/3"
+				}
+			]
+		},
+		"pink_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/12"
+				}
+			]
+		},
+		"pink_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/13"
+				}
+			]
+		},
+		"pink_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/14"
+				}
+			]
+		},
+		"pink_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/15"
+				}
+			]
+		},
+		"pink_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/24"
+				}
+			]
+		},
+		"pink_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/25"
+				}
+			]
+		},
+		"pink_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/26"
+				}
+			]
+		},
+		"pink_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/27"
+				}
+			]
+		},
+		"pink_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/36"
+				}
+			]
+		},
+		"pink_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/37"
+				}
+			]
+		},
+		"pink_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/38"
+				}
+			]
+		},
+		"pink_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/39"
+				}
+			]
+		},
+		"pink_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/44"
+				}
+			]
+		},
+		"pink_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/45"
+				}
+			]
+		},
+		"pink_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/22"
+				}
+			]
+		},
+		"pink_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/33"
+				}
+			]
+		},
+		"pink_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/35"
+				}
+			]
+		},
+		"pink_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/23"
+				}
+			]
+		},
+		"pink_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/9"
+				}
+			]
+		},
+		"pink_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/31"
+				}
+			]
+		},
+		"pink_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/28"
+				}
+			]
+		},
+		"pink_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/32"
+				}
+			]
+		},
+		"pink_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/10"
+				}
+			]
+		},
+		"pink_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/34"
+				}
+			]
+		},
+		"pink_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/21"
+				}
+			]
+		},
+		"pink_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/29"
+				}
+			]
+		},
+		"pink_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/11"
+				}
+			]
+		},
+		"pink_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/20"
+				}
+			]
+		},
+		"pink_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/8"
+				}
+			]
+		},
+		"pink_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/46"
+				}
+			]
+		},
+		"pink_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/7"
+				}
+			]
+		},
+		"pink_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/30"
+				}
+			]
+		},
+		"pink_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/6"
+				}
+			]
+		},
+		"pink_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/4"
+				}
+			]
+		},
+		"pink_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/42"
+				}
+			]
+		},
+		"pink_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/40"
+				}
+			]
+		},
+		"pink_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/18"
+				}
+			]
+		},
+		"pink_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/16"
+				}
+			]
+		},
+		"pink_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/41"
+				}
+			]
+		},
+		"pink_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/5"
+				}
+			]
+		},
+		"pink_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/19"
+				}
+			]
+		},
+		"pink_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/17"
+				}
+			]
+		},
+		"pink_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/pink/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		"tinted_regular": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/0"
+				}
+			]
+		},
+		"tinted_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/1"
+				}
+			]
+		},
+		"tinted_middle_left_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/2"
+				}
+			]
+		},
+		"tinted_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/3"
+				}
+			]
+		},
+		"tinted_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/12"
+				}
+			]
+		},
+		"tinted_corner_left_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/13"
+				}
+			]
+		},
+		"tinted_top_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/14"
+				}
+			]
+		},
+		"tinted_corner_right_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/15"
+				}
+			]
+		},
+		"tinted_middle_top_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/24"
+				}
+			]
+		},
+		"tinted_left_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/25"
+				}
+			]
+		},
+		"tinted_plain": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/26"
+				}
+			]
+		},
+		"tinted_right_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/27"
+				}
+			]
+		},
+		"tinted_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/36"
+				}
+			]
+		},
+		"tinted_corner_left_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/37"
+				}
+			]
+		},
+		"tinted_down_side": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/38"
+				}
+			]
+		},
+		"tinted_corner_right_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/39"
+				}
+			]
+		},
+		"tinted_00000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/44"
+				}
+			]
+		},
+		"tinted_00000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/45"
+				}
+			]
+		},
+		"tinted_00000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/22"
+				}
+			]
+		},
+		"tinted_00010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/33"
+				}
+			]
+		},
+		"tinted_00010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/35"
+				}
+			]
+		},
+		"tinted_00010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/23"
+				}
+			]
+		},
+		"tinted_00010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/9"
+				}
+			]
+		},
+		"tinted_top_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/31"
+				}
+			]
+		},
+		"tinted_left_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/28"
+				}
+			]
+		},
+		"tinted_01000000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/32"
+				}
+			]
+		},
+		"tinted_01000001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/10"
+				}
+			]
+		},
+		"tinted_01000100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/34"
+				}
+			]
+		},
+		"tinted_01000101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/21"
+				}
+			]
+		},
+		"tinted_top_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/29"
+				}
+			]
+		},
+		"tinted_01010000": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/11"
+				}
+			]
+		},
+		"tinted_01010001": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/20"
+				}
+			]
+		},
+		"tinted_01010100": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/8"
+				}
+			]
+		},
+		"tinted_01010101": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/46"
+				}
+			]
+		},
+		"tinted_top_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/7"
+				}
+			]
+		},
+		"tinted_left_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/30"
+				}
+			]
+		},
+		"tinted_left_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/6"
+				}
+			]
+		},
+		"tinted_corner_left_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/4"
+				}
+			]
+		},
+		"tinted_down_dot_right": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/42"
+				}
+			]
+		},
+		"tinted_down_dot_left": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/40"
+				}
+			]
+		},
+		"tinted_down_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/18"
+				}
+			]
+		},
+		"tinted_corner_left_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/16"
+				}
+			]
+		},
+		"tinted_right_dot_down": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/41"
+				}
+			]
+		},
+		"tinted_corner_right_top_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/5"
+				}
+			]
+		},
+		"tinted_right_dots": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/19"
+				}
+			]
+		},
+		"tinted_corner_right_down_dot": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/17"
+				}
+			]
+		},
+		"tinted_right_dot_top": {
+			"textures": [
+				{
+					"path": "textures/blocks/connected_glass/tinted/43"
+				}
+			]
+		},
+		
+		
+		
+		
+		"glass_pane_top_default": {
+			"textures": "textures/blocks/glass_pane_atas_hitam"
+		},
+		"glass_pane_top_white": {
+			"textures": "textures/blocks/glass_pane_top_white"
+		},
+		"glass_pane_top_orange": {
+			"textures": "textures/blocks/glass_pane_top_orange"
+		},
+		"glass_pane_top_magenta": {
+			"textures": "textures/blocks/glass_pane_top_magenta"
+		},
+		"glass_pane_top_light_blue": {
+			"textures": "textures/blocks/glass_pane_top_light_blue"
+		},
+		"glass_pane_top_yellow": {
+			"textures": "textures/blocks/glass_pane_top_yellow"
+		},
+		"glass_pane_top_lime": {
+			"textures": "textures/blocks/glass_pane_top_lime"
+		},
+		"glass_pane_top_pink": {
+			"textures": "textures/blocks/glass_pane_top_pink"
+		},
+		"glass_pane_top_gray": {
+			"textures": "textures/blocks/glass_pane_top_gray"
+		},
+		"glass_pane_top_silver": {
+			"textures": "textures/blocks/glass_pane_top_silver"
+		},
+		"glass_pane_top_cyan": {
+			"textures": "textures/blocks/glass_pane_top_cyan"
+		},
+		"glass_pane_top_purple": {
+			"textures": "textures/blocks/glass_pane_top_purple"
+		},
+		"glass_pane_top_blue": {
+			"textures": "textures/blocks/glass_pane_top_blue"
+		},
+		"glass_pane_top_brown": {
+			"textures": "textures/blocks/glass_pane_top_brown"
+		},
+		"glass_pane_top_green": {
+			"textures": "textures/blocks/glass_pane_top_green"
+		},
+		"glass_pane_top_red": {
+			"textures": "textures/blocks/glass_pane_top_red"
+		},
+		"glass_pane_top_black": {
+			"textures": "textures/blocks/glass_pane_top_black"
+		}
+	}
+}

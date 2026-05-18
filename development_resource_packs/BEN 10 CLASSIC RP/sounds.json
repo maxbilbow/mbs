@@ -1,0 +1,58 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "cso:prototype_phobos": {
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 4.0,
+        "events": {
+          "ambient": "cso:mob.prototype_phobos.idle",
+          "hurt": "",
+          "death": "",
+          "attack": "cso:mob.prototype_phobos.swing",
+          "deactivate": "cso:mob.prototype_phobos.death",
+          "dash_ready": "cso:mob.prototype_phobos.dash",
+          "activate": "cso:mob.prototype_phobos.shockwave",
+          "step": "cso:mob.prototype_phobos.step"
+        },
+        "variants": {
+          "key": "q.property('cso:entity_state')=='death'?'death':undefined",
+          "map": {
+            "death": {
+              "volume": 1.0,
+              "pitch": 1.0,
+              "events": {
+                "ambient": "",
+                "attack": "",
+                "deactivate": "",
+                "dash_ready": "",
+                "activate": "",
+                "step": ""
+              }
+            }
+          }
+        }
+      },
+      "cso:oberon": {
+        "events": {
+          "ambient": "",
+          "hurt": "",
+          "death": ""
+        },
+        "pitch": 1.0,
+        "volume": 1.0
+      },
+      "cso:obeball": {
+        "events": {
+          "ambient": "",
+          "hurt": "",
+          "death": ""
+        },
+        "pitch": 1.0,
+        "volume": 1.0
+      }
+    }
+  }
+}

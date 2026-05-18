@@ -1,0 +1,62 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.pakrahmatmamat",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 12.5,
+				"visible_bounds_offset": [0, 5.75, 0]
+			},
+			"bones": [
+				{
+					"name": "all",
+					"pivot": [0, 58, 0]
+				},
+				{
+					"name": "left_leg",
+					"parent": "all",
+					"pivot": [16, 31, -1],
+					"rotation": [0, -15, 0],
+					"cubes": [
+						{"origin": [3, 1, -37], "size": [11, 12.5, 9], "uv": [100, 150], "mirror": true},
+						{"origin": [8.5, 10, -9], "size": [16.5, 21.5, 16.5], "uv": [104, 113], "mirror": true},
+						{"origin": [5.5, 1, -4], "size": [22.5, 12.5, 16.5], "uv": [104, 85], "mirror": true},
+						{"origin": [7, 1, -32.5], "size": [19.5, 11, 28.5], "inflate": 0.01, "uv": [104, 46], "mirror": true}
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "all",
+					"pivot": [-16, 31, -1],
+					"rotation": [0, 15, 0],
+					"cubes": [
+						{"origin": [-14, 1, -37], "size": [11, 12.5, 9], "uv": [100, 150]},
+						{"origin": [-25, 10, -9], "size": [16.5, 21.5, 16.5], "uv": [104, 113]},
+						{"origin": [-28, 1, -4], "size": [22.5, 12.5, 16.5], "uv": [104, 85]},
+						{"origin": [-26.5, 1, -32.5], "size": [19.5, 11, 28.5], "uv": [104, 46]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "all",
+					"pivot": [0, 112, 0]
+				},
+				{
+					"name": "torso",
+					"parent": "head",
+					"pivot": [0, 97.6, -5.2],
+					"cubes": [
+						{"origin": [-13, 76, -13], "size": [26, 108, 26], "uv": [0, 0]},
+						{"origin": [-27, 105, -13], "size": [14, 36, 0], "uv": [44, 134]},
+						{"origin": [13, 105, -13], "size": [14, 36, 0], "uv": [72, 134]},
+						{"origin": [-11, 54, -11], "size": [22, 24, 22], "uv": [104, 0]},
+						{"origin": [-6, 34, -5], "size": [12, 24, 10], "uv": [0, 134]}
+					]
+				}
+			]
+		}
+	]
+}

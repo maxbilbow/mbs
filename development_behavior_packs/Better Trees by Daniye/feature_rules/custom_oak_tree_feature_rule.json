@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:custom_oak_tree_feature_rule",
+			"places_feature": "daniye:custom_oak_tree_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {}
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": {},
+			"y": {},
+			"z": {}
+		}
+	}
+}

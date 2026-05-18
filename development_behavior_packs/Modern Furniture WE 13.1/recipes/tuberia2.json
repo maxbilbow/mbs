@@ -1,0 +1,23 @@
+//bridge-file-version: #57
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:tuberia2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajaconducto"
+			}
+		],
+		"result": [
+			{
+				"item": "f:tuberia2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

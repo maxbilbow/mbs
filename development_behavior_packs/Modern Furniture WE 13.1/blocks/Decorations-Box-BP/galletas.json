@@ -1,0 +1,264 @@
+
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:galletas",
+			"states": {
+				"custom:geometry": [
+					"full_7",
+					"empty",
+					"full_1",
+					"full_2",
+					"full_3",
+					"full_4",
+					"full_5",
+					"full_6"
+				]
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "galletas"
+				}
+			},
+			"minecraft:geometry": "geometry.galletas",
+			"minecraft:collision_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					11,
+					5,
+					11
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					10,
+					5,
+					10
+				]
+			},
+			"minecraft:custom_components": [
+				"content_mf:mf_cookiestacker"
+			],
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'empty'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "False",
+							"item_2": "False",
+							"item_3": "False",
+							"item_4": "False",
+							"item_5": "False",
+							"item_6": "False",
+							"item_7": "False"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_1'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "False",
+							"item_3": "False",
+							"item_4": "False",
+							"item_5": "False",
+							"item_6": "False",
+							"item_7": "False"
+
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_2'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "False",
+							"item_4": "False",
+							"item_5": "False",
+							"item_6": "False",
+							"item_7": "False"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_3'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "True",
+							"item_4": "False",
+							"item_5": "False",
+							"item_6": "False",
+							"item_7": "False"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_4'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "True",
+							"item_4": "True",
+							"item_5": "False",
+							"item_6": "False",
+							"item_7": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_5'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "True",
+							"item_4": "True",
+							"item_5": "True",
+							"item_6": "False",
+							"item_7": "False"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_6'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "True",
+							"item_4": "True",
+							"item_5": "True",
+							"item_6": "True",
+							"item_7": "False"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'full_7'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.galletas",
+						"bone_visibility": {
+							"item_1": "True",
+							"item_2": "True",
+							"item_3": "True",
+							"item_4": "True",
+							"item_5": "True",
+							"item_6": "True",
+							"item_7": "True"
+							
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		]
+	},
+	"format_version": "1.20.20"
+}

@@ -1,0 +1,79 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "wypnt_mss:tall_rocks_feature_rule",
+			"places_feature": "wypnt_mss:scatter_tall_rocks_feature"
+		},
+		"conditions": {
+			"placement_pass": "surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "ocean"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "river"
+						},
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "forest"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "roofed"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "plains"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "taiga"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "savanna"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": "math.random(0, 1)",
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 225
+			},
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					-1,
+					1
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz) + -1",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					-1,
+					1
+				]
+			}
+		}
+	}
+}

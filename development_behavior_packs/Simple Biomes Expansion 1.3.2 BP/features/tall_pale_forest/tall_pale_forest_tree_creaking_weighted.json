@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_tree_creaking_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_tree_creaking_1_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_tree_creaking_2_feature",
+				7
+			],
+			[
+				"vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_tree_creaking_3_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_tree_creaking_4_feature",
+				1
+			]
+		]
+	}
+}

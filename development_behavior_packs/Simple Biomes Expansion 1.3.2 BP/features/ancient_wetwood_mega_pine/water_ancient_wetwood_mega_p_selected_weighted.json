@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:ancient_wetwood_mega_pine/water_ancient_wetwood_mega_p_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:ancient_wetwood_mega_pine/water_ancient_wetwood_mega_p_weighted",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:ancient_wetwood/water_ancient_wetwood_spruce_weighted",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:ancient_wetwood/water_ancient_wetwood_pine_weighted",
+				6
+			]
+		]
+	}
+}

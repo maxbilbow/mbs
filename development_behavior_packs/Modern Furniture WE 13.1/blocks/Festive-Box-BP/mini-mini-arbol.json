@@ -1,0 +1,61 @@
+//bridge-file-version: #53
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:mini-mini-arbol",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "arbol"
+				}
+			},
+			"minecraft:geometry": "geometry.mini-mini-arbol",
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			}
+		}
+
+	},
+	"format_version": "1.20.20"
+}

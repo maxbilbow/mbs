@@ -1,0 +1,30 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bca:eclipse_katana"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["  N", " X ", "#  "],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      },
+      "N": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:netherite_ingot"
+      }
+    ],
+    "result": {
+      "item": "bca:eclipse_katana"
+    },
+    "priority": -1
+  }
+}

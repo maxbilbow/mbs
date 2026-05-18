@@ -1,0 +1,23 @@
+//bridge-file-version: #240
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cuadro39"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajacuadro"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cuadro39",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

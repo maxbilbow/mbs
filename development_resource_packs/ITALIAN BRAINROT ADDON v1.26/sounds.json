@@ -1,0 +1,986 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"italian:tralalero_tralala": {
+				"events": {
+					"ambient": "tralalero_tralala_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:tungtung_sahur": {
+				"events": {
+					"ambient": "tungtung_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:lirili_larilila": {
+				"events": {
+					"ambient": "lirila_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bombardiro_crocodilo": {
+				"events": {
+					"ambient": "bombadiro_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:capuccino_assasino": {
+				"events": {
+					"ambient": "capucino_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:ballerina_capuchina": {
+				"events": {
+					"ambient": "ballerina_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:brbr_patapim": {
+				"events": {
+					"ambient": "patapim_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:vaca_saturno": {
+				"events": {
+					"ambient": "vaca_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bambini_crostini": {
+				"events": {
+					"ambient": "bambini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:banana_dolphin": {
+				"events": {
+					"ambient": "dolphin_banana_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:banana_elephant": {
+				"events": {
+					"ambient": "elephant_banana_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bandito_bobritto": {
+				"events": {
+					"ambient": "bandito_bobritto_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bribri_dicusbombicus": {
+				"events": {
+					"ambient": "bribri_bicus_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:blueberrini_octopucini": {
+				"events": {
+					"ambient": "bluberini_octopusini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bombini_gusini": {
+				"events": {
+					"ambient": "bombini_gusini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:boneca_ambalabu": {
+				"events": {
+					"ambient": "boneca_ambalabu_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:brr_potato_potate": {
+				"events": {
+					"ambient": "brr_potato_potate_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bulbito_bandito_tractorito": {
+				"events": {
+					"ambient": "bulbito_tractorito_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:burbaloni_luliloli": {
+				"events": {
+					"ambient": "burbaloni_luliloli_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:caballo_virtuoso": {
+				"events": {
+					"ambient": "caballo_virtuoso_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:cacto_hipopotamo": {
+				"events": {
+					"ambient": "cacto_hipopotamo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:chef_crabracadabra": {
+				"events": {
+					"ambient": "chef_crabracadabra_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:chicletera_bicicletera": {
+				"events": {
+					"ambient": "chicletera_bicicletera_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:odin_dindindun": {
+				"events": {
+					"ambient": "odin_dindindun_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:chimpanzini_bananini": {
+				"events": {
+					"ambient": "chimpanzini_bananini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:coco_fanto": {
+				"events": {
+					"ambient": "coco_fanto_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:cocosini_mama": {
+				"events": {
+					"ambient": "cocosini_mama_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:dardirdurrdorr": {
+				"events": {
+					"ambient": "dardirdurrdorr_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_patapim": {
+				"events": {
+					"ambient": "kid_patapim_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_tung": {
+				"events": {
+					"ambient": "kid_tung_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_crocodilo": {
+				"events": {
+					"ambient": "kid_crocodilo_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_los_tralaleritos": {
+				"events": {
+					"ambient": "kid_los_tralaleritos_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_ballerina": {
+				"events": {
+					"ambient": "kid_ballerina_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_capuccino": {
+				"events": {
+					"ambient": "kid_capuccino_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_chimpanzini": {
+				"events": {
+					"ambient": "kid_chimpanzini_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_lirili": {
+				"events": {
+					"ambient": "kid_lirili_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_trumilero": {
+				"events": {
+					"ambient": "kid_trumilero_say"
+				},
+				"pitch": [
+					1.2,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:trulimero": {
+				"events": {
+					"ambient": "trulimero_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:espresso_signora": {
+				"events": {
+					"ambient": "espresso_signora_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:garamaran": {
+				"events": {
+					"ambient": "garamaran_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:giraffa_celeste": {
+				"events": {
+					"ambient": "giraffa_celeste_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:la_esok_sekolah": {
+				"events": {
+					"ambient": "la_esok_sekolah_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:noobini": {
+				"events": {
+					"ambient": "noobini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:orangutini_ananasini": {
+				"events": {
+					"ambient": "orangutini_ananasini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:agarrini_palini": {
+				"events": {
+					"ambient": "agarrini_palini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:titit": {
+				"events": {
+					"ambient": "titit_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:tata_sahur": {
+				"events": {
+					"ambient": "tata_sahur_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:orcalero": {
+				"events": {
+					"ambient": "orcalero_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:jobjob": {
+				"events": {
+					"ambient": "jobjob_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:los_job_jobcitos": {
+				"events": {
+					"ambient": "los_job_jobcitos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:mateo": {
+				"events": {
+					"ambient": "mateo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:glorbo": {
+				"events": {
+					"ambient": "glorbo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:fusion_sahur": {
+				"events": {
+					"ambient": "tungtung_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:mutant_tungtungsahur": {
+				"events": {
+					"ambient": "tungtung_say"
+				},
+				"pitch": [
+					0.6,
+					0.8
+				],
+				"volume": 1
+			},
+			"italian:anomali_gin_gin_login": {
+				"events": {
+					"ambient": "anomali_gin_gin_login_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:avocadini_guffo": {
+				"events": {
+					"ambient": "avocadini_guffo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:ballerino_lololo": {
+				"events": {
+					"ambient": "ballerino_lololo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:dragon_canelloni": {
+				"events": {
+					"ambient": "dragon_canelloni_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:67": {
+				"events": {
+					"ambient": "67_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:fritzolini": {
+				"events": {
+					"ambient": "fritzolini_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:fruli_frula": {
+				"events": {
+					"ambient": "fruli_frula_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:ganganzelli": {
+				"events": {
+					"ambient": "ganganzelli_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:gorilo_watermelondrilo": {
+				"events": {
+					"ambient": "gorilo_watermelondrilo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:graipuss_medussi": {
+				"events": {
+					"ambient": "graipuss_medussi_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:grunkle_blibbo": {
+				"events": {
+					"ambient": "grunkle_blibbo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:sacro_cabrospaghetti": {
+				"events": {
+					"ambient": "sacro_cabrospaghetti_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bigmo": {
+				"events": {
+					"ambient": "bigmo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:bus_telotet": {
+				"events": {
+					"ambient": "bus_telotet_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:denis": {
+				"events": {
+					"ambient": "denis_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:dikasih_ujianmatematika": {
+				"events": {
+					"ambient": "dikasih_ujianmatematika_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:jokominto": {
+				"events": {
+					"ambient": "jokominto_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:mastodontico": {
+				"events": {
+					"ambient": "mastodontico_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:chachechichachachachi": {
+				"events": {
+					"ambient": "chachechichachachachi_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:karkerkar_anomaly": {
+				"events": {
+					"ambient": "karkerkar_anomaly_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:karkerkar_kurkur": {
+				"events": {
+					"ambient": "karkerkar_kurkur_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:karkerkarkurkur_greatgrandfather": {
+				"events": {
+					"ambient": "karkerkarkurkur_greatgrandfather_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:krakrakrakrakrake_qurinakrarina": {
+				"events": {
+					"ambient": "krakrakrakrakrake_qurinakrarina_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kukarakirikur": {
+				"events": {
+					"ambient": "kukarakirikur_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:poltronaplastica_classicobianco": {
+				"events": {
+					"ambient": "poltronaplastica_classicobianco_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:prapambanrr_jatmatungg": {
+				"events": {
+					"ambient": "prapambanrr_jatmatungg_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:rarerorirararol": {
+				"events": {
+					"ambient": "rarerorirararol_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:rulrilrelralrulrul": {
+				"events": {
+					"ambient": "rulrilrelralrulrul_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kecum": {
+				"events": {
+					"ambient": "kecum_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:ketchuru_and_musturu": {
+				"events": {
+					"ambient": "ketchuru_and_musturu_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:ketupat_kepatprekupat": {
+				"events": {
+					"ambient": "ketupat_kepatprekupat_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_fusion": {
+				"events": {
+					"ambient": "kid_fusion_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_las_tralaleritas": {
+				"events": {
+					"ambient": "kid_las_tralaleritas_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_los_orcaleritos": {
+				"events": {
+					"ambient": "kid_los_orcaleritos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:kid_orcaleritos": {
+				"events": {
+					"ambient": "kid_orcaleritos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:la_sahur_combinasion": {
+				"events": {
+					"ambient": "la_sahur_combinasion_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:lionel": {
+				"events": {
+					"ambient": "lionel_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:los_lirilitos": {
+				"events": {
+					"ambient": "los_lirilitos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:los_spijuniritos": {
+				"events": {
+					"ambient": "los_spijuniritos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:los_tungtungcitos": {
+				"events": {
+					"ambient": "los_tungtungcitos_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:nuclearo": {
+				"events": {
+					"ambient": "nuclearo_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:og": {
+				"events": {
+					"ambient": "og_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:opor": {
+				"events": {
+					"ambient": "opor_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"italian:pakrah": {
+				"events": {
+					"ambient": "pakrah_say"
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "wypnt_mss:spider_nest_1_feature_mcstructure"
+        },
+        "structure_name": "wypnt_mss:spider_nest",
+        "adjustment_radius": 8,
+        "facing_direction": "random",
+        "constraints": {
+            "grounded": {},
+            "block_intersection": {
+                "block_allowlist": [
+                    "minecraft:stone",
+                    "minecraft:deepslate"
+                ]
+            }
+        }
+    }
+}

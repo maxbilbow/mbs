@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:herioscuino_tanquini",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/herioscuinotanquini"
+			},
+			"geometry": {
+				"default": "geometry.herioscuino_tanquini"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.herioscuino_tanquini.walk",
+				"walk_chad": "animation.herioscuino_tanquini.walk_chad",
+				"idle": "animation.herioscuino_tanquini.idle",
+				"idle_chad": "animation.herioscuino_tanquini.idle_chad",
+				"attack": "animation.herioscuino_tanquini.attack",
+				"attack_chad": "animation.herioscuino_tanquini.attack_chad",
+				"attack_chad2": "animation.herioscuino_tanquini.attack_chad2",
+				"attack_chad3": "animation.herioscuino_tanquini.attack_chad3",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.herioscuino_tanquini.attack",
+				"controller_base": "controller.animation.herioscuino_tanquini.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#9e6e52",
+				"overlay_color": "#552e22"
+			}
+		}
+	}
+}

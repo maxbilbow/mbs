@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:spit_normal",
+			"materials": {
+				"default": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/entity/powers/up_spit"
+			},
+			"geometry": {
+				"default": "geometry.up_spit"
+			},
+			"animations": {
+				"arrow": "animation.alien.projectile"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"arrow": "query.is_moving"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			]
+		}
+	}
+}

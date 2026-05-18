@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "nuclear_reactor",
+		"metalness_emissive_roughness": "nuclear_reactor_mer",
+		"normal": "nuclear_reactor_normal"
+	}
+}

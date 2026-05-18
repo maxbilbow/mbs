@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_swamp/water_roofed_swamp_tree_small_3_feature"
+		},
+		"structure_name": "mystructure:roofed_tree_small3",
+		"adjustment_radius": 2,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:water"
+				]
+			},
+			"unburied": {}
+		}
+	}
+}

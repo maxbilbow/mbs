@@ -1,0 +1,133 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.omnitrix_item": {
+			"geometry": "geometry.omnitrix_item",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix"
+			],
+			"part_visibility": [
+				{
+					"*": "query.get_equipped_item_name('main_hand') =='omnitrix'"
+				}
+			]
+		},
+		"controller.render.omnitrix": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.omnitrix || variable.selecting_omni_alien"
+				}
+			]
+		},
+		"controller.render.omnitrix_off": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix_off"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.omnitrix_off"
+				}
+			]
+		},
+		"controller.render.omni_player_leftarm": {
+			"geometry": "geometry.omni_player_leftarm",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.is_first_person && variable.omnitrix || variable.omnitrix_off || variable.selecting_omni_alien || variable.omni_destruct"
+				}
+			]
+		},
+		"controller.render.omni_player_rightarm": {
+			"geometry": "geometry.omni_player_rightarm",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.is_first_person && variable.holding_omni_icon && variable.omnitrix || variable.omnitrix_off || variable.selecting_omni_alien || variable.omni_destruct"
+				}
+			]
+		},
+		"controller.render.omni_plate2": {
+			"geometry": "geometry.omni_plate2",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.holding_omni_icon && variable.selecting_omni_alien"
+				}
+			]
+		},
+		"controller.render.omni_destruct_blink1": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni_destruct_blink1"
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 50"
+				}
+			]
+		},
+		"controller.render.omni_destruct_blink2": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni_destruct_blink2"
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 51"
+				}
+			]
+		}
+	}
+}

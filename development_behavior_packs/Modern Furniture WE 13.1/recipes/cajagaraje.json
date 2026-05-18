@@ -1,0 +1,23 @@
+//bridge-file-version: #102
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cajagaraje"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "clay_ball"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cajagaraje",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,397 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "minecraft:wolf",
+			"population_control": "animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": "minecraft:grass_block",
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "cold"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "mega"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "mutated"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					"minecraft:grass_block",
+					"minecraft:snow",
+					"minecraft:snow_layer"
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "cold"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:podzol"
+					},
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "mega"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "forest"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "mutated"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:podzol"
+					},
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "mega"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "forest"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "mutated"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": "minecraft:grass_block",
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "edge"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "jungle"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					"minecraft:grass_block",
+					"minecraft:snow",
+					"minecraft:snow_layer"
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 1
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"value": "grove"
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": "minecraft:grass_block",
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 8
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 8
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "plateau"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 2,
+					"rarity": 2
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 8
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "mesa"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "plateau"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "stone"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": "minecraft:grass_block",
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 5
+				},
+				"minecraft:herd": {
+					"min_size": 4,
+					"max_size": 4
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "forest"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "birch"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "roofed"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "mutated"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "not",
+							"value": "mountain"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 2,
+					"rarity": 2
+				},
+				"minecraft:herd": {
+					"min_size": 3,
+					"max_size": 6,
+					"event": "minecraft:spawn_wild_striped"
+				},
+				"minecraft:biome_filter": {
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "arid_taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "arid_birch_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "roofed_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "wooded_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "birch_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "birch_savanna_mutated"
+						}
+					]
+				}
+			}
+		]
+	}
+}

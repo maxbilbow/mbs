@@ -1,0 +1,106 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cannonbolt_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==5"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"cannonbolt_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.cannonbolt_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==5"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"cannonbolt": "!variable.is_first_person",
+							"cannonbolt_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.cannonbolt_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"cannonbolt_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==5"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.cannonbolt_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"cannonbolt_jumping": "!variable.is_first_person&&query.variant==5"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

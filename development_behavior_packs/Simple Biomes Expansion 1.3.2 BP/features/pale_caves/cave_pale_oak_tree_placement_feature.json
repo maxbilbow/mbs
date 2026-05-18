@@ -1,0 +1,11 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:snap_to_surface_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/cave_pale_oak_tree_placement_feature"
+		},
+		"feature_to_snap": "vanilla_biomes_expansion:pale_caves/cave_pale_oak_tree_selected_weighted",
+		"vertical_search_range": 64,
+		"surface": "floor"
+	}
+}

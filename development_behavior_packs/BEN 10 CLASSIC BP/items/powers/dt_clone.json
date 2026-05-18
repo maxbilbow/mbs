@@ -1,0 +1,26 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:dt_clone",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "power_dt_clone"
+			},
+			"minecraft:display_name": {
+				"value": "§l§fClone\n§7sneak & use to clear clone"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"nutrition": 0,
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera"
+		}
+	}
+}

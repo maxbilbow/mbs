@@ -1,0 +1,220 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:crafting_items_catalog": {
+      "categories": [
+         {
+            "category_name": "items",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "he:switch",
+                     "name": "he:itemGroup.name.consoles"
+                  },
+                  "items": [
+                     "he:wii",
+                     "he:wii_black",
+                     "he:wii_red",
+                     "he:switch",
+                     "he:gamecube",
+                     "he:ps1",
+                     "he:ps2",
+                     "he:ps5",
+                     "he:nes",
+                     "he:switch_lite1",
+                     "he:switch_lite2",
+                     "he:switch_lite3",
+                     "he:switch_lite4",
+                     "he:switch_lite5",
+                     "he:gameboy1",
+                     "he:gameboy2",
+                     "he:nintendo_ds1",
+                     "he:nintendo_ds2",
+                     "he:nintendo_ds3",
+                     "he:nintendo_ds4",
+                     "he:nintendo_ds5"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:antena1",
+                     "name": "he:itemGroup.name.antena"
+                  },
+                  "items": [
+                     "he:antena1",
+                     "he:antena2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:router1",
+                     "name": "he:itemGroup.name.router"
+                  },
+                  "items": [
+                     "he:hub1",
+                     "he:hub2",
+                     "he:router1"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:pc1",
+                     "name": "he:itemGroup.name.pc"
+                  },
+                  "items": [
+                     "he:pc1",
+                     "he:pc2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:monitor1",
+                     "name": "he:itemGroup.name.monitor"
+                  },
+                  "items": [
+                     "he:soporte-monitor1",
+                     "he:soporte-monitor2",
+                     "he:soporte-monitor3",
+                     "he:soporte-monitor-pared2",
+                     "he:soporte-monitor-pared1",
+                     "he:soporte-monitor-pared3",
+                     "he:monitor1",
+                     "he:monitor2",
+                     "he:monitor3"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:enchufe1",
+                     "name": "he:itemGroup.name.enchufes"
+                  },
+                  "items": [
+                     "he:tostadora1",
+                     "he:enchufe1",
+                     "he:regleta1",
+                     "he:luz",
+                     "he:luz2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:ventilador1",
+                     "name": "he:itemGroup.name.ventilador"
+                  },
+                  "items": [
+                     "he:ventilador1",
+                     "he:ventilador2",
+                     "he:ventilador2-1",
+                     "he:ventilador2-2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:silla1",
+                     "name": "he:itemGroup.name.silla"
+                  },
+                  "items": [
+                     "he:silla1",
+                     "he:silla2",
+                     "he:butaca1",
+                     "he:butaca2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:impresora1",
+                     "name": "he:itemGroup.name.impresora"
+                  },
+                  "items": [
+                     "he:impresora1",
+                     "he:impresora2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:game_deco1",
+                     "name": "he:itemGroup.name.gaming"
+                  },
+                  "items": [
+                     "he:piano_red_1",
+                     "he:piano_red_2",
+                     "he:piano_green_1",
+                     "he:piano_green_2",
+                     "he:piano_blue_1",
+                     "he:piano_blue_2",
+                     "he:piano_purple_1",
+                     "he:piano_purple_2",
+                     "he:game_deco1",
+                     "he:game_deco2",
+                     "he:joystick",
+                     "he:micro1"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:deco_disco1",
+                     "name": "he:itemGroup.name.disc_frame"
+                  },
+                  "items": [
+                     "he:deco_disco1",
+                     "he:deco_disco2",
+                     "he:deco_disco3",
+                     "he:deco_disco4"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:poster1",
+                     "name": "he:itemGroup.name.poster"
+                  },
+                  "items": [
+                     "he:poster1",
+                     "he:poster2",
+                     "he:poster3",
+                     "he:poster4",
+                     "he:poster5",
+                     "he:poster6",
+                     "he:poster7",
+                     "he:poster8",
+                     "he:poster9",
+                     "he:poster10",
+                     "he:poster11",
+                     "he:poster12"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:tv1",
+                     "name": "he:itemGroup.name.tv"
+                  },
+                  "items": [
+                     "he:tv1",
+                     "he:tv2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:portatil1",
+                     "name": "he:itemGroup.name.portatil"
+                  },
+                  "items": [
+                     "he:portatil1",
+                     "he:portatil2"
+                  ]
+               },
+               {
+                  "group_identifier": {
+                     "icon": "he:tablet1",
+                     "name": "he:itemGroup.name.phonestablets"
+                  },
+                  "items": [
+                     "he:tablet1",
+                     "he:tablet2",
+                     "he:movil1",
+                     "he:movil2"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

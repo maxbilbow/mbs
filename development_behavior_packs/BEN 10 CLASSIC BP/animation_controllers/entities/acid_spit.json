@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.acid_spit": {
+			"states": {
+				"base": {
+					"transitions": [
+						{
+							"shoot": "1"
+						}
+					],
+					"on_entry": [
+						"0"
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/fill ~-1~-1~-1 ~1~1~1 air 0"
+					]
+				}
+			}
+		}
+	}
+}

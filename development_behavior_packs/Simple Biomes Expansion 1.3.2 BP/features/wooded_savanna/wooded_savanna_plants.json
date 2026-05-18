@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:wooded_savanna/wooded_savanna_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_leaf_litter_feature",
+				15
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				3
+			]
+		]
+	}
+}

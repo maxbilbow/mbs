@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Daniye"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "Better Trees by Daniye v1.4.1",
+		"description": "Created by Daniye",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "2de69d15-1330-484e-b511-d37e8f32f819",
+		"version": [
+			2,
+			0,
+			50
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "b392c4cf-872b-4962-9d9f-7c04f88b597d",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "4487ffac-2100-4536-b719-2df0aba4c9ed",
+			"version": [
+				2,
+				0,
+				50
+			]
+		}
+	]
+}

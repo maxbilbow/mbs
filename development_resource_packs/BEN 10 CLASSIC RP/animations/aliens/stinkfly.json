@@ -1,0 +1,275 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.stinkfly_fp": {
+			"loop": true,
+			"animation_length": 1.5,
+			"bones": {
+				"arm1": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.75": [
+							0,
+							-1,
+							0
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": 0.65
+				},
+				"arm2": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.75": [
+							0,
+							-1,
+							0
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": 0.65
+				}
+			}
+		},
+		"animation.stinkfly_bob": {
+			"loop": true,
+			"animation_length": 1.5,
+			"bones": {
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.75": [
+							-2.39455,
+							3.04137,
+							3.9705
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.75": [
+							-2.39455,
+							-3.04137,
+							-3.9705
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.stinkfly_flying": {
+			"loop": true,
+			"animation_length": 0.16667,
+			"bones": {
+				"wing1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							0,
+							-50,
+							-30
+						]
+					}
+				},
+				"wing2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							0,
+							50,
+							37.5
+						]
+					}
+				}
+			}
+		},
+		"animation.stinkfly_walk": {
+			"loop": true,
+			"animation_length": 0.58333,
+			"bones": {
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							-17.5,
+							0,
+							0
+						],
+						"0.2917": [
+							17.5,
+							0,
+							0
+						],
+						"0.5833": [
+							-15,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							17.5,
+							0,
+							0
+						],
+						"0.2917": [
+							-17.5,
+							0,
+							0
+						],
+						"0.5833": [
+							20,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.stinkfly_attacking_fp": {
+			"loop": true,
+			"animation_length": 0.41667,
+			"override_previous_animation": true,
+			"bones": {
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							-15,
+							-17.5,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							0,
+							0,
+							2
+						]
+					}
+				}
+			}
+		},
+		"animation.stinkfly_attacking": {
+			"loop": true,
+			"animation_length": 0.41667,
+			"override_previous_animation": true,
+			"bones": {
+				"arm1": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							-35,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"head": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							5,
+							-20,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

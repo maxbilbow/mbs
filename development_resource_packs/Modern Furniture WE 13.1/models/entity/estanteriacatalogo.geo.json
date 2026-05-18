@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.estanteriacatalogo",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [0, 1, 0], "size": [15, 1, 8], "uv": [53.8, 103]},
+						{"origin": [-15, 1, 0], "size": [15, 1, 8], "uv": [53.8, 103]},
+						{"origin": [12, 9, -1], "size": [1, 1, 8.8], "inflate": 0.2, "uv": [55, 50.7]},
+						{"origin": [12, 1.4, -1], "size": [1, 7.2, 1], "inflate": 0.2, "uv": [55, 41.7]},
+						{"origin": [11, 2, 1], "size": [2, 6, 5], "uv": [97, 21]},
+						{"origin": [12, 0, -1], "size": [1, 1, 8.8], "inflate": 0.2, "uv": [65, 51.7]},
+						{"origin": [9, 2, 2], "size": [2, 6, 5], "uv": [96, 10]},
+						{"origin": [6.4, 2, 3], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [0, 4, 0], "uv": [112, 23]},
+						{"origin": [5.6, -1.4, 0.7], "size": [2, 6, 5], "pivot": [0.4, 0, 0], "rotation": [7.68615, -9.88744, -38.16584], "uv": [113, 11]},
+						{"origin": [-10.3, 2, 1.7], "size": [12, 7, 6], "pivot": [0.4, 0, 0], "rotation": [0, -12.5, 0], "uv": [62, 22]},
+						{"origin": [-5.3, 5, 0.7], "size": [2, 3, 1], "pivot": [0.4, 0, 0], "rotation": [0, -12.5, 0], "uv": [3, 18]},
+						{"origin": [-13, 0, -1], "size": [1, 1, 8.8], "inflate": 0.2, "uv": [65, 60.7]},
+						{"origin": [-13, 1.4, -1], "size": [1, 7.2, 1], "inflate": 0.2, "uv": [59, 42.4]},
+						{"origin": [-13, 9, -1], "size": [1, 1, 8.8], "inflate": 0.2, "uv": [55, 59.7]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:mega_swampy_taiga/water_swampy_taiga_mega_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:mega_swampy_taiga/water_swampy_taiga_mega_s_weighted",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:mega_swampy_taiga/water_swampy_taiga_mega_p_weighted",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:swampy_taiga/water_swampy_taiga_spruce_weighted",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:swampy_taiga/water_swampy_taiga_pine_weighted",
+				5
+			]
+		]
+	}
+}

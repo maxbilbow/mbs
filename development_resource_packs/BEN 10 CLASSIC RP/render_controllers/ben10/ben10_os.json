@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.ben10": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0"
+				}
+			]
+		},
+		"controller.render.ben10.omnitrix": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix"
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 1 || query.skin_id == 2"
+				}
+			]
+		}
+	}
+}

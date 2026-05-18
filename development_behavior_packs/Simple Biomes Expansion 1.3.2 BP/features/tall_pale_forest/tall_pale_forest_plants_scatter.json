@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_plants_scatter"
+		},
+		"iterations": 1,
+		"x": {
+			"extent": [
+				-16,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				-16,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"y": -1,
+		"places_feature": "vanilla_biomes_expansion:tall_pale_forest/tall_pale_forest_plants"
+	}
+}

@@ -1,0 +1,49 @@
+//bridge-file-version: #37
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "f:sit",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"seats": [
+					{
+						"position": [
+							0,
+							-0.25,
+							0
+						]
+					}
+				],
+				"interact_text": "Sit",
+				"family_types": [
+					"player"
+				],
+				"crouching_skip_interact": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"sit"
+				]
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:fire_immune": true
+		}
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:cold_mushroom_island"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.4,
+				"snow_accumulation": [
+					0.125,
+					0.5
+				],
+				"temperature": -0.5
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "mushroom"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:dirt",
+					"top_material": "minecraft:mycelium",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"mooshroom_island",
+					"overworld",
+					"spawns_without_patrols",
+					"cold",
+					"spawns_cold_variant_farm_animals",
+					"spawns_white_rabbits",
+					"spawns_cold_variant_frogs"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:cold_taiga",
+							"minecraft:ice_plains",
+							"minecraft:ice_plains_spikes",
+							"minecraft:snowy_slopes"
+						],
+						"amount": 0.085,
+						"noise_frequency_scale": 0.16
+					}
+				]
+			}
+		}
+	}
+}

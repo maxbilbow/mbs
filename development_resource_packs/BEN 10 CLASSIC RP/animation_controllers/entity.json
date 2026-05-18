@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.idle": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"idling": "!query.is_moving"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.move": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"moving": "query.is_moving"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.attack": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"attacking": "variable.attack_time>0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

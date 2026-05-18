@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.hojas1",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5.9, 0, -5], "size": [7, 2, 11], "pivot": [-2.0315, 0.95, 0.36011], "rotation": [0, -10, 0], "uv": [0, 0]},
+						{"origin": [-4.94285, 1, -4.70787], "size": [7, 0, 11], "pivot": [-2.0315, 0.95, 0.36011], "rotation": [0, -17.5, 0], "uv": [0, 0]},
+						{"origin": [-5.74285, 0.5, -5.60787], "size": [7, 0, 11], "pivot": [-2.0315, 0.95, 0.36011], "rotation": [0, -17.5, 0], "uv": [0, 0]},
+						{"origin": [-6.01268, 1.4, -5.68907], "size": [7, 0, 11], "pivot": [-2.0315, 0.95, 0.36011], "rotation": [0, -5, 0], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

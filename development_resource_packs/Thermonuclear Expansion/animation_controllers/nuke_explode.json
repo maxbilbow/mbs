@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.nuke_explode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"nuke_explode": "!query.all_animations_finished"
+						}
+					]
+				}
+			}
+		}
+	}
+}

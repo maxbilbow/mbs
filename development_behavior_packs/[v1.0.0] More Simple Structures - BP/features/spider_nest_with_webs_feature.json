@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "wypnt_mss:spider_nest_with_webs_feature"
+		},
+		"early_out": "first_failure",
+		"features": [
+			"wypnt_mss:spider_nest_1_feature_mcstructure",
+			"wypnt_mss:spider_nest_loot_snap_feature",
+			"wypnt_mss:scatter_hanging_webs_feature"
+		]
+	}
+}

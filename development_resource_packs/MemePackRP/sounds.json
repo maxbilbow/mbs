@@ -1,0 +1,190 @@
+{
+  "individual_event_sounds": {
+    "events": {}
+  },
+  "block_sounds": {},
+  "entity_sounds": {
+    "defaults": {
+      "volume": 1,
+      "pitch": [
+        0.8,
+        1.2
+      ],
+      "events": {
+        "fall.big": {
+          "sound": "damage.fallbig",
+          "volume": 0.75,
+          "pitch": 1
+        },
+        "fall.small": {
+          "sound": "damage.fallsmall",
+          "volume": 0.75,
+          "pitch": 1
+        },
+        "splash": {
+          "sound": "random.splash",
+          "pitch": [
+            0.6,
+            1.4
+          ]
+        },
+        "swim": {
+          "sound": "random.swim",
+          "pitch": [
+            0.6,
+            1.4
+          ]
+        },
+        "fizz": {
+          "sound": "random.fizz",
+          "volume": 0.7,
+          "pitch": [
+            1.2,
+            2
+          ]
+        },
+        "drink": {
+          "sound": "random.drink",
+          "volume": 0.5,
+          "pitch": [
+            0.9,
+            1
+          ]
+        },
+        "eat": {
+          "sound": "random.eat",
+          "volume": [
+            0.5,
+            1.5
+          ],
+          "pitch": [
+            0.8,
+            1.2
+          ]
+        },
+        "ambient": {},
+        "flop": {},
+        "hurt": "game.player.hurt",
+        "death": "game.player.die",
+        "ambient.in.water": {},
+        "hurt.in.water": {},
+        "death.in.water": {},
+        "ambient.in.raid": {}
+      }
+    },
+    "entities": {
+      "player": {
+        "volume": 0.4,
+        "pitch": 1,
+        "events": {
+          "death": {
+            "volume": 0.4,
+            "sound": "player.death"
+          }
+        }
+      },
+      "meme:villager": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.idle",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:villager_supreme": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.idle",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:villager_fat": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.obese",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:villager_horny": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.horny",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:villager_derp": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.derp",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:pillager_derp": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.derp",
+          "hurt": "mob.pillager.hurt",
+          "death": "mob.pillager.death",
+          "ambient.in.raid": {"sound": "mob.villager.derp", "volume": 3.0, "pitch": [ 0.8, 1.2 ]},
+          "celebrate": "mob.pillager.celebrate"
+        }
+      },
+      "meme:villager_dumb": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.dumb",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      },
+      "meme:villager_sad": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.villager.sad",
+          "hurt": "mob.villager.hit",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.zombie.infect",
+          "haggle": "mob.villager.haggle",
+          "haggle.yes": "mob.villager.yes",
+          "haggle.no": "mob.villager.no"
+        }
+      }
+    }
+  }
+}

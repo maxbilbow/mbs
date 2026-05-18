@@ -1,0 +1,13 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_savanna/pale_savanna_tree_scatter"
+		},
+		"places_feature": "vanilla_biomes_expansion:pale_savanna/pale_savanna_tree_selected_weighted",
+		"iterations": 1,
+		"x": -2,
+		"y": 0,
+		"z": -2
+	}
+}

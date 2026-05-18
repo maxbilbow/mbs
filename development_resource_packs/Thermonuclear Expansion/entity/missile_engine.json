@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "kaboom:missile_engine",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/blocks/missile_engine_new"
+			},
+			"geometry": {
+				"default": "geometry.missile_engine_new"
+			},
+			"render_controllers": [
+				"controller.render.dummy_block"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

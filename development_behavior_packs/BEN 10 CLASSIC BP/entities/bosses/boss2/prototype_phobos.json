@@ -1,0 +1,896 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cso:prototype_phobos",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"scripts": {
+				"animate": [
+					"restart_timer_controller"
+				]
+			},
+			"animations": {
+				"restart_timer_controller": "controller.animation.cso.prototype_phobos.restart_timer",
+				"restart_timer": "animation.cso.prototype_phobos.restart_timer"
+			},
+			"properties": {
+				"cso:entity_state": {
+					"type": "enum",
+					"values": [
+						"default",
+						"dashing",
+						"shockwave",
+						"death"
+					],
+					"default": "default",
+					"client_sync": true
+				},
+				"cso:boss_music_playing": {
+					"type": "bool",
+					"default": false,
+					"client_sync": false
+				},
+				"cso:phobos_boss_music": {
+					"type": "bool",
+					"default": false,
+					"client_sync": false
+				},
+				"cso:phobos_shockwave_use": {
+					"type": "bool",
+					"default": false,
+					"client_sync": false
+				}
+			}
+		},
+		"component_groups": {
+			"cso:boss": {
+				"minecraft:boss": {
+					"name": "entity.cso:prototype_phobos.name",
+					"should_darken_sky": false,
+					"hud_range": 55
+				}
+			},
+			"cso:dashing": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 2.2,
+					"time_down_event": {
+						"event": "minecraft:entity_default_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.look_at_entity": {
+					"priority": 0,
+					"look_distance": 64,
+					"probability": 1,
+					"filters": {
+						"test": "is_target",
+						"subject": "other"
+					}
+				}
+			},
+			"cso:death": {
+				"minecraft:on_death": {
+					"filters": {
+						"test": "enum_property",
+						"subject": "self",
+						"domain": "cso:entity_state",
+						"operator": "==",
+						"value": "death"
+					},
+					"event": "minecraft:entity_destroyed",
+					"target": "self"
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 5.2,
+					"time_down_event": {
+						"event": "minecraft:entity_destroyed",
+						"target": "self"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"filters": {
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:instant_despawn"
+						},
+						"min_wait_time": 0.3,
+						"max_wait_time": 0.3,
+						"single_use": false,
+						"spawn_entity": "minecraft:xp_orb",
+						"num_to_spawn": 35
+					}
+				}
+			},
+			"cso:old_delayed_attack": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 7,
+					"time_down_event": {
+						"event": "minecraft:on_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"cooldown_time": 2,
+					"can_spread_on_fire": true,
+					"melee_fov": 360,
+					"reach_multiplier": 3,
+					"speed_multiplier": 1.5,
+					"track_target": true,
+					"x_max_rotation": 90,
+					"y_max_head_rotation": 90
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 13
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 12
+				}
+			},
+			"cso:default": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 7,
+					"time_down_event": {
+						"event": "minecraft:on_attack",
+						"target": "self"
+					}
+				}
+			},
+			"cso:delayed_attack": {
+				"minecraft:behavior.delayed_attack": {
+					"priority": 0,
+					"attack_duration": 2,
+					"attack_once": false,
+					"can_spread_on_fire": true,
+					"hit_delay_pct": 0.25,
+					"melee_fov": 360,
+					"random_stop_interval": 0,
+					"reach_multiplier": 4.5,
+					"require_complete_path": false,
+					"speed_multiplier": 1.5,
+					"track_target": true,
+					"x_max_rotation": 90,
+					"y_max_head_rotation": 90
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 13
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 12
+				}
+			},
+			"cso:destroyed": {
+				"minecraft:instant_despawn": {}
+			},
+			"cso:dying": {
+				"minecraft:transformation": {
+					"into": "cso:prototype_phobos<minecraft:entity_death>",
+					"transformation_sound": "death"
+				}
+			},
+			"cso:shockwave": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3,
+					"time_down_event": {
+						"event": "minecraft:entity_default_attack",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"prototype_phobos",
+					"monster",
+					"mob",
+					"boss1",
+					"boss2"
+				]
+			},
+			"minecraft:attack": {
+				"damage": 45
+			},
+			"minecraft:breathable": {
+				"total_supply": 20,
+				"suffocate_time": 0
+			},
+			"minecraft:collision_box": {
+				"width": 2.2,
+				"height": 6.8
+			},
+			"minecraft:dimension_bound": {},
+			"minecraft:entity_sensor": {
+				"relative_range": false,
+				"subsensors": [
+					{
+						"event": "minecraft:entity_shockwave_attack",
+						"cooldown": -1,
+						"range": [
+							9,
+							7
+						],
+						"minimum_count": 1,
+						"event_filters": {
+							"all_of": [
+								{
+									"test": "bool_property",
+									"subject": "self",
+									"domain": "cso:phobos_shockwave_use",
+									"operator": "=="
+								},
+								{
+									"test": "enum_property",
+									"subject": "self",
+									"domain": "cso:entity_state",
+									"value": "default"
+								},
+								{
+									"test": "has_target",
+									"subject": "self"
+								},
+								{
+									"test": "is_target",
+									"subject": "other"
+								}
+							]
+						}
+					},
+					{
+						"event": "minecraft:on_start_music",
+						"cooldown": 0.2,
+						"range": [
+							55,
+							55
+						],
+						"minimum_count": 1,
+						"event_filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					},
+					{
+						"event": "minecraft:on_stop_music",
+						"cooldown": 0.2,
+						"range": [
+							55,
+							55
+						],
+						"minimum_count": 0,
+						"maximum_count": 0,
+						"event_filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					},
+					{
+						"event": "minecraft:on_music_false",
+						"cooldown": 0.2,
+						"range": [
+							55,
+							55
+						],
+						"minimum_count": 1,
+						"event_filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "prototype_phobos"
+						}
+					},
+					{
+						"event": "minecraft:on_music_true",
+						"cooldown": 0.2,
+						"range": [
+							55,
+							55
+						],
+						"minimum_count": 0,
+						"maximum_count": 0,
+						"event_filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "prototype_phobos"
+						}
+					}
+				]
+			},
+			"minecraft:follow_range": {
+				"value": 1024,
+				"max": 1024
+			},
+			"minecraft:health": {
+				"value": 85000,
+				"max": 85000
+			},
+			"minecraft:jump.static": {},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/cso/prototype_phobos.json"
+			},
+			"minecraft:mob_effect_immunity": {
+				"mob_effects": [
+					"fatal_poison",
+					"instant_damage",
+					"poison",
+					"slowness",
+					"wither"
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.45
+			},
+			"minecraft:movement_sound_distance_offset": {
+				"value": 2
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:on_death": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "enum_property",
+							"subject": "self",
+							"domain": "cso:entity_state",
+							"operator": "!=",
+							"value": "death"
+						},
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:transformation"
+						}
+					]
+				},
+				"event": "minecraft:on_death",
+				"target": "self"
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:renders_when_invisible": {},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"controlled_value": 1.5625,
+				"jump_prevented_value": 1.0625
+			},
+			"minecraft:water_movement": {
+				"drag_factor": 0.58
+			},
+			"minecraft:behavior.nearest_prioritized_attackable_target": {
+				"priority": 4,
+				"reselect_targets": true,
+				"must_see": true,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "enum_property",
+									"subject": "self",
+									"domain": "cso:entity_state",
+									"operator": "!=",
+									"value": "death"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 1024,
+						"priority": 0
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "enum_property",
+									"subject": "self",
+									"domain": "cso:entity_state",
+									"operator": "!=",
+									"value": "death"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "irongolem"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "villager"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "wandering_trader"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "dragon"
+										}
+									]
+								}
+							]
+						},
+						"max_dist": 56,
+						"priority": 1
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "enum_property",
+									"subject": "self",
+									"domain": "cso:entity_state",
+									"operator": "!=",
+									"value": "death"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "animal"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "camel"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "cow"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "pig"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "sheep"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "wolf"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "horse"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "donkey"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "mule"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "arthropod"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "ocelot"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "cat"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "turtle"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "sniffer"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "llama"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "fox"
+										}
+									]
+								}
+							]
+						},
+						"max_dist": 38,
+						"priority": 2
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"cso:boss",
+						"cso:default",
+						"cso:delayed_attack"
+					]
+				}
+			},
+			"minecraft:on_attack": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_target",
+							"subject": "self"
+						},
+						"sequence": [
+							{
+								"filters": {
+									"test": "is_difficulty",
+									"value": "peaceful"
+								},
+								"randomize": [
+									{
+										"weight": 80
+									},
+									{
+										"weight": 10,
+										"trigger": "minecraft:entity_use_shockwave"
+									},
+									{
+										"weight": 10,
+										"trigger": "minecraft:entity_dash_attack"
+									}
+								]
+							},
+							{
+								"filters": {
+									"test": "is_difficulty",
+									"value": "easy"
+								},
+								"randomize": [
+									{
+										"weight": 40
+									},
+									{
+										"weight": 30,
+										"trigger": "minecraft:entity_use_shockwave"
+									},
+									{
+										"weight": 30,
+										"trigger": "minecraft:entity_dash_attack"
+									}
+								]
+							},
+							{
+								"filters": {
+									"test": "is_difficulty",
+									"value": "normal"
+								},
+								"randomize": [
+									{
+										"weight": 20
+									},
+									{
+										"weight": 40,
+										"trigger": "minecraft:entity_use_shockwave"
+									},
+									{
+										"weight": 40,
+										"trigger": "minecraft:entity_dash_attack"
+									}
+								]
+							},
+							{
+								"filters": {
+									"test": "is_difficulty",
+									"value": "hard"
+								},
+								"randomize": [
+									{
+										"weight": 50,
+										"trigger": "minecraft:entity_use_shockwave"
+									},
+									{
+										"weight": 50,
+										"trigger": "minecraft:entity_dash_attack"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			"minecraft:entity_dash_attack": {
+				"filters": {
+					"test": "enum_property",
+					"domain": "cso:entity_state",
+					"operator": "!=",
+					"value": "dashing"
+				},
+				"set_property": {
+					"cso:entity_state": "dashing",
+					"cso:phobos_shockwave_use": false
+				},
+				"remove": {
+					"component_groups": [
+						"cso:default",
+						"cso:delayed_attack",
+						"cso:shockwave"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cso:dashing"
+					]
+				},
+				"play_sound": {
+					"sound": "dash_ready"
+				}
+			},
+			"minecraft:entity_default_attack": {
+				"filters": {
+					"test": "enum_property",
+					"domain": "cso:entity_state",
+					"operator": "!=",
+					"value": "default"
+				},
+				"set_property": {
+					"cso:entity_state": "default",
+					"cso:phobos_shockwave_use": false
+				},
+				"remove": {
+					"component_groups": [
+						"cso:dashing",
+						"cso:shockwave"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cso:default",
+						"cso:delayed_attack"
+					]
+				},
+				"play_sound": {
+					"sound": "ambient"
+				}
+			},
+			"minecraft:entity_use_shockwave": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "enum_property",
+							"domain": "cso:entity_state",
+							"operator": "!=",
+							"value": "default"
+						},
+						"set_property": {
+							"cso:entity_state": "default"
+						},
+						"remove": {
+							"component_groups": [
+								"cso:dashing",
+								"cso:shockwave"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"cso:default",
+								"cso:delayed_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "bool_property",
+							"domain": "cso:phobos_shockwave_use",
+							"operator": "!="
+						},
+						"set_property": {
+							"cso:phobos_shockwave_use": true
+						},
+						"play_sound": {
+							"sound": "ambient"
+						}
+					}
+				]
+			},
+			"minecraft:entity_shockwave_attack": {
+				"filters": {
+					"test": "enum_property",
+					"domain": "cso:entity_state",
+					"operator": "!=",
+					"value": "shockwave"
+				},
+				"set_property": {
+					"cso:entity_state": "shockwave",
+					"cso:phobos_shockwave_use": false
+				},
+				"remove": {
+					"component_groups": [
+						"cso:default",
+						"cso:delayed_attack",
+						"cso:dashing"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cso:shockwave"
+					]
+				},
+				"play_sound": {
+					"sound": "ambient"
+				}
+			},
+			"minecraft:entity_restart_attack": {
+				"filters": {
+					"test": "enum_property",
+					"domain": "cso:entity_state",
+					"operator": "==",
+					"value": "default"
+				},
+				"remove": {
+					"component_groups": [
+						"cso:delayed_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cso:delayed_attack"
+					]
+				},
+				"play_sound": {
+					"sound": "death"
+				}
+			},
+			"minecraft:on_death": {
+				"add": {
+					"component_groups": [
+						"cso:dying"
+					]
+				}
+			},
+			"minecraft:entity_death": {
+				"filters": {
+					"test": "enum_property",
+					"subject": "other",
+					"domain": "cso:entity_state",
+					"operator": "!=",
+					"value": "death"
+				},
+				"add": {
+					"component_groups": [
+						"cso:death"
+					]
+				},
+				"set_property": {
+					"cso:entity_state": "death"
+				},
+				"queue_command": {
+					"command": "scriptevent cso:stop_music"
+				},
+				"play_sound": {
+					"sound": "deactivate"
+				}
+			},
+			"minecraft:entity_destroyed": {
+				"add": {
+					"component_groups": [
+						"cso:destroyed"
+					]
+				}
+			},
+			"minecraft:on_music_false": {
+				"filters": {
+					"test": "bool_property",
+					"operator": "==",
+					"domain": "cso:phobos_boss_music"
+				},
+				"set_property": {
+					"cso:phobos_boss_music": false
+				}
+			},
+			"minecraft:on_music_true": {
+				"filters": {
+					"test": "bool_property",
+					"operator": "!=",
+					"domain": "cso:phobos_boss_music"
+				},
+				"set_property": {
+					"cso:phobos_boss_music": true
+				}
+			},
+			"minecraft:on_start_music": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "bool_property",
+							"operator": "!=",
+							"domain": "cso:boss_music_playing"
+						},
+						{
+							"test": "enum_property",
+							"domain": "cso:entity_state",
+							"operator": "!=",
+							"value": "death"
+						}
+					]
+				},
+				"queue_command": {
+					"command": "scriptevent cso:play_music"
+				},
+				"set_property": {
+					"cso:boss_music_playing": true
+				}
+			},
+			"minecraft:on_stop_music": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "bool_property",
+							"operator": "==",
+							"domain": "cso:boss_music_playing"
+						},
+						{
+							"test": "enum_property",
+							"domain": "cso:entity_state",
+							"operator": "!=",
+							"value": "death"
+						}
+					]
+				},
+				"queue_command": {
+					"command": "scriptevent cso:stop_music"
+				},
+				"set_property": {
+					"cso:boss_music_playing": false
+				}
+			}
+		}
+	}
+}

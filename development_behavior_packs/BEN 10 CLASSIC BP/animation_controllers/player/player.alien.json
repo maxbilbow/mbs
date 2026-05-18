@@ -1,0 +1,1207 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player_alien": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"player_alien": "query.variant>0"
+						}
+					]
+				},
+				"player_alien": {
+					"transitions": [
+						{
+							"default": "query.variant==0"
+						}
+					],
+					"on_entry": [
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 0 omni:omni_off",
+						"/execute as @s[family=alien,tag=master_control] at @s run scriptevent omni:equip_power 8 omni:omni_master",
+						"/ability @s[family=stinkfly] mayfly true",
+						"/ability @s[family=heatblast] mayfly true",
+						"/ability @s[family=ghostfreak] mayfly true"
+					],
+					"on_exit": [
+						"/effect @s clear",
+						"/ability @s[m=s] mayfly false",
+						"/ability @s[m=a] mayfly false",
+						"/tag @s remove alien"
+					]
+				}
+			}
+		},
+		"controller.animation.waybig_ray": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"waybig_ray": "query.variant==15&&query.get_equipped_item_name('main_hand')=='wb_ray'&&query.is_using_item"
+						}
+					]
+				},
+				"waybig_ray": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/playanimation @e[c=1,type=player:waybig] shooting"
+					]
+				}
+			}
+		},
+		"controller.animation.waybig_stomp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"waybig_stomp": "query.variant==15&&query.get_equipped_item_name('main_hand')=='wb_stomp'&&query.is_using_item"
+						}
+					]
+				},
+				"waybig_stomp": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/event entity @e[c=1,type=player:waybig_height] wb_stomp"
+					]
+				}
+			}
+		},
+		"controller.animation.waybig": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"waybig": "query.variant==15"
+						}
+					]
+				},
+				"waybig": {
+					"transitions": [
+						{
+							"default": "query.variant!=15"
+						}
+					],
+					"on_entry": [
+						"/execute as @s run scriptevent omni:equip_power 1 power:wb_stomp",
+						"/execute as @s run scriptevent omni:equip_power 2 power:wb_ray"
+					]
+				}
+			}
+		},
+		"controller.animation.ditto": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ditto": "query.variant==18"
+						}
+					]
+				},
+				"ditto": {
+					"transitions": [
+						{
+							"default": "query.variant!=18"
+						}
+					],
+					"on_entry": [
+						"/scriptevent omni:equip_power 1 power:dt_clone",
+						"/scriptevent omni:equip_power 2 power:dt_command",
+						"/tag @s add ditto_owner"
+					]
+				}
+			}
+		},
+		"controller.animation.ditto_clone": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ditto_clone": "!query.is_sneaking&&query.variant==18&&query.get_equipped_item_name('main_hand')=='dt_clone'&&query.is_using_item"
+						}
+					]
+				},
+				"ditto_clone": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item||query.is_sneaking||query.get_equipped_item_name('main_hand')!='dt_clone'"
+						}
+					],
+					"on_entry": [
+						"/summon omni:ditto_clone ~~~"
+					]
+				}
+			}
+		},
+		"controller.animation.ditto_clear_clone": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ditto_clear_clone": "query.is_sneaking&&query.variant==18&&query.get_equipped_item_name('main_hand')=='dt_clone'&&query.is_using_item"
+						}
+					]
+				},
+				"ditto_clear_clone": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item||!query.is_sneaking||query.get_equipped_item_name('main_hand')!='dt_clone'"
+						}
+					],
+					"on_entry": [
+						"/event entity @e[c=1,type=omni:ditto_clone] despawn"
+					]
+				}
+			}
+		},
+		"controller.animation.cannonbolt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"cannonbolt": "query.variant==5"
+						}
+					]
+				},
+				"cannonbolt": {
+					"transitions": [
+						{
+							"default": "query.variant!=5"
+						}
+					],
+					"on_entry": [
+						"/effect @s resistance 99999 1 true",
+						"/effect @s slowness 99999 0 true"
+					]
+				}
+			}
+		},
+		"controller.animation.cannonbolt_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"cannonbolt_sprint": "query.variant==5&&query.is_sprinting"
+						}
+					]
+				},
+				"cannonbolt_sprint": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting||query.variant!=5"
+						},
+						{
+							"sprint_loop": "query.state_time>=0.25"
+						}
+					],
+					"on_entry": [
+						"/event entity @s cannonbolt_ball",
+						"/camerashake add @a[r=15] 0.15 0.5 rotational",
+						"/playsound random.explode @a[r=10] ~ ~ ~ 0.5 1.5"
+					]
+				},
+				"sprint_loop": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting||query.variant!=5"
+						},
+						{
+							"cannonbolt_sprint": "query.state_time>=0.1"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.ghostfreak": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"visible": "query.variant==11"
+						},
+						{
+							"invisible": "query.variant==12"
+						}
+					]
+				},
+				"visible": {
+					"transitions": [
+						{
+							"default": "query.variant!=11&&query.variant!=12"
+						},
+						{
+							"turn_invisible": "query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/effect @s invisibility 0",
+						"/effect @s speed 0",
+						"/effect @s night_vision 99999 0 true",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:gf_intangibility",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:gf_possession"
+					]
+				},
+				"turn_invisible": {
+					"transitions": [
+						{
+							"default": "query.variant!=11&&query.variant!=12"
+						},
+						{
+							"invisible": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/event entity @s ghostfreak_invisible"
+					]
+				},
+				"invisible": {
+					"transitions": [
+						{
+							"default": "query.variant!=11&&query.variant!=12"
+						},
+						{
+							"turn_visible": "query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/effect @s invisibility 99999 0 true",
+						"/effect @s speed 99999 5 true"
+					]
+				},
+				"turn_visible": {
+					"transitions": [
+						{
+							"default": "query.variant!=11&&query.variant!=12"
+						},
+						{
+							"visible": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/event entity @s ghostfreak"
+					]
+				}
+			}
+		},
+		"controller.animation.gf_intangibility": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"turn_intangible": "query.get_equipped_item_name('main_hand')=='gf_intangibility'&&query.is_using_item"
+						}
+					]
+				},
+				"turn_intangible": {
+					"animations": [
+						"gf_timer"
+					],
+					"transitions": [
+						{
+							"turn_tangible": "query.state_time>=10||(query.variant!=11&&query.variant!=12)"
+						}
+					],
+					"on_entry": [
+						"/tag @s[m=c] add was_creative",
+						"/tag @s[m=a] add was_adventure",
+						"/gamemode spectator @s",
+						"/playsound mob.ghast.scream @s ~ ~ ~ 0.5 0.5"
+					]
+				},
+				"turn_tangible": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/gamemode creative @s[tag=was_creative]",
+						"/gamemode adventure @s[tag=was_adventure]",
+						"/gamemode survival @s[tag=!was_creative,tag=!was_adventure]",
+						"/tag @s remove was_creative",
+						"/tag @s remove was_adventure",
+						"/playsound mob.ghast.moan @s ~ ~ ~ 0.5 0.5"
+					]
+				}
+			}
+		},
+		"controller.animation.gf_possession": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"grab_mob": "query.get_equipped_item_name('main_hand')=='gf_possession'&&query.is_using_item"
+						}
+					]
+				},
+				"grab_mob": {
+					"transitions": [
+						{
+							"tp_loop_1": "0.05"
+						}
+					],
+					"on_entry": [
+						"/tag @e[r=4,c=1,family=!player,type=!item] add possessed",
+						"/effect @s invisibility 99999 0 true",
+						"/playsound mob.evocation_illager.cast @s ~ ~ ~ 1.0 0.5"
+					]
+				},
+				"tp_loop_1": {
+					"transitions": [
+						{
+							"release_mob": "query.is_sneaking||query.get_equipped_item_name('main_hand')!='gf_possession'"
+						},
+						{
+							"tp_loop_2": "0.05"
+						}
+					],
+					"on_entry": [
+						"/tp @e[tag=possessed,r=10] @s"
+					]
+				},
+				"tp_loop_2": {
+					"transitions": [
+						{
+							"release_mob": "query.is_sneaking||query.get_equipped_item_name('main_hand')!='gf_possession'"
+						},
+						{
+							"tp_loop_1": "0.05"
+						}
+					],
+					"on_entry": [
+						"/tp @e[tag=possessed,r=10] @s"
+					]
+				},
+				"release_mob": {
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/tag @e[tag=possessed] remove possessed",
+						"/effect @s invisibility 0",
+						"/playsound mob.evocation_illager.prepare_summon @s ~ ~ ~ 1.0 0.5"
+					]
+				}
+			}
+		},
+		"controller.animation.upgrade": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"upgrade": "query.variant==10"
+						}
+					]
+				},
+				"upgrade": {
+					"transitions": [
+						{
+							"default": "query.variant!=10"
+						}
+					],
+					"on_entry": [
+						"/effect @s resistance 99999 1 true"
+					]
+				}
+			}
+		},
+		"controller.animation.ripjaws": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"water_form": "(query.variant==9||query.variant==999)&&query.is_in_water"
+						},
+						{
+							"land_form_rain": "(query.variant==9||query.variant==999)&&query.is_in_water_or_rain&&!query.is_in_water"
+						},
+						{
+							"land_form": "(query.variant==9||query.variant==999)&&!query.is_in_water_or_rain"
+						}
+					]
+				},
+				"land_form": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"water_form": "query.is_in_water"
+						},
+						{
+							"land_form_rain": "query.is_in_water_or_rain"
+						},
+						{
+							"suffocate_warning": "query.state_time>=20"
+						}
+					],
+					"on_entry": [
+						"/event entity @s ripjaws",
+						"/effect @s water_breathing 99999 0 true",
+						"/effect @s night_vision 99999 0 true"
+					]
+				},
+				"land_form_rain": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"water_form": "query.is_in_water"
+						},
+						{
+							"land_form": "!query.is_in_water_or_rain"
+						}
+					],
+					"on_entry": [
+						"/event entity @s ripjaws",
+						"/effect @s water_breathing 99999 0 true",
+						"/effect @s night_vision 99999 0 true",
+						"/tag @s add rj_raining"
+					],
+					"on_exit": [
+						"/tag @s remove rj_raining"
+					]
+				},
+				"suffocate_warning": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"water_form": "query.is_in_water"
+						},
+						{
+							"land_form_rain": "query.is_in_water_or_rain"
+						},
+						{
+							"suffocate_damage": "query.state_time>=5"
+						}
+					],
+					"on_entry": [
+						"/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§c§l> WARNING: Need Water to Survive! <\"}]}",
+						"/playsound random.fizz @s ~ ~ ~ 1 0.8"
+					]
+				},
+				"suffocate_damage": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"water_form": "query.is_in_water"
+						},
+						{
+							"land_form_rain": "query.is_in_water_or_rain"
+						},
+						{
+							"suffocate_loop": "query.state_time>=1.5"
+						}
+					],
+					"on_entry": [
+						"/damage @s 2 drowning"
+					]
+				},
+				"suffocate_loop": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"water_form": "query.is_in_water"
+						},
+						{
+							"land_form_rain": "query.is_in_water_or_rain"
+						},
+						{
+							"suffocate_damage": "query.state_time>=0"
+						}
+					]
+				},
+				"water_form": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"land_form_rain": "query.is_in_water_or_rain&&!query.is_in_water"
+						},
+						{
+							"land_form": "!query.is_in_water_or_rain"
+						},
+						{
+							"water_dash": "query.is_sprinting"
+						}
+					],
+					"on_entry": [
+						"/event entity @s water_ripjaws",
+						"/effect @s water_breathing 99999 255 true",
+						"/effect @s night_vision 99999 255 true",
+						"/effect @s conduit_power 99999 255 true",
+						"/tag @s add in_water_rj"
+					],
+					"on_exit": [
+						"/effect @s conduit_power 0",
+						"/tag @s remove in_water_rj"
+					]
+				},
+				"water_dash": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"land_form": "!query.is_in_water"
+						},
+						{
+							"water_form": "!query.is_sprinting"
+						},
+						{
+							"water_sprint": "query.state_time>=0.8"
+						}
+					],
+					"on_entry": [
+						"/effect @s speed 99999 8 true",
+						"/playsound random.splash @s ~ ~ ~ 1 1.5",
+						"/particle minecraft:bubble_column_up_particle ~ ~1 ~"
+					],
+					"on_exit": [
+						"/effect @s speed 0"
+					]
+				},
+				"water_sprint": {
+					"transitions": [
+						{
+							"default": "query.variant!=9&&query.variant!=999"
+						},
+						{
+							"land_form": "!query.is_in_water"
+						},
+						{
+							"water_form": "!query.is_sprinting"
+						}
+					],
+					"on_entry": [
+						"/effect @s conduit_power 99999 255 true",
+						"/effect @s speed 99999 6 true",
+						"/playsound conduit.ambient @s ~ ~ ~ 1 1.5"
+					],
+					"on_exit": [
+						"/effect @s speed 0",
+						"/effect @s conduit_power 0"
+					]
+				}
+			}
+		},
+		"controller.animation.stinkfly": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"stinkfly": "query.variant==8"
+						}
+					]
+				},
+				"stinkfly": {
+					"transitions": [
+						{
+							"default": "query.variant!=8"
+						}
+					],
+					"on_entry": [
+						"/effect @s slowness 99999 0 true",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:sf_slime"
+					]
+				}
+			}
+		},
+		"controller.animation.fourarms": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"fourarms": "query.variant==7"
+						}
+					]
+				},
+				"fourarms": {
+					"transitions": [
+						{
+							"default": "query.variant!=7"
+						}
+					],
+					"on_entry": [
+						"/effect @s jump_boost 99999 5 true",
+						"/effect @s resistance 99999 1 true"
+					]
+				}
+			}
+		},
+		"controller.animation.greymatter": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"greymatter": "query.variant==6"
+						}
+					]
+				},
+				"greymatter": {
+					"transitions": [
+						{
+							"default": "query.variant!=6"
+						}
+					],
+					"on_entry": [
+						"/effect @s jump_boost 99999 1 true"
+					]
+				}
+			}
+		},
+		"controller.animation.xlr8": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"xlr8": "query.variant==4"
+						}
+					]
+				},
+				"xlr8": {
+					"transitions": [
+						{
+							"default": "query.variant!=4"
+						}
+					],
+					"on_entry": [
+						"/effect @s speed 99999 0 true",
+						"/effect @s jump_boost 99999 2 true"
+					]
+				}
+			}
+		},
+		"controller.animation.xlr8_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"xlr8_sprint": "query.variant==4&&query.is_sprinting"
+						}
+					]
+				},
+				"xlr8_sprint": {
+					"transitions": [
+						{
+							"default": "!query.is_sprinting||query.variant!=4"
+						}
+					],
+					"on_entry": [
+						"/event entity @s xlr8_sprint"
+					]
+				}
+			}
+		},
+		"controller.animation.diamondhead": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"diamondhead": "query.variant==3"
+						}
+					]
+				},
+				"diamondhead": {
+					"transitions": [
+						{
+							"default": "query.variant!=3"
+						}
+					],
+					"on_entry": [
+						"/effect @s jump_boost 99999 1 true",
+						"/effect @s resistance 99999 10 true",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:dh_crystal",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:dh_spikes"
+					]
+				}
+			}
+		},
+		"controller.animation.wildmutt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wildmutt": "query.variant==2"
+						}
+					],
+					"on_entry": [
+						"/fog @s remove custom_wildmutt_fog"
+					]
+				},
+				"wildmutt": {
+					"transitions": [
+						{
+							"default": "query.variant!=2"
+						}
+					],
+					"on_entry": [
+						"/effect @s speed 99999 2 true",
+						"/effect @s jump_boost 99999 3 true",
+						"/effect @s haste 99999 255 true",
+						"/fog @s push wm:vision_fog custom_wildmutt_fog"
+					],
+					"on_exit": [
+						"/fog @s remove custom_wildmutt_fog"
+					]
+				}
+			}
+		},
+		"controller.animation.heatblast": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"heatblast": "query.variant==1"
+						}
+					]
+				},
+				"heatblast": {
+					"transitions": [
+						{
+							"default": "query.variant!=1"
+						}
+					],
+					"on_entry": [
+						"/effect @s fire_resistance 99999 255 true",
+						"/effect @s night_vision 99999 0 true",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:fire_ball",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:hb_flamethrower",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 3 power:flight_activator"
+					]
+				}
+			}
+		},
+		"controller.animation.heatblast_loop": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"loop_1": "query.variant==1"
+						}
+					]
+				},
+				"loop_1": {
+					"transitions": [
+						{
+							"default": "query.variant!=1"
+						},
+						{
+							"loop_2": "query.variant==1"
+						}
+					],
+					"on_entry": [
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ~ ~0.6 ~",
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ^0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ^-0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ~ ~0.6 ~",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ^0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ^-0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=sneaking] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace fire",
+						"/execute as @s[tag=flying,tag=sneaking] at @s run tp @s ^ ^ ^0.4",
+						"/execute as @s[tag=flying,tag=sneaking] at @s run particle minecraft:lava_particle ^ ^-0.1 ^-0.5",
+						"/execute as @s[tag=is_custom_flying,tag=sneaking] at @s run tp @s ^ ^ ^0.4",
+						"/execute as @s[tag=is_custom_flying,tag=sneaking] at @s run particle minecraft:lava_particle ^ ^-0.1 ^-0.5"
+					]
+				},
+				"loop_2": {
+					"transitions": [
+						{
+							"default": "query.variant!=1"
+						},
+						{
+							"loop_1": "query.variant==1"
+						}
+					],
+					"on_entry": [
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ~ ~0.6 ~",
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ^0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=flying] at @s run particle minecraft:mobflame_single ^-0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ~ ~0.6 ~",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ^0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=is_custom_flying] at @s run particle minecraft:mobflame_single ^-0.4 ^0.6 ^0.1",
+						"/execute as @s[tag=sneaking] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 air replace fire",
+						"/execute as @s[tag=flying,tag=sneaking] at @s run tp @s ^ ^ ^0.4",
+						"/execute as @s[tag=flying,tag=sneaking] at @s run particle minecraft:lava_particle ^ ^-0.1 ^-0.5",
+						"/execute as @s[tag=is_custom_flying,tag=sneaking] at @s run tp @s ^ ^ ^0.4",
+						"/execute as @s[tag=is_custom_flying,tag=sneaking] at @s run particle minecraft:lava_particle ^ ^-0.1 ^-0.5"
+					]
+				}
+			}
+		},
+		"controller.animation.hb_flamethrower": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot_fire": "query.is_item_name_any('slot.weapon.mainhand','power:hb_flamethrower')&&query.is_using_item"
+						}
+					]
+				},
+				"shoot_fire": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"loop_reset": "query.state_time>=0.05"
+						}
+					],
+					"on_entry": [
+						"/scriptevent power:hb_flame",
+						"/execute as @s at @s anchored eyes positioned ^ ^ ^4 run execute as @e[r=5,family=!player,type=!item] at @s run setblock ~ ~ ~ fire [] keep",
+						"/execute as @s at @s anchored eyes run fill ^-1 ^-1 ^3 ^1 ^-1 ^6 fire [] keep",
+						"/execute as @s at @s anchored eyes run fill ^-1 ^-2 ^3 ^1 ^-2 ^6 fire [] keep",
+						"/playsound mob.blaze.shoot @s ~ ~ ~ 0.3 1.5",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-0.4 ^1.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-0.4 ^2.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-0.4 ^4.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^0.8 ^-0.4 ^4.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^-0.8 ^-0.4 ^4.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^0.4 ^4.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-1.2 ^4.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-0.4 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^1.5 ^-0.4 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^-1.5 ^-0.4 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^1.1 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^ ^-1.9 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^1.0 ^0.6 ^7.0",
+						"/execute as @s at @s anchored eyes run particle minecraft:mobflame_single ^-1.0 ^-1.4 ^7.0"
+					]
+				},
+				"loop_reset": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						},
+						{
+							"shoot_fire": "query.state_time>=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.alien_quick_swap": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"swap": "query.get_equipped_item_name('main_hand')=='omni_master'&&(query.is_using_item||variable.attack_time>0)&&query.variant>0"
+						}
+					]
+				},
+				"swap": {
+					"on_entry": [
+						"/function omni/quick_swap",
+						"/particle minecraft:huge_explosion_emitter ~ ~1 ~",
+						"/playsound omni.transform @s"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item&&variable.attack_time==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.arctiguana": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"arctiguana": "query.variant==16"
+						}
+					]
+				},
+				"arctiguana": {
+					"transitions": [
+						{
+							"default": "query.variant!=16"
+						}
+					],
+					"on_entry": [
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:arc_ice",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:arc_frost_walker",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 3 power:arc_armor",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 4 power:arc_chill"
+					]
+				}
+			}
+		},
+		"controller.animation.clockwork": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"clockwork": "query.variant==26"
+						}
+					]
+				},
+				"clockwork": {
+					"transitions": [
+						{
+							"default": "query.variant!=26"
+						}
+					],
+					"on_entry": [
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:clock_beam",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:clock_time",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 3 power:clock_stop",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 4 power:clock_rewind"
+					]
+				}
+			}
+		},
+		"controller.animation.benvictor": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"benvictor": "query.variant==22"
+						}
+					]
+				},
+				"benvictor": {
+					"transitions": [
+						{
+							"default": "query.variant!=22"
+						}
+					],
+					"on_entry": [
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:bv_lightning",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:bv_electrokinesis"
+					]
+				}
+			}
+		},
+		"controller.animation.upchuck": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"upchuck": "query.variant==17"
+						}
+					]
+				},
+				"upchuck": {
+					"transitions": [
+						{
+							"default": "query.variant!=17"
+						}
+					],
+					"on_entry": [
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:up_tongue",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:up_menu"
+					]
+				}
+			}
+		},
+		"controller.animation.wildvine": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wildvine": "query.variant==19"
+						}
+					]
+				},
+				"wildvine": {
+					"transitions": [
+						{
+							"default": "query.variant!=19"
+						}
+					],
+					"on_entry": [
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:wv_plant",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:wv_seeds",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 3 power:wv_stretch"
+					]
+				}
+			}
+		},
+		"controller.animation.benwolf": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"benwolf": "query.variant==20"
+						}
+					]
+				},
+				"benwolf": {
+					"transitions": [
+						{
+							"default": "query.variant!=20"
+						}
+					],
+					"on_entry": [
+						"/effect @s night_vision 99999 255 true",
+						"/effect @s speed 99999 1 true",
+						"/effect @s jump_boost 99999 2 true",
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:bw_howl"
+					]
+				}
+			}
+		},
+		"controller.animation.benmummy": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"benmummy": "query.variant==21"
+						}
+					]
+				},
+				"benmummy": {
+					"transitions": [
+						{
+							"default": "query.variant!=21"
+						}
+					],
+					"on_entry": [
+						"/effect @s jump_boost 99999 2 true",
+						"/effect @s resistance 99999 0 true",
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:bm_stretch",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:bm_grapple"
+					]
+				}
+			}
+		},
+		"controller.animation.eyeguy": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"eyeguy": "query.variant==23"
+						}
+					]
+				},
+				"eyeguy": {
+					"transitions": [
+						{
+							"default": "query.variant!=23"
+						}
+					],
+					"on_entry": [
+						"/effect @s night_vision 99999 255 true",
+						"/effect @s jump_boost 99999 2 true",
+						"/tag @s[family=alien] add alien",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 1 power:eyelaser",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 2 power:eyefire",
+						"/execute as @s[family=alien] at @s run scriptevent omni:equip_power 3 power:eyeice"
+					]
+				}
+			}
+		},
+		"controller.animation.punch_break_blocks": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"punch_break_blocks": "query.get_equipped_item_name('main_hand')==''&&variable.attack_time>0.6&&(query.variant==7||query.variant==3||query.variant==5)"
+						}
+					]
+				},
+				"punch_break_blocks": {
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0.6"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s run fill ~-1 ~2 ~-1 ~1 ~0 ~1 air destroy"
+					]
+				}
+			}
+		},
+		"controller.animation.spacebar_flight": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"fly": "query.is_using_item&&(query.variant==1||query.variant==8)&&(query.get_equipped_item_name('main_hand')=='flight_activator'||query.get_equipped_item_name('main_hand')=='sf_slime')"
+						}
+					]
+				},
+				"fly": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item||(query.variant!=1&&query.variant!=8)"
+						}
+					],
+					"on_entry": [
+						"/tag @s add jetpack_flying",
+						"/tag @s add flying",
+						"/execute as @s[variant=1] at @s run playanimation @s animation.heatblast_flying null 0.4",
+						"/execute as @s[variant=8] at @s run playanimation @s animation.stinkfly_flying null 0.4"
+					],
+					"on_exit": [
+						"/tag @s remove jetpack_flying",
+						"/tag @s remove flying",
+						"/execute as @s[variant=1] at @s run playanimation @s animation.heatblast_hover null 0.4",
+						"/execute as @s[variant=8] at @s run playanimation @s animation.stinkfly_bob null 0.4"
+					]
+				}
+			}
+		}
+	}
+}

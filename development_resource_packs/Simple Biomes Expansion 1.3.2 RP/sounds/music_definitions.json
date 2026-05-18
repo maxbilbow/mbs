@@ -1,0 +1,27 @@
+{
+	"sbe_amethyst_caves": {
+		"event_name": "music.game.amethyst_caves",
+		"max_delay": 180,
+		"min_delay": 60
+	},
+	"sbe_black_caves": {
+		"event_name": "music.game.black_caves",
+		"max_delay": 180,
+		"min_delay": 60
+	},
+	"sbe_jungle_caves": {
+		"event_name": "music.game.jungle_caves",
+		"max_delay": 180,
+		"min_delay": 60
+	},
+	"sbe_tuff_caves": {
+		"event_name": "music.game.tuff_caves",
+		"max_delay": 180,
+		"min_delay": 60
+	},
+	"sbe_white_caves": {
+		"event_name": "music.game.white_caves",
+		"max_delay": 180,
+		"min_delay": 60
+	}
+}

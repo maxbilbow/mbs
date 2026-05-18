@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:mega_spring_taiga/spring_taiga_mega_spruce_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:spring_taiga/spring_taiga_spruce_weighted",
+				14
+			],
+			[
+				"vanilla_biomes_expansion:mega_spring_taiga/spring_taiga_mega_spruce_weighted",
+				2
+			]
+		]
+	}
+}

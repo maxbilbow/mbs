@@ -1,0 +1,134 @@
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"normal",
+					"pulsado"
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:timbre-servicio-2"
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'pulsado'",
+				"components": {
+					"minecraft:geometry": "geometry.timbre_sis"
+					}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'normal'",
+				"components": {
+					"minecraft:geometry": "geometry.timbre_non"
+				}
+			
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			"minecraft:custom_components": [
+				"content_mf:timbre2"
+			],
+
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "tim2",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.timbre_non",
+
+			"minecraft:collision_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					4,
+					6
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					4,
+					6
+				]
+			}
+			
+		}
+
+	},
+	"format_version": "1.20.20"
+}

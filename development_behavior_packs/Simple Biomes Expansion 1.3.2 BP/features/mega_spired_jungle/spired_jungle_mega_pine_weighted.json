@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_1_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_2_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_3_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_4_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:mega_spired_jungle/spired_jungle_mega_pine_5_feature",
+				1
+			]
+		]
+	}
+}

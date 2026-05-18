@@ -1,0 +1,80 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "minecraft:splash_spell_emitter",
+      "basic_render_parameters": {
+        "material": "particles_add",
+        "texture": "textures/particle/glowing"
+      }
+    },
+    "components": {
+
+      "minecraft:emitter_rate_instant": {
+        "num_particles": 150
+      },
+
+      "minecraft:emitter_lifetime_once": {},
+
+      "minecraft:emitter_shape_point": {
+        "offset": [
+          "variable.is_vertical   = Math.Random(0.0, 1.0) > 0.45;  variable.splash_power   = Math.random(0.0, 1.0) * variable.splash_range;  variable.color_brightness = 0.85 + Math.random(0.0, 1.0) * 0.15;  variable.px_size        = Math.random(0.04, 0.18);  variable.is_big         = Math.Random(0.0, 1.0) > 0.85;  return 0.0;",
+          0,
+          0
+        ],
+        "direction": [
+          "(variable.is_vertical > 0 ? Math.random(-0.25, 0.25) : Math.random(-1.0, 1.0))",
+          "(variable.is_vertical > 0 ? Math.random(0.6, 1.0)    : Math.random(0.0, 0.35))",
+          "(variable.is_vertical > 0 ? Math.random(-0.25, 0.25) : Math.random(-1.0, 1.0))"
+        ]
+      },
+
+      "minecraft:particle_initial_speed": "(variable.is_big > 0 ? Math.random(4.0, 7.5) : Math.random(2.0, 6.0))",
+
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "Math.random(0.55, 1.4)"
+      },
+
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [
+          "(variable.particle_random_1 * 2.0 - 1.0) * variable.splash_power * (variable.is_vertical > 0 ? 0.15 : 0.45) * 3.0",
+          "(-0.1 * variable.splash_power + 0.9) * (variable.is_vertical > 0 ? -7.0 : -9.8)",
+          "(variable.particle_random_2 * 2.0 - 1.0) * variable.splash_power * (variable.is_vertical > 0 ? 0.15 : 0.45) * 3.0"
+        ],
+        "linear_drag_coefficient": 3.2
+      },
+
+      "minecraft:particle_motion_collision": {
+        "enabled": 1,
+        "expire_on_contact": true,
+        "collision_drag": 1.5,
+        "coefficient_of_restitution": 0.0,
+        "collision_radius": 0.01
+      },
+
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          "(variable.is_big > 0 ? variable.px_size * 2.2 : variable.px_size)",
+          "(variable.is_big > 0 ? variable.px_size * 2.2 : variable.px_size)"
+        ],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 16,
+          "texture_height": 16,
+          "uv": [ 0, 0 ],
+          "uv_size": [ 16, 16 ]
+        }
+      },
+
+      "minecraft:particle_appearance_tinting": {
+        "color": [
+          "variable.color.r * variable.color_brightness * (variable.is_big > 0 ? 1.0 : 0.9)",
+          "variable.color.g * variable.color_brightness * (variable.is_big > 0 ? 1.0 : 0.9)",
+          "variable.color.b * variable.color_brightness * (variable.is_big > 0 ? 1.0 : 0.9)",
+          "variable.color.a * Math.pow(Math.max(0.0, 1.0 - (variable.particle_age / variable.particle_lifetime)), 0.55)"
+        ]
+      }
+
+    }
+  }
+}

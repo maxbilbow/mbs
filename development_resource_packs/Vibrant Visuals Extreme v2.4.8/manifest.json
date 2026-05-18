@@ -1,0 +1,21 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Unlocks vibrant visuals potential",
+    "name": "§bVibrant Visuals Extreme",
+    "uuid": "abe088da-90f4-4248-aa98-4869e5e8c9de",
+    "version": [ 2, 4, 8 ],
+    "min_engine_version": [ 1, 20, 20 ]
+  },
+  "modules": [
+    {
+      "description": "new graphics resource pack",
+      "type": "resources",
+      "uuid": "7aa90502-4de0-4155-b21d-80c5877bb045",
+      "version": [ 2, 4, 8 ]
+    }
+  ],
+  "capabilities": [
+    "pbr"
+  ]
+}

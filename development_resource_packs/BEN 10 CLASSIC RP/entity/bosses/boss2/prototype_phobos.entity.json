@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "cso:prototype_phobos",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bosses/boss2/entity/phobos/prototype_phobos"
+			},
+			"geometry": {
+				"default": "geometry.cso.prototype_phobos"
+			},
+			"animations": {
+				"main_controller": "controller.animation.cso.prototype_phobos.main",
+				"attack_controller": "controller.animation.cso.prototype_phobos.attack",
+				"movement_controller": "controller.animation.cso.prototype_phobos.movement",
+				"idle": "animation.cso.prototype_phobos.idle",
+				"walking": "animation.cso.prototype_phobos.walking",
+				"running": "animation.cso.prototype_phobos.running",
+				"attack": "animation.cso.prototype_phobos.attack",
+				"dashing": "animation.cso.prototype_phobos.dash",
+				"shockwave": "animation.cso.prototype_phobos.shockwave",
+				"death": "animation.cso.prototype_phobos.death",
+				"death_rotation": "animation.cso.prototype_phobos.death_rotation"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.entity_state = q.property('cso:entity_state');",
+					"v.entity_default = v.entity_state=='default';",
+					"v.entity_is_dashing = v.entity_state=='dashing';",
+					"v.entity_shockwave = v.entity_state=='shockwave';",
+					"v.entity_has_died = v.entity_state=='death';"
+				],
+				"animate": [
+					"main_controller",
+					{
+						"death_rotation": "!q.is_alive"
+					}
+				],
+				"should_update_effects_offscreen": "1.0"
+			},
+			"render_controllers": [
+				"controller.render.cso.prototype_phobos"
+			],
+			"spawn_egg": {
+				"texture": "cso:spawn_egg_prototype_phobos"
+			}
+		}
+	}
+}

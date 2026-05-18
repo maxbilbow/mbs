@@ -1,0 +1,67 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:frosted_badlands"
+		},
+		"components": {
+			"minecraft:creature_spawn_probability": {
+				"probability": 0.05
+			},
+			"minecraft:climate": {
+				"downfall": 0.9,
+				"snow_accumulation": [
+					0,
+					0.25
+				],
+				"temperature": -0.2
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:mesa",
+					"bryce_pillars": false,
+					"clay_material": "minecraft:snow",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:ice",
+					"foundation_material": "minecraft:stone",
+					"hard_clay_material": "minecraft:blue_ice",
+					"has_forest": false,
+					"mid_material": "minecraft:blue_ice",
+					"top_material": "minecraft:snow",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "default"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"mesa",
+					"monster",
+					"mutated",
+					"overworld",
+					"spawns_cold_variant_farm_animals",
+					"frozen",
+					"spawns_white_rabbits",
+					"spawns_polar_bears_on_alternate_blocks",
+					"spawns_cold_variant_frogs",
+					"frosted_badlands"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:ice_plains_spikes",
+							"minecraft:ice_plains"
+						],
+						"amount": 0.35,
+						"noise_frequency_scale": 0.17
+					}
+				]
+			}
+		}
+	}
+}

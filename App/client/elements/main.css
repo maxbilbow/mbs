@@ -1,0 +1,41 @@
+:root {
+    --active: green;
+    --active-contrast-color: #ffffff;
+}
+
+.plugin-version--active {
+    /* background-color: var(--accent-color);
+    color: var(--accent-contrast-color); */
+
+    i {
+        color: green;
+    }
+}
+
+.plugin-version--inactive {
+
+    i {
+        color: red;
+    }
+}
+
+button[is="plugin-version-toggle"] {
+    /* border: none; */
+    background: none;
+    cursor: pointer;
+    gap: 0.25em;
+    min-width: 10vw;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+button[is="mbs-start-button"] {
+    
+}
+
+td.version-list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+

@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.tung_tung_tung_sahur.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"melee_attack": "variable.attack_time > 0.0"
+						}
+					]
+				},
+				"melee_attack": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "variable.attack_time <= 0.0"
+						}
+					],
+					"animations": [
+						"attack"
+					]
+				}
+			}
+		},
+		"controller.animation.tung_tung_tung_sahur.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"moving": "query.ground_speed>=0.1"
+						}
+					],
+					"animations": [
+						"idle"
+					]
+				},
+				"moving": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.ground_speed<0.1"
+						}
+					],
+					"animations": [
+						{
+							"walk": "!query.has_target"
+						},
+						{
+							"angry_walk": "query.has_target"
+						}
+					]
+				}
+			}
+		}
+	}
+}

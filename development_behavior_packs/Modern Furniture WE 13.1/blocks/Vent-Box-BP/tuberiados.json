@@ -1,0 +1,447 @@
+//bridge-file-version: #331
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"states": {
+				"custom:geometry": [
+					"cambio0",
+					"cambio1",	
+					"cambio2",
+					"cambio3",	
+					"cambio4",
+					"cambio5",	
+					"cambio6",
+					"cambio7",
+					"cambio8",
+					"cambio9",
+					"cambio10",
+					"cambio11",
+					"cambio12",
+					"cambio13"
+				]
+			},
+			"identifier": "f:tuberiados",
+			"is_experimental": false
+		
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:pipe"
+			],
+			"minecraft:geometry": "geometry.tuberiados1",
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					3,
+					-4
+				],
+				"size": [
+					16,
+					8,
+					8
+				]
+			},
+			
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "tuberia"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					3,
+					-4
+				],
+				"size": [
+					16,
+					8,
+					8
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio0'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio1'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio2'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados5"
+
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio3'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados5",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio4'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados2",
+					"minecraft:selection_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio5'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:geometry": "geometry.tuberiados2",
+					"minecraft:collision_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio6'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:geometry": "geometry.tuberiados2",
+					"minecraft:collision_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio7'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:geometry": "geometry.tuberiados2",
+					"minecraft:collision_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-4,
+							3,
+							-8
+						],
+						"size": [
+							12,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio8'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados3",
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio9'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados3",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio10'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados3",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio11'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados3",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							3,
+							-4
+						],
+						"size": [
+							16,
+							8,
+							12
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio12'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados4",
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							3,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							3,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio13'",
+				"components": {
+					"minecraft:geometry": "geometry.tuberiados1"
+				}
+			}
+		]
+	},
+	"format_version": "1.20.20"
+}

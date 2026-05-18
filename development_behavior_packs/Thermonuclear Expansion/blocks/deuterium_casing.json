@@ -1,0 +1,57 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:deuterium_casing",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.deuterium_casing",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_deuterium_casing",
+					"render_method": "blend"
+				}
+			},
+			"minecraft:display_name": "Deuterium Casing",
+			"minecraft:collision_box": {
+				"size": [
+					10,
+					10,
+					10
+				],
+				"origin": [
+					-5,
+					0,
+					-5
+				]
+			},
+			"minecraft:selection_box": {
+				"size": [
+					10,
+					10,
+					10
+				],
+				"origin": [
+					-5,
+					0,
+					-5
+				]
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": true,
+						"liquid_type": "water"
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/deuterium_casing.json",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.1
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:nuke"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_block"
+			},
+			"T": {
+				"item": "minecraft:tnt"
+			},
+			"P": {
+				"item": "kaboom:plutonium"
+			}
+		},
+		"pattern": [
+			"ITI",
+			"TPT",
+			"ITI"
+		],
+		"result": {
+			"item": "kaboom:nuke",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "kaboom:uranium_dust"
+			}
+		]
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_cocoa_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_cocoa_1_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_cocoa_2_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_cocoa_3_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:jungle_caves/cave_jungle_tree_cocoa_4_feature",
+				6
+			]
+		]
+	}
+}

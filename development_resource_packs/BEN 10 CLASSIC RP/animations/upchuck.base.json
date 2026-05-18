@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.upchuck.base": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"position": [
+						0,
+						-10,
+						0
+					]
+				},
+				"leftArm": {
+					"position": [
+						0,
+						-10,
+						0
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "wypnt_mss:well_ruin_feature_rule",
+			"places_feature": "wypnt_mss:select_well_ruin_feature"
+		},
+		"conditions": {
+			"placement_pass": "surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "ocean"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "river"
+						},
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "birch"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "forest"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "plains"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "taiga"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "roofed"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "meadow"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "pale_garden"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "mangrove_swamp"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "swamp"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 400
+			},
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz) + -3",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #142
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:taburetemoderno2l"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajasilla"
+			}
+		],
+		"result": [
+			{
+				"item": "f:taburetemoderno2l",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

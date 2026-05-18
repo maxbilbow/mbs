@@ -1,0 +1,133 @@
+
+pack.discover_more_addons=Descubra mais addons em TRMC-ADDONS.COM
+
+pack.modern_doors_text_1=Modern Doors adiciona portas novas com trancas, designs únicos e suporte a Redstone, com 14 estilos por porta!
+pack.modern_doors_text_2=Abaixe-se e interaja para acessar o menu de tranca. Defina códigos, crie chaves e proteja sua base com portas inquebráveis.
+
+pack.modern_furniture_text_1=Modern Furniture adiciona mais de 800 peças para decorar seu mundo no Minecraft, incluindo sofás, prateleiras, luzes, quadros e mais!
+pack.modern_furniture_text_2=Crie usando argila no cortador de pedra. Design simples e limpo que combina perfeitamente com o estilo vanilla do Minecraft.
+
+pack.locked_chests_text_1=Locked Chests adiciona mais de 80 novos contêineres com chaves e proteção de dono para segurança total.
+pack.locked_chests_text_2=Personalize o visual e o rótulo das suas chaves. Sem a chave correta ou sem ser o dono, os baús permanecem trancados!
+
+pack.sleeping_bags_text_1=Sleeping Bags permite que você durma a qualquer hora e em qualquer lugar, até mesmo no Nether ou no End!
+pack.sleeping_bags_text_2=Acelere o tempo, defina o ponto de renascimento e use mecânicas de sono compatíveis com multijogador durante aventuras.
+
+pack.feudal_furniture_text_1=Feudal Furniture traz mais de 800 itens de estilo medieval para vilas, castelos e masmorras.
+pack.feudal_furniture_text_2=Inclui caixas para cada tipo de madeira e suporte para sentar, acender fogueiras e muito mais.
+
+pack.lore_anvil_text_1=Com o Lore Anvil, você pode adicionar descrições coloridas e ícones a qualquer item ou bloco.
+pack.lore_anvil_text_2=Adicione lore, símbolos ou comentários para personalizar e organizar seus equipamentos, tudo com uma bigorna personalizada!
+
+pack.home_electronics_text_1=Home Electronics adiciona consoles, computadores, TVs e eletrodomésticos, perfeitos para interiores modernos.
+pack.home_electronics_text_2=Abra notebooks, toque notas em pianos e decore com pôsteres, luzes e itens gamers.
+
+pack.pet_furniture_text_1=Pet Furniture adiciona casinhas de gato, comedouros e decorações amigáveis para animais na sua casa e jardim.
+pack.pet_furniture_text_2=Inclui modelos prontos e cercados modulares para gatos, totalmente compatíveis com o Minecraft 1.21+ e todos os Add-Ons.
+
+pack.better_beds_text_1=Better Beds adiciona novas camas com controle de tempo, opções de renascimento e a possibilidade de dormir em qualquer dimensão!
+pack.better_beds_text_2=Compatível com servidores, possui animações e permite empilhar camas para criar beliches automaticamente.
+
+midgameTips.15=Usar um sleeping bag não altera seu ponto de renascimento. Para isso, é necessário selecioná-lo no menu.
+midgameTips.16=Ao usar um sleeping bag, as plantações crescem de acordo com o tempo passado!
+midgameTips.17=Você pode sair do sleeping bag pulando a qualquer momento.
+midgameTips.18=Mesmo que defina um ponto de renascimento em um sleeping bag, destruí-lo não irá redefinir seu ponto.
+
+tips.creative.10=Você pode usar o item de Configurações do Sleeping Bag (disponível apenas no criativo) para personalizar o comportamento do addon.
+
+midgameTips.61=Quer que as plantações cresçam enquanto você dorme? Baixe Better Beds em §lTRMC-ADDONS.COM
+midgameTips.62=Gosta de eletrônicos? Baixe Home Electronics em §lTRMC-ADDONS.COM
+midgameTips.63=Quer baús com tranca? Baixe Locked Chests em §lTRMC-ADDONS.COM
+midgameTips.64=Curte decoração rústica? Baixe Feudal Furniture em §lTRMC-ADDONS.COM
+midgameTips.65=Ama os animais? Baixe Pet Furniture em §lTRMC-ADDONS.COM
+midgameTips.66=É um mestre da decoração? Baixe Modern Furniture em §lTRMC-ADDONS.COM
+midgameTips.67=Quer adicionar lore aos seus itens? Baixe Lore Anvil em §lTRMC-ADDONS.COM
+midgameTips.68=Quer sleeping bags? Baixe Sleeping Bags em §lTRMC-ADDONS.COM
+midgameTips.69=Quer mais addons? Visite §lTRMC-ADDONS.COM§r para vários conteúdos gratuitos!
+
+tips.creative.1=Quer mais addons? Visite §lTRMC-ADDONS.COM§r para vários conteúdos gratuitos!
+tips.creative.2=Curte decoração rústica? Baixe Feudal Furniture em §lTRMC-ADDONS.COM
+tips.creative.3=Ama os animais? Baixe Pet Furniture em §lTRMC-ADDONS.COM
+tips.creative.4=É um mestre da decoração? Baixe Modern Furniture em §lTRMC-ADDONS.COM
+tips.creative.5=Quer adicionar lore aos seus itens? Baixe Lore Anvil em §lTRMC-ADDONS.COM
+tips.creative.6=Quer sleeping bags? Baixe Sleeping Bags em §lTRMC-ADDONS.COM
+tips.creative.7=Quer baús com tranca? Baixe Locked Chests em §lTRMC-ADDONS.COM
+tips.creative.8=Gosta de eletrônicos? Baixe Home Electronics em §lTRMC-ADDONS.COM
+tips.creative.9=Quer que as plantações cresçam enquanto você dorme? Baixe Better Beds em §lTRMC-ADDONS.COM
+
+sbun.toast.header.he=§eNova atualização disponível para Home Electronics!§r
+sbun.toast.body.001=Confira a tela de pausa!
+
+pack.addon_update= Atualização de Add-On Disponível
+pack.trmc_store= Baixe Add-Ons Gratuitos
+
+pack.new_update_available=NOVA ATUALIZAÇÃO DISPONÍVEL!
+
+pack.he_update_text=A atualização 1.4 de Home Electronics adiciona 6 novos blocos!
+pack.he_update_trmc=Para acessar a atualização, visite §aTRMC-ADDONS.COM.§r Você também pode escanear o §acódigo QR§r abaixo para ir direto ao site e baixar a nova versão do addon.
+
+pack.he_store_text=Visite §aTRMC-ADDONS.COM§r para uma grande seleção de Add-Ons gratuitos! Seja você um decorador que quer mais móveis ou quer aprimorar sua experiência de sobrevivência com novas mecânicas, §aTRMC-ADDONS.COM§r tem um addon para você!
+pack.he_store_trmc=Você também pode escanear o §acódigo QR§r abaixo para acessar o site diretamente.
+
+he:itemGroup.name.phonestablets=Celulares e Tablets
+he:itemGroup.name.consoles=Consoles
+he:itemGroup.name.antena=Antenas
+he:itemGroup.name.router=Roteadores
+he:itemGroup.name.pc=Computadores
+he:itemGroup.name.monitor=Monitores
+he:itemGroup.name.enchufes=Tomadas e Energia
+he:itemGroup.name.ventilador=Ventiladores
+he:itemGroup.name.silla=Cadeiras
+he:itemGroup.name.impresora=Impressoras
+he:itemGroup.name.gaming=Jogos e Arcade
+he:itemGroup.name.disc_frame=Molduras de Discos de Música
+he:itemGroup.name.poster=Pôsteres
+he:itemGroup.name.portatil=Notebooks
+he:itemGroup.name.tv=Televisores
+
+tile.he:ventilador1.name=Ventilador de mesa preto
+tile.he:ventilador2.name=Ventilador de mesa branco
+
+tile.he:wii.name=Wii Branca
+tile.he:wii_black.name=Wii Preta
+tile.he:wii_red.name=Wii Vermelha
+
+
+tile.he:gameboy1.name=Gameboy
+tile.he:gameboy2.name=Gameboy
+
+tile.he:butaca1.name=Banco de ferro preto §h[ §aAssento§h ]
+tile.he:butaca2.name=Banco de ferro branco §h[ §aAssento§h ]
+
+tile.he:soporte-monitor3.name=Monitor curvo com suporte
+tile.he:soporte-monitor-pared3.name=Monitor curvo com suporte de parede
+tile.he:monitor3.name=Monitor curvo
+tile.he:tablet1.name=Tablet preto
+tile.he:tablet2.name=Tablet branco
+
+tile.he:ps2.name=PS2 Slim
+tile.he:ps5.name=PS5
+tile.he:poster1.name=Póster
+tile.he:poster2.name=Póster
+tile.he:poster3.name=Póster
+tile.he:poster4.name=Póster
+tile.he:poster5.name=Póster
+tile.he:poster6.name=Póster
+tile.he:poster7.name=Póster
+tile.he:poster8.name=Póster
+tile.he:poster9.name=Póster
+tile.he:poster10.name=Póster
+tile.he:poster11.name=Póster
+tile.he:poster12.name=Póster
+
+tile.he:nintendo_ds1.name=Nintendo DS 1 Preto §h[ §aInterativo§h ]
+tile.he:nintendo_ds2.name=Nintendo DS 1 Branco §h[ §aInterativo§h ]
+tile.he:nintendo_ds3.name=Nintendo DS 1 Vermelho §h[ §aInterativo§h ]
+tile.he:nintendo_ds4.name=Nintendo DS 1 Caqui §h[ §aInterativo§h ]
+tile.he:nintendo_ds5.name=Nintendo DS 1 Rosa §h[ §aInterativo§h ]
+
+tile.he:luz.name=LED §h[ §aBrilhante§h ]
+tile.he:luz2.name=Barras de luz §h[ §aBrilhante§h ]
+
+tile.he:bateria1.name=Bateria de carro
+tile.he:air_fryer.name=Fritadeira elétrica sem óleo

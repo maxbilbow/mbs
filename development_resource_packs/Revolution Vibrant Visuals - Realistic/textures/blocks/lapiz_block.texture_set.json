@@ -1,0 +1,8 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:texture_set": {
+    "color": "lapiz_block",
+    "metalness_emissive_roughness": "lapiz_block_mer",
+    "heightmap": "lapiz_block_heightmap"
+  }
+}

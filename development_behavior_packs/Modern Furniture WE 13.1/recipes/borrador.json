@@ -1,0 +1,28 @@
+//bridge-file-version: #54
+{
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "f:borrador"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#A",
+			"#B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:iron_ingot"
+			},
+			"B": {
+				"item": "minecraft:black_wool"
+			}
+		},
+		"result": {
+			"item": "f:borrador",
+			"count": 1
+		}
+	},
+	"format_version": "1.17.0"
+}

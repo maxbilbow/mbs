@@ -1,0 +1,38 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:swampy_taiga/swampy_taiga_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:swampy_taiga/swampy_taiga_plants_placement_feature",
+				14
+			],
+			[
+				"vanilla_biomes_expansion:sbe_deadbush_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_red_mushroom_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_brown_mushroom_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_firefly_bush_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				28
+			],
+			[
+				"vanilla_biomes_expansion:sbe_fern_feature",
+				32
+			]
+		]
+	}
+}

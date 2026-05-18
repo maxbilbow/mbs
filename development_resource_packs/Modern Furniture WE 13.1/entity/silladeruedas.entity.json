@@ -1,0 +1,31 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "f:silladeruedas",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/silladeruedas"
+			},
+			"geometry": {
+				"default": "geometry.silladeruedas"
+			},
+			"render_controllers": ["controller.render.default"],
+			"animations": {
+				"drive": "animation.silladeruedas.drive",
+				"stand": "animation.silladeruedas.stand"
+			},
+			"scripts": {
+				"initialize": ["variable.steering = 0;"],
+				"pre_animation": ["query.has_rider ? (variable.steering = Math.lerp(variable.steering, query.yaw_speed, 0.15));"],
+				"animate": ["drive"]
+				
+			},
+			"spawn_egg": {
+				"texture": "silladeruedas_spawn_egg"
+			}
+		}
+	}
+}

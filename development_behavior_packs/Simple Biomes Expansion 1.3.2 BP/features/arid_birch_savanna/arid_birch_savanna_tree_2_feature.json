@@ -1,0 +1,19 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:arid_birch_savanna/arid_birch_savanna_tree_2_feature"
+		},
+		"structure_name": "mystructure:arid_birch_savanna_tree2",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air"
+				]
+			}
+		}
+	}
+}

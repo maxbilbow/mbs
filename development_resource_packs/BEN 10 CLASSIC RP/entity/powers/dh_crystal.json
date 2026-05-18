@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:dh_crystal_projectile",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/powers/dh_crystal"
+			},
+			"geometry": {
+				"default": "geometry.dh_crystal"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

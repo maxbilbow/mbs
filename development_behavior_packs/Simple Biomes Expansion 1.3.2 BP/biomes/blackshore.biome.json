@@ -1,0 +1,99 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:blackshore"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.2,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 1.1
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "beach"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 5,
+					"sea_floor_material": "minecraft:black_concrete",
+					"foundation_material": "minecraft:blackstone",
+					"mid_material": "minecraft:black_concrete_powder",
+					"top_material": "minecraft:black_concrete_powder",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"monster",
+					"overworld",
+					"warm",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"blackshore"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:stone_beach",
+							"minecraft:beach"
+						],
+						"amount": 0.2,
+						"noise_frequency_scale": 0.46
+					}
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:gray_concrete_powder",
+							"mid_material": "minecraft:gray_concrete_powder"
+						},
+						"noise_frequency_scale": 0.035,
+						"noise_range": [
+							-1,
+							-0.4
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:basalt",
+							"mid_material": "minecraft:basalt"
+						},
+						"noise_frequency_scale": 0.13,
+						"noise_range": [
+							0.4,
+							1
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:blackstone",
+							"mid_material": "minecraft:blackstone"
+						},
+						"noise_frequency_scale": 0.16,
+						"noise_range": [
+							-0.8,
+							-0.2
+						]
+					}
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#778272"
+				},
+				"foliage": "#878d76"
+			}
+		}
+	}
+}

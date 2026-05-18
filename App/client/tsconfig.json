@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "lib": [
+            "esnext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "types": [],
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "verbatimModuleSyntax": true,
+        "jsx": "react-jsx"
+    },
+    "references": [
+        {
+            "path": "../model/tsconfig.json"
+        }
+    ]
+}

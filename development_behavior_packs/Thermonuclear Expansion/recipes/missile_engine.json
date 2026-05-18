@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:missile_engine"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"S": {
+				"item": "kaboom:steel_ingot"
+			}
+		},
+		"pattern": [
+			" S ",
+			"S S",
+			"S S"
+		],
+		"result": {
+			"item": "kaboom:missile_engine"
+		},
+		"unlock": [
+			{
+				"item": "minecraft:raw_iron"
+			}
+		]
+	}
+}

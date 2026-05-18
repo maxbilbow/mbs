@@ -1,0 +1,23 @@
+//bridge-file-version: #117
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:rail3"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajagaraje"
+			}
+		],
+		"result": [
+			{
+				"item": "f:rail3",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,41 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"mangrove_start": {
+			"textures": "textures/blocks/mangrove_start"
+		},
+		"cherry_start": {
+			"textures": "textures/blocks/cherry_start"
+		},
+		"dark_oak_start": {
+			"textures": "textures/blocks/dark_oak_start"
+		},
+		"acacia_start": {
+			"textures": "textures/blocks/acacia_start"
+		},
+		"big_spruce_start": {
+			"textures": "textures/blocks/big_spruce_start"
+		},
+		"big_jungle_start": {
+			"textures": "textures/blocks/big_jungle_start"
+		},
+		"jungle_start": {
+			"textures": "textures/blocks/jungle_start"
+		},
+		"spruce_start": {
+			"textures": "textures/blocks/spruce_start"
+		},
+		"birch_start": {
+			"textures": "textures/blocks/birch_start"
+		},
+		"oak_start": {
+			"textures": "textures/blocks/oak_start"
+		},
+		"pale_oak_start": {
+			"textures": "textures/blocks/pale_oak_start"
+		}
+	}
+}

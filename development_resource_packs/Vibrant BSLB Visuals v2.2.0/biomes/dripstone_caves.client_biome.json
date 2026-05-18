@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "dripstone_caves"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:default_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5C6B6A"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#3A2F26"
+      }
+    }
+  }
+}

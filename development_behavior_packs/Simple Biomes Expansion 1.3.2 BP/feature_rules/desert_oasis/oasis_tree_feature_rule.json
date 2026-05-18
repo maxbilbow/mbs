@@ -1,0 +1,34 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:oasis_tree_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:desert_oasis/oasis_tree_weighted"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"value": "desert_oasis"
+			}
+		},
+		"distribution": {
+			"iterations": "math.random_integer(8, 16)",
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"z": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": "query.heightmap(v.worldx, v.worldz)"
+		}
+	}
+}

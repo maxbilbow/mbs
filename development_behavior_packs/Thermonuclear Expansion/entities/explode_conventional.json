@@ -1,0 +1,51 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kaboom:explode_conventional",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"tnt"
+				]
+			},
+			"minecraft:explode": {
+				"fuse_lit": true,
+				"power": 10,
+				"causes_fire": true,
+				"fuse_length": 0.1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_transformed": {
+				"queue_command": {
+					"command": [
+						"effect @s invisibility 2 1 true"
+					]
+				}
+			},
+			"kaboom:despawn": {
+				"add": {
+					"component_groups": [
+						"kaboom:instant_despawn"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"kaboom:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

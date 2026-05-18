@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:muddy_swamp/water_muddy_swamp_tree_2_feature"
+		},
+		"structure_name": "mystructure:water_muddy_swamp_tree2",
+		"adjustment_radius": 1,
+		"facing_direction": "random",
+		"constraints": {
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:water"
+				]
+			},
+			"unburied": {},
+			"grounded": {}
+		}
+	}
+}

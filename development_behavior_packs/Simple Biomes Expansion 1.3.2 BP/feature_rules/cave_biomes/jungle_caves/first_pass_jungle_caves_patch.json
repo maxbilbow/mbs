@@ -1,0 +1,42 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:first_pass_jungle_caves_patch",
+			"places_feature": "vanilla_biomes_expansion:jungle_caves/jungle_caves_biome_placement_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"operator": "==",
+				"value": "jungle_caves"
+			}
+		},
+		"distribution": {
+			"iterations": 56,
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-60,
+					30
+				]
+			},
+			"z": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"scatter_chance": 48
+		}
+	}
+}

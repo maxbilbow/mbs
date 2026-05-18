@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "the_end"
+    },
+    "components": {
+      "minecraft:sky_color": {
+        "sky_color": "#7218bb"
+      },
+      "minecraft:fog_appearance": {
+        "fog_identifier": "ale:end"
+      },
+      "minecraft:atmosphere_identifier": {
+        "atmosphere_identifier": "ale:end_atmosphere"
+      },
+      "minecraft:lighting_identifier": {
+        "lighting_identifier": "ale:end_lighting"
+      },
+      "minecraft:color_grading_identifier": {
+        "color_grading_identifier": "ale:end_grading"
+      }
+    }
+  }
+}

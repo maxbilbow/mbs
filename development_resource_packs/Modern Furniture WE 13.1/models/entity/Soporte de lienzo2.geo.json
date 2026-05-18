@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lienzo2",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5.33721, -0.96064, 2], "size": [1, 24, 1], "pivot": [0, 13.9, 2.2], "rotation": [-9.85108, 1.72794, 9.85108], "uv": [81, 99]},
+						{"origin": [4.33721, -0.96064, 2], "size": [1, 24, 1], "pivot": [0, 13.9, 2.2], "rotation": [-9.85108, -1.72794, -9.85108], "uv": [77, 99]},
+						{"origin": [-0.5, 5, 2], "size": [1, 22, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [88, 100]},
+						{"origin": [-0.5, -0.3, 4.4], "size": [1, 19, 1], "pivot": [0, 14, 2.2], "rotation": [7.5, 0, 0], "uv": [78, 103]},
+						{"origin": [-5.5, 19, 3], "size": [11, 1, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [33, 104]},
+						{"origin": [-6.5, 8, 1], "size": [13, 1, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [21, 100]},
+						{"origin": [-6.5, 9.1, 1.4], "size": [13, 2, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [28, 101]},
+						{"origin": [-6.5, 11.1, 1.4], "size": [2, 13, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [28, 101]},
+						{"origin": [4.5, 11.1, 1.4], "size": [2, 13, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [28, 101]},
+						{"origin": [-6.5, 24.1, 1.4], "size": [13, 2, 1], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [28, 101]},
+						{"origin": [-6.5, 9.1, 1.1], "size": [13, 17, 1], "inflate": 0.1, "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [70, 66]},
+						{"origin": [-6.5, 8, 0.9], "size": [13, 2, 0], "pivot": [0, 14, 2.2], "rotation": [-10, 0, 0], "uv": [29, 102]}
+					]
+				}
+			]
+		}
+	]
+}

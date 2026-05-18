@@ -1,0 +1,217 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cso:oberon_asteroid",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"cso:instant_despawn_asteroid": {
+				"minecraft:instant_despawn": {}
+			},
+			"asteroid:explode": {
+				"minecraft:is_charged": {},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 1.3,
+							"max_wait_time": 1.3,
+							"single_use": true,
+							"spawn_entity": "cso:oberon",
+							"num_to_spawn": 1
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 3.2,
+					"looping": false,
+					"time_down_event": {
+						"event": "cso:instant_despawn_asteroid",
+						"target": "self"
+					}
+				}
+			},
+			"asteroid:pre_explode": {
+				"minecraft:timer": {
+					"time": 21,
+					"looping": false,
+					"time_down_event": {
+						"event": "asteroid:explode",
+						"target": "self"
+					}
+				}
+			},
+			"asteroid:start_timer": {
+				"minecraft:timer": {
+					"time": 30,
+					"looping": false,
+					"time_down_event": {
+						"event": "asteroid:pre_explode",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"oberon"
+				]
+			},
+			"minecraft:spell_effects": {
+				"add_effects": [
+					{
+						"effect": "fire_resistance",
+						"amplifier": 255,
+						"duration": 255,
+						"visible": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:health": {
+				"value": 1000000000,
+				"max": 10000000000
+			},
+			"minecraft:scale": {
+				"value": 1.3
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:spawn_entity": {
+				"entities": [
+					{
+						"min_wait_time": 30,
+						"max_wait_time": 30,
+						"single_use": true,
+						"spawn_entity": "cso:oberon_asteroid_explode",
+						"num_to_spawn": 1
+					}
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"cso:instant_despawn_asteroid": {
+				"add": {
+					"component_groups": [
+						"cso:instant_despawn_asteroid"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:start_timer"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_1"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:start_timer"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_2"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:start_timer"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_3"
+							]
+						}
+					}
+				]
+			},
+			"asteroid:explode": {
+				"add": {
+					"component_groups": [
+						"asteroid:explode"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"music stop"
+					]
+				}
+			},
+			"asteroid:pre_explode": {
+				"randomize": [
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:pre_explode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_4",
+								"music play entity.asteroid.music 1 1 play_once"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:pre_explode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_5",
+								"music play entity.asteroid.music 1 1 play_once"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"asteroid:pre_explode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function oberon_alert_6",
+								"music play entity.asteroid.music 1 1 play_once"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #225
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:arbol2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:arbol2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

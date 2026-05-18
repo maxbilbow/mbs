@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "daniye:azalea_tree_03_mcstructure"
+		},
+		"structure_name": "mystructure:azalea_tree_03",
+		"facing_direction": "random",
+		"adjustment_radius": 10,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:polystyrene_foam",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:display_name": "Polystyrene Foam",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.2
+			},
+			"minecraft:flammable": {
+				"destroy_chance_modifier": 1,
+				"catch_chance_modifier": 1
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_polystyrene_foam"
+				}
+			}
+		}
+	}
+}

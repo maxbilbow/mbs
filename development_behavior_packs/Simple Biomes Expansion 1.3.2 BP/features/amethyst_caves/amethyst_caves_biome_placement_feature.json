@@ -1,0 +1,21 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_caves/amethyst_caves_biome_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:amethyst_caves/smooth_basalt_patch",
+			"vanilla_biomes_expansion:amethyst_caves/smooth_basalt_ceiling_patch",
+			"vanilla_biomes_expansion:amethyst_caves/calcite_patch",
+			"vanilla_biomes_expansion:amethyst_caves/calcite_ceiling_patch",
+			"vanilla_biomes_expansion:amethyst_caves/amethyst_block_patch",
+			"vanilla_biomes_expansion:amethyst_caves/amethyst_block_ceiling_patch",
+			"vanilla_biomes_expansion:amethyst_caves/budding_amethyst_scatter",
+			"vanilla_biomes_expansion:amethyst_caves/budding_amethyst_ceiling_scatter",
+			"vanilla_biomes_expansion:amethyst_caves/amethyst_spikes_ceiling_scatter",
+			"vanilla_biomes_expansion:amethyst_caves/amethyst_spikes_floor_scatter"
+		],
+		"early_out": "none"
+	}
+}

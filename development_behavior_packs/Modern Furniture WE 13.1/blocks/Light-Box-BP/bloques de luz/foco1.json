@@ -1,0 +1,175 @@
+//bridge-file-version: #50
+{
+	"minecraft:block": {
+		"description": {
+
+			"states": {
+				"custom:geometry": [
+					"foco0",
+					"foco1",
+					"foco2",
+					"foco3",	
+					"foco4",
+					"foco5",
+					"foco6",
+					"foco7",
+					"foco8",
+					"foco9"	
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:foco",
+			"is_experimental": false
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco0'",
+				"components": {
+					"minecraft:geometry": "geometry.foco1"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco1'",
+				"components": {
+					"minecraft:geometry": "geometry.foco2"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco2'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco3'",
+				"components": {
+					"minecraft:geometry": "geometry.foco2",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco4'",
+				"components": {
+					"minecraft:geometry": "geometry.foco1",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco5'",
+				"components": {
+					"minecraft:geometry": "geometry.foco2",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco6'",
+				"components": {
+					"minecraft:geometry": "geometry.foco1",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco7'",
+				"components": {
+					"minecraft:geometry": "geometry.foco2",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco8'",
+				"components": {
+					"minecraft:geometry": "geometry.foco3",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'foco9'",
+				"components": {
+					"minecraft:geometry": "geometry.foco4",
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:spotlight"
+			],
+			
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "foco"
+				}
+			},
+			"minecraft:geometry": "geometry.foco1",
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-6,
+					0,
+					-6
+				],
+				"size": [
+					12,
+					16,
+					12
+				]
+			},
+			"minecraft:light_emission": 15
+		}
+	},
+	"format_version": "1.20.20"
+}

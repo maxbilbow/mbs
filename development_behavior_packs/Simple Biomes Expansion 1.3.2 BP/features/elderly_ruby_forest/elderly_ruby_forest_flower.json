@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:elderly_ruby_forest/elderly_ruby_forest_flower"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_red_mushroom_feature",
+				4
+			],
+			[
+				"vanilla_biomes_expansion:sbe_poppy_feature",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:sbe_red_tulip_feature",
+				6
+			]
+		]
+	}
+}

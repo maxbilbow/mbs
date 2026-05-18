@@ -1,0 +1,130 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.greymatter_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==6"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"greymatter_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.greymatter_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==6"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"greymatter_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.greymatter_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"greymatter_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==6"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.greymatter_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"greymatter_jumping": "!variable.is_first_person&&query.variant==6"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.greymatter_swim": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"swim": "query.is_swimming"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"swim": {
+					"animations": [
+						{
+							"greymatter_swimming": "!variable.is_first_person&&query.variant==6"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_swimming"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

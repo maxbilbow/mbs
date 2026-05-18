@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:capuccino_assassino",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "vindicator"
+			},
+			"textures": {
+				"default": "textures/entity/capuccinoassassino"
+			},
+			"geometry": {
+				"default": "geometry.capuccino_assassino"
+			},
+			"spawn_egg": {
+				"base_color": "#ece3dc",
+				"overlay_color": "#000000"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.capuccino_assassino.walk",
+				"angry_walk": "animation.capuccino_assassino.angry_walk",
+				"idle": "animation.capuccino_assassino.idle",
+				"attack": "animation.capuccino_assassino.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.capuccino_assassino.attack",
+				"controller_base": "controller.animation.capuccino_assassino.general"
+				//"controller_riding": "controller.animation.humanoid.riding"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

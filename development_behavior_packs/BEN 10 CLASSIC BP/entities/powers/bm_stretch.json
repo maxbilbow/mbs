@@ -1,0 +1,89 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:bm_stretch",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:evocation_fang"
+		},
+		"component_groups": {
+			"despawn_state": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 1.8
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"benmummy",
+					"player",
+					"projectile"
+				]
+			},
+			"minecraft:projectile": {
+				"onHit": {},
+				"power": 3,
+				"gravity": 0,
+				"hit_sound": "squish"
+			},
+			"minecraft:timer": {
+				"time": 0.25,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:area_attack": {
+				"damage_range": 1.5,
+				"damage_per_tick": 8,
+				"cause": "contact",
+				"entity_filter": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "player"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "benmummy"
+						}
+					]
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn_state"
+					]
+				}
+			}
+		}
+	}
+}

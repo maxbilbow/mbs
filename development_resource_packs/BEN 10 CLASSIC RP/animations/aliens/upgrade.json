@@ -1,0 +1,621 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.upgrade_attack_fp": {
+			"loop": true,
+			"animation_length": 0.33333,
+			"override_previous_animation": true,
+			"bones": {
+				"rightarm_fp": {
+					"rotation": {
+						"0.0": [
+							-15,
+							-20,
+							45
+						],
+						"0.1667": [
+							0,
+							5,
+							-7.5
+						]
+					},
+					"position": {
+						"0.0": [
+							1,
+							1,
+							-1
+						],
+						"0.1667": [
+							0,
+							-5,
+							-1
+						],
+						"0.3333": [
+							0,
+							-5,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.ug_irongolem_laser": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"arm1": {
+					"rotation": [
+						10,
+						0,
+						7.5
+					]
+				},
+				"rightarm_p2": {
+					"rotation": [
+						-20,
+						0,
+						0
+					]
+				},
+				"arm2": {
+					"rotation": [
+						10,
+						0,
+						-7.5
+					]
+				},
+				"leftarm_p2": {
+					"rotation": [
+						-20,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.upgrade_laser": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"arm1": {
+					"rotation": [
+						0,
+						0,
+						5
+					]
+				},
+				"arm2": {
+					"rotation": [
+						0,
+						0,
+						-5
+					]
+				}
+			}
+		},
+		"animation.ug_irongolem_attack": {
+			"loop": true,
+			"animation_length": 0.41667,
+			"override_previous_animation": true,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							7.5,
+							15,
+							0
+						],
+						"0.2917": [
+							7.5,
+							-10,
+							0
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							27.5
+						],
+						"0.125": [
+							-5.23224,
+							-2.1016,
+							30.55905
+						],
+						"0.2917": [
+							-62.06283,
+							-7.35559,
+							38.20667
+						],
+						"0.3333": [
+							-65.85105,
+							-16.21394,
+							56.54803
+						]
+					}
+				},
+				"rightarm_p2": {
+					"rotation": {
+						"0.0833": [
+							-35,
+							0,
+							0
+						],
+						"0.2917": [
+							-32.5,
+							0,
+							0
+						],
+						"0.3333": [
+							-40,
+							0,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							-5,
+							0,
+							-10
+						],
+						"0.0833": [
+							0,
+							0,
+							-7.5
+						]
+					}
+				},
+				"leftarm_p2": {
+					"rotation": [
+						-5,
+						0,
+						0
+					]
+				},
+				"body_down": {
+					"rotation": {
+						"0.0833": [
+							0,
+							-2.5,
+							0
+						],
+						"0.2917": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.ug_form": {
+			"loop": "hold_on_last_frame",
+			"override_previous_animation": true,
+			"bones": {
+				"fullbody2": {
+					"scale": 2.3
+				}
+			}
+		},
+		"animation.ug_piston_walk": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"bones": {
+				"fullbody": {
+					"position": {
+						"0.0": [
+							0,
+							-3,
+							0
+						],
+						"0.3333": [
+							0,
+							3,
+							0
+						],
+						"0.6667": [
+							0,
+							-3,
+							0
+						]
+					}
+				},
+				"bottom": {
+					"position": {
+						"0.0": [
+							0,
+							3,
+							0
+						],
+						"0.1667": [
+							0,
+							0,
+							0
+						],
+						"0.6667": [
+							0,
+							3,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.ug_boat_walk": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"fan": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							360
+						]
+					}
+				}
+			}
+		},
+		"animation.ug_noteblock_walk": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"leg": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							1,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"position": {
+						"0.0": [
+							0,
+							1,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							1,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.upgrade_walk": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"bones": {
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							25,
+							0,
+							0
+						],
+						"0.3333": [
+							-25,
+							0,
+							0
+						],
+						"0.6667": [
+							25,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							-25,
+							0,
+							0
+						],
+						"0.3333": [
+							25,
+							0,
+							0
+						],
+						"0.6667": [
+							-22.5,
+							0,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							30,
+							0,
+							0
+						],
+						"0.3333": [
+							-30,
+							0,
+							0
+						],
+						"0.6667": [
+							30,
+							0,
+							0
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							-30,
+							0,
+							0
+						],
+						"0.3333": [
+							30,
+							0,
+							0
+						],
+						"0.6667": [
+							-30,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.upgrade_sprint": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							30,
+							0,
+							0
+						],
+						"0.25": [
+							-30,
+							0,
+							0
+						],
+						"0.5": [
+							30,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							-30,
+							0,
+							0
+						],
+						"0.25": [
+							30,
+							0,
+							0
+						],
+						"0.5": [
+							-30,
+							0,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							40,
+							0,
+							0
+						],
+						"0.25": [
+							-40,
+							0,
+							0
+						],
+						"0.5": [
+							40,
+							0,
+							0
+						]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							-40,
+							0,
+							0
+						],
+						"0.25": [
+							40,
+							0,
+							0
+						],
+						"0.5": [
+							-40,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.upgrade_attack": {
+			"loop": true,
+			"animation_length": 0.29167,
+			"override_previous_animation": true,
+			"bones": {
+				"body2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							-10,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": [
+						2.5,
+						0,
+						0
+					]
+				},
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							-94.89557,
+							-7.32123,
+							73.36781
+						]
+					}
+				}
+			}
+		},
+		"animation.upgrade": {
+			"loop": "hold_on_last_frame",
+			"override_previous_animation": true,
+			"bones": {
+				"head2": {
+					"rotation": [
+						"query.target_x_rotation-this",
+						"query.target_y_rotation-this",
+						0
+					]
+				}
+			}
+		},
+		"animation.ug_irongolem_walk": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"bones": {
+				"arm1": {
+					"rotation": {
+						"0.0": [
+							-35,
+							0,
+							0
+						],
+						"0.3333": [
+							35,
+							0,
+							0
+						],
+						"0.6667": [
+							-35,
+							0,
+							0
+						]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"0.0": [
+							35,
+							0,
+							0
+						],
+						"0.3333": [
+							-35,
+							0,
+							0
+						],
+						"0.6667": [
+							35,
+							0,
+							0
+						]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": [
+							25,
+							0,
+							0
+						],
+						"0.3333": [
+							-25,
+							0,
+							0
+						],
+						"0.6667": [
+							25,
+							0,
+							0
+						]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": [
+							-25,
+							0,
+							0
+						],
+						"0.3333": [
+							25,
+							0,
+							0
+						],
+						"0.6667": [
+							-25,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "wypnt_mss:mummy",
+			"materials": {
+				"default": "husk"
+			},
+			"textures": {
+				"default": "textures/coreblockstudios/moresimplestructures/entity/zombie/mummy"
+			},
+			"geometry": {
+				"default": "geometry.coreblockstudios_mss.mummy"
+			},
+			"particle_effects": {
+				"dust_right": "wypnt_mss:mummy_dust",
+				"dust_left": "wypnt_mss:mummy_dust",
+				"spawn_dirt": "wypnt_mss:mummy_emerge"
+			},
+			"sound_effects": {
+				"digging": "dig.sand"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				]
+			},
+			"animations": {
+				"humanoid_big_head": "animation.humanoid.big_head",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.coreblockstudios_mss.mummy.walk",
+				"spawn": "animation.coreblockstudios_mss.mummy.spawn",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"bob": "animation.coreblockstudios_mss.mummy.bob",
+				"swimming": "animation.zombie.swimming",
+				"zombie_attack_bare_hand": "animation.zombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"humanoid_baby_big_head": "controller.animation.humanoid.baby_big_head"
+				},
+				{
+					"look_at_target": "controller.animation.humanoid.look_at_target"
+				},
+				{
+					"move": "controller.animation.coreblockstudios_mss.mummy.move"
+				},
+				{
+					"riding": "controller.animation.humanoid.riding"
+				},
+				{
+					"swimming": "controller.animation.zombie.swimming"
+				}
+			],
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"enable_attachables": false,
+			"spawn_egg": {
+				"texture": "wypnt_mss:spawn_egg_mummy"
+			}
+		}
+	}
+}

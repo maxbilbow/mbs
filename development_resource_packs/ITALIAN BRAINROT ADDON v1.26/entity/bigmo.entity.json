@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "italian:bigmo",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bigmo",
+				"gold": "textures/entity/bigmo_gold",
+				"rainbow": "textures/entity/bigmo_rainbow"
+			},
+			"geometry": {
+				"default": "geometry.bigmo"
+			},
+			"scripts": {
+				"animate": [
+					//"controller_look_at_target",
+					"controller_base"
+				]
+			},
+			"animations": {
+				"walk": "animation.bigmo.walk",
+				"idle": "animation.bigmo.idle",
+				"attack": "animation.bigmo.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_base": "controller.animation.entity.generic_melee_attack"
+			},
+			"render_controllers": [
+				"controller.render.kid_ballerina"
+			],
+			"spawn_egg": {
+				"base_color": "#9D3F09",
+				"overlay_color": "#242424"
+			}
+		}
+	}
+}

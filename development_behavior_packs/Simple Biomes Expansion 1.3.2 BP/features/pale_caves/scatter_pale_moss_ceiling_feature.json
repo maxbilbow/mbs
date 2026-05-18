@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/scatter_pale_moss_ceiling_feature"
+		},
+		"iterations": 2,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				-3,
+				3
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-2,
+				2
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				-3,
+				3
+			]
+		},
+		"coordinate_eval_order": "xyz",
+		"places_feature": "vanilla_biomes_expansion:pale_caves/pale_moss_ceiling_feature"
+	}
+}

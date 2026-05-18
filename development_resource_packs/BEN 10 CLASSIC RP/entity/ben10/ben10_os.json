@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:ben10",
+			"materials": {
+				"default": "entity_alphatest",
+				"glow": "enderman"
+			},
+			"textures": {
+				"default": "textures/entity/ben10/os",
+				"omnitrix": "textures/omnitrix/omnitrix_default"
+			},
+			"geometry": {
+				"default": "geometry.player",
+				"omnitrix": "geometry.omnitrix"
+			},
+			"animations": {
+				"omnitrix": "animation.player.omnitrix_tp",
+				"omni_using": "animation.player.omnitrix_tapped",
+				"omni_use": "controller.animation.ben10.omni_use",
+				"moving": "animation.npc.moving",
+				"attacking": "animation.npc.attacking",
+				"move": "controller.animation.move",
+				"attack": "controller.animation.attack",
+				"look": "animation.common.look_at_target"
+			},
+			"scripts": {
+				"animate": [
+					"omnitrix",
+					"omni_use",
+					"move",
+					"attack",
+					"look"
+				]
+			},
+			"render_controllers": [
+				"controller.render.ben10",
+				"controller.render.ben10.omnitrix"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg_ben10"
+			}
+		}
+	}
+}

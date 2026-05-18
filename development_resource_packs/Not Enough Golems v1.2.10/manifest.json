@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Euforia"
+		]
+	},
+	"header": {
+		"name": "Not Enough Golems",
+		"description": "Have fun!",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "9eb639b4-1580-4fdd-9488-9713e101652c",
+		"version": [
+			1,
+			2,
+			10
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "522332fb-b770-4012-b75c-9019c75ada40",
+			"version": [
+				1,
+				2,
+				10
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "fbaa7cdd-d421-47e6-92b0-89d11de3f3cf",
+			"version": [
+				1,
+				2,
+				10
+			]
+		}
+	]
+}

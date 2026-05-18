@@ -1,0 +1,52 @@
+{
+    "format_version":  2,
+    "header":  {
+                   "name":  "pack.name",
+                   "description":  "pack.description",
+                   "min_engine_version":  [
+                                              1,
+                                              21,
+                                              70
+                                          ],
+                   "uuid":  "61e5cf7d-c8a7-44b2-89c9-a82e9db91cbb",
+                   "version":  [
+                                   1,
+                                   2,
+                                   0
+                               ]
+               },
+    "modules":  [
+                    {
+                        "type":  "resources",
+                        "uuid":  "7a506eb2-1ef6-4742-bc42-513a717dcc0c",
+                        "version":  [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                    }
+                ],
+    "dependencies":  [
+                         {
+                             "uuid":  "5fdf43ea-deae-40bc-b7ee-9051e763a0dc",
+                             "version":  [
+                                             1,
+                                             2,
+                                             0
+                                         ]
+                         }
+                     ],
+    "capabilities":  [
+
+                     ],
+    "metadata":  {
+                     "generated_with":  {
+                                            "bridge":  [
+                                                           "2.7.51"
+                                                       ],
+                                            "dash":  [
+                                                         "0.11.7"
+                                                     ]
+                                        }
+                 }
+}

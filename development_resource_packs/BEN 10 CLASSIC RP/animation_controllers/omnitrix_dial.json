@@ -1,0 +1,59 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.omnitrix_dial": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"reverse": "variable.holding_omni_icon&&variable.attack_time>0.1&&query.variant==0"
+						},
+						{
+							"forward": "variable.holding_omni_icon&&query.is_using_item&&query.variant==0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"forward": {
+					"animations": [
+						"omnitrix_clicked"
+					],
+					"transitions": [
+						{
+							"wait_release_forward": "query.state_time>=0.35"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"wait_release_forward": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"blend_transition": 0
+				},
+				"reverse": {
+					"animations": [
+						"omnitrix_clicked_reverse"
+					],
+					"transitions": [
+						{
+							"wait_release_reverse": "query.state_time>=0.35"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"wait_release_reverse": {
+					"transitions": [
+						{
+							"default": "variable.attack_time<0.1"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

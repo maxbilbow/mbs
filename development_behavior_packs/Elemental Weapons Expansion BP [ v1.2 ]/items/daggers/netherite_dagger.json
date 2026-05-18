@@ -1,0 +1,44 @@
+{
+  "format_version": "1.21.120",
+  "minecraft:item": {
+    "description": {
+      "identifier": "bca:netherite_dagger",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.dagger"
+      }
+    },
+    "components": {
+      "minecraft:tags": {
+        "tags": ["minecraft:netherite_tier"]
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": ["minecraft:netherite_ingot"],
+            "repair_amount": "math.floor(q.max_durability * 0.25)"
+          }
+        ]
+      },
+      "minecraft:enchantable": {
+        "slot": "sword",
+        "value": 15
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:damage": 7,
+      "minecraft:durability": {
+        "max_durability": 2031,
+        "damage_chance": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "minecraft:hand_equipped": true,
+      "minecraft:display_name": {
+        "value": "Netherite Dagger"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "bca:netherite_dagger"
+    }
+  }
+}

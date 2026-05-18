@@ -1,0 +1,60 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.garam_mararam.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.5,
+					"transitions": [
+						{
+							"attack": "query.facing_target_to_range_attack"
+						}
+					]
+				},
+				"attack": {
+					"blend_transition": 0.5,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"animations": [
+						"attack"
+					]
+				}
+			}
+		},
+		"controller.animation.garam_mararam.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"moving": "query.ground_speed>=0.1"
+						}
+					],
+					"animations": [
+						{
+							"idle": "!query.has_target"
+						}
+					]
+				},
+				"moving": {
+					"blend_transition": 0.5,
+					"transitions": [
+						{
+							"default": "query.ground_speed<0.1"
+						}
+					],
+					"animations": [
+						{
+							"walk": "!query.has_target && !query.facing_target_to_range_attack"
+						}
+					]
+				}
+			}
+		}
+	}
+}

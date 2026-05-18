@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.sticky_slime": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": []
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @s clear",
+						"/effect @e[r=1,family=!stinkfly] slowness 1 255 true",
+						"/fill ~~~~~~ air 0 replace fire"
+					]
+				}
+			}
+		}
+	}
+}

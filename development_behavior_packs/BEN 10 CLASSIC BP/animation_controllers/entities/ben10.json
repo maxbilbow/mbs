@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ben10_transform": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ben10_transform": "query.skin_id==1&&query.has_target"
+						}
+					]
+				},
+				"ben10_transform": {
+					"transitions": [
+						{
+							"default": "query.skin_id==1&&query.has_target"
+						}
+					],
+					"on_entry": [
+						"/event entity @s[family=omni_unused] omnitrix_use",
+						"/event entity @s[family=!omni_unused] omnitrix_unused"
+					]
+				}
+			}
+		}
+	}
+}

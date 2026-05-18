@@ -1,0 +1,79 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:uranium_fuel_rods",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.uranium_fuel_rods",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_uranium_fuel_rods",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					10,
+					16,
+					10
+				]
+			},
+			"minecraft:display_name": "Uranium Fuel Rods",
+			"minecraft:selection_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					10,
+					16,
+					10
+				]
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": true,
+						"liquid_type": "water"
+					}
+				]
+			},
+			"minecraft:light_emission": 12,
+			"minecraft:loot": "loot_tables/fuel_rods.json",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.1
+			},
+			"minecraft:tick": {
+				"interval_range": [
+					20,
+					20
+				],
+				"looping": true
+			},
+			"kaboom:radiation": [
+				{
+					"radius": 4,
+					"name": "wither",
+					"duration": 240,
+					"amplifier": 1
+				},
+				{
+					"radius": 2,
+					"name": "nausea",
+					"duration": 80,
+					"amplifier": 2
+				}
+			]
+		}
+	}
+}

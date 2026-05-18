@@ -1,0 +1,317 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.upgrade_attack_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==10&&query.skin_id==0&&variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"upgrade_attack_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=10||query.skin_id!=0||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.upgrade_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==10&&query.skin_id==0&&!variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"upgrade_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=10||query.skin_id!=0||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.upgrade_laser": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==10&&query.skin_id==0&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')=='ug_laser'&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"upgrade_laser"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=10||query.skin_id!=0||variable.is_first_person||query.get_equipped_item_name('main_hand')!='ug_laser'||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_irongolem_laser": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==10&&query.skin_id==501&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')=='ug_laser'&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"ug_irongolem_laser"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=10||query.skin_id!=501||variable.is_first_person||query.get_equipped_item_name('main_hand')!='ug_laser'||!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_irongolem_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==10&&query.skin_id==501&&!variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"ug_irongolem_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=10||query.skin_id!=501||variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.upgrade": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.variant==10&&query.skin_id==0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"upgrade"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.variant!=10||query.skin_id!=0"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.upgrade_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.variant==10&&query.is_on_ground&&query.is_moving&&!query.is_sprinting&&query.skin_id==0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upgrade_walk"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.variant!=10||!query.is_on_ground||!query.is_moving||query.is_sprinting||query.skin_id!=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_irongolem_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.skin_id==501&&query.is_on_ground&&query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ug_irongolem_walk"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.skin_id!=501||!query.is_on_ground||!query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.upgrade_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.variant==10&&query.is_on_ground&&query.is_sprinting&&query.skin_id==0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upgrade_sprint"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.variant!=10||!query.is_on_ground||!query.is_sprinting||query.skin_id!=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_form": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "(query.skin_id==502||query.skin_id==503||query.skin_id==504||query.skin_id==505||query.skin_id==506)&&query.variant==10&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"ug_form"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=502&&query.skin_id!=503&&query.skin_id!=504&&query.skin_id!=505&&query.skin_id!=506||query.variant!=10||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.ug_piston_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.skin_id==506&&query.is_on_ground&&query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ug_piston_walk"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.skin_id!=506||!query.is_on_ground||!query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_boat_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.skin_id==502&&query.is_in_water&&query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ug_boat_walk"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.skin_id!=502||!query.is_in_water||!query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ug_noteblock_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.is_first_person&&query.skin_id==505&&query.is_on_ground&&query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ug_noteblock_walk"
+					],
+					"transitions": [
+						{
+							"default": "variable.is_first_person||query.skin_id!=505||!query.is_on_ground||!query.is_moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

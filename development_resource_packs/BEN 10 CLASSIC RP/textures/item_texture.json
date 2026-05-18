@@ -1,0 +1,156 @@
+{
+   "resource_pack_name": "vanilla",
+   "texture_name": "atlas.items",
+   "texture_data": {
+      "icon_omni_blue": {
+         "textures": "textures/items/icons/omni_blue"
+      },
+      "icon_omni_green": {
+         "textures": "textures/items/icons/omni_green"
+      },
+      "omni_master": {
+         "textures": "textures/items/icons/omni_master"
+      },
+      "icon_omni_red": {
+         "textures": "textures/items/icons/omni_red"
+      },
+      "power_dt_command": {
+         "textures": "textures/items/icons/setting"
+      },
+      "omnitrix": {
+         "textures": "textures/items/omnitrix"
+      },
+      "power_dh_crystal": {
+         "textures": "textures/items/powers/dh_crystal"
+      },
+      "power_dh_spike": {
+         "textures": "textures/items/powers/dh_spike"
+      },
+      "power_dt_clone": {
+         "textures": "textures/items/powers/dt_clone"
+      },
+      "power_fire_ball": {
+         "textures": "textures/items/powers/fire_ball"
+      },
+      "power_sf_slime": {
+         "textures": "textures/items/powers/sf_slime"
+      },
+      "power_wb_ray": {
+         "textures": "textures/items/powers/wb_ray"
+      },
+      "power_wb_stomp": {
+         "textures": "textures/items/powers/wb_stomp"
+      },
+      "arc_ice": {
+         "textures": "textures/items/powers/arc_ice"
+      },
+      "power:arc_frost_walker": {
+         "textures": "textures/items/powers/arc_frost_walker"
+      },
+      "power:arc_armor": {
+         "textures": "textures/items/powers/arc_armor"
+      },
+      "power:arc_chill": {
+         "textures": "textures/items/powers/arc_chill"
+      },
+      "power_up_tongue": {
+         "textures": "textures/items/powers/up_tongue"
+      },
+      "power_clock_beam": {
+         "textures": "textures/items/powers/clock_beam"
+      },
+      "power_clock_stop": {
+         "textures": "textures/items/powers/clock_stop"
+      },
+      "power_clock_time": {
+         "textures": "textures/items/powers/clock_time"
+      },
+      "power_clock_rewind": {
+         "textures": "textures/items/powers/clock_rewind"
+      },
+      "power_bv_lightning": {
+         "textures": "textures/items/powers/bv_lightning"
+      },
+      "power_bv_electrokinesis": {
+         "textures": "textures/items/powers/bv_electrokinesis"
+      },
+      "power_wv_seeds": {
+         "textures": "textures/items/powers/wv_seeds"
+      },
+      "power_wv_plant": {
+         "textures": "textures/items/powers/wv_plant"
+      },
+      "power_wv_stretch": {
+         "textures": "textures/items/powers/wv_stretch"
+      },
+      "power_bw_howl": {
+         "textures": "textures/items/powers/bw_howl"
+      },
+      "power_bm_stretch": {
+         "textures": "textures/items/powers/bm_stretch"
+      },
+      "power_bm_grapple": {
+         "textures": "textures/items/powers/bm_grapple"
+      },
+      "power_eyefire": {
+         "textures": "textures/items/powers/eyefire"
+      },
+      "power_eyeice": {
+         "textures": "textures/items/powers/eyeice"
+      },
+      "power_eyelaser": {
+         "textures": "textures/items/powers/eyelaser"
+      },
+      "power_ug_laser": {
+         "textures": "textures/items/powers/ug_laser"
+      },
+      "power_ug_jump": {
+         "textures": "textures/items/powers/ug_jump"
+      },
+      "power_ug_sonar": {
+         "textures": "textures/items/powers/ug_sonar"
+      },
+      "power_ug_bomb": {
+         "textures": "textures/items/powers/ug_bomb"
+      },
+      "power_upgrade": {
+         "textures": "textures/items/powers/upgrade"
+      },
+      "setting": {
+         "textures": "textures/items/icons/setting"
+      },
+      "mutant_egg": {
+         "textures": "textures/items/egg/zombie"
+      },
+      "spawn_egg_ben10": {
+         "textures": "textures/items/spawn_eggs/ben10_os"
+      },
+      "werewolf": {
+         "textures": "textures/entity/fox/werewolf_icon"
+      },
+      "spawn_egg_omni_capsule": {
+         "textures": "textures/items/spawn_eggs/omni_capsule"
+      },
+      "spawn_egg_omni_heatblast": {
+         "textures": "textures/items/spawn_eggs/omni_heatblast"
+      },
+      "cso:spawn_egg_prototype_phobos": {
+         "textures": "textures/entity/bosses/boss2/items/prototype_phobos_spawn_egg"
+      },
+      "cso:spawn_egg_siege_phobos": {
+         "textures": "textures/entity/bosses/boss2/items/siege_phobos_spawn_egg"
+      },
+      "flight_activator_icon": {
+         "textures": "textures/items/powers/flight_activator"
+      },
+      "gf_intangibility_icon": {
+         "textures": "textures/items/powers/gf_intangibility"
+      },
+      "gf_possession_icon": {
+         "textures": "textures/items/powers/gf_possession"
+      },
+      "power_hb_flamethrower": {
+         "textures": "textures/items/powers/hb_flamethrower"
+      }
+   }
+}

@@ -1,0 +1,80 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.3d_item_fp": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"3d_item_tp": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.player.3d_item_tp": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"3d_item_fp": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.player.omnitrix_item": {
+			"loop": true,
+			"bones": {
+				"omnitrix_item": {
+					"position": [
+						0,
+						9,
+						-5
+					],
+					"scale": [
+						0.4,
+						0.4,
+						0.5
+					]
+				},
+				"dial_item": {
+					"position": [
+						0,
+						0,
+						2
+					]
+				},
+				"base_item": {
+					"scale": [
+						1,
+						1,
+						0.8
+					]
+				},
+				"omnitrix_item_fp": {
+					"position": [
+						0,
+						9,
+						-5
+					],
+					"scale": [
+						0.3,
+						0.3,
+						0.4
+					]
+				},
+				"dial_item_fp": {
+					"position": [
+						0,
+						0,
+						2
+					]
+				},
+				"base_item_fp": {
+					"scale": [
+						1,
+						1,
+						0.8
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,154 @@
+//bridge-file-version: #101
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"sin_pintar",
+					"rojo_pintar",	
+					"azul_pintar",	
+					"negro_pintar"	
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:pizarra",
+			"is_experimental": false
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'sin_pintar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pizarra1",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'rojo_pintar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pizarra1_rojo",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'azul_pintar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pizarra1_azul",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'negro_pintar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pizarra1_negro",
+							"render_method": "alpha_test"
+						}
+					}
+					
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:board"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "pizarra1",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:geometry": "geometry.pizarra",
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					2,
+					6
+				],
+				"size": [
+					16,
+					14,
+					2
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}

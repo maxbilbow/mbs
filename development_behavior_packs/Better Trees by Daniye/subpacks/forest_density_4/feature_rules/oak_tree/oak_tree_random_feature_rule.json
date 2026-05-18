@@ -1,0 +1,73 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:oak_tree_random_feature_rule",
+			"places_feature": "daniye:oak_tree_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "extreme_hills"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "birch"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "jungle"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "meadow"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "mesa"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "plains"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "river"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "roofed"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "savanna"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 2,
+			"x": 0,
+			"y": "q.heightmap(v.worldx, v.worldz)",
+			"z": 0,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 16
+			}
+		}
+	}
+}

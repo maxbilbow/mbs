@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "new:glowstone_shield",
+			"materials": {
+				"default": "spider",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/glowstone_shield",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.glowstone_shield",
+				"offhand": "geometry.glowstone_shield_offhand"
+			},
+			"render_controllers": [
+				{"controller.render.mshield": "c.item_slot == 'main_hand'"},
+				{"controller.render.offhand": "c.item_slot == 'off_hand'"}
+			],
+			"animations": {
+				"mainhand.thierd_person.block": "animation.custom_shield.thierd_person.block",
+				"mainhand.first_person.block": "animation.custom_shield.first_person.block",
+				"mainhand.first_person": "animation.custom_shield.first_person",
+				"mainhand.thierd_person": "animation.custom_shield.thierd_person",
+
+				"offhand.thierd_person.block": "animation.custom_shield.thierd_person.block_offhand",
+				"offhand.first_person.block": "animation.custom_shield.first_person.block_offhand",
+				"offhand.first_person": "animation.custom_shield.first_person_offhand",
+				"offhand.thierd_person": "animation.custom_shield.thierd_person_offhand"
+			},
+			"scripts": {
+				"animate": [
+					{"mainhand.thierd_person.block": "!c.is_first_person && c.item_slot == 'main_hand' && q.is_item_name_any('slot.weapon.mainhand', 'new:glowstone_shield') && query.is_sneaking && !query.equipped_item_any_tag('slot.weapon.offhand', 'new:shield_custom')"},
+					{"mainhand.first_person.block": "c.is_first_person && c.item_slot == 'main_hand' && q.is_item_name_any('slot.weapon.mainhand', 'new:glowstone_shield') && query.is_sneaking && !query.equipped_item_any_tag('slot.weapon.offhand', 'new:shield_custom')"},
+					{"mainhand.first_person": "c.is_first_person && c.item_slot == 'main_hand' && q.is_item_name_any('slot.weapon.mainhand', 'new:glowstone_shield') && (!query.is_sneaking || q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield'))"},
+					{"mainhand.thierd_person": "!c.is_first_person && c.item_slot == 'main_hand' && q.is_item_name_any('slot.weapon.mainhand', 'new:glowstone_shield') && (!query.is_sneaking || q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield'))"},
+
+					{"offhand.thierd_person.block": "!c.is_first_person && c.item_slot == 'off_hand' && q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield') && query.is_sneaking"},
+					{"offhand.first_person.block": "c.is_first_person && c.item_slot == 'off_hand' && q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield') && query.is_sneaking"},
+					{"offhand.first_person": "c.is_first_person && c.item_slot == 'off_hand' && q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield') && !query.is_sneaking"},
+					{"offhand.thierd_person": "!c.is_first_person && c.item_slot == 'off_hand' && q.is_item_name_any('slot.weapon.offhand', 'new:glowstone_shield') && !query.is_sneaking"}
+				]
+			}
+		}
+	}
+}

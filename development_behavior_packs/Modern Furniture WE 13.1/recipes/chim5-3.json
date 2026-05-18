@@ -1,0 +1,23 @@
+//bridge-file-version: #405
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:chim5-3"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:chim5-3",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

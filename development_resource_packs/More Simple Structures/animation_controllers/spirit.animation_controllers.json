@@ -1,0 +1,22 @@
+
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.coreblockstudios_mss.spirit.move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move": "query.modified_move_speed"
+						},
+						{
+							"bob": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		}
+	}
+}

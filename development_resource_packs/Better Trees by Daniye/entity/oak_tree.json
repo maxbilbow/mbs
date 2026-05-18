@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:oak_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/oak_tree"
+			},
+			"geometry": {
+				"default": "geometry.oak_tree"
+			},
+			"render_controllers": [
+				"controller.render.oak_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_oak_tree"
+			}
+		}
+	}
+}

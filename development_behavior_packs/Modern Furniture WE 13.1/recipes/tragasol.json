@@ -1,0 +1,23 @@
+//bridge-file-version: #310
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:tragasol"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:tragasol",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

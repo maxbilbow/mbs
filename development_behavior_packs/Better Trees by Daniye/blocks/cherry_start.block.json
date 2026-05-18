@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "daniye:cherry_start"
+		},
+		"components": {
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 0
+			},
+			"minecraft:geometry": "geometry.cherry_start",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "cherry_start",
+					"render_method": "alpha_test",
+					"face_dimming": false,
+					"ambient_occlusion": false
+				}
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:map_color": "#32a852",
+			"minecraft:loot": "loot_tables/blocks/cherry_start.json"
+		}
+	}
+}

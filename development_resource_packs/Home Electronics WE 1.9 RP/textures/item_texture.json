@@ -1,0 +1,13 @@
+{
+	"texture_data": {
+		"mando_switch2": {
+			"textures": "textures/items/mando_switch2.png"
+		},
+		"mando_swhitch": {
+			"textures": "textures/items/mando_swhitch.png"
+		},
+		"mando_wii": {
+			"textures": "textures/items/mando_wii.png"
+		}
+	}
+}

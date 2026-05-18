@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:arid_tall_pine_taiga/arid_taiga_mega_pine_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:arid_taiga/arid_taiga_spruce_weighted",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:arid_taiga/arid_taiga_pine_weighted",
+				3
+			],
+			[
+				"vanilla_biomes_expansion:arid_tall_pine_taiga/arid_taiga_mega_pine_weighted",
+				7
+			]
+		]
+	}
+}

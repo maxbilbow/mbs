@@ -1,0 +1,79 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.waybig_ray_shoot_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.is_using_item"
+						}
+					],
+					"blend_transition": 0.24
+				},
+				"shoot": {
+					"animations": [
+						{
+							"waybig_ray_shooting_fp": "variable.is_first_person&&variable.waybig_ray"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.24
+				}
+			}
+		},
+		"controller.animation.waybig_ray_shoot": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.is_using_item"
+						}
+					],
+					"blend_transition": 0.22
+				},
+				"shoot": {
+					"animations": [
+						{
+							"waybig_ray_shooting": "!variable.is_first_person&&variable.waybig_ray"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.22
+				}
+			}
+		},
+		"controller.animation.waybig_stomp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"stomp": "query.variant==15&&query.get_equipped_item_name('main_hand')=='wb_stomp'&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"stomp": {
+					"animations": [
+						"waybig_tp",
+						"waybig_stomping"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

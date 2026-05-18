@@ -1,0 +1,72 @@
+{
+    "namespace": "hud",
+    "root_panel": {
+  "modifications": [
+    {
+      "array_name": "controls",
+      "operation": "insert_front",
+      "value": [
+        {
+          "chat_panel@hud.chat_panel": {}
+        }
+      ]
+    }
+  ]
+},
+
+"chat_panel": {
+  "anchor_from": "bottom_left",
+  "anchor_to": "bottom_left",
+  "size": [
+    "34%",
+    "100%c"
+  ],
+  "offset": [
+    0,
+    -30
+  ]
+},
+
+"root_panel/chat_stack": {
+  "modifications": [
+    {
+      "array_name": "controls",
+      "operation": "remove",
+      "control_name": "chat_panel"
+    }
+  ]
+},
+"to": {
+  "anim_type": "alpha",
+  "easing": "in_expo",
+  "duration": 5,
+  "from": 10.0,
+  "to": 0,
+  "destroy_at_end": "hud_actionbar_text",
+  "end_event": "hud_actionbar_text_complete"
+},
+"hud_actionbar_text": {
+        "type": "image",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "size": [ "100%c + 7px", "100%c + 5px" ],
+        "offset": [ 0, 5 ],
+        "texture": "textures/ui/hud_tip_text",
+        "alpha": "@hud.to",
+        "controls": [
+          {
+            "actionbar_message": {
+              "type": "label",
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "color": "$tool_tip_text",
+              "layer": 31,
+              "offset": [ 4, 3 ],
+              "text": "$actionbar_text",
+              "localize": false,
+              "alpha": "@hud.to"   
+            }
+          }
+        ]
+    }
+    }

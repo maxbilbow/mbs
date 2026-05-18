@@ -1,0 +1,864 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "num_to_select": 44,
+          "trades": [
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:oak_planks",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:stick",
+                  "quantity": 64
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:tung_tung_tung_sahur_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:kelp",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:water_bucket",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:tralalero_tralala_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:melon_slice",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:melon_seeds",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:chimpanzini_bananini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:wheat",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:frigo_cammello_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:waterlily",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:bombardino_cocodrilo_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:wheat",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:vaca_saturno_saturnita_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:sand",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:burbaloni_luliloli_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:oak_leaves",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:oak_log",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:brrbrr_patapin_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:wheat_seeds",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:herioscuino_tanquini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:cactus",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:sand",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:lirililarila_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:salmon",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:water_bucket",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:tripi_tropi_tropa_tripa_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:pink_wool",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:white_wool",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:ballerina_capuchina_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:slime_ball",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:black_wool",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:boneca_ambalabu_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:quartz_block",
+                  "quantity": 15
+                },
+                {
+                  "item": "minecraft:water_bucket",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:skibidi_toilet_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:sand",
+                  "quantity": 25
+                },
+                {
+                  "item": "minecraft:tropical_fish",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:fruli_frula_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:sugar",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:honey_block",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:garam_mararam_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:cocoa_beans",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:black_wool",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:capuccino_assassino_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:melon_block",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:glorbo_fruttodillo_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:black_wool",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:bobrito_bandito_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:feather",
+                  "quantity": 20
+                },
+                {
+                  "item": "minecraft:tnt",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:bombombini_guzini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:salmon",
+                  "quantity": 10
+                },
+                {
+                  "item": "minecraft:tropical_fish",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:trulimero_trulichina_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 10
+                },
+                {
+                  "item": "minecraft:brown_wool",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:mateooo_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 32
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:nuclearo_dinossauro_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 8
+                },
+                {
+                  "item": "minecraft:cobblestone",
+                  "quantity": 12
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:pot_hotspot_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:porkchop",
+                  "quantity": 6
+                },
+                {
+                  "item": "minecraft:tnt",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:svinino_bombondino_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:carrot",
+                  "quantity": 8
+                },
+                {
+                  "item": "minecraft:pumpkin",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:udindindindun_madindindindun_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:golden_helmet",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:golden_sword",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:bri_bri_bicus_dicus_debicus_dedicus_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:carrot",
+                  "quantity": 20
+                },
+                {
+                  "item": "minecraft:wheat_seeds",
+                  "quantity": 15
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:trictrac_barabum_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:clay",
+                  "quantity": 15
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:tatatata_sahur_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 10
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:ballerino_lololo_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:water_bucket",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:orcalero_orcala_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:minecart",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:rhino_toasterino_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 25
+                },
+                {
+                  "item": "minecraft:oak_planks",
+                  "quantity": 9
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:pak_rahmat_ma_mat_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:ice",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:water_bucket",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:sigma_boy_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:cactus",
+                  "quantity": 4
+                },
+                {
+                  "item": "minecraft:stone",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:ilcacto_hipopotamo_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:oak_planks",
+                  "quantity": 64
+                },
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:laesoksekolah_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:melon",
+                  "quantity": 6
+                },
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:giraffaceleste_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:leather",
+                  "quantity": 15
+                },
+                {
+                  "item": "minecraft:gold_block",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:orangutini_ananasini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:ink_sac",
+                  "quantity": 20
+                },
+                {
+                  "item": "minecraft:blue_wool",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:blueberrinnioctopussini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:ink_sac",
+                  "quantity": 20
+                },
+                {
+                  "item": "minecraft:blue_wool",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:blueberrinnioctopussini_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:minecart",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:redstone",
+                  "quantity": 32
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:trenostruzzoturbo3000_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:saddle",
+                  "quantity": 8
+                },
+                {
+                  "item": "minecraft:music_disc_11",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:eccocavallovirtuoso_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:cocoa_beans",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:phantom_membrane",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:cocofantoelefanto_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:kelp",
+                  "quantity": 20
+                },
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:ketupatkepat_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 9999999,
+              "wants": [
+                {
+                  "item": "minecraft:egg",
+                  "quantity": 16
+                },
+                {
+                  "item": "minecraft:bell",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "eu:titutitutitabuu_spawn_egg",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

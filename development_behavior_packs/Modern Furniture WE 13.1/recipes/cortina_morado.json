@@ -1,0 +1,23 @@
+//bridge-file-version: #327
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cortina_morado"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajaalfombra"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cortina_morado",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

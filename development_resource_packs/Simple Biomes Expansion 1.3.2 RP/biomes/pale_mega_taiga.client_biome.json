@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_mega_taiga"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "minecraft:fog_pale_garden"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#76889D"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 0
+			},
+			"minecraft:atmosphere_identifier": {
+				"atmosphere_identifier": "minecraft:pale_garden_atmospherics"
+			},
+			"minecraft:color_grading_identifier": {
+				"color_grading_identifier": "minecraft:pale_garden_color_grading"
+			},
+			"minecraft:lighting_identifier": {
+				"lighting_identifier": "minecraft:pale_garden_lighting"
+			},
+			"minecraft:water_identifier": {
+				"water_identifier": "minecraft:default_water"
+			},
+			"minecraft:foliage_appearance": {
+				"color": "#878d76"
+			},
+			"minecraft:grass_appearance": {
+				"color": "#778272"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#b9b9b9"
+			}
+		}
+	}
+}

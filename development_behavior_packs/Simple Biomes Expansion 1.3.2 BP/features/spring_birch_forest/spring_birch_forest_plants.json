@@ -1,0 +1,38 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spring_birch_forest/spring_birch_forest_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_lily_of_the_valley_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:sbe_allium_feature",
+				8
+			],
+			[
+				"vanilla_biomes_expansion:sbe_pink_tulip_feature",
+				8
+			],
+			[
+				"vanilla_biomes_expansion:sbe_white_tulip_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:spring_forest/spring_forest_plants_placement_feature",
+				3
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				20
+			],
+			[
+				"vanilla_biomes_expansion:sbe_pink_petals_feature",
+				30
+			]
+		]
+	}
+}

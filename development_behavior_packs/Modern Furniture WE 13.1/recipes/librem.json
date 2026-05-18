@@ -1,0 +1,23 @@
+//bridge-file-version: #48
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:librem"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalibreria"
+			}
+		],
+		"result": [
+			{
+				"item": "f:librem",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

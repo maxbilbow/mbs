@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:atmosphere_settings": {
+    "description": {
+      "identifier": "va:nether_atmosphere"
+    },
+
+    "sky_zenith_color": {
+      "0.0": [140, 60, 25]
+    },
+
+    "sky_horizon_color": {
+      "0.0": [200, 95, 40]
+    },
+
+    "horizon_blend_stops": {
+      "min": 0.30,
+      "start": 0.70,
+      "mie_start": 0.90,
+      "max": 0.45
+    },
+
+    "rayleigh_strength": {
+      "0.0": 0.6
+    }
+  }
+}

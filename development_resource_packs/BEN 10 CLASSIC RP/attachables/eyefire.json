@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "power:eyefire",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/items/powers/eyefire"
+            },
+            "geometry": {
+                "default": "geometry.item_default"
+            },
+            "render_controllers": [
+                {
+                    "controller.render.item_default": "!query.is_first_person"
+                }
+            ]
+        }
+    }
+}

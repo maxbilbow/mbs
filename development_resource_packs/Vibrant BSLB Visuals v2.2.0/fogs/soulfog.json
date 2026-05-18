@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:fog_settings": {
+    "description": { "identifier": "va:nether_soul_fog" },
+
+    "distance": {
+      "air": {
+        "fog_start": 48.0,
+        "fog_end": 192.0,
+        "fog_color": "#6b7f8a",
+        "render_distance_type": "fixed"
+      }
+    },
+
+    "volumetric": {
+      "density": {
+        "air": { "max_density": 0.18, "uniform": true }
+      },
+      "media_coefficients": {
+        "air": {
+          "scattering": [0.02, 0.04, 0.06],
+          "absorption": [0.04, 0.04, 0.02]
+        }
+      }
+    }
+  }
+}

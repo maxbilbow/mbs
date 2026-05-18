@@ -1,0 +1,23 @@
+//bridge-file-version: #467
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:clinex_box"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:clinex_box",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,67 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spell_book": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						-90,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.spell_fly": {
+			"loop": true,
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"bones": {
+				"root": {
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								2.7,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"rightleg": {
+					"rotation": [
+						"2.4747-this",
+						"0.2375-this",
+						"4.7419-this"
+					]
+				},
+				"leftleg": {
+					"rotation": [
+						"5-this",
+						"0-this",
+						-5
+					]
+				}
+			}
+		}
+	}
+}

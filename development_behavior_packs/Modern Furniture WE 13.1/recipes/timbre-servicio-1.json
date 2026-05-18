@@ -1,0 +1,23 @@
+//bridge-file-version: #423
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:timbre-servicio-1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:timbre-servicio-1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

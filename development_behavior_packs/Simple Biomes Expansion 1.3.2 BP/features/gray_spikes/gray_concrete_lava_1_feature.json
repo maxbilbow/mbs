@@ -1,0 +1,23 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:gray_spikes/gray_concrete_lava_1_feature"
+		},
+		"structure_name": "mystructure:gray_concrete_lava1",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:gray_concrete",
+					"minecraft:gray_concrete_powder",
+					"minecraft:black_concrete_powder",
+					"minecraft:black_concrete"
+				]
+			},
+			"unburied": {}
+		}
+	}
+}

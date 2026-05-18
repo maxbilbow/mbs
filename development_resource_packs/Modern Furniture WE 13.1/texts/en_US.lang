@@ -1,0 +1,994 @@
+
+## ## Translation notes: Sleeping Bags is the name of the addon, it should not be translated. If encontered in lowecase, you can translate it.
+## midgameTips.15=Using a sleeping bag doesn't modify your spawnpoint. To do that, you need to select it in the menu.
+## midgameTips.16=When using a sleeping bag, crops will grow according to time passed!
+## midgameTips.17=You can get out of a sleeping bag by jumping anytime.
+## midgameTips.18=Even if you set a spawnpoint in a sleeping bag, destroying it will not reset your spawnpoint.
+
+## tips.creative.10=You can use the Sleeping Bag Settings item (only available in creative) to customize the behavior of the addon.
+
+## Translation notes: Do not translate item we ask to download, they are Addon names and should not be translated.
+## We mean things like Locked Chests, Feudal Furniture, Pet Furniture, Lore Anvil, etc.
+midgameTips.61=Want crops to grow while you sleep? Download Better Beds from §lTRMC-ADDONS.COM
+midgameTips.62=Like electronics? Download Home Electronics from §lTRMC-ADDONS.COM
+midgameTips.63=Want lockable chests? Download Locked Chests from §lTRMC-ADDONS.COM
+midgameTips.64=Into rustic decor? Download Feudal Furniture from §lTRMC-ADDONS.COM
+midgameTips.65=Love animals? Download Pet Furniture from §lTRMC-ADDONS.COM
+midgameTips.66=Are you a decor master? Download Modern Furniture from §lTRMC-ADDONS.COM
+midgameTips.67=Want to add lore to your items? Download Lore Anvil from §lTRMC-ADDONS.COM
+midgameTips.68=Want sleeping bags? Download Sleeping Bags from §lTRMC-ADDONS.COM
+midgameTips.69=Want more addons? Visit §lTRMC-ADDONS.COM§r for all kinds of free content!
+
+tips.creative.1=Want more addons? Visit §lTRMC-ADDONS.COM§r for all kinds of free content!
+tips.creative.2=Into rustic decor? Download Feudal Furniture from §lTRMC-ADDONS.COM
+tips.creative.3=Love animals? Download Pet Furniture from §lTRMC-ADDONS.COM
+tips.creative.4=Are you a decor master? Download Modern Furniture from §lTRMC-ADDONS.COM
+tips.creative.5=Want to add lore to your items? Download Lore Anvil from §lTRMC-ADDONS.COM
+tips.creative.6=Want sleeping bags? Download Sleeping Bags from §lTRMC-ADDONS.COM
+tips.creative.7=Want lockable chests? Download Locked Chests from §lTRMC-ADDONS.COM
+tips.creative.8=Like electronics? Download Home Electronics from §lTRMC-ADDONS.COM
+tips.creative.9=Want crops to grow while you sleep? Download Better Beds from §lTRMC-ADDONS.COM
+
+mfun.toast.header.mf=§eNew update available for Modern Furniture!§r
+mfun.toast.body.001=Check the pause screen!
+
+pack.addon_update= Add-On Update Available
+pack.trmc_store= Get Free Add-Ons
+
+pack.new_update_available=NEW UPDATE AVAILABLE!
+
+pack.new_store_available=GET FREE ADDONS!
+
+pack.mf_update_text=The 1.4 update for Modern Furniture adds 6 new Blocks! 
+pack.mf_update_trmc=To access the update, visit §aTRMC-ADDONS.COM.§r You can also scan the §aQR code§r below to go directly to the website and download the new version of the addon.
+
+pack.mf_store_text=Visit §aTRMC-ADDONS.COM.§r for a wide selection of free Add-Ons! Whether you are a decorator and want more furniture, or want to enhance your survival experience with new mechanics, §aTRMC-ADDONS.COM§r has an addon for you! 
+pack.mf_store_trmc=You can also scan the §aQR code§r below to go directly to the website.
+
+pack.discover_more_addons=Discover more addons at TRMC-ADDONS.COM
+
+pack.modern_doors_text_1=Modern Doors adds all-new doors with locks, unique designs, and Redstone support, with 14 styles per door!
+pack.modern_doors_text_2=Crouch and interact to access the lock menu. Set codes, make keys, and protect your base with unbreakable doors.
+
+pack.modern_furniture_text_1=Modern Furniture adds over 800 pieces to decorate your Minecraft world, including sofas, shelves, lights, paintings, and more!
+pack.modern_furniture_text_2=Craft them using clay in the stonecutter. Simple and clean design that fits perfectly with Minecraft's vanilla look.
+
+pack.locked_chests_text_1=Locked Chests adds over 80 new containers with keys and owner protection for total security.
+pack.locked_chests_text_2=Customize your key's look and label. Without the right key or being the owner, chests stay locked!
+
+pack.sleeping_bags_text_1=Sleeping Bags let you sleep anytime and anywhere, even in the Nether or End!
+pack.sleeping_bags_text_2=Speed up time, set spawn, and use multiplayer-friendly sleep mechanics during adventures.
+
+pack.feudal_furniture_text_1=Feudal Furniture brings 800+ medieval-style items for villages, castles, and dungeons.
+pack.feudal_furniture_text_2=Includes boxes for each wood type and supports features like sitting, lighting fires, and more.
+
+pack.lore_anvil_text_1=With Lore Anvil, you can add colored descriptions and icons to any item or block.
+pack.lore_anvil_text_2=Add lore, symbols, or comments to customize and organize your gear, all done with a custom anvil!
+
+pack.home_electronics_text_1=Home Electronics adds consoles, computers, TVs, and appliances, perfect for modern interiors.
+pack.home_electronics_text_2=Open laptops, play notes on pianos, and decorate with posters, lights, and gaming gear.
+
+pack.pet_furniture_text_1=Pet Furniture adds cat houses, feeders, and animal-friendly decorations for your home and garden.
+pack.pet_furniture_text_2=Includes prefabs and modular cat enclosures, fully compatible with Minecraft 1.21+ and all Add-Ons.
+
+pack.better_beds_text_1=Better Beds adds new beds with time control, spawnpoint options, and sleep in any dimension!
+pack.better_beds_text_2=Supports servers, has animations, and lets you stack beds to create bunk beds automatically.
+
+
+
+pack.description=Created by Trotamundos872.
+
+pack.use_the_item=Use the item
+pack.on_this_block!=on this block!
+
+tile.f:conducto1.name=Ventilation module 
+tile.f:conducto10.name=Ventilation module
+tile.f:conducto11.name=Ventilation module
+tile.f:conducto12.name=Ventilation module
+tile.f:conducto2.name=Ventilation module
+tile.f:conducto3.name=Ventilation module
+tile.f:conducto4.name=Ventilation module
+tile.f:conducto5.name=Ventilation module
+tile.f:conducto6.name=Ventilation module
+tile.f:conducto7.name=Ventilation module
+tile.f:conducto8.name=Ventilation module
+tile.f:conducto9.name=Ventilation module
+tile.f:sofasa1a.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1m.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1n.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasaa.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasam.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasan.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1az.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasaaz.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2az.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa.name=Module sofa §h[ §aSeat§h ]
+tile.f:bnegro.name=Black quartz block
+tile.f:alfombra2.name=Modern carpet
+tile.f:alfombra3.name=Modern carpet
+tile.f:alfombra4.name=Modern carpet
+tile.f:alfombra5.name=Modern carpet
+tile.f:alfombra6.name=Modern carpet
+tile.f:alfombra7.name=Modern carpet
+tile.f:alfombra8.name=Modern carpet
+tile.f:alfombra9.name=Modern carpet
+tile.f:alfombra10.name=Modern carpet
+tile.f:alfombra11.name=Modern carpet
+tile.f:libreriamod1.name=Book shelf §h[ §aConfigurable§h ]
+tile.f:libreriamod2.name=Book shelf §h[ §aConfigurable§h ]
+
+tile.f:mesamod1.name=Room table
+tile.f:mesamod2.name=Room table
+tile.f:cuadro7.name=Painting
+tile.f:cuadro8.name=Painting
+tile.f:cuadro9.name=Painting
+tile.f:cuadro10.name=Painting
+tile.f:cuadro11.name=Painting
+tile.f:cuadro12.name=Painting
+tile.f:cuadro13.name=Painting
+tile.f:cuadro14.name=Painting
+tile.f:cuadro15.name=Painting
+tile.f:cuadro16.name=Painting
+tile.f:cuadro17.name=Painting
+tile.f:cuadro18.name=Painting
+tile.f:cuadro19.name=Painting
+tile.f:cuadro20.name=Painting
+tile.f:cuadro21.name=Painting
+tile.f:cuadro22.name=Painting
+tile.f:cuadro23.name=Painting
+tile.f:cuadro24.name=Painting
+tile.f:cuadro25.name=Painting
+tile.f:luz1.name=LED §h[ §aBright§h ]
+tile.f:mesasalonr.name=Table
+tile.f:mesasalonr1.name=Table
+tile.f:libreriar2.name=Bookshop
+tile.f:libreriar1.name=Bookshop
+tile.f:chim1.name=Fireplace §h[ §aInteractive§h ]
+tile.f:cajaalfombra.name=§l[§3MF§f] §r§fInterior box
+tile.f:cajalampara.name=§l[§3MF§f] §r§fLight box
+tile.f:cajalibreria.name=§l[§3MF§f] §r§fBookshelf box
+tile.f:cajamesa.name=§l[§3MF§f] §r§fTable box
+tile.f:cajacocina.name=§l[§3MF§f] §r§fKitchen box
+tile.f:cajaconducto.name=§l[§3MF§f] §r§fVent box
+tile.f:cajasilla.name=§l[§3MF§f] §r§fChair blox
+tile.f:cajabloque.name=§l[§3MF§f] §r§fConstruction box
+tile.f:cajacuadro.name=§l[§3MF§f] §r§fPainting box
+tile.f:cajabano.name=§l[§3MF§f] §r§fbathroom box
+tile.f:cajadecoracion.name=§l[§3MF§f] §r§fDecorations Box
+tile.f:cajafestiva.name=§l[§3MF§f] §r§fFestive box
+tile.f:cajasofa.name=§l[§3MF§f] §r§fSofa box
+tile.f:brnegro.name=Black brick block
+tile.f:cajagaraje.name=§l[§3MF§f] §r§fGaraje box
+tile.f:chim2.name=Black brick fireplace §h[ §aInteractive§h ]
+tile.f:bladrillosnegro.name=Black brick block
+tile.f:bladrillosblanco.name=White brick block
+tile.f:bladrillosblancocontraste.name=White brick block
+tile.f:bmadera1.name=Continuous wood block
+tile.f:bmadera3.name=Continuous wood black block
+tile.f:bmadera2.name=Continuous wood block
+tile.f:bcuarzonegro.name=Black quartz block
+tile.f:sofasa1w.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasaw.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1b.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasab.name=Module sofa §h[ §aSeat§h ]
+tile.f:butaca1.name=Lime Seat §h[ §aSeat§h ]
+tile.f:butaca2.name=Yellow Seat §h[ §aSeat§h ]
+tile.f:butaca3.name=Orange Seat §h[ §aSeat§h ]
+tile.f:butaca4.name=Purple Seat §h[ §aSeat§h ]
+tile.f:butaca5.name=Black Seat §h[ §aSeat§h ]
+tile.f:butaca6.name=White Seat §h[ §aSeat§h ]
+tile.f:butaca7.name=Gray Seat §h[ §aSeat§h ]
+tile.f:butaca8.name=Red Seat §h[ §aSeat§h ]
+tile.f:butaca9.name=Blue Seat §h[ §aSeat§h ]
+tile.f:butaca10.name=Pink Seat §h[ §aSeat§h ]
+tile.f:moai.name=Moai
+tile.f:sofasar.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasag.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1r.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa1g.name=Module sofa §h[ §aSeat§h ]
+
+tile.f:sofasa2.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2n.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2m.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2a.name=Module sofa §h[ §aSeat§h ]
+tile.f:cuadro1.name=Painting
+tile.f:cuadro2.name=Painting
+tile.f:cuadro3.name=Painting
+tile.f:cuadro4.name=Painting
+tile.f:cuadro5.name=Painting
+tile.f:cuadro6.name=Painting
+tile.f:cocina.name=Kitchen countertop
+tile.f:cocina1.name=Kitchen countertop
+tile.f:cocina2.name=Kitchen countertop
+tile.f:cocina3.name=Kitchen countertop
+tile.f:cocina4.name=Kitchen countertop
+tile.f:cocina5.name=Kitchen countertop
+tile.f:cocina6.name=Kitchen countertop
+tile.f:cocina7.name=Kitchen countertop
+tile.f:sofa1.name=White sofa module §h[ §aSeat§h ]
+tile.f:sofa5.name=Extendable white sofa module §h[ §aSeat§h ]
+tile.f:sofa1n.name=Black sofa module §h[ §aSeat§h ]
+tile.f:sofa5n.name=Extendable black sofa module §h[ §aSeat§h ]
+tile.f:sofa2.name=White sofa module §h[ §aSeat§h ]
+tile.f:sofa2n.name=Black sofa module §h[ §aSeat§h ]
+tile.f:sofa3.name=White sofa module §h[ §aSeat§h ]
+tile.f:sofa3n.name=Black sofa module §h[ §aSeat§h ]
+tile.f:sofa4.name=White sofa module §h[ §aSeat§h ]
+tile.f:sofa4n.name=Black sofa module §h[ §aSeat§h ]
+tile.f:libreria.name=Modern bookcase §h[ §aConfigurable§h ]
+tile.f:libreria1.name=Modern bookcase
+tile.f:libreria2.name=Modern bookcase
+tile.f:sillonblanco.name=White armchair §h[ §aSeat§h ]
+tile.f:sillonazul.name=Blue armchair §h[ §aSeat§h ]
+tile.f:sillonnegro.name=Black armchair §h[ §aSeat§h ]
+tile.f:taburete.name=Stool §h[ §aSeat§h ]
+tile.f:luz.name=LED §h[ §aBright§h ]
+tile.f:luz3.name=LED Light Bar §h[ §aBright§h ]
+tile.f:foco.name=Spotlight §h[ §aBright§h ]
+tile.f:sillablanca.name=White chair §h[ §aSeat§h ]
+tile.f:sillaofisblanca.name=White chair §h[ §aSeat§h ]
+tile.f:sillanegro.name=Black chair §h[ §aSeat§h ]
+tile.f:sillaofisnegro.name=Black chair §h[ §aSeat§h ]
+tile.f:lamparablanca.name=White floor lamp §h[ §aBright§h ]
+tile.f:lamparanegra.name=Black floor lamp §h[ §aBright§h ]
+tile.f:lamparamediablanca.name=White Desk lamp §h[ §aBright§h ]
+tile.f:lamparamedianegra.name=Black desk lamp §h[ §aBright§h ]
+tile.f:lamparatechoblanca.name=White ceiling lamp §h[ §aBright§h ]
+tile.f:lamparatechonegra.name=Black ceiling lamp §h[ §aBright§h ]
+tile.f:celpudo.name=Doormat §h[ §aInteractive§h ]
+tile.f:perchero.name=Coat rack
+tile.f:alfombra.name=Modern Carpet
+tile.f:decoracioncocina1.name=Knife rack
+tile.f:decoracioncocina.name=Cutting board
+tile.f:mesasalon.name=Modern room table
+tile.f:mesa.name=Modern Table
+tile.f:mesamadera.name=Entrance table
+tile.f:taburete1.name=Stool §h[ §aSeat§h ]
+tile.f:taburete2.name=Stool §h[ §aSeat§h ]
+action.hint.exit.f:sit=§lShift §ror §lSPACE §rto get up
+tile.f:sillalima.name=Lime chair §h[ §aSeat§h ]
+tile.f:sillagris.name=Gray chair §h[ §aSeat§h ]
+tile.f:sillaofisgris.name=Gray chair §h[ §aSeat§h ]
+tile.f:sofa1l.name=Lime sofa module §h[ §aSeat§h ]
+tile.f:sofa5l.name=Extendable lime sofa module §h[ §aSeat§h ]
+tile.f:sofa2l.name=Lime sofa module §h[ §aSeat§h ]
+tile.f:sofa3l.name=Lime sofa module §h[ §aSeat§h ]
+tile.f:sofa4l.name=Lime sofa module §h[ §aSeat§h ]
+tile.f:sillonlima.name=Lime armchair §h[ §aSeat§h ]
+tile.f:sofa1y.name=Yellow sofa module §h[ §aSeat§h ]
+tile.f:sofa5y.name=Extendable yellow sofa module §h[ §aSeat§h ]
+tile.f:sofa2y.name=Yellow sofa module §h[ §aSeat§h ]
+tile.f:sofa3y.name=Yellow sofa module §h[ §aSeat§h ]
+tile.f:sofa4y.name=Yellow sofa module §h[ §aSeat§h ]
+tile.f:sillonamarillo.name=Yellow armchair §h[ §aSeat§h ]
+tile.f:sofa1m.name=Purple sofa module §h[ §aSeat§h ]
+tile.f:sofa5m.name=Extendable purple sofa module §h[ §aSeat§h ]
+tile.f:sofa2m.name=Purple sofa module §h[ §aSeat§h ]
+tile.f:sofa3m.name=Purple sofa module §h[ §aSeat§h ]
+tile.f:sofa4m.name=Purple sofa module §h[ §aSeat§h ]
+tile.f:sillonmorado.name=Purple armchair §h[ §aSeat§h ]
+tile.f:sillonnaranja.name=Orange armchair §h[ §aSeat§h ]
+tile.f:sofa1na.name=Orange sofa module §h[ §aSeat§h ]
+tile.f:sofa5na.name=Extendable orange sofa module §h[ §aSeat§h ]
+tile.f:sofa2na.name=Orange sofa module §h[ §aSeat§h ]
+tile.f:sofa3na.name=Orange sofa module §h[ §aSeat§h ]
+tile.f:sofa4na.name=Orange sofa module §h[ §aSeat§h ]
+tile.f:sofa1az.name=Blue sofa module §h[ §aSeat§h ]
+tile.f:sofa2az.name=Blue sofa module §h[ §aSeat§h ]
+tile.f:sofa3az.name=Blue sofa module §h[ §aSeat§h ]
+tile.f:sofa4az.name=Blue sofa module §h[ §aSeat§h ]
+ui.cabinet.name=Storage
+tile.f:moai=Moai
+tile.f:mesaofis1.name=Office table module
+tile.f:mesaofis3.name=Office table module
+tile.f:mesaofis2.name=Office table module
+tile.f:mesaofis4.name=Office table module
+tile.f:decoracioncocina3.name=Keep knives
+tile.f:decoracioncocina4.name=Table with bread §h[ §aStackable§h ]
+tile.f:maceta1.name=bamboo pot
+tile.f:maceta2.name=bamboo pot
+tile.f:mesamadera3.name=Wooden shelf
+tile.f:mesamadera4.name=Wooden porch table
+tile.f:cofremini.name=Mini chest §h[ §aContainer§h ]
+tile.f:paredyerba.name=Plant wall
+tile.f:sofabambo1.name=White outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo2.name=White outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo3.name=White outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo4.name=White outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo1n.name=Black outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo2n.name=Black outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo3n.name=Black outdoor sofa module §h[ §aSeat§h ]
+tile.f:sofabambo4n.name=Black outdoor sofa module §h[ §aSeat§h ]
+tile.f:sillonbambo1.name=White outdoor armchair §h[ §aSeat§h ]
+tile.f:sillonbambo1n.name=Black outdoor armchair §h[ §aSeat§h ]
+tile.f:sofa1ro.name=Red sofa module §h[ §aSeat§h ]
+tile.f:sofa2ro.name=Red sofa module §h[ §aSeat§h ]
+tile.f:sofa3ro.name=Red sofa module §h[ §aSeat§h ]
+tile.f:sofa4ro.name=Red sofa module §h[ §aSeat§h ]
+tile.f:sofa5ro.name=Extendable red sofa module §h[ §aSeat§h ]
+tile.f:sofa5az.name=Extendable blue sofa module §h[ §aSeat§h ]
+tile.f:sofa1gr.name=Gray sofa module §h[ §aSeat§h ]
+tile.f:sofa2gr.name=Gray sofa module §h[ §aSeat§h ]
+tile.f:sofa3gr.name=Gray sofa module §h[ §aSeat§h ]
+tile.f:sofa4gr.name=Gray sofa module §h[ §aSeat§h ]
+tile.f:sofa5gr.name=Extendable gray sofa module §h[ §aSeat§h ]
+tile.f:cocina8.name=Kitchen countertop
+tile.f:cocina9.name=Kitchen countertop
+tile.f:cocina10.name=Kitchen countertop
+tile.f:cocina11.name=Kitchen countertop
+tile.f:cocina12.name=Kitchen countertop
+tile.f:cocina13.name=Kitchen countertop
+tile.f:cocina14.name=Kitchen countertop
+tile.f:cocina15.name=Kitchen countertop
+tile.f:cocina16.name=Kitchen countertop
+tile.f:sillonrojo.name=Red armchair §h[ §aSeat§h ]
+tile.f:sillongris.name=Gray armchair §h[ §aSeat§h ]
+tile.f:estant1.name=Wall shelf
+tile.f:estant2.name=Wall shelf
+tile.f:estant3.name=Wall shelf
+tile.f:estant4.name=Wall shelf
+tile.f:estant5.name=Wall shelf
+tile.f:estatua.name=Statue
+tile.f:estatua2.name=Statue
+tile.f:libreriarust1.name=Wooden bookcase §h[ §aConfigurable§h ]
+tile.f:libreriarust2.name=Wooden bookcase §h[ §aConfigurable§h ]
+
+tile.f:chim3.name=Quartz Black fireplace §h[ §aInteractive§h ]
+tile.f:chim4.name=White brick fireplace §h[ §aInteractive§h ]
+tile.f:chim5.name=White brick fireplace §h[ §aInteractive§h ]
+tile.f:chim6.name=Black brick fireplace §h[ §aInteractive§h ]
+tile.f:mesamadera2.name=Wooden bookcase
+tile.f:taburetemoderno3.name=Modern stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2.name=Modern stool §h[ §aSeat§h ]
+tile.f:taburetemoderno1.name=Modern stool §h[ §aSeat§h ]
+tile.f:yconducto1.name=Vertical duct
+tile.f:yconducto2.name=Vertical duct
+tile.f:yconducto3.name=Vertical duct
+tile.f:yconducto4.name=Vertical duct
+tile.f:yconducto5.name=Vertical duct
+tile.f:valla1.name=Iron fence §h[ §aModular§h ]
+
+tile.f:mundo.name=World globe mockup
+tile.f:mesa1.name=Glass table
+tile.f:mesa2.name=Glass table
+tile.f:papelera.name=Paper bin §h[ §aInteractive§h ]
+tile.f:bonsay.name=Bonsai
+tile.f:escalera1.name=Stairs
+tile.f:sillarus.name=Wooden porch chair §h[ §aSeat§h ]
+
+
+tile.f:brnegro_eslab.name=Black brick slab §h[ §aConfigurable§h ]
+tile.f:bladrillosnegro_eslab.name=Black brick slab §h[ §aConfigurable§h ]
+tile.f:bladrillosblanco_eslab.name=White brick slab §h[ §aConfigurable§h ]
+tile.f:bladrillosblancocontraste_eslab.name=White brick slab §h[ §aConfigurable§h ]
+tile.f:bnegro_eslab.name=Black quartz slab §h[ §aConfigurable§h ]
+tile.f:bcuarzonegro_eslab.name=Black quartz slab §h[ §aConfigurable§h ]
+
+tile.f:brnegro_escalera.name=Black brick stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosnegro_escalera.name=Black brick stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosblanco_escalera.name=White brick stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosblancocontraste_escalera.name=White brick stairs §h[ §aConfigurable§h ]
+tile.f:bnegro_escalera.name=Black quartz stairs §h[ §aConfigurable§h ]
+tile.f:bcuarzonegro_escalera.name=Black quartz stairs §h[ §aConfigurable§h ]
+tile.f:librem.name=Rustic bookstore
+tile.f:libre2m.name=Rustic bookstore
+tile.f:mesamod1m.name=Rustic living room table
+tile.f:mesamod2m.name=Rustic living room table
+
+tile.f:estanteria_moderna.name=Modern bookcase
+tile.f:estanteria_moderna2.name=Modern bookcase
+tile.f:estanteria_moderna3.name=Modern bookcase
+tile.f:estanteria_moderna4.name=Modern bookcase
+tile.f:estanteria_moderna5.name=Modern bookcase
+tile.f:estanteria_moderna6.name=Modern bookcase
+tile.f:estanteria_moderna7.name=Modern bookcase
+tile.f:estanteriacatalogo.name=Modern wooden bookcase
+tile.f:estanteriacatalogo2.name=Modern wooden bookcase
+tile.f:mesasalonmodern.name=Modern living room table
+tile.f:mesitadenochemoderna.name=Modern side table
+tile.f:escalera2.name=Stairs
+tile.f:estantemodern.name=Modern bookcase
+
+tile.f:canalon1.name=Metal gutter module
+tile.f:canalon2.name=Metal gutter module
+tile.f:canalon3.name=Metal gutter module
+tile.f:canalon4.name=Metal gutter module
+tile.f:canalon5.name=Metal gutter module
+tile.f:canalon6.name=Metal gutter module
+tile.f:canalon7.name=Metal gutter module
+tile.f:canalon8.name=Metal gutter module
+tile.f:canalon9.name=Metal gutter module
+tile.f:bloquemetal.name=Metal scaffolding
+tile.f:andamio.name=Metal scaffolding
+tile.f:pizarra.name=Board §h[ §aInteractive§h ]
+tile.f:mesademadera1.name=Wooden table module
+tile.f:mesademadera2.name=Wooden table module
+tile.f:mesademadera.name=Wooden table
+tile.f:cuadro26.name=Painting
+tile.f:cuadro27.name=Painting
+tile.f:cuadro28.name=Painting
+tile.f:cuadro29.name=Painting
+tile.f:cuadro30.name=Painting
+tile.f:cuadro31.name=Painting
+tile.f:cuadro32.name=Painting
+tile.f:cuadro33.name=Painting
+tile.f:cuadro34.name=Painting
+tile.f:cuadro35.name=Painting
+tile.f:cuadro36.name=Painting
+tile.f:cuadro37.name=Painting
+tile.f:cuadro38.name=Painting
+tile.f:cuadro39.name=Painting
+tile.f:cuadro40.name=Painting
+tile.f:cuadro41.name=Painting
+tile.f:cuadro42.name=Painting
+
+tile.f:rendija1.name=Ventilation slot
+tile.f:rendija2.name=Wall ventilation slot §h[ §aInteractive§h ]
+tile.f:huevodeobsidiana.name=Obsidian egg
+tile.f:tuberia2.name=Blue pipe
+tile.f:tuberia1.name=Red pipe
+tile.f:bloquecuadros.name=Kitchen floor
+tile.f:luz2.name=Led floor §h[ §aBright§h ]
+
+tile.f:lamparanaranga.name=Orange floor lamp §h[ §aBright§h ]
+tile.f:lamparaazul.name=Blue floor lamp §h[ §aBright§h ]
+tile.f:lamparamedianaranga.name=Orange Desk lamp §h[ §aBright§h ]
+tile.f:lamparatechonaranga.name=Orange ceiling lamp §h[ §aBright§h ]
+tile.f:lamparamorado.name=Purple floor lamp §h[ §aBright§h ]
+tile.f:lamparamediamorado.name=Purple Desk lamp §h[ §aBright§h ]
+tile.f:lamparamediarosa.name=Pink Desk lamp §h[ §aBright§h ]
+tile.f:lamparatechomorado.name=Purple ceiling lamp §h[ §aBright§h ]
+tile.f:lamparalima.name=Lime floor lamp §h[ §aBright§h ]
+tile.f:lamparamedialima.name=Lime Desk lamp §h[ §aBright§h ]
+
+tile.f:lamparatecholima.name=Lime ceiling lamp §h[ §aBright§h ]
+tile.f:lamparatechoazul.name=Blue ceiling lamp §h[ §aBright§h ]
+tile.f:lamparamediaazul.name=Blue Desk lamp §h[ §aBright§h ]
+
+tile.f:lampararoja.name=Red floor lamp §h[ §aBright§h ]
+tile.f:lampararosa.name=Pink floor lamp §h[ §aBright§h ]
+tile.f:lamparamediaroja.name=Red Desk lamp §h[ §aBright§h ]
+tile.f:lamparatechoroja.name=Red ceiling lamp §h[ §aBright§h ]
+tile.f:lamparatechorosa.name=Pink ceiling lamp §h[ §aBright§h ]
+tile.f:lamparagris.name=Gray floor lamp §h[ §aBright§h ]
+tile.f:lamparamediagris.name=Gray Desk lamp §h[ §aBright§h ]
+tile.f:lamparatechogris.name=Gray ceiling lamp §h[ §aBright§h ]
+tile.f:lamparaamarillo.name=Yellow floor lamp §h[ §aBright§h ]
+tile.f:lamparamediaamarillo.name=Yellow Desk lamp §h[ §aBright§h ]
+tile.f:lamparatechoamarillo.name=Yellow ceiling lamp §h[ §aBright§h ]
+tile.f:sofasa2ne.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2r.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2g.name=Module sofa §h[ §aSeat§h ]
+tile.f:sofasa2b.name=Module sofa §h[ §aSeat§h ]
+tile.f:cocina17.name=Kitchen countertop
+tile.f:cocina18.name=Kitchen countertop
+tile.f:cocina19.name=Kitchen countertop
+tile.f:taza.name=Cup
+tile.f:libreriamoderna1.name=Modern bookcase
+tile.f:piladerueda.name=Tire stack
+tile.f:piladeruedasit.name=Tire stack §h[ §aSeat§h ]
+tile.f:gasolina_rojo.name=Red gasoline canister
+tile.f:gasolina_verde.name=Green gasoline canister
+tile.f:gasolina_azul.name=Blue gasoline canister
+tile.f:decoraciongaraje1.name=Garage decoration
+tile.f:decoraciongaraje2.name=Garage decoration
+tile.f:mesagaraje.name=Garage table
+tile.f:oil.name=Oil
+tile.f:rail1.name=Workshop rail module
+tile.f:rail2.name=Workshop rail module
+tile.f:rail3.name=Mechanical lift §h[ §aInteractive§h ]
+
+tile.f:bano1.name=Sink
+tile.f:bano2.name=Toilet §h[ §aSeat§h ]
+tile.f:bano3.name=Sink
+tile.f:estanteria_bano1.name=Towel rack
+tile.f:estanteria_bano2.name=Towel rack
+tile.f:estanteria_bano3.name=Paper roll
+tile.f:estanteria_bano4.name=Towel rack
+tile.f:estanteria_bano5.name=Towel rack
+tile.f:cristalera1.name=Black bath cover
+tile.f:cristalera2.name=White bath cover
+tile.f:ducha.name=Shower
+tile.f:toalla.name=Towel
+
+tile.f:foco1.name=super spotlight
+tile.f:foco2.name=super spotlight
+tile.f:foco3.name=super spotlight
+tile.f:foco4.name=super spotlight
+tile.f:foco5.name=super spotlight
+tile.f:foco6.name=super spotlight
+tile.f:foco7.name=super spotlight
+tile.f:foco8.name=super spotlight
+
+tile.f:boton.name=Garage door lever §h[ §aInteractive§h ]
+tile.f:puertax_abierta.name=Garage door
+tile.f:puertay_abierta.name=Garage door
+tile.f:bano4.name=Toilet
+tile.f:azulejos.name=Tiles
+
+tile.f:bloquecuarzo.name=Chiseled quartz
+tile.f:bloquecuarzo_eslab.name=Chiseled quartz slab
+tile.f:bloquecuarzo_escalera.name=Chiseled quartz stairs
+
+tile.f:taburetemoderno2b.name=White modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2n.name=Black modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2na.name=Orange modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2m.name=Purple modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2l.name=Lime modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2g.name=Gray modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2a.name=Yellow modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2r.name=Red modern bar stool §h[ §aSeat§h ]
+tile.f:vallablanca1.name=White fence §h[ §aModular§h ]
+
+tile.f:almacenneumatico.name=Tire warehouse
+f.inventory.name=Cabinet
+
+tile.f:mesamodernada1.name=Simple modern table
+tile.f:mesamodernada2.name=Simple modern table
+tile.f:mesamodernada3.name=Simple modern table
+tile.f:mesamodernada4.name=Modern table
+tile.f:mesamodernada5.name=Hallway bookstore
+tile.f:mesitamoderna1.name=Hallway bookstore
+tile.f:cocina21.name=Kitchen Sink
+tile.f:libreriamoderna2.name=Large aisle bookcase
+tile.f:libreriamoderna3.name=Large aisle bookcase
+
+tile.f:palos1-1.name=Wooden room divider
+tile.f:palos1-2.name=Wooden room divider
+tile.f:palos2-1.name=Wooden black room divider
+tile.f:palos2-2.name=Wooden black room divider
+tile.f:palos3-1.name=Wooden dark room divider
+tile.f:palos3-2.name=Wooden dark room divider
+
+
+tile.f:barandilla1.name=Railing §h[ §aConfigurable§h ]
+tile.f:estanteriamodernana1.name=Modern black shelf
+tile.f:estanteriamodernana2.name=Modern wooden shelf
+
+
+tile.f:rodapie1-1.name=Wooden room skirting
+tile.f:rodapie1-2.name=Wooden dark skirting
+tile.f:rodapie1-3.name=Wooden black skirting
+tile.f:rodapie2-1.name=Wooden room skirting corner
+tile.f:rodapie2-2.name=Wooden dark skirting corner
+tile.f:rodapie2-3.name=Wooden black skirting corner
+
+tile.f:rodapiebar1-1.name=Bar wooden room skirting
+tile.f:rodapiebar1-2.name=Bar wooden dark skirting
+tile.f:rodapiebar1-3.name=Bar wooden black skirting
+tile.f:rodapiebar2-1.name=Bar wooden room skirting corner
+tile.f:rodapiebar2-2.name=Bar wooden dark skirting corner
+tile.f:rodapiebar2-3.name=Bar wooden black skirting corner
+
+tile.f:jenga.name=Jenga
+tile.f:damas1.name=Draughts
+tile.f:ajedrez1.name=Chess
+tile.f:hojas1.name=Sheet
+tile.f:hojas2.name=Sheet
+
+tile.f:lamparamodernablanca.name=White modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernaazul.name=Blue modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernanegra.name=Black modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernagris.name=Grey modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernaroja.name=Red modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernaamarillo.name=Yellow modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernamorado.name=Purple modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernanaranga.name=Orange modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernalima.name=Lime modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernarosa.name=Pink modern floor lamp §h[ §aBright§h ]
+tile.f:trofeo.name=Trophy
+tile.f:discord.name=Wumpus head
+tile.f:galletas.name=Plate with cookies §h[ §aStackable§h ]
+
+tile.f:regalo_negro.name=Black gift
+tile.f:regalo_amarillo.name=Yellow gift
+tile.f:regalo_morado.name=Pink gift
+tile.f:regalo_mora.name=Purple gift
+tile.f:regalo_azul.name=Blue gift
+tile.f:regalo_rojo.name=Red gift
+tile.f:regalo_blanco.name=White gift
+tile.f:regalo_naranja.name=Orange gift
+tile.f:decoracionnavidad1.name=Christmas lights
+
+tile.f:decoracionnavidad2.name=Garland of red christmas balls
+tile.f:decoracionnavidad3.name=Mistletoe
+tile.f:decoracionnavidad4.name=Christmas star
+tile.f:arbol.name=Mini tree
+tile.f:arbol2.name=Mini christmas tree
+tile.f:arbol_blanco.name=Mini white tree
+tile.f:arbol2_blanco.name=Mini white christmas tree
+tile.f:rollodepapel2.name=kitchen roll
+tile.f:rollodepapel1.name=kitchen roll
+tile.f:estanteriamadera.name=Modern shelf
+tile.f:estanteria_bano7.name=Long bathroom shelf
+tile.f:estanteria_bano6.name=Long bathroom shelf
+
+tile.f:estanteria_a_1.name=Modern bookcase
+tile.f:estanteria_a_2.name=Modern bookcase
+tile.f:estanteria_a_3.name=Modern bookcase
+tile.f:estanteria_a_4.name=Modern bookcase
+tile.f:estanteria_a_5.name=Modern bookcase
+
+tile.f:perchero2.name=Metal coat rack 
+tile.f:perchero3.name=Metal coat stand
+tile.f:calendario1.name=Calendar §h[ §aInteractive§h ]
+tile.f:calendario2.name=Floor Calendar §h[ §aInteractive§h ]
+tile.f:cuaderno1.name=Notebook
+tile.f:cuaderno2.name=Notebooks
+tile.f:organizadordehojas.name=Sheet organizer
+tile.f:organizadordehojas2.name=Sheet organizer
+tile.f:tocadisco.name=Turntable
+
+tile.f:interruptor1.name=Switch §h[ §aPower level 1§h ]
+tile.f:interruptor2.name=Switch §h[ §aPower level 2§h ]
+tile.f:interruptor3.name=Switch §h[ §aPower level 3§h ]
+tile.f:cafejarra.name=Coffee jar
+tile.f:botes1.name=Jars with spices
+tile.f:botes2.name=Jar with spices
+tile.f:pizarra_bar1.name=Price billboard
+tile.f:pizarra_bar2.name=standing price billboard
+tile.f:pizarra_bar3.name=Hanging price billboard
+tile.f:cafes.name=Coffes
+tile.f:miniportal.name=Mini portal
+tile.f:pbarra_bano_rojo.name=Red toilet §h[ §aSeat§h ]
+tile.f:pbarra_bano_azul.name=Blue toilet §h[ §aSeat§h ]
+tile.f:pbarra_bano_negro.name=Black toilet §h[ §aSeat§h ]
+tile.f:puerta_bano_rojo.name=Red bathroom door §h[ §aInteractive§h ]
+tile.f:puerta_bano_azul.name=Blue bathroom door §h[ §aInteractive§h ]
+tile.f:puerta_bano_negro.name=Black bathroom door §h[ §aInteractive§h ]
+tile.f:lienzo1.name=Canvas support
+tile.f:lienzo2.name=Canvas support
+tile.f:bladrillosdiorita.name=Diorite brick
+tile.f:bladrillosdiorita_escalera.name=Diorite Brick Stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosdiorita_eslab.name=Diorite Brick Slab §h[ §aConfigurable§h ]
+tile.f:bladrillosgranito.name=Granite brick
+tile.f:bladrillosgranito_escalera.name=Granite Brick Stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosgranito_eslab.name=Granite Brick Slab §h[ §aConfigurable§h ]
+tile.f:puertabunker.name=Cellar hatch §h[ §aInteractive§h ]
+tile.f:tragasol.name=Skylight §h[ §aInteractive§h ]
+tile.f:wc2.name=Male restroom poster
+tile.f:wc1.name=Female restroom poster
+tile.f:cortina_amarillo.name=Yellow curtain §h[ §aInteractive§h ]
+tile.f:cortina_azul.name=Blue curtain §h[ §aInteractive§h ]
+tile.f:cortina_rojo.name=Red curtain §h[ §aInteractive§h ]
+tile.f:cortina_blanco.name=White curtain §h[ §aInteractive§h ]
+tile.f:cortina_gris.name=Grey curtain §h[ §aInteractive§h ]
+tile.f:cortina_negro.name=Black curtain §h[ §aInteractive§h ]
+tile.f:cortina_morado.name=Purple curtain §h[ §aInteractive§h ]
+tile.f:cortina_lima.name=Lime curtain §h[ §aInteractive§h ]
+tile.f:cortina_naranja.name=Orange curtain §h[ §aInteractive§h ]
+tile.f:cortina_rosa.name=Pink curtain §h[ §aInteractive§h ]
+
+tile.f:escalerapiscina.name=Pool ladder
+tile.f:paredpiscina.name=Inflatable pool wall §h[ §aConfigurable§h ]
+tile.f:boya_roja.name=Pool separator
+tile.f:boya_roja2.name=Beach buoy
+tile.f:boya_amarillo.name=Pool separator
+tile.f:boya_amarillo2.name=Beach buoy
+tile.f:boya_verde.name=Pool separator
+tile.f:boya_verde2.name=Beach buoy
+tile.f:boya_mina.name=Mine
+
+tile.f:bmosaico.name=Ceramic tiles
+tile.f:bmosaico_escalera.name=Ceramic tiles stairs §h[ §aConfigurable§h ]
+tile.f:bmosaico_eslab.name=Ceramic tiles slab §h[ §aConfigurable§h ]
+tile.f:geoda.name=Mini geode
+
+tile.f:cuadro1patreon.name=Patron painting §l[Panda2857]
+tile.f:cuadro2patreon.name=Patron painting §l[Mine Twister123]
+tile.f:cuadro3patreon.name=Patron painting §l[RafikBrasko]
+tile.f:cuadro4patreon.name=Patron painting §l[therealz28]
+tile.f:cuadro6patreon.name=Patron painting §l[Nova]
+tile.f:cuadro7patreon.name=Patron painting §l[Polsito]
+tile.f:cuadro8patreon.name=Patron painting §l[Cameron]
+
+tile.f:cuadro9patreon.name=Patron painting §l[Braiden Link]
+
+tile.f:cuadro10patreon.name=Patron painting §l[Braiden Link]
+
+tile.f:cuadro11patreon.name=Patron painting §l[KiogeX]
+tile.f:cuadro12patreon.name=Patron painting §l[Imacarrot4254]
+tile.f:arena1.name=Sand temple
+tile.f:arena2.name=Sand Castle
+tile.f:arena3.name=Sand extructure
+tile.f:arena4.name=Sand wall
+tile.f:arena5.name=Sand wall
+item.f:llave_inglesa= Modern Tool 
+
+
+tile.f:semaforo1_1.name=Road traffic light §h[ §aInteractive§h ]
+tile.f:semaforo_peaton1_1.name=Pedestrian traffic light §h[ §aInteractive§h ]
+tile.f:boton_semaforo.name=Traffic light switch §h[ §aInteractive§h ]
+
+
+tile.f:tuberiados.name=Water pipes §h[ §aConfigurable§h ]
+tile.f:timbre1.name=Doorbell §h[ §aInteractive§h ]
+tile.f:timbre2.name=Doorbell §h[ §aInteractive§h ]
+tile.f:timbre3.name=Doorbell §h[ §aInteractive§h ]
+
+tile.f:luces_navidad.name=Christmas lights
+tile.f:regalo_grande_1.name=Christmas gift
+tile.f:regalo_grande_2.name=Christmas gift
+tile.f:regalo_grande_3.name=Christmas gift
+tile.f:regalo_grande_4.name=Christmas gift
+tile.f:mini-mini-arbol.name=Mini tree
+tile.f:campanas_navidad.name=Christmas bells
+tile.f:paleta.name=Candy cane
+tile.f:espejo2.name=Mirror §h[ §aInteractive§h ]
+tile.f:espejo1.name=Mirror §h[ §aInteractive§h ]
+tile.f:cuadro5patreon.name=Patron painting §l[ModernCraft]
+
+tile.f:chim1-2-off.name=Brick chimney
+tile.f:chim2-2-off.name=Black brick chimney
+tile.f:chim3-2-off.name=Quartz Black chimney
+tile.f:chim4-2-off.name=White brick chimney
+tile.f:chim5-2-off.name=White brick chimney
+tile.f:chim6-2-off.name=Black brick chimney
+
+tile.f:chim1-2.name=Brick chimney
+tile.f:chim2-2.name=Black brick chimney
+tile.f:chim3-2.name=Quartz Black chimney
+tile.f:chim4-2.name=White brick chimney
+tile.f:chim5-2.name=White brick chimney
+tile.f:chim6-2.name=Black brick chimney
+
+tile.f:chim1-3.name=Brick grill §h[ §aInteractive§h ]
+tile.f:chim2-3.name=Black brick  grill §h[ §aInteractive§h ]
+tile.f:chim3-3.name=Quartz Black  grill §h[ §aInteractive§h ]
+tile.f:chim4-3.name=White brick  grill §h[ §aInteractive§h ]
+tile.f:chim5-3.name=White brick  grill §h[ §aInteractive§h ]
+tile.f:chim6-3.name=Black brick  grill §h[ §aInteractive§h ]
+tile.f:frutero_moderno.name=kitchen fruit bowl
+
+tile.f:microfono.name=Microphone stand §h[ §aInteractive§h ]
+tile.f:altavoz1.name=Speaker
+tile.f:altavoz2.name=Speaker
+tile.f:parchis.name=Ludo
+tile.f:rendija3.name=Ceiling slot §h[ §aInteractive§h ]
+tile.f:timbre-servicio-1.name=Service bell §h[ §aInteractive§h ]
+tile.f:timbre-servicio-2.name=Service bell §h[ §aInteractive§h ]
+tile.f:mesa_plegable.name=Folding table §h[ §aInteractive§h ]
+tile.f:connect4.name=Connect4
+
+
+tile.f:sofa1rosa.name=Pink sofa §h[ §aSeat§h ]
+tile.f:sofa2rosa.name=Pink sofa §h[ §aSeat§h ]
+tile.f:sofa3rosa.name=Pink sofa §h[ §aSeat§h ]
+tile.f:sofa4rosa.name=Pink sofa §h[ §aSeat§h ]
+tile.f:sofa5rosa.name=Pink sofa §h[ §aSeat§h ]
+tile.f:sillonrosa.name=Pink armchair §h[ §aSeat§h ]
+tile.f:caja_pizza.name=Pizza Box
+
+item.a:catalog=§l[§3TRMC§f] Add-Ons Catalog
+
+tile.f:modern-fence1.name=Modern glass fence
+tile.f:modern-fence2.name=Modern glass fence
+tile.f:modern-fence3.name=Modern separator §h[ §aModular§h ]
+
+tile.f:bloquecuarzo-verde.name=Quartz block with green decorations
+tile.f:bloquecuarzo-azul.name=Quartz block with blue decorations
+tile.f:bloquecuarzo-naranja.name=Quartz block with orange decorations
+
+tile.f:trampolin.name=Trampoline §h[ §aInteractive§h ]
+tile.f:trampolin2.name=Modular trampoline §h[ §aInteractive§h ]
+tile.f:techo-falso.name=Suspended Ceiling
+
+
+item.f:pencil_rojo=Red Marker
+item.f:pencil_azul=Blue Marker
+item.f:pencil_negro=Black Marker
+item.f:microphone=Microphone
+item.f:borrador=Draft whiteBoard
+tile.f:bloquemetal-claro.name=Metal scaffolding
+tile.f:andamio-claro.name=Metal scaffolding
+entity.f:entidad_luz_1.name=entidad_luz_1
+item.spawn_egg.entity.f:entidad_luz_1.name=Spawn entidad_luz_1
+tile.f:mesamaderagrande.name=Big desk
+
+tile.f:puerta_garaje.name=Garage door
+
+tile.f:mesa3.name=Bar Table
+
+tile.f:charco1.name=Puddle
+item.a:book1=§l[§3TRMC§f] §r§fAdd-Ons Catalog
+item.a:book2=§l[§3TRMC§f] §r§fPatreon Book
+item.f:red_hand=red_hand
+
+tile.f:papelera2.name=Metal trash can §h[ §aInteractive§h ]
+tile.f:techo-cristal1.name=Outdoor roof
+tile.f:telescopio.name=Telescope
+tile.f:capsula_amatista.name=Amethyst capsule
+tile.f:clinex_box.name=Clinex box
+tile.f:piano1.name=Piano §h[ §aInteractive§h ]
+tile.f:piano2.name=Piano §h[ §aInteractive§h ]
+tile.f:escoba1.name=Broom
+
+tile.f:apple1.name=Plate of apples §h[ §aStackable§h ]
+
+tile.f:libro_cocina1.name=Cookbook
+
+tile.f:banderita1.name=Festive flags
+tile.f:banderita2.name=Festive flags
+tile.f:banderita3.name=Festive flags
+tile.f:globos1.name=Balloons
+tile.f:globos2.name=Balloons
+tile.f:globos3.name=Balloons
+tile.f:sandia1.name=Plate of Melon §h[ §aStackable§h ]
+
+tile.f:calcetin_rojo.name=Red Christmas Stocking
+tile.f:calcetin_verde.name=Green Christmas Stocking
+tile.f:yeti.name=Snowman
+tile.f:papelera_madera.name=Wooden waste bin §h[ §aInteractive§h ]
+
+tile.f:bladrillos_marron_blanco.name=Smooth bricks
+tile.f:bladrillos_marron_blanco_escalera.name=Smooth bricks Stairs §h[ §aConfigurable§h ]
+tile.f:bladrillos_marron_blanco_eslab.name=Smooth bricks Slab §h[ §aConfigurable§h ]
+
+tile.f:servilletera.name=Bar napkin holder
+tile.f:tablon_corcho1.name=Cork board §h[ §aInteractive§h ]
+
+tile.f:rendija-piscina.name=Pool grate §h[ §aConfigurable§h ]
+
+item.spawn_egg.entity.f:silladeruedas.name=Wheelchair
+action.hint.exit.f:silladeruedas=§lShift §ror §lSPACE §rto get up
+
+
+tile.f:sushi1.name=Sushi plate
+tile.f:sushi2.name=Sushi plate
+
+writeboard.title.board=§l§8[§0Announcement Board§8]
+writeboard.title.write=§l§8[§0Write a Message§8]
+writeboard.title.delete=§l§8[§0Delete a Message§8]
+
+writeboard.body.none=No messages on the board.
+writeboard.body.delete=Select the message you want to delete:
+
+writeboard.button.write=Write New Message
+writeboard.button.delete=Delete Message
+writeboard.button.close=Close
+writeboard.button.cancel=Cancel
+
+writeboard.message.added=§aMessage added to the board.
+writeboard.message.invalid=§cMessage is empty or invalid.
+writeboard.message.none=No messages to delete.
+writeboard.message.deleted=Message deleted=%1"
+
+
+
+f:itemGroup.name.blocks=Construction Blocks
+f:itemGroup.name.stairs=Stairs
+f:itemGroup.name.slabs=Slabs
+f:itemGroup.name.divididores=Dividers
+f:itemGroup.name.cocinas=Kitchens
+f:itemGroup.name.banos=Bathrooms
+f:itemGroup.name.fireplace=Fireplaces
+f:itemGroup.name.chimney_off=Chimneys
+f:itemGroup.name.grill=Grills
+f:itemGroup.name.vallas=Fences
+
+f:itemGroup.name.boxes=Furniture Boxes
+f:itemGroup.name.gifts=Gifts
+f:itemGroup.name.ventilation=Ventilation Ducts
+f:itemGroup.name.cuadros=Paintings
+f:itemGroup.name.lampara_floor=Floor Lamps
+f:itemGroup.name.lampara_desk=Desk Lamps
+f:itemGroup.name.lampara_ceiling=Ceiling Lamps
+f:itemGroup.name.lampara_modern_floor=Modern Floor Lamps
+f:itemGroup.name.curtains=Curtains
+
+
+
+f:itemGroup.name.butacas=Chairs
+f:itemGroup.name.rodapie1=Baseboards
+f:itemGroup.name.rodapie_bar1=Bar Baseboards
+f:itemGroup.name.taburetes=Stools
+f:itemGroup.name.taburetesmoderno=Modern Stools
+f:itemGroup.name.sillas=Chairs
+f:itemGroup.name.sillasofis=Office Chairs
+f:itemGroup.name.canalon=Gutters
+
+f:itemGroup.name.decocomida=Food Decorations
+f:itemGroup.name.decococina=Kitchen Decorations
+f:itemGroup.name.armchair=Armchairs
+
+f:itemGroup.name.sofa=Sofas
+f:itemGroup.name.wall_sofa=Wall Sofas
+
+f:itemGroup.name.semaforos=Traffic Lights
+f:itemGroup.name.alfombras=Rugs
+f:itemGroup.name.mesafis=Office Desks
+f:itemGroup.name.mesacristal=Glass Tables
+f:itemGroup.name.mesitamoderna1=Modern Side Tables (Set 1)
+f:itemGroup.name.mesitamoderna2=Modern Side Tables (Set 2)
+f:itemGroup.name.mesasmadera=Wooden Tables
+f:itemGroup.name.leds=LED Lights
+f:itemGroup.name.timbre=Doorbells
+f:itemGroup.name.interruptores=Switches
+
+f:itemGroup.name.estantes=Shelves
+f:itemGroup.name.estantesblancos=White Shelves
+f:itemGroup.name.librerias=Bookcases
+
+f:itemGroup.name.decoNavidad=Christmas Decorations
+f:itemGroup.name.decofestiva=Festive Decorations
+f:itemGroup.name.decoplaya=Beach Decorations
+f:itemGroup.name.decobanio=Bathroom Decorations
+f:itemGroup.name.decogaraje=Garage Decorations
+f:itemGroup.name.papeleras=Trash Bins
+f:itemGroup.name.decoplantas=Plant Decorations
+f:itemGroup.name.decooficina=Office Decorations
+
+
+tile.f:modular_sofa_white.name=White Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_black.name=Black Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_blue.name=Blue Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_red.name=Red Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_orange.name=Orange Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_yellow.name=Yellow Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_lime.name=Lime Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_pink.name=Pink Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_violet.name=Violet Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_gray.name=Gray Sofa §h[ §aModular§h ]
+
+tile.f:wall_modular_sofa_white.name=White Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_black.name=Black Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_blue.name=Blue Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_red.name=Red Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_orange.name=Orange Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_yellow.name=Yellow Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_lime.name=Lime Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_pink.name=Pink Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_violet.name=Violet Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_gray.name=Gray Wall Sofa §h[ §aModular§h ]
+
+tile.f:bamboo_modular_sofa_white.name=White outdoor sofa §h[ §aModular§h ]
+tile.f:bamboo_modular_sofa_black.name=Black outdoor sofa §h[ §aModular§h ]
+tile.f:modular_table_office.name=Office Table §h[ §aModular§h ]
+
+tile.f:modular_fence_modern1.name=Modern Glass Fence §h[ §aModular§h ]
+tile.f:disc_stand2.name=Disc Stand §h[ §aInteractive§h ]
+
+
+tile.f:modular_sofa_blue_light.name=Light blue Sofa §h[ §aModular§h ]
+tile.f:modular_sofa_blue_cyan.name=Cyan blue Sofa §h[ §aModular§h ]
+tile.f:butaca11.name=Light blue Seat §h[ §aSeat§h ]
+tile.f:sillonazulclaro.name=Light blue armchair §h[ §aSeat§h ]
+tile.f:lamparaazulclaro.name=Light blue floor lamp §h[§h §aBright§h ]
+tile.f:lamparaazulcian.name=Cyan blue floor lamp §h[§h §aBright§h ]
+tile.f:lamparatechoazulclaro.name=Light blue ceiling lamp §h[ §aBright§h ]
+tile.f:lamparatechoazulcian.name=Cyan blue ceiling lamp §h[ §aBright§h ]
+tile.f:lamparamediaazulclaro.name=Light blue Desk lamp §h[ §aBright§h ]
+tile.f:lamparamediaazulcian.name=Cyan blue Desk lamp §h[ §aBright§h ]
+tile.f:lamparamodernaazulclaro.name=Light blue modern floor lamp §h[ §aBright§h ]
+tile.f:lamparamodernaazulcian.name=Cyan blue modern floor lamp §h[ §aBright§h ]
+tile.f:cortina_azul_claro.name=Light blue curtain §h[ §aInteractive§h ]
+tile.f:cortina_azul_cian.name=Cyan blue curtain §h[ §aInteractive§h ]
+tile.f:wall_modular_sofa_blue_light.name=Light blue Wall Sofa §h[ §aModular§h ]
+tile.f:wall_modular_sofa_blue_cyan.name=Cyan blue Wall Sofa §h[ §aModular§h ]
+tile.f:taburetemoderno2ac.name=Light blue modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2cian.name=Cyan blue modern bar stool §h[ §aSeat§h ]
+
+tile.f:taburetemoderno2az.name=Blue modern bar stool §h[ §aSeat§h ]
+tile.f:taburetemoderno2ro.name=Pink modern bar stool §h[ §aSeat§h ]
+
+tile.f:alcantarilla1.name=Manhole Cover §h[ §aInteractive§h ]
+
+tile.f:cristal_flower_pot1.name=Glass flower pot §h[ §aInteractive§h ]
+
+tile.f:pumpking_plate.name=Pumpkin pie plate §h[ §aInteractive§h ]
+
+ui.manual.title=MANUAL
+ui.manual.visit_btn=Visit Website
+ui.manual.visit_msg=Visit Manual | §awww.trmc-addons.com/mfd
+item.f:manual=User Manual §h[ §aInteractive§h ]
+tile.f:tridente1.name=Trident Stand
+
+tile.f:bladrillosandesita.name=Andesite brick
+tile.f:bladrillosandesita_escalera.name=Andesite Brick Stairs §h[ §aConfigurable§h ]
+tile.f:bladrillosandesita_eslab.name=Andesite Brick Slab §h[ §aConfigurable§h ]
+
+
+tile.f:ceramic_flower_pot1.name=Ceramic flower pot §h[ §aInteractive§h ]
+tile.f:red_ceramic_flower_pot1.name=Red Ceramic flower pot §h[ §aInteractive§h ]
+tile.f:white_ceramic_flower_pot1.name=White Ceramic flower pot §h[ §aInteractive§h ]

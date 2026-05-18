@@ -1,0 +1,284 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "cso:mob.prototype_phobos.dash": {
+      "category": "hostile",
+      "max_distance": 32.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_dash"
+      ]
+    },
+    "cso:mob.prototype_phobos.death": {
+      "category": "hostile",
+      "max_distance": 32.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_death"
+      ]
+    },
+    "cso:mob.prototype_phobos.idle": {
+      "category": "hostile",
+      "max_distance": 32.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_idle"
+      ]
+    },
+    "cso:mob.prototype_phobos.shockwave": {
+      "category": "hostile",
+      "max_distance": 64.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_shockwave"
+      ]
+    },
+    "cso:mob.prototype_phobos.step": {
+      "category": "hostile",
+      "max_distance": 32.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step1",
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step2"
+      ]
+    },
+    "cso:mob.prototype_phobos.swing": {
+      "category": "hostile",
+      "max_distance": 24.0,
+      "sounds": [
+        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_swing"
+      ]
+    },
+    "cso:music.cso.prototype_phobos": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss2/music/cso/prototype_phobos",
+          "stream": true
+        }
+      ]
+    },
+    "waybig.stomp": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/aliens/waybig/stomp"
+      ]
+    },
+    "omni.used": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/used"
+      ]
+    },
+    "omni2.used": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni2/used"
+      ]
+    },
+    "omni.opt_change": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/switch"
+      ]
+    },
+    "omni2.opt_change": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni2/switch"
+      ]
+    },
+    "omni2.off": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni2/off"
+      ]
+    },
+    "omni.off": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/off"
+      ]
+    },
+    "omni.idle": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/idle"
+      ]
+    },
+    "omni.falling_omni": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/falling_omni"
+      ]
+    },
+    "omni.charged": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/omnitrix/omni1/charged"
+      ]
+    },
+    "entity.oberon.bombard": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/bombard",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.music": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/music/start",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.asteroid.music": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/music/asteroid",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.asteroid.siren": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/siren",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.claw": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/claw",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.bite": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/bite",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.uppercut": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/uppercut",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.clap": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/clap",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.death": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/death",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.pre_super_smash": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/pre_super_smash",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.smashing": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/smashing",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.spawn": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/spawn",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.spin": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/spin",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.step": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/step1",
+          "load_on_low_memory": true
+        },
+        {
+          "name": "sounds/bosses/boss1/oberon/step2",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.super_smash": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/super_smash",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.swing": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/swing",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "entity.oberon.claw_attack": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/bosses/boss1/oberon/claw_attack",
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "werewolf_howl": {
+      "category": "hostile",
+      "max_distance": 5.0,
+      "sounds": [
+        {
+          "name": "sounds/fox/howl",
+          "load_on_low_memory": true
+        }
+      ]
+    }
+  }
+}

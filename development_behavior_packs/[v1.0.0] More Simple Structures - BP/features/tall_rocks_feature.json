@@ -1,0 +1,16 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:aggregate_feature": {
+      "description": {
+        "identifier": "wypnt_mss:tall_rocks_feature"
+      },
+      "features": [
+        "wypnt_mss:tall_rock_1_feature_mcstructure",
+        "wypnt_mss:tall_rock_2_feature_mcstructure",
+        "wypnt_mss:tall_rock_3_feature_mcstructure",
+        "wypnt_mss:tall_rock_4_feature_mcstructure",
+        "wypnt_mss:tall_rock_5_feature_mcstructure",
+        "wypnt_mss:tall_rock_6_feature_mcstructure"
+      ]
+    }
+  }

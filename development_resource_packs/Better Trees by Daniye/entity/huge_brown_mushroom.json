@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:huge_brown_mushroom",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/huge_brown_mushroom"
+			},
+			"geometry": {
+				"default": "geometry.huge_brown_mushroom"
+			},
+			"render_controllers": [
+				"controller.render.huge_brown_mushroom"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

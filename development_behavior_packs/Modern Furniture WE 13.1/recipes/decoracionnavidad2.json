@@ -1,0 +1,23 @@
+//bridge-file-version: #221
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:decoracionnavidad2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:decoracionnavidad2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

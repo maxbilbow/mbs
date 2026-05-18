@@ -1,0 +1,23 @@
+//bridge-file-version: #415
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:parchis"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:parchis",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

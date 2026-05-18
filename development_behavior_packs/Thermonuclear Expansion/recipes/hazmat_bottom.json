@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:hazmat_bottom"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"M": {
+				"item": "kaboom:melted_polymer"
+			},
+			"A": {
+				"item": "kaboom:activated_carbon"
+			}
+		},
+		"pattern": [
+			"MAM",
+			"M M",
+			"M M"
+		],
+		"result": {
+			"item": "kaboom:hazmat_leggings"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:polystyrene_foam"
+			},
+			{
+				"item": "kaboom:activated_carbon"
+			}
+		]
+	}
+}

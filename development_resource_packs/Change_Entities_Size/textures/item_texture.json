@@ -1,0 +1,9 @@
+{
+	"resource_pack_name": "change_entities_size",
+	"texture_name": "atlas.items",
+	"texture_data": {
+        "douarmc_change_entities_size:size_changer": {
+            "textures": "textures/douarmc/change_entities_size/items/size_changer.png"
+        }
+    }
+}

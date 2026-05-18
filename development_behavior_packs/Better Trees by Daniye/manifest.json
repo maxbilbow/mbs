@@ -1,0 +1,86 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Daniye"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		},
+		"url": "https://www.curseforge.com/minecraft-bedrock/addons/better-trees",
+		"product_type": "addon"
+	},
+	"header": {
+		"name": "Better Trees by Daniye v1.4.1",
+		"description": "Created by Daniye",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "4487ffac-2100-4536-b719-2df0aba4c9ed",
+		"version": [
+			2,
+			0,
+			50
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "37a3ca38-6378-45d2-9981-c614c47293b8",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "2de69d15-1330-484e-b511-d37e8f32f819",
+			"version": [
+				2,
+				0,
+				50
+			]
+		}
+	],
+	"subpacks": [
+		{
+			"folder_name": "forest_density_0",
+			"name": "\n\nForest Density Option: §4Very Rare§r\n    - Almost no trees. Mostly open ground.",
+			"memory_tier": 0
+		},
+		{
+			"folder_name": "forest_density_1",
+			"name": "\n\nForest Density Option: §6Rare§r\n    - Few trees. Sparse forest.",
+			"memory_tier": 0
+		},
+		{
+			"folder_name": "forest_density_2",
+			"name": "\n\nForest Density Option: §eModerate§r\n    - Some trees scattered around.",
+			"memory_tier": 0
+		},
+		{
+			"folder_name": "forest_density_4",
+			"name": " \n\nForest Density Option: §aDense§r\n    - Many trees close together.",
+			"memory_tier": 2
+		},
+		{
+			"folder_name": "forest_density_5",
+			"name": "\n\nForest Density Option: §bVery Dense§r\n    - Trees everywhere. Thick forest.",
+			"memory_tier": 1
+		},
+		{
+			"folder_name": "forest_density_3",
+			"name": "\n\nForest Density Option: §2Normal§r\n    - Vanilla-like forest density.",
+			"memory_tier": 1
+		}
+	]
+}

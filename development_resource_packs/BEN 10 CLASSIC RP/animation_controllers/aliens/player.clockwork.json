@@ -1,0 +1,221 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.clockwork": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clockwork"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.on_ground&&query.variant==26&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_jump"
+					],
+					"transitions": [
+						{
+							"default": "variable.on_ground||query.variant!=26||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==26&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=26||!query.is_moving||query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==26&&query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=26||!query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_beam": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26&&query.get_equipped_item_name('main_hand')=='clock_beam'&&query.is_using_item&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_beam"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26||query.get_equipped_item_name('main_hand')!='clock_beam'||!query.is_using_item||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_forward": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26&&query.get_equipped_item_name('main_hand')=='clock_time'&&query.is_using_item&&!query.is_sneaking&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"clock_forward"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26||query.get_equipped_item_name('main_hand')!='clock_time'||!query.is_using_item||query.is_sneaking||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_backward": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26&&query.get_equipped_item_name('main_hand')=='clock_time'&&query.is_using_item&&query.is_sneaking&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"clock_backward"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26||query.get_equipped_item_name('main_hand')!='clock_time'||!query.is_using_item||!query.is_sneaking||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26&&!variable.is_first_person&&variable.attack_time>0&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26||variable.is_first_person||variable.attack_time<=0||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.clock_attack_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==26&&variable.is_first_person&&variable.attack_time>0&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"clock_attack_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=26||!variable.is_first_person||variable.attack_time<=0||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

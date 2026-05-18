@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:ditto_clone",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/aliens/ditto"
+			},
+			"geometry": {
+				"default": "geometry.ditto"
+			},
+			"animations": {
+				"look": "animation.player.head2",
+				"moving": "animation.ditto_moving",
+				"move": "controller.animation.ditto_clone.move",
+				"attacking": "animation.ditto_attacking",
+				"attack": "controller.animation.ditto_clone.attack"
+			},
+			"scripts": {
+				"animate": [
+					"look",
+					"move",
+					"attack"
+				]
+			},
+			"render_controllers": [
+				"controller.render.entity"
+			],
+			"spawn_egg": {
+				"texture": "null"
+			}
+		}
+	}
+}

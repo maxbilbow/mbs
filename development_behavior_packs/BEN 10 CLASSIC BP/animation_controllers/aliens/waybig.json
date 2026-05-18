@@ -1,0 +1,96 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.wb_get_rider": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wb_get_rider": "!query.has_rider"
+						}
+					]
+				},
+				"wb_get_rider": {
+					"transitions": [
+						{
+							"default": "!query.has_rider"
+						}
+					],
+					"on_entry": [
+						"/execute as @p[c=1,family=waybig] at @s run ride @s start_riding @e[c=1,type=player:waybig_height]",
+						"/effect @s jump_boost 99999 4 true",
+						"/effect @s resistance 99999 255 true"
+					]
+				}
+			}
+		},
+		"controller.animation.wb_if_rider_lefts": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wb_if_rider_lefts": "!query.has_rider"
+						}
+					]
+				},
+				"wb_if_rider_lefts": {
+					"on_entry": [
+						"/event entity @s despawn"
+					],
+					"transitions": [
+						{
+							"default": "query.has_rider"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.wb_ground_break": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wb_ground_break": "query.variant==1"
+						}
+					]
+				},
+				"wb_ground_break": {
+					"transitions": [
+						{
+							"default": "query.variant==1"
+						}
+					],
+					"on_entry": [
+						"/summon power:wb_ground_break ~ ~4 ~",
+						"/camerashake add @a[r=50] 1.5 2 positional",
+						"/playsound random.explode @a[r=50] ~ ~ ~ 3.0 0.5",
+						"/event entity @s reset"
+					]
+				}
+			}
+		},
+		"controller.animation.wb_on_death": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"wb_on_death": "!query.health>0"
+						}
+					]
+				},
+				"wb_on_death": {
+					"on_entry": [
+						"/kill @p[family=waybig]"
+					],
+					"transitions": [
+						{
+							"default": "query.health>0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

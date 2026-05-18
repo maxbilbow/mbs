@@ -1,0 +1,77 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:eroded_peaks"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.3,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 1.6
+			},
+			"minecraft:mountain_parameters": {
+				"steep_material_adjustment": {
+					"material": "minecraft:stone",
+					"north_slopes": true,
+					"east_slopes": true
+				},
+				"top_slide": {
+					"enabled": false
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"mountains",
+					"monster",
+					"overworld",
+					"mutated",
+					"mesa",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"spawns_gold_rabbits",
+					"spawns_mesa_mobs",
+					"jagged_peaks"
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#aea42a"
+				},
+				"foliage": "#90814d"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:mesa",
+					"bryce_pillars": true,
+					"clay_material": "minecraft:white_terracotta",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:stone",
+					"foundation_material": "minecraft:stone",
+					"hard_clay_material": "minecraft:calcite",
+					"has_forest": false,
+					"mid_material": "minecraft:calcite",
+					"top_material": "minecraft:calcite",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:mesa_bryce",
+							"minecraft:stony_peaks"
+						],
+						"amount": 0.4,
+						"noise_frequency_scale": 0.25
+					}
+				]
+			}
+		}
+	}
+}

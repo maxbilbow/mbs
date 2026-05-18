@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:ruby_forest/ruby_forest_plants_scatter"
+		},
+		"iterations": 8,
+		"x": {
+			"extent": [
+				0,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				0,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"y": -1,
+		"places_feature": "vanilla_biomes_expansion:ruby_forest/ruby_forest_plants"
+	}
+}

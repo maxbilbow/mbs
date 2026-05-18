@@ -1,0 +1,33 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+      "description": {
+        "identifier": "wypnt_mss:scatter_spider_nest_loot_feature"
+      },
+      "coordinate_eval_order": "xyz",
+      "iterations": 2,
+      "places_feature": "wypnt_mss:spider_nest_loot_feature_mcstructure",
+      "x": {
+        "extent": [
+          -16,
+          16
+        ],
+        "distribution": "inverse_gaussian"
+      },
+      "z": {
+        "extent": [
+          -16,
+          16
+        ],
+        "distribution": "inverse_gaussian"
+      },
+      "y": {
+        "extent": [
+          -4,
+          4
+        ],
+        "distribution": "inverse_gaussian"
+      }
+    }
+  }
+  

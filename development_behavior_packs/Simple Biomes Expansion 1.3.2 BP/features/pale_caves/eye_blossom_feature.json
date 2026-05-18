@@ -1,0 +1,22 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.17.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/eye_blossom_feature"
+		},
+		"places_block": {
+			"name": "minecraft:closed_eyeblossom"
+		},
+		"enforce_survivability_rules": false,
+		"enforce_placement_rules": false,
+		"may_replace": [
+			"minecraft:air"
+		],
+		"may_attach_to": {
+			"bottom": [
+				"minecraft:pale_moss_block"
+			]
+		}
+	}
+}

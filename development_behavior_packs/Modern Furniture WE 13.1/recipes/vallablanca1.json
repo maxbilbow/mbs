@@ -1,0 +1,23 @@
+//bridge-file-version: #147
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:vallablanca1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:vallablanca1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

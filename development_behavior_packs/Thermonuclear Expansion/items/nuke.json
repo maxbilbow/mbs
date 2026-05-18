@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "kaboom:nuke",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:entity_placer": {
+				"entity": "kaboom:trinity_bomb_entity"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:display_name": {
+				"value": "Atomic Bomb"
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "kaboom_nuke"
+				}
+			}
+		}
+	}
+}

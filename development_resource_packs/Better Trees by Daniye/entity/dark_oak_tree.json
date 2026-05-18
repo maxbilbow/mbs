@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:dark_oak_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/dark_oak_tree"
+			},
+			"geometry": {
+				"default": "geometry.dark_oak_tree"
+			},
+			"render_controllers": [
+				"controller.render.dark_oak_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_dark_oak_tree"
+			}
+		}
+	}
+}

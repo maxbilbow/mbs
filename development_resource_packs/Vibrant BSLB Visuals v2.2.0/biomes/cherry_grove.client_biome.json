@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "cherry_grove"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:cherry_fog"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#7FA3E8"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#C9B6E4"
+      }
+    }
+  }
+}

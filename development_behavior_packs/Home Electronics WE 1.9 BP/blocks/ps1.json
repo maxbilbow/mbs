@@ -1,0 +1,132 @@
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			},
+			"states": {
+				"custom:geometry": [
+					"abierto",
+					"cerrado"		
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "he:ps1",
+			"is_experimental": false
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'abierto'",
+				"components": {
+					"minecraft:geometry": "geometry.ps1_abierta"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cerrado'",
+				"components": {
+					"minecraft:geometry": "geometry.ps1_cerrada"
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "ps1",
+					"ambient_occlusion": false,
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.ps1_abierta",
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-5
+				],
+				"size": [
+					14,
+					4,
+					10
+				]
+			},
+			"minecraft:custom_components": [
+				"content:he_close_open_console"
+			],
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-5
+				],
+				"size": [
+					14,
+					4,
+					10
+				]
+			}
+
+
+		}
+	},
+	"format_version": "1.20.20"
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "the_end"
+    },
+    "components": {
+      "minecraft:sky_color": {
+        "sky_color": "#7214CF"
+      },
+      "minecraft:fog_appearance": {
+        "fog_identifier": "rg:end"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#64519F"
+      }
+    }
+  }
+}

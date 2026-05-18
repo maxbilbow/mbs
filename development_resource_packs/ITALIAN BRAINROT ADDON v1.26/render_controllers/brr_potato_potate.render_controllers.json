@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.brr_potato_potate": {
+			"geometry": "Geometry.default",
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"texture.default",
+						"texture.gold",
+						"texture.rainbow"
+					]
+				}
+			},
+			//supreme victory se logroooo uwu
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.variant]"
+			]
+		}
+	}
+}

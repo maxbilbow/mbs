@@ -1,0 +1,23 @@
+//bridge-file-version: #350
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:boya_amarillo"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:boya_amarillo",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

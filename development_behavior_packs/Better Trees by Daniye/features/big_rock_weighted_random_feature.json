@@ -1,0 +1,50 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "daniye:big_rock_weighted_random_feature"
+		},
+		"features": [
+			[
+				"daniye:big_rock_01_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_02_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_03_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_04_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_05_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_06_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_07_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_08_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_09_mcstructure",
+				1
+			],
+			[
+				"daniye:big_rock_10_mcstructure",
+				1
+			]
+		]
+	}
+}

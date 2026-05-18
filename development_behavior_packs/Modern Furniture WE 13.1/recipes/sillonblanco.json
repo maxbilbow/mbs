@@ -1,0 +1,23 @@
+//bridge-file-version: #26
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:sillonblanco"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajasilla"
+			}
+		],
+		"result": [
+			{
+				"item": "f:sillonblanco",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

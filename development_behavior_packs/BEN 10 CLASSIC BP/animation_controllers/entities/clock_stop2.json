@@ -1,0 +1,57 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.clock_stop2": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"clock_stop2": "query.skin_id==0"
+						}
+					]
+				},
+				"clock_stop2": {
+					"transitions": [
+						{
+							"default": "query.skin_id==0"
+						}
+					],
+					"on_entry": [
+						"/event entity @e[r=1,c=1,type=power:clock_stop,tag=spawn] despawn",
+						"/event entity @s clock_stop:spawmed",
+						"/tag @s add spawn"
+					]
+				}
+			}
+		},
+		"controller.animation.time_stop": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"use": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @e[type=!power:clock_stop,family=!clockwork,r=1,c=1] slowness 2 255 true",
+						"/effect @e[type=!power:clock_stop,family=!clockwork,r=1,c=1] weakness 2 255 true",
+						"/execute @s ~~~ tp @e[rm=6, type=!power:clock_stop, r=2,family=!clockwork,type=!item,c=1] ~~~"
+					]
+				},
+				"use": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @e[type=!power:clock_stop,family=!clockwork,r=1,c=1] slowness 2 255 true",
+						"/effect @e[type=!power:clock_stop,family=!clockwork,r=1,c=1] weakness 2 255 true",
+						"/execute @s ~~~ tp @e[rm=6, type=!power:clock_stop, r=2,family=!clockwork,type=!item,c=1] ~~~"
+					]
+				}
+			}
+		}
+	}
+}

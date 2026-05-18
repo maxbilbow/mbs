@@ -1,0 +1,64 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:eyeice",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:egg"
+		},
+		"component_groups": {
+			"exploding": {
+				"minecraft:explode": {
+					"fuseLength": 2,
+					"power": 0,
+					"fuseLit": true,
+					"causesFire": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"mob_effect": {
+						"effect": "slowness",
+						"durationeasy": 100,
+						"durationnormal": 100,
+						"durationhard": 100,
+						"amplifier": 1
+					},
+					"arrow_effect": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"eventTrigger": {
+							"event": "on:hit",
+							"target": "self"
+						}
+					}
+				},
+				"power": 3,
+				"gravity": 0,
+				"angleoffset": 0
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"on:hit": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"function freeze"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

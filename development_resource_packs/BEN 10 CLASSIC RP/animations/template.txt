@@ -1,0 +1,5 @@
+Looking animation 
+
+				"head": {
+					"rotation": ["query.target_x_rotation - this", "query.target_y_rotation - this", 0]
+				},

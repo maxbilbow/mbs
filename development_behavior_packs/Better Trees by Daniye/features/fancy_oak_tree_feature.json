@@ -1,0 +1,13 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "minecraft:fancy_oak_tree_feature"
+		},
+		"iterations": 0,
+		"x": 0,
+		"z": 0,
+		"y": 0,
+		"places_feature": "daniye:none"
+	}
+}

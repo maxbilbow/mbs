@@ -1,0 +1,23 @@
+//bridge-file-version: #401
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:espejo2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabano"
+			}
+		],
+		"result": [
+			{
+				"item": "f:espejo2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

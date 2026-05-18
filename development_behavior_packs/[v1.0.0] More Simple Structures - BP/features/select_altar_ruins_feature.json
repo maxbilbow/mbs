@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_altar_ruins_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:altar_ruins_1_feature_mcstructure",
+				15
+			],
+			[
+				"wypnt_mss:altar_ruins_2_feature_mcstructure",
+				5
+			],
+			[
+				"wypnt_mss:altar_ruins_3_feature_mcstructure",
+				10
+			],
+			[
+				"wypnt_mss:altar_ruins_4_feature_mcstructure",
+				10
+			]
+		]
+	}
+}

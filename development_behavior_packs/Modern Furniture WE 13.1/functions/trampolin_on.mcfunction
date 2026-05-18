@@ -1,0 +1,1 @@
+effect @a[r=1] jump_boost 5 1 true

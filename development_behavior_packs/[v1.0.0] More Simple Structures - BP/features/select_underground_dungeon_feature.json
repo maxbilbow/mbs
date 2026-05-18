@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_underground_dungeon_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:underground_dungeon_1_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:underground_dungeon_2_mcstructure",
+				1
+			]
+		]
+	}
+}

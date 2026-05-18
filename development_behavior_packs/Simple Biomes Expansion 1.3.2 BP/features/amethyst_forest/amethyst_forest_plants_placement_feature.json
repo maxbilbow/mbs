@@ -1,0 +1,13 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_forest/amethyst_forest_plants_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:amethyst_forest/amethyst_forest_plants_condition_feature",
+			"vanilla_biomes_expansion:amethyst_forest/amethyst_forest_plants_double"
+		],
+		"early_out": "first_failure"
+	}
+}

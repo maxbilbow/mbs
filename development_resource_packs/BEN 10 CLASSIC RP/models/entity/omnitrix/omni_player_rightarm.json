@@ -1,0 +1,199 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.omni_player_rightarm",
+				"texture_width": 64,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightarm_fp",
+					"pivot": [
+						9,
+						18,
+						8
+					],
+					"rotation": [
+						76.19104,
+						5.06726,
+						-140.14336
+					]
+				},
+				{
+					"name": "rightarm_model",
+					"parent": "rightarm_fp",
+					"pivot": [
+						10.16277,
+						17.78337,
+						8.89514
+					],
+					"rotation": [
+						148.75013,
+						-73.31089,
+						147.00329
+					],
+					"cubes": [
+						{
+							"origin": [
+								7.16277,
+								7.78337,
+								6.89514
+							],
+							"size": [
+								4,
+								12,
+								4
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										44,
+										40
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"east": {
+									"uv": [
+										40,
+										40
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"south": {
+									"uv": [
+										52,
+										40
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"west": {
+									"uv": [
+										48,
+										40
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"up": {
+									"uv": [
+										44,
+										32
+									],
+									"uv_size": [
+										4,
+										8
+									]
+								},
+								"down": {
+									"uv": [
+										48,
+										40
+									],
+									"uv_size": [
+										4,
+										-8
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								7.16277,
+								7.78337,
+								6.89514
+							],
+							"size": [
+								4,
+								12,
+								4
+							],
+							"inflate": 0.28,
+							"uv": {
+								"north": {
+									"uv": [
+										44,
+										72
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"east": {
+									"uv": [
+										40,
+										72
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"south": {
+									"uv": [
+										52,
+										72
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"west": {
+									"uv": [
+										48,
+										72
+									],
+									"uv_size": [
+										4,
+										24
+									]
+								},
+								"up": {
+									"uv": [
+										44,
+										64
+									],
+									"uv_size": [
+										4,
+										8
+									]
+								},
+								"down": {
+									"uv": [
+										48,
+										72
+									],
+									"uv_size": [
+										4,
+										-8
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

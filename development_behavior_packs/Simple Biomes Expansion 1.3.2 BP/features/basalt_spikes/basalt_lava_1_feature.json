@@ -1,0 +1,22 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:basalt_spikes/basalt_lava_1_feature"
+		},
+		"structure_name": "mystructure:basalt_lava1",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:basalt",
+					"minecraft:blackstone",
+					"minecraft:magma"
+				]
+			},
+			"unburied": {}
+		}
+	}
+}

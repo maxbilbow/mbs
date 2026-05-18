@@ -1,0 +1,113 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "omni:omni_capsule",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:despawn": {}
+			},
+			"omni_capsule_open": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				},
+				"minecraft:addrider": {
+					"entity_type": "omni:omnitrix"
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"omni_entity"
+					],
+					"seats": {
+						"position": [
+							0,
+							0.2,
+							0
+						]
+					}
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"omni_capsule"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.3
+			},
+			"minecraft:scale": {
+				"value": 1.18
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"event": "omni_capsule_open"
+						},
+						"deals_damage": false
+					},
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:nameable": {},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"omni_capsule_open": {
+				"add": {
+					"component_groups": [
+						"omni_capsule_open"
+					]
+				}
+			}
+		}
+	}
+}

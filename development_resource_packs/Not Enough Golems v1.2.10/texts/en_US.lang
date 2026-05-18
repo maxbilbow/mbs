@@ -1,0 +1,41 @@
+entity.eu:gold_golem.name=Golden Golem
+item.spawn_egg.entity.eu:gold_golem.name=Spawn Golden Golem
+
+entity.eu:emerald_golem.name=Emerald Golem
+item.spawn_egg.entity.eu:emerald_golem.name=Spawn Emerald Golem
+
+entity.eu:diamond_golem.name=Diamond Golem
+item.spawn_egg.entity.eu:diamond_golem.name=Spawn Diamond Golem
+
+entity.eu:lapis_golem.name=Lapis Golem
+item.spawn_egg.entity.eu:lapis_golem.name=Spawn Lapis Golem
+
+entity.eu:hay_golem.name=Hay Golem
+item.spawn_egg.entity.eu:hay_golem.name=Spawn Hay Golem
+
+entity.eu:netherite_golem.name=Netherite Golem
+item.spawn_egg.entity.eu:netherite_golem.name=Spawn Netherite Golem
+
+entity.eu:glass_golem.name=Glass Golem
+item.spawn_egg.entity.eu:glass_golem.name=Spawn Glass Golem
+
+entity.eu:redstone_golem.name=Redstone Golem
+item.spawn_egg.entity.eu:redstone_golem.name=Spawn Redstone Golem
+
+entity.eu:bedrock_golem.name=Bedrock Golem
+item.spawn_egg.entity.eu:bedrock_golem.name=Spawn Bedrock Golem
+
+entity.eu:oak_golem.name=Oak Golem
+item.spawn_egg.entity.eu:oak_golem.name=Spawn Oak Golem
+
+entity.eu:tnt_golem.name=TNT Golem
+item.spawn_egg.entity.eu:tnt_golem.name=Spawn TNT Golem
+
+entity.eu:cobblestone_golem.name=Cobblestone Golem
+item.spawn_egg.entity.eu:cobblestone_golem.name=Spawn Cobblestone Golem
+
+entity.eu:mossy_cobblestone_golem.name=Mossy Cobblestone Golem
+item.spawn_egg.entity.eu:mossy_cobblestone_golem.name=Spawn Mossy Cobblestone Golem
+
+entity.eu:obsidian_golem.name=Obsidian Golem
+item.spawn_egg.entity.eu:obsidian_golem.name=Spawn Obsidian Golem

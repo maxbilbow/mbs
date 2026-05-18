@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "minecraft:mountain_spruce_tree_feature"
+		},
+		"structure_name": "mystructure:random_spruce_tree",
+		"facing_direction": "random",
+		"adjustment_radius": 0,
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

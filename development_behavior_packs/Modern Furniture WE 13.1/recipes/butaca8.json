@@ -1,0 +1,23 @@
+//bridge-file-version: #39
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:butaca8"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajasilla"
+			}
+		],
+		"result": [
+			{
+				"item": "f:butaca8",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

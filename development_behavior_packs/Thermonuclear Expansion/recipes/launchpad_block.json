@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:launchpad_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"S": {
+				"item": "kaboom:steel_ingot"
+			},
+			"R": {
+				"item": "minecraft:redstone_block"
+			}
+		},
+		"pattern": [
+			"SSS",
+			"SRS",
+			"SSS"
+		],
+		"result": {
+			"item": "kaboom:launchpad_block"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:launchpad_block"
+			}
+		]
+	}
+}

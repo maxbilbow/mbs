@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lamparamedia",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 0, -3], "size": [6, 1.1, 6], "uv": [36, 22]},
+						{"origin": [-0.5, 1, -0.5], "size": [1, 12, 1], "uv": [60, 0]},
+						{"origin": [2.5, 6, -2.5], "size": [1, 7, 5], "uv": [52, 32]},
+						{"origin": [-2.5, 12, -0.5], "size": [5, 0, 1], "uv": [44, 21]},
+						{"origin": [2.5, 6, -2.5], "size": [1, 7, 5], "pivot": [0, -14, 0], "rotation": [0, -90, 0], "uv": [40, 41]},
+						{"origin": [-2.5, 12, -0.5], "size": [5, 0, 1], "pivot": [0, -14, 0], "rotation": [0, 90, 0], "uv": [39, 15]},
+						{"origin": [-3.5, 6, -2.5], "size": [1, 7, 5], "pivot": [0, -14, 0], "rotation": [0, -90, 0], "uv": [49, 52]},
+						{"origin": [-3.5, 6, -2.5], "size": [1, 7, 5], "uv": [40, 44]}
+					]
+				}
+			]
+		}
+	]
+}

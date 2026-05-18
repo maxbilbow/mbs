@@ -1,0 +1,108 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "omni:omnitrix",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"omni_attach"
+				]
+			},
+			"animations": {
+				"omni_attach": "controller.animation.omni_attach"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"omni_attach": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"omnitrix",
+					"omni_entity"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.42,
+				"height": 0.6
+			},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 1.5,
+				"minimum_count": 1,
+				"event_filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "no_omnitrix"
+				},
+				"event": "omni_attach"
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "no_omnitrix"
+						},
+						"event": "omni_attach"
+					},
+					"deals_damage": false
+				}
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:nameable": {},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"omni_attach": {
+				"add": {
+					"component_groups": [
+						"omni_attach"
+					]
+				}
+			}
+		}
+	}
+}

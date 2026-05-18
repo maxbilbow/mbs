@@ -1,0 +1,23 @@
+//bridge-file-version: #219
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:regalo_rojo"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:regalo_rojo",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

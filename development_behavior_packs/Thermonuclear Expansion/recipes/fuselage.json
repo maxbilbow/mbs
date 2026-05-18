@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:fuselage"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_block"
+			},
+			"G": {
+				"item": "minecraft:gunpowder"
+			},
+			"N": {
+				"item": "minecraft:netherite_scrap"
+			}
+		},
+		"pattern": [
+			"IGI",
+			"IGI",
+			"INI"
+		],
+		"result": {
+			"item": "kaboom:fuselage"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:plutonium"
+			}
+		]
+	}
+}

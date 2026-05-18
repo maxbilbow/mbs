@@ -1,0 +1,25 @@
+{
+	"format_version": "1.16.200",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "glass:white"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"g"
+		],
+		"key": {
+			"g": {
+				"item": "stained_glass",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "glass:white"
+			}
+		]
+	}
+}

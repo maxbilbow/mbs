@@ -1,0 +1,28 @@
+//bridge-file-version: #66
+{
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "f:pencil_negro"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:iron_ingot"
+			},
+			"B": {
+				"item": "minecraft:gray_dye"
+			}
+		},
+		"result": {
+			"item": "f:pencil_negro",
+			"count": 1
+		}
+	},
+	"format_version": "1.17.0"
+}

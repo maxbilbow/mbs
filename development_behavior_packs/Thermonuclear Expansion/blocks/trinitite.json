@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:trinitite",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.3
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			},
+			"minecraft:display_name": "Trinitite",
+			"minecraft:light_emission": 1,
+			"minecraft:loot": "loot_tables/trinitite.json"
+		}
+	}
+}

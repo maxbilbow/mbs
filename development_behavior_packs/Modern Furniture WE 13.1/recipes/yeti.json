@@ -1,0 +1,23 @@
+//bridge-file-version: #75
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:yeti"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:yeti",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

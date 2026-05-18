@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.perchero2",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [6, 8, 7], "size": [3, 4, 1], "uv": [33, 48]},
+						{"origin": [-9, 8, 7], "size": [1, 4, 1], "uv": [41, 48]},
+						{"origin": [-8, 8, 7], "size": [14, 4, 1], "uv": [33, 43]},
+						{"origin": [8, 10, 5], "size": [0, 1, 1], "uv": [49, 51]},
+						{"origin": [8, 9, 5], "size": [0, 1, 2], "uv": [43, 50]},
+						{"origin": [4, 9, 5], "size": [0, 1, 2], "uv": [47, 49]},
+						{"origin": [4, 10, 5], "size": [0, 1, 1], "uv": [51, 51]},
+						{"origin": [0, 10, 5], "size": [0, 1, 1], "uv": [50, 45]},
+						{"origin": [0, 9, 5], "size": [0, 1, 2], "uv": [51, 49]},
+						{"origin": [-4, 10, 5], "size": [0, 1, 1], "uv": [47, 51]},
+						{"origin": [-4, 9, 5], "size": [0, 1, 2], "uv": [47, 49]},
+						{"origin": [-8, 10, 5], "size": [0, 1, 1], "uv": [50, 45]},
+						{"origin": [-8, 9, 5], "size": [0, 1, 2], "uv": [43, 49]}
+					]
+				}
+			]
+		}
+	]
+}

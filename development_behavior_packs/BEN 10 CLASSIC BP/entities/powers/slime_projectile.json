@@ -1,0 +1,40 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:slime_projectile",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:fire_immune": true,
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"spawn_chance": {
+						"first_spawn_percent_chance": 100,
+						"first_spawn_count": 1,
+						"spawn_definition": "power:slime"
+					},
+					"mob_effect": {
+						"effect": "slowness",
+						"durationeasy": 200,
+						"durationnormal": 200,
+						"durationhard": 200,
+						"amplifier": 5
+					},
+					"remove_on_hit": {}
+				},
+				"power": 1.5,
+				"gravity": 0.03,
+				"angleoffset": 0
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

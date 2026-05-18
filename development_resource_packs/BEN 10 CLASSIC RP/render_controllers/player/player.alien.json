@@ -1,0 +1,1247 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.heatblast_fp": {
+			"geometry": "geometry.heatblast_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.heatblast"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 1 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.heatblast": {
+			"geometry": "geometry.heatblast",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.heatblast"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 1 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.wildmutt_fp": {
+			"geometry": "geometry.wildmutt_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wildmutt"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"arm1_fp": "query.variant == 2 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"arm2_fp": "query.variant == 2 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.wm_vision": {
+			"geometry": "geometry.wildmutt_fp",
+			"materials": [
+				{
+					"*": "material.transparent"
+				}
+			],
+			"textures": [
+				"texture.wm_vision"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"vision": "query.variant == 2 && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.wildmutt": {
+			"geometry": "geometry.wildmutt",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wildmutt"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 2 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.diamondhead_fp": {
+			"geometry": "geometry.diamondhead_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.diamondhead"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 3 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.diamondhead": {
+			"geometry": "geometry.diamondhead",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.diamondhead"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 3 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.xlr8_fp": {
+			"geometry": "geometry.xlr8_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.xlr8"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.xlr8 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.xlr8": {
+			"geometry": "geometry.xlr8",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.xlr8"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 4 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.xlr8_sprint": {
+			"geometry": "geometry.xlr8_sprint",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.xlr8_sprint"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 13 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.greymatter_fp": {
+			"geometry": "geometry.greymatter_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.greymatter"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 6 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.greymatter": {
+			"geometry": "geometry.greymatter",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.greymatter"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 6 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.fourarms_fp": {
+			"geometry": "geometry.fourarms_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.fourarms"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 7 && variable.is_first_person"
+				},
+				{
+					"arm1_p1": "query.variant == 7 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"arm1_p1_2": "query.variant == 7 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.fourarms": {
+			"geometry": "geometry.fourarms",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.fourarms"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 7 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.stinkfly_fp": {
+			"geometry": "geometry.stinkfly_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.stinkfly"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 8 && variable.is_first_person"
+				},
+				{
+					"arm2": "query.variant == 8 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.stinkfly": {
+			"geometry": "geometry.stinkfly",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.stinkfly"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 8 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ripjaws_fp": {
+			"geometry": "geometry.ripjaws_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ripjaws"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.ripjaws && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.ripjaws": {
+			"geometry": "geometry.ripjaws",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ripjaws"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 9 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.water_ripjaws": {
+			"geometry": "geometry.water_ripjaws",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ripjaws"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 999 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ghostfreak_fp": {
+			"geometry": "geometry.ghostfreak_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ghostfreak"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 11 && variable.is_first_person"
+				},
+				{
+					"arm2": "query.variant == 11 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.ghostfreak": {
+			"geometry": "geometry.ghostfreak",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ghostfreak"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 11 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.cannonbolt_fp": {
+			"geometry": "geometry.cannonbolt_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cannonbolt"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 5 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.cannonbolt": {
+			"geometry": "geometry.cannonbolt",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cannonbolt"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 5 && !variable.is_first_person && !query.is_sprinting"
+				}
+			]
+		},
+		"controller.render.cannonbolt_ball": {
+			"geometry": "geometry.cannonbolt_ball",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cannonbolt_ball"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 14 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ditto_fp": {
+			"geometry": "geometry.ditto_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ditto"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 18 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.ditto": {
+			"geometry": "geometry.ditto",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ditto"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 18 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.waybig_fp": {
+			"geometry": "geometry.waybig_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.waybig"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 15 && variable.is_first_person"
+				},
+				{
+					"ray": false
+				},
+				{
+					"arm2_p2": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"arm2_p3": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"hand2": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"fg5": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"fg6": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"fg7": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"fg8": "query.variant == 15 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				}
+			]
+		},
+		"controller.render.waybig": {
+			"geometry": "geometry.waybig",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.waybig"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 15 && !variable.is_first_person && query.is_riding"
+				},
+				{
+					"ray": false
+				},
+				{
+					"fullbody": "query.variant == 15 && !variable.is_first_person && query.is_riding"
+				}
+			]
+		},
+		"controller.render.waybig_ray_fp": {
+			"geometry": "geometry.waybig_fp",
+			"materials": [
+				{
+					"*": "material.transparent"
+				}
+			],
+			"textures": [
+				"texture.waybig_ray"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"ray": "variable.waybig_ray && variable.is_first_person && query.is_using_item"
+				}
+			]
+		},
+		"controller.render.waybig_ray": {
+			"geometry": "geometry.waybig",
+			"materials": [
+				{
+					"*": "material.transparent"
+				}
+			],
+			"textures": [
+				"texture.waybig_ray"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"ray": "variable.waybig_ray && !variable.is_first_person && query.is_using_item"
+				}
+			]
+		},
+		"controller.render.upchuck_fp": {
+			"geometry": "geometry.upchuck_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upchuck"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 17 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.upchuck": {
+			"geometry": "geometry.upchuck",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upchuck"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 17 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.benvictor_fp": {
+			"geometry": "geometry.benvictor_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benvictor"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 22 && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.benvictor": {
+			"geometry": "geometry.benvictor",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benvictor"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 22 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.bv_lightning_fp": {
+			"geometry": "geometry.bv_lightning_fp",
+			"materials": [
+				{
+					"*": "material.charged"
+				}
+			],
+			"textures": [
+				"texture.bv_lightning"
+			],
+			"part_visibility": [
+				{
+					"*": "(query.get_equipped_item_name('main_hand') == 'bv_lightning' || query.get_equipped_item_name('main_hand') == 'bv_electrokinesis') && query.is_using_item && variable.is_first_person"
+				},
+				{
+					"lightning": "query.get_equipped_item_name('main_hand') == 'bv_lightning' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"finger": "query.get_equipped_item_name('main_hand') == 'bv_lightning' && query.is_using_item && query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"finger2": "query.get_equipped_item_name('main_hand') == 'bv_lightning' && query.is_using_item && query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"leftarm2": "query.get_equipped_item_name('main_hand') == 'bv_lightning' && query.is_using_item && query.is_sneaking && variable.is_first_person"
+				}
+			],
+			"overlay_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 1
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 0.5,
+			"ignore_lighting": true
+		},
+		"controller.render.bv_lightning": {
+			"geometry": "geometry.bv_lightning",
+			"materials": [
+				{
+					"*": "material.charged"
+				}
+			],
+			"textures": [
+				"texture.bv_lightning"
+			],
+			"part_visibility": [
+				{
+					"*": "(query.get_equipped_item_name('main_hand') == 'bv_lightning' || query.get_equipped_item_name('main_hand') == 'bv_electrokinesis') && query.is_using_item && !variable.is_first_person"
+				},
+				{
+					"lightning": "query.get_equipped_item_name('main_hand') == 'bv_lightning' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				}
+			],
+			"overlay_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 1
+			},
+			"uv_anim": {
+				"offset": [
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01",
+					"(math.floor(query.life_time*20)+query.frame_alpha)*0.01"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 0.5,
+			"ignore_lighting": true
+		},
+		"controller.render.arctiguana_fp": {
+			"geometry": "geometry.arctiguana_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.arctiguana"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 16 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				},
+				{
+					"ice": false
+				}
+			]
+		},
+		"controller.render.arctiguana": {
+			"geometry": "geometry.arctiguana",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.arctiguana"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 16 && !variable.is_first_person"
+				},
+				{
+					"ice": false
+				}
+			]
+		},
+		"controller.render.arc_ice_fp": {
+			"geometry": "geometry.arctiguana_fp",
+			"materials": [
+				{
+					"*": "material.animated"
+				}
+			],
+			"textures": [
+				"texture.arc_ice"
+			],
+			"uv_anim": {
+				"offset": [
+					0,
+					"math.mod(math.floor(query.life_time*28),64)/64"
+				],
+				"scale": [
+					1,
+					"0.015625"
+				]
+			},
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"ice": "query.variant == 16 && query.get_equipped_item_name('main_hand') == 'arc_ice' && query.is_using_item && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.arc_ice": {
+			"geometry": "geometry.arctiguana",
+			"materials": [
+				{
+					"*": "material.animated"
+				}
+			],
+			"textures": [
+				"texture.arc_ice"
+			],
+			"uv_anim": {
+				"offset": [
+					0,
+					"math.mod(math.floor(query.life_time*28),64)/64"
+				],
+				"scale": [
+					1,
+					"0.015625"
+				]
+			},
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"ice": "query.variant == 16 && query.get_equipped_item_name('main_hand') == 'arc_ice' && query.is_using_item && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.clockwork_fp": {
+			"geometry": "geometry.clockwork_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.clockwork"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 26 && variable.is_first_person"
+				},
+				{
+					"beam": false
+				},
+				{
+					"clock_beam": false
+				}
+			]
+		},
+		"controller.render.clockwork": {
+			"geometry": "geometry.clockwork",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.clockwork"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 26 && !variable.is_first_person"
+				},
+				{
+					"beam": false
+				},
+				{
+					"clock_beam": false
+				}
+			]
+		},
+		"controller.render.clock_beam_fp": {
+			"geometry": "geometry.clockwork_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"beam": "query.variant == 26 && query.get_equipped_item_name('main_hand') == 'clock_beam' && query.is_using_item && variable.is_first_person"
+				},
+				{
+					"clock_beam": "query.variant == 26 && query.get_equipped_item_name('main_hand') == 'clock_beam' && query.is_using_item && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.clock_beam": {
+			"geometry": "geometry.clockwork",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"beam": "query.variant == 26 && query.get_equipped_item_name('main_hand') == 'clock_beam' && query.is_using_item && !variable.is_first_person"
+				},
+				{
+					"clock_beam": "query.variant == 26 && query.get_equipped_item_name('main_hand') == 'clock_beam' && query.is_using_item && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.wildvine_fp": {
+			"geometry": "geometry.wildvine_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wildvine"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 19 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				},
+				{
+					"rightarm_fp": true
+				},
+				{
+					"arms_fp": true
+				}
+			]
+		},
+		"controller.render.wildvine": {
+			"geometry": "geometry.wildvine",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.wildvine"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 19 && !variable.is_first_person"
+				},
+				{
+					"head": true
+				},
+				{
+					"rightarm": true
+				},
+				{
+					"leftarm": true
+				},
+				{
+					"upperbody": true
+				}
+			]
+		},
+		"controller.render.benwolf_fp": {
+			"geometry": "geometry.benwolf_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benwolf_fp"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 20 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.benwolf": {
+			"geometry": "geometry.benwolf",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.benwolf"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 20 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.bw_howl_fp": {
+			"geometry": "geometry.bw_howl_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.bw_howl"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 20 && variable.is_first_person && query.get_equipped_item_name('main_hand') == 'bw_howl' && query.is_using_item"
+				}
+			]
+		},
+		"controller.render.bw_howl": {
+			"geometry": "geometry.bw_howl",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.bw_howl"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 20 && !variable.is_first_person && query.get_equipped_item_name('main_hand') == 'bw_howl' && query.is_using_item"
+				}
+			]
+		},
+		"controller.render.benmummy_fp": {
+			"geometry": "geometry.benmummy_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.benmummy"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 21 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.benmummy": {
+			"geometry": "geometry.benmummy",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.benmummy"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 21 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.eyeguy_fp": {
+			"geometry": "geometry.eyeguy_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.eyeguy"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 23 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.eyeguy": {
+			"geometry": "geometry.eyeguy",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.eyeguy"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"body": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"head": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"rightArm": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"leftArm": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"rightLeg": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"leftLeg": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"ice": false
+				},
+				{
+					"fire": false
+				},
+				{
+					"fire2": false
+				},
+				{
+					"laser": false
+				},
+				{
+					"laser2": false
+				},
+				{
+					"laser3": false
+				},
+				{
+					"laser4": false
+				},
+				{
+					"laser5": false
+				},
+				{
+					"laser6": false
+				},
+				{
+					"biglaser": false
+				}
+			]
+		},
+		"controller.render.eyelaser_fp": {
+			"geometry": "geometry.eyelaser_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.eyelaser"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"ice": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyeice' && query.is_using_item && variable.is_first_person"
+				},
+				{
+					"fire": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyefire' && query.is_using_item && variable.is_first_person"
+				},
+				{
+					"fire2": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyefire' && query.is_using_item && variable.is_first_person"
+				},
+				{
+					"laser": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"laser2": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"laser3": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"laser4": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"laser5": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"laser6": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && variable.is_first_person"
+				},
+				{
+					"biglaser": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && query.is_sneaking && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.eyelaser": {
+			"geometry": "geometry.eyeguy",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.eyelaser"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"body": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"head": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"rightArm": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"leftArm": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"rightLeg": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"leftLeg": "query.variant == 23 && !variable.is_first_person"
+				},
+				{
+					"ice": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyeice' && query.is_using_item && !variable.is_first_person"
+				},
+				{
+					"fire": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyefire' && query.is_using_item && !variable.is_first_person"
+				},
+				{
+					"fire2": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyefire' && query.is_using_item && !variable.is_first_person"
+				},
+				{
+					"laser": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"laser2": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"laser3": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"laser4": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"laser5": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"laser6": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && !query.is_sneaking && !variable.is_first_person"
+				},
+				{
+					"biglaser": "query.variant == 23 && query.get_equipped_item_name('main_hand') == 'eyelaser' && query.is_using_item && query.is_sneaking && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.upgrade_fp": {
+			"geometry": "geometry.upgrade_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upgrade"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 0 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				},
+				{
+					"laser": false
+				}
+			]
+		},
+		"controller.render.upgrade": {
+			"geometry": "geometry.upgrade",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.upgrade"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 0 && !variable.is_first_person"
+				},
+				{
+					"laser": false
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cso.prototype_phobos.restart_timer": {
+			"animation_length": 2.2,
+			"loop": true,
+			"timeline": {
+				"2.1": [
+					"@s minecraft:entity_restart_attack"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.cocina14",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 15], "pivot": [0, 0, 0], "rotation": [-180, 0, 180], "uv": [6, 1]},
+						{"origin": [-7, 1, 7], "size": [14, 14, 1], "pivot": [0, 0, 0], "rotation": [-180, 0, 180], "uv": [11, 73]},
+						{"origin": [5, 4, 7], "size": [1, 8, 2], "pivot": [0, 0, 0], "rotation": [-180, 0, 180], "uv": [105, 19]}
+					]
+				}
+			]
+		}
+	]
+}

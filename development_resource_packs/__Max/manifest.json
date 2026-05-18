@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Max's Shit",
+        "description": "Max's resources",
+        "uuid": "019d97dc-ae90-7742-88e4-c77f60e0cfdf",
+        "version": [
+            0,
+            0,
+            4
+        ],
+        "min_engine_version": [
+            1,
+            20,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "5b6c3e51-b792-4c45-9e86-63d233e80184",
+            "version": [
+                0,
+                0,
+                4
+            ]
+        }
+    ]
+}

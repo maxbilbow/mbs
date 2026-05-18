@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:red_desert"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 2
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "lowlands"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:red_sandstone",
+					"top_material": "minecraft:red_sand",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"desert",
+					"monster",
+					"overworld",
+					"spawns_gold_rabbits",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"spawns_mesa_mobs"
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#aea42a"
+				},
+				"foliage": "#90814d"
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:desert"
+						],
+						"amount": 0.36,
+						"noise_frequency_scale": 0.23
+					}
+				]
+			}
+		}
+	}
+}

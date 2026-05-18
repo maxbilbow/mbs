@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:cherry_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cherry_tree"
+			},
+			"geometry": {
+				"default": "geometry.cherry_tree"
+			},
+			"render_controllers": [
+				"controller.render.cherry_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_cherry_tree"
+			}
+		}
+	}
+}

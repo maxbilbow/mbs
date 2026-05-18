@@ -1,0 +1,23 @@
+//bridge-file-version: #455
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bloquecuarzo-naranja"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bloquecuarzo-naranja",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

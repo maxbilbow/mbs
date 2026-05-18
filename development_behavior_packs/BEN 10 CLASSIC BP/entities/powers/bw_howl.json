@@ -1,0 +1,41 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:bw_howl",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+			"scripts": {
+				"animate": [
+					"null"
+				]
+			},
+			"animations": {
+				"null": "controller.animation.null"
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"projectile",
+					"energy_entity"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"remove_on_hit": {}
+				},
+				"power": 1.5,
+				"gravity": 0,
+				"angleoffset": 0
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

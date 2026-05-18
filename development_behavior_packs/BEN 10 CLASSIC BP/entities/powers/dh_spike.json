@@ -1,0 +1,84 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:dh_spike",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:evocation_fang",
+			"scripts": {
+				"animate": [
+					"dh_spike"
+				]
+			},
+			"animations": {
+				"dh_spike": "controller.animation.dh_spike"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"diamondhead",
+					"dh_spike"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1.23,
+				"height": 1.2
+			},
+			"minecraft:scale": {
+				"value": 1.1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:area_attack": {
+				"damage_range": 0.5,
+				"damage_per_tick": 9,
+				"cause": "contact",
+				"entity_filter": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "diamondhead"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "mob"
+						}
+					]
+				}
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

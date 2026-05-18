@@ -1,0 +1,23 @@
+//bridge-file-version: #276
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:interruptor2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajalampara"
+			}
+		],
+		"result": [
+			{
+				"item": "f:interruptor2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

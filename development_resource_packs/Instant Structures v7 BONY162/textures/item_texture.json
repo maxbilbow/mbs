@@ -1,0 +1,9 @@
+{
+	"resource_pack_name": "Instant Structures v2",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"bony_structures": {
+			"textures": "textures/items/structures"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "mega_taiga"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "vrd:mega_taiga"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#2d6d77"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#5C5C5C"
+
+            },
+            "minecraft:atmosphere_identifier": {
+              "atmosphere_identifier": "ale:forest_atmosphere"
+            },
+            "minecraft:lighting_identifier": {
+              "lighting_identifier": "ale:forest_lighting"
+            }
+    }
+  }
+}

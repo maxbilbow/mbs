@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:crafting_items_catalog": {
+		"categories": [
+			{
+				"category_name": "nature",
+				"groups": [
+					{
+						"group_identifier": {
+							"name": "minecraft:itemGroup.name.instant",
+							"icon": "daniye:oak_tree_placer"
+						},
+						"items": [
+							"daniye:oak_tree_placer",
+							"daniye:spruce_tree_placer",
+							"daniye:big_spruce_tree_placer",
+							"daniye:birch_tree_placer",
+							"daniye:jungle_tree_placer",
+							"daniye:big_jungle_tree_placer",
+							"daniye:acacia_tree_placer",
+							"daniye:dark_oak_tree_placer",
+							"daniye:mangrove_tree_placer",
+							"daniye:cherry_tree_placer",
+							"daniye:pale_oak_tree_placer",
+							"daniye:brown_mushroom_placer",
+							"daniye:red_mushroom_placer",
+							"daniye:crimson_fungus_placer",
+							"daniye:warped_fungus_placer",
+							"daniye:azalea_tree_placer"
+						]
+					}
+				]
+			}
+		]
+	}
+}

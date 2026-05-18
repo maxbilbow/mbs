@@ -1,0 +1,46 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "d189dfc0-c7d1-4fb1-b2f9-0b406b4043fc",
+		"version": [ 1, 1, 7 ],
+		"min_engine_version": [ 1, 21, 113 ]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "93e92a97-8def-4691-9ad0-c59b40ea1176",
+			"version": [ 1, 1, 7 ]
+		}
+	],
+	"subpacks": [
+		{
+			"folder_name": "black_bordered",
+			"name": "Black-Bordered Glass Textures",
+			"memory_tier": 3
+		},
+		{
+			"folder_name": "programmer_art",
+			"name": "Old Glass Textures",
+			"memory_tier": 2
+		},
+		{
+			"folder_name": "clear_glass",
+			"name": "Clear Glass Textures",
+			"memory_tier": 1
+		},
+		{
+			"folder_name": "basic",
+			"name": "Basic Glass Textures",
+			"memory_tier": 0
+		}
+	],
+	"capabilities": [ "pbr" ],
+	"dependencies": [
+		{
+			"uuid": "a773e3cd-1cf4-4464-88c5-d00185c2ccef",
+			"version": [1, 1, 7]
+		}
+	]
+}

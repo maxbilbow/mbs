@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:arid_taiga/arid_taiga_plants_double"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_large_fern_feature",
+				10
+			],
+			[
+				"vanilla_biomes_expansion:sbe_tall_grass_feature",
+				8
+			]
+		]
+	}
+}

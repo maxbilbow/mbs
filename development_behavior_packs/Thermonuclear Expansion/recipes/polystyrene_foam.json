@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:polystyrene_foam"
+		},
+		"tags": [
+			"refiner"
+		],
+		"key": {
+			"G": {
+				"item": "kaboom:graphite"
+			},
+			"D": {
+				"item": "kaboom:deuterium_casing_full"
+			}
+		},
+		"pattern": [
+			"   ",
+			"GD ",
+			"DG "
+		],
+		"result": {
+			"item": "kaboom:polystyrene_foam",
+			"count": 16
+		},
+		"unlock": [
+			{
+				"item": "kaboom:graphite"
+			}
+		]
+	}
+}

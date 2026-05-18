@@ -1,0 +1,17 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "kaboom:fissile_uranium",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "kaboom_fissile_uranium",
+			"minecraft:display_name": {
+				"value": "Fissile Uranium"
+			}
+		}
+	}
+}

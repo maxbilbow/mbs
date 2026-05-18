@@ -1,0 +1,12 @@
+pack.name=Change Entities Size RP [v1.0.8]
+pack.description=Resource Pack that adds a way to change the size of Entities !
+
+item.douarmc_change_entities_size:size_changer=Size Changer
+
+douarmc_change_entities_size.script.server_form.title=Change Entity Size
+douarmc_change_entities_size.script.server_form.text_field.entity_size_value.label=Change %%s size :
+douarmc_change_entities_size.script.server_form.text_field.entity_size_value.place_holder_text=Write Entity Size...
+
+douarmc_change_entities_size.script.chat.error_message.cannot_change_entity_size=§cYou cannot change the size of this Entity.
+douarmc_change_entities_size.script.chat.error_message.value_is_not_a_number=§cValue has to be a number !
+douarmc_change_entities_size.script.chat.error_message.value_not_between_valid_numbers=§cValue has to be between 0.1 and 10 !

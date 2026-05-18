@@ -1,0 +1,9 @@
+{
+    "format_version": "1.21.30",
+    "minecraft:texture_set": {
+      "color": "warden_ears",
+      "metalness_emissive_roughness": "warden_ears_mer",
+      "normal":"warden_ears_n"
+      
+    }
+  }

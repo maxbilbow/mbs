@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:lighting_settings": {
+    "description": {
+      "identifier": "va:nether_warped_lighting"
+    },
+
+    "directional_lights": {
+      "sun": {
+        "illuminance": { "0.0": 90 },
+        "color": [255, 140, 20]
+      },
+      "moon": {
+        "illuminance": { "0.0": 90 },
+        "color": [255, 255, 255]
+      }
+    },
+
+    "ambient": {
+      "illuminance": 1.0,
+      "color": [40, 165, 155]
+    },
+
+    "sky": {
+      "intensity": 1.0
+    }
+  }
+}

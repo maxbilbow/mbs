@@ -1,0 +1,70 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "daniye:jungle_tree_weighted_random_feature"
+		},
+		"features": [
+			[
+				"daniye:jungle_tree_04_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_05_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_06_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_07_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_08_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_09_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_10_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_11_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_12_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_13_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_14_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_15_mcstructure",
+				5
+			],
+			[
+				"daniye:jungle_tree_16_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_17_mcstructure",
+				10
+			],
+			[
+				"daniye:jungle_tree_18_mcstructure",
+				10
+			]
+		]
+	}
+}

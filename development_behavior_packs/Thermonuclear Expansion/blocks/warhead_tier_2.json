@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:warhead_tier_2",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.warhead_new",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_warhead_tier_2",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:display_name": "§5Thermonuclear Warhead",
+			"tag:kaboom:dummy": {},
+			"tag:kaboom:warhead": {},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"kaboom:dummy_block"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/wt2.json"
+		}
+	}
+}

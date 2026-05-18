@@ -1,0 +1,23 @@
+//bridge-file-version: #314
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:lienzo1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:lienzo1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

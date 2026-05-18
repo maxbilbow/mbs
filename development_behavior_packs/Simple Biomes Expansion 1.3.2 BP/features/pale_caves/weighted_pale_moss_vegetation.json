@@ -1,0 +1,22 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/weighted_pale_moss_vegetation"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:pale_caves/pale_moss_carpet_feature",
+				45
+			],
+			[
+				"vanilla_biomes_expansion:pale_caves/eye_blossom_feature",
+				2
+			],
+			[
+				"vanilla_biomes_expansion:short_grass_feature",
+				10
+			]
+		]
+	}
+}

@@ -1,0 +1,700 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:block": {
+		"description": {
+			"identifier": "f:disc_stand2",
+			"states": {
+				"custom:geometry": [
+					"stand",
+					"disc1",
+					"disc2",
+					"disc3",
+					"disc4",
+					"disc5",
+					"disc6",
+					"disc7",
+					"disc8",
+					"disc9",
+					"disc10",
+					"disc11",
+					"disc12",
+					"disc13",
+					"disc14",
+					"disc15"
+				],
+				"custom:geometry2": [
+					"stand",
+					"disc16",
+					"disc17",
+					"disc18"
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-4,
+					0,
+					-3
+				],
+				"size": [
+					8,
+					5,
+					8
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:disc_stand"
+			],
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:geometry": "geometry.stand_disc2",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "mf-stand1",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:flammable": {
+				"destroy_chance_modifier": 20,
+				"catch_chance_modifier": 5
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'stand' && q.block_state('custom:geometry2') == 'stand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand1",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-4,
+							0,
+							-3
+						],
+						"size": [
+							8,
+							5,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "False"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc1' && q.block_state('custom:geometry2') == 'stand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-1",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc2'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-2",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc3'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-3",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc4'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-4",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc5'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-5",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc6'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-6",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc7'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-7",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc8'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-8",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc9'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-9",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc10'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-10",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc11'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-11",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc12'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-12",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc13'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-13",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc14'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-14",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'disc15'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-15",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry2') == 'disc16'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-16",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry2') == 'disc17'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-17",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry2') == 'disc18'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mf-stand2-18",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-3
+						],
+						"size": [
+							16,
+							12,
+							8
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.stand_disc2",
+						"bone_visibility": {
+							"stand": "True",
+							"disc": "True"
+						}
+					}
+				}
+			}
+		]
+	}
+}

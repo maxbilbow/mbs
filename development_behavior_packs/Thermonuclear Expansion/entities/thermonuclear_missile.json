@@ -1,0 +1,87 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kaboom:thermonuclear_missile",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"kaboom:transform_to_item": {
+				"minecraft:timer": {
+					"time": 0,
+					"looping": false,
+					"time_down_event": {
+						"event": "kaboom:despawn"
+					}
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/nuclear_missile.json"
+				}
+			},
+			"kaboom:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:interact": {
+				"interactions": {
+					"on_interact": {}
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true,
+				"push_towards_closest_space": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"target": "self",
+						"event": "kaboom:transform_item",
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					},
+					"deals_damage": false
+				}
+			}
+		},
+		"events": {
+			"kaboom:interact": {
+				"queue_command": {
+					"command": [
+						"say \"Interaction Ocurred\""
+					]
+				}
+			},
+			"kaboom:transform_item": {
+				"add": {
+					"component_groups": [
+						"kaboom:transform_to_item"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"loot spawn ~ ~ ~ loot nuclear_missile"
+					]
+				}
+			},
+			"kaboom:despawn": {
+				"add": {
+					"component_groups": [
+						"kaboom:instant_despawn"
+					]
+				}
+			}
+		}
+	}
+}

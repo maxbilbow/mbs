@@ -1,0 +1,17 @@
+{
+    "format_version": 2,
+    "header": {
+		"name": "§lMeme Addon",
+		"description": "This addon's goal is to make the game unhinged.§r | by §eEmptyCoso§r",
+        "uuid": "fab2979a-e26b-4d1e-b041-3be334d11081",
+        "version":[ 1, 0, 0 ],
+        "min_engine_version": [ 1, 16, 100 ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "64ae89de-9c1d-4804-821c-059ac04d0e87",
+            "version":[ 1, 0, 0 ]
+        }
+    ]
+}

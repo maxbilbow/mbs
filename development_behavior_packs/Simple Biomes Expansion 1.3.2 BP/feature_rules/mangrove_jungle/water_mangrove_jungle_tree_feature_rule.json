@@ -1,0 +1,40 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:water_mangrove_jungle_tree_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:mangrove_jungle/water_mangrove_jungle_mega_t_selected_weighted"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"value": "mangrove_jungle"
+			}
+		},
+		"distribution": {
+			"iterations": "math.random_integer(20, 30)",
+			"x": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": {
+				"extent": [
+					55,
+					63
+				],
+				"distribution": "uniform"
+			},
+			"z": {
+				"extent": [
+					0,
+					16
+				],
+				"distribution": "uniform"
+			}
+		}
+	}
+}

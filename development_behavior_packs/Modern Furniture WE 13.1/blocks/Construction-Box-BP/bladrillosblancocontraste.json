@@ -1,0 +1,63 @@
+//bridge-file-version: #45
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "construction"
+			},
+			"identifier": "f:bladrillosblancocontraste",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "bladrillosblancocontraste"
+				}
+			},
+			"minecraft:geometry": "geometry.bnegro",
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+		"minecraft:light_dampening": 15
+
+			
+
+		}
+	},
+	"format_version": "1.20.20"
+}

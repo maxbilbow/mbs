@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spired_jungle/spired_jungle_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:spired_jungle/spired_jungle_plants_placement_feature",
+				14
+			],
+			[
+				"vanilla_biomes_expansion:sbe_fern_feature",
+				22
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				22
+			]
+		]
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #39
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cocina14"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajacocina"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cocina14",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

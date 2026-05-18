@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mesa_plegable_cerrada",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 15, -7], "size": [16, 1, 15], "pivot": [-0.5, 15, 6.75], "rotation": [90, 0, 0], "uv": [36, 99]},
+						{"origin": [-6.9, 14, -6], "size": [1, 1, 14], "pivot": [-0.5, 15, 6.75], "rotation": [90, 0, 0], "uv": [55, 55]},
+						{"origin": [5.9, 14, -6], "size": [1, 1, 14], "pivot": [0.5, 15, 6.75], "rotation": [90, 0, 0], "uv": [71, 46]},
+						{"origin": [-7, 4, 7], "size": [1, 10, 1], "uv": [55, 58]},
+						{"origin": [6, 4, 7], "size": [1, 10, 1], "uv": [55, 58]},
+						{"origin": [-6, 14, 7.7], "size": [12, 1, 0], "uv": [56, 59]},
+						{"origin": [-6, 11, 7.5], "size": [12, 1, 0], "uv": [56, 59]}
+					]
+				}
+			]
+		}
+	]
+}

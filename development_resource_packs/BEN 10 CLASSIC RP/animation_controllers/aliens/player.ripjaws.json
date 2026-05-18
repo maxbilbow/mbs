@@ -1,0 +1,225 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ripjaws_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&variable.ripjaws"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ripjaws_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&variable.ripjaws"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"ripjaws_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_swim": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"swim": "query.variant==999&&query.is_sprinting"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"swim": {
+					"animations": [
+						"ripjaws_swimming"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=999||!query.is_sprinting"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.ripjaws_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"ripjaws_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==9"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.ripjaws_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"ripjaws_jumping": "!variable.is_first_person&&query.variant==9"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.is_first_person&&variable.ripjaws"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ripjaws_fp"
+					],
+					"transitions": [
+						{
+							"default": "!variable.is_first_person||!variable.ripjaws"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_idle": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&variable.ripjaws&&!query.is_moving&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ripjaws_idle"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||!variable.ripjaws||query.is_moving||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_moving": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==9&&query.is_moving&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ripjaws_moving"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=9||!query.is_moving||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.ripjaws_sprinting": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==9&&query.is_sprinting&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"ripjaws_sprinting"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=9||!query.is_sprinting||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:plutonium",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:light_emission": 2,
+			"minecraft:display_name": "Plutonium Block",
+			"minecraft:loot": "loot_tables/plutonium_block.json",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 1
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			}
+		}
+	}
+}

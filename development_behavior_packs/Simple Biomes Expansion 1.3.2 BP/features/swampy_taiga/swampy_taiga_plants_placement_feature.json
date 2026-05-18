@@ -1,0 +1,13 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:swampy_taiga/swampy_taiga_plants_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:swampy_taiga/swampy_taiga_plants_condition_feature",
+			"vanilla_biomes_expansion:sbe_large_fern_feature"
+		],
+		"early_out": "first_failure"
+	}
+}

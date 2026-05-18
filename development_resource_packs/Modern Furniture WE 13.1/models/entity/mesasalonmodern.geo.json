@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mesasalonmodern",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [0, 2, -7], "size": [13, 1, 14], "uv": [52, 105]},
+						{"origin": [-13, 2, -7], "size": [13, 1, 14], "uv": [52, 105]},
+						{"origin": [10, 0, -6], "size": [1, 1, 12], "uv": [28, 45]},
+						{"origin": [10, 1, -6], "size": [1, 10, 1], "uv": [28, 45]},
+						{"origin": [10, 1, 5], "size": [1, 10, 1], "uv": [28, 45]},
+						{"origin": [-11, 1, -6], "size": [1, 10, 1], "uv": [28, 45]},
+						{"origin": [-11, 0, -6], "size": [1, 1, 12], "uv": [28, 45]},
+						{"origin": [-11, 1, 5], "size": [1, 10, 1], "uv": [50, 57]},
+						{"origin": [-5, -8, -2], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [-17.5, 0, 90], "uv": [2, 105]},
+						{"origin": [5, 2, -4], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [-2.5, 0, -90], "uv": [3, 75]},
+						{"origin": [3, -10, -2], "size": [2, 6, 5], "pivot": [0, 0, 0], "rotation": [-20, 0, -90], "uv": [1, 117]},
+						{"origin": [0, 9, -7], "size": [13, 1, 14], "uv": [52, 105]},
+						{"origin": [-13, 9, -7], "size": [13, 1, 14], "uv": [52, 105]},
+						{"origin": [-11, 11, -6], "size": [1, 1, 12], "uv": [28, 45]},
+						{"origin": [10, 11, -6], "size": [1, 1, 12], "uv": [28, 45]}
+					]
+				}
+			]
+		}
+	]
+}

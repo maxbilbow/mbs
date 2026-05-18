@@ -1,0 +1,29 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:white_caves/calcite_scatter"
+		},
+		"iterations": 1,
+		"x": {
+			"extent": [
+				0,
+				14
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				0,
+				14
+			],
+			"distribution": "uniform"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:white_caves/calcite_patch",
+		"scatter_chance": {
+			"numerator": 12,
+			"denominator": 128
+		}
+	}
+}

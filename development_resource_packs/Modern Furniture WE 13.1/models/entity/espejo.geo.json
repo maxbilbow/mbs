@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.espejo",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 4, 6.9],
+							"size": [15, 24, 1.1],
+							"uv": {
+								"north": {"uv": [1, 7], "uv_size": [15, 24]},
+								"east": {"uv": [0, 7], "uv_size": [1, 24]},
+								"south": {"uv": [17, 7], "uv_size": [15, 24]},
+								"west": {"uv": [16, 7], "uv_size": [1, 24]},
+								"up": {"uv": [1, 6], "uv_size": [15, 1]},
+								"down": {"uv": [16, 7], "uv_size": [15, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

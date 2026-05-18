@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:eyeice",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "power_eyeice"
+			},
+			"minecraft:display_name": {
+				"value": "§rFreeze Beam"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera"
+		}
+	}
+}

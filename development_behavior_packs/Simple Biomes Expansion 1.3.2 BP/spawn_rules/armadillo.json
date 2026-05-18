@@ -1,0 +1,235 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "minecraft:armadillo",
+			"population_control": "animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:red_sand"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					},
+					{
+						"name": "minecraft:brown_terracotta"
+					},
+					{
+						"name": "minecraft:hardened_clay"
+					},
+					{
+						"name": "minecraft:orange_terracotta"
+					},
+					{
+						"name": "minecraft:light_gray_terracotta"
+					},
+					{
+						"name": "minecraft:red_terracotta"
+					},
+					{
+						"name": "minecraft:white_terracotta"
+					},
+					{
+						"name": "minecraft:yellow_terracotta"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 10
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 3
+				},
+				"minecraft:biome_filter": {
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"value": "swampy_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "savanna_plains"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "roofed_savanna"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:red_sand"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					},
+					{
+						"name": "minecraft:brown_terracotta"
+					},
+					{
+						"name": "minecraft:hardened_clay"
+					},
+					{
+						"name": "minecraft:orange_terracotta"
+					},
+					{
+						"name": "minecraft:light_gray_terracotta"
+					},
+					{
+						"name": "minecraft:red_terracotta"
+					},
+					{
+						"name": "minecraft:white_terracotta"
+					},
+					{
+						"name": "minecraft:yellow_terracotta"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 6,
+					"rarity": 3
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 2
+				},
+				"minecraft:biome_filter": {
+					"any_of": [
+						{
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "mesa"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "not",
+									"value": "plateau"
+								}
+							]
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "plateau_spruce_taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "red_palm_beach"
+						}
+					]
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_on_block_filter": [
+					{
+						"name": "minecraft:grass_block"
+					},
+					{
+						"name": "minecraft:red_sand"
+					},
+					{
+						"name": "minecraft:coarse_dirt"
+					},
+					{
+						"name": "minecraft:brown_terracotta"
+					},
+					{
+						"name": "minecraft:hardened_clay"
+					},
+					{
+						"name": "minecraft:orange_terracotta"
+					},
+					{
+						"name": "minecraft:light_gray_terracotta"
+					},
+					{
+						"name": "minecraft:red_terracotta"
+					},
+					{
+						"name": "minecraft:white_terracotta"
+					},
+					{
+						"name": "minecraft:yellow_terracotta"
+					}
+				],
+				"minecraft:brightness_filter": {
+					"min": 7,
+					"max": 15,
+					"adjust_for_weather": false
+				},
+				"minecraft:weight": {
+					"default": 6,
+					"rarity": 2
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 2
+				},
+				"minecraft:biome_filter": {
+					"all_of": [
+						{
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "mesa"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "plateau"
+								}
+							]
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "wooded_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "birch_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "birch_savanna_mutated"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "arid_birch_savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "arid_taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"value": "arid_tall_pine_taiga"
+						}
+					]
+				}
+			}
+		]
+	}
+}

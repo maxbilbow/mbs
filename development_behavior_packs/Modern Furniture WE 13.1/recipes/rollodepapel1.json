@@ -1,0 +1,23 @@
+//bridge-file-version: #230
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:rollodepapel1"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:rollodepapel1",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

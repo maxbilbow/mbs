@@ -1,0 +1,186 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.heatblast_attack_fp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"heatblast_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.heatblast_attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "variable.attack_time>0&&query.variant==1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						{
+							"heatblast_attacking": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.heatblast_sneak": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sneak": {
+					"animations": [
+						{
+							"heatblast_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==1"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.hb_flamethrower_arms": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.is_using_item&&query.get_equipped_item_name('main_hand')=='hb_flamethrower'&&query.variant==1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						{
+							"hb_flamethrower_pose": "!variable.is_first_person"
+						},
+						{
+							"heatblast_attacking_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item||query.get_equipped_item_name('main_hand')!='hb_flamethrower'"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.heatblast_flight": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"flying": "query.variant==1&&!variable.on_ground&&(query.is_sprinting||query.get_equipped_item_name('main_hand')=='flight_activator')"
+						},
+						{
+							"hover": "query.variant==1&&!variable.on_ground&&!query.is_sprinting&&query.get_equipped_item_name('main_hand')!='flight_activator'"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"flying": {
+					"animations": [
+						{
+							"heatblast_flying": "!variable.is_first_person"
+						},
+						{
+							"heatblast_flying_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=1||variable.on_ground"
+						},
+						{
+							"hover": "!query.is_sprinting&&query.get_equipped_item_name('main_hand')!='flight_activator'"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"hover": {
+					"animations": [
+						{
+							"heatblast_hover": "!variable.is_first_person"
+						},
+						{
+							"heatblast_hover_fp": "variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=1||variable.on_ground"
+						},
+						{
+							"flying": "query.is_sprinting||query.get_equipped_item_name('main_hand')=='flight_activator'"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		},
+		"controller.animation.heatblast_jump": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"jump": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"jump": {
+					"animations": [
+						{
+							"heatblast_jumping": "!variable.is_first_person&&query.variant==1"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

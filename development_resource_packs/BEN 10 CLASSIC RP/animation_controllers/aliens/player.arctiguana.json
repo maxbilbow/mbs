@@ -1,0 +1,173 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.arctiguana": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==16"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"arctiguana"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=16"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==16&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"arc_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=16||!query.is_moving||query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==16&&query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"arc_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=16||!query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.on_ground&&query.variant==16&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"arc_jump"
+					],
+					"transitions": [
+						{
+							"default": "variable.on_ground||query.variant!=16||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_ice": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==16&&query.get_equipped_item_name('main_hand')=='arc_ice'&&query.is_using_item&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"arc_ice"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=16||query.get_equipped_item_name('main_hand')!='arc_ice'||!query.is_using_item||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_attack_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==16&&variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"arc_attack_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=16||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.arc_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==16&&!variable.is_first_person&&variable.attack_time>0&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"arc_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=16||variable.is_first_person||variable.attack_time<=0||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

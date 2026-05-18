@@ -1,0 +1,31 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "wypnt_mss:piglin_lantern_big_decoration"
+		},
+		"structure_name": "wypnt_mss:piglin_lantern_big",
+		"adjustment_radius": 8,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_whitelist": [
+					"minecraft:air",
+					"minecraft:crimson_stem",
+					"minecraft:crimson_hyphae",
+					"minecraft:crimson_fungus",
+					"minecraft:crimson_nylium",
+					"minecraft:weeping_vines",
+					"minecraft:twisting_vines",
+					"minecraft:crimson_roots",
+					"minecraft:warped_fungus",
+					"minecraft:warped_stem",
+					"minecraft:warped_wart_block",
+					"minecraft:warped_hyphae",
+					"minecraft:warped_nylium"			
+				]
+			}
+		}
+	}
+}

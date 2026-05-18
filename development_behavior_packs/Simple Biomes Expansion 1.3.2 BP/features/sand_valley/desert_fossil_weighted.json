@@ -1,0 +1,66 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sand_valley/desert_fossil_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_1_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_2_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_3_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_4_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_5_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_6_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_7_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_8_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_9_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_10_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_11_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_12_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_13_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:sand_valley/desert_fossil_14_feature",
+				1
+			]
+		]
+	}
+}

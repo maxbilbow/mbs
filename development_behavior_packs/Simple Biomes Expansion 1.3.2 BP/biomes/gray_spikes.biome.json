@@ -1,0 +1,94 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:gray_spikes"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 2
+			},
+			"minecraft:overworld_height": {
+				"noise_params": [
+					0.425,
+					0.65
+				]
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gray_concrete",
+					"foundation_material": "minecraft:gray_concrete",
+					"mid_material": "minecraft:gray_concrete",
+					"top_material": "minecraft:gray_concrete",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"gray_spikes",
+					"monster",
+					"overworld",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs"
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:gray_concrete_powder",
+							"mid_material": "minecraft:gray_concrete_powder"
+						},
+						"noise_frequency_scale": 0.035,
+						"noise_range": [
+							-1,
+							-0.4
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:black_concrete_powder",
+							"mid_material": "minecraft:black_concrete_powder"
+						},
+						"noise_frequency_scale": 0.13,
+						"noise_range": [
+							0.4,
+							1
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:black_concrete",
+							"mid_material": "minecraft:black_concrete"
+						},
+						"noise_frequency_scale": 0.16,
+						"noise_range": [
+							-0.8,
+							-0.2
+						]
+					}
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:desert",
+							"minecraft:mesa_bryce"
+						],
+						"amount": 0.25,
+						"noise_frequency_scale": 0.23
+					}
+				]
+			}
+		}
+	}
+}

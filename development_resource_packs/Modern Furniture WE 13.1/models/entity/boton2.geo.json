@@ -1,0 +1,81 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.boton2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main4",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-3, 5, 7],
+							"size": [6, 5, 1],
+							"uv": {
+								"north": {"uv": [20, 1], "uv_size": [6, 5]},
+								"east": {"uv": [19, 1], "uv_size": [1, 5]},
+								"south": {"uv": [27, 1], "uv_size": [6, 5]},
+								"west": {"uv": [26, 1], "uv_size": [1, 5]},
+								"up": {"uv": [20, 0], "uv_size": [6, 1]},
+								"down": {"uv": [15, 18], "uv_size": [6, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bb_main3",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-6, 7, 1], "size": [0, 0, 0], "uv": [2, 2]}
+					]
+				},
+				{
+					"name": "bb_main2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-2.5, 7, 3.2], "size": [5, 1, 1], "inflate": 0.1, "pivot": [0, 7.5, 7], "rotation": [32.5, 0, 0], "uv": [11, 38]},
+						{
+							"origin": [-2, 7, 3.8],
+							"size": [0, 1, 4],
+							"pivot": [0, 7.5, 7],
+							"rotation": [32.5, 0, 0],
+							"uv": {
+								"north": {"uv": [24, 13], "uv_size": [0, 1]},
+								"east": {"uv": [25, 18], "uv_size": [4, 1], "uv_rotation": 180},
+								"south": {"uv": [28, 13], "uv_size": [0, 1]},
+								"west": {"uv": [25, 13], "uv_size": [4, 1]},
+								"up": {"uv": [24, 9], "uv_size": [0, 4]},
+								"down": {"uv": [24, 13], "uv_size": [0, -4]}
+							}
+						},
+						{
+							"origin": [2, 7, 3.8],
+							"size": [0, 1, 4],
+							"pivot": [4, 7.5, 7],
+							"rotation": [32.5, 0, 0],
+							"uv": {
+								"north": {"uv": [24, 13], "uv_size": [0, 1]},
+								"east": {"uv": [25, 18], "uv_size": [4, 1], "uv_rotation": 180},
+								"south": {"uv": [28, 13], "uv_size": [0, 1]},
+								"west": {"uv": [25, 13], "uv_size": [4, 1]},
+								"up": {"uv": [24, 9], "uv_size": [0, 4]},
+								"down": {"uv": [24, 13], "uv_size": [0, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0]
+				}
+			]
+		}
+	]
+}

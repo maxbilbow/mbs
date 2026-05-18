@@ -1,0 +1,127 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kaboom:explode",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"tnt"
+				]
+			},
+			"minecraft:explode": {
+				"fuse_lit": true,
+				"power": 40,
+				"causes_fire": true,
+				"fuse_length": 1.8
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.1,
+				"time_down_event": {
+					"event": "kaboom:destroy"
+				}
+			},
+			"minecraft:is_baby": {},
+			"minecraft:ageable": {
+				"duration": 1.5,
+				"grow_up": {
+					"event": "kaboom:explode_sound"
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_transformed": {
+				"queue_command": {
+					"command": [
+						"summon kaboom:cloud ~ ~ ~",
+						"camera @a[r=50] fade time 0.2 1.5 4 color 255 255 255",
+						"effect @s invisibility 2 1 true",
+						"damage @e[r=50,type=!kaboom:explode,type=!kaboom:cloud] 25 entity_explosion",
+						"fog @a[r=50] push kaboom:nuclear_wasteland nuclear_wasteland"
+					]
+				}
+			},
+			"kaboom:destroy": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"tp @s ~ ~ ~ ~10",
+								"fill ~ ~-10 ~ ^ ^10 ^35 polished_basalt replace minecraft:log",
+								"fill ~ ~-10 ~ ^ ^10 ^35 mycelium replace grass_block",
+								"fill ~ ~-10 ~ ^ ^10 ^30 smooth_basalt replace mycelium",
+								"fill ~ ~-10 ~ ^ ^10 ^20 blackstone replace smooth_basalt",
+								"fill ~ ~-10 ~ ^ ^10 ^20 kaboom:trinitite replace minecraft:sand",
+								"fill ~ ~-10 ~ ^ ^10 ^35 pale_oak_leaves replace minecraft:leaves",
+								"tp @s ~ ~ ~ ~10",
+								"fill ~ ~-10 ~ ^ ^10 ^35 polished_basalt replace minecraft:log",
+								"fill ~ ~-10 ~ ^ ^10 ^35 mycelium replace grass_block",
+								"fill ~ ~-10 ~ ^ ^10 ^30 smooth_basalt replace mycelium",
+								"fill ~ ~-10 ~ ^ ^10 ^20 blackstone replace smooth_basalt",
+								"fill ~ ~-10 ~ ^ ^10 ^20 kaboom:trinitite replace minecraft:sand",
+								"fill ~ ~-10 ~ ^ ^10 ^35 pale_oak_leaves replace minecraft:leaves"
+							]
+						},
+						"weight": 0.8
+					},
+					{
+						"queue_command": {
+							"command": [
+								"tp @s ~ ~ ~ ~10",
+								"fill ~ ~-10 ~ ^ ^10 ^37 polished_basalt replace minecraft:log",
+								"fill ~ ~-10 ~ ^ ^10 ^37 mycelium replace grass_block",
+								"fill ~ ~-10 ~ ^ ^10 ^30 basalt replace mycelium",
+								"fill ~ ~-10 ~ ^ ^10 ^20 blackstone replace basalt",
+								"fill ~ ~-10 ~ ^ ^10 ^20 kaboom:trinitite replace minecraft:sand",
+								"fill ~ ~-10 ~ ^ ^10 ^37 pale_oak_leaves replace minecraft:leaves",
+								"tp @s ~ ~ ~ ~10",
+								"fill ~ ~-10 ~ ^ ^10 ^37 polished_basalt replace minecraft:log",
+								"fill ~ ~-10 ~ ^ ^10 ^37 mycelium replace grass_block",
+								"fill ~ ~-10 ~ ^ ^10 ^30 basalt replace mycelium",
+								"fill ~ ~-10 ~ ^ ^10 ^20 blackstone replace basalt",
+								"fill ~ ~-10 ~ ^ ^10 ^20 kaboom:trinitite replace minecraft:sand",
+								"fill ~ ~-10 ~ ^ ^10 ^37 pale_oak_leaves replace minecraft:leaves"
+							]
+						},
+						"weight": 0.2
+					}
+				]
+			},
+			"kaboom:despawn": {
+				"add": {
+					"component_groups": [
+						"kaboom:instant_despawn"
+					]
+				}
+			},
+			"kaboom:explode_sound": {
+				"queue_command": {
+					"command": "playsound kaboom:explode @a[r=100]"
+				}
+			}
+		},
+		"component_groups": {
+			"kaboom:spawn_entity": {
+				"minecraft:spawn_entity": {
+					"entities": {
+						"spawn_entity": "kaboom:cloud"
+					}
+				}
+			},
+			"kaboom:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

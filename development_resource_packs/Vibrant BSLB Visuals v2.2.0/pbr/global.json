@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:pbr_fallback_settings": {
+    "blocks": {
+      "global_metalness_emissive_roughness_subsurface": [0, 8, 180, 12]
+    },
+    "actors": {
+      "global_metalness_emissive_roughness_subsurface": [0, 12, 170, 18]
+    },
+    "particles": {
+      "global_metalness_emissive_roughness_subsurface": [0, 20, 150, 6]
+    },
+    "items": {
+      "global_metalness_emissive_roughness_subsurface": [5, 15, 160, 10]
+    }
+  }
+}

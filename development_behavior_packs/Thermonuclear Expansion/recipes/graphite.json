@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:graphite"
+		},
+		"tags": [
+			"blast_furnace",
+			"furnace"
+		],
+		"input": "minecraft:coal_block",
+		"output": "kaboom:graphite"
+	}
+}

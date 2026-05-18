@@ -1,0 +1,34 @@
+{
+    "format_version": 2,
+    "header": {
+      "description": "This package aims to revolutionize Deferred graphics and Vibrant Visual, Created By Ale.",
+      "name": "Revolution Vibrant Visual - Realistic",
+      "uuid": "917aab9c-5273-1000-ba5e-087a4328aa6b",
+      "version": [1,3,0],
+      "min_engine_version": [1, 20, 0]
+     },
+    "modules": [
+      {
+        "description": "Created by Ale",
+        "type": "resources",
+        "uuid": "8b5b9e9f-8f64-4aab-b476-d5c57e25874f",
+        "version": [1,3,0]
+      }
+    ],
+      "subpacks": 
+      [
+        {
+          "folder_name": "Low Featured",
+          "name": "Low Featured",
+          "memory_tier": 0
+        },
+        {
+          "folder_name": "Default Featured",
+          "name": "Default Featured",
+          "memory_tier": 0
+        }
+      ], 
+    "capabilities" : [
+      "pbr"
+  ]
+  }

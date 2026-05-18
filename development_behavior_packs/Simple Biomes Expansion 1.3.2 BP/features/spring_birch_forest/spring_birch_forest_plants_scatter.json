@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spring_birch_forest/spring_birch_forest_plants_scatter"
+		},
+		"iterations": 5,
+		"x": {
+			"extent": [
+				-16,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				-16,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:spring_birch_forest/spring_birch_forest_plants"
+	}
+}

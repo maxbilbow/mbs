@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:swampy_taiga/swampy_taiga_spruce_3_feature"
+		},
+		"structure_name": "mystructure:swampy_taiga_spruce3",
+		"adjustment_radius": 1,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:oak_leaves",
+					"minecraft:vine"
+				]
+			}
+		}
+	}
+}

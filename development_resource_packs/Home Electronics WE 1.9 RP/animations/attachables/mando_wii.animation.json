@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mando_wii.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [100.95211, -55.27998, 134.75194],
+					"position": [1, 26, 3]
+				}
+			}
+		},
+		"animation.mando_wii.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [33.65487, -5.63259, 551.72742],
+					"position": [0.5, 26, -2.5],
+					"scale": 0.85
+				}
+			}
+		}
+	}
+}

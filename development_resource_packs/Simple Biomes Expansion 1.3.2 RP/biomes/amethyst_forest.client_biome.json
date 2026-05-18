@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:amethyst_forest"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "vanilla_biomes_expansion:amethyst_forest_fog_setting"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#B28FE8"
+			},
+			"minecraft:atmosphere_identifier": {
+				"atmosphere_identifier": "minecraft:default_atmospherics"
+			},
+			"minecraft:color_grading_identifier": {
+				"color_grading_identifier": "minecraft:cold_color_grading"
+			},
+			"minecraft:lighting_identifier": {
+				"lighting_identifier": "minecraft:cold_lighting"
+			},
+			"minecraft:water_identifier": {
+				"water_identifier": "minecraft:default_water"
+			},
+			"minecraft:foliage_appearance": {
+				"color": "#A876E1"
+			},
+			"minecraft:grass_appearance": {
+				"color": "#AF85EA"
+			},
+			"minecraft:biome_music": {
+				"music_definition": "cherry_grove"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#DCC7FF"
+			}
+		}
+	}
+}

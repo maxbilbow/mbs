@@ -1,0 +1,329 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"tung_tung_tung_sahur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/tungtungsahur"
+			]
+		},
+		"tralalero_tralala_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/tralalerotralala"
+			]
+		},
+		"chimpanzini_bananini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/shimpanzinibananini"
+			]
+		},
+		"frigo_cammello_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/frigocamelo"
+			]
+		},
+		"vaca_saturno_saturnita_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/vaca_saturno_saturnita"
+			]
+		},
+		"brrbrr_patapin_saturnita_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/brbrpatapin"
+			]
+		},
+		"boneca_ambalabu_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bonecaambalabu"
+			]
+		},
+		"burbaloni_luliloli_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/burbaloni_luliloli"
+			]
+		},
+		"bombardino_cocodrilo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bombardirocrocodilo"
+			]
+		},
+		"herioscuino_tanquini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/herioscuinotanquini"
+			]
+		},
+		"tripi_tropi_tropa_tripa_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/tripitropitropatripa"
+			]
+		},
+		"lirililarila_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/lirililarila"
+			]
+		},
+		"ballerina_capuchina_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ballerinacapuchina"
+			]
+		},
+		"glorbo_fruttodillo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/glorbo"
+			]
+		},
+		"capuccino_assassino_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/capuccino"
+			]
+		},
+		"fruli_frula_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/frulifrula"
+			]
+		},
+		"garam_mararam_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/garanmaranam"
+			]
+		},
+		"skibidi_toilet_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/skibiditoilet"
+			]
+		},
+		"mateooo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/mateooo"
+			]
+		},
+		"trulimerotrulichina_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/trulimerotrulichina"
+			]
+		},
+		"bombombiniguzini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bombombinigusini"
+			]
+		},
+		"bobritobandito_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bobritobondito"
+			]
+		},
+		"udindindindunmadindindindun_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/udindindindun"
+			]
+		},
+		"nuclearodinossauro_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/nuclearodinossauro"
+			]
+		},
+		"pothotspot_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/pothotspot"
+			]
+		},
+		"svininobombondino_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/svininobombondino"
+			]
+		},
+		"orcaleroorcala_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/orcaleroorcala"
+			]
+		},
+		"bribribricusdicusdedicus_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bribribricusdicusdedicus"
+			]
+		},
+		"ballerinolololo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ballerinolololo"
+			]
+		},
+		"tatatatasahur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/tatatatasahur"
+			]
+		},
+		"trictracbarabum_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/trictracbarabum"
+			]
+		},
+		"ilcactohipopotamo_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ilcactohipopotamo"
+			]
+		},
+		"rhinotoasterino_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/rhinotoasterino"
+			]
+		},
+		"sigmaboy_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/sigmaboy"
+			]
+		},
+		"pakrahmatmamat_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/pakrahmatmamat"
+			]
+		},
+		"orangutiniananasini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/orangutiniananasini"
+			]
+		},
+		"blueberrinnioctopussini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/blueberrinnioctopussini"
+			]
+		},
+		"giraffaceleste_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/giraffaceleste"
+			]
+		},
+		"laesoksekolah_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/laesoksekolah"
+			]
+		},
+		"trenostruzzoturbo3000_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/trenostruzzoturbo3000"
+			]
+		},
+		"eccocavallovirtuoso_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ecocavalovirtuoso"
+			]
+		},
+		"cocofantoelefanto_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/cocofantoelefanto"
+			]
+		},
+		"ketupatkepat_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ketupatkepat"
+			]
+		},
+		"titutitutitabuu_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/titutitutitabuu"
+			]
+		},
+		"gangsterfooteracriminalera_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/gangsterfooteracriminalera"
+			]
+		},
+		"ganganzellitrulala_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/ganganzellitrulala"
+			]
+		},
+		"karkerkarkurkur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/karkerkarkurkur"
+			]
+		},
+		"berestehpatipum_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/berrrestehpatipum"
+			]
+		},
+		"herioscuinibombardini_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/herioscuinibombardini"
+			]
+		},
+		"spionirogolubiro_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/spionirogolubiro"
+			]
+		},
+		"espressonasignora_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/espressonasignora"
+			]
+		},
+		"bulbitobanditotraktorito_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/bulbitobanditotraktorito"
+			]
+		},
+		"mechaboneca_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/mechaboneca"
+			]
+		},
+		"tetetesahur_say": {
+			"category": "ambient",
+			"sounds": [
+				"sounds/italian_brainrot/tetetesahur"
+			]
+		}
+	}
+}

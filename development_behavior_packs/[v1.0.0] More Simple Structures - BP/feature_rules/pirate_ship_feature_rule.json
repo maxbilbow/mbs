@@ -1,0 +1,58 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "wypnt_mss:pirate_ship_feature_rule",
+            "places_feature": "wypnt_mss:select_pirate_ship_feature"
+        },
+        "conditions": {
+            "placement_pass": "surface_pass",
+            "minecraft:biome_filter": [
+                {
+                    "all_of": [
+                        {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "operator": "==",
+                                    "value": "ocean"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "none_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "==",
+                            "value": "frozen_ocean"
+                        }
+                    ]
+                }
+            ]
+        },
+        "distribution": {
+            "iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 2250
+			},
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    1
+                ]
+            },
+            "y": "query.heightmap(variable.worldx, variable.worldz) + -2",
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    1
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #122
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:cristalera2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabano"
+			}
+		],
+		"result": [
+			{
+				"item": "f:cristalera2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

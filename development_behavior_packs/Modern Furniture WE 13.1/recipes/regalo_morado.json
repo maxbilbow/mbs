@@ -1,0 +1,23 @@
+//bridge-file-version: #225
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:regalo_morado"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:regalo_morado",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

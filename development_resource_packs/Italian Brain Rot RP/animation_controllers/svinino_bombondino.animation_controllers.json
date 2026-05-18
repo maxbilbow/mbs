@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.svinino_bombondino.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"moving": "query.ground_speed>=0.1"
+						},
+						{
+							"exploding": "q.property('eu:is_lit') == true"
+						}
+					],
+					"animations": [
+						"idle"
+					]
+				},
+				"exploding": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "q.property('eu:is_lit') == false"
+						}
+					],
+					"animations": [
+						"attack"
+					]
+				},
+				"moving": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.ground_speed<0.1"
+						},
+						{
+							"exploding": "q.property('eu:is_lit') == true"
+						}
+					],
+					"animations": [
+						"walk"
+					]
+				}
+			}
+		}
+	}
+}

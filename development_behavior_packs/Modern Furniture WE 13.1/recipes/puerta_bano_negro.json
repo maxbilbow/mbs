@@ -1,0 +1,23 @@
+//bridge-file-version: #302
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:puerta_bano_negro"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabano"
+			}
+		],
+		"result": [
+			{
+				"item": "f:puerta_bano_negro",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

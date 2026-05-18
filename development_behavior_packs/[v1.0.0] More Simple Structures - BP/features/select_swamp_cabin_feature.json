@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_swamp_cabin_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:swamp_cabin_1_feature_mcstructure",
+				5
+			],
+			[
+				"wypnt_mss:swamp_cabin_2_feature_mcstructure",
+				10
+			],
+			[
+				"wypnt_mss:swamp_cabin_3_feature_mcstructure",
+				10
+			]
+		]
+	}
+}

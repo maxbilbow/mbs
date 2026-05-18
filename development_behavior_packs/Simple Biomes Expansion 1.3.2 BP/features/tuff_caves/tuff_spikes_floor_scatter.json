@@ -1,0 +1,29 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tuff_caves/tuff_spikes_floor_scatter"
+		},
+		"iterations": 22,
+		"x": {
+			"extent": [
+				0,
+				9
+			],
+			"distribution": "gaussian"
+		},
+		"z": {
+			"extent": [
+				0,
+				9
+			],
+			"distribution": "gaussian"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:tuff_caves/tuff_spike_snap_to_floor_feature",
+		"scatter_chance": {
+			"numerator": 1,
+			"denominator": 4
+		}
+	}
+}

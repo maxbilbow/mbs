@@ -1,0 +1,93 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:fox_spawn",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"timer": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "spawn_mobs",
+						"target": "self"
+					}
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"events": {
+			"spawn_mobs": {
+				"queue_command": {
+					"command": [
+						"summon minecraft:fox"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"timer"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"mob"
+				]
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:movement": {
+				"value": 0.001
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.7
+			}
+		}
+	}
+}

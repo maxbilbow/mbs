@@ -1,0 +1,10 @@
+import "./transmute.js";
+import "./transmute2.js";
+import "./fuel_rods_explode.js";
+import "./electrolysis.js";
+import "./missile_launch2.js";
+import "./radialEffects.js";
+import "./blockReplace.js";
+import "./radiation.js";
+import "./blocksToEntitiesTest.js";
+import "./customMissileSetup.js";

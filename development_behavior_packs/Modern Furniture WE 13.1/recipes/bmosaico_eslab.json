@@ -1,0 +1,23 @@
+//bridge-file-version: #349
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bmosaico_eslab"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bmosaico_eslab",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

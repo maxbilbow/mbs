@@ -1,0 +1,60 @@
+//bridge-file-version: #50
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:tocadisco",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "tocadisco"
+				}
+			},
+			"minecraft:geometry": "geometry.tocadisco",
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}

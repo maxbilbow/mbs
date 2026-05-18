@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_mega_taiga/pale_mega_taiga_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:pale_forest/pale_forest_eye_blossom_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:pale_mega_taiga/pale_forest_plants_placement_feature",
+				24
+			],
+			[
+				"vanilla_biomes_expansion:sbe_deadbush_feature",
+				7
+			],
+			[
+				"vanilla_biomes_expansion:pale_caves/pale_moss_carpet_feature",
+				4
+			]
+		]
+	}
+}

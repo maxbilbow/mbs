@@ -1,0 +1,90 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:eyeice2",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"eyeice2",
+					"eyeice2_attk"
+				]
+			},
+			"animations": {
+				"eyeice2": "controller.animation.eyeice2",
+				"eyeice2_attk": "controller.animation.eyeice2_attk"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:despawn": {}
+			},
+			"eyeice2:spawmed": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"eyeice"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:timer": {
+				"time": 20,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "ice_attacker"
+						}
+					},
+					"deals_damage": false
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"eyeice2:spawmed": {
+				"add": {
+					"component_groups": [
+						"eyeice2:spawmed"
+					]
+				}
+			}
+		}
+	}
+}

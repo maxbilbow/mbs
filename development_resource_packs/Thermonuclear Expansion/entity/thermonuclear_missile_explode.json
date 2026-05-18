@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "kaboom:thermonuclear_missile_explode",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/thermonuclear_missile_new"
+			},
+			"geometry": {
+				"default": "geometry.thermonuclear_missile_explode_new"
+			},
+			"render_controllers": [
+				"controller.render.thermonuclear_missile_explode"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

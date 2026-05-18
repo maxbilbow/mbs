@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:ancient_wetwood_mega_spruce/water_ancient_wetwood_mega_s_5_feature"
+		},
+		"structure_name": "mystructure:water_ancient_wetwood_mega_s5",
+		"adjustment_radius": 3,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:water"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "messages_text/text": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "(#text - '<' - '>')",
+        "target_property_name": "#text_n"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#text_n - b1 - b2 - b3 - b4 - b5 - b6 - b7 - c1 - c2 - c3 - c4 - c5 - c6 - c7 - d1 - d2 - d3 - d4 - d5 - d6 - d7 - ranzieflash = #text_n)",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

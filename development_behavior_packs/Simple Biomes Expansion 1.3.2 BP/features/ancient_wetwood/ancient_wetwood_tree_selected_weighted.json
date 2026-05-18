@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:ancient_wetwood/ancient_wetwood_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:ancient_wetwood/ancient_wetwood_spruce_weighted",
+				3
+			],
+			[
+				"vanilla_biomes_expansion:ancient_wetwood/ancient_wetwood_pine_weighted",
+				2
+			]
+		]
+	}
+}

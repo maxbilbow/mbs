@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:spruce_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/spruce_tree"
+			},
+			"geometry": {
+				"default": "geometry.spruce_tree"
+			},
+			"render_controllers": [
+				"controller.render.spruce_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_spruce_tree"
+			}
+		}
+	}
+}

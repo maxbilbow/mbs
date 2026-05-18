@@ -1,0 +1,68 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tostadora1",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [14, 7, 5],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [14, 7]},
+								"east": {"uv": [13, 0], "uv_size": [5, 7]},
+								"south": {"uv": [0, 0], "uv_size": [14, 7]},
+								"west": {"uv": [13, 0], "uv_size": [5, 7]},
+								"up": {"uv": [0, 8], "uv_size": [14, 5]},
+								"down": {"uv": [0, 18], "uv_size": [14, -5]}
+							}
+						},
+						{"origin": [-5, 7.1, -1.5], "size": [10, 0, 2], "uv": [-2, 18]},
+						{
+							"origin": [-4, 5.4, -1],
+							"size": [5, 3, 1],
+							"inflate": -0.2,
+							"pivot": [-1.5, 8.2, -0.5],
+							"rotation": [0, 0, -5],
+							"uv": {
+								"north": {"uv": [20, 4], "uv_size": [5, 3]},
+								"east": {"uv": [20, 4], "uv_size": [1, 3]},
+								"south": {"uv": [20, 4], "uv_size": [5, 3]},
+								"west": {"uv": [24, 4], "uv_size": [1, 3]},
+								"up": {"uv": [20, 3], "uv_size": [5, 1]},
+								"down": {"uv": [25, 4], "uv_size": [5, -1]}
+							}
+						},
+						{
+							"origin": [-5, 8, -1],
+							"size": [7, 3, 1],
+							"inflate": -0.2,
+							"pivot": [-1.5, 8.2, -0.5],
+							"rotation": [0, 0, -5],
+							"uv": {
+								"north": {"uv": [19, 1], "uv_size": [7, 3]},
+								"east": {"uv": [25, 1], "uv_size": [1, 3]},
+								"south": {"uv": [19, 1], "uv_size": [7, 3]},
+								"west": {"uv": [25, 1], "uv_size": [1, 3]},
+								"up": {"uv": [19, 1], "uv_size": [7, 1]},
+								"down": {"uv": [19, 4], "uv_size": [7, -1]}
+							}
+						},
+						{"origin": [7.1, 1, -1], "size": [0, 4, 1], "uv": [0, 19]},
+						{"origin": [7.1, 2, -1], "size": [1, 0, 1], "uv": [0, 19]}
+					]
+				}
+			]
+		}
+	]
+}

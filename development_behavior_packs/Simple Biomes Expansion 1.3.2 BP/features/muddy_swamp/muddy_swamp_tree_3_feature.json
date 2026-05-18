@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:muddy_swamp/muddy_swamp_tree_3_feature"
+		},
+		"structure_name": "mystructure:muddy_swamp_tree3",
+		"adjustment_radius": 1,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:vine",
+					"minecraft:mangrove_leaves"
+				]
+			}
+		}
+	}
+}

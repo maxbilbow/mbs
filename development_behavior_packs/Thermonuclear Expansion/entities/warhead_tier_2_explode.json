@@ -1,0 +1,64 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kaboom:warhead_tier_2_explode",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"kaboom:thermonuclear_missile_explode": {
+				"minecraft:transformation": {
+					"into": "kaboom:thermonuclear_explosion"
+				}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true,
+				"push_towards_closest_space": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:is_baby": {},
+			"minecraft:ageable": {
+				"duration": 3,
+				"grow_up": {
+					"event": "kaboom:thermonuclear_explosion"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"event": "kaboom:invisible"
+						},
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"kaboom:thermonuclear_explosion": {
+				"add": {
+					"component_groups": [
+						"kaboom:thermonuclear_missile_explode"
+					]
+				}
+			},
+			"kaboom:invisible": {
+				"queue_command": {
+					"command": [
+						"effect @s invisibility 99999 1 true"
+					]
+				}
+			}
+		}
+	}
+}

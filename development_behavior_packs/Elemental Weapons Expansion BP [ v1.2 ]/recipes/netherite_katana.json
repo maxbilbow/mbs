@@ -1,0 +1,13 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_smithing_transform": {
+    "description": {
+      "identifier": "bca:smithing_netherite_katana"
+    },
+    "tags": ["smithing_table"],
+    "template": "minecraft:netherite_upgrade_smithing_template",
+    "base": "bca:diamond_katana",
+    "addition": "minecraft:netherite_ingot",
+    "result": "bca:netherite_katana"
+  }
+}

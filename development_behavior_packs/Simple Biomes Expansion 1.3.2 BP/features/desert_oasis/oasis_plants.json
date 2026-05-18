@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:desert_oasis/oasis_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:birch_savanna/birch_savanna_plants_placement_feature",
+				8
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_dry_grass_feature",
+				12
+			],
+			[
+				"vanilla_biomes_expansion:sbe_tall_dry_grass_feature",
+				15
+			]
+		]
+	}
+}

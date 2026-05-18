@@ -1,0 +1,124 @@
+//bridge-file-version: #35
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"normal",
+					"pulsado"
+				]
+			},
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:timbre1"
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'pulsado'",
+				"components": {
+					"minecraft:geometry": "geometry.timbre_pulsado"
+					}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'normal'",
+				"components": {
+					"minecraft:geometry": "geometry.timbre"
+				}
+			
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+
+			"minecraft:custom_components": [
+				"content_mf:timbre"
+			],
+
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "timbre1",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:geometry": "geometry.timbre",
+
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					6,
+					6
+				],
+				"size": [
+					4,
+					6,
+					2
+				]
+			},
+			"minecraft:collision_box": false
+			
+		}
+
+	},
+	"format_version": "1.20.20"
+}

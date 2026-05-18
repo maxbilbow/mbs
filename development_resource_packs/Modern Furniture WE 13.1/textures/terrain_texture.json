@@ -1,0 +1,2527 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"pumpking_plate": {
+			"textures": [
+				{
+					"path": "textures/blocks/pumpking_plate"
+				}
+			]
+		},
+		"vorde": {
+			"textures": [
+				{
+					"path": "textures/blocks/vorde"
+				}
+			]
+		},
+		"bnegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/bnegro"
+				}
+			]
+		},
+		"tridente1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tridente1"
+				}
+			]
+		},
+		"papelera_madera": {
+			"textures": [
+				{
+					"path": "textures/blocks/papelera_madera"
+				}
+			]
+		},
+		"sushi": {
+			"textures": [
+				{
+					"path": "textures/blocks/sushi"
+				}
+			]
+		},
+		"mf-stand1": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1"
+				}
+			]
+		},
+		"mf-stand2-1": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-1"
+				}
+			]
+		},
+		"mf-stand2-2": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-2"
+				}
+			]
+		},
+		"mf-stand2-3": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-3"
+				}
+			]
+		},
+		"mf-stand2-4": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-4"
+				}
+			]
+		},
+		"mf-stand2-5": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-5"
+				}
+			]
+		},
+		"mf-stand2-6": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-6"
+				}
+			]
+		},
+		"mf-stand2-7": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-7"
+				}
+			]
+		},
+		"mf-stand2-8": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-8"
+				}
+			]
+		},
+		"mf-stand2-9": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-9"
+				}
+			]
+		},
+		"mf-stand2-10": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-10"
+				}
+			]
+		},
+		"mf-stand2-11": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-11"
+				}
+			]
+		},
+		"mf-stand2-12": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-12"
+				}
+			]
+		},
+		"mf-stand2-13": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-13"
+				}
+			]
+		},
+		"mf-stand2-14": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-14"
+				}
+			]
+		},
+		"mf-stand2-15": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-15"
+				}
+			]
+		},
+		"mf-stand2-16": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-16"
+				}
+			]
+		},
+		"mf-stand2-17": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-17"
+				}
+			]
+		},
+		"mf-stand2-18": {
+			"textures": [
+				{
+					"path": "textures/blocks/disc_stand2/mf-stand1-18"
+				}
+			]
+		},
+		"techo-cristal1": {
+			"textures": [
+				{
+					"path": "textures/blocks/techo-cristal1"
+				}
+			]
+		},
+		"calcetin_rojo": {
+			"textures": [
+				{
+					"path": "textures/blocks/calcetin_rojo"
+				}
+			]
+		},
+		"calcetin_verde": {
+			"textures": [
+				{
+					"path": "textures/blocks/calcetin_verde"
+				}
+			]
+		},
+		"banderita1": {
+			"textures": [
+				{
+					"path": "textures/blocks/banderita1"
+				}
+			]
+		},
+		"banderita2": {
+			"textures": [
+				{
+					"path": "textures/blocks/banderita2"
+				}
+			]
+		},
+		"banderita3": {
+			"textures": [
+				{
+					"path": "textures/blocks/banderita3"
+				}
+			]
+		},
+		"telescopio": {
+			"textures": [
+				{
+					"path": "textures/blocks/telescopio"
+				}
+			]
+		},
+		"tomate1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tomate1"
+				}
+			]
+		},
+		"libro_cocina1": {
+			"textures": [
+				{
+					"path": "textures/blocks/libro_cocina1"
+				}
+			]
+		},
+		"escoba1": {
+			"textures": [
+				{
+					"path": "textures/blocks/escoba1"
+				}
+			]
+		},
+		"clinex_box": {
+			"textures": [
+				{
+					"path": "textures/blocks/clinex_box"
+				}
+			]
+		},
+		"piano1": {
+			"textures": [
+				{
+					"path": "textures/blocks/piano1"
+				}
+			]
+		},
+		"conducto": {
+			"textures": [
+				{
+					"path": "textures/blocks/conducto"
+				}
+			]
+		},
+		"luz_led_1": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz_led_1"
+				}
+			]
+		},
+		"lampararosa": {
+			"textures": [
+				{
+					"path": "textures/blocks/lampararosa"
+				}
+			]
+		},
+		"sofasa9": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa9"
+				}
+			]
+		},
+				"sofasa10": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa10"
+				}
+			]
+		},
+		"luz_led_1_apagado": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz_led_1_apagado"
+				}
+			]
+		},
+		"conducto1": {
+			"textures": [
+				{
+					"path": "textures/blocks/conducto1"
+				}
+			]
+		},
+		"sofasa": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa"
+				},
+				{
+					"path": "textures/blocks/sofasa"
+				}
+			]
+		},
+		"sofasa2": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa2"
+				}
+			]
+		},
+		"sofasa1": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa1"
+				}
+			]
+		},
+		"sofasa3": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa3"
+				}
+			]
+		},
+		"foco": {
+			"textures": [
+				{
+					"path": "textures/blocks/foco"
+				}
+			]
+		},
+		"alfombra2": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra2"
+				}
+			]
+		},
+		"alfombra3": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra3"
+				}
+			]
+		},
+		"alfombra4": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra4"
+				}
+			]
+		},
+		"alfombra5": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra5"
+				}
+			]
+		},
+		"alfombra6": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra6"
+				}
+			]
+		},
+		"alfombra7": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra7"
+				}
+			]
+		},
+		"alfombra8": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra8"
+				}
+			]
+		},
+		"alfombra9": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra9"
+				}
+			]
+		},
+		"alfombra10": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra10"
+				}
+			]
+		},
+		"alfombra11": {
+			"textures": [
+				"textures/blocks/alfombra11"
+			]
+		},
+		"libreriamod1": {
+			"textures": [
+				{
+					"path": "textures/blocks/libreria2"
+				}
+			]
+		},
+		"cajamesa": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajamesa"
+				}
+			]
+		},
+		"cajacocina": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajacocina"
+				}
+			]
+		},
+		"cajaalfombra": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajaalfombra"
+				}
+			]
+		},
+		"cajaconducto": {
+			"textures": [
+				"textures/blocks/cajaconducto"
+			]
+		},
+		"cajacuadro": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajacuadro"
+				}
+			]
+		},
+		"cajalampara": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajalampara"
+				}
+			]
+		},
+		"cajadecoracion": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajadecoracion"
+				}
+			]
+		},
+		"cajasilla": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajasilla"
+				}
+			]
+		},
+		"libreriar": {
+			"textures": [
+				{
+					"path": "textures/blocks/libreriar"
+				}
+			]
+		},
+		"chim": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim"
+				}
+			]
+		},
+		"mesarustica": {
+			"textures": [
+				{
+					"path": "textures/blocks/mesarustica"
+				}
+			]
+		},
+		"sofam": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofamarron"
+				}
+			]
+		},
+		"cuadro12": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro12"
+				}
+			]
+		},
+		"cuadro13": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro13"
+				}
+			]
+		},
+		"cuadro14": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro14"
+				}
+			]
+		},
+		"cuadro15": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro15"
+				}
+			]
+		},
+		"cuadro16": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro16"
+				}
+			]
+		},
+		"cuadro17": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro17"
+				}
+			]
+		},
+		"cuadro18": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro18"
+				}
+			]
+		},
+		"cuadro19": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro19"
+				}
+			]
+		},
+		"cuadro20": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro20"
+				}
+			]
+		},
+		"cuadro21": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro21"
+				}
+			]
+		},
+		"luz1": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz1"
+				}
+			]
+		},
+		"cuadro22": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro22"
+				}
+			]
+		},
+		"cuadro23": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro23"
+				}
+			]
+		},
+		"cuadro24": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro24"
+				}
+			]
+		},
+		"cuadro25": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro25"
+				}
+			]
+		},
+		"cuadro11": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro11"
+				}
+			]
+		},
+		"cuadro10": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro10"
+				}
+			]
+		},
+		"cuadro9": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro9"
+				}
+			]
+		},
+		"cuadro8": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro8"
+				}
+			]
+		},
+		"cuadro7": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro7"
+				}
+			]
+		},
+		"brnegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/brnegro"
+				}
+			]
+		},
+		"chim1": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim1"
+				}
+			]
+		},
+		"chim2": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim2"
+				}
+			]
+		},
+		"sofasa4": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa4"
+				}
+			]
+		},
+		"sofasa5": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa5"
+				}
+			]
+		},
+		"chim3": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim3"
+				}
+			]
+		},
+		"chim4": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim4"
+				}
+			]
+		},
+		"chim5": {
+			"textures": [
+				{
+					"path": "textures/blocks/chim5"
+				}
+			]
+		},
+		"bladrillosblancocontraste": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosblancocontraste"
+				}
+			]
+		},
+		"bladrillosblanco": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosblanco"
+				}
+			]
+		},
+		"bladrillosnegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosnegro"
+				}
+			]
+		},
+		"bmadera1": {
+			"textures": [
+				{
+					"path": "textures/blocks/bmadera1"
+				}
+			]
+		},
+		"bcuarzonegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/bcuarzonegro"
+				}
+			]
+		},
+		"bmadera2": {
+			"textures": [
+				{
+					"path": "textures/blocks/bmadera2"
+				}
+			]
+		},
+		"bmadera3": {
+			"textures": [
+				{
+					"path": "textures/blocks/bmadera3"
+				}
+			]
+		},
+		"moai": {
+			"textures": [
+				{
+					"path": "textures/blocks/moai"
+				}
+			]
+		},
+		"sofasa6": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa6"
+				}
+			]
+		},
+		"sofasa7": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa7"
+				}
+			]
+		},
+		"mesamadera1": {
+			"textures": [
+				{
+					"path": "textures/blocks/mesamadera1"
+				}
+			]
+		},
+		"falsifier": {
+			"textures": [
+				{
+					"path": "textures/blocks/falsifier"
+				}
+			]
+		},
+		"cocina": {
+			"textures": [
+				{
+					"path": "textures/blocks/cocina"
+				},
+				{
+					"path": "textures/blocks/cocina"
+				}
+			]
+		},
+		"cocina1": {
+			"textures": [
+				{
+					"path": "textures/blocks/cocina1"
+				}
+			]
+		},
+		"bandere": {
+			"textures": [
+				{
+					"path": "textures/blocks/bandere"
+				}
+			]
+		},
+		"mese": {
+			"textures": [
+				{
+					"path": "textures/blocks/mese"
+				}
+			],
+			"mese": {
+				"textures": [
+					{
+						"path": "textures/blocks/mese"
+					}
+				]
+			}
+		},
+		"estante": {
+			"textures": [
+				{
+					"path": "textures/blocks/estante"
+				}
+			],
+			"bro": {}
+		},
+		"libreria": {
+			"textures": [
+				{
+					"path": "textures/blocks/libreria"
+				}
+			]
+		},
+		"celpudo": {
+			"textures": [
+				{
+					"path": "textures/blocks/celpudo"
+				}
+			]
+		},
+		"lamparanegra": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparanegra"
+				}
+			]
+		},
+		"lamparablanca": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparablanca"
+				}
+			]
+		},
+		"mesamadera": {
+			"textures": [
+				{
+					"path": "textures/blocks/mesamadera"
+				}
+			]
+		},
+		"sofanegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofanegro"
+				}
+			],
+			"cuadro1": {
+				"textures": [
+					{
+						"path": "textures/blocks/cuadro1"
+					}
+				],
+				"cuadro2": {
+					"textures": [
+						{
+							"path": "textures/blocks/cuadro2"
+						}
+					]
+				}
+			}
+		},
+		"cuadro1": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro1"
+				}
+			]
+		},
+		"cuadro2": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro2"
+				}
+			]
+		},
+		"cuadro3": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro3"
+				}
+			]
+		},
+		"cuadro4": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro4"
+				}
+			]
+		},
+		"cuadro5": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro5"
+				}
+			]
+		},
+		"cuadro6": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro6"
+				}
+			]
+		},
+		"sillanegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/sillanegro"
+				}
+			]
+		},
+		"sillablanca": {
+			"textures": [
+				{
+					"path": "textures/blocks/sillablanca"
+				}
+			]
+		},
+		"mesa": {
+			"textures": [
+				{
+					"path": "textures/blocks/mesa"
+				}
+			]
+		},
+		"taburete": {
+			"textures": [
+				{
+					"path": "textures/blocks/taburete"
+				}
+			]
+		},
+		"perchero": {
+			"textures": [
+				{
+					"path": "textures/blocks/perchero"
+				}
+			]
+		},
+		"alfombra": {
+			"textures": [
+				{
+					"path": "textures/blocks/alfombra"
+				}
+			]
+		},
+		"sillalima": {
+			"textures": [
+				{
+					"path": "textures/blocks/sillalima"
+				}
+			]
+		},
+		"sofalima": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofalima"
+				}
+			]
+		},
+		"lamparalima": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparalima"
+				}
+			]
+		},
+		"sofa": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofa"
+				}
+			]
+		},
+		"taburete1": {
+			"textures": [
+				{
+					"path": "textures/blocks/taburete1"
+				}
+			]
+		},
+		"taburete2": {
+			"textures": [
+				{
+					"path": "textures/blocks/taburete2"
+				}
+			]
+		},
+		"sillagris": {
+			"textures": [
+				{
+					"path": "textures/blocks/sillagris"
+				}
+			]
+		},
+		"sofaamarillo": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofaamarillo"
+				}
+			]
+		},
+		"sofamorado": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofamorado"
+				}
+			]
+		},
+		"sofanaranja": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofalnaranja"
+				}
+			]
+		},
+		"mesaofis": {
+			"textures": [
+				{
+					"path": "textures/blocks/mesaofis"
+				}
+			]
+		},
+		"cocina2": {
+			"textures": [
+				{
+					"path": "textures/blocks/cocina2"
+				}
+			]
+		},
+		"maceta1": {
+			"textures": [
+				{
+					"path": "textures/blocks/maceta1"
+				}
+			]
+		},
+		"paredyerba": {
+			"textures": [
+				{
+					"path": "textures/blocks/paredyerba"
+				}
+			]
+		},
+		"sofarojo": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofarojo"
+				}
+			]
+		},
+		"sofagris": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofagris"
+				}
+			]
+		},
+		"estatua": {
+			"textures": [
+				{
+					"path": "textures/blocks/estatua"
+				}
+			]
+		},
+		"pizarra1": {
+			"textures": [
+				{
+					"path": "textures/blocks/pizarra1"
+				}
+			]
+		},
+		"mundo": {
+			"textures": [
+				{
+					"path": "textures/blocks/mundo"
+				}
+			]
+		},
+		"papelera": {
+			"textures": [
+				{
+					"path": "textures/blocks/papelera"
+				}
+			]
+		},
+		"papelera2": {
+			"textures": [
+				{
+					"path": "textures/blocks/papelera2"
+				}
+			]
+		},
+		"bonsay": {
+			"textures": [
+				{
+					"path": "textures/blocks/bonsay"
+				}
+			]
+		},
+		"cuadro26": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro26"
+				}
+			]
+		},
+		"cuadro27": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro27"
+				}
+			]
+		},
+		"cuadro28": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro28"
+				}
+			]
+		},
+		"cuadro29": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro29"
+				}
+			]
+		},
+		"cuadro30": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro30"
+				}
+			]
+		},
+		"cuadro31": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro31"
+				}
+			]
+		},
+		"cuadro32": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro32"
+				}
+			]
+		},
+		"cuadro33": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro33"
+				}
+			]
+		},
+		"cuadro34": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro34"
+				}
+			]
+		},
+		"cuadro35": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro35"
+				}
+			]
+		},
+		"cuadro36": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro36"
+				}
+			]
+		},
+		"tuberia1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tuberia1"
+				}
+			]
+		},
+		"tuberia2": {
+			"textures": [
+				{
+					"path": "textures/blocks/tuberia2"
+				}
+			]
+		},
+		"huevodeobsidiana": {
+			"textures": [
+				{
+					"path": "textures/blocks/huevodeobsidiana"
+				}
+			]
+		},
+		"bloquecuadros": {
+			"textures": [
+				{
+					"path": "textures/blocks/bloquecuadros"
+				}
+			]
+		},
+		"lamparanaranga": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparanaranga"
+				}
+			]
+		},
+		"lamparamorado": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparamorado"
+				}
+			]
+		},
+		"lamparagris": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparagris"
+				}
+			]
+		},
+		"lampararoja": {
+			"textures": [
+				{
+					"path": "textures/blocks/lampararoja"
+				}
+			]
+		},
+		"lamparaamarillo": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparaamarillo"
+				}
+			]
+		},
+		"rueda": {
+			"textures": [
+				{
+					"path": "textures/blocks/rueda"
+				}
+			]
+		},
+		"gasolina_azul": {
+			"textures": [
+				{
+					"path": "textures/blocks/gasolina_azul"
+				}
+			]
+		},
+		"gasolina_roja": {
+			"textures": [
+				{
+					"path": "textures/blocks/gasolina_roja"
+				}
+			]
+		},
+		"gasolina_verde": {
+			"textures": [
+				{
+					"path": "textures/blocks/gasolina_verde"
+				}
+			]
+		},
+		"metal": {
+			"textures": [
+				{
+					"path": "textures/blocks/metal"
+				}
+			]
+		},
+		"cajagaraje": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajagaraje"
+				}
+			]
+		},
+		"maceta2": {
+			"textures": [
+				{
+					"path": "textures/blocks/maceta2"
+				}
+			]
+		},
+		"bloquecuarzo": {
+			"textures": [
+				{
+					"path": "textures/blocks/bloquecuarzo"
+				}
+			]
+		},
+		"azulejos": {
+			"textures": [
+				{
+					"path": "textures/blocks/azulejos"
+				}
+			]
+		},
+		"garaje": {
+			"textures": [
+				{
+					"path": "textures/blocks/garaje"
+				}
+			]
+		},
+		"vallablanca": {
+			"textures": [
+				{
+					"path": "textures/blocks/vallablanca"
+				}
+			]
+		},
+		"conductogris": {
+			"textures": [
+				{
+					"path": "textures/blocks/conductogris"
+				}
+			]
+		},
+		"conducto1gris": {
+			"textures": [
+				{
+					"path": "textures/blocks/conducto1gris"
+				}
+			]
+		},
+		"damas1": {
+			"textures": [
+				{
+					"path": "textures/blocks/damas"
+				}
+			]
+		},
+		"hojas": {
+			"textures": [
+				{
+					"path": "textures/blocks/hojas"
+				}
+			]
+		},
+		"discord": {
+			"textures": [
+				{
+					"path": "textures/blocks/discord"
+				}
+			]
+		},
+		"galletas": {
+			"textures": [
+				{
+					"path": "textures/blocks/galletas"
+				}
+			]
+		},
+		"trofeo": {
+			"textures": [
+				{
+					"path": "textures/blocks/trofeo"
+				}
+			]
+		},
+		"regalorojo": {
+			"textures": [
+				"textures/blocks/regalo_rojo"
+			]
+		},
+		"regaloazul": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_azul"
+				}
+			]
+		},
+		"regalomorado": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_morado"
+				}
+			]
+		},
+		"regalomora": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_mora"
+				}
+			]
+		},
+		"regaloamarillo": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_amarilo"
+				}
+			]
+		},
+		"regalonaranja": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_naranja"
+				}
+			]
+		},
+		"regaloblanco": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_blanco"
+				}
+			]
+		},
+		"regalonegro": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo_negro"
+				}
+			]
+		},
+		"decoracionnavidad": {
+			"textures": [
+				"textures/blocks/decoracionnavidad"
+			]
+		},
+		"cuadro37": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro37"
+				}
+			]
+		},
+		"arbol": {
+			"textures": [
+				{
+					"path": "textures/blocks/arbol"
+				}
+			]
+		},
+		"arbol2": {
+			"textures": [
+				{
+					"path": "textures/blocks/arbol2"
+				}
+			]
+		},
+		"estrella": {
+			"textures": [
+				{
+					"path": "textures/blocks/estrella"
+				}
+			]
+		},
+		"cajafestiva": {
+			"textures": [
+				{
+					"path": "textures/blocks/cajafestiva"
+				}
+			]
+		},
+		"cuadro38": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro38"
+				}
+			]
+		},
+		"cuadro39": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro39"
+				}
+			]
+		},
+		"cuadro40": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro40"
+				}
+			]
+		},
+		"tocadisco": {
+			"textures": [
+				{
+					"path": "textures/blocks/tocadisco"
+				}
+			]
+		},
+		"sofaazul": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofaazul"
+				}
+			]
+		},
+				"sofaazulclaro": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofaazulclaro"
+				}
+			]
+		},
+		"sofasa8": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa8"
+				}
+			]
+		},
+		"lamparaazul": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparaazul"
+				}
+			]
+		},
+				"lamparaazulclaro": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparaazulclaro"
+				}
+			]
+		},
+		"puerta_bano_rojo": {
+			"textures": [
+				{
+					"path": "textures/blocks/puerta_bano_rojo"
+				}
+			]
+		},
+		"puerta_bano_azul": {
+			"textures": [
+				{
+					"path": "textures/blocks/puerta_bano_azul"
+				}
+			]
+		},
+		"puerta_bano_negro": {
+			"textures": [
+				{
+					"path": "textures/blocks/puerta_bano_negro"
+				}
+			]
+		},
+		"bladrillosgranito": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosgranito"
+				}
+			]
+		},
+		"bladrillosdiorita": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosdiorita"
+				}
+			]
+		},
+		"bladrillosandesita": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillosandesita"
+				}
+			]
+		},
+		"a": {
+			"textures": [
+				{
+					"path": "textures/blocks/a"
+				}
+			]
+		},
+		"servilletera": {
+			"textures": [
+				{
+					"path": "textures/blocks/servilletera"
+				}
+			]
+		},
+		"tablon_corcho1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tablon_corcho1"
+				}
+			]
+		},
+		"l": {
+			"textures": [
+				{
+					"path": "textures/blocks/l"
+				}
+			]
+		},
+		"paredpiscina": {
+			"textures": [
+				{
+					"path": "textures/blocks/paredpiscina"
+				}
+			]
+		},
+		"escalerapiscina": {
+			"textures": [
+				{
+					"path": "textures/blocks/escalerapiscina"
+				}
+			]
+		},
+		"boya_roja": {
+			"textures": [
+				{
+					"path": "textures/blocks/boya_roja"
+				}
+			]
+		},
+		"geoda": {
+			"textures": [
+				{
+					"path": "textures/blocks/amatista"
+				}
+			]
+		},
+		"mosaico2": {
+			"textures": [
+				{
+					"path": "textures/blocks/mosaico"
+				}
+			]
+		},
+		"cuadro41": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro41"
+				}
+			]
+		},
+		"cuadro42": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro42"
+				}
+			]
+		},
+		"cuadro1patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro1patreon"
+				}
+			]
+		},
+		"arena": {
+			"textures": [
+				{
+					"path": "textures/blocks/arena"
+				}
+			]
+		},
+		"puerta_bunker": {
+			"textures": [
+				{
+					"path": "textures/blocks/puerta_bunker"
+				}
+			]
+		},
+		"rendija-piscina": {
+			"textures": [
+				{
+					"path": "textures/blocks/rendija-piscina"
+				}
+			]
+		},
+		"cocinados": {
+			"textures": [
+				{
+					"path": "textures/blocks/cocinados"
+				}
+			]
+		},
+		"boya_bomba": {
+			"textures": [
+				{
+					"path": "textures/blocks/boya_bomba"
+				}
+			]
+		},
+		"bladrillos_marron_blanco": {
+			"textures": [
+				{
+					"path": "textures/blocks/bladrillos-marron-blanco"
+				}
+			]
+		},
+		"yeti": {
+			"textures": [
+				{
+					"path": "textures/blocks/yeti"
+				}
+			]
+		},
+		"boya_amarilla": {
+			"textures": [
+				{
+					"path": "textures/blocks/boya_amarilla"
+				}
+			]
+		},
+		"boya_verde": {
+			"textures": [
+				{
+					"path": "textures/blocks/boya_verde"
+				}
+			]
+		},
+		"cuadro2patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro2patreon"
+				}
+			]
+		},
+		"cuadro9patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro9patreon"
+				}
+			]
+		},
+		"cuadro10patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro10patreon"
+				}
+			]
+		},
+		"semaforo": {
+			"textures": [
+				{
+					"path": "textures/blocks/semaforo"
+				}
+			]
+		},
+		"tuberia": {
+			"textures": [
+				{
+					"path": "textures/blocks/tuberia"
+				}
+			]
+		},
+		"cuadro3patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro3patreon"
+				}
+			]
+		},
+		"cuadro4patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro4patreon"
+				}
+			]
+		},
+		"timbre1": {
+			"textures": [
+				{
+					"path": "textures/blocks/timbre1"
+				}
+			]
+		},
+		"timbre2": {
+			"textures": [
+				{
+					"path": "textures/blocks/timbre2"
+				}
+			]
+		},
+		"timbre3": {
+			"textures": [
+				{
+					"path": "textures/blocks/timbre3"
+				}
+			]
+		},
+		"paleta": {
+			"textures": [
+				{
+					"path": "textures/blocks/paleta"
+				}
+			]
+		},
+		"regalo1": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo1"
+				}
+			]
+		},
+		"regalo2": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo2"
+				}
+			]
+		},
+		"regalo3": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo3"
+				}
+			]
+		},
+		"regalo4": {
+			"textures": [
+				{
+					"path": "textures/blocks/regalo4"
+				}
+			]
+		},
+		"cuadro5patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro5patreon"
+				}
+			]
+		},
+		"espejo1": {
+			"textures": [
+				{
+					"path": "textures/blocks/espejo1"
+				}
+			]
+		},
+		"espejo2": {
+			"textures": [
+				{
+					"path": "textures/blocks/espejo2"
+				}
+			]
+		},
+		"textura_letal_1": {
+			"textures": [
+				{
+					"path": "textures/blocks/textura_letal_1"
+				}
+			]
+		},
+		"cuadro6patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro6patreon"
+				}
+			]
+		},
+		"luz3": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz3"
+				}
+			]
+		},
+		"luz3_apagado": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz3_apagado"
+				}
+			]
+		},
+		"cuadro7patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro7patreon"
+				}
+			]
+		},
+		"cuadro8patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro8patreon"
+				}
+			]
+		},
+		"cuadro10patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro10patreon"
+				}
+			]
+		},
+		"cuadro11patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro11patreon"
+				}
+			]
+		},
+		"cuadro12patreon": {
+			"textures": [
+				{
+					"path": "textures/blocks/cuadro12patreon"
+				}
+			]
+		},
+		"microfono": {
+			"textures": [
+				{
+					"path": "textures/blocks/microfono"
+				}
+			]
+		},
+		"altavoz1": {
+			"textures": [
+				{
+					"path": "textures/blocks/altavoz1"
+				}
+			]
+		},
+		"frutero": {
+			"textures": [
+				{
+					"path": "textures/blocks/frutero"
+				}
+			]
+		},
+		"tim1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tim1"
+				}
+			]
+		},
+		"tim2": {
+			"textures": [
+				{
+					"path": "textures/blocks/tim2"
+				}
+			]
+		},
+		"parchis": {
+			"textures": [
+				{
+					"path": "textures/blocks/parchis"
+				}
+			]
+		},
+		"connect4": {
+			"textures": [
+				{
+					"path": "textures/blocks/connect4"
+				}
+			]
+		},
+		"sofarosa": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofarosa"
+				}
+			]
+		},
+		"caja_pizza": {
+			"textures": [
+				{
+					"path": "textures/blocks/caja_pizza"
+				}
+			]
+		},
+		"modern-fence1": {
+			"textures": [
+				{
+					"path": "textures/blocks/modern-fence1"
+				}
+			]
+		},
+		"modern-fence3": {
+			"textures": [
+				{
+					"path": "textures/blocks/modern-fence3"
+				}
+			]
+		},
+		"bloquecuarzo-verde": {
+			"textures": [
+				{
+					"path": "textures/blocks/bloquecuarzo-verde"
+				}
+			]
+		},
+		"bloquecuarzo-azul": {
+			"textures": [
+				{
+					"path": "textures/blocks/bloquecuarzo-azul"
+				}
+			]
+		},
+		"bloquecuarzo-naranja": {
+			"textures": [
+				{
+					"path": "textures/blocks/bloquecuarzo-naranja"
+				}
+			]
+		},
+		"office-table": {
+			"textures": [
+				{
+					"path": "textures/blocks/office-table"
+				}
+			]
+		},
+		"techo-falso": {
+			"textures": [
+				{
+					"path": "textures/blocks/techo-falso"
+				}
+			]
+		},
+		"trampolin": {
+			"textures": [
+				{
+					"path": "textures/blocks/trampolin"
+				}
+			]
+		},
+		"andamio1": {
+			"textures": [
+				{
+					"path": "textures/blocks/andamio1"
+				}
+			]
+		},
+		"andamio2": {
+			"textures": [
+				{
+					"path": "textures/blocks/andamio2"
+				}
+			]
+		},
+		"pizarra1_rojo": {
+			"textures": [
+				{
+					"path": "textures/blocks/pizarra1_rojo"
+				}
+			]
+		},
+		"pizarra1_azul": {
+			"textures": [
+				{
+					"path": "textures/blocks/pizarra1_azul"
+				}
+			]
+		},
+		"book_ad_1": {
+			"textures": [
+				{
+					"path": "textures/blocks/book_ad_1"
+				}
+			]
+		},
+		"book_ad_2": {
+			"textures": [
+				{
+					"path": "textures/blocks/book_ad_2"
+				}
+			]
+		},
+		"pizarra1_azul": {
+			"textures": [
+				{
+					"path": "textures/blocks/pizarra1_azul"
+				}
+			]
+		},
+		"pizarra1_negro": {
+			"textures": [
+				{
+					"path": "textures/blocks/pizarra1_negro"
+				}
+			]
+		},
+		"compuerta": {
+			"textures": [
+				{
+					"path": "textures/blocks/compuerta"
+				}
+			]
+		},
+				"cristal_flower_pot1": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot1"
+				}
+			]
+		},
+		"cristal_flower_pot2": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot2"
+				}
+			]
+		},
+		"cristal_flower_pot3": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot3"
+				}
+			]
+		},
+		"cristal_flower_pot4": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot4"
+				}
+			]
+		},
+		"cristal_flower_pot5": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot5"
+				}
+			]
+		},
+		"cristal_flower_pot6": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot6"
+				}
+			]
+		},
+		"cristal_flower_pot7": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot7"
+				}
+			]
+		},
+		"cristal_flower_pot8": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot8"
+				}
+			]
+		},
+		"cristal_flower_pot9": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot9"
+				}
+			]
+		},
+		"cristal_flower_pot10": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot10"
+				}
+			]
+		},
+		"cristal_flower_pot11": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot11"
+				}
+			]
+		},
+		"cristal_flower_pot12": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot12"
+				}
+			]
+		},
+		"cristal_flower_pot13": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot13"
+				}
+			]
+		},
+		"cristal_flower_pot14": {
+			"textures": [
+				{
+					"path": "textures/blocks/cristal_flower_pot/cristal_flower_pot14"
+				}
+			]
+		},
+				"ceramic_flower_pot1": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot1"
+				}
+			]
+		},
+		"ceramic_flower_pot2": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot2"
+				}
+			]
+		},
+		"ceramic_flower_pot3": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot3"
+				}
+			]
+		},
+		"ceramic_flower_pot4": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot4"
+				}
+			]
+		},
+		"ceramic_flower_pot5": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot5"
+				}
+			]
+		},
+		"ceramic_flower_pot6": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot6"
+				}
+			]
+		},
+		"ceramic_flower_pot7": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot7"
+				}
+			]
+		},
+		"ceramic_flower_pot8": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot8"
+				}
+			]
+		},
+		"ceramic_flower_pot9": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot9"
+				}
+			]
+		},
+		"ceramic_flower_pot10": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot10"
+				}
+			]
+		},
+		"ceramic_flower_pot11": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot11"
+				}
+			]
+		},
+		"ceramic_flower_pot12": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot12"
+				}
+			]
+		},
+		"ceramic_flower_pot13": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot13"
+				}
+			]
+		},
+		"ceramic_flower_pot14": {
+			"textures": [
+				{
+					"path": "textures/blocks/ceramic_flower_pot/ceramic_flower_pot14"
+				}
+			]
+		},
+		"white_ceramic_flower_pot1": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot1"
+				}
+			]
+		},
+		"white_ceramic_flower_pot2": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot2"
+				}
+			]
+		},
+		"white_ceramic_flower_pot3": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot3"
+				}
+			]
+		},
+		"white_ceramic_flower_pot4": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot4"
+				}
+			]
+		},
+		"white_ceramic_flower_pot5": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot5"
+				}
+			]
+		},
+		"white_ceramic_flower_pot6": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot6"
+				}
+			]
+		},
+		"white_ceramic_flower_pot7": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot7"
+				}
+			]
+		},
+		"white_ceramic_flower_pot8": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot8"
+				}
+			]
+		},
+		"white_ceramic_flower_pot9": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot9"
+				}
+			]
+		},
+		"white_ceramic_flower_pot10": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot10"
+				}
+			]
+		},
+		"white_ceramic_flower_pot11": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot11"
+				}
+			]
+		},
+		"white_ceramic_flower_pot12": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot12"
+				}
+			]
+		},
+		"white_ceramic_flower_pot13": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot13"
+				}
+			]
+		},
+		"white_ceramic_flower_pot14": {
+			"textures": [
+				{
+					"path": "textures/blocks/white_ceramic_flower_pot/white_ceramic_flower_pot14"
+				}
+			]
+		},
+		"red_ceramic_flower_pot1": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot1"
+				}
+			]
+		},
+		"red_ceramic_flower_pot2": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot2"
+				}
+			]
+		},
+		"red_ceramic_flower_pot3": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot3"
+				}
+			]
+		},
+		"red_ceramic_flower_pot4": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot4"
+				}
+			]
+		},
+		"red_ceramic_flower_pot5": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot5"
+				}
+			]
+		},
+		"red_ceramic_flower_pot6": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot6"
+				}
+			]
+		},
+		"red_ceramic_flower_pot7": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot7"
+				}
+			]
+		},
+		"red_ceramic_flower_pot8": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot8"
+				}
+			]
+		},
+		"red_ceramic_flower_pot9": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot9"
+				}
+			]
+		},
+		"red_ceramic_flower_pot10": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot10"
+				}
+			]
+		},
+		"red_ceramic_flower_pot11": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot11"
+				}
+			]
+		},
+		"red_ceramic_flower_pot12": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot12"
+				}
+			]
+		},
+		"red_ceramic_flower_pot13": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot13"
+				}
+			]
+		},
+		"red_ceramic_flower_pot14": {
+			"textures": [
+				{
+					"path": "textures/blocks/red_ceramic_flower_pot/red_ceramic_flower_pot14"
+				}
+			]
+		},
+		"sofasa11": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofasa11"
+				}
+			]
+		},
+		"sofaazulcian": {
+			"textures": [
+				{
+					"path": "textures/blocks/sofaazulcian"
+				}
+			]
+		},
+		"lamparaazulcian": {
+			"textures": [
+				{
+					"path": "textures/blocks/lamparaazulcian"
+				}
+			]
+		}
+	}
+}

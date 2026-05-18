@@ -1,0 +1,23 @@
+//bridge-file-version: #19
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:conducto9"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajaconducto"
+			}
+		],
+		"result": [
+			{
+				"item": "f:conducto9",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

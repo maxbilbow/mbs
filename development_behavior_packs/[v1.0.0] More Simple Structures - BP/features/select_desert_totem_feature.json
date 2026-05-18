@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "wypnt_mss:select_desert_totem_feature"
+		},
+		"features": [
+			[
+				"wypnt_mss:small_desert_totem_pillar_1_feature_mcstructure",
+				1
+			],
+			[
+				"wypnt_mss:small_desert_totem_pillar_2_feature_mcstructure",
+				5
+			]
+		]
+	}
+}

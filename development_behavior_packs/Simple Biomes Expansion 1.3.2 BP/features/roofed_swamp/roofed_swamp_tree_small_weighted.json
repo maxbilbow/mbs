@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_swamp/roofed_swamp_tree_small_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:roofed_swamp/roofed_swamp_tree_small_1_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:roofed_swamp/roofed_swamp_tree_small_2_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:roofed_swamp/roofed_swamp_tree_small_3_feature",
+				1
+			],
+			[
+				"vanilla_biomes_expansion:roofed_swamp/roofed_swamp_tree_small_4_feature",
+				1
+			]
+		]
+	}
+}

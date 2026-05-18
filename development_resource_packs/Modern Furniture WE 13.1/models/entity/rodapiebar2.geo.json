@@ -1,0 +1,79 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.rodapiebar2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, 6.9],
+							"size": [16, 11, 1.1],
+							"uv": {
+								"north": {"uv": [15, 16], "uv_size": [16, 11]},
+								"east": {"uv": [15, 16], "uv_size": [1, 11]},
+								"south": {"uv": [16, 16], "uv_size": [16, 11]},
+								"west": {"uv": [31, 16], "uv_size": [1, 11]},
+								"up": {"uv": [16, 15], "uv_size": [15, 1]},
+								"down": {"uv": [31, 16], "uv_size": [15, -1]}
+							}
+						},
+						{
+							"origin": [6.9, 0, 6.9],
+							"size": [15, 11, 1.1],
+							"pivot": [14.9, 0, 0],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"north": {"uv": [15, 16], "uv_size": [15, 11]},
+								"east": {"uv": [15, 16], "uv_size": [1, 11]},
+								"south": {"uv": [16, 16], "uv_size": [16, 11]},
+								"west": {"uv": [31, 16], "uv_size": [1, 11]},
+								"up": {"uv": [16, 15], "uv_size": [15, 1]},
+								"down": {"uv": [31, 16], "uv_size": [15, -1]}
+							}
+						},
+						{
+							"origin": [-8, 11, 6.9],
+							"size": [16, 5, 1.1],
+							"uv": {
+								"north": {"uv": [16, 7], "uv_size": [16, 5]},
+								"east": {"uv": [16, 7], "uv_size": [1, 5]},
+								"south": {"uv": [31, 7], "uv_size": [16, 5]},
+								"west": {"uv": [30, 7], "uv_size": [1, 5]},
+								"up": {"uv": [16, 7], "uv_size": [15, 1]},
+								"down": {"uv": [30, 9], "uv_size": [14, -1]}
+							}
+						},
+						{
+							"origin": [6.9, 11, 6.9],
+							"size": [15, 5, 1.1],
+							"pivot": [14.9, 0, 0],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"north": {"uv": [16, 7], "uv_size": [15, 5]},
+								"east": {"uv": [16, 7], "uv_size": [1, 5]},
+								"south": {"uv": [31, 7], "uv_size": [15, 5]},
+								"west": {"uv": [30, 7], "uv_size": [1, 5]},
+								"up": {"uv": [16, 7], "uv_size": [15, 1]},
+								"down": {"uv": [30, 9], "uv_size": [14, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0]
+				}
+			]
+		}
+	]
+}

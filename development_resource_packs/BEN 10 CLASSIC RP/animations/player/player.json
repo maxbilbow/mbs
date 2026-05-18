@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.invisible": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"scale": "(query.variant == 19 || query.variant == 20 || query.variant == 15 || query.variant == 23) ? 1.0 : 0.0"
+				},
+				"body": {
+					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+				},
+				"rightarm": {
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+				},
+				"leftarm": {
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+				},
+				"rightleg": {
+					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+				},
+				"leftleg": {
+					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+				}
+			}
+		},
+		"animation.player.head2": {
+			"loop": true,
+			"bones": {
+				"head2": {
+					"rotation": [
+						"query.variant==17?0:(query.target_x_rotation-this)",
+						"query.variant==17?0:(query.target_y_rotation-this)",
+						0
+					]
+				}
+			}
+		},
+		"animation.player.rightarm_fp": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"position": [
+						0,
+						0,
+						-1
+					]
+				}
+			}
+		}
+	}
+}

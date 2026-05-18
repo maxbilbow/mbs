@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:fissile_uranium"
+		},
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"input": "minecraft:redstone",
+		"output": "kaboom:fissile_uranium"
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"resource_pack_name": "Drills",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"drills_diamond_drill": {
+			"textures": "textures/items/diamonddrill"
+		},
+		"drills_gold_drill": {
+			"textures": "textures/items/golddrill"
+		},
+		"drills_iron_drill": {
+			"textures": "textures/items/irondrill"
+		},
+		"drills_copper_drill": {
+			"textures": "textures/items/copperdrill"
+		},
+		"drills_emerald_drill": {
+			"textures": "textures/items/emeralddrill"
+		},
+		"drills_multi_drill": {
+			"textures": "textures/items/multidrill"
+		},
+		"drills_netherite_drill": {
+			"textures": "textures/items/netheritedrill"
+		},
+		"drills_sculk_drill": {
+			"textures": "textures/items/sculkdrill"
+		},
+		"drills_amethyst_drill": {
+			"textures": "textures/items/amethystdrill"
+		},
+		"drills_prismarine_drill": {
+			"textures": "textures/items/prismarinedrill"
+		},
+		"drills_chorus_drill": {
+			"textures": "textures/items/chorusdrill"
+		}
+	}
+}

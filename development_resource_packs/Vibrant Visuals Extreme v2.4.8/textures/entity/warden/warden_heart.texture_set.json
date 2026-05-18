@@ -1,0 +1,9 @@
+{
+    "format_version": "1.21.30",
+    "minecraft:texture_set": {
+      "color": "warden_heart",
+      "metalness_emissive_roughness": "warden_heart_mer",
+      "normal":"warden_heart_n"
+      
+    }
+  }

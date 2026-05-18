@@ -1,0 +1,24 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sapphire_forest/sapphire_forest_tree_1_feature"
+		},
+		"structure_name": "mystructure:sapphire_forest_tree1",
+		"adjustment_radius": 2,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:cornflower",
+					"minecraft:blue_orchid",
+					"minecraft:pitcher_plant",
+					"minecraft:short_grass",
+					"minecraft:dark_oak_leaves"
+				]
+			}
+		}
+	}
+}

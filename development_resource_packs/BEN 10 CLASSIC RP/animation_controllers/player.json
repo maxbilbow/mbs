@@ -1,0 +1,108 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.head2": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==0"
+						}
+					]
+				},
+				"shoot": {
+					"animations": [
+						"head2"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.invinsible": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant>0"
+						}
+					]
+				},
+				"shoot": {
+					"animations": [
+						"invinsible"
+					],
+					"transitions": [
+						{
+							"default": "query.variant<=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.riding.arms": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!query.variant==15"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"riding.arms"
+					],
+					"transitions": [
+						{
+							"default": "query.variant==15"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.player.omni_dial_state": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"opening": "variable.holding_omni_icon&&variable.selecting_omni_alien"
+						}
+					]
+				},
+				"opening": {
+					"animations": [
+						"omnitrix_started"
+					],
+					"transitions": [
+						{
+							"closing": "!(variable.holding_omni_icon&&variable.selecting_omni_alien)"
+						}
+					]
+				},
+				"closing": {
+					"animations": [
+						"omnitrix_ended"
+					],
+					"transitions": [
+						{
+							"idle": "query.state_time>=0.3"
+						},
+						{
+							"opening": "variable.holding_omni_icon&&variable.selecting_omni_alien"
+						}
+					]
+				}
+			}
+		}
+	}
+}

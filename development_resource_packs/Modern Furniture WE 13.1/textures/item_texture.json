@@ -1,0 +1,40 @@
+{
+	"texture_data": {
+		"red_hand": {
+			"textures": "textures/items/red_hand.png"
+		},
+		"book2": {
+			"textures": "textures/items/book2.png"
+		},
+		"book1": {
+			"textures": "textures/items/book1.png"
+		},
+		"pencil_rojo": {
+			"textures": "textures/items/pencil_rojo.png"
+		},
+		"catalog": {
+			"textures": ["textures/items/catalog"]
+		},
+		"bridge_llave_inglesa": {
+			"textures": ["textures/items/llave_inglesa"]
+		},
+		"microphone": {
+			"textures": ["textures/items/microphone"]
+		},
+		"borrador": {
+			"textures": ["textures/items/borrador"]
+		},
+		"pencil_azul": {
+			"textures": ["textures/items/pencil_azul"]
+		},
+		"pencil_negro": {
+			"textures": ["textures/items/pencil_negro"]
+		},
+		"silladeruedas_spawn_egg": {
+			"textures": ["textures/items/silladeruedas_spawn_egg.png"]
+		},
+		"manual": {
+			"textures": ["textures/items/manual.png"]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #103
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:mesagaraje"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajagaraje"
+			}
+		],
+		"result": [
+			{
+				"item": "f:mesagaraje",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

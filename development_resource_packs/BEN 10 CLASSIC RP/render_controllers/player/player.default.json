@@ -1,0 +1,130 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.player.first_person": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"query.variant<=0&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)?texture.ben10_costume:texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"rightArm": "query.variant <= 0 && query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map'"
+				},
+				{
+					"rightSleeve": "query.variant <= 0 && query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map'"
+				},
+				{
+					"leftArm": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))"
+				},
+				{
+					"leftSleeve": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))"
+				},
+				{
+					"body": false
+				},
+				{
+					"jacket": false
+				},
+				{
+					"head": false
+				},
+				{
+					"hat": false
+				}
+			]
+		},
+		"controller.render.player.third_person": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"query.variant<=0&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)?texture.ben10_costume:texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"helmet": "query.variant <= 0"
+				},
+				{
+					"leftLegging": "query.variant <= 0"
+				},
+				{
+					"rightLegging": "query.variant <= 0"
+				},
+				{
+					"leftBoot": "query.variant <= 0"
+				},
+				{
+					"rightBoot": "query.variant <= 0"
+				},
+				{
+					"leftSock": "query.variant <= 0"
+				},
+				{
+					"rightSock": "query.variant <= 0"
+				},
+				{
+					"bodyArmor": "query.variant <= 0"
+				},
+				{
+					"leftArmArmor": "query.variant <= 0"
+				},
+				{
+					"rightArmArmor": "query.variant <= 0"
+				},
+				{
+					"belt": "query.variant <= 0"
+				},
+				{
+					"rightLeg": "query.variant <= 0"
+				},
+				{
+					"leftLeg": "query.variant <= 0"
+				},
+				{
+					"rightArm": "query.variant <= 0"
+				},
+				{
+					"leftArm": "query.variant <= 0"
+				},
+				{
+					"head": "query.variant <= 0"
+				},
+				{
+					"body": "query.variant <= 0"
+				},
+				{
+					"hat": "query.variant <= 0"
+				},
+				{
+					"rightPants": "query.variant <= 0"
+				},
+				{
+					"leftPants": "query.variant <= 0"
+				},
+				{
+					"rightSleeve": "query.variant <= 0"
+				},
+				{
+					"leftSleeve": "query.variant <= 0"
+				},
+				{
+					"jacket": "query.variant <= 0"
+				}
+			]
+		}
+	}
+}

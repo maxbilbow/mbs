@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "crafting:recipe_20"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"iii",
+			"RPR"
+		],
+		"key": {
+			"i": {
+				"item": "drills:gold_drill"
+			},
+			"R": {
+				"item": "drills:diamond_drill"
+			},
+			"P": {
+				"item": "drills:netherite_drill"
+			}
+		},
+		"result": {
+			"item": "drills:multi_drill",
+			"count": 1
+		}
+	}
+}

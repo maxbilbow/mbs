@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:melted_polymer"
+		},
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"input": "kaboom:polystyrene_foam",
+		"output": "kaboom:melted_polymer"
+	}
+}

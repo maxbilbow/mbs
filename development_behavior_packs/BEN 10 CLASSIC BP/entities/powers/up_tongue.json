@@ -1,0 +1,73 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:up_tongue",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:evocation_fang",
+			"component_groups": {},
+			"components": {
+				"minecraft:collision_box": {
+					"width": 0.8,
+					"height": 1.8
+				},
+				"minecraft:fire_immune": true,
+				"minecraft:type_family": {
+					"family": [
+						"upchuck",
+						"player"
+					]
+				},
+				"minecraft:area_attack": {
+					"damage_range": 0.5,
+					"damage_per_tick": 5,
+					"cause": "contact",
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "monster"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mob"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "kevin11"
+							}
+						]
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "upchuck"
+							}
+						},
+						"deals_damage": false
+					}
+				},
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": false
+				},
+				"minecraft:pushable": {
+					"is_pushable": false,
+					"is_pushable_by_piston": false
+				}
+			},
+			"events": {}
+		}
+	}
+}

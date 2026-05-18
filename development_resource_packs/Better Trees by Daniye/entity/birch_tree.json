@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "daniye:birch_tree",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/birch_tree"
+			},
+			"geometry": {
+				"default": "geometry.birch_tree"
+			},
+			"render_controllers": [
+				"controller.render.birch_tree"
+			],
+			"spawn_egg": {
+				"texture": "instant_birch_tree"
+			}
+		}
+	}
+}

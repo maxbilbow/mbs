@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.caja_he_retro",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -6],
+							"size": [16, 11, 12],
+							"uv": {
+								"north": {"uv": [16, 17], "uv_size": [16, 11]},
+								"east": {"uv": [2, 16], "uv_size": [12, 11]},
+								"south": {"uv": [45, 0], "uv_size": [16, 11]},
+								"west": {"uv": [34, 16], "uv_size": [12, 11]},
+								"up": {"uv": [16, 2], "uv_size": [16, 12]},
+								"down": {"uv": [32, 14], "uv_size": [16, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

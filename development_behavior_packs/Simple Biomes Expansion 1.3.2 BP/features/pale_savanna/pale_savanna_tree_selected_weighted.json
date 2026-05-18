@@ -1,0 +1,18 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_savanna/pale_savanna_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:pale_savanna/pale_savanna_tree_weighted",
+				6
+			],
+			[
+				"vanilla_biomes_expansion:pale_savanna/pale_savanna_tree_creaking_weighted",
+				1
+			]
+		]
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #42
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bladrillosnegro_escalera"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bladrillosnegro_escalera",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

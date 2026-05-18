@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Elemental Weapons Expansion RP [ v1.1 ]",
+    "description": "Resource Pack for Elemental Katanas V1",
+    "uuid": "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Resources for Elemental Katanas V1",
+      "type": "resources",
+      "uuid": "f5a6b7c8-d9e0-4f1a-2b3c-4d5e6f7a8b9c",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": ["blockcraftaddons"],
+    "product_type": "addon"
+  }
+}

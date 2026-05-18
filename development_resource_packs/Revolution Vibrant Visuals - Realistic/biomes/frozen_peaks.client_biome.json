@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "frozen_peaks"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "vrd:jagged_peaks"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#5993ff"
+      },
+      "minecraft:sky_color": {
+                "sky_color": "#B8B8B8"
+            }
+    }
+  }
+}

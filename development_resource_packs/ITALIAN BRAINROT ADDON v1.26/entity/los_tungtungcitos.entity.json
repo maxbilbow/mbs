@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "italian:los_tungtungcitos",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/los_tungtungcitos",
+				"gold": "textures/entity/los_tungtungcitos_gold",
+				"rainbow": "textures/entity/los_tungtungcitos_rainbow"
+			},
+			"geometry": {
+				"default": "geometry.los_tungtungcitos"
+			},
+			"scripts": {
+				"animate": [
+					//"controller_look_at_target",
+					"controller_base"
+				]
+			},
+			"animations": {
+				"walk": "animation.los_tungtungcitos.walk",
+				"idle": "animation.los_tungtungcitos.idle",
+				"attack": "animation.los_tungtungcitos.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_base": "controller.animation.entity.generic_melee_attack"
+			},
+			"render_controllers": [
+				"controller.render.kid_ballerina"
+			],
+			"spawn_egg": {
+				"base_color": "#1FD6FF",
+				"overlay_color": "#8F604B"
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #371
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:arena5"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajafestiva"
+			}
+		],
+		"result": [
+			{
+				"item": "f:arena5",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

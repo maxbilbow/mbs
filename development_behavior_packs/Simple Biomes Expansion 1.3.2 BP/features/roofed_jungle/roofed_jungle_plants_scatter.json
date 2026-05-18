@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_jungle/roofed_jungle_plants_scatter"
+		},
+		"iterations": 4,
+		"x": {
+			"extent": [
+				0,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				0,
+				16
+			],
+			"distribution": "uniform"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:roofed_jungle/roofed_jungle_plants"
+	}
+}

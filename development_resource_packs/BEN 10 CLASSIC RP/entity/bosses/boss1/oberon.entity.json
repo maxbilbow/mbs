@@ -1,0 +1,74 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "cso:oberon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bosses/boss1/entity/oberon"
+			},
+			"geometry": {
+				"default": "geometry.oberon"
+			},
+			"scripts": {
+				"initialize": [
+					"v.is_walking = false;"
+				],
+				"pre_animation": [
+					"v.is_walking = q.modified_move_speed >= 0.05;"
+				],
+				"animate": [
+					"controller",
+					{
+						"look_at_target": "q.property('cso:state')=='spawned'"
+					}
+				]
+			},
+			"animations": {
+				"controller": "controller.animation.oberon.general",
+				"look_at_target": "animation.oberon.look_at_target",
+				"spawn": "animation.oberon.spawn",
+				"death": "animation.oberon.death",
+				"idle": "animation.oberon.idle",
+				"walking": "animation.oberon.walking",
+				"smashing": "animation.oberon.smashing",
+				"instakill_attack": "animation.oberon.instakill_attack",
+				"instakill_attack2": "animation.oberon.clawless_instakill_attack",
+				"swing": "animation.oberon.swing",
+				"super_smash": "animation.oberon.super_smash",
+				"bombard": "animation.oberon.bombard",
+				"spin": "animation.oberon.spin",
+				"claw": "animation.oberon.claw",
+				"claw_idle": "animation.oberon.claw_idle",
+				"claw_walking": "animation.oberon.claw_walking",
+				"claw_attack1": "animation.oberon.claw_attack1",
+				"claw_attack2": "animation.oberon.claw_attack2",
+				"claw_smashing": "animation.oberon.claw_smashing",
+				"claw_bombard": "animation.oberon.claw_bombard",
+				"claw_super_smash": "animation.oberon.claw_super_smash",
+				"claw_spin": "animation.oberon.claw_spin"
+			},
+			"render_controllers": [
+				"controller.render.oberon.default"
+			],
+			"spawn_egg": {
+				"base_color": "#e94c4c",
+				"overlay_color": "#39230a"
+			},
+			"sound_effects": {
+				"bombard": "entity.oberon.bombard",
+				"claw": "entity.oberon.claw",
+				"claw_attack": "entity.oberon.claw_attack",
+				"death": "entity.oberon.death",
+				"music": "entity.oberon.music",
+				"smashing": "entity.oberon.smashing",
+				"spawn": "entity.oberon.spawn",
+				"spin": "entity.oberon.spin",
+				"super_smash": "entity.oberon.super_smash",
+				"swing": "entity.oberon.swing"
+			}
+		}
+	}
+}

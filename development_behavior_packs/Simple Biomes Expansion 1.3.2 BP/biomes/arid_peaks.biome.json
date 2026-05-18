@@ -1,0 +1,102 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:arid_peaks"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.2,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 1.8
+			},
+			"minecraft:mountain_parameters": {
+				"steep_material_adjustment": {
+					"material": "minecraft:granite",
+					"north_slopes": true,
+					"east_slopes": true
+				}
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:gravel",
+					"mid_material": "minecraft:sandstone",
+					"top_material": "minecraft:sandstone",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"mid_material": "minecraft:white_terracotta"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							-0.5,
+							0.15
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:white_terracotta"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							0,
+							0.4
+						]
+					},
+					{
+						"materials": {
+							"mid_material": "minecraft:granite"
+						},
+						"noise_frequency_scale": 0.5,
+						"noise_range": [
+							-0.06,
+							0.25
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:granite"
+						},
+						"noise_frequency_scale": 0.5,
+						"noise_range": [
+							0.25,
+							0.9
+						]
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"mountains",
+					"monster",
+					"overworld",
+					"spawns_warm_variant_farm_animals",
+					"spawns_warm_variant_frogs",
+					"spawns_gold_rabbits"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:stony_peaks"
+						],
+						"amount": 0.44,
+						"noise_frequency_scale": 0.19
+					}
+				]
+			}
+		}
+	}
+}

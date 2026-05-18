@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:birch_savanna/birch_savanna_plants"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:sbe_leaf_litter_feature",
+				5
+			],
+			[
+				"vanilla_biomes_expansion:birch_savanna/birch_savanna_plants_placement_feature",
+				16
+			],
+			[
+				"vanilla_biomes_expansion:sbe_short_grass_feature",
+				10
+			]
+		]
+	}
+}

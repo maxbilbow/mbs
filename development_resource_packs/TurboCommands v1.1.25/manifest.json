@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§dTurbo Commands §r",
+        "description": "§gEnable: §cBeta APIs\n§gCompatible with all addons and multiplayer!\n§b26.10+ §7| §8by sirob §7| §av1.1.25",
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ],
+        "uuid": "7e76edea-b15b-4483-a528-eb5eed8cf511",
+        "version": [
+            1,
+            1,
+            25
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "d42af9aa-8339-4141-b8c5-c8c0cb20be74",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.upchuck_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==17&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='up_tongue'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upchuck_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=17||!query.is_moving||query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='up_tongue'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.upchuck_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==17&&query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='up_tongue'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upchuck_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=17||!query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='up_tongue'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.upchuck": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==17"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upchuck"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=17"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.up_tongue_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==17&&query.get_equipped_item_name('main_hand')=='up_tongue'&&(query.is_using_item||variable.attack_time>0.6)&&variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"up_tongue_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=17||query.get_equipped_item_name('main_hand')!='up_tongue'||(!query.is_using_item&&variable.attack_time<=0.6)||!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.up_tongue": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==17&&query.get_equipped_item_name('main_hand')=='up_tongue'&&(query.is_using_item||variable.attack_time>0.6)&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"up_tongue"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=17||query.get_equipped_item_name('main_hand')!='up_tongue'||(!query.is_using_item&&variable.attack_time<=0.6)||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.upchuck_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==17&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')!='up_tongue'&&variable.attack_time>0&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"upchuck_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=17||variable.is_first_person||query.get_equipped_item_name('main_hand')=='up_tongue'||variable.attack_time<=0||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

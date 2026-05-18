@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sbe_cornflower_feature"
+		},
+		"places_block": {
+			"name": "minecraft:cornflower"
+		},
+		"enforce_survivability_rules": false,
+		"enforce_placement_rules": false,
+		"may_replace": [
+			"minecraft:air"
+		],
+		"may_attach_to": {
+			"bottom": [
+				"minecraft:grass_block",
+				"minecraft:coarse_dirt",
+				"minecraft:mud",
+				"minecraft:coarse_dirt",
+				"minecraft:podzol",
+				"minecraft:dirt_with_roots"
+			]
+		}
+	}
+}

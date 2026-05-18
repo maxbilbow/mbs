@@ -1,0 +1,41 @@
+{
+   "resource_pack_name": "bridgeRP",
+   "texture_name": "atlas.terrain",
+   "padding": 8,
+   "num_mip_levels": 4,
+   "texture_data": {
+      "rtc:oak_log": {
+         "textures": ["textures/blocks/stripped_oak_log"]
+      },
+      "rtc:spruce_log": {
+         "textures": ["textures/blocks/stripped_spruce_log"]
+      },
+      "rtc:birch_log": {
+         "textures": ["textures/blocks/stripped_birch_log"]
+      },
+      "rtc:acacia_log": {
+         "textures": ["textures/blocks/stripped_acacia_log"]
+      },
+      "rtc:jungle_log": {
+         "textures": ["textures/blocks/stripped_jungle_log"]
+      },
+      "rtc:cherry_log": {
+         "textures": ["textures/blocks/stripped_cherry_log_side"]
+      },
+      "rtc:mangrove_log": {
+         "textures": ["textures/blocks/stripped_mangrove_log_side"]
+      },
+      "rtc:dark_oak_log": {
+         "textures": ["textures/blocks/stripped_dark_oak_log"]
+      },
+      "rtc:pale_oak_log": {
+         "textures": ["textures/blocks/stripped_pale_oak_log_side"]
+      },
+      "rtc:crimson_log": {
+         "textures": ["textures/blocks/huge_fungus/stripped_crimson_stem_side"]
+      },
+      "rtc:warped_log": {
+         "textures": ["textures/blocks/huge_fungus/stripped_warped_stem_side"]
+      }
+   }
+}

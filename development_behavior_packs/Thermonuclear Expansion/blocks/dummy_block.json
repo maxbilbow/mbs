@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:dummy_block",
+			"menu_category": {
+				"category": "items",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"tag:kaboom:dummy": {},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"kaboom:missile_engine",
+							"kaboom:dummy_block"
+						],
+						"allowed_faces": [
+							"up"
+						]
+					}
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.fuselage"
+			},
+			"minecraft:display_name": "Fuselage Block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_dummy_block"
+				}
+			},
+			"minecraft:loot": "loot_tables/fuselage.json"
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.addon_settings": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": []
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/gamerule showtags false",
+						"/gamerule sendcommandfeedback false",
+						"/execute as @s[scores={omni_destruct=0..}] at @s run function omni/destruct_timer",
+						"/execute as @s[scores={omni_off=0..}] at @s run function omni/battery_timer",
+						"/execute as @s[scores={omni_charge=0..}] at @s run function omni/battery_timer"
+					]
+				}
+			}
+		}
+	}
+}

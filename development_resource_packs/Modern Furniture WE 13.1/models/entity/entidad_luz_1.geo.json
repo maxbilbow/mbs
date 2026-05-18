@@ -1,0 +1,76 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.entidad_luz_1",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 6.5,
+				"visible_bounds_offset": [0, 2.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "element",
+					"pivot": [0, 122, 0]
+				},
+				{
+					"name": "movingHead",
+					"parent": "element",
+					"pivot": [0, 122, 0]
+				},
+				{
+					"name": "masterRotate",
+					"parent": "movingHead",
+					"pivot": [0, 133, 0]
+				},
+				{
+					"name": "HorizontalRotation",
+					"parent": "masterRotate",
+					"pivot": [0, 133, 0]
+				},
+				{
+					"name": "VerticalRotation",
+					"parent": "HorizontalRotation",
+					"pivot": [0, 122.5, 0],
+					"rotation": [90, 0, 0]
+				},
+				{
+					"name": "lightOn",
+					"parent": "VerticalRotation",
+					"pivot": [0, 121.8, 0]
+				},
+				{
+					"name": "beaconBeamTransparent",
+					"parent": "lightOn",
+					"pivot": [0, 122, -8],
+					"cubes": [
+						{
+							"origin": [-4, 118.5, -122],
+							"size": [8, 8, 26],
+							"pivot": [0, 122.5, -41],
+							"rotation": [0, 0, -90],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [186.48276, 11.53448]},
+								"west": {"uv": [186.48276, 0], "uv_size": [-186.48276, 11.53448]}
+							}
+						},
+						{
+							"origin": [-4, 118.5, -122],
+							"size": [8, 8, 26],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [186.48276, 11.53448]},
+								"west": {"uv": [186.48276, 0], "uv_size": [-186.48276, 11.53448]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

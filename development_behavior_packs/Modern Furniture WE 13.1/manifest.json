@@ -1,0 +1,61 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Modern Furniture WE 13.1 BP",
+        "description": "Created by Trotamundos872\nMore Add-Ons at www.trmc-addons.com",
+        "uuid": "e13a0da6-5187-49fd-896a-7075b847d728",
+        "version": [
+            1,
+            0,
+            1
+        ],
+        "min_engine_version": [
+            1,
+            20,
+            30
+        ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "807006c1-5143-406a-b78b-5e9e7bad7cfd",
+            "version": [
+                1,
+                0,
+                1
+            ]
+        },
+        {
+            "language": "javascript",
+            "type": "script",
+            "uuid": "81e238b8-8fb6-434d-aef1-254473be3517",
+            "version": [
+                1,
+                0,
+                1
+            ],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "metadata": {
+        "product_type": "addon"
+    },
+    "dependencies": [
+        {
+            "version": [
+                1,
+                0,
+                1
+            ],
+            "uuid": "2b516aa8-2b8c-4fa1-ae00-741632c64b6c"
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.1.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0"
+        }
+    ]
+}

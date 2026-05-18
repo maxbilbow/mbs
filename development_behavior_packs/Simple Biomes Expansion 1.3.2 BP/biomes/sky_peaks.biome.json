@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sky_peaks"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.25,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.2
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:blue_terracotta",
+					"foundation_material": "minecraft:blue_terracotta",
+					"mid_material": "minecraft:light_blue_terracotta",
+					"top_material": "minecraft:white_terracotta",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"monster",
+					"overworld",
+					"mountains",
+					"spawns_cold_variant_farm_animals",
+					"spawns_cold_variant_frogs",
+					"spawns_snow_foxes",
+					"spawns_white_rabbits"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:jagged_peaks"
+						],
+						"amount": 0.32,
+						"noise_frequency_scale": 0.18
+					}
+				]
+			},
+			"minecraft:creature_spawn_probability": {
+				"probability": 0.08
+			},
+			"minecraft:overworld_height": {
+				"noise_params": [
+					0.9225,
+					6.425
+				]
+			}
+		}
+	}
+}

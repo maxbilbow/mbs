@@ -1,0 +1,10 @@
+{ 
+    "format_version": "1.21.50",
+    "minecraft:camera_preset": { 
+        "identifier": "douarmc_change_entities_size:adapt_to_entity_size", 
+        "inherit_from": "minecraft:follow_orbit",
+        "view_offset": [0, 0],
+        "entity_offset": [0, 0, 0],
+        "radius": 0.1
+    } 
+}

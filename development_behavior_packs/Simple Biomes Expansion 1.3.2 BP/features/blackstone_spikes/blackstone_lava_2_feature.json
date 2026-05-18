@@ -1,0 +1,22 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:blackstone_spikes/blackstone_lava_2_feature"
+		},
+		"structure_name": "mystructure:blackstone_lava2",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:blackstone",
+					"minecraft:gravel",
+					"minecraft:gray_concrete_powder"
+				]
+			},
+			"unburied": {}
+		}
+	}
+}

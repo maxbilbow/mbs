@@ -1,0 +1,182 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cso.prototype_phobos.main": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"attack_controller",
+						{
+							"movement_controller": "!v.entity_is_dashing&&!v.entity_shockwave"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cso.prototype_phobos.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "q.is_delayed_attacking"
+						},
+						{
+							"dashing": "v.entity_is_dashing"
+						},
+						{
+							"shockwave": "v.entity_shockwave"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"default": "q.all_animations_finished"
+						},
+						{
+							"dashing": "!q.is_delayed_attacking&&v.entity_is_dashing"
+						},
+						{
+							"shockwave": "!q.is_delayed_attacking&&v.entity_shockwave"
+						}
+					]
+				},
+				"dashing": {
+					"animations": [
+						"dashing"
+					],
+					"transitions": [
+						{
+							"attack": "q.is_delayed_attacking"
+						},
+						{
+							"default": "!v.entity_is_dashing"
+						},
+						{
+							"shockwave": "v.entity_shockwave"
+						}
+					]
+				},
+				"shockwave": {
+					"animations": [
+						"shockwave"
+					],
+					"transitions": [
+						{
+							"attack": "q.is_delayed_attacking"
+						},
+						{
+							"default": "!v.entity_shockwave"
+						},
+						{
+							"dashing": "v.entity_is_dashing"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cso.prototype_phobos.movement": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"idle": "!v.entity_has_died&&!v.entity_is_dashing&&!v.entity_shockwave"
+						},
+						{
+							"death": "v.entity_has_died&&!v.entity_is_dashing&&!v.entity_shockwave"
+						}
+					]
+				},
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"walking": "!q.has_target&&q.modified_move_speed>0.4"
+						},
+						{
+							"running": "q.has_target&&q.modified_move_speed>0.4"
+						},
+						{
+							"actions": "v.entity_is_dashing||v.entity_shockwave"
+						},
+						{
+							"death": "v.entity_has_died"
+						}
+					]
+				},
+				"walking": {
+					"animations": [
+						"walking"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"idle": "!q.is_moving&&!v.entity_is_dashing&&!v.entity_shockwave"
+						},
+						{
+							"running": "q.is_moving&&q.has_target"
+						},
+						{
+							"actions": "v.entity_is_dashing||v.entity_shockwave"
+						},
+						{
+							"death": "v.entity_has_died"
+						}
+					]
+				},
+				"running": {
+					"animations": [
+						"running"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"walking": "q.is_moving&&!q.has_target"
+						},
+						{
+							"idle": "!q.is_moving&&!v.entity_is_dashing&&!v.entity_shockwave"
+						},
+						{
+							"actions": "v.entity_is_dashing||v.entity_shockwave"
+						},
+						{
+							"death": "v.entity_has_died"
+						}
+					]
+				},
+				"actions": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"idle": "!v.entity_is_dashing&&!v.entity_shockwave&&!v.entity_has_died&&q.all_animations_finished"
+						},
+						{
+							"death": "!v.entity_is_dashing&&!v.entity_shockwave&&v.entity_has_died"
+						}
+					]
+				},
+				"death": {
+					"animations": [
+						"death"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"idle": "!v.entity_has_died"
+						}
+					]
+				}
+			}
+		}
+	}
+}

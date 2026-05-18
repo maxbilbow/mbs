@@ -1,0 +1,55 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:growing_plant_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:pale_caves/pale_hanging_moss_feature"
+		},
+		"height_distribution": [
+			[
+				{
+					"range_min": 2,
+					"range_max": 3
+				},
+				2
+			],
+			[
+				{
+					"range_min": 4,
+					"range_max": 6
+				},
+				5
+			],
+			[
+				{
+					"range_min": 2,
+					"range_max": 5
+				},
+				3
+			],
+			[
+				{
+					"range_min": 6,
+					"range_max": 11
+				},
+				1
+			]
+		],
+		"growth_direction": "DOWN",
+		"body_blocks": [
+			[
+				"minecraft:pale_hanging_moss",
+				6
+			]
+		],
+		"head_blocks": [
+			[
+				"minecraft:pale_hanging_moss",
+				1
+			]
+		],
+		"age": {
+			"range_min": 4,
+			"range_max": 11
+		}
+	}
+}

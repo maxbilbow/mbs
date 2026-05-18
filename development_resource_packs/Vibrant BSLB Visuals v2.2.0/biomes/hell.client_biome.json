@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "hell"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "va:nether_hell_fog"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#c45a2a"
+      },
+      "minecraft:atmosphere_identifier": {
+        "atmosphere_identifier": "va:nether_atmosphere"
+      },
+      "minecraft:lighting_identifier": {
+        "lighting_identifier": "va:nether_lighting"
+      },
+      "minecraft:color_grading_identifier": {
+        "color_grading_identifier": "va:nether_color_grading"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#6b3a1d"
+      }
+    }
+  }
+}

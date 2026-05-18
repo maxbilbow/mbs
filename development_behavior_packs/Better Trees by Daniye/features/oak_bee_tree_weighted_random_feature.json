@@ -1,0 +1,46 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "daniye:oak_bee_tree_weighted_random_feature"
+		},
+		"features": [
+			[
+				"daniye:oak_bee_tree_01_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_02_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_03_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_04_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_05_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_06_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_07_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_08_mcstructure",
+				1
+			],
+			[
+				"daniye:oak_bee_tree_09_mcstructure",
+				1
+			]
+		]
+	}
+}

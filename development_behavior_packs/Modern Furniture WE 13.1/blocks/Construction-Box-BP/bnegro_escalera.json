@@ -1,0 +1,193 @@
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"cambio0",
+					"cambio1",
+					"cambio2",
+					"cambio3",
+					"cambio4",
+					"cambio5"
+				]
+			},
+			"menu_category": {
+				"category": "construction"
+			},
+			"identifier": "f:bnegro_escalera",
+			"is_experimental": false
+		},
+		"permutations": [
+						{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio0'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio1'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa_cambio_1"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio2'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa_cambio_2"
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio3'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa_cambio_3",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio4'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa_cambio_4",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'cambio5'",
+				"components": {
+					"minecraft:geometry": "geometry.escaleraa_cambio_5",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+				"content_mf:stair"
+			],
+			"minecraft:geometry": "geometry.escaleraa",
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "bnegro"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					0
+				],
+				"size": [
+					16,
+					8,
+					8
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}

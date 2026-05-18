@@ -1,0 +1,134 @@
+entity.eu:tung_tung_tung_sahur.name=Tung Tung Tung Sahur
+entity.eu:tralalero_tralala.name=Tralalero Tralala
+entity.eu:chimpanzini_bananini.name=Chimpanzini Bananini
+entity.eu:brrbrr_patapin.name=Brr Brr Patapin
+entity.eu:frigo_cammello.name=Frigo Cammello
+entity.eu:vaca_saturno_saturnita.name=Vaca Saturno Saturnita
+entity.eu:thrown_brainrot_bomb.name=Brainrot Bomb
+entity.eu:nuclearo_dinossauro.name=Nuclearo Dinossauro
+entity.eu:pot_hotspot.name=Pot Hotspot
+entity.eu:svinino_bombondino.name=Svinino Bombondino
+entity.eu:udindindindun_madindindindun.name=Udindindindun Madindindindun
+entity.eu:orcalero_orcala.name=Orcalero Orcala
+entity.eu:tatatata_sahur.name=Tatatata Sahur
+entity.eu:ballerino_lololo.name=Ballerino Lololo
+entity.eu:bri_bri_bicus_dicus_debicus_dedicus.name=Bri Bri Bicus Dicus Debicus Dedicus
+entity.eu:trictrac_barabum.name=Trictrac Barabum
+entity.eu:ilcacto_hipopotamo.name=Ilcacto Hipopotamo
+entity.eu:pak_rahmat_ma_mat.name=Pak Rahmat Ma Mat
+entity.eu:rhino_toasterino.name=Rhino Toasterino
+entity.eu:sigma_boy.name=Sigma Boy
+entity.eu:blueberrinnioctopussini.name=Blueberrinnioctopussini
+entity.eu:giraffaceleste.name=Giraffaceleste
+entity.eu:laesoksekolah.name=Laesoksekolah
+entity.eu:orangutini_ananasini.name=Orangutini Ananasini
+entity.eu:cocofantoelefanto.name=Cocofantoelefanto
+entity.eu:eccocavallovirtuoso.name=Eccocavallovirtuoso
+entity.eu:ketupatkepat.name=Ketupatkepat
+entity.eu:titutitutitabuu.name=Titutitutitabuu
+entity.eu:trenostruzzoturbo3000.name=Trenostruzzoturbo3000
+entity.eu:berestehpatipum.name=Berestehpatipum
+entity.eu:ganganzellitrulala.name=Ganganzellitrulala
+entity.eu:gangsterfooteracriminalera.name=Gangsterfooteracriminalera
+entity.eu:karkerkarkurkur.name=Karkerkarkurkur
+entity.eu:herioscuinibombardini.name=Herioscuinibombardini
+entity.eu:bulbitobanditotraktorito.name=Bulbitobanditotraktorito
+entity.eu:espressonasignora.name=Espressonasignora
+entity.eu:mechaboneca.name=Mechaboneca
+entity.eu:spionirogolubiro.name=Spionirogolubiro
+entity.eu:tetetesahur.name=Tetetesahur
+
+
+
+entity.eu:bombardino_cocodrilo.name=Bombardino Cocodrilo
+entity.eu:burbaloni_luliloli.name=Burbaloni Luliloli
+entity.eu:herioscuino_tanquini.name=Herioscuino Tanquini
+entity.eu:tanquini.name=Tanquini
+entity.eu:tripi_tropi_tropa_tripa.name=Tripi Tropi Tropa Tripa
+entity.eu:ballerina_capuchina.name=Ballerina Capuchina
+entity.eu:boneca_ambalabu.name=Boneca Ambalabu
+entity.eu:lirililarila.name=Lirililarila
+entity.eu:capuccino_assassino.name=Capuccino Assassino
+entity.eu:fruli_frula.name=Fruli Frula
+entity.eu:garam_mararam.name=Garam Mararam
+entity.eu:glorbo_fruttodillo.name=Glorbo Fruttodillo
+entity.eu:skibidi_toilet.name=Skibidi Toilet
+entity.eu:bobrito_bandito.name=Bobrito Bandito
+entity.eu:bombombini_guzini.name=Bombombini Guzini
+entity.eu:mateooo.name=Mateooo
+entity.eu:trulimero_trulichina.name=Trulimero Trulichina
+
+
+
+item.eu:brainrot_bomb=Brainrot Bomb
+item.spawn_egg.entity.eu:bulbitobanditotraktorito.name=Spawn Bulbitobanditotraktorito
+item.spawn_egg.entity.eu:espressonasignora.name=Spawn Espressonasignora
+item.spawn_egg.entity.eu:mechaboneca.name=Spawn Mechaboneca
+item.spawn_egg.entity.eu:spionirogolubiro.name=Spawn Spionirogolubiro
+item.spawn_egg.entity.eu:tetetesahur.name=Spawn Tetetesahur
+item.spawn_egg.entity.eu:herioscuinibombardini.name=Spawn Herioscuinibombardini
+item.spawn_egg.entity.eu:berestehpatipum.name=Spawn Berestehpatipum
+item.spawn_egg.entity.eu:ganganzellitrulala.name=Spawn Ganganzellitrulala
+item.spawn_egg.entity.eu:gangsterfooteracriminalera.name=Spawn Gangsterfooteracriminalera
+item.spawn_egg.entity.eu:karkerkarkurkur.name=Spawn Karkerkarkurkur
+item.spawn_egg.entity.eu:cocofantoelefanto.name=Spawn Cocofantoelefanto
+item.spawn_egg.entity.eu:eccocavallovirtuoso.name=Spawn Eccocavallovirtuoso
+item.spawn_egg.entity.eu:ketupatkepat.name=Spawn Ketupatkepat
+item.spawn_egg.entity.eu:titutitutitabuu.name=Spawn Titutitutitabuu
+item.spawn_egg.entity.eu:trenostruzzoturbo3000.name=Spawn Trenostruzzoturbo3000
+item.spawn_egg.entity.eu:blueberrinnioctopussini.name=Spawn Blueberrinnioctopussini
+item.spawn_egg.entity.eu:giraffaceleste.name=Spawn Giraffaceleste
+item.spawn_egg.entity.eu:laesoksekolah.name=Spawn Laesoksekolah
+item.spawn_egg.entity.eu:orangutini_ananasini.name=Spawn Orangutini Ananasini
+
+item.spawn_egg.entity.eu:ilcacto_hipopotamo.name=Spawn Ilcacto Hipopotamo
+item.spawn_egg.entity.eu:pak_rahmat_ma_mat.name=Spawn Pak Rahmat Ma Mat
+item.spawn_egg.entity.eu:rhino_toasterino.name=Spawn Rhino Toasterino
+item.spawn_egg.entity.eu:sigma_boy.name=Spawn Sigma Boy
+item.spawn_egg.entity.eu:ballerino_lololo.name=Spawn Ballerino Lololo
+item.spawn_egg.entity.eu:bri_bri_bicus_dicus_debicus_dedicus.name=Spawn Bri Bri Bicus Dicus Debicus Dedicus
+item.spawn_egg.entity.eu:trictrac_barabum.name=Spawn Trictrac Barabum
+item.spawn_egg.entity.eu:orcalero_orcala.name=Spawn Orcalero Orcala
+item.spawn_egg.entity.eu:tatatata_sahur.name=Spawn Tatatata Sahur
+item.spawn_egg.entity.eu:chimpanzini_bananini.name=Spawn Chimpanzini Bananini
+item.spawn_egg.entity.eu:tralalero_tralala.name=Spawn Tralalero Tralala
+item.spawn_egg.entity.eu:tung_tung_tung_sahur.name=Spawn Tung Tung Tung Sahur
+item.spawn_egg.entity.eu:brrbrr_patapin.name=Spawn Brr Brr Patapin
+item.spawn_egg.entity.eu:frigo_cammello.name=Spawn Frigo Cammello
+item.spawn_egg.entity.eu:vaca_saturno_saturnita.name=Spawn Vaca Saturno Saturnita
+item.spawn_egg.entity.eu:bombardino_cocodrilo.name=Spawn Bombardino Cocodrilo
+item.spawn_egg.entity.eu:burbaloni_luliloli.name=Spawn Burbaloni Luliloli
+item.spawn_egg.entity.eu:herioscuino_tanquini.name=Spawn Herioscuino Tanquini
+item.spawn_egg.entity.eu:tanquini.name=Spawn Tanquini
+item.spawn_egg.entity.eu:thrown_brainrot_bomb.name=Spawn Thrown Brainrot Bomb
+item.spawn_egg.entity.eu:tripi_tropi_tropa_tripa.name=Spawn Tripi Tropi Tropa Tripa
+item.spawn_egg.entity.eu:ballerina_capuchina.name=Spawn Ballerina Capuchina
+item.spawn_egg.entity.eu:boneca_ambalabu.name=Spawn Boneca Ambalabu
+item.spawn_egg.entity.eu:lirililarila.name=Spawn Lirililarila
+item.spawn_egg.entity.eu:herios.name=Spawn SoyHerios
+item.spawn_egg.entity.eu:capuccino_assassino.name=Spawn Capuccino Assassino
+item.spawn_egg.entity.eu:fruli_frula.name=Spawn Fruli Frula
+item.spawn_egg.entity.eu:garam_mararam.name=Spawn Garam Mararam
+item.spawn_egg.entity.eu:glorbo_fruttodillo.name=Spawn Glorbo Fruttodillo
+item.spawn_egg.entity.eu:skibidi_toilet.name=Spawn Skibidi Toilet
+item.spawn_egg.entity.eu:bobrito_bandito.name=Spawn Bobrito Bandito
+item.spawn_egg.entity.eu:bombombini_guzini.name=Spawn Bombombini Guzini
+item.spawn_egg.entity.eu:mateooo.name=Spawn Mateooo
+item.spawn_egg.entity.eu:thrown_honey_projectile.name=Spawn Thrown Honey Projectile
+item.spawn_egg.entity.eu:trulimero_trulichina.name=Spawn Trulimero Trulichina
+item.spawn_egg.entity.eu:nuclearo_dinossauro.name=Spawn Nuclearo Dinossauro
+item.spawn_egg.entity.eu:pot_hotspot.name=Spawn Pot Hotspot
+item.spawn_egg.entity.eu:svinino_bombondino.name=Spawn Svinino Bombondino
+item.spawn_egg.entity.eu:udindindindun_madindindindun.name=Spawn Udindindindun Madindindindun
+
+entity.eu:herios.name=SoyHerios
+entity.herios.name=SoyHerios
+
+action.hint.exit.eu:tanquini=Tap sneak to dismount
+action.hint.exit.eu:bombardino_cocodrilo=Tap sneak to dismount
+action.hint.exit.eu:lirililarila=Tap sneak to dismount
+
+
+item.eu:honey_projectile=Honey Projectile
+
+entity.eu:thrown_honey_projectile.name=Honey Projectile

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "wypnt_mss:spider_web",
+			"materials": {
+				"default": "llama_spit"
+			},
+			"textures": {
+				"default": "textures/entity/llama/spit"
+			},
+			"particle_effects": {
+				"particle": "wypnt_mss:web_smoke"
+			},
+			"geometry": {
+				"default": "geometry.corecreations_mss.spiderweb"
+			},
+			"animations": {
+				"setup": "animation.llama_spit.setup",
+				"particle": "animation.coreblockstudios_mss.spider_web.particle"
+			},
+			"scripts": {
+				"animate": [
+					"setup",
+					"particle"
+				]
+			},
+			"render_controllers": [
+				"controller.render.llama_spit"
+			]
+		}
+	}
+}

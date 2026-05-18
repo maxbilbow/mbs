@@ -1,0 +1,13 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sand_valley/desert_fossil_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:sand_valley/desert_fossil_scatter",
+			"vanilla_biomes_expansion:sand_valley/desert_fossil_condition_feature"
+		],
+		"early_out": "first_failure"
+	}
+}

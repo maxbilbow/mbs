@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:chimpanzini_bananini",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/chimpanzinibananini"
+			},
+			"geometry": {
+				"default": "geometry.chimpanzini_bananini"
+			},
+			"scripts": {
+				"animate": [
+					"controller_look_at_target",
+					"controller_base",
+					"controller_attack"
+					//"controller_riding"
+				]
+			},
+			"animations": {
+				"walk": "animation.chimpanzini_bananini.walk",
+				"idle": "animation.chimpanzini_bananini.idle",
+				"attack": "animation.chimpanzini_bananini.attack",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_attack": "controller.animation.chimpanzini_bananini.attack",
+				"controller_base": "controller.animation.chimpanzini_bananini.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#486f2c",
+				"overlay_color": "#d09d3a"
+			}
+		}
+	}
+}

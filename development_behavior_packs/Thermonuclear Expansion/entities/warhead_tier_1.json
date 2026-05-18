@@ -1,0 +1,69 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kaboom:warhead_tier_1",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"kaboom:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"subject": "other",
+								"operator": "==",
+								"test": "is_family",
+								"value": "player"
+							},
+							"target": "self",
+							"event": "kaboom:instant_despawn"
+						},
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"seats": {
+					"position": [
+						0,
+						1,
+						0
+					]
+				},
+				"family_types": [
+					"player"
+				]
+			},
+			"minecraft:type_family": {
+				"family": [
+					"dummy_block"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			}
+		},
+		"events": {
+			"kaboom:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"kaboom:instant_despawn"
+					]
+				}
+			}
+		}
+	}
+}

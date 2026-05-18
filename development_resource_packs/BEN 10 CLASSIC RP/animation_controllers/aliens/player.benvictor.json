@@ -1,0 +1,269 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.bv_lightning_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&query.get_equipped_item_name('main_hand')=='bv_lightning'&&variable.is_first_person&&query.is_using_item&&!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"bv_lightning_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||query.get_equipped_item_name('main_hand')!='bv_lightning'||!variable.is_first_person||!query.is_using_item||query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.bv_lightning": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&query.get_equipped_item_name('main_hand')=='bv_lightning'&&!variable.is_first_person&&query.is_using_item&&!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"bv_lightning"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||query.get_equipped_item_name('main_hand')!='bv_lightning'||variable.is_first_person||!query.is_using_item||query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.bv_lightning2_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&query.get_equipped_item_name('main_hand')=='bv_lightning'&&variable.is_first_person&&query.is_using_item&&query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"bv_lightning2_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||query.get_equipped_item_name('main_hand')!='bv_lightning'||!variable.is_first_person||!query.is_using_item||!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.bv_lightning2": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&query.get_equipped_item_name('main_hand')=='bv_lightning'&&!variable.is_first_person&&query.is_using_item&&query.is_sneaking"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"bv_lightning2"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||query.get_equipped_item_name('main_hand')!='bv_lightning'||variable.is_first_person||!query.is_using_item||!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.bv_electrokinesis": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&query.get_equipped_item_name('main_hand')=='bv_electrokinesis'&&query.is_using_item&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"bv_electrokinesis"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||query.get_equipped_item_name('main_hand')!='bv_electrokinesis'||!query.is_using_item||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor_attack_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"benvictor_attack_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22&&!variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"benvictor_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22||variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==22&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!((query.get_equipped_item_name('main_hand')=='bv_lightning'||query.get_equipped_item_name('main_hand')=='bv_electrokinesis')&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benvictor_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=22||!query.is_moving||query.is_sprinting||variable.is_first_person||((query.get_equipped_item_name('main_hand')=='bv_lightning'||query.get_equipped_item_name('main_hand')=='bv_electrokinesis')&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==22&&query.is_sprinting&&!variable.is_first_person&&!((query.get_equipped_item_name('main_hand')=='bv_lightning'||query.get_equipped_item_name('main_hand')=='bv_electrokinesis')&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benvictor_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=22||!query.is_sprinting||variable.is_first_person||((query.get_equipped_item_name('main_hand')=='bv_lightning'||query.get_equipped_item_name('main_hand')=='bv_electrokinesis')&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor_jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.on_ground&&query.variant==22&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"benvictor_jump"
+					],
+					"transitions": [
+						{
+							"default": "variable.on_ground||query.variant!=22||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.benvictor": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==22"
+						}
+					],
+					"blend_transition": 0
+				},
+				"shoot": {
+					"animations": [
+						"benvictor"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=22"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

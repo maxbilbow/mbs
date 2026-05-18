@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.41",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "new:lantern_gold_helmet",
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/lantern_gold_1",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.lanter_helmet"
+            },
+            "scripts": {},
+            "render_controllers": [ "controller.render.armor" ]
+        }
+    }
+}

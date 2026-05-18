@@ -1,0 +1,29 @@
+//bridge-file-version: #54
+{
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "f:silladeruedas_spawn_egg"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B",
+			"ABA",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:iron_ingot"
+			},
+			"B": {
+				"item": "minecraft:black_wool"
+			}
+		},
+		"result": {
+			"item": "f:silladeruedas_spawn_egg",
+			"count": 1
+		}
+	},
+	"format_version": "1.17.0"
+}

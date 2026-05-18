@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:roofed_savanna/roofed_savanna_tree_selected_weighted"
+		},
+		"features": [
+			[
+				"vanilla_biomes_expansion:roofed_savanna/roofed_savanna_tree_weighted",
+				20
+			],
+			[
+				"vanilla_biomes_expansion:wooded_savanna/wooded_savanna_tree_weighted",
+				2
+			],
+			[
+				"vanilla_biomes_expansion:birch_savanna/birch_savanna_tree_weighted",
+				1
+			]
+		]
+	}
+}

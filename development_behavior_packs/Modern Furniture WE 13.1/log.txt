@@ -1,0 +1,242 @@
+[Recipes][error]-recipes/galletas.json | f:galletas | The Item: f:galletas is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/galletas.json | f:galletas | Recipe result malformed
+
+
+[Recipes][error]-recipes/galletas.json | f:galletas | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/libreriamod1.json | f:libreriamod1 | The Item: f:libreriamod1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/libreriamod1.json | f:libreriamod1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/libreriamod1.json | f:libreriamod1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/libreriamod2.json | f:libreriamod2 | The Item: f:libreriamod2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/libreriamod2.json | f:libreriamod2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/libreriamod2.json | f:libreriamod2 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/libreriarust1.json | f:libreriarust1 | The Item: f:libreriarust1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/libreriarust1.json | f:libreriarust1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/libreriarust1.json | f:libreriarust1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/libreriarust2.json | f:libreriarust2 | The Item: f:libreriarust2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/libreriarust2.json | f:libreriarust2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/libreriarust2.json | f:libreriarust2 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/luz.json | f:luz | The Item: f:luz is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/luz.json | f:luz | Recipe result malformed
+
+
+[Recipes][error]-recipes/luz.json | f:luz | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/luz1.json | f:luz1 | The Item: f:luz1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/luz1.json | f:luz1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/luz1.json | f:luz1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/palos2-2.json | f:palos2-2 | The Item: f:palos2-2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/palos2-2.json | f:palos2-2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/palos2-2.json | f:palos2-2 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/puerta_garaje.json | f:puerta_garaje | The Item: f:puerta_garaje is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/puerta_garaje.json | f:puerta_garaje | Recipe result malformed
+
+
+[Recipes][error]-recipes/puerta_garaje.json | f:puerta_garaje | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/pumpking_plate.json | f:pumpking_plate | The Item: f:pumpking_plate is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/pumpking_plate.json | f:pumpking_plate | Recipe result malformed
+
+
+[Recipes][error]-recipes/pumpking_plate.json | f:pumpking_plate | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/rendija-piscina.json | f:rendija-piscina | The Item: f:rendija-piscina is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/rendija-piscina.json | f:rendija-piscina | Recipe result malformed
+
+
+[Recipes][error]-recipes/rendija-piscina.json | f:rendija-piscina | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/semaforo_peaton1_1.json | f:semaforo_peaton1_1 | The Item: f:semaforo_peaton1_1 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/semaforo_peaton1_1.json | f:semaforo_peaton1_1 | Recipe result malformed
+
+
+[Recipes][error]-recipes/semaforo_peaton1_1.json | f:semaforo_peaton1_1 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/timbre2.json | f:timbre2 | The Item: f:timbre2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/timbre2.json | f:timbre2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/timbre2.json | f:timbre2 | Recipe has no result item(s)
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | The Item: f:trampolin2 is missing or invalid, can't make the recipe
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | Recipe result malformed
+
+
+[Recipes][error]-recipes/trampolin2.json | f:trampolin2 | Recipe has no result item(s)
+
+
+[Scripting][warning]-Block custom component 'content_mf:pumpkin_stacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_cierre_z' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:interact_air' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_apertura_z' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_chim_on' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_inicial' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_cierre_x' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:garaje_apertura_x' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:railing' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_applestacker' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_rendija_piscina' is not being used by a block
+
+[Scripting][warning]-Block custom component 'content_mf:mf_cookiestacker' is not being used by a block
+
+[Json][error]- -> categories[0] -> groups[1] -> group_identifier -> icon:  Missing referenced asset f:brnegro_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[0]:  Missing referenced asset f:bladrillosnegro_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[2]:  Missing referenced asset f:bladrillosblancocontraste_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[4]:  Missing referenced asset f:brnegro_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[5]:  Missing referenced asset f:bloquecuarzo_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[7]:  Missing referenced asset f:bladrillosdiorita_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[9]:  Missing referenced asset f:bladrillosandesita_escalera
+
+[Json][error]- -> categories[0] -> groups[1] -> items[10]:  Missing referenced asset f:bmosaico_escalera
+
+[Json][error]- -> categories[0] -> groups[2] -> items[0]:  Missing referenced asset f:bladrillosnegro_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[2]:  Missing referenced asset f:bladrillosblancocontraste_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[3]:  Missing referenced asset f:bcuarzonegro_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[5]:  Missing referenced asset f:bloquecuarzo_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[6]:  Missing referenced asset f:bnegro_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[7]:  Missing referenced asset f:bladrillosdiorita_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[8]:  Missing referenced asset f:bladrillosgranito_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[9]:  Missing referenced asset f:bladrillosandesita_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[10]:  Missing referenced asset f:bmosaico_eslab
+
+[Json][error]- -> categories[0] -> groups[2] -> items[11]:  Missing referenced asset f:bladrillos_marron_blanco_eslab
+
+[Json][error]- -> categories[0] -> groups[3] -> items[4]:  Missing referenced asset f:palos2-2
+
+[Json][error]- -> categories[0] -> groups[4] -> items[1]:  Missing referenced asset f:cocina4
+
+[Json][error]- -> categories[0] -> groups[4] -> items[3]:  Missing referenced asset f:cocina7
+
+[Json][error]- -> categories[0] -> groups[4] -> items[4]:  Missing referenced asset f:cocina8
+
+[Json][error]- -> categories[0] -> groups[4] -> items[5]:  Missing referenced asset f:cocina9
+
+[Json][error]- -> categories[0] -> groups[4] -> items[6]:  Missing referenced asset f:cocina12
+
+[Json][error]- -> categories[0] -> groups[4] -> items[7]:  Missing referenced asset f:cocina14
+
+[Json][error]- -> categories[0] -> groups[4] -> items[8]:  Missing referenced asset f:cocina15
+
+[Json][error]- -> categories[0] -> groups[6] -> items[1]:  Missing referenced asset f:chim2
+
+[Json][error]- -> categories[0] -> groups[6] -> items[2]:  Missing referenced asset f:chim3
+
+[Json][error]- -> categories[0] -> groups[6] -> items[3]:  Missing referenced asset f:chim4
+
+[Json][error]- -> categories[0] -> groups[6] -> items[4]:  Missing referenced asset f:chim5
+
+[Json][error]- -> categories[0] -> groups[6] -> items[5]:  Missing referenced asset f:chim6
+
+[Json][error]- -> categories[1] -> groups[16] -> group_identifier -> icon:  Missing referenced asset f:galletas
+
+[Json][error]- -> categories[1] -> groups[16] -> items[4]:  Missing referenced asset f:apple1
+
+[Json][error]- -> categories[1] -> groups[16] -> items[5]:  Missing referenced asset f:galletas
+
+[Json][error]- -> categories[1] -> groups[16] -> items[6]:  Missing referenced asset f:pumpking_plate
+
+[Json][error]- -> categories[1] -> groups[22] -> items[1]:  Missing referenced asset f:semaforo_peaton1_1
+
+[Json][error]- -> categories[1] -> groups[28] -> group_identifier -> icon:  Missing referenced asset f:luz
+
+[Json][error]- -> categories[1] -> groups[28] -> items[0]:  Missing referenced asset f:luz
+
+[Json][error]- -> categories[1] -> groups[28] -> items[1]:  Missing referenced asset f:luz1
+
+[Json][error]- -> categories[1] -> groups[28] -> items[2]:  Missing referenced asset f:luz3
+
+[Json][error]- -> categories[1] -> groups[29] -> items[1]:  Missing referenced asset f:timbre2
+
+[Json][error]- -> categories[1] -> groups[33] -> items[2]:  Missing referenced asset f:libreriamod1
+
+[Json][error]- -> categories[1] -> groups[33] -> items[3]:  Missing referenced asset f:libreriamod2
+
+[Json][error]- -> categories[1] -> groups[33] -> items[7]:  Missing referenced asset f:libreriarust1
+
+[Json][error]- -> categories[1] -> groups[33] -> items[8]:  Missing referenced asset f:libreriarust2
+
+[Json][error]- -> categories[1] -> groups[38] -> items[14]:  Missing referenced asset f:puerta_garaje
+

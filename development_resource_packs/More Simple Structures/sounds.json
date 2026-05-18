@@ -1,0 +1,64 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"wypnt_mss:spirit" : {
+				"events" : {
+				   "ambient" : "mob.vex.ambient",
+				   "charge" : "mob.vex.charge",
+				   "death" : "mob.vex.death",
+				   "hurt" : "mob.vex.hurt"
+				},
+				"pitch" : [ 0.45, 0.55 ],
+				"volume" : 1.0
+			 },
+			"wypnt_mss:mummy": {
+				"events": {
+					"ambient": "mob.husk.ambient",
+					"death": "mob.husk.death",
+					"hurt": "mob.husk.hurt",
+					"step": {
+						"pitch": 1,
+						"sound": "mob.husk.step",
+						"volume": 2
+					}
+				},
+				"pitch": [0.8, 1.2],
+				"volume": 1
+			},
+			"wypnt_mss:queen_spider": {
+				"events": {
+					"ambient": "mob.spider.say",
+					"death": "mob.spider.death",
+					"hurt": "mob.spider.say",
+					"step": {
+						"pitch": [
+							0.6,
+							0.85
+						],
+						"sound": "mob.spider.step",
+						"volume": 2
+					}
+				},
+				"pitch": [
+					0.3,
+					0.5
+				],
+				"volume": 2
+			},
+			"wypnt_mss:spider_web": {
+				"events": {
+					"ambient": "empty",
+					"death": "empty",
+					"hurt": "empty",
+					"step": {
+						"pitch": 1,
+						"sound": "empty",
+						"volume": 0.35
+					}
+				},
+				"pitch": [0.8, 1.2],
+				"volume": 0
+			}
+		}
+	}
+}

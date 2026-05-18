@@ -1,0 +1,9 @@
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^2
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^3
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^4
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^5
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^6
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^7
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^8
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^9
+execute as @s at @s run summon power:up_tongue ^ ^0.5 ^10

@@ -1,0 +1,500 @@
+{
+	"resource_pack_name": "bridgeRP",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"monitor1": {
+			"textures": [
+				{
+					"path": "textures/blocks/monitor1"
+				}
+			]
+		},
+		"ps1": {
+			"textures": [
+				{
+					"path": "textures/blocks/ps1"
+				}
+			]
+		},
+		"ps2": {
+			"textures": [
+				{
+					"path": "textures/blocks/ps2"
+				}
+			]
+		},
+		"playstation5": {
+			"textures": [
+				{
+					"path": "textures/blocks/playstation5"
+				}
+			]
+		},
+		"gameboy1": {
+			"textures": [
+				{
+					"path": "textures/blocks/gameboy1"
+				}
+			]
+		},
+		"gameboy2": {
+			"textures": [
+				{
+					"path": "textures/blocks/gameboy2"
+				}
+			]
+		},
+		"hub1": {
+			"textures": [
+				{
+					"path": "textures/blocks/hub1"
+				}
+			]
+		},
+		"ventilador1_negra": {
+			"textures": [
+				{
+					"path": "textures/blocks/ventilador1_negra"
+				}
+			]
+		},
+		"ventilador1_blanca": {
+			"textures": [
+				{
+					"path": "textures/blocks/ventilador1_blanca"
+				}
+			]
+		},
+		"hub2": {
+			"textures": [
+				{
+					"path": "textures/blocks/hub2"
+				}
+			]
+		},
+		"impresora1": {
+			"textures": [
+				{
+					"path": "textures/blocks/impresora1"
+				}
+			]
+		},
+		"impresora2": {
+			"textures": [
+				{
+					"path": "textures/blocks/impresora2"
+				}
+			]
+		},
+		"telefonillo1": {
+			"textures": [
+				{
+					"path": "textures/blocks/telefonillo1"
+				}
+			]
+		},
+		"portatil1": {
+			"textures": [
+				{
+					"path": "textures/blocks/portatil1"
+				}
+			]
+		},
+		"portatil2": {
+			"textures": [
+				{
+					"path": "textures/blocks/portatil2"
+				}
+			]
+		},
+		"wii": {
+			"textures": [
+				{
+					"path": "textures/blocks/Wii"
+				}
+			]
+		},
+		"wii_black": {
+			"textures": [
+				{
+					"path": "textures/blocks/Wii_black"
+				}
+			]
+		},
+		"wii_red": {
+			"textures": [
+				{
+					"path": "textures/blocks/Wii_red"
+				}
+			]
+		},
+		"deco_disco1": {
+			"textures": [
+				{
+					"path": "textures/blocks/deco_disco1"
+				}
+			]
+		},
+		"deco_disco2": {
+			"textures": [
+				{
+					"path": "textures/blocks/deco_disco2"
+				}
+			]
+		},
+		"deco_disco3": {
+			"textures": [
+				{
+					"path": "textures/blocks/deco_disco3"
+				}
+			]
+		},
+		"deco_disco4": {
+			"textures": [
+				{
+					"path": "textures/blocks/deco_disco4"
+				}
+			]
+		},
+		"caja_he_setup": {
+			"textures": [
+				{
+					"path": "textures/blocks/caja_he_setup"
+				}
+			]
+		},
+		"switch_lite1": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch_lite1"
+				}
+			]
+		},
+		"switch_lite2": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch_lite2"
+				}
+			]
+		},
+		"switch_lite3": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch_lite3"
+				}
+			]
+		},
+		"switch_lite4": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch_lite4"
+				}
+			]
+		},
+		"switch_lite5": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch_lite5"
+				}
+			]
+		},
+		"caja_he_poster": {
+			"textures": [
+				{
+					"path": "textures/blocks/caja_he_poster"
+				}
+			]
+		},
+		"game_deco1": {
+			"textures": [
+				{
+					"path": "textures/blocks/game_deco1"
+				}
+			]
+		},
+		"piano_red": {
+			"textures": [
+				{
+					"path": "textures/blocks/piano_red"
+				}
+			]
+		},
+		"piano_purple": {
+			"textures": [
+				{
+					"path": "textures/blocks/piano_purple"
+				}
+			]
+		},
+		"piano_green": {
+			"textures": [
+				{
+					"path": "textures/blocks/piano_green"
+				}
+			]
+		},
+		"piano_blue": {
+			"textures": [
+				{
+					"path": "textures/blocks/piano_blue"
+				}
+			]
+		},
+		"antena1": {
+			"textures": [
+				{
+					"path": "textures/blocks/antena1"
+				}
+			]
+		},
+		"micro1": {
+			"textures": [
+				{
+					"path": "textures/blocks/micro1"
+				}
+			]
+		},
+		"gamecube": {
+			"textures": [
+				{
+					"path": "textures/blocks/gamecube"
+				}
+			]
+		},
+		"router": {
+			"textures": [
+				{
+					"path": "textures/blocks/router"
+				}
+			]
+		},
+		"switch": {
+			"textures": [
+				{
+					"path": "textures/blocks/switch"
+				}
+			]
+		},
+		"nes": {
+			"textures": [
+				{
+					"path": "textures/blocks/nes"
+				}
+			]
+		},
+		"tv1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tv1"
+				}
+			]
+		},
+		"poster1": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster1"
+				}
+			]
+		},
+		"poster2": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster2"
+				}
+			]
+		},
+		"poster3": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster3"
+				}
+			]
+		},
+		"poster4": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster4"
+				}
+			]
+		},
+		"poster5": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster5"
+				}
+			]
+		},
+		"poster6": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster6"
+				}
+			]
+		},
+		"poster7": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster7"
+				}
+			]
+		},
+		"poster8": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster8"
+				}
+			]
+		},
+
+		"poster9": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster9"
+				}
+			]
+		},
+		"poster10": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster10"
+				}
+			]
+		},
+		"poster11": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster11"
+				}
+			]
+		},
+		"poster12": {
+			"textures": [
+				{
+					"path": "textures/blocks/poster12"
+				}
+			]
+		},
+
+		"regleta1": {
+			"textures": [
+				{
+					"path": "textures/blocks/regleta1"
+				}
+			]
+		},
+		"he_silla1": {
+			"textures": [
+				{
+					"path": "textures/blocks/he_silla1"
+				}
+			]
+		},
+		"he_silla2": {
+			"textures": [
+				{
+					"path": "textures/blocks/he_silla2"
+				}
+			]
+		},
+		"tostadora1": {
+			"textures": [
+				{
+					"path": "textures/blocks/tostadora1"
+				}
+			]
+		},
+		"pc1": {
+			"textures": [
+				{
+					"path": "textures/blocks/pc1"
+				}
+			]
+		},
+		"pc2": {
+			"textures": [
+				{
+					"path": "textures/blocks/pc2"
+				}
+			]
+		},
+		"nintendods1": {
+			"textures": [
+				{
+					"path": "textures/blocks/nintendods1"
+				}
+			]
+		},
+		"nintendods2": {
+			"textures": [
+				{
+					"path": "textures/blocks/nintendods2"
+				}
+			]
+		},
+		"nintendods3": {
+			"textures": [
+				{
+					"path": "textures/blocks/nintendods3"
+				}
+			]
+		},
+		"nintendods4": {
+			"textures": [
+				{
+					"path": "textures/blocks/nintendods4"
+				}
+			]
+		},
+		"nintendods5": {
+			"textures": [
+				{
+					"path": "textures/blocks/nintendods5"
+				}
+			]
+		},
+		"bateria1": {
+			"textures": [
+				{
+					"path": "textures/blocks/bateria1"
+				}
+			]
+		},
+		"air_fryer": {
+			"textures": [
+				{
+					"path": "textures/blocks/air_fryer"
+				}
+			]
+		},
+		"luz3": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz3"
+				}
+			]
+		},
+		"luz3_apagado": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz3_apagado"
+				}
+			]
+		},
+		"luz_led_1": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz_led_1"
+				}
+			]
+		},
+		"luz_led_1_apagado": {
+			"textures": [
+				{
+					"path": "textures/blocks/luz_led_1_apagado"
+				}
+			]
+		}
+	}
+}

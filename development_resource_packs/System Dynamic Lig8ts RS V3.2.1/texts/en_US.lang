@@ -1,0 +1,12 @@
+item.new:torch_offhand=Torch OffHand
+item.new:soul_torch_offhand=Soul Torch OffHand
+item.new:redstone_torch_offhand=Redstone Torch OffHand
+item.new:sea_pickle_offhand=Sea Pickle OffHand
+
+
+item.new:lantern_diamond_helmet=Lantern Diamond Helmet
+item.new:lantern_iron_helmet=Lantern Iron Helmet
+item.new:lantern_netherite_helmet=Lantern Netherite Helmet
+item.new:lantern_gold_helmet=Lantern Gold Helmet
+item.new:lantern_chainmain_helmet=Lantern Chainmail Helmet
+item.new:lantern_copper_helmet=Lantern Copper Helmet

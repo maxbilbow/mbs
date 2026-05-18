@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:rock_feature_rule",
+			"places_feature": "daniye:rock_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "savanna"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "jungle"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "taiga"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "equals",
+							"value": "desert"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 0,
+			"x": 0,
+			"y": "q.above_top_solid(v.worldx, v.worldz) - 4",
+			"z": 0
+		}
+	}
+}

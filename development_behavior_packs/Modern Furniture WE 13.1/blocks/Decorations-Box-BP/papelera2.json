@@ -1,0 +1,53 @@
+//bridge-file-version: #84
+{
+	"minecraft:block": {
+		"description": {
+			"menu_category": {
+				"category": "items"
+			},
+			"identifier": "f:papelera2",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.4
+			},
+			"minecraft:custom_components": [
+
+				"content_mf:trush"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "papelera2"
+				}
+			},
+			"minecraft:geometry": "geometry.papelera2",
+			"minecraft:collision_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					10,
+					16,
+					10
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-5,
+					0,
+					-5
+				],
+				"size": [
+					10,
+					16,
+					10
+				]
+			}
+		}
+	},
+	"format_version": "1.20.20"
+}

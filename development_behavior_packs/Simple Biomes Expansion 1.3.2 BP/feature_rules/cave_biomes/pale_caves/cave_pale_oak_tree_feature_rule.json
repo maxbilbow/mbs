@@ -1,0 +1,49 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:cave_pale_oak_tree_feature_rule",
+			"places_feature": "vanilla_biomes_expansion:pale_caves/cave_pale_oak_tree_scatter"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": {
+				"all_of": [
+					{
+						"test": "has_biome_tag",
+						"value": "pale_caves"
+					},
+					{
+						"test": "has_biome_tag",
+						"value": "caves"
+					}
+				]
+			}
+		},
+		"distribution": {
+			"iterations": 256,
+			"x": {
+				"extent": [
+					-16,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"y": {
+				"extent": [
+					-60,
+					30
+				],
+				"distribution": "gaussian"
+			},
+			"z": {
+				"extent": [
+					-16,
+					16
+				],
+				"distribution": "uniform"
+			},
+			"scatter_chance": 100
+		}
+	}
+}

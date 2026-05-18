@@ -1,0 +1,83 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:plateau_spruce_taiga"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.2,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 1.7
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "taiga"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"monster",
+					"overworld",
+					"has_structure_trail_ruins",
+					"spawns_warm_variant_farm_animals",
+					"spawns_mesa_mobs",
+					"plateau_spruce_taiga",
+					"desert"
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#aea42a"
+				},
+				"foliage": "#90814d"
+			},
+			"minecraft:creature_spawn_probability": {
+				"probability": 0.04
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:mesa",
+							"minecraft:mesa_plateau_stone",
+							"minecraft:savanna"
+						],
+						"amount": 0.185,
+						"noise_frequency_scale": 0.34
+					}
+				]
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:gravel",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:coarse_dirt",
+					"top_material": "minecraft:coarse_dirt",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:red_sand",
+							"mid_material": "minecraft:red_sand"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							-0.115,
+							0.212
+						]
+					}
+				]
+			}
+		}
+	}
+}

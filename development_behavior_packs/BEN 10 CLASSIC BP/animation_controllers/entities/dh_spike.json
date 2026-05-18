@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.0",
+	"animation_controllers": {
+		"controller.animation.dh_spike": {
+			"initial_state": "spawn",
+			"states": {
+				"spawn": {
+					"transitions": [
+						{
+							"active": "1"
+						}
+					],
+					"on_entry": [
+						"/effect @e[type=item,r=2] resistance 2 255 true"
+					]
+				},
+				"active": {}
+			}
+		}
+	}
+}

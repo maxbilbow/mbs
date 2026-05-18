@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "crafting:recipe_1"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"iii",
+			"RPR"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:iron_ingot"
+			},
+			"R": {
+				"item": "minecraft:redstone_block"
+			},
+			"P": {
+				"item": "minecraft:piston"
+			}
+		},
+		"result": {
+			"item": "drills:iron_drill",
+			"count": 1
+		}
+	}
+}

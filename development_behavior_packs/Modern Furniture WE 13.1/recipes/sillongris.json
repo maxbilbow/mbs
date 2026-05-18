@@ -1,0 +1,23 @@
+//bridge-file-version: #45
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:sillongris"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajasilla"
+			}
+		],
+		"result": [
+			{
+				"item": "f:sillongris",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "kaboom:activated_carbon"
+		},
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"input": "minecraft:charcoal",
+		"output": "kaboom:activated_carbon"
+	}
+}

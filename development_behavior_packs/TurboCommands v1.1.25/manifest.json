@@ -1,0 +1,53 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§dTurbo Commands §r",
+        "description": "§gEnable: §cBeta APIs\n§gCompatible with all addons and multiplayer!\n§b26.10+ §7| §8by sirob §7| §av1.1.25",
+        "min_engine_version": [
+            1,
+            19,
+            51
+        ],
+        "uuid": "e7d80eb9-c1d7-4338-a808-6bb65a1caae2",
+        "version": [
+            1,
+            1,
+            25
+        ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "37358556-f2c0-4b59-8017-553458ef3186",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "178161c9-22d6-4c3b-ac96-836ddba364f5",
+            "entry": "scripts/.sirob_turbocommands.js",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.1.0-beta"
+        }
+    ],
+    "capabilities": [
+        "script_eval"
+    ]
+}

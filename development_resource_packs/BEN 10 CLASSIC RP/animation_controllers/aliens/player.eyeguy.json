@@ -1,0 +1,269 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.eyeguy_walk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==23&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='eyelaser'||query.get_equipped_item_name('main_hand')=='eyefire'||query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_walk"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=23||!query.is_moving||query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='eyelaser'||query.get_equipped_item_name('main_hand')=='eyefire'||query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_sprint": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "variable.on_ground&&query.variant==23&&query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='eyelaser'||query.get_equipped_item_name('main_hand')=='eyefire'||query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_sprint"
+					],
+					"transitions": [
+						{
+							"default": "!variable.on_ground||query.variant!=23||!query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='eyelaser'||query.get_equipped_item_name('main_hand')=='eyefire'||query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item)"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_jump": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "!variable.on_ground&&query.variant==23&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_jump"
+					],
+					"transitions": [
+						{
+							"default": "variable.on_ground||query.variant!=23||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_laser": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&!variable.is_first_person&&!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_laser"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||query.get_equipped_item_name('main_hand')!='eyelaser'||!query.is_using_item||variable.is_first_person||query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_laser2": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&query.get_equipped_item_name('main_hand')=='eyelaser'&&query.is_using_item&&!variable.is_first_person&&query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_laser2"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||query.get_equipped_item_name('main_hand')!='eyelaser'||!query.is_using_item||variable.is_first_person||!query.is_sneaking"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_fire": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&query.get_equipped_item_name('main_hand')=='eyefire'&&query.is_using_item&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_fire"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||query.get_equipped_item_name('main_hand')!='eyefire'||!query.is_using_item||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_ice": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&query.get_equipped_item_name('main_hand')=='eyeice'&&query.is_using_item&&!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_ice"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||query.get_equipped_item_name('main_hand')!='eyeice'||!query.is_using_item||variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_blink": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_blink"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_fp": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_fp"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||!variable.is_first_person"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_fp_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&variable.is_first_person&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_fp_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||!variable.is_first_person||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.eyeguy_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.variant==23&&!variable.is_first_person&&variable.attack_time>0&&!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"eyeguy_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=23||variable.is_first_person||variable.attack_time<=0||query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

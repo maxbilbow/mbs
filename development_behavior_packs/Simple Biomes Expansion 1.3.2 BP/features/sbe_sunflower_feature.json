@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:sbe_sunflower_feature"
+		},
+		"structure_name": "mystructure:sbe_sunflower",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air",
+					"minecraft:dandelion"
+				]
+			}
+		}
+	}
+}

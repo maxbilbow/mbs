@@ -1,0 +1,9 @@
+pack.name=More Simple Structures
+pack.description=Adds more structures to the game for you to discover! | by CoreBlock Studios | Published by Waypoint Studios
+item.spawn_egg.entity.wypnt_mss:mummy.name=Spawn Mummy
+item.spawn_egg.entity.wypnt_mss:queen_spider.name=Spawn Spider Queen
+item.spawn_egg.entity.wypnt_mss:spirit.name=Spawn Spirit
+item.wypnt_mss:info_book.name=§3More Simple Structures§r\n§7Info Book§r
+entity.wypnt_mss:mummy.name=Mummy
+entity.wypnt_mss:queen_spider.name=Spider Queen
+entity.wypnt_mss:spirit.name=Spirit

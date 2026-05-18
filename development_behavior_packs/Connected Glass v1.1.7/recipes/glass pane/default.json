@@ -1,0 +1,24 @@
+{
+	"format_version": "1.16.200",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "glass_pane:basic"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"g"
+		],
+		"key": {
+			"g": {
+				"item": "glass_pane" 
+			}
+		},
+		"result": [
+			{
+				"item": "glass_pane:regular"
+			}
+		]
+	}
+}

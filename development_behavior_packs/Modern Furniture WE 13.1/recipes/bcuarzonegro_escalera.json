@@ -1,0 +1,23 @@
+//bridge-file-version: #47
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bcuarzonegro_escalera"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabloque"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bcuarzonegro_escalera",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

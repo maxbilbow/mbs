@@ -1,0 +1,17 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tuff_caves/deepslate_copper_ore_feature"
+		},
+		"count": 9,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:deepslate_copper_ore",
+				"may_replace": [
+					"minecraft:tuff"
+				]
+			}
+		]
+	}
+}

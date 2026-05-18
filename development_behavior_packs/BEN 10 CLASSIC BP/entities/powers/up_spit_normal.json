@@ -1,0 +1,60 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:spit_normal",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+			"scripts": {
+				"animate": [
+					"acid"
+				]
+			},
+			"animations": {
+				"acid": "controller.animation.acid_spit"
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.625,
+				"height": 0.625
+			},
+			"minecraft:type_family": {
+				"family": [
+					"acid_spit",
+					"upchuck"
+				]
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"mob_effect": {
+						"effect": "poison",
+						"durationeasy": 200,
+						"durationnormal": 200,
+						"durationhard": 200,
+						"amplifier": 1
+					},
+					"remove_on_hit": {}
+				},
+				"destroyOnHurt": true,
+				"crit_particle_on_hurt": true,
+				"power": 1.6,
+				"gravity": 0.05,
+				"uncertainty_base": 16,
+				"uncertainty_multiplier": 4,
+				"anchor": 1,
+				"offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			}
+		}
+	}
+}

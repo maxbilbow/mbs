@@ -1,0 +1,46 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "vrd:mega_taiga"
+    },
+    "volumetric": {
+      "density": {
+        "air": {
+          "max_density": 0.076,
+          "zero_density_height": 170,
+          "max_density_height": 91,
+          "uniform": false
+        },
+        "weather": {
+          "max_density": 0.121,
+          "uniform": true
+        },
+        "water": {
+          "max_density": 1.0,
+          "uniform": true
+        }
+      },
+           "media_coefficients": {
+          "air": {
+            "scattering":[0.0365, 0.0385, 0.0325],
+            "absorption": [0.085 ,0.07,0.06]
+   
+        },
+        "cloud": {
+          "scattering": [
+            0.100,
+            0.213,
+            0.100
+          ],
+          "absorption": [
+            0.053,
+            0.023,
+            0.053
+          ]
+        }
+      }
+    }
+  }
+}
+    

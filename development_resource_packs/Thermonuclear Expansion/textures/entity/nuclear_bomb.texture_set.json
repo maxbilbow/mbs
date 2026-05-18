@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "nuclear_bomb_entity",
+		"metalness_emissive_roughness": "nuclear_bomb_mer"
+	}
+}

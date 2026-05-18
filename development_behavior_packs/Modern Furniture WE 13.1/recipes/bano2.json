@@ -1,0 +1,23 @@
+//bridge-file-version: #119
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:bano2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajabano"
+			}
+		],
+		"result": [
+			{
+				"item": "f:bano2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

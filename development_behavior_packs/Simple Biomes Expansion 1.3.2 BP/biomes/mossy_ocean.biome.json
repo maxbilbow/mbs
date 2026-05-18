@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:mossy_ocean"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.6,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.65
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "ocean"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:overworld",
+					"sea_floor_depth": 7,
+					"sea_floor_material": "minecraft:moss_block",
+					"foundation_material": "minecraft:stone",
+					"mid_material": "minecraft:moss_block",
+					"top_material": "minecraft:moss_block",
+					"sea_material": "minecraft:water"
+				}
+			},
+			"minecraft:tags": {
+				"tags": [
+					"has_structure_trail_ruins",
+					"monster",
+					"overworld",
+					"ocean",
+					"lush_caves",
+					"spawns_tropical_fish_at_any_height",
+					"deep"
+				]
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:ocean",
+							"minecraft:deep_ocean"
+						],
+						"amount": 0.2,
+						"noise_frequency_scale": 0.27
+					}
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"sea_floor_material": "minecraft:dirt_with_roots",
+							"top_material": "minecraft:dirt_with_roots",
+							"mid_material": "minecraft:dirt_with_roots"
+						},
+						"noise_frequency_scale": 0.022,
+						"noise_range": [
+							0.12,
+							0.42
+						]
+					},
+					{
+						"materials": {
+							"sea_floor_material": "minecraft:clay"
+						},
+						"noise_frequency_scale": 0.0065,
+						"noise_range": [
+							0.08,
+							0.14
+						]
+					}
+				]
+			},
+			"minecraft:map_tints": {
+				"grass": {
+					"type": "tint",
+					"tint": "#b6db61"
+				},
+				"foliage": "#b6db61"
+			}
+		}
+	}
+}

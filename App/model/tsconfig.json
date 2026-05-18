@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "lib": ["esnext"],
+        "types":["node"],
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "verbatimModuleSyntax": true,
+        "composite": true
+        }
+}

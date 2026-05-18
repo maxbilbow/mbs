@@ -1,0 +1,16 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.omni_capsule_open": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"open": "query.variant==1"
+						}
+					]
+				}
+			}
+		}
+	}
+}

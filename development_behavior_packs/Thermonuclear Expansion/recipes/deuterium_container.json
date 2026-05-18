@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "kaboom:deuterium_container"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:glass"
+			}
+		},
+		"pattern": [
+			"GGG",
+			"G G",
+			"GGG"
+		],
+		"result": {
+			"item": "kaboom:deuterium_casing"
+		},
+		"unlock": [
+			{
+				"item": "minecraft:redstone_block"
+			}
+		]
+	}
+}

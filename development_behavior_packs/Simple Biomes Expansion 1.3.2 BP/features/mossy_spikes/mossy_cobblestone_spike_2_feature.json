@@ -1,0 +1,15 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:mossy_spikes/mossy_cobblestone_spike_2_feature"
+		},
+		"structure_name": "mystructure:mossy_cobblestone_spike2",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"unburied": {}
+		}
+	}
+}

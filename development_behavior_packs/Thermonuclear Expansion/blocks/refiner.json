@@ -1,0 +1,83 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:refiner",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:crafting_table": {
+				"grid_size": 3,
+				"crafting_tags": [
+					"refiner"
+				],
+				"table_name": "Refiner"
+			},
+			"minecraft:display_name": "Refiner",
+			"minecraft:geometry": {
+				"identifier": "geometry.refiner"
+			},
+			"minecraft:item_visual": {
+				"geometry": {
+					"identifier": "geometry.refiner"
+				},
+				"material_instances": {
+					"*": {
+						"texture": "kaboom_refiner",
+						"render_method": "opaque"
+					}
+				}
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "kaboom_refiner",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:collision_box": {
+				"size": [
+					16,
+					12,
+					16
+				],
+				"origin": [
+					-8,
+					0,
+					-8
+				]
+			},
+			"minecraft:loot": "loot_tables/refiner.json",
+			"minecraft:selection_box": {
+				"size": [
+					16,
+					12,
+					16
+				],
+				"origin": [
+					-8,
+					0,
+					-8
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.3
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			}
+		}
+	}
+}

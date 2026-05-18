@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "kaboom:explode",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/nuclear_explosion_flash"
+			},
+			"geometry": {
+				"default": "geometry.nuclear_explosion"
+			},
+			"render_controllers": [
+				"controller.render.explode"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			},
+			"animations": {
+				"nuke_explode": "animation.nuclear_explosion.active"
+			}
+		}
+	}
+}

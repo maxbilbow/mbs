@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "daniye:acacia_tree_feature_rule",
+			"places_feature": "daniye:acacia_tree_weighted_random_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "equals",
+					"value": "savanna"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 2,
+			"x": 0,
+			"y": "q.heightmap(v.worldx, v.worldz)",
+			"z": 0,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 6
+			}
+		}
+	}
+}

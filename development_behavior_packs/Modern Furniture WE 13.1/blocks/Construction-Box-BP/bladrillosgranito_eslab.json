@@ -1,0 +1,104 @@
+
+{
+	"minecraft:block": {
+		"description": {
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+						
+					],
+					"y_rotation_offset": 180
+				}
+				 
+			},
+			"states": {
+				"custom:geometry": [
+					"arriba",
+					"abajo"		
+				]
+			},
+			"menu_category": {
+				"category": "construction"
+			},
+			"identifier": "f:bladrillosgranito_eslab",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:geometry": "geometry.eslab",
+			"minecraft:custom_components": [
+				"content_mf:slab"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "opaque",
+					"texture": "bladrillosgranito"
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('custom:geometry') == 'arriba'",
+				"components": {
+					"minecraft:geometry": "geometry.eslab",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('custom:geometry') == 'abajo'",
+				"components": {
+					"minecraft:geometry": "geometry.slabarriba",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+
+			}
+		]
+	},
+	"format_version": "1.20.20"
+}

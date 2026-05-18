@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "launchpad_block",
+		"metalness_emissive_roughness": "launchpad_block_mer",
+		"normal": "launchpad_block_normal"
+	}
+}

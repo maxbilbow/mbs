@@ -1,0 +1,71 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.coreblockstudios_mss.queenspider.move": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"leg_setup": "query.is_alive"
+						},
+						{
+							"bob": "query.is_alive"
+						},
+						{
+							"walk": "query.modified_move_speed * 0.5"
+						}
+					],
+					"transitions": [
+						{
+							"summon": "query.is_casting"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"summon": {
+					"animations": [
+						"summon",
+						{
+							"bob": "query.is_alive"
+						},
+						{
+							"walk": "query.modified_move_speed * 0.5"
+						},
+						{
+							"leg_setup": "query.is_alive"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting && query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.05
+				}
+			}
+		},
+		"controller.animation.coreblockstudios_mss.queenspider.attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.is_charged&&q.has_target"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"shoot": {
+					"animations": [
+						"shoot"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.05
+				}
+			}
+		}
+	}
+}

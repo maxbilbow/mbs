@@ -1,0 +1,42 @@
+{
+   "format_version": [1,1,0],
+   "grass" : {
+      "carried_textures" : {
+         "down" : "grass_carried_bottom",
+         "side" : "grass_carried",
+         "up" : "grass_carried_top"
+      },
+      "isotropic" : {
+         "down" : false,
+         "up" : false
+      },
+      "sound" : "grass",
+      "textures" : {
+         "down" : "grass_bottom",
+         "side" : "grass_side",
+         "up" : "grass_top"
+}
+   },
+   "dirt" : {
+      "isotropic" : false,
+      "sound" : "gravel",
+      "textures" : "dirt"
+   },
+   "dirt_with_roots" : {
+      "isotropic" : false,
+      "sound" : "dirt_with_roots",
+      "textures" : "dirt_with_roots"
+   },
+   "sand" : {
+      "brightness_gamma" : 0.550,
+      "isotropic" : false,
+      "sound" : "sand",
+      "textures" : "sand"
+   },
+   "obsidian" : {
+      "brightness_gamma" : 2.0,
+      "isotropic" : false,
+      "sound" : "stone",
+      "textures" : "obsidian"
+   }
+}

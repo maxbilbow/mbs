@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sillaofis",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5, 1, -5], "size": [1, 7, 1], "uv": [4, 19]},
+						{"origin": [4, 7, -4], "size": [1, 1, 9], "uv": [16, 15]},
+						{"origin": [4, 8, 3], "size": [1, 10, 1], "pivot": [0, 0, 0], "rotation": [-7.5, 0, 0], "uv": [14, 18]},
+						{"origin": [-5, 8, 3], "size": [1, 10, 1], "pivot": [1, 0, 0], "rotation": [-7.5, 0, 0], "uv": [8, 14]},
+						{"origin": [-4, 17, 3], "size": [8, 1, 1], "pivot": [1, 0, 0], "rotation": [-7.5, 0, 0], "uv": [8, 14]},
+						{"origin": [-5.5, 13, 2], "size": [11, 6, 1], "pivot": [0, 0, 0], "rotation": [-7.5, 0, 0], "uv": [0, 38]},
+						{"origin": [4, 0, -5], "size": [1, 1, 10], "uv": [18, 16]},
+						{"origin": [4, 1, -5], "size": [1, 7, 1], "uv": [0, 19]},
+						{"origin": [-5, 0, -5], "size": [1, 1, 10], "uv": [0, 19]},
+						{"origin": [-4, 0, 4], "size": [8, 1, 1], "uv": [2, 20]},
+						{"origin": [-5, 7, -4], "size": [1, 1, 9], "uv": [23, 18]},
+						{"origin": [-5.5, 8, -6], "size": [11, 1, 11], "uv": [0, 37]}
+					]
+				}
+			]
+		}
+	]
+}

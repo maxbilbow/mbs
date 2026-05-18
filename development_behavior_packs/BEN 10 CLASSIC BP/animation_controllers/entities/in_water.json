@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.in_water": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_water": "query.is_in_water"
+						}
+					]
+				},
+				"in_water": {
+					"transitions": [
+						{
+							"default": "query.is_in_water"
+						}
+					],
+					"on_entry": [
+						"/event entity @s[family=fire] despawn"
+					]
+				}
+			}
+		}
+	}
+}

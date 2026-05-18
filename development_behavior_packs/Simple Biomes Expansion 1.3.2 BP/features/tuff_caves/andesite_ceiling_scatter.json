@@ -1,0 +1,29 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:tuff_caves/andesite_ceiling_scatter"
+		},
+		"iterations": 1,
+		"x": {
+			"extent": [
+				0,
+				8
+			],
+			"distribution": "uniform"
+		},
+		"z": {
+			"extent": [
+				0,
+				8
+			],
+			"distribution": "uniform"
+		},
+		"y": 0,
+		"places_feature": "vanilla_biomes_expansion:tuff_caves/andesite_ceiling_patch",
+		"scatter_chance": {
+			"numerator": 3,
+			"denominator": 128
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:spring_birch_forest_mutated/spring_birch_forest_tree_f_3_feature"
+		},
+		"structure_name": "mystructure:spring_birch_forest_tree_f3",
+		"adjustment_radius": 0,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_allowlist": [
+					"minecraft:air"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "vanilla_biomes_expansion:jungle_caves/jungle_caves_biome_placement_feature"
+		},
+		"features": [
+			"vanilla_biomes_expansion:jungle_caves/dirt_patch",
+			"vanilla_biomes_expansion:jungle_caves/grass_block_patch"
+		],
+		"early_out": "none"
+	}
+}

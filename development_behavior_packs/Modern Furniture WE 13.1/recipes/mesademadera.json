@@ -1,0 +1,23 @@
+//bridge-file-version: #41
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:mesademadera"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajamesa"
+			}
+		],
+		"result": [
+			{
+				"item": "f:mesademadera",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

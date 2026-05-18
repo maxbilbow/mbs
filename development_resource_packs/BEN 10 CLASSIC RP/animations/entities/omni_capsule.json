@@ -1,0 +1,60 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.falling_omni_capsule": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"object": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							360,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.omni_capsule.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"right_lid": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.7083": [
+							0,
+							0,
+							65
+						]
+					}
+				},
+				"left_lid": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5833": [
+							0,
+							0,
+							-65
+						]
+					}
+				}
+			}
+		}
+	}
+}

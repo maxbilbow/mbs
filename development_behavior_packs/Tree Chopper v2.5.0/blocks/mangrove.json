@@ -1,0 +1,91 @@
+{
+   "format_version": "1.21.50",
+   "minecraft:block": {
+      "description": {
+         "identifier": "rtc:mangrove_log",
+         "states": {
+            "log:state": [1, 2, 3, 4]
+         }
+      },
+      "permutations": [
+         {
+            "condition": "query.block_state('log:state') == 1",
+            "components": {
+               "minecraft:geometry": "geometry.log1",
+               "minecraft:collision_box": {
+                  "origin": [-7, 0, -7],
+                  "size": [14, 16, 14]
+               },
+               "minecraft:selection_box": {
+                  "origin": [-7, 0, -7],
+                  "size": [14, 16, 14]
+               }
+            }
+         },
+         {
+            "condition": "query.block_state('log:state') == 2",
+            "components": {
+               "minecraft:geometry": "geometry.log2",
+               "minecraft:collision_box": {
+                  "origin": [-6, 0, -6],
+                  "size": [12, 16, 12]
+               },
+               "minecraft:selection_box": {
+                  "origin": [-6, 0, -6],
+                  "size": [12, 16, 12]
+               }
+            }
+         },
+         {
+            "condition": "query.block_state('log:state') == 3",
+            "components": {
+               "minecraft:geometry": "geometry.log3",
+               "minecraft:collision_box": {
+                  "origin": [-5, 0, -5],
+                  "size": [10, 16, 10]
+               },
+               "minecraft:selection_box": {
+                  "origin": [-5, 0, -5],
+                  "size": [10, 16, 10]
+               }
+            }
+         },
+         {
+            "condition": "query.block_state('log:state') == 4",
+            "components": {
+               "minecraft:geometry": "geometry.log4",
+               "minecraft:collision_box": {
+                  "origin": [-4, 0, -4],
+                  "size": [8, 16, 8]
+               },
+               "minecraft:selection_box": {
+                  "origin": [-4, 0, -4],
+                  "size": [8, 16, 8]
+               }
+            }
+         }
+      ],
+      "components": {
+         "minecraft:material_instances": {
+            "*": {
+               "texture": "rtc:mangrove_log",
+               "render_method": "alpha_test",
+               "face_dimming": true,
+               "ambient_occlusion": true
+            }
+         },
+         "minecraft:destructible_by_mining": {
+            "seconds_to_destroy": 2.5
+         },
+         "tag:minecraft:is_axe_item_destructible": {},
+         "minecraft:display_name": "Mangrove Log",
+         "minecraft:loot": "loot_tables/empty.json",
+         "tag:custom:log": {},
+         "minecraft:custom_components": ["log:ticking"],
+         "minecraft:tick": {
+            "looping": true,
+            "interval_range": [100, 100]
+         }
+      }
+   }
+}

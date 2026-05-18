@@ -1,0 +1,54 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kaboom:neptunium_block",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:display_name": "Neptunium Block",
+			"minecraft:loot": "loot_tables/neptunium_block.json",
+			"minecraft:light_emission": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": "minecraft:iron_pickaxe",
+						"destroy_speed": 1
+					},
+					{
+						"item": "minecraft:diamond_pickaxe",
+						"destroy_speed": 0.4
+					},
+					{
+						"item": "minecraft:netherite_pickaxe",
+						"destroy_speed": 0.2
+					}
+				]
+			},
+			"minecraft:tick": {
+				"interval_range": [
+					20,
+					20
+				],
+				"looping": true
+			},
+			"kaboom:radiation": [
+				{
+					"radius": 4,
+					"name": "wither",
+					"duration": 240,
+					"amplifier": 1
+				},
+				{
+					"radius": 2,
+					"name": "nausea",
+					"duration": 80,
+					"amplifier": 2
+				}
+			]
+		}
+	}
+}

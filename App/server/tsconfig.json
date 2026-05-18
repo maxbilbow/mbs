@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "lib": [
+            "esnext"
+        ],
+        "types": [
+            "node"
+        ],
+        "allowImportingTsExtensions": true,
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "verbatimModuleSyntax": true,
+        "composite": true,
+        "strict": true
+    },
+    "references": [
+        {
+            "path": "../model/tsconfig.json"
+        }
+    ]
+}

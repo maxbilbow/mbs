@@ -1,0 +1,40 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.trampolin2-normal",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7.5, 9.4, -7.5], "size": [15, 0, 15], "uv": [1, 1]},
+						{"origin": [-5, 0, -15], "size": [10, 2, 2], "pivot": [0, 9, -10], "rotation": [0, 180, 0], "uv": [0, 16]},
+						{"origin": [-7, 0, -9], "size": [2, 2, 2], "pivot": [-7, 1, -7], "rotation": [0, -90, 0], "uv": [0, 35]},
+						{"origin": [7, 0, -9], "size": [2, 2, 2], "pivot": [7, 1, -7], "rotation": [0, 180, 0], "uv": [0, 35]},
+						{"origin": [0, 0, 12], "size": [2, 2, 2], "pivot": [0, 1, 7], "rotation": [0, 90, 0], "uv": [0, 35]},
+						{"origin": [-7, 0, 5], "size": [2, 2, 2], "uv": [0, 35]},
+						{"origin": [5, 1, 5], "size": [2, 8, 2], "pivot": [6, 5.5, 6], "rotation": [-105, 75, -90], "uv": [0, 42]},
+						{"origin": [-7, 1, 5], "size": [2, 8, 2], "pivot": [-6, 5.5, 6], "rotation": [-15, 0, -15], "uv": [0, 42]},
+						{"origin": [-7, 1, -7], "size": [2, 8, 2], "pivot": [-6, 5.5, -6], "rotation": [90, -75, -105], "uv": [0, 42]},
+						{"origin": [5, 1, -7], "size": [2, 8, 2], "pivot": [6, 5.5, -6], "rotation": [165, 0, -165], "uv": [0, 42]},
+						{"origin": [-5, 0, 5], "size": [10, 2, 2], "pivot": [0, 1, 0], "rotation": [0, 90, 0], "uv": [0, 16]},
+						{"origin": [-5, 0, 5], "size": [10, 2, 2], "pivot": [0, 1, 0], "rotation": [0, -90, 0], "uv": [0, 16]},
+						{"origin": [-7, 8, 6], "size": [14, 0, 2], "uv": [14, 8]},
+						{"origin": [-7, 8, -8], "size": [14, 0, 2], "pivot": [0, 8, -7], "rotation": [0, 180, 0], "uv": [14, 8]},
+						{"origin": [-7, 8, 6], "size": [14, 0, 2], "pivot": [0, 1, 0], "rotation": [0, -90, 0], "uv": [14, 8]},
+						{"origin": [0, 8, -1], "size": [14, 0, 2], "pivot": [7, 8, 0], "rotation": [0, 90, 0], "uv": [14, 8]},
+						{"origin": [-5, 0, 5], "size": [10, 2, 2], "uv": [0, 16]}
+					]
+				}
+			]
+		}
+	]
+}

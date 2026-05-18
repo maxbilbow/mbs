@@ -1,0 +1,37 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:lighting_settings": {
+      "description": {
+          "identifier": "ale:deltas_lighting"
+      },
+  "directional_lights": {
+      "sun": {
+        "illuminance": {
+          "0.000000": 100.0,
+          "1.000000": 100.0
+        },
+        "color": {
+          "0.000000": [ 255, 140, 12 ],
+          "1.000000": [ 255, 140, 12  ]
+        }
+      },
+      "moon": {
+        "illuminance": {
+          "0.000000": 100.0,
+          "1.000000": 100.0
+        },
+        "color": {
+          "0.000000": [ 255, 255, 255 ],
+          "1.000000": [ 255, 255, 255 ]
+        }
+      }
+    },
+    "ambient": {
+      "color": [255, 132, 5],
+      "illuminance": 1.5
+    },
+    "sky":{
+        "intensity" : 1.0
+    }
+  }
+}

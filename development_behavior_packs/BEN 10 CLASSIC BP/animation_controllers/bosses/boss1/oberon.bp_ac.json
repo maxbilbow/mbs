@@ -1,0 +1,250 @@
+{
+	"format_version": "1.20.30",
+	"animation_controllers": {
+		"controller.animation.oberon.root": {
+			"initial_state": "init",
+			"states": {
+				"init": {
+					"transitions": [
+						{
+							"spawning": "variable.state_time=query.life_time;return query.property('cso:state')=='spawning';"
+						},
+						{
+							"spawned": "1"
+						}
+					]
+				},
+				"spawning": {
+					"transitions": [
+						{
+							"spawned": "query.life_time-variable.state_time>5"
+						}
+					],
+					"on_entry": [
+						"@s cso:oberon.pre_ai",
+						"/playsound entity.oberon.spawn @a ~~~ 8",
+						"/scoreboard objectives add oberon dummy oberon",
+						"/music stop"
+					]
+				},
+				"spawned": {
+					"transitions": [
+						{
+							"ai": "1"
+						}
+					],
+					"on_entry": [
+						"@s cso:oberon.ai",
+						"/fog @a[r=99999999999] push minecraft:fog_crimson_forest red",
+						"/time set night",
+						"/music play entity.oberon.music"
+					]
+				},
+				"ai": {
+					"transitions": [
+						{
+							"death_sequence": "query.health<=1||query.property('cso:state')=='dying'"
+						},
+						{
+							"cannon_ball_sequence": "query.property('cso:attack_state')=='cannon_ball'"
+						},
+						{
+							"jump_slam_sequence": "query.property('cso:attack_state')=='jump_slam'"
+						}
+					],
+					"on_entry": [
+						"@s cso:oberon.switch_to_backfist"
+					]
+				},
+				"cannon_ball_sequence": {
+					"animations": [
+						"obeball_dummy"
+					],
+					"transitions": [
+						{
+							"ai": "query.life_time-variable.state_time>=9.46"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;"
+					]
+				},
+				"jump_slam_sequence": {
+					"transitions": [
+						{
+							"jump_slam_sequence.tick_a": "query.life_time-variable.state_time>0.625"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;",
+						"variable.jump_slam_time=query.life_time;",
+						"/playsound entity.oberon.pre_super_smash @a ~~~ 4",
+						"/tag @a[r=128,c=-1] add jump_slam_target",
+						"/effect @s levitation 1 10 true"
+					],
+					"on_exit": [
+						"variable.state_time=query.life_time;"
+					]
+				},
+				"jump_slam_sequence.tick_a": {
+					"transitions": [
+						{
+							"jump_slam_sequence.tick_b": "query.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"ai": "query.life_time-variable.state_time>=1.59&&query.property('cso:attack_state')!='jump_slam'"
+						}
+					],
+					"on_entry": [
+						"/tp @s ^^^2.5 facing @a[tag=\"jump_slam_target\",c=1]"
+					]
+				},
+				"jump_slam_sequence.tick_b": {
+					"transitions": [
+						{
+							"jump_slam_sequence.tick_a": "query.property('cso:attack_state')=='jump_slam'"
+						},
+						{
+							"ai": "query.life_time-variable.state_time>=1.59&&query.property('cso:attack_state')!='jump_slam'"
+						}
+					],
+					"on_entry": [
+						"/tp @s ^^^2.5 facing @a[tag=\"jump_slam_target\",c=1]"
+					]
+				},
+				"jump_slam_sequence.end": {
+					"transitions": [
+						{
+							"ai": "query.life_time-variable.state_time>=1.59&&query.property('cso:attack_state')!='jump_slam'"
+						},
+						{
+							"jump_slam_sequence": "query.property('cso:attack_state')=='jump_slam'"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;"
+					]
+				},
+				"death_sequence": {
+					"transitions": [
+						{
+							"death_sequence.despawn": "query.life_time-variable.state_time>=12"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;",
+						"@s cso:oberon.is_dying",
+						"/fog @a remove red",
+						"/music stop",
+						"/playsound entity.oberon.death @a ~~~ 8"
+					]
+				},
+				"death_sequence.despawn": {
+					"on_entry": [
+						"@s cso:instant_despawn"
+					]
+				}
+			}
+		},
+		"controller.animation.oberon.test": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"charge_spin": "query.property('cso:attack_state')=='charge_spin'"
+						},
+						{
+							"swing": "query.is_delayed_attacking&&query.property('cso:rage_state')!='raged'"
+						},
+						{
+							"swing_claw": "query.is_delayed_attacking&&query.property('cso:rage_state')=='raged'"
+						},
+						{
+							"instakill": "query.property('cso:attack_state')=='instakill'&&query.mark_variant==1"
+						},
+						{
+							"uppercut": "query.property('cso:attack_state')=='instakill'&&query.mark_variant==2"
+						},
+						{
+							"rage": "variable.health=query.health/query.max_health;return variable.health<=0.5&&!query.is_delayed_attacking&&!variable.attack_time&&query.property('cso:attack_state')=='backfist'&&query.property('cso:rage_state')=='none';"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;"
+					]
+				},
+				"rage": {
+					"transitions": [
+						{
+							"default": "query.property('cso:attack_state')!='rage'"
+						}
+					],
+					"on_entry": [
+						"@s cso:oberon.start_rage",
+						"/playsound entity.oberon.claw @a ~~~ 8"
+					]
+				},
+				"charge_spin": {
+					"transitions": [
+						{
+							"default": "query.property('cso:attack_state')!='charge_spin'"
+						}
+					],
+					"on_entry": [
+						"/particle oberon:blackhole ~~0.1~",
+						"/playsound entity.oberon.spin @a ~~~ 6"
+					]
+				},
+				"swing": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;",
+						"/playsound entity.oberon.swing @a ~~~ 4.5"
+					]
+				},
+				"instakill": {
+					"transitions": [
+						{
+							"default": "query.property('cso:attack_state')!='instakill'||query.mark_variant!=1"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;"
+					],
+					"animations": [
+						"oberon_bite"
+					]
+				},
+				"uppercut": {
+					"transitions": [
+						{
+							"default": "query.property('cso:attack_state')!='instakill'||query.mark_variant!=2"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;"
+					],
+					"animations": [
+						"oberon_clap"
+					]
+				},
+				"swing_claw": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						}
+					],
+					"on_entry": [
+						"variable.state_time=query.life_time;",
+						"/playsound entity.oberon.claw_attack @a ~~~ 4.5"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+//bridge-file-version: #271
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:botes2"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:botes2",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

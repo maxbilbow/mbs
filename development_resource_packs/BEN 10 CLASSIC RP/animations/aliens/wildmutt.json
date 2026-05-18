@@ -1,0 +1,564 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.wildmutt_idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							2.5,
+							0,
+							0
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"0.0": [
+							12.5,
+							0,
+							0
+						],
+						"1.0": [
+							25,
+							0,
+							0
+						],
+						"2.0": [
+							12.5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							-5,
+							0,
+							0
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							-5,
+							0,
+							0
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.wildmutt_jumping": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"fullbody": {
+					"rotation": [
+						-7.5,
+						0,
+						0
+					],
+					"position": [
+						0,
+						6,
+						-5
+					]
+				},
+				"upperbody": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"wm_arm1": {
+					"rotation": [
+						29.78729,
+						-3.74196,
+						6.50446
+					]
+				},
+				"wm_arm2": {
+					"rotation": [
+						29.78729,
+						3.74196,
+						-6.50446
+					]
+				},
+				"wm_leg1": {
+					"rotation": [
+						55,
+						0,
+						0
+					]
+				},
+				"wm_leg2": {
+					"rotation": [
+						55,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.wildmutt_moving": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"jaw": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							2.5,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm1": {
+					"rotation": {
+						"0.0": [
+							20,
+							0,
+							0
+						],
+						"0.25": [
+							-15,
+							0,
+							0
+						],
+						"0.5": [
+							20,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm2": {
+					"rotation": {
+						"0.0": [
+							-15,
+							0,
+							0
+						],
+						"0.25": [
+							20,
+							0,
+							0
+						],
+						"0.5": [
+							-15,
+							0,
+							0
+						]
+					}
+				},
+				"wm_leg1": {
+					"rotation": {
+						"0.0": [
+							-10,
+							0,
+							0
+						],
+						"0.25": [
+							30,
+							0,
+							0
+						],
+						"0.5": [
+							-10,
+							0,
+							0
+						]
+					}
+				},
+				"wm_leg2": {
+					"rotation": {
+						"0.0": [
+							30,
+							0,
+							0
+						],
+						"0.25": [
+							-10,
+							0,
+							0
+						],
+						"0.5": [
+							30,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.wildmutt_sprinting": {
+			"loop": true,
+			"animation_length": 0.54167,
+			"override_previous_animation": true,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							-5,
+							0,
+							0
+						],
+						"0.1667": [
+							5,
+							0,
+							0
+						],
+						"0.3333": [
+							-2.5,
+							0,
+							0
+						],
+						"0.375": [
+							-6,
+							0,
+							0
+						],
+						"0.5": [
+							-5,
+							0,
+							0
+						]
+					}
+				},
+				"jaw": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"wm_arm1": {
+					"rotation": {
+						"0.0": [
+							-12.5,
+							0,
+							0
+						],
+						"0.1667": [
+							-2.5,
+							0,
+							0
+						],
+						"0.3333": [
+							12.5,
+							0,
+							0
+						],
+						"0.5": [
+							-12.5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm2": {
+					"rotation": {
+						"0.0": [
+							-12.5,
+							0,
+							0
+						],
+						"0.1667": [
+							-2.5,
+							0,
+							0
+						],
+						"0.3333": [
+							12.5,
+							0,
+							0
+						],
+						"0.5": [
+							-12.5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_leg1": {
+					"rotation": {
+						"0.0": [
+							27.5,
+							0,
+							0
+						],
+						"0.1667": [
+							-12.5,
+							0,
+							0
+						],
+						"0.3333": [
+							-30,
+							0,
+							0
+						],
+						"0.5": [
+							27.5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_leg2": {
+					"rotation": {
+						"0.0": [
+							27.5,
+							0,
+							0
+						],
+						"0.1667": [
+							-12.5,
+							0,
+							0
+						],
+						"0.3333": [
+							-30,
+							0,
+							0
+						],
+						"0.5": [
+							27.5,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.wildmutt_attacking_fp": {
+			"loop": true,
+			"animation_length": 0.33333,
+			"override_previous_animation": true,
+			"bones": {
+				"wm_arm1_fp": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							-12.5,
+							0,
+							0
+						],
+						"0.25": [
+							20,
+							0,
+							5
+						]
+					}
+				},
+				"wm_arm2_fp": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							-12.5,
+							0,
+							0
+						],
+						"0.25": [
+							20,
+							0,
+							-5
+						]
+					}
+				}
+			}
+		},
+		"animation.wildmutt_attacking": {
+			"loop": true,
+			"animation_length": 0.375,
+			"override_previous_animation": true,
+			"bones": {
+				"upperbody": {
+					"rotation": {
+						"0.0": [
+							-12.5,
+							0,
+							0
+						],
+						"0.2083": [
+							2.5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_body": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"jaw": {
+					"rotation": {
+						"0.0": [
+							57.5,
+							0,
+							0
+						],
+						"0.2917": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm1": {
+					"rotation": {
+						"0.0": [
+							-5,
+							0,
+							0
+						],
+						"0.0833": [
+							-35.02848,
+							0.14179,
+							-0.34551
+						],
+						"0.2917": [
+							-5,
+							0,
+							0
+						]
+					}
+				},
+				"wm_arm2": {
+					"rotation": {
+						"0.0": [
+							-5,
+							0,
+							0
+						],
+						"0.0833": [
+							-35.02848,
+							0.14179,
+							-0.34551
+						],
+						"0.2917": [
+							-5,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.wildmutt_swimming": {
+			"loop": true,
+			"bones": {
+				"fullbody": {
+					"rotation": [
+						-15,
+						0,
+						0
+					],
+					"position": [
+						0,
+						"math.sin(query.life_time*400)*1",
+						0
+					]
+				},
+				"wm_head": {
+					"rotation": [
+						"15-query.target_x_rotation",
+						"-query.target_y_rotation",
+						0
+					]
+				},
+				"wm_arm1": {
+					"rotation": [
+						"math.sin(query.life_time*600)*35",
+						0,
+						0
+					]
+				},
+				"wm_arm2": {
+					"rotation": [
+						"-math.sin(query.life_time*600)*35",
+						0,
+						0
+					]
+				},
+				"wm_leg1": {
+					"rotation": [
+						"-math.sin(query.life_time*600)*35",
+						0,
+						0
+					]
+				},
+				"wm_leg2": {
+					"rotation": [
+						"math.sin(query.life_time*600)*35",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

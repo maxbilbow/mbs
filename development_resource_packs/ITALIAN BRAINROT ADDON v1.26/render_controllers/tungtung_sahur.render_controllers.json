@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.tungtung_sahur": {
+			"geometry": "Geometry.default",
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"texture.default",
+						"texture.gold",
+						"texture.rainbow"
+					]
+				}
+			},
+			//supreme victory se logroooo uwu
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.variant]"
+			]
+		}
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "daniye:spruce_tree_weighted_random_feature"
+		},
+		"features": [
+			[
+				"daniye:spruce_tree_01_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_02_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_03_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_04_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_05_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_06_mcstructure",
+				2
+			],
+			[
+				"daniye:spruce_tree_07_mcstructure",
+				1
+			],
+			[
+				"daniye:spruce_tree_08_mcstructure",
+				1
+			],
+			[
+				"daniye:spruce_tree_09_mcstructure",
+				1
+			],
+			[
+				"daniye:spruce_tree_10_mcstructure",
+				1
+			],
+			[
+				"daniye:spruce_tree_11_mcstructure",
+				1
+			],
+			[
+				"daniye:spruce_tree_12_mcstructure",
+				1
+			]
+		]
+	}
+}

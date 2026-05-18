@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "kaboom:uranium"
+		},
+		"tags": [
+			"refiner"
+		],
+		"ingredients": [
+			{
+				"item": "kaboom:uranium_dust",
+				"count": 9
+			}
+		],
+		"result": {
+			"item": "kaboom:uranium_block"
+		},
+		"unlock": [
+			{
+				"item": "kaboom:uranium_dust"
+			}
+		]
+	}
+}

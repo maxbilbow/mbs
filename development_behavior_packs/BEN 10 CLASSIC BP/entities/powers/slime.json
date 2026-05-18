@@ -1,0 +1,104 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:slime",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"sticky_slime"
+				]
+			},
+			"animations": {
+				"sticky_slime": "controller.animation.sticky_slime"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"stinkfly",
+					"sf_slime"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 0.2
+			},
+			"minecraft:health": {
+				"value": 50,
+				"max": 50
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/slime.json"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "projectile",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:timer": {
+				"time": 7,
+				"looping": false,
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"test": "is_family",
+						"subject": "self",
+						"value": "sf_slime"
+					},
+					"event": "omni:trap_entities"
+				}
+			},
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"omni:trap_entities": {
+				"run_command": {
+					"command": [
+						"effect @e[r=1.5,family=!omnitrix,family=!stinkfly,family=!sf_slime,type=!item] slowness 1 255 true",
+						"effect @e[r=1.5,family=!omnitrix,family=!stinkfly,family=!sf_slime,type=!item] fatal_poison 1 1 true",
+						"effect @e[r=1.5,family=!omnitrix,family=!stinkfly,family=!sf_slime,type=!item] darkness 1 0 true",
+						"effect @e[r=1.5,family=!omnitrix,family=!stinkfly,family=!sf_slime,type=!item] nausea 5 0 true"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

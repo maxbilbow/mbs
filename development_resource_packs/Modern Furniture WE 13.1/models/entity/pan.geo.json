@@ -1,0 +1,39 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.decoracioncocina4",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 19, 0]
+				},
+				{
+					"name": "item_1",
+					"parent": "bb_main",
+					"pivot": [0, 25.29201, 0],
+					"cubes": [
+						{"origin": [-0.5, 1, 6], "size": [3, 2.5, 3], "pivot": [0, 0, 2], "rotation": [-180, 67.5, 180], "uv": [0, 0]},
+						{"origin": [-1, 1, 0], "size": [4, 3, 6], "pivot": [0, 0, 2], "rotation": [-180, 67.5, 180], "uv": [0, 13]},
+						{"origin": [-0.5, 1, -3], "size": [3, 2.5, 3], "pivot": [0, 0, 2], "rotation": [-180, 67.5, 180], "uv": [0, 6]}
+					]
+				},
+				{
+					"name": "structure",
+					"parent": "bb_main",
+					"pivot": [0, 25.29201, 0],
+					"cubes": [
+						{"origin": [-5, 0, -6], "size": [9, 1, 12], "pivot": [0, 0, 0], "rotation": [-180, 82.5, 180], "uv": [17, 41]}
+					]
+				}
+			]
+		}
+	]
+}

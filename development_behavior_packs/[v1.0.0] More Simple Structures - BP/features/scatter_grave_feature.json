@@ -1,0 +1,24 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+      "description": {
+        "identifier": "wypnt_mss:scatter_grave_feature"
+      },
+      "coordinate_eval_order": "xzy",
+      "iterations": "math.random(4,10)",
+      "places_feature": "wypnt_mss:grave_1_feature_mcstructure",
+        "x": {
+        "distribution": "gaussian",
+        "extent": [-20, 20]
+        },
+        "z": {
+        "distribution": "gaussian",
+        "extent": [-20, 20]
+        },
+      "y": {
+        "distribution": "gaussian",
+        "extent": [-4, 4]
+      }
+    }
+  }
+  

@@ -1,0 +1,69 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "wypnt_mss:abandoned_house_feature_rule",
+			"places_feature": "wypnt_mss:select_abandoned_house_feature"
+		},
+		"conditions": {
+			"placement_pass": "surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "ocean"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "!=",
+							"value": "river"
+						},
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "forest"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "roofed"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "taiga"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 250
+			},
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					-1,
+					1
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz) + -1",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					-1,
+					1
+				]
+			}
+		}
+	}
+}

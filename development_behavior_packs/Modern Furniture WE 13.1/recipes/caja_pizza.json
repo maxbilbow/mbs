@@ -1,0 +1,23 @@
+//bridge-file-version: #441
+{
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "f:caja_pizza"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "f:cajadecoracion"
+			}
+		],
+		"result": [
+			{
+				"item": "f:caja_pizza",
+				"count": 1
+			}
+		]
+	},
+	"format_version": "1.17.0"
+}

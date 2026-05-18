@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ben10.omni_use": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attacking": "query.skin_id==2"
+						}
+					]
+				},
+				"attacking": {
+					"animations": [
+						"omni_attacking"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=2"
+						}
+					]
+				}
+			}
+		}
+	}
+}
