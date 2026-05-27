@@ -10,7 +10,7 @@ import { setUpAuthApi } from "./rest/AuthApi.ts";
 const DEV_MODE = process.argv.includes("--dev");
 
 const app = express();
-const PORT = 8080;
+const PORT = 8081;
 
 
 if (import.meta.main) {
