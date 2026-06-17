@@ -3,24 +3,24 @@ import { activatePlugin, deactivatePlugin, findDevelompentPlugins } from "../dat
 
 export function setUpPluginsApi(app: Express) {
 
-    app.get("/api/plugins", (req, res) => {
+    app.get("/plugins", (req, res) => {
         const plugins = findDevelompentPlugins();
         res.json(plugins);
     });
 
-    app.post("/api/plugins/activate/:type/:uuid/:version", (req, res) => {
+    app.post("/plugins/activate/:type/:uuid/:version", (req, res) => {
         const { type, uuid, version } = req.params;
         activatePlugin(type as "behaviour" | "resource", uuid, version.split('.').map(Number) as unknown as readonly [number, number, number]);
         res.json({ success: true });
     });
 
-    app.post("/api/plugins/deactivate/:type/:uuid/:version", (req, res) => {
+    app.post("/plugins/deactivate/:type/:uuid/:version", (req, res) => {
         const { type, uuid, version } = req.params;
         deactivatePlugin(type as "behaviour" | "resource", uuid);
         res.json({ success: true });
     });
 
-    app.post("/api/plugins/:uuid/:version/toggle", (req, res) => {
+    app.post("/plugins/:uuid/:version/toggle", (req, res) => {
         const { uuid, version } = req.params;
         const versionTuple = version.split('.').map(Number) as unknown as readonly [number, number, number];
         const plugins = findDevelompentPlugins();

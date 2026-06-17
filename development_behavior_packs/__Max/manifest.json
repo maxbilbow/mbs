@@ -10,7 +10,7 @@
         "name": "Max's Shit",
         "description": "Script API Template",
         "uuid": "00972561-1dc7-4a3a-a4f6-cb34571b642a",
-        "version": [0, 0, 3],
+        "version": [0, 0, 4],
         "min_engine_version": [
             1,
             20,
@@ -20,7 +20,7 @@
     "modules": [
         {
             "uuid": "49365b3b-b866-4b7d-b591-a0773940dd08",
-            "version": [0,0,3],
+            "version": [0,0,4],
             "type": "script",
             "language": "javascript",
             "entry": "scripts/main.js"

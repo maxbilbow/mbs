@@ -1,13 +1,14 @@
 import { system, world } from '@minecraft/server';
-// import ChatCommand from './ChatCommants.js'
+import ChatCommand from './ChatCommants.js'
 // import { commands } from './ChatCommants.js';
 
 // way 1 to make commands
-// ChatCommand.create('Road', 'Create a road', ['road'], false, false, (player, args, commandString) => {
-//     player.sendMessage(`${player.name}, ${commandString}`)
-//     system.run(() => player.runCommand(`fill ~ ~ ~ ~100 ~10 ~4 air"`))
-//     system.run(() => player.runCommand(`fill ~ ~ ~ ~100 ~-1 ~4 smooth_quartz"`))
-// });
+ChatCommand.create('Road', 'Create a road', ['road'], false, {key: "raod"}, (player, args, commandString) => {
+    player.sendMessage(`${player.name}, ${commandString}`)
+    system.run(() => player.runCommand(`fill ~ ~ ~ ~100 ~10 ~4 air"`))
+
+    system.run(() => player.runCommand(`fill ~ ~ ~a ~100 ~-1 ~4 smooth_quartz"`))
+});
 
 system.runInterval(() => {
     world.sendMessage('MAX: script is running');

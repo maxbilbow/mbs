@@ -4,9 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "node ./App/server/start.ts",
-    "prestart": "npm run build",
-    "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --outdir=./App/www/js"
+    "start": "node --env-file=.env ./App/server/start.ts",
+    "prestart2": "npm run build",
+    "build": "esbuild ./App/client/main.tsx --bundle --outdir=./App/www/js"
   },
   "author": "Max Bilbow",
   "license": "ISC",

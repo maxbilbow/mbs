@@ -1,21 +1,20 @@
 
 // Start express server
 import express from "express";
-import { setUpPluginsApi } from "./rest/PluginsApi.ts";
-import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { setUpMbsApi } from "./rest/MbsApi.ts";
-import { spawn, spawnSync } from "node:child_process";
-import { setUpAuthApi } from "./rest/AuthApi.ts";
+import { setUpPluginsApi } from "./rest/PluginsApi.ts";
+import { Logger } from "tslog";
 
 const DEV_MODE = process.argv.includes("--dev");
 
 const app = express();
 const PORT = 8081;
 
-
+const logger = new Logger({ name: "ServerStart" });
 if (import.meta.main) {
+
     app.use(express.json());
-    setUpAuthApi(app);
     useCors(app);
     setUpPluginsApi(app);
     setUpMbsApi(app);
@@ -24,40 +23,17 @@ if (import.meta.main) {
         console.log(`Server is running on port ${PORT}`);
     });
 
-    app.use(express.static(path.join(import.meta.dirname, "../www"), {
-        index: "index.html",
-    }));
+    // app.use(express.static(path.join(import.meta.dirname, "../www"), {
+    //     index: "index.html",
+    // }));
 
-    spawn("esbuild", [
-        "./App/client/main.tsx",
-        "./App/client/auth.ts",
-        "--bundle",
-        "--outdir=./App/www/js",
-        "--loader:.css=global-css",
-    ], {
-        stdio: "inherit",
-    });
-
-    // spawn("esbuild", [
-    //     "./App/client/main.tsx",
-    //     "--bundle",
-    //     "--serve=8080",
-    //     "--servedir=./App/www",
-    //     "--outdir=./App/www/js",
-    //     "--loader:.css=global-css",
-    //     "--watch"
-    // ], {
-    //     stdio: "inherit",
-    // });
+    copyBuild();
 }
 
 function useCors(app: express.Express) {
     // List of allowed origins
     const allowedOrigins = [
         'http://192.168.0.18:8080',
-        'http://max.hopto.org',
-        'https://max.hopto.org',
-        'http://mbs.maxbilbow.com',
         'https://mbs.maxbilbow.com',
     ];
 
@@ -82,5 +58,26 @@ function useCors(app: express.Express) {
         }
 
         next();
+    });
+}
+
+function copyBuild() {
+    const outputPath = process.env.caddy_output_path;
+    if (!outputPath) {
+        logger.warn("CADDY_OUTPUT_PATH not set, skipping build copy");
+        return;
+    }
+    spawnSync("esbuild", [
+        "./App/client/main.tsx",
+        "./App/client/auth.ts",
+        "--bundle",
+        "--outdir=./App/www/js",
+        "--loader:.css=global-css",
+    ], {
+        stdio: "inherit",
+    });
+    logger.debug(`Copying build to ${outputPath}`);
+    spawnSync("rsync", ["--delete", "-r", "./App/www/", outputPath], {
+        stdio: "inherit",
     });
 }
