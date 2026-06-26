@@ -1,26 +1,35 @@
 {
     "format_version": 2,
     "metadata": {
-		"authors": [
-			"Max Bilbow"
-		],
-		"product_type": "addon"
-	},
+        "authors": [
+            "Max Bilbow"
+        ],
+        "product_type": "addon"
+    },
     "header": {
-        "name": "Max's Shit",
+        "name": "Max chat commands",
         "description": "Script API Template",
-        "uuid": "00972561-1dc7-4a3a-a4f6-cb34571b642a",
-        "version": [0, 0, 4],
+        "uuid": "597d3dd8-5075-4785-96ef-36ed2359a2b9",
+        "version": [
+            0,
+            0,
+            0
+        ],
         "min_engine_version": [
             1,
-            20,
-            0
-        ]
+            21,
+            90
+        ],
+        "pack_scope": "world"
     },
     "modules": [
         {
             "uuid": "49365b3b-b866-4b7d-b591-a0773940dd08",
-            "version": [0,0,4],
+            "version": [
+                0,
+                0,
+                0
+            ],
             "type": "script",
             "language": "javascript",
             "entry": "scripts/main.js"
@@ -29,7 +38,11 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "2.6.0"
+            "version": [
+                2,
+                6,
+                0
+            ]
         }
     ]
 }
