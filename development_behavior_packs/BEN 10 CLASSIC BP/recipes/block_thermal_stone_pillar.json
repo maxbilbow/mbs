@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_stone_pillar_72c13315"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_stone_tile_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_stone_pillar",
+			"count": 1
+		}
+	}
+}

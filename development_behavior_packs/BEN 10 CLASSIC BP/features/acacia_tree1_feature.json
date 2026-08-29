@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "gen:acacia_tree1_feature"
+		},
+		"structure_name": "mystructure:newacaciatree1",
+		"adjustment_radius": 4,
+		"facing_direction": "east",
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:dirt"
+					},
+					{
+						"name": "minecraft:grass"
+					},
+					{
+						"name": "minecraft:red_sand"
+					},
+					{
+						"name": "block:wild_wheat"
+					},
+					{
+						"name": "block:acacia_leaf_litter"
+					},
+					{
+						"name": "block:rock"
+					},
+					{
+						"name": "block:orange_petels"
+					},
+					{
+						"name": "minecraft:short_grass"
+					},
+					{
+						"name": "minecraft:tall_grass"
+					},
+					{
+						"name": "minecraft:mud"
+					},
+					{
+						"name": "minecraft:air"
+					}
+				]
+			}
+		}
+	}
+}

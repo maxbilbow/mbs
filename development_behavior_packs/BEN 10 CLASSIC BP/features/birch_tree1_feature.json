@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "gen:birch_tree1_feature"
+		},
+		"structure_name": "mystructure:newbirchtree",
+		"adjustment_radius": 4,
+		"facing_direction": "east",
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:dirt"
+					},
+					{
+						"name": "minecraft:grass"
+					},
+					{
+						"name": "minecraft:short_grass"
+					},
+					{
+						"name": "minecraft:tall_grass"
+					},
+					{
+						"name": "minecraft:mud"
+					},
+					{
+						"name": "block:yellow_petels"
+					},
+					{
+						"name": "minecraft:moss_block"
+					},
+					{
+						"name": "minecraft:moss_carpet"
+					},
+					{
+						"name": "minecraft:wildflowers"
+					},
+					{
+						"name": "block:buttercup"
+					},
+					{
+						"name": "minecraft:air"
+					}
+				]
+			}
+		}
+	}
+}

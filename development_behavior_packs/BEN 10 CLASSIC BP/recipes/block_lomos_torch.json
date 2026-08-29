@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lomos_torch_1be40449"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:lumenyl",
+				"data": 0
+			},
+			"B": {
+				"item": "block:abyssal_slag",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:lomos_torch",
+			"count": 16
+		}
+	}
+}

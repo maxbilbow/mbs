@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "omni:falling_omni_capsule",
 			"materials": {
-				"default": "enderman"
+				"default": "charged_creeper"
 			},
 			"textures": {
 				"default": "textures/entity/powers/fire_ball"
@@ -12,12 +12,22 @@
 			"geometry": {
 				"default": "geometry.big_fireball"
 			},
+			"particle_effects": {
+				"fire_trail": "hb_asteriodfire2",
+				"smoke_trail": "hb_asteriodfire1",
+				"lava": "minecraft:lava_particle"
+			},
 			"animations": {
 				"general": "animation.falling_omni_capsule"
 			},
 			"scripts": {
 				"animate": [
 					"general"
+				],
+				"particle_effects": [
+					"fire_trail",
+					"smoke_trail",
+					"lava"
 				]
 			},
 			"render_controllers": [

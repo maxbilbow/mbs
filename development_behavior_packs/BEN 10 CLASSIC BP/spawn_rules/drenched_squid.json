@@ -1,0 +1,37 @@
+//bridge-file-version: #12
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "mob:drenched_squid",
+			"population_control": "monster"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_underwater": {},
+				"minecraft:distance_filter": {
+					"min": 12,
+					"max": 32
+				},
+				"minecraft:weight": {
+					"default": 2
+				},
+				"minecraft:density_limit": {
+					"surface": 20
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 1
+				},
+				"minecraft:biome_filter": [
+					{
+						"test": "has_biome_tag",
+						"operator": "==",
+						"value": "drenched_void"
+					}
+				],
+				"minecraft:spawns_underground": {}
+			}
+		]
+	}
+}

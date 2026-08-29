@@ -1,0 +1,25 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "gen:small_lillypad2_feature"
+		},
+		"places_block": {
+			"name": "block:small_lillypad",
+			"states": {
+				"block:growth": 1
+			}
+		},
+		"enforce_survivability_rules": true,
+		"enforce_placement_rules": false,
+		"may_attach_to": {
+			"bottom": [
+				"minecraft:water",
+				"minecraft:flowing_water"
+			]
+		},
+		"may_replace": [
+			"minecraft:water"
+		]
+	}
+}

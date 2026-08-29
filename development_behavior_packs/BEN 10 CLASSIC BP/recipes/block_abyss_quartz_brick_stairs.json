@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "abyss_quartz_brick_stairs_a493f01b"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A  ",
+			"AA ",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:abyss_quartz_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:abyss_quartz_brick_stairs",
+			"count": 3
+		}
+	}
+}

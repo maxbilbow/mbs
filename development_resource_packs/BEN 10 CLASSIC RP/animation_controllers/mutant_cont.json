@@ -1,0 +1,144 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mocelot.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"hiss": "math.random(0,1200)<1&&!query.is_angry&&!query.is_baby&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"roar": "math.random(0,800)<1&&!query.is_roaring&&query.has_target&&!query.is_baby&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"baby_hiss": "math.random(0,1200)<1&&!query.is_angry&&!query.is_roaring&&!query.has_target&&query.is_baby&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"baby_roar": "math.random(0,400)<1&&!query.is_roaring&&query.has_target&&query.is_baby&&!query.is_interested&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				},
+				"hiss": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"roar": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"baby_hiss": {
+					"animations": [
+						"baby_idle_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.is_baby||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"baby_roar": {
+					"animations": [
+						"baby_idle_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.has_target||!query.is_baby||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.mutant.baby_big_head": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"baby": "query.is_baby"
+						}
+					]
+				},
+				"baby": {
+					"animations": [
+						"big_head"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_baby"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.on_fire": {
+			"initial_state": "default",
+			"states": {
+				"fire": {
+					"particle_effects": [
+						{
+							"effect": "mutant_fire"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"default": "!query.is_shaking&&query.is_alive"
+						}
+					]
+				},
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"fire": "query.is_shaking||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.chemical": {
+			"initial_state": "default",
+			"states": {
+				"anger": {
+					"particle_effects": [
+						{
+							"effect": "chemical_flame"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"default": "query.is_stunned"
+						}
+					]
+				},
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"anger": "query.is_sheared"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:dark_oak_roots",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.log"
+			}
+		},
+		"components": {
+			"minecraft:flammable": true,
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:wood": {},
+			"tag:pumpkin": {},
+			"tag:minecraft:is_axe_item_destructible": {},
+			"minecraft:light_dampening": 1,
+			"minecraft:geometry": "geometry.roots",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_dark_oak_roots_side",
+					"render_method": "alpha_test_to_opaque"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			}
+		}
+	}
+}

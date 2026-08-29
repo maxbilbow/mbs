@@ -1,0 +1,65 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:clone_enderman",
+			"materials": {
+				"default": "enderman",
+				"armor": "charged_creeper",
+				"invisible": "enderman_invisible"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/minion/clone_enderman",
+				"armor": "textures/mutants/entity/entities/enderglint"
+			},
+			"geometry": {
+				"default": "geometry.enderman_clone",
+				"armor": "geometry.enderman_clone_armor"
+			},
+			"scripts": {
+				"scale": "1.15",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 28.65;"
+				]
+			},
+			"animations": {
+				"look_at_target_default": "animation.menderman.look_at_target",
+				"look_at_target_gliding": "animation.menderman.look_at_target",
+				"look_at_target_swimming": "animation.menderman.look_at_target",
+				"clone_move": "animation.enderman_clone.move",
+				"walk": "animation.menderman.walk",
+				"run": "animation.menderman.run",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"arms_legs": "animation.enderman.arms_legs",
+				"carrying": "animation.enderman.carrying",
+				"scary_face": "animation.enderman_clone.anger"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.humanoid.look_at_target"
+				},
+				{
+					"move": "controller.animation.menderman.walking"
+				},
+				{
+					"attack": "controller.animation.humanoid.attack"
+				},
+				{
+					"bob": "controller.animation.humanoid.bob"
+				},
+				{
+					"scary_face": "controller.animation.enderman_clone.scary_face"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_clone",
+				"controller.render.clone_armor"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 7
+			}
+		}
+	}
+}

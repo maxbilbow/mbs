@@ -1,0 +1,51 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "minecraft:birch_forest_surface_trees_feature",
+      "places_feature": "minecraft:birch_tree_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "forest"
+        },
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "birch"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "mutated"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz)",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			}
+    }
+  }
+}

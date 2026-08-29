@@ -1,0 +1,78 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.morph_spider.walk": {
+			"loop": true,
+			"bones": {
+				"spider_leg0": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"spider_leg1": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"spider_leg2": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"spider_leg3": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"spider_leg4": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"spider_leg5": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"spider_leg6": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"spider_leg7": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.morph_spider.look_at_target": {
+			"loop": true,
+			"bones": {
+				"spider_head": {
+					"rotation": [
+						"query.target_x_rotation",
+						"query.target_y_rotation",
+						0
+					]
+				}
+			}
+		}
+	}
+}

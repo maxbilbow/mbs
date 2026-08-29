@@ -1,0 +1,430 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                      },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+
+   {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 9
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        
+       {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:bread",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 6,
+                                "max": 12
+                            }
+                       },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+
+   {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:apple",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 5,
+                                "max": 10
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        }, 
+
+  {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:potato",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 7,
+                                "max": 15
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+
+   {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:carrot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 7,
+                                "max": 15
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },  
+      
+      
+  
+  {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:experience_bottle",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 10
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+
+   {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_apple",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },  
+      
+         
+      
+ 
+      
+               
+   {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:paper",
+ 
+                    "weight": 1,
+ 
+   
+  
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        },
+
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+             {
+            "conditions": [
+                {
+                    "condition": "killed_by_player"
+                },
+                {
+                    "condition": "random_chance_with_looting",
+                    "chance": 0.85,
+                           "function": "enchant_with_levels",
+                    "looting_multiplier": 2.01
+                }
+            ],
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_block",
+                    
+                    "weight": 1,
+                       "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald_block",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:appleenchanted",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_chestplate",
+                    
+                    "weight": 1,
+                       "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_chestplate",
+                      
+                    "weight": 1,
+                       "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_leggings",
+                   
+                    "weight": 1,
+                     "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ] 
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_leggings",
+                       
+                    "weight": 1,
+                       "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },              
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_boots",
+                    
+                    "weight": 1,
+                     "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ] 
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_boots",
+                   
+                    "weight": 1,
+                      "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },                           
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond_helmet",
+               
+                    "weight": 1,
+                      "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_helmet",
+                    
+                    "weight": 1,
+                      "functions": [
+            {
+              "function": "enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 12,
+                "max": 39
+              }
+            }
+          ]
+               
+                }                
+            ]
+        }        
+    ]
+}
+   

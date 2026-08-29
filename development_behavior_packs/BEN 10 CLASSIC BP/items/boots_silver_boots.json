@@ -1,0 +1,39 @@
+{
+	"format_version": "1.20.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "boots:silver_boots",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.boots"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"textures": {
+					"default": "silver_boots"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_feet"
+			},
+			"minecraft:durability": {
+				"max_durability": 400
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.feet",
+				"protection": 2
+			},
+			"minecraft:display_name": {
+				"value": "Silver Boots"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

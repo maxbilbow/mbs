@@ -1,0 +1,117 @@
+{
+  "namespace": "server_form",
+
+  // Stable ActionFormData does not expose a custom screen id. Keep this
+  // override compact because it styles settings menus while this RP is active.
+  "long_form@common_dialogs.main_panel_no_buttons": {
+    "$title_panel": "common_dialogs.standard_title_label",
+    "$title_size": [ "100% - 15px", 10 ],
+    "$title_max_size": [ "100% - 15px", 10 ],
+    "size": [ "85%", "85%" ],
+    "max_size": [ 480, 400 ],
+    "min_size": [ 260, 180 ],
+    "$text_name": "#title_text",
+    "$title_text_binding_type": "none",
+    "$child_control": "server_form.long_form_panel",
+    "layer": 2
+  },
+
+  // Stable ModalFormData does not expose a custom screen id. Keep this
+  // override conservative because it styles custom forms while this RP is active.
+  "custom_form@common_dialogs.main_panel_no_buttons": {
+    "$title_panel": "common_dialogs.standard_title_label",
+    "$title_size": [ "100% - 15px", 10 ],
+    "$title_max_size": [ "100% - 15px", 10 ],
+    "size": [ "85%", "85%" ],
+    "max_size": [ 480, 400 ],
+    "min_size": [ 260, 180 ],
+    "$text_name": "#title_text",
+    "$title_text_binding_type": "none",
+    "$child_control": "server_form.custom_form_panel",
+    "layer": 2
+  },
+
+  "dynamic_button": {
+    "type": "stack_panel",
+    "size": [ "100%", 40 ],
+    "orientation": "horizontal",
+    "controls": [
+      {
+        "icon_panel": {
+          "type": "panel",
+          "size": [ 112, "100%c" ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "image",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(not (#texture = ''))",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "image": {
+                "type": "image",
+                "layer": 2,
+                "size": [ 104, 26 ],
+                "bindings": [
+                  {
+                    "binding_name": "#form_button_texture",
+                    "binding_name_override": "#texture",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_name": "#form_button_texture_file_system",
+                    "binding_name_override": "#texture_file_system",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(not ((#texture = '') or (#texture = 'loading')))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "progress@progress.progress_loading_bars": {
+                "size": [ 28, 4 ],
+                "offset": [ -2, 15 ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "image",
+                    "resolve_sibling_scope": true,
+                    "source_property_name": "(#texture = 'loading')",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "form_button@common_buttons.light_text_button": {
+          "$pressed_button_name": "button.form_button_click",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "fill", 40 ],
+          "$button_text": "#form_button_text",
+          "$button_text_binding_type": "collection",
+          "$button_text_grid_collection_name": "form_buttons",
+          "$button_text_max_size": [ "100%", 22 ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"tags": [
+			"furnace"
+		],
+		"output": {
+			"item": "block:thermal_glass",
+			"data": 0
+		},
+		"input": {
+			"item": "block:thermal_sand",
+			"data": 0
+		},
+		"description": {
+			"identifier": "recipes_0761bb24"
+		}
+	}
+}

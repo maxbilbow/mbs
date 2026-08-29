@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "helmet:sea_prism_helmet",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.helmet"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"textures": {
+					"default": "sea_prism_helmet"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_head"
+			},
+			"minecraft:durability": {
+				"max_durability": 720
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 3
+			},
+			"minecraft:display_name": {
+				"value": "Sea Prism Helmet"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

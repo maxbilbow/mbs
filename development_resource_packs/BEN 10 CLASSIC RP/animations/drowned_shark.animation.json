@@ -1,0 +1,362 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.drowned_shark.swim": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								-5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								-0.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								-0.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"head2": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								-5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								10,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								10,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								-10,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								-10,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								10,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"end": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								6.67,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								0,
+								20,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								20,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								6.67,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								-6.67,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"post": [
+								0,
+								-20,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								-20,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								6.67,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"fin": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"fins": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								2.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								-2.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.drowned_shark.charge": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"upperjaw": {
+					"rotation": [
+						-7.5,
+						0,
+						0
+					]
+				},
+				"lowerjaw": {
+					"rotation": [
+						30,
+						0,
+						0
+					]
+				},
+				"bone": {
+					"rotation": [
+						10,
+						0,
+						0
+					],
+					"position": [
+						0,
+						-1,
+						0
+					],
+					"scale": [
+						0.9,
+						2.9,
+						1
+					]
+				}
+			}
+		},
+		"animation.drowned_shark.pose": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						-18.07779,
+						14.2906,
+						-4.60659
+					]
+				},
+				"head2": {
+					"rotation": [
+						12.92638,
+						-14.63639,
+						-3.31914
+					]
+				},
+				"tail": {
+					"rotation": [
+						-20.49807,
+						30.82594,
+						-10.8448
+					]
+				},
+				"end": {
+					"rotation": [
+						-20,
+						35,
+						0
+					]
+				},
+				"fin": {
+					"rotation": [
+						0,
+						0,
+						-37.5
+					]
+				},
+				"upperjaw": {
+					"rotation": [
+						-12.5,
+						0,
+						0
+					]
+				},
+				"lowerjaw": {
+					"rotation": [
+						17.5,
+						0,
+						0
+					]
+				},
+				"bone": {
+					"scale": [
+						0.9,
+						3.3,
+						1
+					]
+				}
+			}
+		}
+	}
+}

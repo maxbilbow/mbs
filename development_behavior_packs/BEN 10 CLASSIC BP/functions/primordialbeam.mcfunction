@@ -1,0 +1,10 @@
+summon projectile:primordial_beam_1 ^^^3
+summon projectile:primordial_beam_2 ^^^6
+summon projectile:primordial_beam_3 ^^^9
+summon projectile:primordial_beam_4 ^^^12
+summon projectile:primordial_beam_5 ^^^15
+summon projectile:primordial_beam_6 ^^^18
+summon projectile:primordial_beam_7 ^^^21
+summon projectile:primordial_beam_8 ^^^24
+summon projectile:primordial_beam_9 ^^^27
+summon projectile:primordial_beam_10 ^^^30

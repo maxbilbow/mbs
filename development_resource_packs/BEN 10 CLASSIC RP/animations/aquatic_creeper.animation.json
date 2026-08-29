@@ -1,0 +1,226 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.aquatic_creeper.underwater_idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"fin": {
+					"rotation": [
+						35,
+						-40,
+						0
+					]
+				},
+				"fin2": {
+					"rotation": [
+						35,
+						40,
+						0
+					]
+				},
+				"fin3": {
+					"rotation": [
+						-35,
+						-40,
+						0
+					]
+				},
+				"fin4": {
+					"rotation": [
+						-35,
+						40,
+						0
+					]
+				},
+				"root": {
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [
+								0,
+								1,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"4.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.aquatic_creeper.swim": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"fin": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"fin2": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"fin3": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								-20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"fin4": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								-20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								-20,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.aquatic_creeper.flat": {
+			"loop": true,
+			"animation_length": 0.125,
+			"bones": {
+				"fin": {
+					"rotation": [
+						0,
+						-45,
+						0
+					]
+				},
+				"fin2": {
+					"rotation": [
+						0,
+						45,
+						0
+					]
+				},
+				"fin3": {
+					"rotation": [
+						0,
+						-45,
+						0
+					]
+				},
+				"fin4": {
+					"rotation": [
+						0,
+						45,
+						0
+					]
+				},
+				"root": {
+					"position": [
+						0,
+						1,
+						0
+					]
+				}
+			}
+		}
+	}
+}

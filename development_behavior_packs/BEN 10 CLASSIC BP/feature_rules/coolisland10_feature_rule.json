@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "minecraft:coolisland10_feature_rule",
+			"places_feature": "generation:coolisland10_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "before_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "island_ocean"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 3,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					17,
+					21
+				]
+			},
+			"z": 0
+		}
+	}
+}

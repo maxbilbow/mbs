@@ -1,0 +1,91 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_wither_skeleton": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": 1
+				},
+				{
+					"rsword": 0
+				},
+				{
+					"lsword": 0
+				}
+			]
+		},
+		"controller.render.mutant_wither_skeleton_blaze_rod": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(0)"
+			},
+			"textures": [
+				"texture.blaze_rods"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.mutant_wither_skeleton_weapon": {
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"overlay_color": {
+				"r": "(0)",
+				"g": 0,
+				"b": 0,
+				"a": "(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"rsword": 1
+				},
+				{
+					"lsword": 1
+				}
+			]
+		}
+	}
+}

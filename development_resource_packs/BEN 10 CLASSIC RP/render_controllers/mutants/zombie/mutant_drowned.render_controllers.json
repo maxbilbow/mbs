@@ -1,0 +1,96 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_drowned": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": 1
+				},
+				{
+					"trident": 0
+				}
+			]
+		},
+		"controller.render.mutant_drowned_weapon": {
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"overlay_color": {
+				"r": "(0)",
+				"g": 0,
+				"b": 0,
+				"a": "(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"trident": 1
+				}
+			]
+		},
+		"controller.render.mutant_drowned_glow": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"textures": [
+				"texture.glow"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		}
+	}
+}

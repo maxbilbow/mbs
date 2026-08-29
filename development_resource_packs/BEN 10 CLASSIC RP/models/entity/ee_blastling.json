@@ -1,0 +1,293 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ee_blastling",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [
+					0,
+					1.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "Blastling",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "Body",
+					"parent": "Blastling",
+					"pivot": [
+						0,
+						35,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								25,
+								-4
+							],
+							"size": [
+								16,
+								21,
+								8
+							],
+							"uv": [
+								0,
+								51
+							]
+						}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Body",
+					"pivot": [
+						0,
+						46,
+						-5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6,
+								41,
+								-11
+							],
+							"size": [
+								12,
+								12,
+								12
+							],
+							"uv": [
+								48,
+								39
+							]
+						}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "Head",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "Fire",
+					"parent": "Head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6.1,
+								41,
+								-11
+							],
+							"size": [
+								0,
+								10,
+								12
+							],
+							"uv": [
+								60,
+								0
+							]
+						},
+						{
+							"origin": [
+								6.1,
+								41,
+								-11
+							],
+							"size": [
+								0,
+								10,
+								12
+							],
+							"uv": [
+								48,
+								51
+							]
+						},
+						{
+							"origin": [
+								-6,
+								41,
+								-11.2
+							],
+							"size": [
+								12,
+								4,
+								0
+							],
+							"uv": [
+								60,
+								6
+							]
+						},
+						{
+							"origin": [
+								-6,
+								46,
+								1.2
+							],
+							"size": [
+								12,
+								6,
+								0
+							],
+							"uv": [
+								52,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "Arms",
+					"parent": "Body",
+					"pivot": [
+						0,
+						36,
+						0
+					]
+				},
+				{
+					"name": "Arm0",
+					"parent": "Arms",
+					"pivot": [
+						-12,
+						39,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-15,
+								3,
+								-4
+							],
+							"size": [
+								7,
+								43,
+								8
+							],
+							"uv": [
+								30,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "Arm1",
+					"parent": "Arms",
+					"pivot": [
+						12,
+						39,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								8,
+								3,
+								-4
+							],
+							"size": [
+								7,
+								43,
+								8
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "Legs",
+					"parent": "Blastling",
+					"pivot": [
+						0,
+						27,
+						0
+					]
+				},
+				{
+					"name": "Leg0",
+					"parent": "Legs",
+					"pivot": [
+						-4,
+						23,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								3,
+								0,
+								-1
+							],
+							"size": [
+								2,
+								25,
+								2
+							],
+							"uv": [
+								70,
+								71
+							]
+						}
+					]
+				},
+				{
+					"name": "Leg1",
+					"parent": "Legs",
+					"pivot": [
+						4,
+						23,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-1
+							],
+							"size": [
+								2,
+								25,
+								2
+							],
+							"uv": [
+								48,
+								73
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

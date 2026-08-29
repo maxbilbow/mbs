@@ -1,0 +1,48 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:jellyfish",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"blue": "textures/entity/jellafish_blue",
+				"green": "textures/entity/jellafish_green",
+				"red_blue": "textures/entity/jellafish_orange",
+				"yellow_blue": "textures/entity/jellafish_pink",
+				"grey": "textures/entity/jellafish_red"
+			},
+			"geometry": {
+				"default": "geometry.jellafish"
+			},
+			"animations": {
+				"walk": "animation.jellafish.move",
+				"look_at_target": "animation.humanoid.look_at_target.default",
+				"attack": "animation.lurer.bite",
+				"idle": "animation.jellafish.general"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.wrathnar.look_at_target"
+				},
+				{
+					"walk": "controller.animation.wrathnar.walk"
+				},
+				{
+					"attack": "controller.animation.wrathnar.attack"
+				},
+				{
+					"idle": "controller.animation.wrathnar"
+				}
+			],
+			"render_controllers": [
+				"controller.render.parrot"
+			],
+			"spawn_egg": {
+				"base_color": "#FF39DB",
+				"overlay_color": "#FF96F2"
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+//bridge-file-version: #14
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:lomoskelp_feature_rule",
+			"places_feature": "gen:scatter_lomos_kelp_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "drenched_void"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"z": 0,
+			"y": {
+				"extent": [
+					-54,
+					50
+				],
+				"distribution": "uniform"
+			}
+		}
+	}
+}

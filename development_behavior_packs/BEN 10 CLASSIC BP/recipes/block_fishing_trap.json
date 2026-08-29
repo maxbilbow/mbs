@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fishing_trap_06aa14d0"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ABA",
+			"BAB",
+			" B "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:string",
+				"data": 0
+			},
+			"B": {
+				"item": "item:silver_ingot",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:fishing_trap",
+			"count": 1
+		}
+	}
+}

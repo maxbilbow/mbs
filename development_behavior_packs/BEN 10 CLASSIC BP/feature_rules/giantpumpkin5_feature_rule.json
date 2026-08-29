@@ -1,0 +1,55 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:giantpumpkin5_feature_rule",
+			"places_feature": "generation:giantpumpkin5_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "ocean"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "desert"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "mesa"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "frozen"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "cold"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 0.07,
+			"x": 0,
+			"y": "query.heightmap(variable.worldx, variable.worldz) + 0",
+			"z": 0
+		}
+	}
+}

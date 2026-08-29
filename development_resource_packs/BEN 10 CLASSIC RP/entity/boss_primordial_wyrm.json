@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "boss:primordial_wyrm",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/jared"
+			},
+			"geometry": {
+				"default": "geometry.jared"
+			},
+			"animations": {
+				"base": "animation.jared.base",
+				"wiggle": "animation.jared.wiggle",
+				"idle": "animation.jared.idle",
+				"face_player": "controller.animation.jared.swimswim",
+				"look_at_target": "animation.common.look_at_target_wyrm"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player",
+					"look_at_target"
+				]
+			},
+			"render_controllers": [
+				"controller.render.cod"
+			],
+			"spawn_egg": {
+				"base_color": "#6A2313",
+				"overlay_color": "#AE330B"
+			}
+		}
+	}
+}

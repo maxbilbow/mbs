@@ -1,0 +1,112 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutated_iron_spikes",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"spawned": "controller.animation.mutant.iron_spikes",
+				"spawned_player": "controller.animation.mutant.iron_spikes_player",
+				"attack": "controller.animation.mutant.on_going_iron_spikes",
+				"attack_player": "controller.animation.mutant.on_going_iron_spikes_player"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"spawned": "query.skin_id==0"
+					},
+					{
+						"spawned_player": "query.skin_id==1"
+					},
+					{
+						"attack": "query.skin_id==0"
+					},
+					{
+						"attack_player": "query.skin_id==1"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"from_player": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			},
+			"minecraft:health": {
+				"value": 150,
+				"max": 150
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0.5
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": [
+					3,
+					3
+				],
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": false,
+				"emit_swim": false
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"mirongolem",
+					"item"
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			}
+		},
+		"events": {
+			"from_player": {
+				"add": {
+					"component_groups": [
+						"from_player"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

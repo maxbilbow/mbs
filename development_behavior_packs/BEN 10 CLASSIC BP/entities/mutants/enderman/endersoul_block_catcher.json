@@ -1,0 +1,238 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:endersoul_block_catcher",
+			"runtime_identifier": "minecraft:arrow",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					{
+						"catch_endersoul_right": "query.skin_id==1&&query.mark_variant==1"
+					},
+					{
+						"catch_endersoul_left": "query.skin_id==2&&query.mark_variant==1"
+					}
+				]
+			},
+			"animations": {
+				"catch_endersoul_right": "controller.animation.endersoul_catch_right_block",
+				"catch_endersoul_left": "controller.animation.endersoul_catch_left_block"
+			}
+		},
+		"component_groups": {
+			"endersoul_hand_throw": {
+				"minecraft:addrider": {
+					"spawn_event": "endersoul_hand_throw",
+					"entity_type": "mutant:endersoul_block"
+				},
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								13,
+								14
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						}
+					},
+					"filter": "endersoul_block",
+					"power": 2,
+					"gravity": 0.075,
+					"uncertaintyBase": 1,
+					"uncertaintyMultiplier": 1,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"reflect_on_hurt": false,
+					"shouldbounce": false,
+					"offset": [
+						0,
+						0.15,
+						0
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									},
+									{
+										"test": "is_riding",
+										"subject": "self",
+										"operator": "equals",
+										"value": false
+									}
+								]
+							},
+							"event": "despawn"
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"grab_right_block": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"grab_left_block": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"start_ride": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1.25,
+					"time_down_event": {
+						"event": "despawn"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"interact_text": "action.interact.ride.boat",
+				"pull_in_entities": false,
+				"family_types": [
+					"endersoul_block"
+				],
+				"seats": [
+					{
+						"position": [
+							0,
+							0.15,
+							0
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 1
+					}
+				]
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:mark_variant": {
+				"value": 0
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0,
+				"time_down_event": {
+					"event": "start_ride"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:area_attack": {
+				"damage_range": 1,
+				"damage_per_tick": 2,
+				"cause": "contact",
+				"entity_filter": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "endersoul_block"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": [
+							13,
+							14
+						],
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					}
+				},
+				"filter": "endersoul_block",
+				"power": 2,
+				"gravity": 0.075,
+				"uncertaintyBase": 1,
+				"uncertaintyMultiplier": 1,
+				"anchor": 2,
+				"inertia": 1,
+				"liquid_inertia": 0.9,
+				"reflect_on_hurt": true,
+				"shouldbounce": true,
+				"offset": [
+					0,
+					-0.45,
+					1.5
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"endersoul_hand_throw": {
+				"add": {
+					"component_groups": [
+						"endersoul_hand_throw"
+					]
+				}
+			},
+			"start_ride": {
+				"add": {
+					"component_groups": [
+						"start_ride"
+					]
+				}
+			},
+			"grab_right_block": {
+				"add": {
+					"component_groups": [
+						"grab_right_block"
+					]
+				}
+			},
+			"grab_left_block": {
+				"add": {
+					"component_groups": [
+						"grab_left_block"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

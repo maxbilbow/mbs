@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lava_release_bubble_295193c8"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:release_bubble",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:lava_bucket",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:lava_release_bubble",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,631 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_endolotl",
+			"runtime_identifier": "minecraft:axolotl",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"vanilla": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"hive": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"endolotl_baby": {
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:ageable": {
+					"duration": 1200,
+					"feed_items": "chorus_fruit",
+					"grow_up": {
+						"event": "minecraft:ageable_grow_up",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.follow_parent": {
+					"priority": 5,
+					"speed_multiplier": 1.1
+				}
+			},
+			"endolotl_adult": {
+				"minecraft:experience_reward": {
+					"on_bred": "math.random(7,14)",
+					"on_death": "math.random(9,20)"
+				},
+				"minecraft:behavior.breed": {
+					"priority": 1,
+					"speed_multiplier": 0.65
+				},
+				"minecraft:breedable": {
+					"require_tame": true,
+					"breed_items": "popped_chorus_fruit",
+					"breeds_with": {
+						"mate_type": "mutant:mutant_endolotl",
+						"baby_type": "mutant:mutant_endolotl",
+						"breed_event": {
+							"event": "minecraft:entity_born",
+							"target": "baby"
+						}
+					}
+				}
+			},
+			"tameable": {
+				"minecraft:tameable": {
+					"probability": 0.33,
+					"tameItems": "chorus_fruit",
+					"tame_event": {
+						"event": "on_tame",
+						"target": "self"
+					}
+				}
+			},
+			"wild": {
+				"minecraft:behavior.circle_around_anchor": {
+					"priority": 3,
+					"radius_change": 1,
+					"radius_adjustment_chance": 0.25,
+					"height_adjustment_chance": 0.5,
+					"goal_radius": 1,
+					"angle_change": 15,
+					"radius_range": [
+						5,
+						15
+					],
+					"height_offset_range": [
+						-4,
+						5
+					],
+					"height_above_target_range": [
+						10,
+						20
+					]
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 3,
+					"must_see": true,
+					"reselect_targets": true,
+					"within_radius": 20,
+					"must_see_forget_duration": 17,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "endermite"
+									}
+								]
+							},
+							"max_dist": 32
+						}
+					]
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 2
+				},
+				"minecraft:on_target_acquired": {
+					"event": "become_angry",
+					"target": "self"
+				}
+			},
+			"angry": {
+				"minecraft:teleport": {
+					"random_teleports": true,
+					"min_random_teleport_time": 5,
+					"max_random_teleport_time": 10,
+					"random_teleport_cube": [
+						4,
+						4,
+						4
+					],
+					"target_distance": 30,
+					"light_teleport_chance": 0.05
+				},
+				"minecraft:angry": {
+					"broadcastAnger": true,
+					"filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "axolotl"
+							}
+						]
+					},
+					"broadcastRange": 20,
+					"calm_event": {
+						"event": "on_calm",
+						"target": "self"
+					}
+				},
+				"minecraft:on_target_acquired": {}
+			},
+			"gravity": {
+				"minecraft:physics": {
+					"has_gravity": true
+				}
+			},
+			"space": {
+				"minecraft:physics": {
+					"has_gravity": false
+				}
+			},
+			"tame": {
+				"minecraft:behavior.stay_while_sitting": {
+					"priority": 3
+				},
+				"minecraft:sittable": {
+					"sit_event": {
+						"event": "is_sitting"
+					},
+					"stand_event": {
+						"event": "is_standing"
+					}
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:behavior.random_hover": {
+					"priority": 9,
+					"xz_dist": 8,
+					"y_dist": 8,
+					"y_offset": -1,
+					"interval": 30,
+					"hover_height": [
+						1.25,
+						5
+					]
+				},
+				"minecraft:health": {
+					"value": 110,
+					"max": 110
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 2,
+					"start_distance": 16,
+					"stop_distance": 4
+				},
+				"minecraft:attack": {
+					"damage": 18
+				},
+				"minecraft:behavior.breed": {
+					"priority": 7
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1,
+					"entity_types": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "endolotl"
+						},
+						"max_dist": 64
+					}
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2,
+					"entity_types": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "endolotl"
+						},
+						"max_dist": 64
+					}
+				},
+				"minecraft:leashable": {
+					"soft_distance": 4,
+					"hard_distance": 6,
+					"max_distance": 10
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.pickup_items": {
+				"priority": 1,
+				"max_dist": 32,
+				"goal_radius": 2,
+				"speed_multiplier": 1.15
+			},
+			"minecraft:equip_item": {},
+			"minecraft:behavior.eat_carried_item": {
+				"priority": 12,
+				"delay_before_eating": 0
+			},
+			"minecraft:behavior.equip_item": {
+				"priority": 2
+			},
+			"minecraft:shareables": {
+				"all_items": false,
+				"all_items_max_amount": 1,
+				"items": [
+					{
+						"item": "minecraft:appleEnchanted",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:chorus_fruit",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:golden_apple",
+						"priority": 0,
+						"max_amount": 1
+					}
+				]
+			},
+			"minecraft:behavior.tempt": {
+				"priority": 2,
+				"speed_multiplier": 0.9,
+				"can_tempt_vertically": true,
+				"items": [
+					"popped_chorus_fruit"
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/enderman.json"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.9
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:type_family": {
+				"family": [
+					"endolotl",
+					"mendolotl",
+					"mob",
+					"mutantmonster",
+					"chemical_x"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 0.9
+			},
+			"minecraft:health": {
+				"value": 80,
+				"max": 80
+			},
+			"minecraft:attack": {
+				"damage": 15
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true,
+				"breathes_air": true,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {},
+			"minecraft:behavior.delayed_attack": {
+				"priority": 4,
+				"melee_fov": 90,
+				"reach_multiplier": 3.25,
+				"speed_multiplier": 1.5,
+				"attack_duration": 0.6,
+				"hit_delay_pct": 0.2,
+				"track_target": true,
+				"sound_event": "attack.strong"
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.225
+			},
+			"minecraft:flying_speed": {
+				"value": 0.225
+			},
+			"minecraft:movement.glide": {
+				"start_speed": 0.2,
+				"speed_when_turning": 0.5
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:follow_range": {
+				"value": 1024
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:jump.static": {},
+			"minecraft:can_fly": {},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:healable": {
+				"items": [
+					{
+						"item": "chorus_fruit",
+						"heal_amount": 6
+					},
+					{
+						"item": "popped_chorus_fruit",
+						"heal_amount": 12
+					}
+				]
+			},
+			"minecraft:behavior.play_dead": {
+				"priority": 0,
+				"duration": 15,
+				"force_below_health": 30,
+				"random_start_chance": 0.33,
+				"random_damage_range": [
+					10,
+					12
+				],
+				"damage_sources": [
+					"contact",
+					"entity_attack",
+					"entity_explosion",
+					"magic",
+					"projectile",
+					"thorns",
+					"wither"
+				],
+				"apply_regeneration": true
+			},
+			"minecraft:behavior.float": {
+				"priority": 7
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"target_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 8
+			},
+			"minecraft:behavior.random_hover": {
+				"priority": 9,
+				"xz_dist": 8,
+				"y_dist": 8,
+				"y_offset": -1,
+				"interval": 10,
+				"hover_height": [
+					1.25,
+					5
+				]
+			}
+		},
+		"events": {
+			"is_sitting": {
+				"remove": {
+					"component_groups": [
+						"space"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"gravity"
+					]
+				}
+			},
+			"is_standing": {
+				"remove": {
+					"component_groups": [
+						"gravity"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"space"
+					]
+				}
+			},
+			"on_tame": {
+				"remove": {
+					"component_groups": [
+						"wild",
+						"tameable"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"tame",
+						"rideable",
+						"mwolf_stand"
+					]
+				}
+			},
+			"become_angry": {
+				"remove": {
+					"component_groups": [
+						"wild",
+						"tameable"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"angry"
+					]
+				}
+			},
+			"on_calm": {
+				"remove": {
+					"component_groups": [
+						"angry"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"wild",
+						"tameable"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"endolotl_baby",
+										"wild",
+										"tameable"
+									]
+								}
+							},
+							{
+								"weight": 95,
+								"add": {
+									"component_groups": [
+										"endolotl_adult",
+										"wild",
+										"tameable"
+									]
+								}
+							}
+						]
+					},
+					{
+						"randomize": [
+							{
+								"weight": 95,
+								"add": {
+									"component_groups": [
+										"vanilla"
+									]
+								}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"hive"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"minecraft:entity_transformed": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"value": "minecraft:is_baby"
+						},
+						"add": {
+							"component_groups": [
+								"endolotl_baby",
+								"wild",
+								"tameable"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"operator": "!=",
+							"value": "minecraft:is_baby"
+						},
+						"add": {
+							"component_groups": [
+								"endolotl_adult",
+								"wild",
+								"tameable"
+							]
+						}
+					},
+					{
+						"randomize": [
+							{
+								"weight": 95,
+								"add": {
+									"component_groups": [
+										"vanilla"
+									]
+								}
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"hive"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"minecraft:entity_born": {
+				"remove": {
+					"component_groups": [
+						"endolotl_adult"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"endolotl_baby",
+						"tame"
+					]
+				}
+			},
+			"minecraft:ageable_grow_up": {
+				"remove": {
+					"component_groups": [
+						"endolotl_baby"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"endolotl_adult"
+					]
+				}
+			}
+		}
+	}
+}

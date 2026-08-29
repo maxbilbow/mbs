@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "opal_cleaver_4806cbc1"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" A ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "item:opal",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:opal_cleaver",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:savanna_tree_feature"
+		},
+		"features": [
+			[
+				"gen:acacia_tree1_feature",
+				10
+			],
+			[
+				"gen:acacia_tree2_feature",
+				10
+			],
+			[
+				"gen:acacia_tree3_feature",
+				10
+			]
+		]
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:note_block_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"~~~",
+			"~#~",
+			"~~~"
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_planks"
+			},
+			"#": {
+				"item": "minecraft:redstone"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:noteblock",
+				"count": 1
+			}
+		]
+	}
+}

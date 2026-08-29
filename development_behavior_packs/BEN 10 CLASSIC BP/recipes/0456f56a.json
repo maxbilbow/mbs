@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_0780253e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:thermal_roots",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:stick",
+				"count": 5,
+				"data": 0
+			}
+		]
+	}
+}

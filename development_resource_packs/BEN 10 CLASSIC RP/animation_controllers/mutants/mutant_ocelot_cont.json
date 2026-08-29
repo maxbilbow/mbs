@@ -1,0 +1,433 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mutant_ocelot.walking": {
+			"states": {
+				"default": {
+					"animations": [
+						"gravity",
+						{
+							"walk": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"run": "query.ground_speed>5.5"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"air": "!query.is_on_ground&&query.is_alive&&!query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0&&variable.attack_num==0"
+						},
+						{
+							"right_attack": "variable.attack_time>0&&variable.attack_num==1"
+						},
+						{
+							"left_attack": "variable.attack_time>0&&variable.attack_num==2"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"first_attack": {
+					"animations": [
+						"first_attack",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"right_attack": {
+					"animations": [
+						"right_attack",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"left_attack": {
+					"animations": [
+						"left_attack",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						"gravity",
+						{
+							"sprint": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.ground_speed<4.5"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"air": "!query.is_on_ground&&query.is_alive&&!query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"air": {
+					"animations": [
+						"air"
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground||!query.is_alive||query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.35
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						},
+						{
+							"sleeping": "math.random(0,6070)<1&&query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sleeping": {
+					"animations": [
+						"sleep"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.35
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.death": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"cancel_animation": "!query.is_alive"
+						}
+					]
+				},
+				"cancel_animation": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.tail": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"tail": "math.random(0,900)<1&&!query.has_target&&query.is_alive&&!query.is_sitting"
+						}
+					]
+				},
+				"tail": {
+					"animations": [
+						"tail"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_sitting||query.has_target||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"idle_1": "math.random(0,2800)<1&&!query.is_angry&&!query.is_stunned&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"idle_2": "math.random(0,3600)<1&&!query.is_angry&&!query.is_stunned&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"hiss": "math.random(0,1000)<1&&query.has_target&&!query.is_baby&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"roar": "query.ground_speed==0&&math.random(0,1700)<1&&!query.is_baby&&!query.is_interested&&query.is_alive&&!query.is_sitting"
+						},
+						{
+							"baby_hiss": "math.random(0,700)<1&&query.is_baby&&!query.is_interested&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"has_item": {
+					"transitions": [
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"default": "query.is_item_equipped"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"eat": {
+					"animations": [
+						"eating"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_1": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_2": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"hiss": {
+					"animations": [
+						"hiss"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"forget": "query.all_animations_finished&&variable.roar_num==0||query.is_interested||!query.is_alive"
+						},
+						{
+							"hiss_and_roar": "query.all_animations_finished&&variable.roar_num==1&&query.has_target&&!query.is_baby&&!query.is_interested&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"forget": {
+					"animations": [
+						"forget"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"hiss_and_roar": {
+					"animations": [
+						"hiss_and_roar"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"roar": {
+					"animations": [
+						"roaring"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||!query.is_alive||query.ground_speed!=0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"baby_hiss": {
+					"animations": [
+						"baby_hiss"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.is_baby||query.has_target||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.baby_big_head": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"baby": "query.is_baby"
+						}
+					]
+				},
+				"baby": {
+					"animations": [
+						"big_head"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"default": "!query.is_baby"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target",
+						"idle"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"sit": "query.is_sitting"
+						},
+						{
+							"angry": "query.has_target"
+						}
+					]
+				},
+				"angry": {
+					"animations": [
+						"look_at_target",
+						"angry"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"sit": "query.is_sitting"
+						}
+					]
+				},
+				"sit": {
+					"animations": [
+						"look_at_target"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mutant_ocelot.beg": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"beg": "query.is_interested&&!query.is_angry&&query.is_alive&&!query.is_sitting"
+						}
+					]
+				},
+				"beg": {
+					"animations": [
+						"begging"
+					],
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"default": "!query.is_interested||query.is_angry||!query.is_alive"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_chestplate_74aa1ebf"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:scrap_metal_chestplate",
+			"count": 1
+		}
+	}
+}

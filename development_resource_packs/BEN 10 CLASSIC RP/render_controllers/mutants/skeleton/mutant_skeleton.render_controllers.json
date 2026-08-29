@@ -1,0 +1,121 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_skeleton": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"part_visibility": [
+				{
+					"*": 1
+				},
+				{
+					"bow_main": 0
+				},
+				{
+					"bow_part_back": 0
+				},
+				{
+					"bow_part_front": 0
+				},
+				{
+					"bow_part_back_2": 0
+				},
+				{
+					"bow_part_front2": 0
+				},
+				{
+					"bow_part_back_3": 0
+				},
+				{
+					"bow_part_front3": 0
+				},
+				{
+					"string1": 0
+				},
+				{
+					"string2": 0
+				},
+				{
+					"main_arrow": 0
+				}
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.mutant_skeleton_weapon": {
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"overlay_color": {
+				"r": "(0)",
+				"g": 0,
+				"b": 0,
+				"a": "(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"bow_main": 1
+				},
+				{
+					"bow_part_back": 1
+				},
+				{
+					"bow_part_front": 1
+				},
+				{
+					"bow_part_back_2": 1
+				},
+				{
+					"bow_part_front2": 1
+				},
+				{
+					"bow_part_back_3": 1
+				},
+				{
+					"bow_part_front3": 1
+				},
+				{
+					"string1": 1
+				},
+				{
+					"string2": 1
+				},
+				{
+					"main_arrow": "query.facing_target_to_range_attack"
+				}
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		}
+	}
+}

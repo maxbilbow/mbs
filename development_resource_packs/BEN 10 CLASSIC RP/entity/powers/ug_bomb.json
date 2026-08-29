@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "power:ug_bomb_projectile",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/powers/up_spit"
+			},
+			"geometry": {
+				"default": "geometry.up_spit"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

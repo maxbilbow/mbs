@@ -1,0 +1,140 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "tool:prismarine_hoe",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.hoe"
+			}
+		},
+		"components": {
+			"minecraft:icon": "tool:prismarine_hoe",
+			"minecraft:display_name": {
+				"value": "Prismarine Hoe\n\n\n§7Crushing I\nMining Speed: 10"
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 3600
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_hoe",
+					"minecraft:is_tool",
+					"minecraft:iron_tier"
+				]
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 900
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:damage": 5,
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('minecraft:is_hoe_item_destructible')"
+						},
+						"speed": 10
+					},
+					{
+						"block": "minecraft:azalea_leaves_flowered",
+						"speed": 10
+					},
+					{
+						"block": {
+							"tags": "q.any_tag('hoe_diggable')"
+						},
+						"speed": 20
+					},
+					{
+						"block": "minecraft:azalea_leaves",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:calibrated_sculk_sensor",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:cherry_leaves",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:dried_kelp_block",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:hay_block",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:leaves",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:leaves2",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:mangrove_leaves",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:moss_block",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:moss_carpet",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:nether_wart_block",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sculk_catalyst",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sculk_sensor",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sculk_shrieker",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sculk_vein",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sculk",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:shroomlight",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:sponge",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:target",
+						"speed": 10
+					},
+					{
+						"block": "minecraft:warped_wart_block",
+						"speed": 10
+					}
+				],
+				"use_efficiency": true
+			},
+			"minecraft:enchantable": {
+				"slot": "hoe",
+				"value": 30
+			}
+		}
+	}
+}

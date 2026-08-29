@@ -1,0 +1,107 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:lightninghitbullett",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 20,
+						"destroy_on_hit": false,
+						"semi_random_diff_damage": false,
+						"max_critical_damage": 0,
+						"min_critical_damage": 0
+					},
+					"stick_in_ground": {
+						"shake_time": 0.2
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "onhit"
+						}
+					}
+				},
+				"power": 20,
+				"gravity": 0,
+				"liquid_inertia": 40,
+				"destroy_on_hurt": false,
+				"semi_random_diff_damage": false,
+				"shoot_sound": "shoot",
+				"hit_sound": "hit",
+				"hit_ground_sound": "hit"
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"none",
+					"proj"
+				]
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"time": 1.5,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"onhit": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"scoreboard players add @p[tag=zapping] lhb 1",
+								"scoreboard players add lhb lhb 1",
+								"tag @p[tag=zapping,scores={lhb=11..}] remove zapping",
+								"execute at @s if score lhb lhb <= @p[tag=zapping] lhb run summon zk:lightninghitbullett"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

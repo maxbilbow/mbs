@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_creeper_death",
+			"materials": {
+				"default": "creeper",
+				"charged": "charged_creeper"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/creeper/mutant_creeper",
+				"charged": "textures/mutants/entity/creeper/mutant_creeper_armor"
+			},
+			"geometry": {
+				"default": "geometry.mcreeper",
+				"charged": "geometry.mcreeper.charged"
+			},
+			"particle_effects": {
+				"chemical_x": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"scripts": {
+				"scale": "1.15"
+			},
+			"animations": {
+				"idle": "animation.mcreeper.general",
+				"look_at_target": "animation.mcreeper.look_at_target",
+				"walk": "animation.mcreeper.move",
+				"death": "animation.mcreeper.death",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.mcreeper.death"
+				},
+				{
+					"move": "controller.animation.mcreeper.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_creeper_explode",
+				"controller.render.mutant_creeper_charged"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 0
+			}
+		}
+	}
+}

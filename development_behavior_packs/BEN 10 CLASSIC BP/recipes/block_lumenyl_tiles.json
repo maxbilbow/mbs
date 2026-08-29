@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_tiles_dd84d54a"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:lumenyl_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:lumenyl_tiles",
+			"count": 4
+		}
+	}
+}

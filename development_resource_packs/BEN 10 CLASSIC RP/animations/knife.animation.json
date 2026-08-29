@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.knife.move": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"-query.target_x_rotation",
+						"-query.body_y_rotation",
+						0
+					]
+				}
+			}
+		},
+		"animation.knife.rotate": {
+			"loop": true,
+			"bones": {
+				"banana": {
+					"rotation": [
+						0,
+						"-query.ground_speed*2.5",
+						0
+					]
+				}
+			}
+		}
+	}
+}

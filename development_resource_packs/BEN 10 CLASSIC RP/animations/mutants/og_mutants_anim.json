@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.og_mutants.2017_mzombie.head": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"scale": 0.75
+				}
+			}
+		}
+	}
+}

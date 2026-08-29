@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.leftarm.alien.selecting": {
+			"loop": true,
+			"animation_length": 0.04,
+			"override_previous_animation": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [
+						-42.5,
+						22.5,
+						0
+					]
+				}
+			}
+		},
+		"animation.player.rightarm.alien.selecting": {
+			"loop": true,
+			"animation_length": 0.04,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						-55,
+						-35,
+						-7.5
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

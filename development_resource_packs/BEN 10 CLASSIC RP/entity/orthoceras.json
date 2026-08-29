@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:orthoceras",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/orthoceras"
+			},
+			"geometry": {
+				"default": "geometry.orthoceras"
+			},
+			"animations": {
+				"face_player": "animation.orthoceras.general"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#BB794A",
+				"overlay_color": "#FFB49C"
+			}
+		}
+	}
+}

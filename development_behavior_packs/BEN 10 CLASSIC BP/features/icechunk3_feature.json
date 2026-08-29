@@ -1,0 +1,12 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "gen:icechunk3_feature"
+		},
+		"structure_name": "mystructure:icechunk3",
+		"adjustment_radius": 4,
+		"facing_direction": "random",
+		"constraints": {}
+	}
+}

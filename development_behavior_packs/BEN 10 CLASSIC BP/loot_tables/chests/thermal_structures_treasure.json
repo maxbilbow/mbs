@@ -1,0 +1,440 @@
+//bridge-file-version: #10
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 3,
+					"name": "tool:reidite_hoe"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 4
+							}
+						}
+					],
+					"name": "item:reidite"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 4
+							}
+						}
+					],
+					"name": "item:malachite"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 10,
+								"max": 22
+							}
+						}
+					],
+					"name": "minecraft:iron_nugget"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 10
+							}
+						}
+					],
+					"name": "food:golden_ocean_berry"
+				},
+				{
+					"type": "item",
+					"weight": 4,
+					"name": "block:malachite_block",
+					"functions": [
+						{
+							"count": {
+								"min": 1,
+								"max": 10
+							},
+							"function": "set_count"
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 9,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "food:enchanted_ocean_berry"
+				},
+				{
+					"type": "item",
+					"weight": 10,
+					"functions": [
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"min": 1,
+								"max": 40
+							}
+						}
+					],
+					"name": "minecraft:book"
+				},
+				{
+					"type": "item",
+					"weight": 6,
+					"name": "item:abyssal_crate_key"
+				}
+			]
+		},
+		{
+			"rolls": 2,
+			"entries": [
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						},
+						{
+							"function": "specific_enchants",
+							"enchants": [
+								{
+									"id": "soul_speed",
+									"level": [
+										1,
+										3
+									]
+								}
+							]
+						}
+					],
+					"name": "boots:reidite_boots",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "enchant_randomly"
+						}
+					],
+					"name": "tool:reidite_axe"
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "block:reidite_block",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "block:magnesium_block",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0.1,
+								"max": 0.9
+							}
+						},
+						{
+							"function": "enchant_randomly"
+						}
+					],
+					"name": "sword:reidite_cleaver"
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					],
+					"name": "minecraft:diamond",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:iron_ingot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "item:malachite",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 12
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "chestplate:reidite_chestplate",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "helmet:reidite_helmet",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "leggings:reidite_leggings",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "boots:reidite_boots",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 3,
+				"max": 5
+			},
+			"entries": [
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 12
+							}
+						}
+					],
+					"name": "item:raw_magnesium",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 10
+							}
+						}
+					],
+					"name": "item:raw_silver",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 32
+							}
+						}
+					],
+					"name": "minecraft:diamond",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 3
+							}
+						}
+					],
+					"name": "item:malachite",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 8
+							}
+						}
+					],
+					"name": "minecraft:iron_ingot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 4
+						}
+					],
+					"name": "food:silver_ocean_berry",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 8
+							}
+						}
+					],
+					"name": "minecraft:gold_ingot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 4,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:diamond",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "empty",
+					"weight": 11
+				},
+				{
+					"type": "item",
+					"name": "item:sea_prism_forging_template",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.2
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:iron_nautilus_armor",
+					"weight": 50
+				},
+				{
+					"type": "item",
+					"name": "minecraft:golden_nautilus_armor",
+					"weight": 25
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_nautilus_armor",
+					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:netherite_nautilus_armor",
+					"weight": 5
+				}
+			]
+		}
+	]
+}

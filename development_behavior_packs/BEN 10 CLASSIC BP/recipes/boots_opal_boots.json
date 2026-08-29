@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "opal_boots_d87ce4ec"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:opal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "boots:opal_boots",
+			"count": 1
+		}
+	}
+}

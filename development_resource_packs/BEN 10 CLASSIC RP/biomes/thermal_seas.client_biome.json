@@ -1,0 +1,20 @@
+//bridge-file-version: #15
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "ad:thermal_seas"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "ad:thermal_seas_fog"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#B1A32C"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#FFF8CF"
+			}
+		}
+	}
+}

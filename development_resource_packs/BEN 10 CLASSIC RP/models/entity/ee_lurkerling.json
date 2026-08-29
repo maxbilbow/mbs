@@ -1,0 +1,355 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ee_lurkerling",
+				"texture_width": 512,
+				"texture_height": 512,
+				"visible_bounds_width": 16,
+				"visible_bounds_height": 6.5,
+				"visible_bounds_offset": [
+					0,
+					2.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [
+						0,
+						28,
+						-24
+					],
+					"cubes": [
+						{
+							"origin": [
+								-17,
+								7,
+								-37
+							],
+							"size": [
+								34,
+								45,
+								75
+							],
+							"uv": [
+								0,
+								0
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-10,
+								52,
+								10
+							],
+							"size": [
+								20,
+								13,
+								22
+							],
+							"uv": [
+								153,
+								167
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-4,
+								65,
+								17
+							],
+							"size": [
+								8,
+								13,
+								8
+							],
+							"uv": [
+								0,
+								29
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-10,
+								52,
+								-29
+							],
+							"size": [
+								20,
+								13,
+								22
+							],
+							"uv": [
+								190,
+								120
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-4,
+								65,
+								-22
+							],
+							"size": [
+								8,
+								13,
+								8
+							],
+							"uv": [
+								32,
+								29
+							],
+							"inflate": 0
+						}
+					]
+				},
+				{
+					"name": "Head",
+					"pivot": [
+						0,
+						22,
+						-48
+					],
+					"cubes": [
+						{
+							"origin": [
+								-14,
+								12,
+								-55
+							],
+							"size": [
+								28,
+								29,
+								18
+							],
+							"uv": [
+								98,
+								120
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Body"
+				},
+				{
+					"name": "Mouth",
+					"pivot": [
+						0,
+						11,
+						-40
+					],
+					"cubes": [
+						{
+							"origin": [
+								-14,
+								9,
+								-55
+							],
+							"size": [
+								28,
+								3,
+								18
+							],
+							"uv": [
+								143,
+								44
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Head"
+				},
+				{
+					"name": "Tail",
+					"pivot": [
+						0,
+						27,
+						50
+					],
+					"cubes": [
+						{
+							"origin": [
+								-10,
+								17,
+								38
+							],
+							"size": [
+								20,
+								24,
+								29
+							],
+							"uv": [
+								0,
+								120
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-7,
+								21,
+								67
+							],
+							"size": [
+								14,
+								15,
+								29
+							],
+							"uv": [
+								143,
+								0
+							],
+							"inflate": 0
+						},
+						{
+							"origin": [
+								-5,
+								24,
+								96
+							],
+							"size": [
+								10,
+								9,
+								20
+							],
+							"uv": [
+								0,
+								0
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Body"
+				},
+				{
+					"name": "Legs",
+					"pivot": [
+						0,
+						20,
+						8
+					],
+					"parent": "Body"
+				},
+				{
+					"name": "Leg0",
+					"pivot": [
+						-26,
+						13,
+						-19
+					],
+					"cubes": [
+						{
+							"origin": [
+								-34,
+								0,
+								-28
+							],
+							"size": [
+								17,
+								27,
+								21
+							],
+							"uv": [
+								77,
+								167
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Legs"
+				},
+				{
+					"name": "Leg1",
+					"pivot": [
+						-26,
+						13,
+						25
+					],
+					"cubes": [
+						{
+							"origin": [
+								-34,
+								0,
+								14
+							],
+							"size": [
+								17,
+								27,
+								21
+							],
+							"uv": [
+								77,
+								167
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Legs"
+				},
+				{
+					"name": "Leg2",
+					"pivot": [
+						24,
+						13,
+						25
+					],
+					"cubes": [
+						{
+							"origin": [
+								17,
+								0,
+								14
+							],
+							"size": [
+								17,
+								27,
+								21
+							],
+							"uv": [
+								77,
+								167
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Legs"
+				},
+				{
+					"name": "Leg3",
+					"pivot": [
+						25,
+						13,
+						-19
+					],
+					"cubes": [
+						{
+							"origin": [
+								17,
+								0,
+								-28
+							],
+							"size": [
+								17,
+								27,
+								21
+							],
+							"uv": [
+								77,
+								167
+							],
+							"inflate": 0
+						}
+					],
+					"parent": "Legs"
+				}
+			]
+		}
+	]
+}

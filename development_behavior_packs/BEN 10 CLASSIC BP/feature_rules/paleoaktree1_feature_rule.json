@@ -1,0 +1,38 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:paleoaktree1_feature_rule",
+			"places_feature": "gen:pale_oak_tree1_feature"
+		},
+		"conditions": {
+			"placement_pass": "first_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "pale_garden"
+				}
+			]
+		},
+		"distribution": {
+			"scatter_chance": 2,
+      "iterations": 32,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz)",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			}
+		}
+	}
+}

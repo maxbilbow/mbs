@@ -1,0 +1,26 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:mangrove_tree_feature"
+		},
+		"features": [
+			[
+				"gen:mangrove_tree1_feature",
+				50
+			],
+			[
+				"gen:mangrove_tree2_feature",
+				65
+			],
+			[
+				"gen:mangrove_tree3_feature",
+				10
+			],
+			[
+				"gen:mangrove_tree4_feature",
+				4
+			]
+		]
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:sunken_golem",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/sunken_golem"
+			},
+			"geometry": {
+				"default": "geometry.sunken_golem"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.tcos_left_side = -variable.tcos_right_side;",
+					"variable.attack_head_rot =  Math.sin(variable.attack_time * 180.0) * -37.3;"
+				]
+			},
+			"animations": {
+				"walk": "animation.sunken_golem.move",
+				"look_at_target": "animation.humanoid.look_at_target.default",
+				"attack": "animation.sunken_golem.melee",
+				"idle": "animation.sunken_golem.base"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.wrathnar.look_at_target"
+				},
+				{
+					"walk": "controller.animation.wrathnar.walk"
+				},
+				{
+					"attack": "controller.animation.wrathnar.attack"
+				},
+				{
+					"idle": "controller.animation.wrathnar"
+				}
+			],
+			"render_controllers": [
+				"controller.render.hoglin"
+			],
+			"spawn_egg": {
+				"base_color": "#28193A",
+				"overlay_color": "#B9FFFF"
+			}
+		}
+	}
+}

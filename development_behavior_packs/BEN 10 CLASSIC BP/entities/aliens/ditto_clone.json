@@ -11,13 +11,50 @@
 			"despawn": {
 				"minecraft:instant_despawn": {}
 			},
+			"omni:protect_mode": {
+				"minecraft:movement": {
+					"value": 0.42,
+					"max": 0.7
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 2,
+					"speed_multiplier": 1.35,
+					"start_distance": 4,
+					"stop_distance": 1.5
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 16,
+					"reselect_targets": true,
+					"must_see": false,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "villain"
+									}
+								]
+							},
+							"max_dist": 16
+						}
+					]
+				}
+			},
 			"cmd:hostile": {
 				"minecraft:movement": {
 					"value": 0.35
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -35,10 +72,10 @@
 									}
 								]
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:monsters": {
@@ -47,7 +84,7 @@
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -56,10 +93,10 @@
 								"subject": "other",
 								"value": "monster"
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:passives": {
@@ -68,7 +105,7 @@
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -93,13 +130,108 @@
 										"test": "is_family",
 										"subject": "other",
 										"value": "chicken"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "horse"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "donkey"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "mule"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "llama"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "rabbit"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "goat"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "frog"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "bee"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "panda"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "fox"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "turtle"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "axolotl"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "squid"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "glow_squid"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "strider"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "villager"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "wandering_trader"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "iron_golem"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "snow_golem"
 									}
 								]
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:players": {
@@ -108,7 +240,7 @@
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -127,10 +259,10 @@
 									}
 								]
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:all": {
@@ -139,7 +271,7 @@
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -165,10 +297,10 @@
 									}
 								]
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:effect_all": {
@@ -177,7 +309,7 @@
 				},
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 1,
-					"within_radius": 25,
+					"within_radius": 128,
 					"reselect_targets": true,
 					"entity_types": [
 						{
@@ -203,15 +335,816 @@
 									}
 								]
 							},
-							"max_dist": 25
+							"max_dist": 128
 						}
 					],
-					"must_see": true
+					"must_see": false
 				}
 			},
 			"cmd:stay": {
 				"minecraft:movement": {
 					"value": 0
+				}
+			},
+			"omni:ditto_tame": {
+				"minecraft:is_tamed": {},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2
+				},
+				"minecraft:leashable": {
+					"soft_distance": 4,
+					"hard_distance": 6,
+					"max_distance": 10,
+					"on_leash": {
+						"event": "minecraft:on_leash",
+						"target": "self"
+					},
+					"on_unleash": {
+						"event": "minecraft:on_unleash",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_tame_go": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 40,
+					"stop_distance": 4
+				},
+				"minecraft:behavior.beg": {
+					"priority": 4,
+					"look_distance": 8,
+					"look_time": [
+						4,
+						6
+					],
+					"items": [
+						"iron_sword",
+						"iron_shovel",
+						"iron_axe",
+						"iron_pickaxe",
+						"iron_hoe",
+						"fishing_rod"
+					]
+				},
+				"minecraft:sittable": {},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go hunting!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "iron_sword"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_hunt",
+								"target": "self"
+							}
+						},
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go dig!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "iron_shovel"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_dig",
+								"target": "self"
+							}
+						},
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go cut down some trees!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "iron_axe"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_log",
+								"target": "self"
+							}
+						},
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go mine!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "iron_pickaxe"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_mine",
+								"target": "self"
+							}
+						},
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go harvest crops!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "iron_hoe"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_hoe",
+								"target": "self"
+							}
+						},
+						{
+							"use_item": false,
+							"play_sounds": "pop",
+							"interact_text": "Go fishing!",
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "fishing_rod"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										}
+									]
+								},
+								"event": "omni:run_rod",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_run_hunt": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_hunt",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_run_dig": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_dig",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_run_log": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_log",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_run_mine": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_mine",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_run_hoe": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_hoe",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_run_rod": {
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 0,
+					"entity_types": [
+						{
+							"filters": {
+								"other_with_families": "player"
+							},
+							"max_dist": 12,
+							"walk_speed_multiplier": 1.3,
+							"sprint_speed_multiplier": 1.4
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						8,
+						9
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_rod",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_hunt": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_hunt_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_dig": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_dig_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_log": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_log_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_mine": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_mine_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_hoe": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_hoe_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_rod": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 0
+				},
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "omni:go_rod_enough",
+						"target": "self"
+					}
+				}
+			},
+			"omni:ditto_hunt_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/iron_hunt.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_dig_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/iron_dig.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_log_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/iron_log.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_mine_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/iron_mine.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_hoe_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/iron_hoe.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_rod_enough": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.2,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:movement": {
+					"value": 0.35,
+					"max": 0.6
+				},
+				"minecraft:collision_box": {
+					"width": 0.6,
+					"height": 1.6
+				},
+				"minecraft:scale": {
+					"value": 0.71
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"play_sounds": "pop",
+							"spawn_items": {
+								"table": "loot_tables/entities/rod_fish.json"
+							},
+							"interact_text": "What you got?",
+							"on_interact": {
+								"filters": {
+									"other_with_families": "player"
+								},
+								"event": "omni:ditto_normal",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"omni:ditto_leashed": {
+				"minecraft:behavior.move_towards_restriction": {
+					"priority": 2,
+					"speed_multiplier": 1.2
+				}
+			},
+			"cmd:collect": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"within_radius": 20,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "item_marker"
+							},
+							"max_dist": 20
+						}
+					],
+					"must_see": true
 				}
 			}
 		},
@@ -269,12 +1202,26 @@
 				"can_path_over_water": true,
 				"avoid_damage_blocks": true
 			},
+			"minecraft:follow_range": {
+				"value": 128,
+				"max": 128
+			},
 			"minecraft:movement.basic": {},
 			"minecraft:jump.static": {},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
 				"is_pushable": true,
 				"is_pushable_by_piston": true
+			},
+			"minecraft:tameable": {
+				"probability": 1,
+				"tameItems": [
+					"gold_ingot"
+				],
+				"tame_event": {
+					"event": "minecraft:on_tame",
+					"target": "self"
+				}
 			}
 		},
 		"events": {
@@ -408,6 +1355,318 @@
 				"add": {
 					"component_groups": [
 						"cmd:stay"
+					]
+				}
+			},
+			"minecraft:on_tame": {
+				"remove": {
+					"component_groups": [
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay",
+						"cmd:hostile"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_tame",
+						"omni:ditto_tame_go"
+					]
+				}
+			},
+			"omni:run_hunt": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_hunt"
+					]
+				}
+			},
+			"omni:go_hunt": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_hunt"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_hunt"
+					]
+				}
+			},
+			"omni:go_hunt_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_hunt"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_hunt_enough"
+					]
+				}
+			},
+			"omni:run_dig": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_dig"
+					]
+				}
+			},
+			"omni:go_dig": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_dig"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_dig"
+					]
+				}
+			},
+			"omni:go_dig_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_dig"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_dig_enough"
+					]
+				}
+			},
+			"omni:run_log": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_log"
+					]
+				}
+			},
+			"omni:go_log": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_log"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_log"
+					]
+				}
+			},
+			"omni:go_log_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_log"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_log_enough"
+					]
+				}
+			},
+			"omni:run_mine": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_mine"
+					]
+				}
+			},
+			"omni:go_mine": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_mine"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_mine"
+					]
+				}
+			},
+			"omni:go_mine_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_mine"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_mine_enough"
+					]
+				}
+			},
+			"omni:run_hoe": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_hoe"
+					]
+				}
+			},
+			"omni:go_hoe": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_hoe"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_hoe"
+					]
+				}
+			},
+			"omni:go_hoe_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_hoe"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_hoe_enough"
+					]
+				}
+			},
+			"omni:run_rod": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_run_rod"
+					]
+				}
+			},
+			"omni:go_rod": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_run_rod"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_rod"
+					]
+				}
+			},
+			"omni:go_rod_enough": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_rod"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_rod_enough"
+					]
+				}
+			},
+			"omni:ditto_normal": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_hunt_enough",
+						"omni:ditto_dig_enough",
+						"omni:ditto_log_enough",
+						"omni:ditto_mine_enough",
+						"omni:ditto_hoe_enough",
+						"omni:ditto_rod_enough"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni:ditto_tame_go"
+					]
+				}
+			},
+			"minecraft:on_leash": {
+				"add": {
+					"component_groups": [
+						"omni:ditto_leashed"
+					]
+				}
+			},
+			"minecraft:on_unleash": {
+				"remove": {
+					"component_groups": [
+						"omni:ditto_leashed"
+					]
+				}
+			},
+			"cmd:collect": {
+				"remove": {
+					"component_groups": [
+						"cmd:hostile",
+						"cmd:monsters",
+						"cmd:passives",
+						"cmd:players",
+						"cmd:all",
+						"cmd:effect_all",
+						"cmd:stay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cmd:collect"
+					]
+				}
+			},
+			"omni:collect_on": {
+				"add": {
+					"component_groups": [
+						"cmd:collect"
+					]
+				}
+			},
+			"omni:collect_off": {
+				"remove": {
+					"component_groups": [
+						"cmd:collect"
+					]
+				}
+			},
+			"omni:protect_on": {
+				"add": {
+					"component_groups": [
+						"omni:protect_mode"
+					]
+				}
+			},
+			"omni:protect_off": {
+				"remove": {
+					"component_groups": [
+						"omni:protect_mode"
 					]
 				}
 			}

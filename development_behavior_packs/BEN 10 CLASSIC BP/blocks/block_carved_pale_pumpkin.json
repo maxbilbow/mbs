@@ -1,0 +1,107 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:carved_pale_pumpkin",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.crop"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"tag:pumpkin": {},
+			"tag:minecraft:is_axe_item_destructible": {},
+			"minecraft:light_dampening": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:material_instances": {
+				"up": {
+					"texture": "block_carved_pale_pumpkin_down",
+					"render_method": "alpha_test"
+				},
+				"down": {
+					"texture": "block_carved_pale_pumpkin_down",
+					"render_method": "alpha_test"
+				},
+				"north": {
+					"texture": "block_carved_pale_pumpkin_east",
+					"render_method": "alpha_test"
+				},
+				"south": {
+					"texture": "block_carved_pale_pumpkin_north",
+					"render_method": "alpha_test"
+				},
+				"east": {
+					"texture": "block_carved_pale_pumpkin_east",
+					"render_method": "alpha_test"
+				},
+				"west": {
+					"texture": "block_carved_pale_pumpkin_east",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:geometry": "minecraft:geometry.full_block"
+		}
+	}
+}

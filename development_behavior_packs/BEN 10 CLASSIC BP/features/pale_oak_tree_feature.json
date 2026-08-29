@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:pale_oak_tree_feature"
+		},
+		"features": [
+			[
+				"gen:pale_oak_tree1_feature",
+				50
+			],
+			[
+				"gen:pale_oak_tree2_feature",
+				10
+			]
+		]
+	}
+}

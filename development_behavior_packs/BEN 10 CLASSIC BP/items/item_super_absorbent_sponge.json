@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:super_absorbent_sponge",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.equipment"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"textures": {
+					"default": "item:super_absorbent_sponge"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Super Absorbent Sponge"
+			}
+		}
+	}
+}

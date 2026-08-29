@@ -1,0 +1,53 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutant_creeper_egg.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						75,
+						60,
+						-60
+					],
+					"position": [
+						3,
+						25,
+						1
+					],
+					"scale": 1.5
+				}
+			}
+		},
+		"animation.mutant_creeper_egg.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						95,
+						0,
+						0
+					],
+					"position": [
+						0,
+						23,
+						-1
+					],
+					"scale": 1.5
+				},
+				"creeper_egg": {
+					"rotation": [
+						-60,
+						0,
+						0
+					],
+					"position": [
+						0,
+						2,
+						-2
+					]
+				}
+			}
+		}
+	}
+}

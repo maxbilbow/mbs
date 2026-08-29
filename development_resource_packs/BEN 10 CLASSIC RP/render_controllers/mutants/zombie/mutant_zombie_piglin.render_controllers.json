@@ -1,0 +1,73 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.zombified_mutant_piglin": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": 1
+				},
+				{
+					"rsword": 0
+				}
+			]
+		},
+		"controller.render.zombified_mutant_piglin_weapon": {
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"overlay_color": {
+				"r": "(0)",
+				"g": 0,
+				"b": 0,
+				"a": "(0)"
+			},
+			"textures": [
+				"texture.default"
+			],
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"rsword": 1
+				}
+			]
+		}
+	}
+}

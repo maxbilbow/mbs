@@ -5,7 +5,15 @@
 			"identifier": "omni:omni_capsule",
 			"is_spawnable": true,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"smoke_loop"
+				]
+			},
+			"animations": {
+				"smoke_loop": "controller.animation.capsule_smoke"
+			}
 		},
 		"component_groups": {
 			"despawn": {

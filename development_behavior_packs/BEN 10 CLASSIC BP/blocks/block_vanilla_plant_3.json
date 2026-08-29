@@ -1,0 +1,59 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:vanilla_plant_3",
+			"menu_category": {
+				"category": "none"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "popped"
+					}
+				]
+			},
+			"minecraft:geometry": "geometry.plant_large",
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/block_vanilla_plant_3.json",
+			"minecraft:collision_box": false,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4.2
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_vanilla_plant_3",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"block_filter": [
+							"minecraft:farmland",
+							"minecraft:grass",
+							"minecraft:dirt"
+						]
+					}
+				]
+			}
+		},
+		"events": {}
+	}
+}

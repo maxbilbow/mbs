@@ -1,0 +1,251 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mutant_endolotl_cube",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [
+						0,
+						5.5,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						8.5,
+						4
+					],
+					"rotation": [
+						-5,
+						0,
+						0
+					],
+					"locators": {
+						"lead": [
+							0,
+							10.5,
+							-4
+						]
+					}
+				},
+				{
+					"name": "left_leg_front",
+					"parent": "body",
+					"pivot": [
+						5,
+						7.5,
+						-1.5
+					],
+					"rotation": [
+						-10,
+						0,
+						-30
+					]
+				},
+				{
+					"name": "left_leg_front2",
+					"parent": "left_leg_front",
+					"pivot": [
+						5,
+						4,
+						-0.5
+					],
+					"rotation": [
+						-45,
+						0,
+						0
+					]
+				},
+				{
+					"name": "left_leg_front3",
+					"parent": "left_leg_front2",
+					"pivot": [
+						5,
+						-2,
+						-1.5
+					],
+					"rotation": [
+						-25,
+						-15,
+						30
+					]
+				},
+				{
+					"name": "left_leg_front_part",
+					"parent": "left_leg_front3",
+					"pivot": [
+						5,
+						-4,
+						-1.5
+					]
+				},
+				{
+					"name": "left_leg_front_part_2",
+					"parent": "left_leg_front_part",
+					"pivot": [
+						5.5,
+						-6,
+						-1.5
+					]
+				},
+				{
+					"name": "left_leg_front_part2",
+					"parent": "left_leg_front3",
+					"pivot": [
+						5,
+						-4,
+						-0.5
+					],
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				{
+					"name": "left_leg_front_part2_2",
+					"parent": "left_leg_front_part2",
+					"pivot": [
+						5.5,
+						-5.5,
+						-0.5
+					]
+				},
+				{
+					"name": "left_leg_front_part3",
+					"parent": "left_leg_front3",
+					"pivot": [
+						5,
+						-4,
+						-2.5
+					],
+					"rotation": [
+						-25,
+						0,
+						0
+					]
+				},
+				{
+					"name": "left_leg_front_part3_2",
+					"parent": "left_leg_front_part3",
+					"pivot": [
+						5.5,
+						-5.5,
+						-2.5
+					]
+				},
+				{
+					"name": "lil_cube",
+					"parent": "left_leg_front3",
+					"pivot": [
+						5,
+						-3,
+						-1.25
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								-4,
+								-2.25
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"inflate": -0.1,
+							"uv": {
+								"north": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										32,
+										32
+									]
+								},
+								"east": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										32,
+										32
+									]
+								},
+								"south": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										32,
+										32
+									]
+								},
+								"west": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										32,
+										32
+									]
+								},
+								"up": {
+									"uv": [
+										64,
+										64
+									],
+									"uv_size": [
+										-32,
+										-32
+									]
+								},
+								"down": {
+									"uv": [
+										64,
+										64
+									],
+									"uv_size": [
+										-32,
+										-32
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"tags": [
+			"smoker"
+		],
+		"output": {
+			"item": "food:cooked_squid",
+			"data": 0
+		},
+		"input": {
+			"item": "food:raw_squid",
+			"data": 0
+		},
+		"description": {
+			"identifier": "recipes_e604cb34"
+		}
+	}
+}

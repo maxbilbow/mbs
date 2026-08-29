@@ -1,0 +1,8 @@
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~~~10 facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~~~-10 facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~10~~ facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~-10~~ facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~-10~~10 facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~10~~-10 facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~10~~10 facing @e[c=1,type=boss:primordial_wyrm]
+execute at @e[type=mechanic:primordial_fireballs,r=50] run summon projectile:primordial_fireball ~-10~~-10 facing @e[c=1,type=boss:primordial_wyrm]

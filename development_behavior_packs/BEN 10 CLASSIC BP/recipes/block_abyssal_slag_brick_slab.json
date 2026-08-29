@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "abyssal_slag_brick_slab_0102111d"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:abyssal_slag_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:abyssal_slag_brick_slab",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,20 @@
+//bridge-file-version: #21
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "ad:dread_reef"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "ad:dread_reef_fog"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#AEBEC7"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#D8EDFF"
+			}
+		}
+	}
+}

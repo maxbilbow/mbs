@@ -1,0 +1,1822 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.juvenile_abyssal_wyrm",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 19,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						1,
+						1
+					]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [
+						0,
+						1,
+						1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								-12
+							],
+							"size": [
+								14,
+								14,
+								16
+							],
+							"uv": [
+								0,
+								80
+							]
+						},
+						{
+							"origin": [
+								-7,
+								0,
+								-14
+							],
+							"size": [
+								14,
+								14,
+								2
+							],
+							"uv": [
+								88,
+								30
+							]
+						},
+						{
+							"origin": [
+								-2,
+								12,
+								-15
+							],
+							"size": [
+								4,
+								3,
+								11
+							],
+							"uv": [
+								120,
+								66
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								-6
+							],
+							"size": [
+								0,
+								18,
+								10
+							],
+							"uv": [
+								36,
+								110
+							]
+						}
+					],
+					"locators": {
+						"lead": [
+							0,
+							13,
+							-13
+						]
+					}
+				},
+				{
+					"name": "lala",
+					"parent": "head",
+					"pivot": [
+						0,
+						1,
+						-15
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								-3,
+								-15
+							],
+							"size": [
+								10,
+								20,
+								18
+							],
+							"uv": [
+								64,
+								48
+							]
+						}
+					]
+				},
+				{
+					"name": "leftgills",
+					"parent": "head",
+					"pivot": [
+						8,
+						6,
+						-11
+					]
+				},
+				{
+					"name": "tetntacl",
+					"parent": "leftgills",
+					"pivot": [
+						7,
+						7,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								6,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								120,
+								80
+							]
+						},
+						{
+							"origin": [
+								7,
+								2.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								128
+							]
+						}
+					]
+				},
+				{
+					"name": "endten",
+					"parent": "tetntacl",
+					"pivot": [
+						22,
+						7,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								22,
+								3.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "tetntacl3",
+					"parent": "leftgills",
+					"pivot": [
+						7,
+						10,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								9,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								120,
+								80
+							]
+						},
+						{
+							"origin": [
+								7,
+								5.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								137
+							]
+						}
+					]
+				},
+				{
+					"name": "endten3",
+					"parent": "tetntacl3",
+					"pivot": [
+						22,
+						10,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								22,
+								6.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "tetntacl4",
+					"parent": "leftgills",
+					"pivot": [
+						7,
+						4,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								3,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								120,
+								80
+							]
+						},
+						{
+							"origin": [
+								7,
+								-0.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								137
+							]
+						}
+					]
+				},
+				{
+					"name": "endten4",
+					"parent": "tetntacl4",
+					"pivot": [
+						22,
+						4,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								22,
+								0.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "rightgils",
+					"parent": "head",
+					"pivot": [
+						-7,
+						1,
+						-11
+					]
+				},
+				{
+					"name": "tetntacl2",
+					"parent": "rightgils",
+					"pivot": [
+						-7,
+						7,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-17,
+								6,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								144,
+								23
+							]
+						},
+						{
+							"origin": [
+								-22,
+								2.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								137
+							]
+						}
+					]
+				},
+				{
+					"name": "endten2",
+					"parent": "tetntacl2",
+					"pivot": [
+						-22,
+						7,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-37,
+								3.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								7
+							]
+						}
+					]
+				},
+				{
+					"name": "tetntacl5",
+					"parent": "rightgils",
+					"pivot": [
+						-7,
+						10,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-17,
+								9,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								144,
+								23
+							]
+						},
+						{
+							"origin": [
+								-22,
+								5.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								128
+							]
+						}
+					]
+				},
+				{
+					"name": "endten5",
+					"parent": "tetntacl5",
+					"pivot": [
+						-22,
+						10,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-37,
+								6.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								7
+							]
+						}
+					]
+				},
+				{
+					"name": "tetntacl6",
+					"parent": "rightgils",
+					"pivot": [
+						-7,
+						4,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-17,
+								3,
+								-12
+							],
+							"size": [
+								10,
+								2,
+								2
+							],
+							"uv": [
+								144,
+								23
+							]
+						},
+						{
+							"origin": [
+								-22,
+								-0.5,
+								-11
+							],
+							"size": [
+								15,
+								9,
+								0
+							],
+							"uv": [
+								56,
+								128
+							]
+						}
+					]
+				},
+				{
+					"name": "endten6",
+					"parent": "tetntacl6",
+					"pivot": [
+						-22,
+						4,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-37,
+								0.5,
+								-11
+							],
+							"size": [
+								15,
+								7,
+								0
+							],
+							"uv": [
+								144,
+								7
+							]
+						}
+					]
+				},
+				{
+					"name": "fangs",
+					"parent": "head",
+					"pivot": [
+						0,
+						1,
+						-12
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								-2.5,
+								-15
+							],
+							"size": [
+								2,
+								5,
+								3
+							],
+							"uv": [
+								86,
+								128
+							]
+						},
+						{
+							"origin": [
+								2,
+								-2.5,
+								-15
+							],
+							"size": [
+								2,
+								5,
+								3
+							],
+							"uv": [
+								96,
+								128
+							]
+						}
+					]
+				},
+				{
+					"name": "thing",
+					"parent": "head",
+					"pivot": [
+						7,
+						11,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								11,
+								-27
+							],
+							"size": [
+								20,
+								0,
+								24
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "thing2",
+					"parent": "head",
+					"pivot": [
+						7,
+						3,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								3,
+								-27
+							],
+							"size": [
+								20,
+								0,
+								24
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "thing3",
+					"parent": "head",
+					"pivot": [
+						-7,
+						3,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								-27,
+								3,
+								-27
+							],
+							"size": [
+								20,
+								0,
+								24
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "thing4",
+					"parent": "head",
+					"pivot": [
+						-7,
+						11,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								-27,
+								11,
+								-27
+							],
+							"size": [
+								20,
+								0,
+								24
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "segment",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						13
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								4
+							],
+							"size": [
+								14,
+								14,
+								18
+							],
+							"uv": [
+								0,
+								48
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								4
+							],
+							"size": [
+								0,
+								18,
+								18
+							],
+							"uv": [
+								0,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth",
+					"parent": "segment",
+					"pivot": [
+						7,
+						7,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								2.5,
+								5
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth3",
+					"parent": "segment",
+					"pivot": [
+						7,
+						12,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								7.5,
+								6
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth4",
+					"parent": "segment",
+					"pivot": [
+						7,
+						3,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								-1.5,
+								6
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth2",
+					"parent": "segment",
+					"pivot": [
+						-7,
+						3,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								-1.5,
+								6
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth5",
+					"parent": "segment",
+					"pivot": [
+						-7,
+						12,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								7.5,
+								6
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth6",
+					"parent": "segment",
+					"pivot": [
+						-7,
+						7,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								2.5,
+								5
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "segment2",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						31
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								22
+							],
+							"size": [
+								14,
+								14,
+								18
+							],
+							"uv": [
+								0,
+								48
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								22
+							],
+							"size": [
+								0,
+								18,
+								18
+							],
+							"uv": [
+								0,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth13",
+					"parent": "segment2",
+					"pivot": [
+						7,
+						7,
+						23
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								2.5,
+								23
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth14",
+					"parent": "segment2",
+					"pivot": [
+						7,
+						12,
+						24
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								7.5,
+								24
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth15",
+					"parent": "segment2",
+					"pivot": [
+						7,
+						3,
+						24
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								-1.5,
+								24
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth16",
+					"parent": "segment2",
+					"pivot": [
+						-7,
+						3,
+						24
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								-1.5,
+								24
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth17",
+					"parent": "segment2",
+					"pivot": [
+						-7,
+						12,
+						24
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								7.5,
+								24
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth18",
+					"parent": "segment2",
+					"pivot": [
+						-7,
+						7,
+						23
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								2.5,
+								23
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "segment3",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						49
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								40
+							],
+							"size": [
+								14,
+								14,
+								18
+							],
+							"uv": [
+								0,
+								48
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								40
+							],
+							"size": [
+								0,
+								18,
+								18
+							],
+							"uv": [
+								0,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth19",
+					"parent": "segment3",
+					"pivot": [
+						7,
+						7,
+						41
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								2.5,
+								41
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth20",
+					"parent": "segment3",
+					"pivot": [
+						7,
+						12,
+						42
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								7.5,
+								42
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth21",
+					"parent": "segment3",
+					"pivot": [
+						7,
+						3,
+						42
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								-1.5,
+								42
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth22",
+					"parent": "segment3",
+					"pivot": [
+						-7,
+						3,
+						42
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								-1.5,
+								42
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth23",
+					"parent": "segment3",
+					"pivot": [
+						-7,
+						12,
+						42
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								7.5,
+								42
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth24",
+					"parent": "segment3",
+					"pivot": [
+						-7,
+						7,
+						41
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								2.5,
+								41
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "segment4",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						67
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								58
+							],
+							"size": [
+								14,
+								14,
+								18
+							],
+							"uv": [
+								0,
+								48
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								58
+							],
+							"size": [
+								0,
+								18,
+								18
+							],
+							"uv": [
+								0,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth25",
+					"parent": "segment4",
+					"pivot": [
+						7,
+						7,
+						59
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								2.5,
+								59
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth26",
+					"parent": "segment4",
+					"pivot": [
+						7,
+						12,
+						60
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								7.5,
+								60
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth27",
+					"parent": "segment4",
+					"pivot": [
+						7,
+						3,
+						60
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								-1.5,
+								60
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth28",
+					"parent": "segment4",
+					"pivot": [
+						-7,
+						3,
+						60
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								-1.5,
+								60
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth29",
+					"parent": "segment4",
+					"pivot": [
+						-7,
+						12,
+						60
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								7.5,
+								60
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth30",
+					"parent": "segment4",
+					"pivot": [
+						-7,
+						7,
+						59
+					],
+					"cubes": [
+						{
+							"origin": [
+								-21,
+								2.5,
+								59
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						85
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								1,
+								76
+							],
+							"size": [
+								10,
+								12,
+								18
+							],
+							"uv": [
+								88,
+								0
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								76
+							],
+							"size": [
+								0,
+								18,
+								18
+							],
+							"uv": [
+								120,
+								30
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth7",
+					"parent": "tail",
+					"pivot": [
+						5,
+						7,
+						79
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								2.5,
+								79
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth11",
+					"parent": "tail",
+					"pivot": [
+						5,
+						11,
+						80
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								6.5,
+								80
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth12",
+					"parent": "tail",
+					"pivot": [
+						5,
+						4,
+						80
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								-0.5,
+								80
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								144,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth8",
+					"parent": "tail",
+					"pivot": [
+						-5,
+						7,
+						79
+					],
+					"cubes": [
+						{
+							"origin": [
+								-19,
+								2.5,
+								79
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth9",
+					"parent": "tail",
+					"pivot": [
+						-5,
+						11,
+						80
+					],
+					"cubes": [
+						{
+							"origin": [
+								-19,
+								6.5,
+								80
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "finsorsmth10",
+					"parent": "tail",
+					"pivot": [
+						-5,
+						4,
+						80
+					],
+					"cubes": [
+						{
+							"origin": [
+								-19,
+								-0.5,
+								80
+							],
+							"size": [
+								14,
+								9,
+								0
+							],
+							"uv": [
+								0,
+								146
+							]
+						}
+					]
+				},
+				{
+					"name": "tailend",
+					"parent": "root",
+					"pivot": [
+						0,
+						7,
+						96
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								4,
+								94
+							],
+							"size": [
+								4,
+								6,
+								18
+							],
+							"uv": [
+								108,
+								124
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								94
+							],
+							"size": [
+								0,
+								18,
+								20
+							],
+							"uv": [
+								108,
+								86
+							]
+						}
+					]
+				},
+				{
+					"name": "endendend",
+					"parent": "tailend",
+					"pivot": [
+						0,
+						7,
+						114
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								-2,
+								114
+							],
+							"size": [
+								0,
+								18,
+								24
+							],
+							"uv": [
+								60,
+								86
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

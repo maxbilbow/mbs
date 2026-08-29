@@ -1,0 +1,290 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:redwood_door",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.door"
+			},
+			"states": {
+				"pa:is_open": [
+					false,
+					true
+				],
+				"pa:side": [
+					"left",
+					"right"
+				],
+				"pa:part": [
+					"carried",
+					"lower",
+					"upper"
+				]
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			}
+		},
+		"components": {
+			"tag:minecraft:is_axe_item_destructible": {},
+			"tag:pumpkin": {},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_redwood_door_lower",
+					"render_method": "blend"
+				}
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:flammable": {
+				"catch_chance_modifier": 5,
+				"destroy_chance_modifier": 1
+			},
+			"minecraft:light_dampening": 1,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 0.3
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"minecraft:map_color": "#000000",
+			"minecraft:light_emission": 0,
+			"minecraft:custom_components": [
+				"test:modded_doors"
+			],
+			"tag:door": {}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:is_open') == false",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.door_close"
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							32,
+							3
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:is_open') == true && q.block_state('pa:side') == 'left'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.door_left_open"
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:is_open') == true && q.block_state('pa:side') == 'right'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.door_right_open"
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:part') == 'carried'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.door_carried"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:part') == 'lower'",
+				"components": {
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+								"block_filter": [
+									"block:redwood_door"
+								],
+								"allowed_faces": [
+									"down"
+								]
+							}
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('pa:part') == 'upper'",
+				"components": {
+					"minecraft:loot": "loot_tables/empty.json",
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+								"block_filter": [
+									"block:redwood_door"
+								],
+								"allowed_faces": [
+									"up"
+								]
+							}
+						]
+					},
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "block_redwood_door_upper",
+							"render_method": "blend"
+						}
+					}
+				}
+			}
+		],
+		"events": {}
+	}
+}

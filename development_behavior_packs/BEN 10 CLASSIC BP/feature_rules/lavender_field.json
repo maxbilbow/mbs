@@ -1,0 +1,39 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "gen:lavender_field",
+            "places_feature": "gen:scatter_chorus_lavender_feature"
+        },
+        "conditions": {
+            "placement_pass": "after_surface_pass",
+            "minecraft:biome_filter": {
+                "all_of": [
+                    {
+                        "test": "has_biome_tag",
+                        "value": "the_end",
+                        "operator": "equals"
+                    }
+                ]
+            }
+        },
+        "distribution": {
+            "iterations": 250,
+            "x": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            },
+            "y": "query.heightmap(variable.worldx, variable.worldz)",
+            "z": {
+                "distribution": "uniform",
+                "extent": [
+                    0,
+                    15
+                ]
+            }
+        }
+    }
+}

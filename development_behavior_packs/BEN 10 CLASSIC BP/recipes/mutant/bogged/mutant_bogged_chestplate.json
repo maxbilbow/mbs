@@ -1,0 +1,30 @@
+{
+	"format_version": "1.17.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "mutant:mutant_bogged_chestplate"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" A ",
+			" B ",
+			"   "
+		],
+		"key": {
+			"A": {
+				"item": "js7_mutant:mutant_bogged_arms",
+				"data": 0
+			},
+			"B": {
+				"item": "js7_mutant:mutant_bogged_rib_cage",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "mutant:mutant_bogged_chestplate",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:giant_squid",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/giant_squid"
+			},
+			"geometry": {
+				"default": "geometry.giant_squid"
+			},
+			"scripts": {
+				"scale": 1
+			},
+			"animations": {
+				"general": "animation.giant_squid.base",
+				"move": "animation.giant_squid.swim",
+				"ground_move": "animation.giant_squid.base",
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.turtle.general"
+				},
+				{
+					"move": "controller.animation.turtle.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.turtle"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 50
+			}
+		}
+	}
+}

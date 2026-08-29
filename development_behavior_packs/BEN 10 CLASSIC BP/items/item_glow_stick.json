@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:glow_stick",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 16,
+			"minecraft:icon": {
+				"texture": "item:glow_stick"
+			},
+			"minecraft:display_name": {
+				"value": "Glow Stick"
+			},
+			"minecraft:throwable": {
+				"do_swing_animation": true
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "projectile:glow_stick"
+			}
+		}
+	}
+}

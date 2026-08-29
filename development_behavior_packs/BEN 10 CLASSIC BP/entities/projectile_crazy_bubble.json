@@ -1,0 +1,153 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:crazy_bubble",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 4,
+						"knockback": true,
+						"semi_random_diff_damage": false
+					},
+					"mob_effect": {
+						"effect": {},
+						"durationeasy": 200,
+						"durationnormal": 200,
+						"durationhard": 200,
+						"amplifier": 1
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					},
+					"arrow_effect": {}
+				},
+				"liquid_inertia": 1,
+				"power": 1.5,
+				"gravity": 0,
+				"angleoffset": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"magic",
+					"inanimate"
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					0,
+					0
+				],
+				"time_down_event": {
+					"event": "timer"
+				}
+			},
+			"minecraft:ageable": {
+				"duration": 5,
+				"grow_up": {
+					"event": "on:hit"
+				}
+			},
+			"minecraft:scale_by_age": {
+				"start_scale": 0.1,
+				"end_scale": 10
+			}
+		},
+		"events": {
+			"on:hit": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"summon projectile:bubble_blast ~~~3",
+								"summon projectile:bubble_blast ~~~6",
+								"summon projectile:bubble_blast ~~~9",
+								"summon projectile:bubble_blast ~~~12",
+								"summon projectile:bubble_blast ~~~15",
+								"summon projectile:bubble_blast ~~~18",
+								"summon projectile:bubble_blast ~~~21",
+								"summon projectile:bubble_blast ~~~24",
+								"summon projectile:bubble_blast ~~~27",
+								"summon projectile:bubble_blast ~~~30",
+								"summon projectile:bubble_blast ~~~33",
+								"summon projectile:bubble_blast ~~~36",
+								"summon projectile:bubble_blast ~~~-3",
+								"summon projectile:bubble_blast ~~~-6",
+								"summon projectile:bubble_blast ~~~-9",
+								"summon projectile:bubble_blast ~~~-12",
+								"summon projectile:bubble_blast ~~~-15",
+								"summon projectile:bubble_blast ~~~-18",
+								"summon projectile:bubble_blast ~~~-21",
+								"summon projectile:bubble_blast ~~~-24",
+								"summon projectile:bubble_blast ~~~-27",
+								"summon projectile:bubble_blast ~~~-30",
+								"summon projectile:bubble_blast ~~~-33",
+								"summon projectile:bubble_blast ~~~-36",
+								"summon projectile:bubble_blast ~3~~",
+								"summon projectile:bubble_blast ~6~~",
+								"summon projectile:bubble_blast ~9~~",
+								"summon projectile:bubble_blast ~12~~",
+								"summon projectile:bubble_blast ~15~~",
+								"summon projectile:bubble_blast ~18~~",
+								"summon projectile:bubble_blast ~21~~",
+								"summon projectile:bubble_blast ~24~~",
+								"summon projectile:bubble_blast ~27~~",
+								"summon projectile:bubble_blast ~30~~",
+								"summon projectile:bubble_blast ~33~~",
+								"summon projectile:bubble_blast ~36~~",
+								"summon projectile:bubble_blast ~-3~~",
+								"summon projectile:bubble_blast ~-6~~",
+								"summon projectile:bubble_blast ~-9~~",
+								"summon projectile:bubble_blast ~-12~~",
+								"summon projectile:bubble_blast ~-15~~",
+								"summon projectile:bubble_blast ~-18~~",
+								"summon projectile:bubble_blast ~-21~~",
+								"summon projectile:bubble_blast ~-24~~",
+								"summon projectile:bubble_blast ~-27~~",
+								"summon projectile:bubble_blast ~-30~~",
+								"summon projectile:bubble_blast ~-33~~",
+								"summon projectile:bubble_blast ~-36~~",
+								"particle bubblebomb",
+								"damage @e[type=!boss:primordial_wyrm,r=12]  20 contact entity @n[type=boss:primordial_wyrm]"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"timer": {
+				"queue_command": {
+					"command": [
+						"particle radcrossblast"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

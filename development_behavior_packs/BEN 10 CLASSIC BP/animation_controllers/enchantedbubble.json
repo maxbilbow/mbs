@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.enchantedbubble": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": [
+						"/particle enchantedbubble"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/particle enchantedbubble"
+					]
+				}
+			}
+		}
+	}
+}

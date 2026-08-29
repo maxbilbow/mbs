@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.spell_book": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "(query.get_equipped_item_name('main_hand')=='spell_blast'||query.get_equipped_item_name('main_hand')=='spell_shield'||query.get_equipped_item_name('main_hand')=='spell_levi')&&query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"spell_book"
+					],
+					"transitions": [
+						{
+							"default": "(query.get_equipped_item_name('main_hand')!='spell_blast'&&query.get_equipped_item_name('main_hand')!='spell_shield'&&query.get_equipped_item_name('main_hand')!='spell_levi')||!query.is_using_item"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.spell_fly": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.get_equipped_item_name('main_hand')=='spell_fly'&&!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"spell_fly"
+					],
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='spell_fly'||query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

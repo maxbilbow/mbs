@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sword:wooden_cleaver",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sword:wooden_cleaver"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transformable_items",
+					"minecraft:digger",
+					"minecraft:diamond_tier"
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 30
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 40
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:damage": 2,
+			"minecraft:use_animation": "bow",
+			"minecraft:display_name": {
+				"value": "Wooden Cleaver"
+			}
+		}
+	}
+}

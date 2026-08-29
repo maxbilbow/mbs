@@ -8,6 +8,33 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"rz:easy_stats": {
+				"minecraft:health": {
+					"value": 100,
+					"max": 100
+				},
+				"minecraft:attack": {
+					"damage": 2
+				}
+			},
+			"rz:normal_stats": {
+				"minecraft:health": {
+					"value": 150,
+					"max": 150
+				},
+				"minecraft:attack": {
+					"damage": 5
+				}
+			},
+			"rz:hard_stats": {
+				"minecraft:health": {
+					"value": 300,
+					"max": 300
+				},
+				"minecraft:attack": {
+					"damage": 10
+				}
+			},
 			"downed": {
 				"minecraft:health": {
 					"value": 10,
@@ -488,6 +515,27 @@
 			}
 		},
 		"events": {
+			"rz:diff_easy": {
+				"add": {
+					"component_groups": [
+						"rz:easy_stats"
+					]
+				}
+			},
+			"rz:diff_normal": {
+				"add": {
+					"component_groups": [
+						"rz:normal_stats"
+					]
+				}
+			},
+			"rz:diff_hard": {
+				"add": {
+					"component_groups": [
+						"rz:hard_stats"
+					]
+				}
+			},
 			"minecraft:entity_spawned": {
 				"randomize": [
 					{

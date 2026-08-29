@@ -1,0 +1,18 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ztp.health_bar.billboard": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"query.camera_rotation(0)",
+						"query.camera_rotation(1)",
+						0
+					],
+					"scale": "query.camera_distance_range_lerp(1.0, 1.1)"
+				}
+			}
+		}
+	}
+}

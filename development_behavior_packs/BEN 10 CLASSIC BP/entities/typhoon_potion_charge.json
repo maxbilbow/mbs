@@ -1,0 +1,81 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:typhoon_potion_charge",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"runtime_identifier": "minecraft:wind_charge_projectile"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.4,
+				"height": 0.4
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"max_critical_damage": 1,
+						"knockback": true
+					},
+					"wind_burst_on_hit": {}
+				},
+				"power": 1.5,
+				"gravity": 0,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"reflect_on_hurt": true,
+				"multiple_targets": false,
+				"ignored_entities": [
+					"ender_crystal",
+					"wind_charge_projectile",
+					"breeze_wind_charge_projectile"
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"wind_charge",
+					"wind_charge_projectile"
+				]
+			},
+			"minecraft:explode": {
+				"power": 4,
+				"particle_effect": "wind_burst",
+				"sound_effect": "wind_charge.burst",
+				"knockback_scaling": 6,
+				"negates_fall_damage": true,
+				"breaks_blocks": false,
+				"allow_underwater": true,
+				"toggles_blocks": true,
+				"damage_scaling": 0,
+				"max_resistance": 0
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

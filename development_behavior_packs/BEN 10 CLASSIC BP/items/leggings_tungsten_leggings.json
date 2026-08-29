@@ -1,0 +1,46 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "leggings:tungsten_leggings",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.leggings"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "tungsten_leggings"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_legs"
+			},
+			"minecraft:durability": {
+				"max_durability": 2000,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.legs",
+				"protection": 5
+			},
+			"minecraft:display_name": {
+				"value": "Tungsten Leggings"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

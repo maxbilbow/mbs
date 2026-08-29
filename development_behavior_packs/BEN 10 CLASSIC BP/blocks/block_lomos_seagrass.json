@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:lomos_seagrass",
+			"menu_category": {
+				"group": "minecraft:itemGroup.name.grass",
+				"category": "nature"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.cropplant",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 3,
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "no_reaction"
+					}
+				]
+			},
+			"minecraft:item_visual": {
+				"geometry": "geometry.animated_item",
+				"material_instances": {
+					"*": {
+						"texture": "block_lomos_seagrass",
+						"render_method": "alpha_test",
+						"ambient_occlusion": false,
+						"face_dimming": false
+					}
+				}
+			},
+			"minecraft:collision_box": false,
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4.2
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_lomos_seagrass",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		},
+		"events": {}
+	}
+}

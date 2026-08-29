@@ -1,0 +1,1390 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_ocelot",
+			"runtime_identifier": "minecraft:cat",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"jungle": {
+				"minecraft:type_family": {
+					"family": [
+						"mocelot",
+						"ocelot",
+						"mutantmonster",
+						"chemical_x"
+					]
+				},
+				"minecraft:nameable": {
+					"default_trigger": {
+						"event": "jungle",
+						"target": "self"
+					},
+					"name_actions": [
+						{
+							"name_filter": "Joy",
+							"on_named": {
+								"event": "jungle_easter",
+								"target": "self"
+							}
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"easter": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"snowy": {
+				"minecraft:nameable": {
+					"default_trigger": {
+						"event": "snowy",
+						"target": "self"
+					},
+					"name_actions": [
+						{
+							"name_filter": "Joy",
+							"on_named": {
+								"event": "snowy_easter",
+								"target": "self"
+							}
+						}
+					]
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mocelot",
+						"ocelot",
+						"snow",
+						"lightweight",
+						"mutantmonster",
+						"chemical_x"
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"lush": {
+				"minecraft:nameable": {
+					"default_trigger": {
+						"event": "lush",
+						"target": "self"
+					},
+					"name_actions": [
+						{
+							"name_filter": "Joy",
+							"on_named": {
+								"event": "lush_easter",
+								"target": "self"
+							}
+						}
+					]
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mocelot",
+						"lush",
+						"ocelot",
+						"mutantmonster",
+						"chemical_x"
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"minecraft:hostile": {
+				"minecraft:behavior.stalk_and_pounce_on_target": {
+					"priority": 8,
+					"stalk_speed": 1.45,
+					"max_stalk_dist": 65,
+					"leap_height": 1.1,
+					"leap_dist": 1.4,
+					"pounce_max_dist": 9,
+					"interest_time": 0,
+					"stuck_time": 2.5,
+					"strike_dist": 3,
+					"stuck_blocks": {
+						"test": "is_block",
+						"subject": "block",
+						"operator": "==",
+						"value": "snow_layer"
+					}
+				},
+				"minecraft:movement": {
+					"value": 0.4
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 4,
+					"track_target": false,
+					"reach_multiplier": 2,
+					"speed_multiplier": 1.5,
+					"cooldown_time": 0.5
+				},
+				"minecraft:behavior.look_at_player": {
+					"priority": 7,
+					"look_distance": 6,
+					"angle_of_view_horizontal": 45,
+					"probability": 0.01
+				},
+				"minecraft:behavior.look_at_entity": {
+					"priority": 10,
+					"look_distance": 8,
+					"angle_of_view_horizontal": 45,
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "mob"
+					}
+				},
+				"minecraft:behavior.mount_pathing": {
+					"priority": 5,
+					"speed_multiplier": 1,
+					"target_dist": 0,
+					"track_target": true
+				}
+			},
+			"minecraft:ocelot_baby": {
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:ageable": {
+					"duration": 1200,
+					"feedItems": [
+						"chicken",
+						"cooked_chicken",
+						"beef",
+						"cooked_beef",
+						"muttonRaw",
+						"muttonCooked",
+						"porkchop",
+						"cooked_porkchop",
+						"rabbit",
+						"cooked_rabbit",
+						"rotten_flesh"
+					],
+					"grow_up": {
+						"event": "minecraft:ageable_grow_up",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:ocelot_baby_tamed": {
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:ageable": {
+					"duration": 1200,
+					"feedItems": [
+						"chicken",
+						"cooked_chicken",
+						"fish",
+						"salmon",
+						"rabbit",
+						"cooked_rabbit"
+					],
+					"grow_up": {
+						"event": "minecraft:ageable_grow_up_tamed",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:ocelot_adult": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/ocelot.json"
+				}
+			},
+			"minecraft:ocelot_angry": {
+				"minecraft:angry": {
+					"duration": 225,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 20,
+					"filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "ocelot"
+							}
+						]
+					},
+					"broadcastRange": 20,
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"target": "self"
+					}
+				},
+				"minecraft:on_target_escape": {
+					"event": "minecraft:on_calm",
+					"target": "self"
+				}
+			},
+			"tameable": {
+				"minecraft:tameable": {
+					"probability": 0.33,
+					"tameItems": [
+						"fish",
+						"salmon"
+					],
+					"tame_event": {
+						"event": "minecraft:on_tame",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:ocelot_wild": {
+				"minecraft:behavior.random_look_around_and_sit": {
+					"priority": 2,
+					"max_look_count": 22,
+					"min_look_count": 18,
+					"max_look_time": 25,
+					"min_look_time": 18,
+					"probability": 0.01,
+					"random_look_around_cooldown": 10
+				},
+				"minecraft:despawn": {
+					"despawn_from_distance": {}
+				},
+				"minecraft:variable_max_auto_step": {
+					"base_value": 2.0625,
+					"jump_prevented_value": 0.5625
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 6,
+					"must_see": true,
+					"reselect_targets": true,
+					"target_search_height": 10,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"value": "snow"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "rabbit"
+									}
+								]
+							},
+							"max_dist": 49,
+							"priority": 0
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"value": "snow"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "fox"
+									}
+								]
+							},
+							"max_dist": 49,
+							"priority": 0
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"value": "lush"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "fish"
+									}
+								]
+							},
+							"max_dist": 49,
+							"priority": 0
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"value": "lush"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "spider"
+									}
+								]
+							},
+							"max_dist": 49,
+							"priority": 0
+						},
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "chicken"
+							},
+							"max_dist": 49,
+							"priority": 0
+						}
+					]
+				},
+				"minecraft:on_target_acquired": {
+					"event": "minecraft:become_angry",
+					"target": "self"
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"zombie"
+					],
+					"seats": {
+						"position": [
+							0,
+							1.48,
+							0.23
+						]
+					}
+				}
+			},
+			"minecraft:ocelot_tame": {
+				"minecraft:variable_max_auto_step": {
+					"base_value": 3.0625,
+					"jump_prevented_value": 0.5625
+				},
+				"minecraft:behavior.player_ride_tamed": {},
+				"minecraft:breedable": {
+					"requireTame": false,
+					"breedsWith": {
+						"mateType": "mutant:mutant_ocelot",
+						"babyType": "mutant:mutant_ocelot",
+						"breed_event": {
+							"event": "minecraft:entity_born",
+							"target": "baby"
+						}
+					},
+					"breedItems": [
+						"chicken",
+						"cooked_chicken",
+						"fish",
+						"salmon",
+						"rabbit",
+						"cooked_rabbit"
+					]
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:health": {
+					"value": 140,
+					"max": 140
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 0.75,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:attack": {
+					"damage": 21
+				},
+				"minecraft:attack_damage": {
+					"value": 21
+				},
+				"minecraft:behavior.breed": {
+					"priority": 7
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2
+				},
+				"minecraft:leashable": {
+					"soft_distance": 4,
+					"hard_distance": 6,
+					"max_distance": 10,
+					"on_leash": {
+						"event": "minecraft:on_leash",
+						"target": "self"
+					},
+					"on_unleash": {
+						"event": "minecraft:on_unleash",
+						"target": "self"
+					}
+				}
+			},
+			"rideable": {
+				"minecraft:sittable": {
+					"sit_event": {
+						"event": "sitting",
+						"target": "self"
+					},
+					"stand_event": {
+						"event": "standing",
+						"target": "self"
+					}
+				}
+			},
+			"non_rideable": {
+				"minecraft:sittable": {}
+			},
+			"mocelot_sit": {
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"interact_text": "action.interact.mount",
+					"seats": {
+						"position": [
+							0,
+							1.48,
+							0.23
+						]
+					}
+				}
+			},
+			"mocelot_stand": {
+				"minecraft:can_power_jump": {},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"interact_text": "action.interact.mount",
+					"seats": {
+						"position": [
+							0,
+							1.48,
+							0.23
+						]
+					}
+				},
+				"minecraft:horse.jump_strength": {
+					"value": {
+						"range_min": 1.2,
+						"range_max": 1.4
+					}
+				},
+				"minecraft:input_ground_controlled": {},
+				"minecraft:behavior.controlled_by_player": {
+					"priority": 0
+				}
+			},
+			"minecraft:ocelot_leashed": {
+				"minecraft:behavior.move_towards_restriction": {
+					"priority": 2,
+					"speed_multiplier": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.pickup_items": {
+				"priority": 11,
+				"max_dist": 15,
+				"goal_radius": 2,
+				"speed_multiplier": 1.15
+			},
+			"minecraft:equip_item": {},
+			"minecraft:behavior.eat_carried_item": {
+				"priority": 12,
+				"delay_before_eating": 3
+			},
+			"minecraft:behavior.equip_item": {
+				"priority": 2
+			},
+			"minecraft:attack": {
+				"damage": 11
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 0.75
+			},
+			"minecraft:nameable": {},
+			"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"acacia_leaves",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"birch_leaves",
+					"cherry_leaves",
+					"dark_oak_leaves",
+					"jungle_leaves",
+					"mangrove_leaves",
+					"oak_leaves",
+					"spruce_leaves",
+					"bamboo",
+					"bamboo_sapling",
+					"beetroot",
+					"carrots",
+					"carved_pumpkin",
+					"chorus_flower",
+					"chorus_plant",
+					"deadbush",
+					"double_plant",
+					"leaves",
+					"leaves2",
+					"lit_pumpkin",
+					"melon_block",
+					"melon_stem",
+					"potatoes",
+					"pumpkin",
+					"sweet_berry_bush",
+					"turtle_egg",
+					"vine",
+					"waterlily",
+					"azalea",
+					"flowering_azalea",
+					"cave_vines",
+					"cave_vines_body_with_berries",
+					"cave_vines_head_with_berries",
+					"small_dripleaf_block",
+					"big_dripleaf",
+					"spore_blossom",
+					"hanging_roots",
+					"mangrove_leaves"
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "mcreeperblowup"
+								}
+							]
+						},
+						"max_dist": 36,
+						"must_see": false,
+						"walk_speed_multiplier": 1.75,
+						"sprint_speed_multiplier": 1.75
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": -1
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?34:26"
+			},
+			"minecraft:collision_box": {
+				"width": 1.15,
+				"height": 1.4
+			},
+			"minecraft:health": {
+				"value": 90,
+				"max": 90
+			},
+			"minecraft:movement": {
+				"value": 0.4
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "fall",
+					"deals_damage": false
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.9
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"avoid_water": false,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.08
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:follow_range": {
+				"value": 49,
+				"max": 49
+			},
+			"minecraft:shareables": {
+				"all_items": false,
+				"all_items_max_amount": 1,
+				"items": [
+					{
+						"item": "minecraft:apple",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:appleEnchanted",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:baked_potato",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:beef",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:beetroot",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:beetroot_soup",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:bread",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:carrot",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:chicken",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:chorus_fruit",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:clownfish",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_beef",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_chicken",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_fish",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_porkchop",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_rabbit",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cooked_salmon",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:cookie",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:dried_kelp",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:fish",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:golden_apple",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:golden_carrot",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:melon",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:mushroom_stew",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:muttonCooked",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:muttonRaw",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:poisonous_potato",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:porkchop",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:potato",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:pufferfish",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:pumpkin_pie",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:rabbit",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:rabbit_stew",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:rotten_flesh",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:salmon",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:spider_eye",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:sweet_berries",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "minecraft:suspicious_stew",
+						"priority": 0,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_iron_axe",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_gold_axe",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_diamond_axe",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_netherite_axe",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_stone_sword",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_iron_sword",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_gold_sword",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_diamond_sword",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_netherite_sword",
+						"priority": 1,
+						"max_amount": 1
+					},
+					{
+						"item": "mutant:mutated_trident",
+						"priority": 1,
+						"max_amount": 1
+					}
+				]
+			},
+			"minecraft:healable": {
+				"items": [
+					{
+						"item": "fish",
+						"heal_amount": 6
+					},
+					{
+						"item": "salmon",
+						"heal_amount": 7
+					},
+					{
+						"item": "clownfish",
+						"heal_amount": 3
+					},
+					{
+						"item": "pufferfish",
+						"heal_amount": 1
+					},
+					{
+						"item": "cooked_fish",
+						"heal_amount": 5
+					},
+					{
+						"item": "cooked_salmon",
+						"heal_amount": 6
+					},
+					{
+						"item": "chicken",
+						"heal_amount": 2
+					},
+					{
+						"item": "cooked_chicken",
+						"heal_amount": 6
+					},
+					{
+						"item": "rabbit",
+						"heal_amount": 5
+					},
+					{
+						"item": "cooked_rabbit",
+						"heal_amount": 8
+					},
+					{
+						"item": "rabbit_stew",
+						"heal_amount": 15
+					}
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 1,
+				"speed_multiplier": 1,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:behavior.stay_while_sitting": {
+				"priority": 3
+			},
+			"minecraft:behavior.leap_at_target": {
+				"priority": 4,
+				"target_dist": 0.4
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"target_distance": 6,
+				"probability": 0.05
+			},
+			"minecraft:behavior.beg": {
+				"priority": 9,
+				"look_distance": 8,
+				"look_time": [
+					2,
+					4
+				],
+				"items": [
+					"chicken",
+					"cooked_chicken",
+					"fish",
+					"salmon",
+					"rabbit",
+					"cooked_rabbit"
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 3
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"lush": {
+				"remove": {
+					"component_groups": [
+						"easter"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"lush"
+					]
+				}
+			},
+			"snowy": {
+				"remove": {
+					"component_groups": [
+						"easter"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"snowy"
+					]
+				}
+			},
+			"jungle": {
+				"remove": {
+					"component_groups": [
+						"easter"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"jungle"
+					]
+				}
+			},
+			"lush_easter": {
+				"add": {
+					"component_groups": [
+						"easter"
+					]
+				}
+			},
+			"snowy_easter": {
+				"add": {
+					"component_groups": [
+						"easter"
+					]
+				}
+			},
+			"jungle_easter": {
+				"add": {
+					"component_groups": [
+						"easter"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"value": "minecraft:is_baby"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_baby",
+								"jungle",
+								"minecraft:ocelot_wild",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"operator": "!=",
+							"value": "minecraft:is_baby"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_adult",
+								"jungle",
+								"minecraft:ocelot_wild",
+								"tameable",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_biome_tag",
+							"value": "lush_caves"
+						},
+						"remove": {
+							"component_groups": [
+								"jungle"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"lush"
+							]
+						}
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "snowy_slopes"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "jagged_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"jungle"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"snowy"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 9,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_adult",
+								"jungle",
+								"minecraft:ocelot_wild",
+								"tameable",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"weight": 2,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_baby",
+								"jungle",
+								"minecraft:ocelot_wild",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"weight": 30,
+						"filters": {
+							"test": "has_biome_tag",
+							"value": "lush_caves"
+						},
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_adult",
+								"lush",
+								"minecraft:ocelot_wild",
+								"tameable",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"weight": 3,
+						"filters": {
+							"test": "has_biome_tag",
+							"value": "lush_caves"
+						},
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_baby",
+								"lush",
+								"minecraft:ocelot_wild",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"weight": 30,
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "snowy_slopes"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "jagged_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen"
+								}
+							]
+						},
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_adult",
+								"snowy",
+								"minecraft:ocelot_wild",
+								"tameable",
+								"minecraft:hostile"
+							]
+						}
+					},
+					{
+						"weight": 3,
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "snowy_slopes"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "jagged_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen_peaks"
+								},
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "frozen"
+								}
+							]
+						},
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:ocelot_baby",
+								"snowy",
+								"minecraft:ocelot_wild",
+								"minecraft:hostile"
+							]
+						}
+					}
+				]
+			},
+			"sitting": {
+				"remove": {
+					"component_groups": [
+						"mocelot_stand"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mocelot_sit"
+					]
+				}
+			},
+			"standing": {
+				"remove": {
+					"component_groups": [
+						"mocelot_sit"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mocelot_stand"
+					]
+				}
+			},
+			"minecraft:entity_born": {
+				"remove": {},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_baby_tamed",
+						"minecraft:ocelot_tame",
+						"minecraft:hostile",
+						"non_rideable"
+					]
+				}
+			},
+			"minecraft:ageable_grow_up": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_baby"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_adult",
+						"tameable"
+					]
+				}
+			},
+			"minecraft:ageable_grow_up_tamed": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_baby_tamed",
+						"non_rideable"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_adult",
+						"mocelot_stand",
+						"rideable"
+					]
+				}
+			},
+			"minecraft:on_tame": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_wild",
+						"tameable"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_tame",
+						"rideable",
+						"mocelot_sitting"
+					]
+				}
+			},
+			"minecraft:become_angry": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_wild"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_angry"
+					]
+				}
+			},
+			"minecraft:on_calm": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_angry"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_wild"
+					]
+				}
+			},
+			"minecraft:on_leash": {
+				"add": {
+					"component_groups": [
+						"minecraft:ocelot_leashed"
+					]
+				}
+			},
+			"minecraft:on_unleash": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ocelot_leashed"
+					]
+				}
+			},
+			"minecraft:become_stunned": {
+				"add": {
+					"component_groups": [
+						"stunned"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:hostile"
+					]
+				}
+			}
+		}
+	}
+}

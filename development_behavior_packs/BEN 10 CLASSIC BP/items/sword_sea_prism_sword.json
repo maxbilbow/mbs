@@ -1,0 +1,39 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sword:sea_prism_sword",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sword:sea_prism_sword"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transformable_items",
+					"minecraft:is_sword",
+					"minecraft:digger",
+					"minecraft:diamond_tier"
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 30
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 3200
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:damage": 9,
+			"minecraft:use_animation": "bow",
+			"minecraft:display_name": {
+				"value": "Sea Prism Sword"
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:juvenile_void_wyrm",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/juvenile_abyssal_wyrm"
+			},
+			"geometry": {
+				"default": "geometry.juvenile_abyssal_wyrm"
+			},
+			"animations": {
+				"base": "animation.juvenile_abyssal_wyrm.base",
+				"swim": "animation.juvenile_abyssal_wyrm.swim",
+				"face_player": "controller.animation.juvenile_abyssal_wyrm.move",
+				"look_at_target": "animation.common.look_at_target_wyrm"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player",
+					"look_at_target"
+				]
+			},
+			"render_controllers": [
+				"controller.render.cod"
+			],
+			"spawn_egg": {
+				"base_color": "#0A1132",
+				"overlay_color": "#0F0177"
+			}
+		}
+	}
+}

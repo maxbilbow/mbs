@@ -1,0 +1,51 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "chestplate:lumenyl_chestplate",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.chestplate"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "lumenyl_chestplate"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_torso"
+			},
+			"minecraft:durability": {
+				"max_durability": 4000,
+				"damage_chance": {
+					"min": 80,
+					"max": 100
+				}
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.chest",
+				"protection": 10
+			},
+			"minecraft:display_name": {
+				"value": "Lumenyl Chestplate\n\n\n§9Grants immunity to Entity Explosions"
+			},
+			"minecraft:damage_absorption": {
+				"absorbable_causes": [
+					"entity_explosion"
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "reidite_chestplate_6e1a3cb5"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:reidite",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "chestplate:reidite_chestplate",
+			"count": 1
+		}
+	}
+}

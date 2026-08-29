@@ -1,0 +1,236 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:smash_attack",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"zombie_damage": "controller.animation.mutant.zombie_damage",
+				"husk_damage": "controller.animation.mutant.husk_damage",
+				"bouldering_zombie_damage": "controller.animation.mutant.bouldering_zombie_damage",
+				"lobber_zombie_damage": "controller.animation.mutant.lobber_zombie_damage",
+				"drowned_damage": "controller.animation.mutant.drowned_damage",
+				"zombie_villager_damage": "controller.animation.mutant.zombie_villager_damage",
+				"villager_damage": "controller.animation.mutant.villager_damage",
+				"vindicator_damage": "controller.animation.mutant.vindicator_damage",
+				"piglin_brute_damage": "controller.animation.mutant.piglin_brute_damage"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"zombie_damage": "query.skin_id==0"
+					},
+					{
+						"husk_damage": "query.skin_id==1"
+					},
+					{
+						"bouldering_zombie_damage": "query.skin_id==2"
+					},
+					{
+						"lobber_zombie_damage": "query.skin_id==3"
+					},
+					{
+						"drowned_damage": "query.skin_id==4"
+					},
+					{
+						"zombie_villager_damage": "query.skin_id==5"
+					},
+					{
+						"villager_damage": "query.skin_id==6"
+					},
+					{
+						"vindicator_damage": "query.skin_id==7"
+					},
+					{
+						"piglin_brute_damage": "query.skin_id==8"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"zombie_damage": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"husk_damage": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"bouldering_zombie_damage": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"lobber_zombie_damage": {
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"drowned_damage": {
+				"minecraft:skin_id": {
+					"value": 4
+				}
+			},
+			"zombie_villager_damage": {
+				"minecraft:skin_id": {
+					"value": 5
+				}
+			},
+			"villager_damage": {
+				"minecraft:skin_id": {
+					"value": 6
+				}
+			},
+			"vindicator_damage": {
+				"minecraft:skin_id": {
+					"value": 7
+				}
+			},
+			"piglin_brute_damage": {
+				"minecraft:skin_id": {
+					"value": 8
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:spell_effects": {
+				"add_effects": [
+					{
+						"effect": "invisibility",
+						"amplifier": 1,
+						"visible": false,
+						"ambient": false,
+						"duration": 999999
+					}
+				]
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 9,
+				"look_distance": 6,
+				"probability": 0.02,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mutantmonster"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": [
+					0.3,
+					0.3
+				],
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			}
+		},
+		"events": {
+			"zombie_damage": {
+				"add": {
+					"component_groups": [
+						"zombie_damage"
+					]
+				}
+			},
+			"husk_damage": {
+				"add": {
+					"component_groups": [
+						"husk_damage"
+					]
+				}
+			},
+			"bouldering_zombie_damage": {
+				"add": {
+					"component_groups": [
+						"bouldering_zombie_damage"
+					]
+				}
+			},
+			"lobber_zombie_damage": {
+				"add": {
+					"component_groups": [
+						"lobber_zombie_damage"
+					]
+				}
+			},
+			"drowned_damage": {
+				"add": {
+					"component_groups": [
+						"drowned_damage"
+					]
+				}
+			},
+			"zombie_villager_damage": {
+				"add": {
+					"component_groups": [
+						"zombie_villager_damage"
+					]
+				}
+			},
+			"villager_damage": {
+				"add": {
+					"component_groups": [
+						"villager_damage"
+					]
+				}
+			},
+			"vindicator_damage": {
+				"add": {
+					"component_groups": [
+						"vindicator_damage"
+					]
+				}
+			},
+			"piglin_brute_damage": {
+				"add": {
+					"component_groups": [
+						"piglin_brute_damage"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

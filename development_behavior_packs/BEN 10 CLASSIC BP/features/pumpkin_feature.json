@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pumpkin_feature"
+		},
+		"features": [
+			[
+				"gen:small_pumpkin_feature",
+				50
+			],
+			[
+				"gen:big_pumpkin_feature",
+				50
+			]
+		]
+	}
+}

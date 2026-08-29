@@ -36,6 +36,8 @@
 					"omni_off",
 					"player_transform",
 					"player_alien",
+					"swampfire",
+					"echoecho",
 					"master_transform",
 					"alien_quick_swap",
 					"omnitrix_failsafe",
@@ -45,6 +47,7 @@
 					"heatblast_loop",
 					"hb_flamethrower",
 					"spacebar_flight",
+					"cannonbolt_smash",
 					"wildmutt",
 					"diamondhead",
 					"xlr8",
@@ -54,6 +57,8 @@
 					"stinkfly",
 					"ripjaws",
 					"upgrade",
+					"upgrading",
+					"downgrading",
 					"ghostfreak",
 					"gf_intangibility",
 					"gf_possession",
@@ -107,6 +112,30 @@
 					"upchuck",
 					"up_tongue",
 					"up_eat",
+					"ug_laser",
+					"ug_bomb",
+					"ug_sonar",
+					"ug_jump",
+					"feedback",
+					"shoot_feed_electro",
+					"shoot_feed_absorb",
+					"shoot_feed_zap",
+					"shoot_feed_sphere",
+					"spells",
+					"swampfire",
+					"echoecho",
+					"ee_scream",
+					"spell_blast",
+					"spell_ch",
+					{
+						"spell_shield": "query.get_equipped_item_name('off_hand')=='spell_book'"
+					},
+					{
+						"spell_fly": "query.get_equipped_item_name('off_hand')=='spell_book'"
+					},
+					{
+						"spell_levi": "query.get_equipped_item_name('off_hand')=='spell_book'"
+					},
 					{
 						"random.anim": "query.variant==0"
 					},
@@ -115,10 +144,19 @@
 					},
 					{
 						"upgrade": "query.variant==10&&query.skin_id==0"
-					}
+					},
+					"fboost",
+					"boost",
+					"srts",
+					"flend",
+					"fldeath",
+					"gf_possession2"
 				]
 			},
 			"animations": {
+				"swampfire": "controller.animation.swampfire",
+				"echoecho": "controller.animation.echoecho",
+				"ee_scream": "controller.animation.ee_scream",
 				"wildvine": "controller.animation.wildvine",
 				"shoot_wv_seeds": "controller.animation.wv_seeds",
 				"shoot_wv_plant": "controller.animation.wv_plant",
@@ -163,6 +201,7 @@
 				"heatblast_loop": "controller.animation.heatblast_loop",
 				"hb_flamethrower": "controller.animation.hb_flamethrower",
 				"spacebar_flight": "controller.animation.spacebar_flight",
+				"cannonbolt_smash": "controller.animation.cannonbolt_smash",
 				"wildmutt": "controller.animation.wildmutt",
 				"diamondhead": "controller.animation.diamondhead",
 				"xlr8": "controller.animation.xlr8",
@@ -218,16 +257,95 @@
 				"upchuck": "controller.animation.upchuck",
 				"up_tongue": "controller.animation.up_tongue",
 				"up_eat": "controller.animation.up_eat",
-				"upgrade": "controller.animation.upgrade"
+				"upgrade": "controller.animation.upgrade",
+				"upgrading": "controller.animation.upgrading",
+				"downgrading": "controller.animation.downgrading",
+				"feedback": "controller.animation.feedback",
+				"ug_laser": "controller.animation.ug_laser",
+				"ug_bomb": "controller.animation.ug_bomb",
+				"ug_sonar": "controller.animation.ug_sonar",
+				"ug_jump": "controller.animation.ug_jump",
+				"shoot_feed_electro": "controller.animation.shoot_feed_electro",
+				"shoot_feed_absorb": "controller.animation.shoot_feed_absorb",
+				"shoot_feed_zap": "controller.animation.shoot_feed_zap",
+				"shoot_feed_sphere": "controller.animation.shoot_feed_sphere",
+				"spells": "controller.animation.spells",
+				"spell_ch": "controller.animation.spell_ch",
+				"spell_blast": "controller.animation.spell_blast",
+				"spell_fly": "controller.animation.spell_fly",
+				"spell_levi": "controller.animation.spell_levi",
+				"spell_shield": "controller.animation.spell_shield",
+				"fboost": "controller.animation.fboost",
+				"boost": "controller.animation.boost",
+				"srts": "controller.animation.srts",
+				"flend": "controller.animation.flend",
+				"fldeath": "controller.animation.fldeath",
+				"gf_possession2": "controller.animation.gf_possession2"
 			}
 		},
 		"component_groups": {
+			"omni2_active": {
+				"minecraft:skin_id": {
+					"value": 3
+				},
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"omni2_active"
+					]
+				}
+			},
+			"omni_recalibrating_state": {
+				"minecraft:skin_id": {
+					"value": 4
+				}
+			},
+			"omni_recalibrating_state2": {
+				"minecraft:skin_id": {
+					"value": 7
+				}
+			},
+			"omni_recalibrating_state3": {
+				"minecraft:skin_id": {
+					"value": 8
+				}
+			},
 			"reset": {
 				"minecraft:timer": {},
 				"minecraft:type_family": {
 					"family": [
 						"player",
 						"no_omnitrix"
+					]
+				},
+				"minecraft:rideable": {
+					"seat_count": 2,
+					"family_types": [
+						"parrot_tame"
+					],
+					"pull_in_entities": true,
+					"seats": [
+						{
+							"position": [
+								0.4,
+								-0.2,
+								-0.1
+							],
+							"min_rider_count": 0,
+							"max_rider_count": 0,
+							"lock_rider_rotation": 0
+						},
+						{
+							"position": [
+								-0.4,
+								-0.2,
+								-0.1
+							],
+							"min_rider_count": 1,
+							"max_rider_count": 2,
+							"lock_rider_rotation": 0
+						}
 					]
 				},
 				"minecraft:damage_sensor": {
@@ -350,6 +468,24 @@
 					"max_wait_time": 0,
 					"single_use": true,
 					"spawn_entity": "power:clock_beam",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:feed_zap": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "zk:lightninghitbullett",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:feed_sphere": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "zk:greatvoltstrikebullet",
 					"num_to_spawn": 1
 				}
 			},
@@ -497,6 +633,84 @@
 					"num_to_spawn": 1
 				}
 			},
+			"shoot:ug_laser": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "power:ug_laser",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:ug_laser2": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "power:ug_laser2",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:ug_bomb": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "power:ug_bomb_projectile",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:ug_sonar": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "power:ug_sonar",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:ug_jump": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "power:ug_jump",
+					"num_to_spawn": 1
+				}
+			},
+			"shoot:spell_blast": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": false,
+					"spawn_entity": "power:spell_blast",
+					"num_to_spawn": 1
+				},
+				"minecraft:timer": {
+					"time": 0.05,
+					"looping": false,
+					"time_down_event": {
+						"event": "remove:spell_blast",
+						"target": "self"
+					}
+				}
+			},
+			"spell_shield": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				}
+			},
+			"spell_shield_remove": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				}
+			},
 			"player_transform": {
 				"minecraft:skin_id": {
 					"value": 6
@@ -533,6 +747,37 @@
 				},
 				"minecraft:skin_id": {
 					"value": 2
+				},
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:health": {
+					"value": 20,
+					"max": 20
+				},
+				"minecraft:attack": {
+					"damage": 1
+				}
+			},
+			"omni2_off": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"omni2_off"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:skin_id": {
+					"value": 200
 				},
 				"minecraft:scale": {
 					"value": 1
@@ -609,6 +854,85 @@
 				},
 				"minecraft:skin_id": {
 					"value": 101
+				}
+			},
+			"omni2_swampfire": {
+				"minecraft:skin_id": {
+					"value": 125
+				},
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"omni2_active",
+						"omni2_swampfire"
+					]
+				}
+			},
+			"swampfire": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"swampfire",
+						"vines_attacker"
+					]
+				},
+				"minecraft:variant": {
+					"value": 25
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 1.2
+				},
+				"minecraft:health": {
+					"value": 40,
+					"max": 40
+				},
+				"minecraft:attack": {
+					"damage": 6
+				}
+			},
+			"omni2_echoecho": {
+				"minecraft:skin_id": {
+					"value": 126
+				},
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"omni2_active",
+						"omni2_echoecho"
+					]
+				}
+			},
+			"echoecho": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"echoecho"
+					]
+				},
+				"minecraft:variant": {
+					"value": 27
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 0.95
+				},
+				"minecraft:health": {
+					"value": 40,
+					"max": 40
+				},
+				"minecraft:attack": {
+					"damage": 1
 				}
 			},
 			"heatblast": {
@@ -690,6 +1014,22 @@
 						"cause": "all",
 						"deals_damage": true
 					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"player"
+					],
+					"pull_in_entities": false,
+					"seats": [
+						{
+							"position": [
+								0,
+								0.1,
+								-0.2
+							]
+						}
+					]
 				},
 				"minecraft:variant": {
 					"value": 2
@@ -786,6 +1126,22 @@
 						"cause": "all",
 						"deals_damage": true
 					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"player"
+					],
+					"pull_in_entities": false,
+					"seats": [
+						{
+							"position": [
+								0,
+								1,
+								-0.4
+							]
+						}
+					]
 				},
 				"minecraft:variant": {
 					"value": 4
@@ -905,6 +1261,10 @@
 				"minecraft:scale": {
 					"value": 0.4
 				},
+				"minecraft:collision_box": {
+					"width": 0.3,
+					"height": 0.72
+				},
 				"minecraft:health": {
 					"value": 20,
 					"max": 20
@@ -933,6 +1293,29 @@
 						"omnitrix",
 						"alien",
 						"fourarms"
+					]
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"zombie",
+						"villager",
+						"skeleton",
+						"chicken",
+						"mob"
+					],
+					"pull_in_entities": false,
+					"seats": [
+						{
+							"position": [
+								0,
+								1.29,
+								0.15
+							],
+							"min_rider_count": 1,
+							"max_rider_count": 1,
+							"lock_rider_rotation": 0
+						}
 					]
 				},
 				"minecraft:damage_sensor": {
@@ -985,6 +1368,22 @@
 						"cause": "fall",
 						"deals_damage": false
 					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"player"
+					],
+					"pull_in_entities": false,
+					"seats": [
+						{
+							"position": [
+								0,
+								-0.8,
+								0.4
+							]
+						}
+					]
 				},
 				"minecraft:variant": {
 					"value": 8
@@ -1391,10 +1790,22 @@
 						{
 							"cause": "fall",
 							"deals_damage": false
-						},
+						}
+					]
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"player"
+					],
+					"pull_in_entities": false,
+					"seats": [
 						{
-							"cause": "all",
-							"deals_damage": false
+							"position": [
+								0,
+								12,
+								0
+							]
 						}
 					]
 				},
@@ -1741,6 +2152,51 @@
 					"damage": 5
 				}
 			},
+			"omni_feedback": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"omni_inuse",
+						"omni_feedback"
+					]
+				},
+				"minecraft:skin_id": {
+					"value": 122
+				}
+			},
+			"feedback": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"feedback"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:variant": {
+					"value": 24
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:scale": {
+					"value": 1.1
+				},
+				"minecraft:health": {
+					"value": 60,
+					"max": 60
+				},
+				"minecraft:attack": {
+					"damage": 6
+				}
+			},
 			"omni_eyeguy": {
 				"minecraft:type_family": {
 					"family": [
@@ -1784,6 +2240,344 @@
 				},
 				"minecraft:attack": {
 					"damage": 5
+				}
+			},
+			"spell_flight_mode": {
+				"minecraft:physics": {
+					"has_gravity": false,
+					"has_collision": true
+				},
+				"minecraft:can_fly": true
+			},
+			"default_physics": {
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": true
+				}
+			},
+			"ug_irongolem_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"irongolem"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				},
+				"minecraft:skin_id": {
+					"value": 200
+				},
+				"minecraft:scale": {
+					"value": 1.3
+				},
+				"minecraft:health": {
+					"value": 100,
+					"max": 100
+				},
+				"minecraft:attack": {
+					"damage": 17
+				}
+			},
+			"ug_boat_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"boat"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.04
+				},
+				"minecraft:skin_id": {
+					"value": 201
+				},
+				"minecraft:scale": {
+					"value": 1.6
+				},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:attack": {
+					"damage": 8
+				}
+			},
+			"ug_furnace_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"furnace"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				},
+				"minecraft:skin_id": {
+					"value": 202
+				},
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:attack": {
+					"damage": 5
+				}
+			},
+			"ug_minecart_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"minecart"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				},
+				"minecraft:skin_id": {
+					"value": 203
+				},
+				"minecraft:scale": {
+					"value": 1.4
+				},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:attack": {
+					"damage": 6
+				}
+			},
+			"ug_noteblock_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"noteblock"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				},
+				"minecraft:skin_id": {
+					"value": 204
+				},
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:attack": {
+					"damage": 5
+				}
+			},
+			"ug_piston_cg": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"omnitrix",
+						"alien",
+						"upgrade",
+						"piston"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": true
+					}
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"family_types": [
+						"none"
+					],
+					"pull_in_entities": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				},
+				"minecraft:skin_id": {
+					"value": 205
+				},
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:health": {
+					"value": 80,
+					"max": 80
+				},
+				"minecraft:attack": {
+					"damage": 5
+				}
+			},
+			"auto_skin_on": {
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"auto_skin_off": {
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"omni:alien_ee_scream": {
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"single_use": true,
+					"spawn_entity": "omni:alien_ee_scream",
+					"num_to_spawn": 1
+				}
+			},
+			"morph_pig": {
+				"minecraft:variant": {
+					"value": 800
+				},
+				"minecraft:collision_box": {
+					"width": 0.9,
+					"height": 0.9
+				},
+				"minecraft:type_family": {
+					"family": [
+						"pig",
+						"mob",
+						"morphed"
+					]
+				}
+			},
+			"morph_cow": {
+				"minecraft:variant": {
+					"value": 801
+				}
+			},
+			"morph_sheep": {
+				"minecraft:variant": {
+					"value": 802
+				}
+			},
+			"morph_chicken": {
+				"minecraft:variant": {
+					"value": 803
+				}
+			},
+			"morph_zombie": {
+				"minecraft:variant": {
+					"value": 804
+				}
+			},
+			"morph_skeleton": {
+				"minecraft:variant": {
+					"value": 805
+				}
+			},
+			"morph_creeper": {
+				"minecraft:variant": {
+					"value": 806
+				}
+			},
+			"morph_enderman": {
+				"minecraft:variant": {
+					"value": 807
+				}
+			},
+			"morph_spider": {
+				"minecraft:variant": {
+					"value": 808
+				}
+			},
+			"morph_wolf": {
+				"minecraft:variant": {
+					"value": 809
+				}
+			},
+			"morph_piglin": {
+				"minecraft:variant": {
+					"value": 810
 				}
 			}
 		},
@@ -1855,10 +2649,6 @@
 			"minecraft:loot": {
 				"table": "loot_tables/empty.json"
 			},
-			"minecraft:collision_box": {
-				"width": 0.6,
-				"height": 1.8
-			},
 			"minecraft:can_climb": {},
 			"minecraft:movement": {
 				"value": 0.1
@@ -1900,11 +2690,49 @@
 				"days_until_insomnia": 3
 			},
 			"minecraft:rideable": {
-				"seat_count": 2,
+				"seat_count": 3,
 				"family_types": [
-					"parrot_tame"
+					"parrot_tame",
+					"pig",
+					"cow",
+					"sheep",
+					"chicken",
+					"zombie",
+					"skeleton",
+					"creeper",
+					"spider",
+					"enderman",
+					"villager",
+					"illager",
+					"witch",
+					"iron_golem",
+					"snow_golem",
+					"wolf",
+					"cat",
+					"horse",
+					"donkey",
+					"mule",
+					"llama",
+					"panda",
+					"fox",
+					"bee",
+					"strider",
+					"hoglin",
+					"piglin",
+					"zoglin",
+					"goat",
+					"axolotl",
+					"frog",
+					"warden",
+					"allay",
+					"camel",
+					"sniffer",
+					"mob",
+					"animal",
+					"monster",
+					"player"
 				],
-				"pull_in_entities": true,
+				"pull_in_entities": false,
 				"seats": [
 					{
 						"position": [
@@ -1925,13 +2753,89 @@
 						"min_rider_count": 1,
 						"max_rider_count": 2,
 						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							0,
+							2.7,
+							0
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 3,
+						"lock_rider_rotation": 0
 					}
 				]
 			},
 			"minecraft:scaffolding_climber": {}
 		},
 		"events": {
+			"enable_omni2": {
+				"add": {
+					"component_groups": [
+						"omni2_active"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"omni_recalibrating_state3",
+						"omni2_swampfire",
+						"omni2_echoecho",
+						"omni2_off"
+					]
+				}
+			},
+			"start_recalibration": {
+				"add": {
+					"component_groups": [
+						"omni_recalibrating_state"
+					]
+				}
+			},
+			"recal_stage2_event": {
+				"remove": {
+					"component_groups": [
+						"omni_recalibrating_state"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni_recalibrating_state2"
+					]
+				}
+			},
+			"recal_stage3_event": {
+				"remove": {
+					"component_groups": [
+						"omni_recalibrating_state2"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni_recalibrating_state3"
+					]
+				}
+			},
+			"disable_omni2": {
+				"remove": {
+					"component_groups": [
+						"omni2_active",
+						"swampfire",
+						"omni2_echoecho",
+						"echoecho"
+					]
+				}
+			},
 			"reset": {
+				"remove": {
+					"component_groups": [
+						"swampfire",
+						"echoecho",
+						"omni2_swampfire",
+						"omni2_echoecho",
+						"xlr8",
+						"xlr8_sprint"
+					]
+				},
 				"add": {
 					"component_groups": [
 						"reset"
@@ -2101,6 +3005,94 @@
 					]
 				}
 			},
+			"shoot:ug_laser": {
+				"add": {
+					"component_groups": [
+						"shoot:ug_laser"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:ug_laser"
+					]
+				}
+			},
+			"shoot:ug_laser2": {
+				"add": {
+					"component_groups": [
+						"shoot:ug_laser2"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:ug_laser2"
+					]
+				}
+			},
+			"shoot:ug_bomb": {
+				"add": {
+					"component_groups": [
+						"shoot:ug_bomb"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:ug_bomb"
+					]
+				}
+			},
+			"shoot:ug_sonar": {
+				"add": {
+					"component_groups": [
+						"shoot:ug_sonar"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:ug_sonar"
+					]
+				}
+			},
+			"shoot:ug_jump": {
+				"add": {
+					"component_groups": [
+						"shoot:ug_jump"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:ug_jump"
+					]
+				}
+			},
+			"shoot:spell_blast": {
+				"add": {
+					"component_groups": [
+						"shoot:spell_blast"
+					]
+				}
+			},
+			"remove:spell_blast": {
+				"remove": {
+					"component_groups": [
+						"shoot:spell_blast"
+					]
+				}
+			},
+			"spell_shield": {
+				"add": {
+					"component_groups": [
+						"spell_shield"
+					]
+				}
+			},
+			"spell_shield_remove": {
+				"add": {
+					"component_groups": [
+						"spell_shield_remove"
+					]
+				}
+			},
 			"upchuck_eat": {
 				"add": {
 					"component_groups": [
@@ -2227,6 +3219,30 @@
 					]
 				}
 			},
+			"shoot:feed_zap": {
+				"add": {
+					"component_groups": [
+						"shoot:feed_zap"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:feed_zap"
+					]
+				}
+			},
+			"shoot:feed_sphere": {
+				"add": {
+					"component_groups": [
+						"shoot:feed_sphere"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"shoot:feed_sphere"
+					]
+				}
+			},
 			"player_transform": {
 				"add": {
 					"component_groups": [
@@ -2235,9 +3251,79 @@
 				}
 			},
 			"omnitrix": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"value": "has_omni2"
+						},
+						"add": {
+							"component_groups": [
+								"omni2_active"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_tag",
+							"value": "has_omni2",
+							"operator": "!="
+						},
+						"add": {
+							"component_groups": [
+								"omnitrix"
+							]
+						}
+					}
+				]
+			},
+			"omni2_swampfire": {
+				"remove": {
+					"component_groups": [
+						"omni2_echoecho"
+					]
+				},
 				"add": {
 					"component_groups": [
-						"omnitrix"
+						"omni2_swampfire"
+					]
+				}
+			},
+			"swampfire": {
+				"remove": {
+					"component_groups": [
+						"omni2_swampfire",
+						"omni2_echoecho"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"swampfire"
+					]
+				}
+			},
+			"omni2_echoecho": {
+				"remove": {
+					"component_groups": [
+						"omni2_swampfire"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni2_echoecho"
+					]
+				}
+			},
+			"echoecho": {
+				"remove": {
+					"component_groups": [
+						"omni2_swampfire",
+						"omni2_echoecho"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"echoecho"
 					]
 				}
 			},
@@ -2249,9 +3335,33 @@
 				}
 			},
 			"omnitrix_off": {
+				"remove": {
+					"component_groups": [
+						"swampfire",
+						"echoecho",
+						"omni2_swampfire",
+						"omni2_echoecho"
+					]
+				},
 				"add": {
 					"component_groups": [
 						"omnitrix_off"
+					]
+				}
+			},
+			"omni2_off": {
+				"remove": {
+					"component_groups": [
+						"swampfire",
+						"echoecho",
+						"omni2_swampfire",
+						"omni2_echoecho",
+						"omni2_active"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"omni2_off"
 					]
 				}
 			},
@@ -2319,6 +3429,11 @@
 				}
 			},
 			"xlr8": {
+				"remove": {
+					"component_groups": [
+						"xlr8_sprint"
+					]
+				},
 				"add": {
 					"component_groups": [
 						"xlr8"
@@ -2326,6 +3441,11 @@
 				}
 			},
 			"xlr8_sprint": {
+				"remove": {
+					"component_groups": [
+						"xlr8"
+					]
+				},
 				"add": {
 					"component_groups": [
 						"xlr8_sprint"
@@ -2577,6 +3697,20 @@
 					]
 				}
 			},
+			"omni_feedback": {
+				"add": {
+					"component_groups": [
+						"omni_feedback"
+					]
+				}
+			},
+			"feedback": {
+				"add": {
+					"component_groups": [
+						"feedback"
+					]
+				}
+			},
 			"omni_eyeguy": {
 				"add": {
 					"component_groups": [
@@ -2588,6 +3722,379 @@
 				"add": {
 					"component_groups": [
 						"eyeguy"
+					]
+				}
+			},
+			"add_spell_flight": {
+				"remove": {
+					"component_groups": [
+						"default_physics"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"spell_flight_mode"
+					]
+				}
+			},
+			"remove_spell_flight": {
+				"remove": {
+					"component_groups": [
+						"spell_flight_mode"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"default_physics"
+					]
+				}
+			},
+			"ug_irongolem": {
+				"add": {
+					"component_groups": [
+						"ug_irongolem_cg"
+					]
+				}
+			},
+			"ug_boat": {
+				"add": {
+					"component_groups": [
+						"ug_boat_cg"
+					]
+				}
+			},
+			"ug_furnace": {
+				"add": {
+					"component_groups": [
+						"ug_furnace_cg"
+					]
+				}
+			},
+			"ug_minecart": {
+				"add": {
+					"component_groups": [
+						"ug_minecart_cg"
+					]
+				}
+			},
+			"ug_noteblock": {
+				"add": {
+					"component_groups": [
+						"ug_noteblock_cg"
+					]
+				}
+			},
+			"ug_piston": {
+				"add": {
+					"component_groups": [
+						"ug_piston_cg"
+					]
+				}
+			},
+			"upgrade_to_normal": {
+				"remove": {
+					"component_groups": [
+						"ug_irongolem_cg",
+						"ug_boat_cg",
+						"ug_furnace_cg",
+						"ug_minecart_cg",
+						"ug_noteblock_cg",
+						"ug_piston_cg"
+					]
+				}
+			},
+			"event_auto_skin_on": {
+				"add": {
+					"component_groups": [
+						"auto_skin_on"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"auto_skin_off"
+					]
+				}
+			},
+			"event_auto_skin_off": {
+				"add": {
+					"component_groups": [
+						"auto_skin_off"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"auto_skin_on"
+					]
+				}
+			},
+			"omni:alien_ee_scream": {
+				"add": {
+					"component_groups": [
+						"omni:alien_ee_scream"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"omni:alien_ee_scream"
+					]
+				}
+			},
+			"event_morph_pig": {
+				"add": {
+					"component_groups": [
+						"morph_pig"
+					]
+				}
+			},
+			"event_unmorph_pig": {
+				"remove": {
+					"component_groups": [
+						"morph_pig"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_cow": {
+				"add": {
+					"component_groups": [
+						"morph_cow"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_cow": {
+				"remove": {
+					"component_groups": [
+						"morph_cow"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_sheep": {
+				"add": {
+					"component_groups": [
+						"morph_sheep"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_sheep": {
+				"remove": {
+					"component_groups": [
+						"morph_sheep"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_chicken": {
+				"add": {
+					"component_groups": [
+						"morph_chicken"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_chicken": {
+				"remove": {
+					"component_groups": [
+						"morph_chicken"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_zombie": {
+				"add": {
+					"component_groups": [
+						"morph_zombie"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_zombie": {
+				"remove": {
+					"component_groups": [
+						"morph_zombie"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_skeleton": {
+				"add": {
+					"component_groups": [
+						"morph_skeleton"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_skeleton": {
+				"remove": {
+					"component_groups": [
+						"morph_skeleton"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_creeper": {
+				"add": {
+					"component_groups": [
+						"morph_creeper"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_creeper": {
+				"remove": {
+					"component_groups": [
+						"morph_creeper"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_enderman": {
+				"add": {
+					"component_groups": [
+						"morph_enderman"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_enderman": {
+				"remove": {
+					"component_groups": [
+						"morph_enderman"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_spider": {
+				"add": {
+					"component_groups": [
+						"morph_spider"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_spider": {
+				"remove": {
+					"component_groups": [
+						"morph_spider"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_wolf": {
+				"add": {
+					"component_groups": [
+						"morph_wolf"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_wolf": {
+				"remove": {
+					"component_groups": [
+						"morph_wolf"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_morph_piglin": {
+				"add": {
+					"component_groups": [
+						"morph_piglin"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ghostfreak"
+					]
+				}
+			},
+			"event_unmorph_piglin": {
+				"remove": {
+					"component_groups": [
+						"morph_piglin"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ghostfreak"
 					]
 				}
 			}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:sponge_ball",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:icon": {
+				"texture": "item:sponge_ball"
+			},
+			"minecraft:display_name": {
+				"value": "Sponge Ball"
+			},
+			"minecraft:throwable": {
+				"do_swing_animation": true
+			},
+			"minecraft:cooldown": {
+				"category": "shuriken",
+				"duration": 0.5
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "projectile:sponge_ball"
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:thermal_geyser",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.nature"
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.geyser",
+			"minecraft:custom_components": [
+				"test:geyser"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_thermal_geyser",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:light_emission": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			}
+		}
+	}
+}

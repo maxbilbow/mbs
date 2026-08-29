@@ -1,0 +1,320 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.guritavoid",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						16,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [
+						-2.5,
+						16,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.5,
+								16,
+								-3.5
+							],
+							"size": [
+								7,
+								9,
+								7
+							],
+							"uv": [
+								0,
+								14
+							]
+						},
+						{
+							"origin": [
+								-5,
+								22,
+								0
+							],
+							"size": [
+								2,
+								4,
+								0
+							],
+							"uv": [
+								4,
+								30
+							]
+						},
+						{
+							"origin": [
+								3,
+								22,
+								0
+							],
+							"size": [
+								2,
+								4,
+								0
+							],
+							"uv": [
+								0,
+								30
+							]
+						},
+						{
+							"origin": [
+								-7,
+								15.9,
+								-7
+							],
+							"size": [
+								14,
+								0,
+								14
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "ten",
+					"parent": "body",
+					"pivot": [
+						-2.5,
+						16,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-3
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten5",
+					"parent": "body",
+					"pivot": [
+						-0.5,
+						16,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-0.5,
+								0,
+								-3
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten6",
+					"parent": "body",
+					"pivot": [
+						-0.5,
+						16,
+						2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-0.5,
+								0,
+								2
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten3",
+					"parent": "body",
+					"pivot": [
+						-2.5,
+						16,
+						2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								2
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten2",
+					"parent": "body",
+					"pivot": [
+						2.5,
+						16,
+						2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								2,
+								0,
+								2
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten7",
+					"parent": "body",
+					"pivot": [
+						2.5,
+						16,
+						0.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								2,
+								0,
+								-0.5
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten8",
+					"parent": "body",
+					"pivot": [
+						-2.5,
+						16,
+						0.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-0.5
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				},
+				{
+					"name": "ten4",
+					"parent": "body",
+					"pivot": [
+						2.5,
+						16,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								2,
+								0,
+								-3
+							],
+							"size": [
+								1,
+								16,
+								1
+							],
+							"uv": [
+								28,
+								14
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

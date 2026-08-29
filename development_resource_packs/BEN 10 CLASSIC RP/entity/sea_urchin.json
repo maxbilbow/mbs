@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:sea_urchin",
+			"materials": {
+				"default": "parrot"
+			},
+			"textures": {
+				"blue": "textures/entity/black_sea_urchin",
+				"green": "textures/entity/black_sea_urchin",
+				"red_blue": "textures/entity/purple_sea_urchin",
+				"yellow_blue": "textures/entity/red_sea_urchin",
+				"grey": "textures/entity/blue_sea_urchin"
+			},
+			"geometry": {
+				"default": "geometry.sea_urchin"
+			},
+			"render_controllers": [
+				"controller.render.parrot"
+			],
+			"spawn_egg": {
+				"base_color": "#2B1730",
+				"overlay_color": "#0B090C"
+			}
+		}
+	}
+}

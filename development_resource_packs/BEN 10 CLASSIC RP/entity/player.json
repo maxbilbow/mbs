@@ -14,9 +14,16 @@
 			"textures": {
 				"default": "textures/entity/steve",
 				"ben10_costume": "textures/entity/ben10_costume",
+				"ben10_costume2": "textures/entity/ben10_costume2",
 				"cape": "textures/entity/cape_invisible",
+				"magic": "textures/entity/powers/magic",
+				"spell_book": "textures/entity/powers/spell_book",
 				"omnitrix": "textures/omnitrix/omnitrix_default",
 				"omnitrix_off": "textures/omnitrix/omnitrix_off",
+				"omni2": "textures/player/omnitrix/omni2",
+				"omni2_off": "textures/player/omnitrix/omni2off",
+				"omni_recalibrating": "textures/player/omnitrix/omni_recalibrating",
+				"omni_recalibration": "textures/player/omnitrix/omni_recalibration",
 				"omni_destruct_blink1": "textures/omnitrix/omni_destruct_blink1",
 				"omni_destruct_blink2": "textures/omnitrix/omni_destruct_blink2",
 				"heatblast_icon": "textures/omnitrix/alien_icons/heatblast_icon",
@@ -36,6 +43,8 @@
 				"clockwork_icon": "textures/omnitrix/alien_icons/clockwork_icon",
 				"benvictor_icon": "textures/omnitrix/alien_icons/benvictor_icon",
 				"benwolf_icon": "textures/omnitrix/alien_icons/benwolf_icon",
+				"buzzshock_icon": "textures/omnitrix/alien_icons/buzzshock_icon",
+				"spitter_icon": "textures/omnitrix/alien_icons/spitter_icon",
 				"benwolf_fp": "textures/entity/aliens/benwolf_fp",
 				"benwolf": "textures/entity/aliens/benwolf",
 				"bw_howl": "textures/entity/powers/bw_howl",
@@ -43,6 +52,7 @@
 				"benmummy": "textures/entity/aliens/benmummy",
 				"wildvine_icon": "textures/omnitrix/alien_icons/wildvine_icon",
 				"eyeguy_icon": "textures/omnitrix/alien_icons/eyeguy_icon",
+				"feedback_icon": "textures/omnitrix/alien_icons/feedback_icon",
 				"eyeguy": "textures/entity/aliens/eyeguy",
 				"eyelaser": "textures/entity/powers/eyelaser",
 				"heatblast": "textures/entity/aliens/heatblast",
@@ -62,6 +72,7 @@
 				"clockwork": "textures/entity/aliens/clockwork",
 				"benvictor": "textures/entity/aliens/benvictor",
 				"wildvine": "textures/entity/aliens/wildvine",
+				"feedback": "textures/entity/aliens/feedback",
 				"wm_vision": "textures/entity/aliens/wm_vision",
 				"xlr8_sprint": "textures/entity/aliens/xlr8_sprint",
 				"cannonbolt_ball": "textures/entity/aliens/cannonbolt_ball",
@@ -76,17 +87,51 @@
 				"ug_minecart": "textures/entity/aliens/ug_minecart",
 				"ug_noteblock": "textures/entity/aliens/ug_noteblock",
 				"ug_furnace": "textures/entity/aliens/ug_furnace",
-				"ug_boat": "textures/entity/aliens/ug_boat"
+				"ug_boat": "textures/entity/aliens/ug_boat",
+				"swampfire": "textures/player/alien/swampfire",
+				"omni2_swampfire": "textures/player/omnitrix/activated/omni2_swampfire",
+				"echoecho": "textures/player/alien/echoecho",
+				"echoecho_screaming": "textures/player/alien/echoecho_screaming",
+				"ee_sonic_scream": "textures/entity/alien_atk/ee_sonic_scream",
+				"omni2_echoecho": "textures/player/omnitrix/activated/omni2_echoecho",
+				"pig": "textures/entity/pig/pig",
+				"cow": "textures/entity/cow/cow",
+				"sheep": "textures/entity/sheep/sheep",
+				"chicken": "textures/entity/chicken/chicken",
+				"zombie": "textures/entity/zombie/zombie",
+				"skeleton": "textures/entity/skeleton/skeleton",
+				"creeper": "textures/entity/creeper/creeper",
+				"enderman": "textures/entity/enderman/enderman",
+				"spider": "textures/entity/spider/spider",
+				"wolf": "textures/entity/wolf/wolf",
+				"piglin": "textures/entity/piglin/piglin"
 			},
 			"geometry": {
 				"default": "geometry.humanoid.custom",
 				"cape": "geometry.cape",
+				"spell_book": "geometry.spell_book",
+				"spell_book_b": "geometry.spell_book_b",
 				"omnitrix_item": "geometry.omnitrix_item",
 				"omnitrix": "geometry.omnitrix",
 				"omni_player_leftarm": "geometry.omni_player_leftarm",
+				"omnitrix2_1p": "geometry.omnitrix2_1p",
+				"omnitrix2_3p": "geometry.omnitrix2_3p",
+				"omnitrix2_3p_player": "geometry.omnitrix2_3p_player",
+				"omnitrix2_activated_1p": "geometry.omnitrix2_activated_1p",
+				"omnitrix2_activated_3p": "geometry.omnitrix2_activated_3p",
+				"omni2_leftarm": "geometry.omni2_leftarm",
 				"omni_player_rightarm": "geometry.omni_player_rightarm",
 				"omni_plate2": "geometry.omni_plate2",
 				"omni_icon": "geometry.omni_icon",
+				"omni2_hologram": "geometry.omni2_hologram",
+				"omni2_hologram_3p": "geometry.omni2_hologram_3p",
+				"swampfire": "geometry.swampfire",
+				"swampfire_arm": "geometry.swampfire_arm",
+				"echoecho": "geometry.echoecho",
+				"echoecho_screaming": "geometry.echoecho_screaming",
+				"ee_sonic_scream": "geometry.ee_sonic_scream",
+				"ee_sonic_scream_1p": "geometry.ee_sonic_scream_1p",
+				"echoecho_arm": "geometry.echoecho_arm",
 				"heatblast_fp": "geometry.heatblast_fp",
 				"heatblast": "geometry.heatblast",
 				"wildmutt_fp": "geometry.wildmutt_fp",
@@ -137,7 +182,26 @@
 				"bv_lightning_fp": "geometry.bv_lightning_fp",
 				"bv_lightning": "geometry.bv_lightning",
 				"upgrade_fp": "geometry.upgrade_fp",
-				"upgrade": "geometry.upgrade"
+				"upgrade": "geometry.upgrade",
+				"ug_irongolem_fp": "geometry.ug_irongolem_fp",
+				"ug_irongolem": "geometry.ug_irongolem",
+				"ug_boat": "geometry.ug_boat",
+				"ug_furnace": "geometry.ug_furnace",
+				"ug_minecart": "geometry.ug_minecart",
+				"ug_noteblock": "geometry.ug_noteblock",
+				"ug_piston": "geometry.ug_piston",
+				"feedback": "geometry.feedback",
+				"pig": "geometry.pig.custom",
+				"cow": "geometry.cow.custom",
+				"sheep": "geometry.sheep.custom",
+				"chicken": "geometry.chicken.custom",
+				"zombie": "geometry.zombie.custom",
+				"skeleton": "geometry.skeleton.custom",
+				"creeper": "geometry.creeper.custom",
+				"enderman": "geometry.enderman.custom",
+				"spider": "geometry.spider.custom",
+				"wolf": "geometry.wolf.custom",
+				"piglin": "geometry.piglin.custom"
 			},
 			"scripts": {
 				"scale": "0.9375",
@@ -164,13 +228,24 @@
 					"variable.holding_nothing = query.get_equipped_item_name('main_hand') =='';",
 					"variable.on_ground = query.is_on_ground;",
 					"variable.holding_3d_item = query.get_equipped_item_name('main_hand') =='omnitrix';",
-					"variable.holding_power = query.get_equipped_item_name('main_hand') =='fire_ball' || query.get_equipped_item_name('main_hand') =='dh_crystal' || query.get_equipped_item_name('main_hand') =='dh_spike' || query.get_equipped_item_name('main_hand') =='sf_slime' || query.get_equipped_item_name('main_hand') =='wb_ray' || query.get_equipped_item_name('main_hand') =='wb_stomp' || query.get_equipped_item_name('main_hand') =='dt_clone' || query.get_equipped_item_name('main_hand') =='bv_lightning' || query.get_equipped_item_name('main_hand') =='bv_electrokinesis' || query.get_equipped_item_name('main_hand') =='arc_ice' || query.get_equipped_item_name('main_hand') =='clock_beam' || query.get_equipped_item_name('main_hand') =='clock_time' || query.get_equipped_item_name('main_hand') =='clock_stop';",
+					"variable.holding_power = query.get_equipped_item_name('main_hand') =='alien_ee_scream' || query.get_equipped_item_name('main_hand') =='fire_ball' || query.get_equipped_item_name('main_hand') =='dh_crystal' || query.get_equipped_item_name('main_hand') =='dh_spikes' || query.get_equipped_item_name('main_hand') =='sf_slime' || query.get_equipped_item_name('main_hand') =='wb_ray' || query.get_equipped_item_name('main_hand') =='wb_stomp' || query.get_equipped_item_name('main_hand') =='dt_clone' || query.get_equipped_item_name('main_hand') =='bv_lightning' || query.get_equipped_item_name('main_hand') =='bv_electrokinesis' || query.get_equipped_item_name('main_hand') =='arc_ice' || query.get_equipped_item_name('main_hand') =='clock_beam' || query.get_equipped_item_name('main_hand') =='clock_time' || query.get_equipped_item_name('main_hand') =='clock_stop' || query.get_equipped_item_name('main_hand') =='spell_shield' || query.get_equipped_item_name('main_hand') =='spell_blast' || query.get_equipped_item_name('main_hand') =='spell_fly' || query.get_equipped_item_name('main_hand') =='spell_levi' || query.get_equipped_item_name('main_hand') == 'hb_flamethrower' || query.get_equipped_item_name('main_hand') == 'flight_activator' || query.get_equipped_item_name('main_hand') == 'cannon_spin' || query.get_equipped_item_name('main_hand') == 'gf_intangibility' || query.get_equipped_item_name('main_hand') == 'gf_possession' || query.get_equipped_item_name('main_hand') == 'gf_possession2' || query.get_equipped_item_name('main_hand') == 'fourarms_punch' || query.get_equipped_item_name('main_hand') == 'fourarms_slap' || query.get_equipped_item_name('main_hand') == 'stinkfly_spit' || query.get_equipped_item_name('main_hand') == 'eyelaser' || query.get_equipped_item_name('main_hand') == 'eyefire' || query.get_equipped_item_name('main_hand') == 'eyeice' || query.get_equipped_item_name('main_hand') == 'bm_stretch' || query.get_equipped_item_name('main_hand') == 'bm_grapple' || query.get_equipped_item_name('main_hand') == 'up_tongue' || query.get_equipped_item_name('main_hand') == 'up_menu' || query.get_equipped_item_name('main_hand') == 'wv_plant' || query.get_equipped_item_name('main_hand') == 'wv_seeds' || query.get_equipped_item_name('main_hand') == 'wv_stretch' || query.get_equipped_item_name('main_hand') == 'dt_command' || query.get_equipped_item_name('main_hand') == 'feed_electro' || query.get_equipped_item_name('main_hand') == 'upgrade' || query.get_equipped_item_name('main_hand') == 'ug_laser' || query.get_equipped_item_name('main_hand') == 'ug_laser2' || query.get_equipped_item_name('main_hand') == 'ug_bomb' || query.get_equipped_item_name('main_hand') == 'ug_sonar' || query.get_equipped_item_name('main_hand') == 'ug_jump' || query.get_equipped_item_name('main_hand') == 'xlr8_tornado';",
 					"variable.omnitrix = query.skin_id == 1 || query.skin_id == 5;",
+					"variable.omnitrix2 = query.skin_id == 3;",
+					"variable.recal_stage1 = query.skin_id == 4;",
+					"variable.recal_stage2 = query.skin_id == 7;",
+					"variable.recal_stage3 = query.skin_id == 8;",
+					"variable.is_recalibrating = variable.recal_stage1 || variable.recal_stage2 || variable.recal_stage3;",
 					"variable.omnitrix_off = query.skin_id == 2;",
+					"variable.omnitrix2_off = query.skin_id == 200;",
 					"variable.omni_destruct = query.skin_id == 50 || query.skin_id == 51;",
 					"variable.holding_omni_icon = query.get_equipped_item_name('main_hand') =='omni_icon' || query.get_equipped_item_name('main_hand') =='omni_master' || query.get_equipped_item_name('main_hand') =='omni_off';",
-					"variable.selecting_omni_alien = query.skin_id >= 101 && query.skin_id <= 121;",
+					"variable.selecting_omni_alien = query.skin_id >= 101 && query.skin_id <= 124;",
+					"variable.selecting_omni2_alien = query.skin_id == 125 || query.skin_id == 126;",
+					"variable.omni1_arm = variable.omnitrix || variable.omnitrix_off || variable.omni_destruct || variable.selecting_omni_alien || variable.recal_stage1 || variable.recal_stage2 || variable.recal_stage3;",
+					"variable.omni2_arm = variable.omnitrix2 || variable.omnitrix2_off || query.skin_id == 125 || query.skin_id == 126;",
 					"variable.ripjaws = query.variant == 9 || query.variant == 999;",
+					"variable.swampfire = query.variant == 25;",
+					"variable.echoecho_screaming = query.get_equipped_item_name('main_hand') == 'alien_ee_scream' && query.is_using_item;",
 					"variable.xlr8 = query.variant == 4 || query.variant == 13;",
 					"variable.cannonbolt = query.variant == 5 || query.variant == 14;",
 					"variable.waybig_ray = query.variant == 15 && query.get_equipped_item_name('main_hand') =='wb_ray';",
@@ -180,6 +255,18 @@
 				],
 				"animate": [
 					"root",
+					{
+						"leftarm_omni_select": "!variable.is_first_person&&((variable.holding_omni_icon&&variable.selecting_omni_alien)||variable.selecting_omni2_alien)"
+					},
+					{
+						"rightarm_omni_select": "!query.is_moving&&((variable.holding_omni_icon&&variable.selecting_omni_alien)||variable.selecting_omni2_alien)"
+					},
+					{
+						"swampfire_flying": "!variable.is_first_person&&query.variant==25&&!query.is_on_ground"
+					},
+					{
+						"echoecho_scream": "variable.echoecho_screaming&&query.variant==27"
+					},
 					"head2",
 					"ctrl_heatblast_flight",
 					"ctrl_diamondhead_movement",
@@ -198,7 +285,7 @@
 						"heatblast_jump": "!variable.on_ground&&query.variant==1&&!variable.is_first_person"
 					},
 					{
-						"hb_flamethrower_arms": "query.variant==1&&variable.is_first_person&&query.is_using_item"
+						"hb_flamethrower_arms": "query.variant==1"
 					},
 					{
 						"wildmutt_attack_fp": "query.variant==2&&variable.is_first_person&&variable.attack_time>0"
@@ -219,7 +306,10 @@
 						"diamondhead_sneak": "variable.on_ground&&query.variant==3&&query.is_sneaking&&!variable.is_first_person"
 					},
 					{
-						"diamondhead_sneak2": "variable.on_ground&&query.variant==3&&query.is_sneaking&&!variable.is_first_person"
+						"diamondhead_sneak2": "variable.on_ground&&query.variant==3&&query.is_using_item&&!variable.is_first_person"
+					},
+					{
+						"diamondhead_shield": "variable.on_ground&&query.variant==3&&query.is_sneaking&&query.get_equipped_item_name('main_hand')=='dh_shield'&&!variable.is_first_person"
 					},
 					{
 						"diamondhead_jump": "!variable.on_ground&&query.variant==3&&!variable.is_first_person"
@@ -540,7 +630,28 @@
 						"upgrade_attack_c": "query.variant==10&&query.skin_id==0&&!variable.is_first_person&&variable.attack_time>0"
 					},
 					{
-						"upgrade_laser_c": "query.variant==10&&query.skin_id==0&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')=='ug_laser'&&query.is_using_item"
+						"upgrade_laser_c": "query.variant==10&&query.skin_id==0&&!variable.is_first_person&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item"
+					},
+					{
+						"ug_irongolem_laser_c": "query.variant==10&&query.skin_id>=200&&!variable.is_first_person&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item"
+					},
+					{
+						"ug_irongolem_attack_c": "query.variant==10&&query.skin_id==200&&!variable.is_first_person&&variable.attack_time>0"
+					},
+					{
+						"ug_irongolem_walk_c": "!variable.is_first_person&&query.skin_id==200&&query.is_on_ground&&query.is_moving"
+					},
+					{
+						"ug_form_c": "(query.skin_id==201||query.skin_id==202||query.skin_id==203||query.skin_id==204||query.skin_id==205)&&query.variant==10&&!variable.is_first_person"
+					},
+					{
+						"ug_piston_walk_c": "!variable.is_first_person&&query.skin_id==205&&query.is_on_ground&&query.is_moving"
+					},
+					{
+						"ug_boat_walk_c": "!variable.is_first_person&&query.skin_id==201&&query.is_in_water&&query.is_moving"
+					},
+					{
+						"ug_noteblock_walk_c": "!variable.is_first_person&&query.skin_id==204&&query.is_on_ground&&query.is_moving"
 					},
 					{
 						"upgrade_c": "!variable.is_first_person&&query.variant==10&&query.skin_id==0"
@@ -555,7 +666,7 @@
 						"invisible": "!variable.is_first_person&&variable.is_alien&&!variable.selecting_omni_alien"
 					},
 					{
-						"riding.arms": "query.is_riding&&query.variant!=15"
+						"riding.arms": "query.is_riding&&query.variant!=15&&query.get_equipped_item_name('off_hand')!='spell_book'"
 					},
 					{
 						"rightarm_fp": "variable.is_first_person&&(query.variant==0||variable.selecting_omni_alien)&&!variable.holding_omni_icon"
@@ -576,20 +687,26 @@
 						"omnitrix_item": "query.get_equipped_item_name('main_hand')=='omnitrix'"
 					},
 					{
-						"omnitrix_fp": "variable.is_first_person&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)"
+						"omnitrix_fp": "variable.is_first_person&&variable.omni1_arm"
 					},
 					{
-						"omnitrix_tp": "!variable.is_first_person&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)"
+						"omnitrix_tp": "!variable.is_first_person&&variable.omni1_arm"
 					},
 					{
-						"omnitrix_inuse_fp": "variable.holding_omni_icon&&query.variant==0"
+						"omnitrix_inuse_fp": "(variable.holding_omni_icon||variable.selecting_omni2_alien)&&query.variant==0"
 					},
 					{
-						"omnitrix_inuse_tp": "variable.holding_omni_icon&&!variable.is_first_person&&query.variant==0"
+						"omnitrix_inuse_tp": "(variable.holding_omni_icon||variable.selecting_omni2_alien)&&!variable.is_first_person&&query.variant==0"
 					},
 					"omnitrix_dial_controller",
 					{
 						"omnitrix_tapped": "query.skin_id==5"
+					},
+					{
+						"spell_book_c": "query.get_equipped_item_name('main_hand')=='spell_blast'||query.get_equipped_item_name('main_hand')=='spell_shield'||query.get_equipped_item_name('main_hand')=='spell_levi'&&query.is_using_item"
+					},
+					{
+						"spell_fly_c": "query.get_equipped_item_name('off_hand')=='spell_book'&&query.is_riding"
 					},
 					{
 						"omni_dial_state": "variable.holding_omni_icon"
@@ -631,10 +748,10 @@
 						"diamondhead_idle_fp": "query.variant==3&&variable.is_first_person"
 					},
 					{
-						"diamondhead_idle": "variable.on_ground&&query.variant==3&&!query.is_moving&&!variable.is_first_person"
+						"diamondhead_idle": "variable.on_ground&&query.variant==3&&!query.is_moving&&!variable.is_first_person&&!(query.is_sneaking&&query.get_equipped_item_name('main_hand')=='dh_shield')"
 					},
 					{
-						"diamondhead_moving": "variable.on_ground&&query.variant==3&&query.is_moving&&!variable.is_first_person"
+						"diamondhead_moving": "variable.on_ground&&query.variant==3&&query.is_moving&&!variable.is_first_person&&!(query.is_sneaking&&query.get_equipped_item_name('main_hand')=='dh_shield')"
 					},
 					{
 						"diamondhead_sprinting": "variable.on_ground&&query.variant==3&&query.is_sprinting&&!variable.is_first_person"
@@ -646,16 +763,19 @@
 						"xlr8": "variable.xlr8"
 					},
 					{
-						"xlr8_idle": "variable.on_ground&&variable.xlr8&&!query.is_moving"
+						"xlr8_idle": "variable.on_ground&&variable.xlr8&&!query.is_moving&&(query.scoreboard('tornado_active')!=1)"
 					},
 					{
 						"xlr8_moving_fp": "variable.xlr8&&query.is_moving&&variable.is_first_person"
 					},
 					{
-						"xlr8_moving": "variable.on_ground&&variable.xlr8&&query.is_moving&&!variable.is_first_person"
+						"xlr8_moving": "variable.on_ground&&variable.xlr8&&query.is_moving&&!variable.is_first_person&&(query.scoreboard('tornado_active')!=1)"
 					},
 					{
-						"xlr8_sprinting": "variable.on_ground&&variable.xlr8&&query.is_sprinting&&!variable.is_first_person"
+						"xlr8_sprinting": "variable.xlr8&&variable.on_ground&&query.is_sprinting&&!variable.is_first_person&&(query.scoreboard('tornado_active')!=1)"
+					},
+					{
+						"xlr8_tornado_anim": "variable.xlr8&&query.scoreboard('tornado_active')==1"
 					},
 					{
 						"greymatter_fp": "query.variant==6&&variable.is_first_person"
@@ -677,6 +797,9 @@
 					},
 					{
 						"fourarms_sprinting": "variable.on_ground&&query.variant==7&&query.is_sprinting&&!variable.is_first_person"
+					},
+					{
+						"fourarms_moblift": "query.variant==7&&query.has_rider"
 					},
 					{
 						"stinkfly_fp": "variable.is_first_person&&query.variant==8"
@@ -911,10 +1034,92 @@
 					},
 					{
 						"eyeguy_attack_c": "query.variant==23&&!variable.is_first_person&&variable.attack_time>0&&!query.is_using_item"
+					},
+					"feedback_idle_c",
+					"feedback_walk_c",
+					"feedback_sprint_c",
+					"feedback_jump_c",
+					"feedback_sneak_c",
+					"feedback_attack_c",
+					"feedback_fp_c",
+					"feedback_fp_attack_c",
+					"feedback_electro_c",
+					"feedback_electro_fp_c",
+					"feedback_absorb_c",
+					{
+						"pig_walk": "query.variant==800&&query.modified_move_speed>0.01"
+					},
+					{
+						"pig_look": "query.variant==800"
+					},
+					{
+						"cow_walk": "query.variant==801&&query.modified_move_speed>0.01"
+					},
+					{
+						"cow_look": "query.variant==801"
+					},
+					{
+						"sheep_walk": "query.variant==802&&query.modified_move_speed>0.01"
+					},
+					{
+						"sheep_look": "query.variant==802"
+					},
+					{
+						"chicken_walk": "query.variant==803&&query.modified_move_speed>0.01"
+					},
+					{
+						"chicken_look": "query.variant==803"
+					},
+					{
+						"zombie_walk": "query.variant==804&&query.modified_move_speed>0.01"
+					},
+					{
+						"zombie_look": "query.variant==804"
+					},
+					{
+						"skeleton_walk": "query.variant==805&&query.modified_move_speed>0.01"
+					},
+					{
+						"skeleton_look": "query.variant==805"
+					},
+					{
+						"creeper_walk": "query.variant==806&&query.modified_move_speed>0.01"
+					},
+					{
+						"creeper_look": "query.variant==806"
+					},
+					{
+						"enderman_walk": "query.variant==807&&query.modified_move_speed>0.01"
+					},
+					{
+						"enderman_look": "query.variant==807"
+					},
+					{
+						"spider_walk": "query.variant==808&&query.modified_move_speed>0.01"
+					},
+					{
+						"spider_look": "query.variant==808"
+					},
+					{
+						"wolf_walk": "query.variant==809&&query.modified_move_speed>0.01"
+					},
+					{
+						"wolf_look": "query.variant==809"
+					},
+					{
+						"piglin_walk": "query.variant==810&&query.modified_move_speed>0.01"
+					},
+					{
+						"piglin_look": "query.variant==810"
+					},
+					{
+						"zombie_base": "query.variant==804"
 					}
 				]
 			},
 			"animations": {
+				"leftarm_omni_select": "animation.player.leftarm.alien.selecting",
+				"rightarm_omni_select": "animation.player.rightarm.alien.selecting",
 				"invisible": "animation.player.invisible",
 				"head2": "animation.player.head2",
 				"rightarm_fp": "animation.player.rightarm_fp",
@@ -937,6 +1142,10 @@
 				"omni_dial_state": "controller.animation.player.omni_dial_state",
 				"omni_plate2_fp": "animation.player.omni_plate2_fp",
 				"omni_plate2_tp": "animation.player.omni_plate2_tp",
+				"spell_book_c": "controller.animation.spell_book",
+				"spell_book": "animation.spell_book",
+				"spell_fly_c": "controller.animation.spell_fly",
+				"spell_fly": "animation.spell_fly",
 				"heatblast_idle_fp": "animation.player.heatblast_idle_fp",
 				"heatblast_idle": "animation.heatblast_idle",
 				"heatblast_moving": "animation.heatblast_moving",
@@ -953,6 +1162,8 @@
 				"hb_flamethrower_arms": "controller.animation.hb_flamethrower_arms",
 				"hb_flamethrower_pose": "animation.hb_flamethrower_pose",
 				"heatblast_flying": "animation.heatblast_flying",
+				"swampfire_flying": "animation.swampfire.flying",
+				"echoecho_scream": "animation.sonic_scream.general",
 				"heatblast_flying_fp": "animation.heatblast_flying_fp",
 				"heatblast_hover": "animation.heatblast_hover",
 				"heatblast_hover_fp": "animation.heatblast_hover_fp",
@@ -962,9 +1173,9 @@
 				"wildmutt_jump": "controller.animation.wildmutt_jump",
 				"wildmutt_jumping": "animation.wildmutt_jumping",
 				"wildmutt_sprinting": "animation.wildmutt_sprinting",
-				"wildmutt_attack_fp": "controller.animation.wildmutt_attack_fp",
+				"wildmutt_attack_fp": "animation.wildmutt_attacking_fp",
 				"wildmutt_attacking_fp": "animation.wildmutt_attacking_fp",
-				"wildmutt_attack": "controller.animation.wildmutt_attack",
+				"wildmutt_attack": "animation.wildmutt_attacking",
 				"wildmutt_attacking": "animation.wildmutt_attacking",
 				"wildmutt_swimming": "animation.wildmutt_swimming",
 				"ctrl_wildmutt_movement": "controller.animation.wildmutt_movement",
@@ -976,6 +1187,8 @@
 				"diamondhead_sneaking": "animation.diamondhead_sneaking",
 				"diamondhead_sneak2": "controller.animation.diamondhead_sneak2",
 				"diamondhead_sneaking2": "animation.diamondhead_sneaking2",
+				"diamondhead_shield": "controller.animation.diamondhead_shield",
+				"diamondhead_sheild": "animation.diamondhead_sheild",
 				"diamondhead_jump": "controller.animation.diamondhead_jump",
 				"diamondhead_jumping": "animation.diamondhead_jumping",
 				"diamondhead_swimming": "animation.diamondhead_swimming",
@@ -996,6 +1209,7 @@
 				"xlr8_jump": "controller.animation.xlr8_jump",
 				"xlr8_jumping": "animation.xlr8_jumping",
 				"xlr8_sprinting": "animation.xlr8_sprinting",
+				"xlr8_tornado_anim": "animation.xlr8.vortextor",
 				"xlr8_attack_fp": "controller.animation.xlr8_attack_fp",
 				"xlr8_attacking_fp": "animation.xlr8_attacking_fp",
 				"xlr8_attack": "controller.animation.xlr8_attack",
@@ -1025,6 +1239,7 @@
 				"fourarms_sneaking": "animation.fourarms_sneaking",
 				"fourarms_jump": "controller.animation.fourarms_jump",
 				"fourarms_jumping": "animation.fourarms_jumping",
+				"fourarms_moblift": "animation.fourarms_moblift",
 				"stinkfly_fp": "animation.stinkfly_fp",
 				"stinkfly_bob": "animation.stinkfly_bob",
 				"stinkfly_fly": "animation.stinkfly_flying",
@@ -1057,6 +1272,9 @@
 				"cannonbolt_fp": "animation.cannonbolt_fp",
 				"cannonbolt_idle": "animation.cannonbolt_idle",
 				"cannonbolt_ball": "animation.cannonbolt_ball",
+				"cannonbolt_ball_special1": "animation.cannonbolt_ball.special1",
+				"cannonbolt_ball_special2": "animation.cannonbolt_ball.special2",
+				"cannonbolt_ball_special3": "animation.cannonbolt_ball.special3",
 				"cannonbolt_moving": "animation.cannonbolt_moving",
 				"cannonbolt_attack_fp": "controller.animation.cannonbolt_attack_fp",
 				"cannonbolt_attacking_fp": "animation.cannonbolt_attacking_fp",
@@ -1238,6 +1456,20 @@
 				"upgrade_attack_fp": "animation.upgrade_attack_fp",
 				"upgrade_laser_c": "controller.animation.upgrade_laser",
 				"upgrade_laser": "animation.upgrade_laser",
+				"ug_irongolem_laser_c": "controller.animation.ug_irongolem_laser",
+				"ug_irongolem_laser": "animation.ug_irongolem_laser",
+				"ug_irongolem_attack_c": "controller.animation.ug_irongolem_attack",
+				"ug_irongolem_attack": "animation.ug_irongolem_attack",
+				"ug_irongolem_walk_c": "controller.animation.ug_irongolem_walk",
+				"ug_irongolem_walk": "animation.ug_irongolem_walk",
+				"ug_form_c": "controller.animation.ug_form",
+				"ug_form": "animation.ug_form",
+				"ug_piston_walk_c": "controller.animation.ug_piston_walk",
+				"ug_piston_walk": "animation.ug_piston_walk",
+				"ug_noteblock_walk_c": "controller.animation.ug_noteblock_walk",
+				"ug_noteblock_walk": "animation.ug_noteblock_walk",
+				"ug_boat_walk_c": "controller.animation.ug_boat_walk",
+				"ug_boat_walk": "animation.ug_boat_walk",
 				"upgrade_c": "controller.animation.upgrade",
 				"upgrade": "animation.upgrade",
 				"upgrade_walk_c": "controller.animation.upgrade_walk",
@@ -1246,6 +1478,31 @@
 				"upgrade_sprint": "animation.upgrade_sprint",
 				"upgrade_attack_c": "controller.animation.upgrade_attack",
 				"upgrade_attack": "animation.upgrade_attack",
+				"feedback_idle_c": "controller.animation.feedback_idle",
+				"feedback_walk_c": "controller.animation.feedback_walk",
+				"feedback_attack_c": "controller.animation.feedback_attack",
+				"feedback_fp_c": "controller.animation.feedback_fp",
+				"feedback_fp_attack_c": "controller.animation.feedback_fp_attack",
+				"feedback_sprint_c": "controller.animation.feedback_sprint",
+				"feedback_jump_c": "controller.animation.feedback_jump",
+				"feedback_sneak_c": "controller.animation.feedback_sneak",
+				"feedback_electro_c": "controller.animation.feedback_electro",
+				"feedback_electro_fp_c": "controller.animation.feedback_electro_fp",
+				"feedback_absorb_c": "controller.animation.feedback_absorb",
+				"feedback_idle": "animation.feed_pose",
+				"feedback_walk": "animation.feed_andar",
+				"feedback_sprint": "animation.feed_correr",
+				"feedback_jump": "animation.feed_pular",
+				"feedback_sneak": "animation.feed_defender",
+				"feedback_attack": "animation.feed_atacar",
+				"feedback_attack2": "animation.feed_atacar2",
+				"feedback_attack3": "animation.feed_atacar3",
+				"feedback_electro": "animation.feed_electro",
+				"feedback_electro_fp": "animation.feed_electro",
+				"feedback_absorb": "animation.feed_absorb",
+				"feedback_redirect": "animation.feed_redirect",
+				"feedback_fp": "animation.feed_pose",
+				"feedback_fp_attack": "animation.feed_atacar",
 				"root": "controller.animation.player.root",
 				"base_controller": "controller.animation.player.base",
 				"hudplayer": "controller.animation.player.hudplayer",
@@ -1297,29 +1554,112 @@
 				"crossbow_controller": "controller.animation.player.crossbow",
 				"shield_block_main_hand": "animation.player.shield_block_main_hand",
 				"shield_block_off_hand": "animation.player.shield_block_off_hand",
-				"blink": "controller.animation.persona.blink"
+				"blink": "controller.animation.persona.blink",
+				"pig_walk": "animation.morph_pig.walk",
+				"pig_look": "animation.morph_pig.look_at_target",
+				"cow_walk": "animation.morph_cow.walk",
+				"cow_look": "animation.morph_cow.look_at_target",
+				"sheep_walk": "animation.morph_sheep.walk",
+				"sheep_look": "animation.morph_sheep.look_at_target",
+				"chicken_walk": "animation.morph_chicken.walk",
+				"chicken_look": "animation.morph_chicken.look_at_target",
+				"zombie_walk": "animation.morph_zombie.walk",
+				"zombie_look": "animation.morph_zombie.look_at_target",
+				"skeleton_walk": "animation.morph_skeleton.walk",
+				"skeleton_look": "animation.morph_skeleton.look_at_target",
+				"creeper_walk": "animation.morph_creeper.walk",
+				"creeper_look": "animation.morph_creeper.look_at_target",
+				"enderman_walk": "animation.morph_enderman.walk",
+				"enderman_look": "animation.morph_enderman.look_at_target",
+				"spider_walk": "animation.morph_spider.walk",
+				"spider_look": "animation.morph_spider.look_at_target",
+				"wolf_walk": "animation.morph_wolf.walk",
+				"wolf_look": "animation.morph_wolf.look_at_target",
+				"piglin_walk": "animation.morph_piglin.walk",
+				"piglin_look": "animation.morph_piglin.look_at_target",
+				"zombie_base": "animation.morph_zombie.base"
 			},
 			"render_controllers": [
 				{
-					"controller.render.player.first_person": "variable.is_first_person"
+					"controller.render.player.first_person": "variable.is_first_person&&query.variant!=800"
 				},
 				{
-					"controller.render.player.third_person": "!variable.is_first_person&&!variable.map_face_icon"
+					"controller.render.player.third_person": "!variable.is_first_person&&!variable.map_face_icon&&query.variant!=800"
 				},
 				{
 					"controller.render.player.map": "variable.map_face_icon"
 				},
 				{
+					"controller.render.spell_book": "query.get_equipped_item_name('main_hand')=='spell_shield'||query.get_equipped_item_name('main_hand')=='spell_fly'||query.get_equipped_item_name('main_hand')=='spell_blast'||query.get_equipped_item_name('main_hand')=='spell_levi'&&query.get_equipped_item_name('off_hand')=='spell_book'"
+				},
+				{
+					"controller.render.spell_book_b": "query.get_equipped_item_name('main_hand')=='spell_book'"
+				},
+				{
+					"controller.render.spell_shield": "query.get_equipped_item_name('main_hand')=='spell_shield'"
+				},
+				{
 					"controller.render.omnitrix_item": "variable.holding_3d_item"
 				},
 				{
-					"controller.render.omnitrix": "variable.omnitrix||variable.selecting_omni_alien"
+					"controller.render.omnitrix": "variable.omnitrix||(variable.selecting_omni_alien&&!variable.omnitrix2&&!variable.is_recalibrating)"
+				},
+				{
+					"controller.render.omnitrix2": "variable.omnitrix2||variable.selecting_omni2_alien"
+				},
+				{
+					"controller.render.omni_recal_stage1": "variable.recal_stage1"
+				},
+				{
+					"controller.render.omni_recal_stage2": "variable.recal_stage2"
+				},
+				{
+					"controller.render.omni_recal_stage3": "variable.recal_stage3"
 				},
 				{
 					"controller.render.omnitrix_off": "variable.omnitrix_off"
 				},
 				{
-					"controller.render.omni_player_leftarm": "variable.is_first_person&&(variable.omnitrix||variable.omnitrix_off||variable.omni_destruct||variable.selecting_omni_alien)"
+					"controller.render.omnitrix2_off": "variable.omnitrix2_off"
+				},
+				{
+					"controller.render.omni_player_leftarm": "variable.is_first_person&&variable.omni1_arm"
+				},
+				{
+					"controller.render.omni2_leftarm": "variable.is_first_person&&variable.omni2_arm"
+				},
+				{
+					"controller.render.player.swampfire": "query.variant==25&&variable.is_first_person"
+				},
+				{
+					"controller.render.swampfire": "query.variant==25"
+				},
+				{
+					"controller.render.player.omni2_swampfire": "variable.is_first_person&&query.variant==0&&query.skin_id==125"
+				},
+				{
+					"controller.render.player.omni2_swampfire_3p": "!variable.is_first_person&&query.variant==0&&query.skin_id==125"
+				},
+				{
+					"controller.render.player.echoecho": "query.variant==27&&variable.is_first_person"
+				},
+				{
+					"controller.render.echoecho": "query.variant==27&&!variable.echoecho_screaming"
+				},
+				{
+					"controller.render.echoecho_screaming": "query.variant==27&&variable.echoecho_screaming"
+				},
+				{
+					"controller.render.player.echoecho_scream": "query.variant==27&&variable.echoecho_screaming&&variable.is_first_person"
+				},
+				{
+					"controller.render.player.echoecho_scream_3p": "query.variant==27&&variable.echoecho_screaming&&!variable.is_first_person"
+				},
+				{
+					"controller.render.player.omni2_echoecho": "variable.is_first_person&&query.variant==0&&query.skin_id==126"
+				},
+				{
+					"controller.render.player.omni2_echoecho_3p": "!variable.is_first_person&&query.variant==0&&query.skin_id==126"
 				},
 				{
 					"controller.render.omni_player_rightarm": "variable.is_first_person&&(variable.holding_omni_icon||variable.holding_3d_item)"
@@ -1397,6 +1737,15 @@
 					"controller.render.omni.eyeguy_icon": "query.variant==0&&query.skin_id==121&&variable.holding_omni_icon"
 				},
 				{
+					"controller.render.omni.feedback_icon": "query.variant==0&&query.skin_id==122&&variable.holding_omni_icon"
+				},
+				{
+					"controller.render.omni.buzzshock_icon": "query.variant==0&&query.skin_id==123&&variable.holding_omni_icon"
+				},
+				{
+					"controller.render.omni.spitter_icon": "query.variant==0&&query.skin_id==124&&variable.holding_omni_icon"
+				},
+				{
 					"controller.render.heatblast_fp": "query.variant==1&&variable.is_first_person"
 				},
 				{
@@ -1419,6 +1768,9 @@
 				},
 				{
 					"controller.render.xlr8": "query.variant==4"
+				},
+				{
+					"controller.render.xlr8_sprint": "query.variant==13"
 				},
 				{
 					"controller.render.greymatter_fp": "query.variant==6&&variable.is_first_person"
@@ -1520,13 +1872,22 @@
 					"controller.render.eyeguy": "query.variant==23&&!variable.is_first_person"
 				},
 				{
+					"controller.render.feedback_fp": "query.variant==24&&variable.is_first_person"
+				},
+				{
+					"controller.render.feedback": "query.variant==24&&!variable.is_first_person"
+				},
+				{
+					"controller.render.feed_lightning": "query.variant==24&&query.is_using_item&&(query.get_equipped_item_name('main_hand')=='feed_absorb'||query.get_equipped_item_name('main_hand')=='feed_electro'||query.get_equipped_item_name('main_hand')=='feed_zap'||query.get_equipped_item_name('main_hand')=='feed_sphere')&&!variable.is_first_person"
+				},
+				{
 					"controller.render.wm_vision": "query.variant==2"
 				},
 				{
 					"controller.render.xlr8_sprint": "query.variant==13"
 				},
 				{
-					"controller.render.cannonbolt_ball": "query.variant==14"
+					"controller.render.cannonbolt_ball": "query.variant==14&&!variable.is_first_person"
 				},
 				{
 					"controller.render.waybig_ray_fp": "variable.waybig_ray&&variable.is_first_person"
@@ -1569,9 +1930,81 @@
 				},
 				{
 					"controller.render.upgrade": "query.variant==10&&query.skin_id==0&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_golemlaser_fp": "query.variant==10&&query.skin_id>=200&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item&&variable.is_first_person"
+				},
+				{
+					"controller.render.ug_golemlaser": "query.variant==10&&query.skin_id>=200&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_laser_fp": "query.variant==10&&query.skin_id==0&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item&&variable.is_first_person"
+				},
+				{
+					"controller.render.ug_laser": "query.variant==10&&query.skin_id==0&&(query.get_equipped_item_name('main_hand')=='ug_laser'||query.get_equipped_item_name('main_hand')=='ug_laser2')&&query.is_using_item&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_irongolem_fp": "query.variant==10&&query.skin_id==200&&variable.is_first_person"
+				},
+				{
+					"controller.render.ug_irongolem": "query.variant==10&&query.skin_id==200&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_boat": "query.variant==10&&query.skin_id==201&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_furnace": "query.variant==10&&query.skin_id==202&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_minecart": "query.variant==10&&query.skin_id==203&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_noteblock": "query.variant==10&&query.skin_id==204&&!variable.is_first_person"
+				},
+				{
+					"controller.render.ug_piston": "query.variant==10&&query.skin_id==205&&!variable.is_first_person"
+				},
+				{
+					"controller.render.morph.pig": "query.variant==800"
+				},
+				{
+					"controller.render.morph.cow": "query.variant==801"
+				},
+				{
+					"controller.render.morph.sheep": "query.variant==802"
+				},
+				{
+					"controller.render.morph.chicken": "query.variant==803"
+				},
+				{
+					"controller.render.morph.zombie": "query.variant==804"
+				},
+				{
+					"controller.render.morph.skeleton": "query.variant==805"
+				},
+				{
+					"controller.render.morph.creeper": "query.variant==806"
+				},
+				{
+					"controller.render.morph.enderman": "query.variant==807"
+				},
+				{
+					"controller.render.morph.spider": "query.variant==808"
+				},
+				{
+					"controller.render.morph.wolf": "query.variant==809"
+				},
+				{
+					"controller.render.morph.piglin": "query.variant==810"
 				}
 			],
-			"enable_attachables": true
+			"enable_attachables": true,
+			"particle_effects": {
+				"transform_green_fog": "ben:trans",
+				"transform_red_fog": "ben:des",
+				"feed_absorb_sphere": "zk:voltstrikesphere",
+				"feed_redirect_burst": "zk:voltstrikesphereburst"
+			}
 		}
 	}
 }

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:piston_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"~~~",
+			"#&#",
+			"#!#"
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_planks"
+			},
+			"#": {
+				"item": "minecraft:cobblestone"
+			},
+			"&": {
+				"item": "minecraft:iron_ingot"
+			},
+			"!": {
+				"item": "minecraft:redstone"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:piston",
+				"data": 1,
+				"count": 1
+			}
+		]
+	}
+}

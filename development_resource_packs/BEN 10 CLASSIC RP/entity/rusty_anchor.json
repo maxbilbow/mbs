@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "item:rusty_anchor",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/items/item_rusty_anchor"
+			},
+			"geometry": {
+				"default": "geometry.anchor"
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			]
+		}
+	}
+}

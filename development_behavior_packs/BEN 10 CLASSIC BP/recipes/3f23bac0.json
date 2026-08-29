@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_b17abcbf"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:pink_pearl_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:pink_pearl",
+				"count": 9
+			}
+		]
+	}
+}

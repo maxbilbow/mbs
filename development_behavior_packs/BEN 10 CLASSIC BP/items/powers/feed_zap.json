@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:feed_zap",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "power_autobolt"
+			},
+			"minecraft:display_name": {
+				"value": "§bAuto Bolt"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera",
+			"minecraft:custom_components": [
+				"power:setup_zap"
+			]
+		},
+		"events": {
+			"power:setup_zap": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"scoreboard objectives add lhb dummy",
+								"scoreboard players set @s lhb 0",
+								"scoreboard players set lhb lhb 0",
+								"tag @s add zapping"
+							],
+							"target": "holder"
+						}
+					}
+				]
+			}
+		}
+	}
+}

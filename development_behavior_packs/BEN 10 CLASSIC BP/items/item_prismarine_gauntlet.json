@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:prismarine_gauntlet",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "item:prismarine_gauntlet"
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "gauntlet",
+				"duration": 8,
+				"type": "attack"
+			},
+			"minecraft:glint": false,
+			"minecraft:allow_off_hand": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:damage": 24,
+			"minecraft:use_animation": "bow",
+			"minecraft:display_name": {
+				"value": "Prismarine Gauntlet"
+			}
+		}
+	}
+}

@@ -1,284 +1,1076 @@
 {
-  "format_version": "1.14.0",
-  "sound_definitions": {
-    "cso:mob.prototype_phobos.dash": {
-      "category": "hostile",
-      "max_distance": 32.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_dash"
-      ]
-    },
-    "cso:mob.prototype_phobos.death": {
-      "category": "hostile",
-      "max_distance": 32.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_death"
-      ]
-    },
-    "cso:mob.prototype_phobos.idle": {
-      "category": "hostile",
-      "max_distance": 32.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_idle"
-      ]
-    },
-    "cso:mob.prototype_phobos.shockwave": {
-      "category": "hostile",
-      "max_distance": 64.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_shockwave"
-      ]
-    },
-    "cso:mob.prototype_phobos.step": {
-      "category": "hostile",
-      "max_distance": 32.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step1",
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step2"
-      ]
-    },
-    "cso:mob.prototype_phobos.swing": {
-      "category": "hostile",
-      "max_distance": 24.0,
-      "sounds": [
-        "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_swing"
-      ]
-    },
-    "cso:music.cso.prototype_phobos": {
-      "category": "music",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss2/music/cso/prototype_phobos",
-          "stream": true
-        }
-      ]
-    },
-    "waybig.stomp": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/aliens/waybig/stomp"
-      ]
-    },
-    "omni.used": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/used"
-      ]
-    },
-    "omni2.used": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni2/used"
-      ]
-    },
-    "omni.opt_change": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/switch"
-      ]
-    },
-    "omni2.opt_change": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni2/switch"
-      ]
-    },
-    "omni2.off": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni2/off"
-      ]
-    },
-    "omni.off": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/off"
-      ]
-    },
-    "omni.idle": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/idle"
-      ]
-    },
-    "omni.falling_omni": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/falling_omni"
-      ]
-    },
-    "omni.charged": {
-      "category": "neutral",
-      "sounds": [
-        "sounds/omnitrix/omni1/charged"
-      ]
-    },
-    "entity.oberon.bombard": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/bombard",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.music": {
-      "category": "music",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/music/start",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.asteroid.music": {
-      "category": "music",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/music/asteroid",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.asteroid.siren": {
-      "category": "music",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/siren",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.claw": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/claw",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.bite": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/bite",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.uppercut": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/uppercut",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.clap": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/clap",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.death": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/death",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.pre_super_smash": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/pre_super_smash",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.smashing": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/smashing",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.spawn": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/spawn",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.spin": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/spin",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.step": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/step1",
-          "load_on_low_memory": true
-        },
-        {
-          "name": "sounds/bosses/boss1/oberon/step2",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.super_smash": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/super_smash",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.swing": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/swing",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "entity.oberon.claw_attack": {
-      "category": "hostile",
-      "sounds": [
-        {
-          "name": "sounds/bosses/boss1/oberon/claw_attack",
-          "load_on_low_memory": true
-        }
-      ]
-    },
-    "werewolf_howl": {
-      "category": "hostile",
-      "max_distance": 5.0,
-      "sounds": [
-        {
-          "name": "sounds/fox/howl",
-          "load_on_low_memory": true
-        }
-      ]
-    }
-  }
+   "format_version": "1.14.0",
+   "sound_definitions": {
+      "cso:mob.prototype_phobos.dash": {
+         "category": "hostile",
+         "max_distance": 32,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_dash"
+         ]
+      },
+      "cso:mob.prototype_phobos.death": {
+         "category": "hostile",
+         "max_distance": 32,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_death"
+         ]
+      },
+      "cso:mob.prototype_phobos.idle": {
+         "category": "hostile",
+         "max_distance": 32,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_idle"
+         ]
+      },
+      "cso:mob.prototype_phobos.shockwave": {
+         "category": "hostile",
+         "max_distance": 64,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_shockwave"
+         ]
+      },
+      "cso:mob.prototype_phobos.step": {
+         "category": "hostile",
+         "max_distance": 32,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step1",
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_step2"
+         ]
+      },
+      "cso:mob.prototype_phobos.swing": {
+         "category": "hostile",
+         "max_distance": 24,
+         "sounds": [
+            "sounds/bosses/boss2/mob/prototype_phobos/prototype_phobos_swing"
+         ]
+      },
+      "cso:music.cso.prototype_phobos": {
+         "category": "music",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss2/music/cso/prototype_phobos",
+               "stream": true
+            }
+         ]
+      },
+      "waybig.stomp": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/aliens/waybig/stomp"
+         ]
+      },
+      "omni.used": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/omni1_trans"
+         ]
+      },
+      "omni2.used": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni2/used"
+         ]
+      },
+      "omni.opt_change": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/switch"
+         ]
+      },
+      "omni.next": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/omni_next"
+         ]
+      },
+      "omni.prev": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/omni_prev"
+         ]
+      },
+      "xlr8run": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/xlr8run"
+         ]
+      },
+      "xlr8running": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/xlr8running"
+         ]
+      },
+      "omni2.opt_change": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni2/switch"
+         ]
+      },
+      "omni2.off": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni2/off"
+         ]
+      },
+      "omni.off": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/off"
+         ]
+      },
+      "omni.idle": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/idle"
+         ]
+      },
+      "omni.falling_omni": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/falling_omni"
+         ]
+      },
+      "omni.charged": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/charged"
+         ]
+      },
+      "entity.oberon.bombard": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/bombard",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.music": {
+         "category": "music",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/music/start",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.asteroid.music": {
+         "category": "music",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/music/asteroid",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.asteroid.siren": {
+         "category": "music",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/siren",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.claw": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/claw",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.bite": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/bite",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.uppercut": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/uppercut",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.clap": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/clap",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.death": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/death",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.pre_super_smash": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/pre_super_smash",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.smashing": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/smashing",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.spawn": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/spawn",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.spin": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/spin",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.step": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/step1",
+               "load_on_low_memory": true
+            },
+            {
+               "name": "sounds/bosses/boss1/oberon/step2",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.super_smash": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/super_smash",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.swing": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/swing",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "entity.oberon.claw_attack": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/bosses/boss1/oberon/claw_attack",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "werewolf_howl": {
+         "category": "hostile",
+         "max_distance": 5,
+         "sounds": [
+            {
+               "name": "sounds/fox/howl",
+               "load_on_low_memory": true
+            }
+         ]
+      },
+      "mob.mutant_endersoul_hand.teleport": {
+         "category": "neutral",
+         "max_distance": 80,
+         "sounds": [
+            "sounds/mob/endersoul/endersoul_teleport_1",
+            "sounds/mob/endersoul/endersoul_teleport_2"
+         ]
+      },
+      "mob.mutated_fangs.fang_snap": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/fang_snap",
+            "sounds/mob/mutants/mutated_fangs/fang_snap2",
+            "sounds/mob/mutants/mutated_fangs/fang_snap3",
+            "sounds/mob/mutants/mutated_fangs/fang_snap4",
+            "sounds/mob/mutants/mutated_fangs/fang_snap5"
+         ]
+      },
+      "mob.mutated_fangs.snap": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/snap"
+         ]
+      },
+      "mob.mutated_fangs.dig": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/dig"
+         ]
+      },
+      "mob.mutated_fangs.breach": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/breach"
+         ]
+      },
+      "mob.mutated_fangs.death": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/death"
+         ]
+      },
+      "mob.mutated_fangs.hurt": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/hurt1",
+            "sounds/mob/mutants/mutated_fangs/hurt2"
+         ]
+      },
+      "mob.mutated_fangs.idle": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/mutated_fangs/idle1",
+            "sounds/mob/mutants/mutated_fangs/idle2"
+         ]
+      },
+      "mob.skeleton_wolf.howl": {
+         "category": "neutral",
+         "min_distance": 20,
+         "sounds": [
+            {
+               "name": "sounds/mob/skeleton_wolf/howl1",
+               "volume": 0.35
+            },
+            {
+               "name": "sounds/mob/skeleton_wolf/howl2",
+               "volume": 0.35
+            }
+         ]
+      },
+      "mob.bouldering_zombie.climb": {
+         "category": "hostile",
+         "min_distance": 1,
+         "max_distance": 6,
+         "sounds": [
+            {
+               "name": "sounds/mob/bouldering_zombie/climb1",
+               "volume": 0.15
+            },
+            {
+               "name": "sounds/mob/bouldering_zombie/climb2",
+               "volume": 0.15
+            },
+            {
+               "name": "sounds/mob/bouldering_zombie/climb3",
+               "volume": 0.15
+            },
+            {
+               "name": "sounds/mob/bouldering_zombie/climb4",
+               "volume": 0.15
+            }
+         ]
+      },
+      "mob.lobber_zombie.throw": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/lobber_zombie/throw1",
+            "sounds/mob/lobber_zombie/throw2",
+            "sounds/mob/lobber_zombie/throw3",
+            "sounds/mob/lobber_zombie/throw4",
+            "sounds/mob/lobber_zombie/throw5",
+            "sounds/mob/lobber_zombie/throw6"
+         ]
+      },
+      "mob.skeleton_wolf.death": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/death"
+         ]
+      },
+      "mob.skeleton_wolf.growl": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/growl1",
+            "sounds/mob/skeleton_wolf/growl2",
+            "sounds/mob/skeleton_wolf/growl3"
+         ]
+      },
+      "mob.skeleton_wolf.hurt": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/hurt1",
+            "sounds/mob/skeleton_wolf/hurt2",
+            "sounds/mob/skeleton_wolf/hurt3"
+         ]
+      },
+      "mob.skeleton_wolf.panting": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/panting"
+         ]
+      },
+      "mob.skeleton_wolf.shake": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/shake"
+         ]
+      },
+      "mob.skeleton_wolf.step": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/step1",
+            "sounds/mob/skeleton_wolf/step2",
+            "sounds/mob/skeleton_wolf/step3",
+            "sounds/mob/skeleton_wolf/step4",
+            "sounds/mob/skeleton_wolf/step5"
+         ]
+      },
+      "mob.skeleton_wolf.whine": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/skeleton_wolf/whine"
+         ]
+      },
+      "mob.mendolotl.death": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/endolotl/death"
+         ]
+      },
+      "mob.mendolotl.hurt": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/endolotl/hurt1",
+            "sounds/mob/mutants/endolotl/hurt2",
+            "sounds/mob/mutants/endolotl/hurt3",
+            "sounds/mob/mutants/endolotl/hurt4"
+         ]
+      },
+      "mob.mendolotl.idle": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/endolotl/idle1",
+            "sounds/mob/mutants/endolotl/idle2",
+            "sounds/mob/mutants/endolotl/idle3",
+            "sounds/mob/mutants/endolotl/idle4"
+         ]
+      },
+      "mob.mirongolem.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/irongolem/idle1",
+            "sounds/mob/mutants/irongolem/idle2",
+            "sounds/mob/mutants/irongolem/idle3",
+            "sounds/mob/mutants/irongolem/idle4"
+         ]
+      },
+      "mob.mirongolem.repair": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/irongolem/repair"
+         ]
+      },
+      "mob.mirongolem.iron_spikes": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/irongolem/spikes_1",
+            "sounds/mob/mutants/irongolem/spikes_2"
+         ]
+      },
+      "mob.menderman.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/enderman/ambient1",
+            "sounds/mob/mutants/enderman/ambient2"
+         ]
+      },
+      "mob.menderman.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/enderman/hurt1",
+            "sounds/mob/mutants/enderman/hurt2",
+            "sounds/mob/mutants/enderman/hurt3"
+         ]
+      },
+      "mob.menderman.death": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/enderman/death",
+            "sounds/mob/mutants/enderman/death2",
+            "sounds/mob/mutants/enderman/death3",
+            "sounds/mob/mutants/enderman/death4"
+         ]
+      },
+      "mob.menderman.stare": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/enderman/stare"
+         ]
+      },
+      "mob.menderman.roar": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/enderman/scream",
+            "sounds/mob/mutants/enderman/scream2",
+            "sounds/mob/mutants/enderman/scream3"
+         ]
+      },
+      "mob.mzombiepig.zpig": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombiepig/zpig1",
+            "sounds/mob/mutants/zombiepig/zpig2",
+            "sounds/mob/mutants/zombiepig/zpig3",
+            "sounds/mob/mutants/zombiepig/zpig4"
+         ]
+      },
+      "mob.mzombiepig.zpigangry": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombiepig/zpigangry1",
+            "sounds/mob/mutants/zombiepig/zpigangry2",
+            "sounds/mob/mutants/zombiepig/zpigangry3",
+            "sounds/mob/mutants/zombiepig/zpigangry4"
+         ]
+      },
+      "mob.mzombiepig.zpigroar": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombiepig/roar"
+         ]
+      },
+      "mob.mzombiepig.zpighurt": {
+         "category": "hostile",
+         "sounds": [
+            {
+               "name": "sounds/mob/mutants/zombiepig/zpighurt1",
+               "load_on_low_memory": true
+            },
+            "sounds/mob/mutants/zombiepig/zpighurt2"
+         ]
+      },
+      "mob.mdrowned.say_water": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/water/idle1",
+            {
+               "name": "sounds/mob/mutants/drowned/water/idle2",
+               "load_on_low_memory": true
+            },
+            "sounds/mob/mutants/drowned/water/idle3",
+            "sounds/mob/mutants/drowned/water/idle4"
+         ]
+      },
+      "mob.mdrowned.roar_water": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/water/roar1",
+            "sounds/mob/mutants/drowned/water/roar2"
+         ]
+      },
+      "mob.mdrowned.hurt_water": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/water/hurt1",
+            "sounds/mob/mutants/drowned/water/hurt2",
+            "sounds/mob/mutants/drowned/water/hurt3"
+         ]
+      },
+      "mob.mdrowned.idle": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/idle1",
+            {
+               "name": "sounds/mob/mutants/drowned/idle2",
+               "load_on_low_memory": true
+            },
+            "sounds/mob/mutants/drowned/idle3",
+            "sounds/mob/mutants/drowned/idle4",
+            "sounds/mob/mutants/drowned/idle5"
+         ]
+      },
+      "mob.mdrowned.roar": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/roar1",
+            "sounds/mob/mutants/drowned/roar2"
+         ]
+      },
+      "mob.mdrowned.hurt": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/hurt1",
+            "sounds/mob/mutants/drowned/hurt2",
+            "sounds/mob/mutants/drowned/hurt3"
+         ]
+      },
+      "mob.mdrowned.shoot": {
+         "sounds": [
+            "sounds/item/trident/throw1",
+            "sounds/item/trident/throw2"
+         ]
+      },
+      "mob.mdrowned.step": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/step1",
+            "sounds/mob/mutants/drowned/step2",
+            "sounds/mob/mutants/drowned/step3",
+            "sounds/mob/mutants/drowned/step4",
+            "sounds/mob/mutants/drowned/step5"
+         ]
+      },
+      "mob.mdrowned.swim": {
+         "sounds": [
+            "sounds/random/swim1",
+            "sounds/random/swim2",
+            "sounds/random/swim3",
+            "sounds/random/swim4"
+         ]
+      },
+      "entity.zombie.converted_to_mdrowned": {
+         "sounds": [
+            "sounds/mob/mutants/drowned/convert1",
+            "sounds/mob/mutants/drowned/convert2",
+            "sounds/mob/mutants/drowned/convert3"
+         ]
+      },
+      "mob.mwither_skeleton.death": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/wither_skeleton/death1",
+            "sounds/mob/mutants/wither_skeleton/death2"
+         ]
+      },
+      "mob.mwither_skeleton.hurt": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/wither_skeleton/hurt1",
+            "sounds/mob/mutants/wither_skeleton/hurt2",
+            "sounds/mob/mutants/wither_skeleton/hurt3",
+            "sounds/mob/mutants/wither_skeleton/hurt4"
+         ]
+      },
+      "mob.mwither_skeleton.step": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/wither_skeleton/step1",
+            "sounds/mob/mutants/wither_skeleton/step2",
+            "sounds/mob/mutants/wither_skeleton/step3",
+            "sounds/mob/mutants/wither_skeleton/step4"
+         ]
+      },
+      "mob.mwither_skeleton.idle": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/mob/mutants/wither_skeleton/idle1",
+            "sounds/mob/mutants/wither_skeleton/idle2",
+            "sounds/mob/mutants/wither_skeleton/idle3"
+         ]
+      },
+      "mob.mhusk.idle": {
+         "sounds": [
+            "sounds/mob/mutants/husk/say1",
+            "sounds/mob/mutants/husk/say2",
+            "sounds/mob/mutants/husk/say3"
+         ]
+      },
+      "mob.mhusk.roar": {
+         "sounds": [
+            "sounds/mob/mutants/husk/roar"
+         ]
+      },
+      "mob.mhusk.hurt": {
+         "sounds": [
+            "sounds/mob/mutants/husk/hurt1",
+            "sounds/mob/mutants/husk/hurt2"
+         ]
+      },
+      "mob.mcreeper.idle": {
+         "sounds": [
+            "sounds/mob/mutants/creeper/say1",
+            "sounds/mob/mutants/creeper/say2",
+            "sounds/mob/mutants/creeper/say3"
+         ]
+      },
+      "mob.mcreeper.fuse": {
+         "sounds": [
+            "sounds/mob/mutants/creeper/fuse"
+         ]
+      },
+      "mob.mcreeper.heal": {
+         "sounds": [
+            "sounds/mob/mutants/creeper/heal",
+            "sounds/mob/mutants/creeper/heal2",
+            "sounds/mob/mutants/creeper/heal3",
+            "sounds/mob/mutants/creeper/heal4"
+         ]
+      },
+      "mob.mcreeper.hurt": {
+         "sounds": [
+            "sounds/mob/mutants/creeper/hurt1",
+            "sounds/mob/mutants/creeper/hurt2"
+         ]
+      },
+      "mob.mskeleton.death": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeleton/death"
+         ]
+      },
+      "mob.mskeleton.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeleton/hurt1",
+            "sounds/mob/mutants/skeleton/hurt2",
+            "sounds/mob/mutants/skeleton/hurt3",
+            "sounds/mob/mutants/skeleton/hurt4"
+         ]
+      },
+      "mob.mskeleton.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeleton/say1",
+            "sounds/mob/mutants/skeleton/say2",
+            "sounds/mob/mutants/skeleton/say3"
+         ]
+      },
+      "mob.mskeleton.step": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeleton/step1",
+            "sounds/mob/mutants/skeleton/step2",
+            "sounds/mob/mutants/skeleton/step3",
+            "sounds/mob/mutants/skeleton/step4"
+         ]
+      },
+      "mob.mstray.idle": {
+         "sounds": [
+            "sounds/mob/mutants/stray/say1",
+            "sounds/mob/mutants/stray/say2",
+            "sounds/mob/mutants/stray/say3"
+         ]
+      },
+      "mob.mstray.death": {
+         "sounds": [
+            "sounds/mob/mutants/stray/death1",
+            "sounds/mob/mutants/stray/death2"
+         ]
+      },
+      "mob.mstray.hurt": {
+         "sounds": [
+            "sounds/mob/mutants/stray/hurt1",
+            "sounds/mob/mutants/stray/hurt2",
+            "sounds/mob/mutants/stray/hurt3",
+            "sounds/mob/mutants/stray/hurt4"
+         ]
+      },
+      "mob.mstray.step": {
+         "sounds": [
+            "sounds/mob/mutants/stray/step1",
+            "sounds/mob/mutants/stray/step2",
+            "sounds/mob/mutants/stray/step3",
+            "sounds/mob/mutants/stray/step4"
+         ]
+      },
+      "mob.mzombie.roar": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/roar",
+            "sounds/mob/mutants/zombie/roar2"
+         ]
+      },
+      "mob.mutant.step": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/step"
+         ]
+      },
+      "mob.mzombie.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/idle1",
+            "sounds/mob/mutants/zombie/idle2",
+            "sounds/mob/mutants/zombie/idle3"
+         ]
+      },
+      "mob.mzombie.smash": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/smash1"
+         ]
+      },
+      "mob.mzombie.smash_air": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/smash2"
+         ]
+      },
+      "mob.mzombie.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/zombie/hurt1",
+            "sounds/mob/mutants/zombie/hurt2"
+         ]
+      },
+      "mob.mocelot.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/meow1",
+            "sounds/mob/mutants/ocelot/meow2",
+            "sounds/mob/mutants/ocelot/meow3"
+         ]
+      },
+      "mob.mocelot.angry": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/hiss1",
+            "sounds/mob/mutants/ocelot/hiss2"
+         ]
+      },
+      "mob.mocelot.baby_idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/baby_meow1",
+            "sounds/mob/mutants/ocelot/baby_meow2"
+         ]
+      },
+      "mob.mocelot.baby_angry": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/baby_hiss1",
+            "sounds/mob/mutants/ocelot/baby_hiss2"
+         ]
+      },
+      "mob.mocelot.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/hurt1",
+            "sounds/mob/mutants/ocelot/hurt2",
+            "sounds/mob/mutants/ocelot/hurt3"
+         ]
+      },
+      "mob.mocelot.death": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/ocelot/death1",
+            "sounds/mob/mutants/ocelot/death2",
+            "sounds/mob/mutants/ocelot/death3"
+         ]
+      },
+      "mob.mwolf.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/wolf/bark1",
+            "sounds/mob/mutants/wolf/bark2",
+            "sounds/mob/mutants/wolf/bark3"
+         ]
+      },
+      "mob.mwolf.baby_idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/wolf/baby_bark1",
+            "sounds/mob/mutants/wolf/baby_bark2",
+            "sounds/mob/mutants/wolf/baby_bark3"
+         ]
+      },
+      "mob.mwolf.bite": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/wolf/bite1",
+            "sounds/mob/mutants/wolf/bite2",
+            "sounds/mob/mutants/wolf/bite3"
+         ]
+      },
+      "mob.mwolf.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/wolf/hurt1",
+            "sounds/mob/mutants/wolf/hurt2",
+            "sounds/mob/mutants/wolf/hurt3"
+         ]
+      },
+      "mob.mwolf.death": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/wolf/death"
+         ]
+      },
+      "mob.skeleton_wolf.bark": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeletonwolf/bark1",
+            "sounds/mob/mutants/skeletonwolf/bark2",
+            "sounds/mob/mutants/skeletonwolf/bark3"
+         ]
+      },
+      "mob.skeleton_wolf.baby_bark": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeletonwolf/babybark1",
+            "sounds/mob/mutants/skeletonwolf/babybark2",
+            "sounds/mob/mutants/skeletonwolf/babybark3"
+         ]
+      },
+      "mob.mskeletonwolf.idle": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeletonwolf/say1",
+            "sounds/mob/mutants/skeletonwolf/say2",
+            "sounds/mob/mutants/skeletonwolf/say3",
+            "sounds/mob/mutants/skeletonwolf/say4"
+         ]
+      },
+      "mob.mskeletonwolf.hurt": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeletonwolf/hurt1",
+            "sounds/mob/mutants/skeletonwolf/hurt2",
+            "sounds/mob/mutants/skeletonwolf/hurt3",
+            "sounds/mob/mutants/skeletonwolf/hurt4"
+         ]
+      },
+      "mob.mskeletonwolf.death": {
+         "category": "hostile",
+         "sounds": [
+            "sounds/mob/mutants/skeletonwolf/death"
+         ]
+      },
+      "omni.transform": {
+         "category": "neutral",
+         "sounds": [
+            "sounds/omnitrix/omni1/omni1_trans"
+         ]
+      },
+      "music_seashell": {
+         "category": "record",
+         "sounds": [
+            "sounds/music_seashell"
+         ],
+         "volume": 5
+      },
+      "lomos_keypad": {
+         "category": "record",
+         "sounds": [
+            "sounds/lomos_keypad"
+         ],
+         "volume": 5
+      },
+      "whistle": {
+         "category": "record",
+         "sounds": [
+            "sounds/whistle"
+         ],
+         "volume": 5
+      },
+      "cowbell": {
+         "category": "record",
+         "sounds": [
+            "sounds/cowbell"
+         ],
+         "volume": 5
+      },
+      "gong": {
+         "category": "record",
+         "sounds": [
+            "sounds/gong"
+         ],
+         "volume": 5
+      },
+      "guitar": {
+         "category": "record",
+         "sounds": [
+            "sounds/guitar"
+         ],
+         "volume": 5
+      },
+      "drum": {
+         "category": "record",
+         "sounds": [
+            "sounds/drum"
+         ],
+         "volume": 5
+      },
+      "harmonica": {
+         "category": "record",
+         "sounds": [
+            "sounds/harmonica"
+         ],
+         "volume": 5
+      },
+      "harp": {
+         "category": "record",
+         "sounds": [
+            "sounds/harp"
+         ],
+         "volume": 5
+      },
+      "merfolk_idle": {
+         "category": "neutral",
+         "sounds": [
+            {
+               "name": "sounds/merfolkidle1",
+               "volume": 1
+            },
+            {
+               "name": "sounds/merfolkidle2",
+               "volume": 1
+            },
+            {
+               "name": "sounds/merfolkidle3",
+               "volume": 1
+            }
+         ]
+      },
+      "merfolk_death": {
+         "category": "neutral",
+         "sounds": [
+            {
+               "name": "sounds/merfolkdeath",
+               "volume": 1
+            }
+         ]
+      },
+      "merfolk_hurt": {
+         "category": "neutral",
+         "sounds": [
+            {
+               "name": "sounds/merfolkhurt",
+               "volume": 1
+            }
+         ]
+      },
+      "xlr8.speed_start": {
+         "category": "ui",
+         "sounds": [
+            "sounds/fx/xlr8_speed_start"
+         ]
+      },
+      "xlr8.speed_loop": {
+         "category": "ui",
+         "sounds": [
+            "sounds/fx/xlr8_speed_loop"
+         ]
+      }
+   }
 }

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "mutant:endersoul_hand",
+  
+      "materials": {
+        "default": "endersoul_hand",
+          "glint": "endersoul_hand_outline",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/mutants/entity/entities/endersoul_hand/endersoul_hand",
+        "enchanted": "textures/mutants/entity/entities/endersoul_hand/endersoul_hand",
+        "glint": "textures/mutants/entity/entities/endersoul_hand/endersoul_hand_glint"
+      },
+      "geometry": {
+        "default": "geometry.mutant_endersoul_hand",
+        "glint": "geometry.mutant_endersoul_hand_layer"
+      },
+      "animations": {
+        "first_person_hold": "animation.mutant_endersoul_hand.first_person_hold",
+    
+        "third_person_hold": "animation.mutant_endersoul_hand.third_person_hold"
+      },
+      
+      "scripts": {
+      	"animate": [
+					{
+						"first_person_hold": "c.is_first_person"
+					},
+					{
+						"third_person_hold": "!c.is_first_person"
+					}
+				]
+      },
+      "render_controllers": [ "controller.render.item_mutant_endersoul_hand","controller.render.item_mutant_endersoul_hand_glint" ]
+    }
+  }
+}

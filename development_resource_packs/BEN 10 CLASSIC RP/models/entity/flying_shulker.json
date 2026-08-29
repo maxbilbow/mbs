@@ -1,0 +1,67 @@
+{
+	"geometry.flying_shulker": {
+		"texturewidth": 64,
+		"textureheight": 64,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 1,
+		"visible_bounds_offset": [
+			0,
+			0.5,
+			0
+		],
+		"bones": [
+			{
+				"name": "base",
+				"pivot": [
+					0,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-8,
+							7,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						],
+						"uv": [
+							0,
+							28
+						]
+					}
+				]
+			},
+			{
+				"name": "head",
+				"pivot": [
+					0,
+					12,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-3,
+							13,
+							-3
+						],
+						"size": [
+							6,
+							6,
+							6
+						],
+						"uv": [
+							0,
+							52
+						]
+					}
+				]
+			}
+		]
+	}
+}

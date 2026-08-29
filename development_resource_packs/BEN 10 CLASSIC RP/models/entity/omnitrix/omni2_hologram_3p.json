@@ -1,0 +1,179 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.omni2_hologram_3p",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [
+						0,
+						12,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "leftArm",
+					"pivot": [
+						5,
+						22,
+						0
+					],
+					"parent": "body"
+				},
+				{
+					"name": "omni",
+					"parent": "leftArm",
+					"pivot": [
+						37,
+						16,
+						-7
+					],
+					"rotation": [
+						-86.53881,
+						3.33325,
+						-177.09738
+					]
+				},
+				{
+					"name": "hologram",
+					"parent": "omni",
+					"pivot": [
+						71.84641,
+						28.6477,
+						-0.83452
+					],
+					"rotation": [
+						-2.84926,
+						-2.37514,
+						-0.34099
+					]
+				},
+				{
+					"name": "alien",
+					"parent": "hologram",
+					"pivot": [
+						33.84641,
+						53.6477,
+						-1.83452
+					],
+					"cubes": [
+						{
+							"origin": [
+								76.81001,
+								15.86787,
+								-7.25934
+							],
+							"size": [
+								3.6,
+								0,
+								3.2
+							],
+							"pivot": [
+								73.05642,
+								18.28557,
+								-6.84386
+							],
+							"rotation": [
+								-90,
+								-5,
+								177.5
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										7.1875,
+										0
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										6.375,
+										0
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										7.1875,
+										0
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										6.375,
+										0
+									]
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										7.1875,
+										6.375
+									]
+								},
+								"down": {
+									"uv": [
+										0,
+										14.375
+									],
+									"uv_size": [
+										7.1875,
+										-6.375
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

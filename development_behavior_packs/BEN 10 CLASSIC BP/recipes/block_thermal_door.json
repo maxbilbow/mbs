@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_door_38899126"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_planks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_door",
+			"count": 3
+		}
+	}
+}

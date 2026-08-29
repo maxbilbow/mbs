@@ -1,0 +1,123 @@
+{
+	"format_version": "1.10.0",
+	"geometry.mbogged_right_mid_rib_bone": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 4,
+		"visible_bounds_offset": [
+			0,
+			2,
+			0
+		],
+		"bones": [
+			{
+				"name": "root",
+				"pivot": [
+					0,
+					0,
+					0
+				]
+			},
+			{
+				"name": "rib",
+				"parent": "root",
+				"pivot": [
+					0,
+					1,
+					0
+				],
+				"rotation": [
+					0,
+					30,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							2,
+							0,
+							1.5
+						],
+						"size": [
+							6,
+							2,
+							2
+						],
+						"uv": [
+							50,
+							8
+						],
+						"inflate": 0.25
+					}
+				]
+			},
+			{
+				"name": "rib2",
+				"parent": "rib",
+				"pivot": [
+					2,
+					1,
+					2.5
+				],
+				"rotation": [
+					0,
+					-57.5,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-3.7,
+							0,
+							1.5
+						],
+						"size": [
+							6,
+							2,
+							2
+						],
+						"uv": [
+							50,
+							12
+						],
+						"inflate": 0.2
+					}
+				]
+			},
+			{
+				"name": "rib3",
+				"parent": "rib2",
+				"pivot": [
+					-3.5,
+					1,
+					2.5
+				],
+				"rotation": [
+					0,
+					-50,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-9.65,
+							0,
+							1.5
+						],
+						"size": [
+							6,
+							2,
+							2
+						],
+						"uv": [
+							35,
+							60
+						],
+						"inflate": 0.15
+					}
+				]
+			}
+		]
+	}
+}

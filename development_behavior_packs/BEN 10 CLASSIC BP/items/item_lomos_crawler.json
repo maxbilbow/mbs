@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:lomos_crawler",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:lomos_crawler"
+			},
+			"minecraft:display_name": {
+				"value": "Lomos Crawler\n\n§7Releases the seal holding back\nthe Primordial Wyrm\n\nFeed item to Primordial Wyrm"
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "zk:voltstrikesphere",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/lightning"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 800,
+				"max_particles": 800
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.5
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": 4,
+				"surface_only": true,
+				"direction": "inwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "math.random(0.3,0.5)"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": 1,
+				"rotation_rate": 100
+			},
+			"minecraft:particle_initial_speed": 2,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [
+					0,
+					1,
+					0
+				],
+				"linear_drag_coefficient": 1,
+				"rotation_acceleration": 100,
+				"rotation_drag_coefficient": 1.5
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					0.2,
+					0.2
+				],
+				"facing_camera_mode": "lookat_direction",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 192,
+					"flipbook": {
+						"base_UV": [
+							0,
+							0
+						],
+						"size_UV": [
+							32,
+							32
+						],
+						"step_UV": [
+							0,
+							0
+						],
+						"frames_per_second": 5,
+						"max_frame": 10
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:dead_grass_block",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.nature"
+			}
+		},
+		"components": {
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:sand": {},
+			"tag:minecraft:is_shovel_item_destructible": {},
+			"minecraft:loot": "loot_tables/blocks/block_dead_grass_block.json",
+			"minecraft:light_dampening": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			}
+		}
+	}
+}

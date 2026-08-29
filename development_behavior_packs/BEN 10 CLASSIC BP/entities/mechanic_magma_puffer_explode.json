@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mechanic:magma_puffer_explode",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:explode": {
+				"fuse_length": 0,
+				"fuse_lit": true,
+				"power": 3,
+				"causes_fire": false,
+				"fire_affected_by_griefing": true,
+				"destroy_affected_by_griefing": true,
+				"breaks_blocks": false
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			}
+		},
+		"events": {}
+	}
+}

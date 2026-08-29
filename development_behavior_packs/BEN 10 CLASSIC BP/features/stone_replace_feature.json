@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:stone_replace_feature"
+		},
+		"count": 40,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:stone",
+				"may_replace": [
+					"minecraft:grass_block",
+					"minecraft:dirt"
+				]
+			}
+		]
+	}
+}

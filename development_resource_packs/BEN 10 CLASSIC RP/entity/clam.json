@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:clam",
+			"materials": {
+				"default": "parrot"
+			},
+			"textures": {
+				"blue": "textures/entity/clam_white",
+				"green": "textures/entity/clam_pink",
+				"red_blue": "textures/entity/clam_lomos",
+				"yellow_blue": "textures/entity/clam_cyan",
+				"grey": "textures/entity/blue_sea_urchin"
+			},
+			"geometry": {
+				"default": "geometry.clam"
+			},
+			"render_controllers": [
+				"controller.render.parrot"
+			],
+			"spawn_egg": {
+				"base_color": "#EBC656",
+				"overlay_color": "#FFC69D"
+			}
+		}
+	}
+}

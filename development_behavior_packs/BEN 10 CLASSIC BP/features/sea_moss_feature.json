@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:sea_moss_feature"
+		},
+		"count": 30,
+		"replace_rules": [
+			{
+				"places_block": "block:sea_moss_block",
+				"may_replace": [
+					"minecraft:gravel",
+					"minecraft:sand"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,860 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:arrow",
+			"runtime_identifier": "minecraft:arrow",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"normal": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"piglin": {
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								10,
+								13
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 5,
+					"gravity": 0.025,
+					"uncertaintyBase": 2,
+					"uncertaintyMultiplier": 1,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"piglin_exploding": {
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4,
+					"gravity": 0.015,
+					"uncertaintyBase": 10,
+					"uncertaintyMultiplier": 4,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:explode": {
+					"fuse_length": 1,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"villager": {
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								8,
+								10
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 5,
+					"gravity": 0.025,
+					"uncertaintyBase": 2,
+					"uncertaintyMultiplier": 1,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"pillager": {
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								6,
+								8
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 5,
+					"gravity": 0.025,
+					"uncertaintyBase": 2,
+					"uncertaintyMultiplier": 2,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"stray": {
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								13,
+								14
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"spawn_aoe_cloud": {
+							"radius": 2,
+							"radius_on_use": 0,
+							"potion": 18,
+							"particle": "mobspell",
+							"duration": 1,
+							"color": [
+								82,
+								1,
+								26
+							],
+							"affect_owner": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 3.15,
+					"gravity": 0.025,
+					"uncertaintyBase": 4,
+					"uncertaintyMultiplier": 2,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"stray_exploding": {
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"spawn_aoe_cloud": {
+							"radius": 2,
+							"radius_on_use": 0,
+							"potion": 18,
+							"particle": "mobspell",
+							"duration": 1,
+							"color": [
+								82,
+								1,
+								26
+							],
+							"affect_owner": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 3,
+					"gravity": 0.015,
+					"uncertaintyBase": 5,
+					"uncertaintyMultiplier": 2,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:explode": {
+					"fuse_length": 1,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"bogged": {
+				"minecraft:projectile": {
+					"onHit": {
+						"impact_damage": {
+							"damage": [
+								7,
+								9
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"spawn_aoe_cloud": {
+							"radius": 2,
+							"radius_on_use": 0,
+							"potion": 25,
+							"particle": "mobspell",
+							"duration": 2,
+							"color": [
+								72,
+								1,
+								26
+							],
+							"affect_owner": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4.5,
+					"gravity": 0.025,
+					"uncertaintyBase": 8,
+					"uncertaintyMultiplier": 2,
+					"anchor": 1,
+					"inertia": 1,
+					"liquid_inertia": 0.9,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"minecraft:exploding": {
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"bogged_exploding": {
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"spawn_aoe_cloud": {
+							"radius": 2,
+							"radius_on_use": 0,
+							"potion": 25,
+							"particle": "mobspell",
+							"duration": 10,
+							"color": [
+								72,
+								1,
+								26
+							],
+							"affect_owner": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4,
+					"gravity": 0.015,
+					"uncertaintyBase": 10,
+					"uncertaintyMultiplier": 4,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:explode": {
+					"fuse_length": 1,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"to_tnt": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 1.5
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0.5,
+					"height": 0.5
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "minecraft:explode",
+								"target": "self"
+							}
+						},
+						"impact_damage": {
+							"damage": [
+								10,
+								13
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4,
+					"gravity": 0.015,
+					"uncertaintyBase": 10,
+					"uncertaintyMultiplier": 4,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				}
+			},
+			"to_tnt_stray": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 1.5
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0.5,
+					"height": 0.5
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "stray_explode",
+								"target": "self"
+							}
+						},
+						"impact_damage": {
+							"damage": [
+								13,
+								14
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 3,
+					"gravity": 0.015,
+					"uncertaintyBase": 5,
+					"uncertaintyMultiplier": 2,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				}
+			},
+			"to_tnt_bogged": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 1.5
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0.5,
+					"height": 0.5
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "bogged_explode",
+								"target": "self"
+							}
+						},
+						"impact_damage": {
+							"damage": [
+								10,
+								13
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4,
+					"gravity": 0.015,
+					"uncertaintyBase": 10,
+					"uncertaintyMultiplier": 4,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				}
+			},
+			"to_tnt_piglin": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:scale": {
+					"value": 1.5
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0.5,
+					"height": 0.5
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "piglin_explode",
+								"target": "self"
+							}
+						},
+						"impact_damage": {
+							"damage": [
+								10,
+								13
+							],
+							"knockback": true,
+							"semirandomdiffdamage": false,
+							"destroyonhit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {}
+					},
+					"hitSound": "bow.hit",
+					"power": 4,
+					"gravity": 0.015,
+					"uncertaintyBase": 10,
+					"uncertaintyMultiplier": 4,
+					"anchor": 1.1,
+					"inertia": 1,
+					"liquid_inertia": 0.95,
+					"shouldbounce": true,
+					"offset": [
+						-0.1,
+						-0.1,
+						0
+					]
+				}
+			},
+			"despawn": {
+				"minecraft:health": {
+					"value": 0,
+					"max": 0,
+					"min": 0
+				},
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:entity_sensor": {
+				"subsensors": [
+					{
+						"range": 2.5,
+						"relative_range": false,
+						"minimum_count": 1,
+						"event_filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "arrow"
+								},
+								{
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"operator": "equals",
+											"value": "player"
+										},
+										{
+											"none_of": {
+												"test": "has_ability",
+												"subject": "other",
+												"value": "instabuild"
+											}
+										}
+									]
+								}
+							]
+						},
+						"event": "near_entity"
+					}
+				]
+			},
+			"minecraft:scale": {
+				"value": 1.4
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 1.75,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.45,
+				"height": 0.45
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": [
+							9,
+							11
+						],
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": false
+					},
+					"arrow_effect": {}
+				},
+				"hitSound": "bow.hit",
+				"power": 4.5,
+				"gravity": 0.025,
+				"uncertaintyBase": 8,
+				"uncertaintyMultiplier": 2,
+				"anchor": 1,
+				"inertia": 1,
+				"liquid_inertia": 0.9,
+				"shouldbounce": true,
+				"offset": [
+					-0.1,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"near_entity": {},
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"bogged_explode": {
+				"add": {
+					"component_groups": [
+						"bogged_exploding"
+					]
+				}
+			},
+			"stray_explode": {
+				"add": {
+					"component_groups": [
+						"stray_exploding"
+					]
+				}
+			},
+			"piglin_explode": {
+				"add": {
+					"component_groups": [
+						"piglin_exploding"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mvillager"
+								},
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"villager"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mskeleton"
+								},
+								"weight": 80,
+								"add": {
+									"component_groups": []
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mskeleton"
+								},
+								"weight": 20,
+								"add": {
+									"component_groups": [
+										"to_tnt"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mstray"
+								},
+								"weight": 80,
+								"add": {
+									"component_groups": [
+										"stray"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mstray"
+								},
+								"weight": 20,
+								"add": {
+									"component_groups": [
+										"stray",
+										"to_tnt_stray"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mbogged"
+								},
+								"weight": 80,
+								"add": {
+									"component_groups": [
+										"bogged"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mbogged"
+								},
+								"weight": 20,
+								"add": {
+									"component_groups": [
+										"bogged",
+										"to_tnt_bogged"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mpiglin"
+								},
+								"weight": 80,
+								"add": {
+									"component_groups": [
+										"piglin"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mpiglin"
+								},
+								"weight": 20,
+								"add": {
+									"component_groups": [
+										"piglin",
+										"to_tnt_piglin"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "mpillager"
+								},
+								"weight": 80,
+								"add": {
+									"component_groups": [
+										"pillager"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

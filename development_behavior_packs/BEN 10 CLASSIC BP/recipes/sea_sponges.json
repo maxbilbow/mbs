@@ -1,0 +1,19 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"tags": [
+			"furnace"
+		],
+		"output": {
+			"item": "block:dried_sea_sponge",
+			"data": 0
+		},
+		"input": {
+			"item": "block:sea_sponge",
+			"data": 0
+		},
+		"description": {
+			"identifier": "recipes_seasponge"
+		}
+	}
+}

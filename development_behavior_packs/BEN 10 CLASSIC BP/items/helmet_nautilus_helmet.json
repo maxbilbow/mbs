@@ -1,0 +1,51 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "helmet:nautilus_helmet",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.helmet"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "nautilus_helmet"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_head"
+			},
+			"minecraft:durability": {
+				"max_durability": 100,
+				"damage_chance": {
+					"min": 80,
+					"max": 100
+				}
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 1
+			},
+			"minecraft:damage_absorption": {
+				"absorbable_causes": [
+					"drowning"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "Nautilus Helmet\n\n\n§9Drowning Damage is taken\nas Durability"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

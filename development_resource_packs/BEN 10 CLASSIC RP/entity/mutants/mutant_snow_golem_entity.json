@@ -1,0 +1,60 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_snow_golem",
+			"materials": {
+				"default": "drowned",
+				"no_pumpkin": "map_decoration",
+				"pumpkin": "drowned",
+				"ice": "map_decoration"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/snow_golem/mutant_snow_golem",
+				"pinkie": "textures/mutants/entity/snow_golem/pinkie",
+				"no_pumpkin": "textures/mutants/entity/snow_golem/mutant_snow_golem",
+				"pumpkin": "textures/mutants/entity/snow_golem/msnowgolem_pumpkin",
+				"ice": "textures/blocks/ice"
+			},
+			"geometry": {
+				"default": "geometry.msnowgolem",
+				"pinkie": "geometry.msnowpinkie",
+				"no_pumpkin": "geometry.msnowgolem",
+				"pumpkin": "geometry.msnowgolem_pumpkin",
+				"ice": "geometry.miceblock"
+			},
+			"enable_attachables": true,
+			"scripts": {
+				"scale": "1.0"
+			},
+			"animations": {
+				"attack": "animation.msnowgolem.arm_attack",
+				"idle": "animation.msnowgolem.idle",
+				"look_at_target": "animation.msnowgolem.look_at_target",
+				"walk": "animation.msnowgolem.move",
+				"walk_arms": "animation.msnowgolem.move_arms",
+				"sit": "animation.msnowgolem.sit",
+				"range": "animation.msnowgolem.range_attack",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.msnowgolem.death"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.msnowgolem.general"
+				},
+				{
+					"move": "controller.animation.msnowgolem.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_snow_golem",
+				"controller.render.mutant_snow_golem_pumpkin",
+				"controller.render.msnow_golem_ice"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 10
+			}
+		}
+	}
+}

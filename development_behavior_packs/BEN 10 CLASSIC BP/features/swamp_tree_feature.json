@@ -1,0 +1,55 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "minecraft:swamp_tree_feature"
+		},
+		"structure_name": "mystructure:newswamptree",
+		"adjustment_radius": 4,
+		"facing_direction": "east",
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:dirt"
+					},
+					{
+						"name": "minecraft:grass"
+					},
+					{
+						"name": "minecraft:water"
+					},
+					{
+						"name": "minecraft:flowing_water"
+					},
+					{
+						"name": "minecraft:short_grass"
+					},
+					{
+						"name": "minecraft:tall_grass"
+					},
+					{
+						"name": "minecraft:mud"
+					},
+					{
+						"name": "block:dark_oak_leaf_litter"
+					},
+					{
+						"name": "block:red_autumn_leaves"
+					},
+					{
+						"name": "block:yellow_autumn_leaves"
+					},
+					{
+						"name": "block:orange_autumn_leaves"
+					},
+					{
+						"name": "minecraft:air"
+					}
+				]
+			}
+		}
+	}
+}

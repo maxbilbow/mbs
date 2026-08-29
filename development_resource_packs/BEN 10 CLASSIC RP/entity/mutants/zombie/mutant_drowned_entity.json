@@ -1,0 +1,82 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_drowned",
+			"materials": {
+				"default": "drowned"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/zombie/drowned",
+				"glow": "textures/mutants/entity/zombie/drowned_glow"
+			},
+			"geometry": {
+				"default": "geometry.mdrowned"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"sound_effects": {
+				"smash_air": "mob.mzombie.smash_air",
+				"roar": "mob.mzombie.roar"
+			},
+			"scripts": {
+				"scale": "1.35"
+			},
+			"animations": {
+				"big_head": "animation.mzombie.big_head",
+				"smash_attack": "animation.mzombie.smash_attack",
+				"idle": "animation.mzombie.general",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_legs": "animation.mzombie.move_legs",
+				"smash": "animation.mzombie.smash",
+				"range_charge": "animation.mzombie.move_charge_trident",
+				"range_uncharge": "animation.mzombie.move_uncharge_trident",
+				"range_shoot": "animation.mzombie.move_shoot_trident",
+				"throw": "animation.mzombie.throw_target",
+				"throw_success": "animation.mzombie.throw_target_success",
+				"roaring": "animation.mzombie.roar",
+				"swimming": "animation.mzombie.swim",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"no_item": "animation.mutant.no_item",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mzombie.general"
+				},
+				{
+					"no_item": "controller.animation.mpiglin.no_item"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.mdrowned.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_drowned",
+				"controller.render.mutant_drowned_glow",
+				"controller.render.mutant_drowned_weapon"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 1
+			}
+		}
+	}
+}

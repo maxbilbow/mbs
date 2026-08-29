@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:endersoul_hand",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:glint": true,
+			"minecraft:cooldown": {
+				"category": "attack",
+				"duration": 3
+			},
+			"minecraft:use_animation": {
+				"value": "bow"
+			},
+			"minecraft:durability": {
+				"max_durability": 240
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "endersoul_hand"
+				}
+			},
+			"minecraft:custom_components": [
+				"mutant_script:endersoul_teleport"
+			],
+			"minecraft:display_name": {
+				"value": "§5Endersoul Hand§r"
+			},
+			"minecraft:damage": 6,
+			"minecraft:stacked_by_data": true,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

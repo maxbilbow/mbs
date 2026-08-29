@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "glow_stick_3c74de9d"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:glow_ink_sac",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:glow_stick",
+			"count": 4
+		}
+	}
+}

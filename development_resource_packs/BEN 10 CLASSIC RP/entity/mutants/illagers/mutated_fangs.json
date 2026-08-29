@@ -1,0 +1,65 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutated_evoker_fangs",
+			"materials": {
+				"default": "vex",
+				"glow": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/illagers/fangs/mutated_evoker_fangs",
+				"worjira": "textures/mutants/entity/illagers/fangs/mutated_worjira",
+				"worjira_glow": "textures/mutants/entity/illagers/fangs/mutated_worjira_glow"
+			},
+			"geometry": {
+				"default": "geometry.mutated_evoker_fangs",
+				"worjira": "geometry.mutated_evoker_fangs_worjira"
+			},
+			"scripts": {
+				"scale": "1.75"
+			},
+			"sound_effects": {
+				"bite": "mob.mutated_fangs.fang_snap",
+				"dig": "mob.mutated_fangs.dig"
+			},
+			"particle_effects": {
+				"bite": "minecraft:critical_hit_emitter",
+				"breach": "mutant:mutant_breaching",
+				"area": "mutant:mutated_fangs_area"
+			},
+			"animations": {
+				"look_at_target": "animation.mutated_evoker_fangs.look_at_target",
+				"idle": "animation.mutated_evoker_fangs.monster_idle",
+				"melee_attack": "animation.mutated_evoker_fangs.monster_attack",
+				"breach": "animation.mutated_evoker_fangs.monster_breach",
+				"dig": "animation.mutated_evoker_fangs.monster_dig",
+				"hidden": "animation.mutated_evoker_fangs.monster_hidden",
+				"bite": "animation.mutated_evoker_fangs.bite",
+				"particle": "animation.mutated_evoker_fangs.particle",
+				"death": "animation.mutated_evoker_fangs.monster_death",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.mutated_fangs.general"
+				},
+				{
+					"bite": "controller.animation.mutated_fangs.bite"
+				},
+				{
+					"death": "controller.animation.mutated_fangs.death"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutated_evoker_fangs",
+				"controller.render.mutated_evoker_fangs_w_glow"
+			],
+			"held_item_ignores_lighting": true,
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 28
+			}
+		}
+	}
+}

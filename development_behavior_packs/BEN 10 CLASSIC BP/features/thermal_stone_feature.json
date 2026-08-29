@@ -1,0 +1,67 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:thermal_stone_feature"
+		},
+		"count": 90,
+		"replace_rules": [
+			{
+				"places_block": "block:thermal_stone",
+				"may_replace": [
+					"minecraft:stone",
+					"minecraft:deepslate",
+					"minecraft:obsidian",
+					"minecraft:lava"
+				]
+			},
+			{
+				"places_block": "block:thermal_sandstone",
+				"may_replace": [
+					"minecraft:gravel",
+					"minecraft:andesite",
+					"minecraft:granite",
+					"minecraft:diorite",
+					"minecraft:tuff"
+				]
+			},
+			{
+				"places_block": "ore:thermal_silver_ore",
+				"may_replace": [
+					"minecraft:coal_ore",
+					"minecraft:deepslate_coal_ore"
+				]
+			},
+			{
+				"places_block": "ore:thermal_tungsten_ore",
+				"may_replace": [
+					"minecraft:copper_ore",
+					"minecraft:deepslate_copper_ore"
+				]
+			},
+			{
+				"places_block": "ore:thermal_opal_ore",
+				"may_replace": [
+					"minecraft:gold_ore",
+					"minecraft:deepslate_gold_ore"
+				]
+			},
+			{
+				"places_block": "ore:reidite_ore",
+				"may_replace": [
+					"minecraft:diamond_ore",
+					"minecraft:deepslate_diamond_ore"
+				]
+			},
+			{
+				"places_block": "ore:thermal_malachite_ore",
+				"may_replace": [
+					"minecraft:lapis_ore",
+					"minecraft:deepslate_lapis_ore",
+					"minecraft:redstone_ore",
+					"minecraft:deepslate_redstone_ore"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,2618 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_vindicator",
+			"runtime_identifier": "minecraft:vindicator",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"smash_attack",
+					"spin_attacking",
+					"melee_attack",
+					{
+						"stunned": "query.is_stunned"
+					}
+				]
+			},
+			"animations": {
+				"stunned": "animation.mutants.mutant_zombies_illagers_pigmans_stunned",
+				"smash_attack": "controller.animation.mutant_vindicator_smash_attack",
+				"spin_attacking": "controller.animation.mutant_loop_spin_attack",
+				"melee_attack": "controller.animation.mutant_vindicator_melee_roar_attack"
+			}
+		},
+		"component_groups": {
+			"playing_dead": {
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 4,
+					"ignore_visibility": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 0.9,
+							"sprint_speed_multiplier": 0.9
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.75,
+					"time_down_event": {
+						"event": "on_calm_to_normal"
+					}
+				}
+			},
+			"family": {
+				"minecraft:water_movement": {
+					"drag_factor": 0.98
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 9
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 6,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.float": {
+					"priority": 0
+				},
+				"minecraft:movement": {
+					"value": 0.325
+				},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "villager"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "snowgolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "turtle"
+											}
+										]
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							},
+							"max_dist": 56
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							},
+							"max_dist": 56
+						}
+					],
+					"must_see": true
+				},
+				"minecraft:type_family": {
+					"family": [
+						"vindicator",
+						"illager",
+						"mob",
+						"mutantmonster",
+						"chemical_x",
+						"monster"
+					]
+				}
+			},
+			"family_health": {
+				"minecraft:health": {
+					"value": 180,
+					"max": 180
+				}
+			},
+			"family_down": {
+				"minecraft:water_movement": {
+					"drag_factor": 0
+				},
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:pushable": {
+					"is_pushable": false,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				}
+			},
+			"can_attack": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:break_blocks": {
+					"breakable_blocks": [
+						"acacia_leaves",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"birch_leaves",
+						"cherry_leaves",
+						"dark_oak_leaves",
+						"jungle_leaves",
+						"mangrove_leaves",
+						"oak_leaves",
+						"spruce_leaves",
+						"bamboo",
+						"bamboo_sapling",
+						"beetroot",
+						"brown_mushroom",
+						"carrots",
+						"carved_pumpkin",
+						"chorus_flower",
+						"chorus_plant",
+						"deadbush",
+						"double_plant",
+						"leaves",
+						"leaves2",
+						"lit_pumpkin",
+						"melon_block",
+						"melon_stem",
+						"potatoes",
+						"pumpkin",
+						"pumpkin_stem",
+						"red_flower",
+						"red_mushroom",
+						"crimson_fungus",
+						"warped_fungus",
+						"reeds",
+						"sapling",
+						"snow_layer",
+						"sweet_berry_bush",
+						"tallgrass",
+						"turtle_egg",
+						"vine",
+						"waterlily",
+						"wheat",
+						"dandelion",
+						"azalea",
+						"flowering_azalea",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"cave_vines",
+						"cave_vines_body_with_berries",
+						"cave_vines_head_with_berries",
+						"small_dripleaf_block",
+						"big_dripleaf",
+						"spore_blossom",
+						"hanging_roots",
+						"mangrove_leaves"
+					]
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 2.25,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "start_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"melee_fov": 90,
+					"speed_multiplier": 1.2,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"attack_once": false
+				}
+			},
+			"find_target": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						10,
+						14
+					],
+					"attack_cooldown_complete_event": {
+						"event": "minecraft:start_roar",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 0,
+					"speed_multiplier": 1.2,
+					"cooldown_time": 1.5,
+					"attack_duration": 1,
+					"hit_delay_pct": 1,
+					"track_target": true
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				},
+				"minecraft:entity_sensor": {
+					"sensor_range": 1.5,
+					"relative_range": false,
+					"minimum_count": 1,
+					"event_filters": {
+						"test": "has_target"
+					},
+					"event": "throw_target"
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 1.5,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "throw_target",
+						"target": "self"
+					}
+				}
+			},
+			"throw_target": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						1.5,
+						1.5
+					],
+					"time_down_event": {
+						"event": "throw_target_locate"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 0.7,
+					"attack_time": 0.3,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"knockback_height_cap": 1.25,
+					"knockback_vertical_strength": 255,
+					"knockback_strength": 0.15,
+					"knockback_horizontal_strength": 0.6,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mutant_target_thrower"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "throw_target_delay"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mutant_target_thrower"
+							}
+						]
+					},
+					"cooldown_time": 30
+				}
+			},
+			"throw_target_delay": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						9,
+						10
+					],
+					"attack_cooldown_complete_event": {
+						"event": "start_life",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.35,
+						0.5
+					],
+					"time_down_event": {
+						"event": "throw_target_locate"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "levitation",
+							"duration": 0.25,
+							"amplifier": 45,
+							"ambient": false,
+							"visible": false
+						}
+					],
+					"remove_effects": [
+						"poison",
+						"wither"
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				}
+			},
+			"throw_target_locate": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						9,
+						10
+					],
+					"attack_cooldown_complete_event": {
+						"event": "start_life",
+						"target": "self"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									},
+									{
+										"test": "in_lava",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									},
+									{
+										"test": "in_water",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									}
+								]
+							},
+							"event": "melee_return"
+						}
+					]
+				},
+				"minecraft:entity_sensor": {
+					"sensor_range": 3.5,
+					"relative_range": false,
+					"minimum_count": 1,
+					"event_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "inanimate"
+					},
+					"event": "throw_target_success"
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 3.25,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "throw_target_success",
+						"target": "self"
+					}
+				}
+			},
+			"throw_target_success": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "levitation",
+							"duration": 0.5,
+							"amplifier": -10,
+							"ambient": false,
+							"visible": false
+						}
+					],
+					"remove_effects": [
+						"poison",
+						"wither"
+					]
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 0.75,
+					"attack_time": 0.1,
+					"knockback_damage": 10,
+					"knockback_range": 4,
+					"knockback_height_cap": 2,
+					"knockback_vertical_strength": -3,
+					"knockback_horizontal_strength": 0,
+					"on_roar_end": {
+						"event": "throw_target_end"
+					},
+					"damage_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "mutant_target_thrower"
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						9,
+						10
+					],
+					"attack_cooldown_complete_event": {
+						"event": "start_life",
+						"target": "self"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"weapon_attack": {
+				"minecraft:break_blocks": {
+					"breakable_blocks": [
+						"acacia_leaves",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"birch_leaves",
+						"cherry_leaves",
+						"dark_oak_leaves",
+						"jungle_leaves",
+						"mangrove_leaves",
+						"oak_leaves",
+						"spruce_leaves",
+						"bamboo",
+						"bamboo_sapling",
+						"beetroot",
+						"brown_mushroom",
+						"carrots",
+						"carved_pumpkin",
+						"chorus_flower",
+						"chorus_plant",
+						"deadbush",
+						"double_plant",
+						"leaves",
+						"leaves2",
+						"lit_pumpkin",
+						"melon_block",
+						"melon_stem",
+						"potatoes",
+						"pumpkin",
+						"pumpkin_stem",
+						"red_flower",
+						"red_mushroom",
+						"crimson_fungus",
+						"warped_fungus",
+						"reeds",
+						"sapling",
+						"snow_layer",
+						"sweet_berry_bush",
+						"tallgrass",
+						"turtle_egg",
+						"vine",
+						"waterlily",
+						"wheat",
+						"dandelion",
+						"azalea",
+						"flowering_azalea",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"cave_vines",
+						"cave_vines_body_with_berries",
+						"cave_vines_head_with_berries",
+						"small_dripleaf_block",
+						"big_dripleaf",
+						"spore_blossom",
+						"hanging_roots",
+						"mangrove_leaves"
+					]
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 2
+						}
+					]
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 2,
+					"summon_choices": [
+						{
+							"min_activation_range": 0.1,
+							"max_activation_range": 15,
+							"cooldown_time": 30,
+							"weight": 3,
+							"cast_duration": 1.4,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 0.615,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 5,
+									"entity_type": "mutant:smash_attack<vindicator_damage>",
+									"size": 5,
+									"entity_lifespan": 0.2
+								}
+							]
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				}
+			},
+			"smash_attack": {
+				"minecraft:break_blocks": {
+					"breakable_blocks": [
+						"acacia_leaves",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"birch_leaves",
+						"cherry_leaves",
+						"dark_oak_leaves",
+						"jungle_leaves",
+						"mangrove_leaves",
+						"oak_leaves",
+						"spruce_leaves",
+						"bamboo",
+						"bamboo_sapling",
+						"beetroot",
+						"brown_mushroom",
+						"carrots",
+						"carved_pumpkin",
+						"chorus_flower",
+						"chorus_plant",
+						"deadbush",
+						"double_plant",
+						"leaves",
+						"leaves2",
+						"lit_pumpkin",
+						"melon_block",
+						"melon_stem",
+						"potatoes",
+						"pumpkin",
+						"pumpkin_stem",
+						"red_flower",
+						"red_mushroom",
+						"crimson_fungus",
+						"warped_fungus",
+						"reeds",
+						"sapling",
+						"snow_layer",
+						"sweet_berry_bush",
+						"tallgrass",
+						"turtle_egg",
+						"vine",
+						"waterlily",
+						"wheat",
+						"dandelion",
+						"azalea",
+						"flowering_azalea",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"cave_vines",
+						"cave_vines_body_with_berries",
+						"cave_vines_head_with_berries",
+						"small_dripleaf_block",
+						"big_dripleaf",
+						"spore_blossom",
+						"hanging_roots",
+						"mangrove_leaves"
+					]
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 2
+						}
+					]
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 0.9,
+					"attack_time": 0.75,
+					"knockback_damage": 13,
+					"knockback_range": 4,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					},
+					"cooldown_time": 30
+				}
+			},
+			"swing_attack": {
+				"minecraft:is_charged": {},
+				"minecraft:break_blocks": {
+					"breakable_blocks": [
+						"oak_log",
+						"birch_log",
+						"spruce_log",
+						"jungle_log",
+						"dark_oak_log",
+						"acacia_log",
+						"cherry_log",
+						"mangrove_log",
+						"stripped_oak_log",
+						"stripped_birch_log",
+						"stripped_spruce_log",
+						"stripped_jungle_log",
+						"stripped_dark_oak_log",
+						"stripped_acacia_log",
+						"stripped_cherry_log",
+						"stripped_mangrove_log",
+						"acacia_leaves",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"birch_leaves",
+						"cherry_leaves",
+						"dark_oak_leaves",
+						"jungle_leaves",
+						"mangrove_leaves",
+						"oak_leaves",
+						"spruce_leaves",
+						"bamboo",
+						"bamboo_sapling",
+						"beetroot",
+						"brown_mushroom",
+						"carrots",
+						"carved_pumpkin",
+						"chorus_flower",
+						"chorus_plant",
+						"deadbush",
+						"double_plant",
+						"leaves",
+						"leaves2",
+						"lit_pumpkin",
+						"melon_block",
+						"melon_stem",
+						"potatoes",
+						"pumpkin",
+						"pumpkin_stem",
+						"red_flower",
+						"red_mushroom",
+						"crimson_fungus",
+						"warped_fungus",
+						"reeds",
+						"sapling",
+						"snow_layer",
+						"sweet_berry_bush",
+						"tallgrass",
+						"turtle_egg",
+						"vine",
+						"waterlily",
+						"wheat",
+						"dandelion",
+						"azalea",
+						"flowering_azalea",
+						"azalea_leaves",
+						"azalea_leaves_flowered",
+						"cave_vines",
+						"cave_vines_body_with_berries",
+						"cave_vines_head_with_berries",
+						"small_dripleaf_block",
+						"big_dripleaf",
+						"spore_blossom",
+						"hanging_roots",
+						"mangrove_leaves"
+					]
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"melee_fov": 90,
+					"speed_multiplier": 0,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"attack_once": false
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "start_swing_damage"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 10
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 4
+				}
+			},
+			"swing_damage": {
+				"minecraft:is_charged": {},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:mark_variant": {
+					"value": 4
+				},
+				"minecraft:area_attack": {
+					"damage_range": 2.25,
+					"damage_per_tick": 8,
+					"cause": "contact",
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"melee_fov": 90,
+					"speed_multiplier": 1,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"attack_once": false
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						9,
+						9
+					],
+					"attack_cooldown_complete_event": {
+						"event": "end_swing",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 9,
+					"time_down_event": {
+						"event": "end_swing"
+					}
+				}
+			},
+			"swing_delay": {
+				"minecraft:reflect_projectiles": {
+					"reflected_projectiles": [
+						"xp_bottle",
+						"thrown_trident",
+						"shulker_bullet",
+						"dragon_fireball",
+						"arrow",
+						"snowball",
+						"egg",
+						"fireball",
+						"splash_potion",
+						"ender_pearl",
+						"wither_skull",
+						"wither_skull_dangerous",
+						"small_fireball",
+						"lingering_potion",
+						"llama_spit",
+						"fireworks_rocket",
+						"fishing_hook"
+					],
+					"azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+					"reflection_scale": "0.5"
+				},
+				"minecraft:is_charged": {},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"melee_fov": 90,
+					"speed_multiplier": 0,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"attack_once": false
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 3,
+					"time_down_event": {
+						"event": "swing_return"
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 3
+						},
+						{
+							"effect": "slowness",
+							"amplifier": 50,
+							"visible": false,
+							"ambient": false,
+							"duration": 3
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"minecraft:mutant_angry": {
+				"minecraft:on_target_escape": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "self",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"event": "minecraft:on_calm",
+					"target": "self"
+				},
+				"minecraft:angry": {
+					"duration": 125,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 60,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "other",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:mutant_calm": {
+				"minecraft:area_attack": {
+					"damage_range": 0,
+					"damage_per_tick": 0,
+					"cause": "contact",
+					"entity_filter": {
+						"all_of": [
+							{
+								"test": "has_target",
+								"subject": "self",
+								"operator": "equals",
+								"value": true
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					}
+				},
+				"minecraft:on_target_acquired": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "self",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+			},
+			"life_3": {
+				"minecraft:health": {
+					"value": 180,
+					"max": 180
+				},
+				"minecraft:skin_id": {
+					"value": 3
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 999999
+						}
+					]
+				},
+				"minecraft:attack": {
+					"damage": 17
+				}
+			},
+			"life_2": {
+				"minecraft:health": {
+					"value": 60,
+					"max": 60
+				},
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 999999
+						}
+					]
+				},
+				"minecraft:attack": {
+					"damage": 17
+				}
+			},
+			"life_1": {
+				"minecraft:health": {
+					"value": 70,
+					"max": 70
+				},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:attack": {
+					"damage": 21
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 999999
+						}
+					]
+				}
+			},
+			"life_0": {
+				"minecraft:health": {
+					"value": 60,
+					"max": 60
+				},
+				"minecraft:is_sheared": {},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:attack": {
+					"damage": 21
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 999999
+						}
+					]
+				}
+			},
+			"general": {
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:behavior.float": {
+					"priority": 0
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 9
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 6,
+					"speed_multiplier": 1
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.look_at_player": {
+					"priority": 8,
+					"look_distance": 6,
+					"probability": 0.02
+				}
+			},
+			"stunned": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "on_fire",
+										"subject": "self",
+										"value": true
+									},
+									{
+										"test": "has_component",
+										"operator": "!=",
+										"value": "minecraft:is_shaking"
+									}
+								]
+							},
+							"event": "mutant_on_fire"
+						}
+					]
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_equipment",
+											"domain": "hand",
+											"subject": "other",
+											"value": "flint_and_steel"
+										},
+										{
+											"test": "has_component",
+											"operator": "!=",
+											"value": "minecraft:is_shaking"
+										}
+									]
+								},
+								"event": "mutant_on_fire",
+								"target": "self"
+							},
+							"hurt_item": 1,
+							"swing": true,
+							"play_sounds": "ignite",
+							"interact_text": "action.interact.creeper"
+						}
+					]
+				},
+				"minecraft:is_hidden_when_invisible": {},
+				"minecraft:is_stunned": {}
+			},
+			"stunned_check": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "on_fire",
+										"subject": "self",
+										"value": true
+									},
+									{
+										"test": "has_component",
+										"operator": "!=",
+										"value": "minecraft:is_shaking"
+									}
+								]
+							},
+							"event": "mutant_on_fire"
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"operator": "==",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							},
+							"event": "knocked_checked"
+						}
+					]
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_equipment",
+											"domain": "hand",
+											"subject": "other",
+											"value": "flint_and_steel"
+										},
+										{
+											"test": "has_component",
+											"operator": "!=",
+											"value": "minecraft:is_shaking"
+										}
+									]
+								},
+								"event": "mutant_on_fire",
+								"target": "self"
+							},
+							"hurt_item": 1,
+							"swing": true,
+							"play_sounds": "ignite",
+							"interact_text": "action.interact.creeper"
+						}
+					]
+				}
+			},
+			"on_fire": {
+				"minecraft:is_shaking": {},
+				"minecraft:burns_in_daylight": {},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5.5,
+					"time_down_event": {
+						"event": "start_death"
+					}
+				}
+			},
+			"death": {
+				"minecraft:health": {
+					"value": 0,
+					"max": 0,
+					"min": 0
+				}
+			},
+			"heal": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 150,
+							"visible": false,
+							"ambient": false,
+							"duration": 10
+						},
+						{
+							"effect": "instant_health",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 10
+						}
+					],
+					"remove_effects": [
+						"poison",
+						"wither"
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 4.75,
+					"time_down_event": {
+						"event": "end_health"
+					}
+				}
+			},
+			"minecraft:mzombie_name": {
+				"minecraft:nameable": {
+					"default_trigger": {
+						"event": "minecraft:stop_easter_egg",
+						"target": "self"
+					},
+					"name_actions": [
+						{
+							"name_filter": "AA12YT",
+							"on_named": {
+								"event": "minecraft:start_easter_egg",
+								"target": "self"
+							}
+						},
+						{
+							"name_filter": "2016",
+							"on_named": {
+								"event": "to_2016_mutant_zombie",
+								"target": "self"
+							}
+						}
+					]
+				}
+			},
+			"minecraft:mzombie_adult": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 180,
+				"max": 180
+			},
+			"minecraft:is_illager_captain": {},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": -1,
+				"breathesWater": true
+			},
+			"minecraft:ravager_blocked": {
+				"knockback_strength": 1,
+				"reaction_choices": [
+					{
+						"weight": 2,
+						"value": {
+							"event": "throw_target",
+							"target": "self"
+						}
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1.25,
+				"height": 2.95
+			},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"jump_prevented_value": 0.5625
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"operator": "==",
+										"value": "inanimate"
+									}
+								]
+							},
+							"event": "on_calm_play_dead",
+							"target": "other"
+						},
+						"deals_damage": false
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_block",
+										"subject": "block",
+										"operator": "==",
+										"value": "minecraft:campfire"
+									},
+									{
+										"test": "is_block",
+										"subject": "block",
+										"operator": "==",
+										"value": "minecraft:magma"
+									},
+									{
+										"test": "is_block",
+										"subject": "block",
+										"operator": "==",
+										"value": "minecraft:cactus"
+									},
+									{
+										"test": "is_block",
+										"subject": "block",
+										"operator": "==",
+										"value": "minecraft:sweet_berry_bush"
+									},
+									{
+										"test": "has_component",
+										"subject": "self",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"all_of": [
+											{
+												"test": "has_component",
+												"subject": "self",
+												"operator": "!=",
+												"value": "minecraft:behavior.knockback_roar"
+											},
+											{
+												"test": "is_mark_variant",
+												"subject": "self",
+												"value": 3
+											}
+										]
+									}
+								]
+							}
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "!=",
+										"value": 0
+									},
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "has_damage",
+										"value": "fatal"
+									}
+								]
+							},
+							"event": "knocked",
+							"target": "self"
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:nameable": {},
+			"minecraft:follow_range": {
+				"value": 56,
+				"max": 56
+			},
+			"minecraft:experience_reward": {
+				"on_death": 250
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": false,
+				"avoid_portals": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/mutants/vindicator.json"
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.break_door": {
+				"priority": 1
+			},
+			"minecraft:behavior.move_towards_restriction": {
+				"priority": 5
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "mcreeperblowup"
+								}
+							]
+						},
+						"max_dist": 36,
+						"must_see": false,
+						"walk_speed_multiplier": 1.75,
+						"sprint_speed_multiplier": 1.75
+					}
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 2,
+				"entity_types": {
+					"any_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "illager"
+						}
+					]
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"knocked": {
+				"add": {
+					"component_groups": [
+						"heal",
+						"family_down",
+						"stunned",
+						"stunned_check"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"family_health",
+						"general",
+						"family",
+						"can_attack",
+						"weapon_attack",
+						"smash_attack",
+						"find_target",
+						"throw_target",
+						"throw_target_locate",
+						"throw_target_success",
+						"swing_attack",
+						"swing_damage",
+						"swing_delay"
+					]
+				}
+			},
+			"knocked_checked": {
+				"add": {
+					"component_groups": [
+						"stunned"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"stunned_check"
+					]
+				}
+			},
+			"start_life": {
+				"randomize": [
+					{
+						"weight": 6,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 3
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"stunned",
+								"family_down",
+								"playing_dead",
+								"on_fire",
+								"life_3"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"life_2",
+								"can_attack",
+								"family"
+							]
+						}
+					},
+					{
+						"weight": 4,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 3
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"stunned",
+								"family_down",
+								"playing_dead",
+								"on_fire",
+								"life_3"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"life_1",
+								"can_attack",
+								"family"
+							]
+						}
+					},
+					{
+						"weight": 7,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"stunned",
+								"family_down",
+								"playing_dead",
+								"on_fire",
+								"life_2"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"life_1",
+								"can_attack",
+								"family"
+							]
+						}
+					},
+					{
+						"weight": 3,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"stunned",
+								"family_down",
+								"playing_dead",
+								"on_fire",
+								"life_2"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"life_0",
+								"can_attack",
+								"family"
+							]
+						}
+					},
+					{
+						"weight": 10,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"stunned",
+								"family_down",
+								"playing_dead",
+								"on_fire",
+								"life_1"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"life_0",
+								"can_attack",
+								"family"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 98,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"family",
+								"family_health",
+								"can_attack",
+								"general",
+								"life_3",
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_transformed": {
+				"randomize": [
+					{
+						"weight": 98,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"family",
+								"family_health",
+								"can_attack",
+								"general",
+								"life_3",
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"on_calm_play_dead": {
+				"add": {
+					"component_groups": [
+						"playing_dead",
+						"minecraft:mutant_calm"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:mutant_angry"
+					]
+				}
+			},
+			"on_calm_to_normal": {
+				"remove": {
+					"component_groups": [
+						"playing_dead"
+					]
+				}
+			},
+			"mutant_on_fire": {
+				"add": {
+					"component_groups": [
+						"on_fire"
+					]
+				}
+			},
+			"start_death": {
+				"add": {
+					"component_groups": [
+						"death"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"on_fire",
+						"stunned"
+					]
+				}
+			},
+			"end_health": {
+				"remove": {
+					"component_groups": [
+						"heal",
+						"heal_2"
+					]
+				}
+			},
+			"minecraft:become_angry": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:mutant_calm",
+						"find_target",
+						"throw_target",
+						"throw_target_locate",
+						"swing_attack",
+						"swing_damage",
+						"swing_delay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:mutant_angry",
+						"can_attack"
+					]
+				}
+			},
+			"minecraft:on_calm": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_charged"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"minecraft:mutant_angry",
+								"find_target",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"swing_delay",
+								"can_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"trigger_roar": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"weight": 5,
+						"remove": {
+							"component_groups": [
+								"can_attack",
+								"smash_attack",
+								"find_target"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"weapon_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack"
+							]
+						}
+					}
+				]
+			},
+			"start_attack": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 22,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "target",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"smash_attack"
+									]
+								}
+							},
+							{
+								"weight": 7,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "target",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"minecraft:mutant_angry",
+										"find_target",
+										"throw_target",
+										"throw_target_locate",
+										"swing_damage",
+										"minecraft:mutant_calm"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"swing_attack"
+									]
+								}
+							},
+							{
+								"weight": 23,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "target",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"weapon_attack"
+									]
+								}
+							},
+							{
+								"weight": 0,
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_mark_variant",
+											"subject": "self",
+											"operator": "!=",
+											"value": 0
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "target",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										},
+										{
+											"test": "on_ground",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"smash_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"find_target"
+									]
+								}
+							}
+						]
+					},
+					{
+						"weight": 54,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"smash_attack",
+								"find_target"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						}
+					}
+				]
+			},
+			"start_swing_damage": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						}
+					]
+				},
+				"add": {
+					"component_groups": [
+						"swing_damage"
+					]
+				}
+			},
+			"end_swing": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						},
+						"remove": {
+							"component_groups": [
+								"minecraft:mutant_angry",
+								"find_target",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"minecraft:mutant_calm"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"swing_delay"
+							]
+						}
+					}
+				]
+			},
+			"throw_target": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "other",
+							"operator": "==",
+							"value": "minecraft:timer"
+						},
+						{
+							"test": "is_mark_variant",
+							"subject": "other",
+							"operator": "==",
+							"value": 3
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"find_target"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"throw_target"
+					]
+				}
+			},
+			"throw_target_delay": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						},
+						{
+							"test": "has_target",
+							"subject": "self",
+							"operator": "equals",
+							"value": true
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"throw_target"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"throw_target_delay"
+					]
+				}
+			},
+			"throw_target_locate": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						},
+						{
+							"test": "has_target",
+							"subject": "self",
+							"operator": "equals",
+							"value": true
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"throw_target_delay",
+						"can_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"throw_target_locate"
+					]
+				}
+			},
+			"throw_target_success": {
+				"remove": {
+					"component_groups": [
+						"find_target",
+						"throw_target",
+						"throw_target_locate"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"throw_target_success"
+					]
+				}
+			},
+			"throw_target_end": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate"
+							]
+						}
+					}
+				]
+			},
+			"melee_return": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"swing_delay"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"swing_delay"
+							]
+						}
+					}
+				]
+			},
+			"swing_return": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"swing_delay",
+								"minecraft:mutant_angry",
+								"can_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:mutant_calm"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:mutant_angry",
+								"can_attack"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"weapon_attack",
+								"smash_attack",
+								"throw_target_success",
+								"throw_target",
+								"throw_target_locate",
+								"swing_attack",
+								"swing_damage",
+								"swing_delay",
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

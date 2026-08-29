@@ -1,0 +1,78 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.16.100",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "minecraft:ocean_carver_feature",
+			"places_feature": "ad:ocean_carver_feature"
+		},
+		"conditions": {
+			"placement_pass": "pregeneration_pass",
+			"minecraft:biome_filter": {
+				"all_of": [
+					{
+						"any_of": [
+							{
+								"any_of": [
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "ocean"
+									},
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "glowing_ocean"
+									},
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "dread_reef"
+									},
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "iceberg_ocean"
+									},
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "thermal_seas"
+									}
+								]
+							}
+						]
+					},
+					{
+						"test": "has_biome_tag",
+						"value": "frozen",
+						"operator": "!="
+					}
+				]
+			},
+			"distribution": {
+				"x": {
+					"distribution": "uniform",
+					"extent": [
+						0,
+						16
+					]
+				},
+				"y": {
+					"distribution": "uniform",
+					"extent": [
+						-54,
+						50
+					]
+				},
+				"z": {
+					"distribution": "uniform",
+					"extent": [
+						0,
+						16
+					]
+				}
+			}
+		}
+	}
+}

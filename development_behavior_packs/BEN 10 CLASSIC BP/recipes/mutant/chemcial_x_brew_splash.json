@@ -1,0 +1,14 @@
+{
+	"format_version": "1.17.40",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "mutant:chemical_x_brewing_splash"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"input": "minecraft:splash_potion",
+		"reagent": "minecraft:obsidian",
+		"output": "mutant:chemical_x"
+	}
+}

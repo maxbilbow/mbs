@@ -1,0 +1,27 @@
+//bridge-file-version: #14
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:glowingkelp_feature_rule",
+			"places_feature": "gen:scatter_glowing_kelp_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "glowing_ocean"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 25,
+			"x": 0,
+			"y": "query.above_top_solid(variable.worldx, variable.worldz)",
+			"z": 0
+		}
+	}
+}

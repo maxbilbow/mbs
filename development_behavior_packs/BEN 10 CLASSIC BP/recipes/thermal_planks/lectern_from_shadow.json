@@ -1,0 +1,30 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:lectern_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"~~~",
+			" # ",
+			" ~ "
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_plank_slab"
+			},
+			"#": {
+				"item": "minecraft:bookshelf"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:lectern",
+				"count": 1
+			}
+		]
+	}
+}

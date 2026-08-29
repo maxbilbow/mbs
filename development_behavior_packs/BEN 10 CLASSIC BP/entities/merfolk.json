@@ -1,0 +1,3276 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mob:merfolk",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"properties": {
+				"minecraft:is_armorable": {
+					"type": "bool",
+					"client_sync": true,
+					"default": true
+				}
+			}
+		},
+		"component_groups": {
+			"minecraft:baby_drowned": {
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:movement": {
+					"value": 0.7
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.24
+				},
+				"minecraft:behavior.panic": {
+					"priority": 3,
+					"speed_multiplier": 1.2
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water",
+										"value": false
+									},
+									{
+										"test": "is_riding",
+										"value": false
+									},
+									{
+										"test": "has_tag",
+										"value": "grown_up",
+										"operator": "!="
+									}
+								]
+							},
+							"event": "on_ground_baby"
+						}
+					]
+				},
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_event": {
+						"event": "adopt",
+						"target": "self"
+					},
+					"tame_items": "item:malachite"
+				},
+				"minecraft:behavior.flee_sun": {
+					"priority": 2,
+					"speed_multiplier": 1
+				},
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": false,
+					"can_break_doors": true,
+					"can_swim": true,
+					"can_walk": false,
+					"avoid_sun": true,
+					"can_sink": false
+				},
+				"minecraft:spawn_egg_interaction": {},
+				"minecraft:is_charged": {}
+			},
+			"minecraft:adult_drowned": {
+				"minecraft:experience_reward": {
+					"on_death": "query.last_hit_by_player?5+(query.equipment_count*math.random(1,3)):0"
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"reselect_targets": false,
+					"must_see": true,
+					"within_radius": 12,
+					"must_see_forget_duration": 17,
+					"persist_time": 0.5,
+					"entity_types": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "undead"
+									}
+								]
+							},
+							"max_dist": 16
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"subject": "other",
+										"domain": "head",
+										"operator": "!=",
+										"value": "helmet:scrap_metal_helmet"
+									},
+									{
+										"test": "has_equipment",
+										"subject": "other",
+										"domain": "torso",
+										"operator": "!=",
+										"value": "helmet:scrap_metal_chestplate"
+									},
+									{
+										"test": "has_equipment",
+										"subject": "other",
+										"domain": "leg",
+										"operator": "!=",
+										"value": "leggings:scrap_metal_leggings"
+									},
+									{
+										"test": "has_equipment",
+										"subject": "other",
+										"domain": "feet",
+										"operator": "!=",
+										"value": "boots:scrap_metal_boots"
+									}
+								]
+							},
+							"max_dist": 16
+						},
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_container_open",
+										"subject": "other",
+										"operator": "==",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 32
+						}
+					]
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:block_sensor": {
+					"sensor_radius": 16,
+					"on_break": [
+						{
+							"block_list": [
+								"block:malachite_block",
+								"ore:malachite_ore",
+								"ore:thermal_malachite_ore",
+								"ore:deepslate_malachite_ore",
+								"ore:abyssal_malachite_ore",
+								"block:rough_malachite_ore",
+								"minecraft:chest",
+								"minecraft:trapped_chest",
+								"minecraft:ender_chest",
+								"minecraft:barrel",
+								"minecraft:shulker_box",
+								"minecraft:undyed_shulker_box"
+							],
+							"on_block_broken": "minecraft:has_target"
+						}
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water",
+										"value": false
+									},
+									{
+										"test": "is_riding",
+										"value": false
+									}
+								]
+							},
+							"event": "on_ground_adult"
+						}
+					]
+				},
+				"minecraft:behavior.flee_sun": {
+					"priority": 2,
+					"speed_multiplier": 1
+				},
+				"minecraft:on_target_acquired": {
+					"event": "minecraft:has_target",
+					"target": "self"
+				},
+				"minecraft:on_target_escape": {
+					"event": "minecraft:lost_target",
+					"target": "self"
+				},
+				"minecraft:spawn_egg_interaction": {},
+				"minecraft:is_sheared": {}
+			},
+			"minecraft:mode_switcher": {
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 1.5,
+					"outside_range": 4,
+					"on_inside_range": {
+						"event": "minecraft:switch_to_melee",
+						"target": "self"
+					},
+					"on_outside_range": {
+						"event": "minecraft:switch_to_ranged",
+						"target": "self"
+					}
+				},
+				"minecraft:equipment": {
+					"table": "loot_tables/merfolk_equipment_ranged.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.offhand",
+							"drop_chance": 0
+						}
+					]
+				}
+			},
+			"minecraft:ranged_mode": {
+				"minecraft:shooter": {
+					"def": "sword:scrap_metal_harpoon"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 3,
+					"attack_interval_min": 1,
+					"attack_interval_max": 15,
+					"attack_radius": 20,
+					"swing": false
+				}
+			},
+			"minecraft:melee_mode": {
+				"minecraft:attack": {
+					"damage": 8
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"speed_multiplier": 1,
+					"track_target": false,
+					"require_complete_path": true
+				}
+			},
+			"minecraft:hunter_mode": {
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": false,
+					"can_break_doors": true,
+					"can_swim": true,
+					"can_walk": false,
+					"avoid_sun": true,
+					"can_sink": false
+				},
+				"minecraft:angry": {
+					"duration": 30,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 16,
+					"broadcast_targets": [
+						"mob:merfolk",
+						"mob:merfolk_brute",
+						"merfolk",
+						"piglin"
+					],
+					"filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "merfolk"
+							},
+							{
+								"test": "is_baby",
+								"operator": "!=",
+								"subject": "other"
+							}
+						]
+					},
+					"angry_sound": "angry",
+					"sound_interval": {
+						"range_min": 2,
+						"range_max": 5
+					},
+					"calm_event": {
+						"event": "become_calm_event",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:wander_mode": {
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": false,
+					"can_break_doors": true,
+					"can_swim": true,
+					"can_walk": false,
+					"avoid_sun": true,
+					"can_sink": false
+				},
+				"minecraft:economy_trade_table": {
+					"display_name": "Merfolk",
+					"table": "trading/merfolk_trades.json",
+					"new_screen": true,
+					"persist_trades": true
+				},
+				"minecraft:behavior.trade_interest": {
+					"priority": 3,
+					"within_radius": 6,
+					"interest_time": 45,
+					"remove_item_time": 1,
+					"carried_item_switch_time": 2,
+					"cooldown": 2
+				},
+				"minecraft:behavior.trade_with_player": {
+					"priority": 3
+				},
+				"minecraft:behavior.look_at_trading_player": {
+					"priority": 3
+				}
+			},
+			"melee_equipment": {
+				"minecraft:equipment": {
+					"table": "loot_tables/merfolk_equipment_melee.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.offhand",
+							"drop_chance": 0
+						}
+					]
+				}
+			},
+			"adopted": {
+				"minecraft:ageable": {
+					"duration": 48000,
+					"pause_growth_items": [
+						"golden_dandelion"
+					],
+					"reset_growth_items": [
+						"golden_dandelion"
+					],
+					"grow_up": {
+						"event": "grown_up",
+						"target": "self"
+					}
+				},
+				"minecraft:leashable": {},
+				"minecraft:behavior.panic": {
+					"priority": 3,
+					"speed_multiplier": 1.2
+				},
+				"minecraft:behavior.follow_owner": {
+					"priority": 1,
+					"speed_multiplier": 1,
+					"start_distance": 10,
+					"stop_distance": 2
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:sittable": {},
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:movement": {
+					"value": 0.35
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.24
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"event": "baby_sitting",
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_sitting",
+										"value": true
+									}
+								]
+							}
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water",
+										"value": false
+									},
+									{
+										"test": "is_riding",
+										"value": false
+									},
+									{
+										"test": "is_sitting",
+										"value": false
+									}
+								]
+							},
+							"event": "on_ground_baby"
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "actor_health",
+										"value": 5,
+										"operator": "<="
+									}
+								]
+							},
+							"event": "cryingbaby"
+						}
+					]
+				},
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": true,
+					"can_break_doors": true,
+					"can_swim": true,
+					"can_walk": false,
+					"avoid_sun": true,
+					"can_sink": false
+				},
+				"minecraft:equipment": {
+					"table": "loot_tables/empty.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.offhand",
+							"drop_chance": 1
+						}
+					]
+				},
+				"minecraft:color": {
+					"value": 4
+				},
+				"minecraft:is_dyeable": {
+					"interact_text": "action.interact.dye"
+				},
+				"minecraft:behavior.eat_carried_item": {
+					"delay_before_eating": 5,
+					"priority": 2
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "has_equipment_tag",
+											"value": "minecraft:trimmable_armors",
+											"operator": "!=",
+											"subject": "other",
+											"domain": "main_hand"
+										},
+										{
+											"test": "has_equipment",
+											"value": "minecraft:shears",
+											"operator": "!=",
+											"subject": "other",
+											"domain": "main_hand"
+										},
+										{
+											"test": "has_equipment_tag",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:is_spear",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:trident",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "item:scrap_metal",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:kelp",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:pink_petals",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:feather",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "item:silver_ingot",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:leather",
+											"operator": "not"
+										}
+									]
+								}
+							},
+							"interact_text": "action.interact.allay",
+							"take_item": true,
+							"give_item": true
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "item:scrap_metal"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant1",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:kelp"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant0",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:pink_petals"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant2",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:feather"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant3",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "item:silver_ingot"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant4",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:leather"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant5",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						}
+					]
+				},
+				"minecraft:behavior.drink_potion": {
+					"priority": 2,
+					"potions": [
+						{
+							"id": 28,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:28"
+									}
+								]
+							}
+						},
+						{
+							"id": 45,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:45"
+									}
+								]
+							}
+						},
+						{
+							"id": 46,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:46"
+									}
+								]
+							}
+						},
+						{
+							"id": 44,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:44"
+									}
+								]
+							}
+						},
+						{
+							"id": 43,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:43"
+									}
+								]
+							}
+						},
+						{
+							"id": 41,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:41"
+									}
+								]
+							}
+						},
+						{
+							"id": 40,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:40"
+									}
+								]
+							}
+						},
+						{
+							"id": 39,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:39"
+									}
+								]
+							}
+						},
+						{
+							"id": 38,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:38"
+									}
+								]
+							}
+						},
+						{
+							"id": 37,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:37"
+									}
+								]
+							}
+						},
+						{
+							"id": 36,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:36"
+									}
+								]
+							}
+						},
+						{
+							"id": 35,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:35"
+									}
+								]
+							}
+						},
+						{
+							"id": 34,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:34"
+									}
+								]
+							}
+						},
+						{
+							"id": 33,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:33"
+									}
+								]
+							}
+						},
+						{
+							"id": 32,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:32"
+									}
+								]
+							}
+						},
+						{
+							"id": 31,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:31"
+									}
+								]
+							}
+						},
+						{
+							"id": 30,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:30"
+									}
+								]
+							}
+						},
+						{
+							"id": 29,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:29"
+									}
+								]
+							}
+						},
+						{
+							"id": 28,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:28"
+									}
+								]
+							}
+						},
+						{
+							"id": 27,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:27"
+									}
+								]
+							}
+						},
+						{
+							"id": 26,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:26"
+									}
+								]
+							}
+						},
+						{
+							"id": 25,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:25"
+									}
+								]
+							}
+						},
+						{
+							"id": 24,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:24"
+									}
+								]
+							}
+						},
+						{
+							"id": 23,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:23"
+									}
+								]
+							}
+						},
+						{
+							"id": 22,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:22"
+									}
+								]
+							}
+						},
+						{
+							"id": 21,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:21"
+									}
+								]
+							}
+						},
+						{
+							"id": 20,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:20"
+									}
+								]
+							}
+						},
+						{
+							"id": 19,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:19"
+									}
+								]
+							}
+						},
+						{
+							"id": 18,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:18"
+									}
+								]
+							}
+						},
+						{
+							"id": 17,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:17"
+									}
+								]
+							}
+						},
+						{
+							"id": 16,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:16"
+									}
+								]
+							}
+						},
+						{
+							"id": 15,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:15"
+									}
+								]
+							}
+						},
+						{
+							"id": 14,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:14"
+									}
+								]
+							}
+						},
+						{
+							"id": 13,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:13"
+									}
+								]
+							}
+						},
+						{
+							"id": 12,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:12"
+									}
+								]
+							}
+						},
+						{
+							"id": 11,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:11"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:10"
+									}
+								]
+							}
+						},
+						{
+							"id": 9,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:9"
+									}
+								]
+							}
+						},
+						{
+							"id": 8,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:8"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:7"
+									}
+								]
+							}
+						},
+						{
+							"id": 6,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:6"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:5"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:4"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:3"
+									}
+								]
+							}
+						},
+						{
+							"id": 2,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:2"
+									}
+								]
+							}
+						},
+						{
+							"id": 1,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:1"
+									}
+								]
+							}
+						},
+						{
+							"id": 0,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:0"
+									}
+								]
+							}
+						},
+						{
+							"id": 42,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:42"
+									}
+								]
+							}
+						}
+					]
+				},
+				"minecraft:behavior.drink_milk": {
+					"priority": 2,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_equipment",
+								"domain": "main_hand",
+								"value": "minecraft:milk_bucket"
+							}
+						]
+					}
+				}
+			},
+			"grown_up": {
+				"minecraft:is_tamed": {},
+				"minecraft:behavior.follow_owner": {
+					"priority": 6,
+					"speed_multiplier": 1.5,
+					"start_distance": 5,
+					"stop_distance": 1
+				},
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 2
+				},
+				"minecraft:inventory": {
+					"inventory_size": 16,
+					"container_type": "horse"
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 2,
+					"speed_multiplier": 1.5,
+					"track_target": true,
+					"reach_multiplier": 1.6,
+					"cooldown_time": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 1
+				},
+				"minecraft:health": {
+					"value": 60,
+					"max": 60
+				},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:leashable": {
+					"soft_distance": 4,
+					"hard_distance": 6,
+					"max_distance": 10,
+					"can_be_stolen": false
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:movement": {
+					"value": 0.25
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.14
+				},
+				"minecraft:navigation.generic": {
+					"is_amphibious": true,
+					"can_path_over_water": false,
+					"can_break_doors": true,
+					"can_swim": true,
+					"can_walk": true,
+					"avoid_sun": true,
+					"can_sink": false
+				},
+				"minecraft:sittable": {},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment_tag",
+											"subject": "self",
+											"domain": "head",
+											"value": "minecraft:trimmable_armors",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment_tag",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:trimmable_armors",
+											"operator": "=="
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "all_slots_empty",
+											"value": "head",
+											"subject": "self"
+										}
+									]
+								}
+							},
+							"equip_item_slot": "slot.armor.head",
+							"play_sounds": "armor.equip_wolf",
+							"interact_text": "action.interact.equipwolfarmor"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment_tag",
+											"subject": "self",
+											"domain": "torso",
+											"value": "minecraft:trimmable_armors",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment_tag",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:trimmable_armors",
+											"operator": "=="
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "all_slots_empty",
+											"value": "torso",
+											"subject": "self"
+										}
+									]
+								}
+							},
+							"equip_item_slot": "slot.armor.chest",
+							"play_sounds": "armor.equip_wolf",
+							"interact_text": "action.interact.equipwolfarmor"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment_tag",
+											"subject": "self",
+											"domain": "leg",
+											"operator": "not",
+											"value": "minecraft:trimmable_armors"
+										},
+										{
+											"test": "has_equipment_tag",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:trimmable_armors",
+											"operator": "=="
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "all_slots_empty",
+											"value": "leg",
+											"subject": "self"
+										}
+									]
+								}
+							},
+							"equip_item_slot": "slot.armor.legs",
+							"play_sounds": "armor.equip_wolf",
+							"interact_text": "action.interact.equipwolfarmor"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment_tag",
+											"subject": "self",
+											"domain": "feet",
+											"operator": "not",
+											"value": "minecraft:trimmable_armors"
+										},
+										{
+											"test": "has_equipment_tag",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:trimmable_armors",
+											"operator": "=="
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "all_slots_empty",
+											"value": "feet",
+											"subject": "self"
+										}
+									]
+								}
+							},
+							"equip_item_slot": "slot.armor.feet",
+							"play_sounds": "armor.equip_wolf",
+							"interact_text": "action.interact.equipwolfarmor"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_sneaking",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "has_equipment_tag",
+											"value": "minecraft:trimmable_armors",
+											"operator": "!=",
+											"subject": "other",
+											"domain": "main_hand"
+										},
+										{
+											"test": "has_equipment",
+											"value": "minecraft:shears",
+											"operator": "!=",
+											"subject": "other",
+											"domain": "main_hand"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "item:scrap_metal",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:kelp",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:pink_petals",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:feather",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "item:silver_ingot",
+											"operator": "not"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "main_hand",
+											"value": "minecraft:leather",
+											"operator": "not"
+										}
+									]
+								}
+							},
+							"interact_text": "action.interact.allay",
+							"take_item": true,
+							"give_item": true
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "all_slots_empty",
+											"value": "head",
+											"subject": "self",
+											"operator": "!="
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "shears"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneak_held",
+											"subject": "other",
+											"value": false
+										}
+									]
+								}
+							},
+							"hurt_item": 1,
+							"drop_item_slot": "slot.armor.head",
+							"play_sounds": "armor.unequip_wolf",
+							"interact_text": "action.interact.removewolfarmor",
+							"vibration": "shear"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "all_slots_empty",
+											"value": "torso",
+											"subject": "self",
+											"operator": "!="
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "shears"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneak_held",
+											"subject": "other",
+											"value": false
+										}
+									]
+								}
+							},
+							"hurt_item": 1,
+							"drop_item_slot": "slot.armor.chest",
+							"play_sounds": "armor.unequip_wolf",
+							"interact_text": "action.interact.removewolfarmor",
+							"vibration": "shear"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "all_slots_empty",
+											"value": "leg",
+											"subject": "self",
+											"operator": "!="
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "shears"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneak_held",
+											"subject": "other",
+											"value": false
+										}
+									]
+								}
+							},
+							"hurt_item": 1,
+							"drop_item_slot": "slot.armor.legs",
+							"play_sounds": "armor.unequip_wolf",
+							"interact_text": "action.interact.removewolfarmor",
+							"vibration": "shear"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "all_slots_empty",
+											"value": "feet",
+											"subject": "self",
+											"operator": "!="
+										},
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "shears"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										},
+										{
+											"test": "is_sneak_held",
+											"subject": "other",
+											"value": false
+										}
+									]
+								}
+							},
+							"hurt_item": 1,
+							"drop_item_slot": "slot.armor.feet",
+							"play_sounds": "armor.unequip_wolf",
+							"interact_text": "action.interact.removewolfarmor",
+							"vibration": "shear"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "item:scrap_metal"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant1",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:kelp"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant0",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:pink_petals"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant2",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:feather"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant3",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "item:silver_ingot"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant4",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_equipment",
+											"subject": "other",
+											"domain": "hand",
+											"value": "minecraft:leather"
+										},
+										{
+											"test": "is_owner",
+											"subject": "other",
+											"value": true
+										}
+									]
+								},
+								"event": "changevariant5",
+								"target": "self"
+							},
+							"use_item": true,
+							"interact_text": "action.interact.allay"
+						}
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"event": "adult_sitting",
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_sitting",
+										"value": true
+									},
+									{
+										"test": "is_underwater",
+										"value": false
+									}
+								]
+							}
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "actor_health",
+										"value": 15,
+										"operator": "<="
+									}
+								]
+							},
+							"event": "cryingadult"
+						}
+					]
+				},
+				"minecraft:equipment": {
+					"table": "loot_tables/empty.json",
+					"slot_drop_chance": [
+						{
+							"slot": "slot.weapon.offhand",
+							"drop_chance": 1
+						}
+					]
+				},
+				"minecraft:is_dyeable": {
+					"interact_text": "action.interact.dye"
+				},
+				"minecraft:color": {
+					"value": 4
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": [
+						10,
+						20
+					],
+					"time_down_event": {
+						"event": "play_music"
+					}
+				},
+				"minecraft:behavior.eat_carried_item": {
+					"delay_before_eating": 5,
+					"priority": 2
+				},
+				"minecraft:on_hurt_by_player": {
+					"event": "angry"
+				},
+				"minecraft:behavior.drink_potion": {
+					"priority": 2,
+					"potions": [
+						{
+							"id": 28,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:28"
+									}
+								]
+							}
+						},
+						{
+							"id": 45,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:45"
+									}
+								]
+							}
+						},
+						{
+							"id": 46,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:46"
+									}
+								]
+							}
+						},
+						{
+							"id": 44,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:44"
+									}
+								]
+							}
+						},
+						{
+							"id": 43,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:43"
+									}
+								]
+							}
+						},
+						{
+							"id": 41,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:41"
+									}
+								]
+							}
+						},
+						{
+							"id": 40,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:40"
+									}
+								]
+							}
+						},
+						{
+							"id": 39,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:39"
+									}
+								]
+							}
+						},
+						{
+							"id": 38,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:38"
+									}
+								]
+							}
+						},
+						{
+							"id": 37,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:37"
+									}
+								]
+							}
+						},
+						{
+							"id": 36,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:36"
+									}
+								]
+							}
+						},
+						{
+							"id": 35,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:35"
+									}
+								]
+							}
+						},
+						{
+							"id": 34,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:34"
+									}
+								]
+							}
+						},
+						{
+							"id": 33,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:33"
+									}
+								]
+							}
+						},
+						{
+							"id": 32,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:32"
+									}
+								]
+							}
+						},
+						{
+							"id": 31,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:31"
+									}
+								]
+							}
+						},
+						{
+							"id": 30,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:30"
+									}
+								]
+							}
+						},
+						{
+							"id": 29,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:29"
+									}
+								]
+							}
+						},
+						{
+							"id": 28,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:28"
+									}
+								]
+							}
+						},
+						{
+							"id": 27,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:27"
+									}
+								]
+							}
+						},
+						{
+							"id": 26,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:26"
+									}
+								]
+							}
+						},
+						{
+							"id": 25,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:25"
+									}
+								]
+							}
+						},
+						{
+							"id": 24,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:24"
+									}
+								]
+							}
+						},
+						{
+							"id": 23,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:23"
+									}
+								]
+							}
+						},
+						{
+							"id": 22,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:22"
+									}
+								]
+							}
+						},
+						{
+							"id": 21,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:21"
+									}
+								]
+							}
+						},
+						{
+							"id": 20,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:20"
+									}
+								]
+							}
+						},
+						{
+							"id": 19,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:19"
+									}
+								]
+							}
+						},
+						{
+							"id": 18,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:18"
+									}
+								]
+							}
+						},
+						{
+							"id": 17,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:17"
+									}
+								]
+							}
+						},
+						{
+							"id": 16,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:16"
+									}
+								]
+							}
+						},
+						{
+							"id": 15,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:15"
+									}
+								]
+							}
+						},
+						{
+							"id": 14,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:14"
+									}
+								]
+							}
+						},
+						{
+							"id": 13,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:13"
+									}
+								]
+							}
+						},
+						{
+							"id": 12,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:12"
+									}
+								]
+							}
+						},
+						{
+							"id": 11,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:11"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:10"
+									}
+								]
+							}
+						},
+						{
+							"id": 9,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:9"
+									}
+								]
+							}
+						},
+						{
+							"id": 8,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:8"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:7"
+									}
+								]
+							}
+						},
+						{
+							"id": 6,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:6"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:5"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:4"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:3"
+									}
+								]
+							}
+						},
+						{
+							"id": 2,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:2"
+									}
+								]
+							}
+						},
+						{
+							"id": 1,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:1"
+									}
+								]
+							}
+						},
+						{
+							"id": 0,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:0"
+									}
+								]
+							}
+						},
+						{
+							"id": 42,
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"domain": "main_hand",
+										"value": "minecraft:potion:42"
+									}
+								]
+							}
+						}
+					]
+				},
+				"minecraft:behavior.drink_milk": {
+					"priority": 2,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_equipment",
+								"domain": "main_hand",
+								"value": "minecraft:milk_bucket"
+							}
+						]
+					}
+				}
+			},
+			"variant1": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"variant2": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"variant3": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"variant4": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"variant5": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"variant6": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			}
+		},
+		"components": {
+			"minecraft:offspring": {
+				"offspring_pairs": {
+					"mob:merfolk": "mob:merfolk"
+				}
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"merfolk",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.12
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": true,
+				"can_path_over_water": false,
+				"can_break_doors": true,
+				"can_swim": false,
+				"can_walk": true,
+				"avoid_sun": true
+			},
+			"minecraft:shareables": {
+				"items": [
+					{
+						"item": "minecraft:nautilus_shell",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:trident",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:netherite_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:diamond_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:iron_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:stone_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:golden_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 6
+					},
+					{
+						"item": "minecraft:wooden_sword",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:netherite_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:turtle_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 6
+					},
+					{
+						"item": "minecraft:skull:0",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:skull:1",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:carved_pumpkin",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:netherite_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:netherite_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:netherite_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					}
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_owner",
+										"operator": "==",
+										"value": true,
+										"subject": "other"
+									}
+								]
+							}
+						},
+						"deals_damage": false,
+						"cause": "all"
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 50,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:mode_switcher",
+								"minecraft:ranged_mode",
+								"minecraft:adult_drowned",
+								"minecraft:wander_mode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"replaceitem entity @s slot.weapon.offhand 0 sword:scrap_metal_harpoon"
+							]
+						}
+					},
+					{
+						"weight": 50,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:melee_mode",
+								"minecraft:adult_drowned",
+								"melee_equipment",
+								"minecraft:wander_mode"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"replaceitem entity @s slot.weapon.offhand 0 sword:scrap_metal_sword"
+							]
+						}
+					},
+					{
+						"weight": 5,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:baby_drowned"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:as_baby": {
+				"add": {
+					"component_groups": [
+						"minecraft:baby_drowned"
+					]
+				}
+			},
+			"minecraft:as_adult": {
+				"add": {
+					"component_groups": [
+						"minecraft:melee_mode",
+						"minecraft:adult_drowned",
+						"minecraft:wander_mode"
+					]
+				}
+			},
+			"minecraft:switch_to_melee": {
+				"remove": {
+					"component_groups": [
+						"minecraft:ranged_mode"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:melee_mode"
+					]
+				}
+			},
+			"minecraft:switch_to_ranged": {
+				"remove": {
+					"component_groups": [
+						"minecraft:melee_mode"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ranged_mode"
+					]
+				}
+			},
+			"minecraft:has_target": {
+				"remove": {
+					"component_groups": [
+						"minecraft:wander_mode"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:hunter_mode"
+					]
+				}
+			},
+			"minecraft:lost_target": {
+				"remove": {
+					"component_groups": [
+						"minecraft:hunter_mode"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:wander_mode"
+					]
+				}
+			},
+			"minecraft:entity_born": {
+				"add": {
+					"component_groups": [
+						"minecraft:baby_drowned"
+					]
+				}
+			},
+			"on_ground_adult": {
+				"queue_command": {
+					"command": [
+						"effect @s slowness 2 255 true"
+					]
+				}
+			},
+			"on_ground_baby": {
+				"queue_command": {
+					"command": [
+						"effect @s slowness 2 255 true"
+					]
+				}
+			},
+			"adopt": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"replaceitem entity @s slot.weapon.offhand 0 item:adoption_bracelet"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"minecraft:baby_drowned"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"minecraft:wander_mode"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"adopted",
+								"variant1"
+							]
+						}
+					}
+				]
+			},
+			"grown_up": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"tag @s add grown_up",
+								"effect @s instant_health 1 255 true"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"adopted"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"grown_up",
+								"variant1"
+							]
+						}
+					}
+				]
+			},
+			"baby_sitting": {
+				"queue_command": {
+					"command": [
+						"effect @s slowness 2 255 true"
+					]
+				}
+			},
+			"adult_sitting": {
+				"queue_command": {
+					"command": [
+						"effect @s slowness 2 255 true"
+					]
+				}
+			},
+			"play_music": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"execute at @s[hasitem=[{item=item:music_seashell,location=slot.weapon.mainhand}]] run playsound music_seashell @a[r=50] ~~~ 1 0.8",
+								"execute at @s[hasitem=[{item=item:lomos_keypad,location=slot.weapon.mainhand}]] run playsound lomos_keypad @a[r=50] ~~~ 1 1",
+								"execute at @s[hasitem=[{item=item:bubble_wand,location=slot.weapon.mainhand}]] run function bubblewand",
+								"execute at @s[hasitem=[{item=item:pink_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:cyan_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:white_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:lomos_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=experience_bottle,location=slot.weapon.mainhand}]] run particle merfolkenchanted",
+								"execute at @s[hasitem=[{item=skeleton_skull,location=slot.weapon.mainhand}]] run playsound mob.skeleton.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=zombie_head,location=slot.weapon.mainhand}]] run playsound mob.zombie.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=wither_skeleton_skull,location=slot.weapon.mainhand}]] run playsound entity.wither_skeleton.ambient @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=creeper_head,location=slot.weapon.mainhand}]] run playsound random.fuse @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=dragon_head,location=slot.weapon.mainhand}]] run playsound mob.enderdragon.growl @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=piglin_head,location=slot.weapon.mainhand}]] run playsound mob.piglin.ambient @a ~~~ 1 2",
+								"effect @s instant_health 1 0 true"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"execute at @s[hasitem=[{item=item:music_seashell,location=slot.weapon.mainhand}]] run playsound music_seashell @a[r=50] ~~~ 1 1",
+								"execute at @s[hasitem=[{item=item:lomos_keypad,location=slot.weapon.mainhand}]] run playsound lomos_keypad @a[r=50] ~~~ 1 1.2",
+								"execute at @s[hasitem=[{item=item:bubble_wand,location=slot.weapon.mainhand}]] run function bubblewand",
+								"execute at @s[hasitem=[{item=item:pink_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:cyan_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:white_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:lomos_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=experience_bottle,location=slot.weapon.mainhand}]] run particle merfolkenchanted",
+								"execute at @s[hasitem=[{item=skeleton_skull,location=slot.weapon.mainhand}]] run playsound mob.skeleton.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=zombie_head,location=slot.weapon.mainhand}]] run playsound mob.zombie.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=wither_skeleton_skull,location=slot.weapon.mainhand}]] run playsound entity.wither_skeleton.ambient @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=creeper_head,location=slot.weapon.mainhand}]] run playsound random.fuse @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=dragon_head,location=slot.weapon.mainhand}]] run playsound mob.enderdragon.growl @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=piglin_head,location=slot.weapon.mainhand}]] run playsound mob.piglin.ambient @a ~~~ 1 2"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"execute at @s[hasitem=[{item=item:music_seashell,location=slot.weapon.mainhand}]] run playsound music_seashell @a[r=50] ~~~ 1 0.6",
+								"execute at @s[hasitem=[{item=item:lomos_keypad,location=slot.weapon.mainhand}]] run playsound lomos_keypad @a[r=50] ~~~ 1 0.8",
+								"execute at @s[hasitem=[{item=item:bubble_wand,location=slot.weapon.mainhand}]] run function bubblewand",
+								"execute at @s[hasitem=[{item=item:pink_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:cyan_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:white_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=item:lomos_pearl,location=slot.weapon.mainhand}]] run particle merfolklove",
+								"execute at @s[hasitem=[{item=experience_bottle,location=slot.weapon.mainhand}]] run particle merfolkenchanted",
+								"execute at @s[hasitem=[{item=skeleton_skull,location=slot.weapon.mainhand}]] run playsound mob.skeleton.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=zombie_head,location=slot.weapon.mainhand}]] run playsound mob.zombie.say @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=wither_skeleton_skull,location=slot.weapon.mainhand}]] run playsound entity.wither_skeleton.ambient @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=creeper_head,location=slot.weapon.mainhand}]] run playsound random.fuse @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=dragon_head,location=slot.weapon.mainhand}]] run playsound mob.enderdragon.growl @a ~~~ 1 2",
+								"execute at @s[hasitem=[{item=piglin_head,location=slot.weapon.mainhand}]] run playsound mob.piglin.ambient @a ~~~ 1 2"
+							]
+						}
+					}
+				]
+			},
+			"angry": {
+				"queue_command": {
+					"command": [
+						"particle merfolkangry"
+					]
+				}
+			},
+			"changevariant0": {
+				"remove": {
+					"component_groups": [
+						"variant2",
+						"variant3",
+						"variant4",
+						"variant5",
+						"variant6"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant1"
+					]
+				}
+			},
+			"changevariant1": {
+				"remove": {
+					"component_groups": [
+						"variant1",
+						"variant3",
+						"variant4",
+						"variant5",
+						"variant6"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant2"
+					]
+				}
+			},
+			"changevariant2": {
+				"remove": {
+					"component_groups": [
+						"variant1",
+						"variant2",
+						"variant4",
+						"variant5",
+						"variant6"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant3"
+					]
+				}
+			},
+			"changevariant3": {
+				"remove": {
+					"component_groups": [
+						"variant1",
+						"variant2",
+						"variant3",
+						"variant5",
+						"variant6"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant4"
+					]
+				}
+			},
+			"changevariant4": {
+				"remove": {
+					"component_groups": [
+						"variant1",
+						"variant2",
+						"variant3",
+						"variant4",
+						"variant6"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant5"
+					]
+				}
+			},
+			"changevariant5": {
+				"remove": {
+					"component_groups": [
+						"variant1",
+						"variant2",
+						"variant3",
+						"variant4",
+						"variant5"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"variant6"
+					]
+				}
+			},
+			"cryingbaby": {
+				"queue_command": {
+					"command": [
+						"particle merfolkscaredbaby"
+					]
+				}
+			},
+			"cryingadult": {
+				"queue_command": {
+					"command": [
+						"particle merfolkscared"
+					]
+				}
+			}
+		}
+	}
+}

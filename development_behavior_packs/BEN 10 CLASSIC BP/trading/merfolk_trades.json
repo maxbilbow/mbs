@@ -1,0 +1,446 @@
+//bridge-file-version: #82
+{
+	"tiers": [
+		{
+			"groups": [
+				{
+					"num_to_select": 5,
+					"trades": [
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "food:ocean_berry",
+									"quantity": 3
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 6
+								}
+							],
+							"gives": [
+								{
+									"item": "food:bejeweled_ocean_berry"
+								}
+							]
+						},
+						{
+							"max_uses": 1,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 10
+								}
+							],
+							"gives": [
+								{
+									"item": "food:gold_kelp",
+									"quantity": 10
+								}
+							]
+						},
+						{
+							"max_uses": 4,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "sword:scrap_metal_harpoon",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 2,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 4
+								}
+							],
+							"gives": [
+								{
+									"item": "item:air_bottle",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 4,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 2
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:wind_charge",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "item:abyss_quartz",
+									"quantity": 8
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "item:raw_magnesium",
+									"quantity": 8
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "item:raw_silver",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "item:raw_tungsten",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 8,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 4
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:blue_bundle",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:raw_gold",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 8,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 6
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:sponge",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 12,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "food:cooked_shrimp",
+									"quantity": 4
+								}
+							]
+						},
+						{
+							"max_uses": 4,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 4
+								}
+							],
+							"gives": [
+								{
+									"item": "item:sea_urchin_grimoire",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:gunpowder",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 8,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 2
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:obsidian",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 6,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 4
+								}
+							],
+							"gives": [
+								{
+									"item": "item:release_bubble",
+									"quantity": 4
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "item:sea_prism",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:ink_sac",
+									"quantity": 4
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:glow_ink_sac",
+									"quantity": 2
+								}
+							]
+						},
+						{
+							"max_uses": 5,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 1
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:glowstone_dust",
+									"quantity": 6
+								}
+							]
+						},
+						{
+							"max_uses": 2,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 5
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:diamond"
+								}
+							]
+						},
+						{
+							"max_uses": 4,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 2
+								}
+							],
+							"gives": [
+								{
+									"item": "minecraft:prismarine_shard",
+									"quantity": 4
+								}
+							]
+						},
+						{
+							"max_uses": 6,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 3
+								}
+							],
+							"gives": [
+								{
+									"item": "item:scrap_metal",
+									"quantity": 5
+								}
+							]
+						},
+						{
+							"max_uses": 7,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 3
+								}
+							],
+							"gives": [
+								{
+									"item": "item:chum_cluster",
+									"quantity": 1
+								}
+							]
+						},
+						{
+							"max_uses": 2,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 10
+								}
+							],
+							"gives": [
+								{
+									"item": "item:music_seashell"
+								}
+							]
+						},
+						{
+							"max_uses": 6,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 3
+								}
+							],
+							"gives": [
+								{
+									"item": "food:salmon_roll",
+									"quantity": 3
+								}
+							]
+						},
+						{
+							"max_uses": 1,
+							"wants": [
+								{
+									"item": "item:malachite",
+									"quantity": 3
+								}
+							],
+							"gives": [
+								{
+									"item": "block:underwater_torch",
+									"quantity": 8
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

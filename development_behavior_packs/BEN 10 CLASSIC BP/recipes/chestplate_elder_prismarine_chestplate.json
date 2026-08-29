@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "elder_prismarine_chestplate_61dd6156"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"EEE"
+		],
+		"key": {
+			"A": {
+				"item": "item:elder_prismarine_shard",
+				"data": 0
+			},
+			"B": {
+				"item": "item:elder_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "item:white_pearl",
+				"data": 0
+			},
+			"D": {
+				"item": "chestplate:prismarine_chestplate",
+				"data": 0
+			},
+			"E": {
+				"item": "minecraft:diamond",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "chestplate:elder_prismarine_chestplate",
+			"count": 1
+		}
+	}
+}

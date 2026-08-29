@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:clovers_feature"
+		},
+		"features": [
+			[
+				"gen:clovers1_feature",
+				1
+			],
+			[
+				"gen:clovers2_feature",
+				1
+			],
+			[
+				"gen:clovers3_feature",
+				1
+			],
+			[
+				"gen:clovers4_feature",
+				1
+			]
+		]
+	}
+}

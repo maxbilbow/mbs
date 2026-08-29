@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "generation:marbleruins3_feature_mcstructure"
+		},
+		"structure_name": "mystructure:marbleruins3",
+		"adjustment_radius": 8,
+		"facing_direction": "south",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_whitelist": [
+					"minecraft:sand",
+					"block:glowing_kelp",
+					"block:glowing_sea_moss_block",
+					"block:glowing_sea_moss_carpet",
+					"block:sea_glowstone",
+					"minecraft:bone_block",
+					"block:dread_coral_block",
+					"block:dread_coral",
+					"minecraft:gravel",
+					"minecraft:seagrass",
+					"minecraft:kelp",
+					"block:sea_moss_block",
+					"minecraft:pale_moss_block",
+					"minecraft:stone",
+					"minecraft:granite",
+					"minecraft:diorite",
+					"minecraft:andesite",
+					"block:sea_moss_carpet",
+					"minecraft:sea_pickle",
+					"block:marble",
+					"minecraft:water",
+					"minecraft:dirt"
+				]
+			}
+		}
+	}
+}

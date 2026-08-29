@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_0792564e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" B ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_planks",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "sword:wooden_harpoon",
+				"count": 1
+			}
+		]
+	}
+}

@@ -1,0 +1,146 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:thermal_bubble",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 100,
+					"max_dropped_ticks": 5,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:timer": {
+				"time": [
+					1,
+					10
+				],
+				"looping": true,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:health": {
+				"value": 2000000
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"event_trigger": {
+							"target": "self",
+							"event": "despawn"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							30,
+							40
+						]
+					}
+				},
+				"anchor": 1,
+				"power": 3,
+				"gravity": 0,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"inertia": 0.6,
+				"reflect_on_hurt": true,
+				"liquid_inertia": 1,
+				"uncertainty_base": 6
+			},
+			"minecraft:scale": {
+				"value": 0.5
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": [
+						"playanimation @n[r=3,type=mob:thermal_shrimp] animation.thermal_shrimp.shoot"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"size1": {
+				"minecraft:scale": {
+					"value": 0.2
+				}
+			},
+			"size2": {
+				"minecraft:scale": {
+					"value": 0.25
+				}
+			},
+			"size3": {
+				"minecraft:scale": {
+					"value": 0.3
+				}
+			},
+			"size4": {
+				"minecraft:scale": {
+					"value": 0.35
+				}
+			},
+			"size5": {
+				"minecraft:scale": {
+					"value": 0.4
+				}
+			},
+			"size6": {
+				"minecraft:scale": {
+					"value": 0.45
+				}
+			},
+			"size7": {
+				"minecraft:scale": {
+					"value": 0.5
+				}
+			},
+			"size8": {
+				"minecraft:scale": {
+					"value": 0.55
+				}
+			},
+			"size9": {
+				"minecraft:scale": {
+					"value": 0.6
+				}
+			},
+			"size10": {
+				"minecraft:scale": {
+					"value": 0.65
+				}
+			}
+		}
+	}
+}

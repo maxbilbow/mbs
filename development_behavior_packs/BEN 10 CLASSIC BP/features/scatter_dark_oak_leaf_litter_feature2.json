@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_dark_oak_leaf_litter_feature2"
+		},
+		"iterations": 180,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				-20,
+				20
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-5,
+				5
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				-20,
+				20
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:dark_oak_leaf_litter_feature"
+	}
+}

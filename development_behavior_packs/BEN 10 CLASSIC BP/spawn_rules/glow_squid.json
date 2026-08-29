@@ -1,0 +1,77 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "minecraft:glow_squid",
+			"population_control": "animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_underground": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:weight": {
+					"default": 10
+				},
+				"minecraft:height_filter": {
+					"min": -64,
+					"max": 30
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:distance_filter": {
+					"min": 12,
+					"max": 32
+				},
+				"minecraft:weight": {
+					"default": 4
+				},
+				"minecraft:density_limit": {
+					"surface": 20
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 1
+				},
+				"minecraft:biome_filter": [
+					{
+						"test": "has_biome_tag",
+						"operator": "==",
+						"value": "ocean"
+					}
+				]
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:distance_filter": {
+					"min": 12,
+					"max": 32
+				},
+				"minecraft:weight": {
+					"default": 20
+				},
+				"minecraft:density_limit": {
+					"surface": 20
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 3
+				},
+				"minecraft:biome_filter": [
+					{
+						"test": "has_biome_tag",
+						"operator": "==",
+						"value": "glowing_ocean"
+					}
+				]
+			}
+		]
+	}
+}

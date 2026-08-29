@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:gold_kelp",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.crop"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:gold_kelp"
+			},
+			"minecraft:display_name": {
+				"value": "Golden Kelp"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 0.6,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 3,
+				"saturation_modifier": 4
+			}
+		}
+	}
+}

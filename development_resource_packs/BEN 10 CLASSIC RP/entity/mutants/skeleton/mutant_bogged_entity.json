@@ -1,0 +1,61 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_bogged",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/skeleton/bogged",
+				"shiny": "textures/mutants/entity/skeleton/bogged_old"
+			},
+			"geometry": {
+				"default": "geometry.mbogged"
+			},
+			"scripts": {
+				"scale": "1.0"
+			},
+			"animations": {
+				"idle": "animation.mbogged.general",
+				"bow_and_arrow": "animation.mskeleton.wither_power",
+				"attack": "animation.mskeleton.swing",
+				"look_at_target": "animation.mskeleton.look_at_target",
+				"range_charge": "animation.mbogged.bow_charging",
+				"range_uncharge": "animation.mbogged.bow_uncharge",
+				"range_shoot": "animation.mbogged.bow_shoot",
+				"range_jump": "animation.mskeleton.jump",
+				"range_jump_shoot": "animation.mskeleton.jump_shoot",
+				"range_land": "animation.mskeleton.land",
+				"walk": "animation.mskeleton.walk",
+				"walk_arms": "animation.mskeleton.walk_arms",
+				"ribcage": "animation.mskeleton.bones",
+				"stunned": "animation.mskeleton.knocked_out",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mskeleton.death"
+			},
+			"animation_controllers": [
+				{
+					"death": "controller.animation.mskeleton.death"
+				},
+				{
+					"general": "controller.animation.mskeleton.general"
+				},
+				{
+					"move": "controller.animation.mskeleton.walking"
+				},
+				{
+					"range": "controller.animation.mskeleton.walk_arms"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_bogged",
+				"controller.render.mutant_bogged_weapon"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 23
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "minecraft:creaking_heart_trail",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/lightcube"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"direction": [
+					"variable.direction.x",
+					"variable.direction.y",
+					"variable.direction.z"
+				]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "variable.max_lifetime"
+			},
+			"minecraft:particle_initial_speed": "variable.particle_initial_speed",
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					0.075,
+					0.075
+				],
+				"facing_camera_mode": "lookat_xyz"
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [
+					"variable.color.r",
+					"variable.color.g",
+					"variable.color.b",
+					1
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:cooked_clam",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.cookedFood"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:cooked_clam"
+			},
+			"minecraft:display_name": {
+				"value": "Cooked Clam"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 1.8,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 8,
+				"saturation_modifier": 4
+			}
+		}
+	}
+}

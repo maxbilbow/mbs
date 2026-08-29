@@ -1,0 +1,247 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.aeroslime",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "base",
+					"parent": "head",
+					"pivot": [
+						0,
+						5,
+						0
+					]
+				},
+				{
+					"name": "core",
+					"parent": "base",
+					"pivot": [
+						0,
+						5.66667,
+						-2
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								2,
+								-3
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								0,
+								34
+							]
+						},
+						{
+							"origin": [
+								1.5,
+								5,
+								-4
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": [
+								33,
+								43
+							]
+						},
+						{
+							"origin": [
+								-3.5,
+								5,
+								-4
+							],
+							"size": [
+								2,
+								2,
+								2
+							],
+							"uv": [
+								43,
+								43
+							]
+						}
+					]
+				},
+				{
+					"name": "leftwing",
+					"parent": "head",
+					"pivot": [
+						-6,
+						8,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-11,
+								7,
+								-1
+							],
+							"size": [
+								6,
+								2,
+								2
+							],
+							"uv": [
+								24,
+								34
+							]
+						},
+						{
+							"origin": [
+								-13,
+								7,
+								-1
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								24,
+								38
+							]
+						},
+						{
+							"origin": [
+								-18,
+								15,
+								-1
+							],
+							"size": [
+								5,
+								2,
+								2
+							],
+							"uv": [
+								40,
+								12
+							]
+						},
+						{
+							"origin": [
+								-19.5,
+								1,
+								0
+							],
+							"size": [
+								15,
+								14,
+								0
+							],
+							"uv": [
+								0,
+								20
+							]
+						}
+					]
+				},
+				{
+					"name": "rightwing",
+					"parent": "head",
+					"pivot": [
+						6,
+						8,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								7,
+								-1
+							],
+							"size": [
+								6,
+								2,
+								2
+							],
+							"uv": [
+								32,
+								38
+							]
+						},
+						{
+							"origin": [
+								11,
+								7,
+								-1
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								40,
+								0
+							]
+						},
+						{
+							"origin": [
+								13,
+								15,
+								-1
+							],
+							"size": [
+								5,
+								2,
+								2
+							],
+							"uv": [
+								40,
+								16
+							]
+						},
+						{
+							"origin": [
+								4.5,
+								1,
+								0
+							],
+							"size": [
+								15,
+								14,
+								0
+							],
+							"uv": [
+								30,
+								20
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

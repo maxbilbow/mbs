@@ -1,0 +1,1 @@
+ride @e[c=1,family=zombie] start_riding @s teleport_rider

@@ -1,0 +1,268 @@
+//bridge-file-version: #11
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 6,
+					"name": "minecraft:stone_pickaxe"
+				},
+				{
+					"type": "item",
+					"weight": 6,
+					"name": "minecraft:stone_shovel"
+				},
+				{
+					"type": "item",
+					"weight": 4,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "item:scrap_metal"
+				},
+				{
+					"type": "item",
+					"weight": 4,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					],
+					"name": "item:scrap_metal"
+				},
+				{
+					"type": "item",
+					"weight": 10,
+					"name": "sword:wooden_harpoon"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 6,
+								"max": 17
+							}
+						}
+					],
+					"name": "minecraft:pufferfish"
+				},
+				{
+					"type": "item",
+					"weight": 12,
+					"name": "minecraft:dried_kelp",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 6,
+								"max": 17
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 2,
+					"name": "item:abyssal_crate_key"
+				}
+			]
+		},
+		{
+			"rolls": 2,
+			"entries": [
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:iron_ingot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:iron_nugget",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					],
+					"name": "block:scrap_metal_chain",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					],
+					"name": "item:scrap_metal",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 3,
+				"max": 5
+			},
+			"entries": [
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					],
+					"name": "minecraft:dried_kelp",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 10
+							}
+						}
+					],
+					"name": "minecraft:pufferfish",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:raw_salmon",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 3,
+								"max": 6
+							}
+						}
+					],
+					"name": "minecraft:bone",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 8
+							}
+						}
+					],
+					"name": "minecraft:rotten_flesh",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 4,
+								"max": 6
+							}
+						}
+					],
+					"name": "food:caviar",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 8
+							}
+						}
+					],
+					"name": "minecraft:iron_nugget",
+					"weight": 2
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.2
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:copper_nautilus_armor",
+					"weight": 100
+				},
+				{
+					"type": "item",
+					"name": "minecraft:iron_nautilus_armor",
+					"weight": 50
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:dead_grass",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.grass"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:flammable": true,
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "broken"
+					}
+				]
+			},
+			"minecraft:item_visual": {
+				"geometry": "geometry.animated_item",
+				"material_instances": {
+					"*": {
+						"texture": "block_dead_grass",
+						"render_method": "alpha_test",
+						"ambient_occlusion": false,
+						"face_dimming": false
+					}
+				}
+			},
+			"minecraft:geometry": "geometry.plant",
+			"minecraft:light_dampening": 0,
+			"minecraft:replaceable": {},
+			"minecraft:collision_box": false,
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4.2
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_dead_grass",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		},
+		"events": {}
+	}
+}

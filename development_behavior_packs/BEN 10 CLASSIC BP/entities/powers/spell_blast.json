@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:spell_blast",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+			"scripts": {
+				"animate": [
+					"sp"
+				]
+			},
+			"animations": {
+				"sp": "controller.animation.sp"
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 6,
+						"knockback": true
+					}
+				},
+				"power": 1.5,
+				"gravity": 0.01,
+				"angle_offset": 0
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			}
+		}
+	}
+}

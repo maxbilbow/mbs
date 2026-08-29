@@ -1,0 +1,33 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:tripwire_hook_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"!",
+			"#",
+			"~"
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_planks"
+			},
+			"#": {
+				"item": "minecraft:stick"
+			},
+			"!": {
+				"item": "minecraft:iron_ingot"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:tripwire_hook",
+				"count": 2
+			}
+		]
+	}
+}

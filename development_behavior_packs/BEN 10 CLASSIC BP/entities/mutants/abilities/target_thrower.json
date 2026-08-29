@@ -1,0 +1,362 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:target_thrower",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"throw_attack_warden"
+				]
+			},
+			"animations": {
+				"throw_attack_warden": "controller.animation.mutant_throw_attack_warden"
+			}
+		},
+		"component_groups": {
+			"health": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									}
+								]
+							},
+							"event": "despawn"
+						}
+					]
+				}
+			},
+			"fall_damage": {
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"seats": {
+						"position": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"super_fall_damage": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:rideable": {
+					"seat_count": 0,
+					"seats": {
+						"position": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"minecraft:area_attack": {
+					"damage_range": 1.25,
+					"damage_per_tick": 14,
+					"cause": "contact",
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mutantmonster"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "snowgolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "irongolem"
+							}
+						]
+					}
+				}
+			},
+			"fall": {
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:rideable": {
+					"interact_text": "action.hint.exit.mutant:target_thrower",
+					"seat_count": 1,
+					"seats": {
+						"position": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "contact",
+							"deals_damage": false
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_damage",
+											"operator": "==",
+											"value": "contact"
+										}
+									]
+								}
+							},
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									}
+								]
+							},
+							"event": "fall_damage"
+						}
+					]
+				}
+			},
+			"super": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.4,
+						0.4
+					],
+					"time_down_event": {
+						"event": "super_fall_damage"
+					}
+				},
+				"minecraft:rideable": {
+					"interact_text": "action.hint.exit.mutant:target_thrower",
+					"seat_count": 1,
+					"seats": {
+						"position": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:mark_variant": {
+				"value": 0
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": [
+					2.15,
+					2.15
+				],
+				"time_down_event": {
+					"event": "fall"
+				}
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 3.5,
+				"relative_range": false,
+				"minimum_count": 1,
+				"event_filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "other",
+							"operator": "==",
+							"value": "minecraft:behavior.knockback_roar"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "irongolem"
+						},
+						{
+							"test": "is_mark_variant",
+							"subject": "other",
+							"operator": "!=",
+							"value": 3
+						}
+					]
+				},
+				"event": "super"
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "other",
+										"operator": "==",
+										"value": "minecraft:behavior.knockback_roar"
+									},
+									{
+										"test": "is_mark_variant",
+										"subject": "other",
+										"operator": "!=",
+										"value": 3
+									},
+									{
+										"test": "has_damage",
+										"operator": "==",
+										"value": "contact"
+									}
+								]
+							},
+							"event": "super",
+							"target": "self"
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_damage",
+										"operator": "==",
+										"value": "fall"
+									}
+								]
+							},
+							"event": "fall_damage",
+							"target": "self"
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:rideable": {
+				"interact_text": "action.hint.exit.mutant:target_thrower",
+				"seat_count": 1,
+				"seats": {
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			},
+			"minecraft:spell_effects": {
+				"add_effects": [
+					{
+						"effect": "invisibility",
+						"amplifier": 1,
+						"visible": false,
+						"ambient": false,
+						"duration": 999999
+					}
+				],
+				"remove_effects": [
+					"poison",
+					"wither"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.1
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"mutant_target_thrower"
+				]
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"fall_damage": {
+				"add": {
+					"component_groups": [
+						"fall_damage",
+						"health"
+					]
+				}
+			},
+			"super_fall_damage": {
+				"add": {
+					"component_groups": [
+						"super_fall_damage",
+						"health"
+					]
+				}
+			},
+			"fall": {
+				"add": {
+					"component_groups": [
+						"fall"
+					]
+				}
+			},
+			"super": {
+				"add": {
+					"component_groups": [
+						"super"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

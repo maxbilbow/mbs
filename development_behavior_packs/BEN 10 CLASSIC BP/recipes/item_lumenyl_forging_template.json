@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_forging_template_3bb4ba75"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"EEE"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:netherite_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:netherstar",
+				"data": 0
+			},
+			"C": {
+				"item": "item:cyan_pearl",
+				"data": 0
+			},
+			"D": {
+				"item": "item:lumenyl_forging_template",
+				"data": 0
+			},
+			"E": {
+				"item": "block:lumenyl_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:lumenyl_forging_template",
+			"count": 2
+		}
+	}
+}

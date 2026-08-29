@@ -1,0 +1,71 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mwither_skeleton_bones",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/skeleton/wither_skeleton",
+				"blaze_rods": "textures/mutants/entity/skeleton/wither_skeleton_blaze_rods"
+			},
+			"animations": {
+				"spawned": "animation.mutant_skeleton_bone.spawned",
+				"head": "animation.mutant_skeleton_bone.head",
+				"neck": "animation.mutant_skeleton_bone.head",
+				"topbody": "animation.mutant_skeleton_bone.topbody",
+				"arm": "animation.mutant_skeleton_bone.arm",
+				"rib": "animation.mutant_skeleton_bone.rib",
+				"leg": "animation.mutant_skeleton_bone.leg",
+				"body": "animation.mutant_skeleton_bone.body",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"death_cancel": "!query.is_alive"
+					},
+					"spawned",
+					"head",
+					"neck",
+					"arm",
+					"rib",
+					"leg",
+					"body",
+					"topbody"
+				],
+				"scale": "1.1"
+			},
+			"geometry": {
+				"head": "geometry.mwither_skeleton_head",
+				"neck": "geometry.mskeleton_neck_bone",
+				"body": "geometry.mwither_body_bone",
+				"body_2": "geometry.mskeleton_body_2_bone",
+				"topbody": "geometry.mskeleton_topbody_bone",
+				"topbody_2": "geometry.mskeleton_topbody_2_bone",
+				"topbody_3": "geometry.mskeleton_topbody_3_bone",
+				"right_shoulder": "geometry.mwither_right_shoulder_bone",
+				"right_arm": "geometry.mwither_right_arm_bone",
+				"right_arm_2": "geometry.mwither_right_arm_2_bone",
+				"left_shoulder": "geometry.mwither_left_shoulder_bone",
+				"left_arm": "geometry.mwither_left_arm_bone",
+				"left_arm_2": "geometry.mwither_left_arm_2_bone",
+				"right_leg": "geometry.mwither_rleg_bone",
+				"right_leg_2": "geometry.mwither_rleg_2_bone",
+				"left_leg": "geometry.mwither_lleg_bone",
+				"left_leg_2": "geometry.mwither_lleg_2_bone",
+				"right_top_rib": "geometry.mskeleton_right_rib_bone",
+				"right_mid_rib": "geometry.mskeleton_right_rib_bone",
+				"right_bot_rib": "geometry.mskeleton_right_rib_bone",
+				"left_top_rib": "geometry.mskeleton_left_rib_bone",
+				"left_mid_rib": "geometry.mskeleton_left_rib_bone",
+				"left_bot_rib": "geometry.mskeleton_left_rib_bone"
+			},
+			"render_controllers": [
+				"controller.render.mwither_skeleton_bones",
+				"controller.render.mwither_skeleton_blaze_rod_bones"
+			]
+		}
+	}
+}

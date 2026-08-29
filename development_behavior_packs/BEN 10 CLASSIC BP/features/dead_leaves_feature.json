@@ -1,0 +1,63 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:dead_leaves_feature"
+		},
+		"count": 50,
+		"replace_rules": [
+			{
+				"places_block": "block:dead_spruce_leaves",
+				"may_replace": [
+					"minecraft:spruce_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_pale_oak_leaves",
+				"may_replace": [
+					"minecraft:pale_oak_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_oak_leaves",
+				"may_replace": [
+					"minecraft:oak_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_mangrove_leaves",
+				"may_replace": [
+					"minecraft:mangrove_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_jungle_leaves",
+				"may_replace": [
+					"minecraft:jungle_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_dark_oak_leaves",
+				"may_replace": [
+					"minecraft:dark_oak_leaves"
+				]
+			},
+			{
+				"places_block": "block:dead_birch_leaves",
+				"may_replace": [
+					{
+						"name": "minecraft:birch_leaves"
+					}
+				]
+			},
+			{
+				"places_block": "block:dead_acacia_leaves",
+				"may_replace": [
+					{
+						"name": "minecraft:acacia_leaves"
+					}
+				]
+			}
+		]
+	}
+}

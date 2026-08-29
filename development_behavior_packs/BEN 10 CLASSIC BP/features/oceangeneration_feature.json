@@ -1,0 +1,34 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:oceangeneration_feature"
+		},
+		"features": [
+			[
+				"gen:oceangeneration1_feature",
+				2
+			],
+			[
+				"gen:oceangeneration2_feature",
+				2
+			],
+			[
+				"gen:oceangeneration3_feature",
+				2
+			],
+			[
+				"gen:oceangeneration4_feature",
+				1
+			],
+			[
+				"gen:oceangeneration5_feature",
+				1
+			],
+			[
+				"gen:oceangeneration6_feature",
+				1
+			]
+		]
+	}
+}

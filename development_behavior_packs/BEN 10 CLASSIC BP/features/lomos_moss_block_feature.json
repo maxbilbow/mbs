@@ -1,0 +1,21 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:lomos_moss_block_feature"
+		},
+		"count": 30,
+		"replace_rules": [
+			{
+				"places_block": "block:lomos_moss_block",
+				"may_replace": [
+					"minecraft:stone",
+					"minecraft:deepslate",
+					"minecraft:obsidian",
+					"minecraft:lava",
+					"minecraft:magma"
+				]
+			}
+		]
+	}
+}

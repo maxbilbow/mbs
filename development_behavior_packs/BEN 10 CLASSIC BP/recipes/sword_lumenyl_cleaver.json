@@ -1,0 +1,46 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_cleaver_d9cd3dae"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"EFE"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"B": {
+				"item": "item:lumenyl_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "block:lumenyl_block",
+				"data": 0
+			},
+			"D": {
+				"item": "sword:netherite_cleaver",
+				"data": 0
+			},
+			"E": {
+				"item": "item:lumenyl",
+				"data": 0
+			},
+			"F": {
+				"item": "minecraft:diamond_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:lumenyl_cleaver",
+			"count": 1
+		}
+	}
+}

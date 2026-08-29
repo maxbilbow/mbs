@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_9999eb7a"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"  A",
+			" B ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_planks",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:wooden_spear",
+				"count": 1,
+				"data": 0
+			}
+		]
+	}
+}

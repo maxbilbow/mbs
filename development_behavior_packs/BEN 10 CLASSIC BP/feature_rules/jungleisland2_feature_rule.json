@@ -1,0 +1,41 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:jungleisland2_feature_rule",
+			"places_feature": "generation:jungleisland2_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "jungle"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "bamboo"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 0.05,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					150,
+					190
+				]
+			},
+			"z": 0
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sea_prism_pickaxe_a2d472bc"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"ACA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"B": {
+				"item": "item:sea_prism_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "block:sea_prism_block",
+				"data": 0
+			},
+			"D": {
+				"item": "tool:reidite_pickaxe",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "tool:sea_prism_pickaxe",
+			"count": 1
+		}
+	}
+}

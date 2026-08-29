@@ -1,0 +1,164 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:scrap_metal_lantern",
+			"menu_category": {
+				"category": "items",
+				"group": "minecraft:itemGroup.name.items"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			},
+			"states": {
+				"kai:waterlogged": [
+					false,
+					true
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'up'",
+				"components": {
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							0,
+							-3
+						],
+						"size": [
+							6,
+							8,
+							6
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-3,
+							0,
+							-3
+						],
+						"size": [
+							6,
+							8,
+							6
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'down'",
+				"components": {
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							8,
+							6
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							8,
+							6
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3.5
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.lantern",
+				"bone_visibility": {
+					"lantern_floor": "query.block_state('minecraft:block_face') == 'up'",
+					"lantern_hanging": "query.block_state('minecraft:block_face') == 'down'"
+				}
+			},
+			"minecraft:light_emission": 0,
+			"minecraft:light_dampening": 0,
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"allowed_faces": [
+							"up",
+							"down"
+						]
+					}
+				]
+			},
+			"minecraft:custom_components": [
+				"kai:on_interact"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_scrap_metal_lantern",
+					"render_method": "blend_to_opaque",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"minecraft:transformation": {
+				"rotation": [
+					0,
+					90,
+					0
+				]
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					15,
+					16
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3.5
+			}
+		}
+	}
+}

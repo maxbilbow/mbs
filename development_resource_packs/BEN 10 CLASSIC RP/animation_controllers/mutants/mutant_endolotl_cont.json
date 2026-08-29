@@ -1,0 +1,402 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mob_endolotl.move": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						{
+							"fly": "math.min(1,query.modified_move_speed*10)"
+						},
+						"look_at_target",
+						"idle"
+					],
+					"transitions": [
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"play_dead": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"play_dead"
+					],
+					"transitions": [
+						{
+							"play_alive": "!query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"play_alive": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"play_alive"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.mob_endolotl.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"idle_1": "math.random(0,2300)<1&&!query.is_angry&&query.is_sitting&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"idle_2": "math.random(0,2600)<1&&!query.is_angry&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"idle_3": "math.random(0,3100)<1&&!query.is_angry&&!query.is_roaring&&query.is_playing_dead&&!query.has_target&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_1": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_2": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_3": {
+					"animations": [
+						"idle_3"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_sitting||query.is_playing_dead||query.is_roaring||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mendolotl.portal": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"particle_effects": [
+						{
+							"effect": "portal"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mendolotl.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"idle_1": "math.random(0,2300)<1&&!query.is_angry&&query.is_sitting&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"idle_2": "math.random(0,2600)<1&&!query.is_angry&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"idle_3": "math.random(0,3100)<1&&!query.is_angry&&!query.is_roaring&&!query.is_sitting&&query.is_playing_dead&&!query.has_target&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"eat": {
+					"animations": [
+						"eating"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_1": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_2": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_3": {
+					"animations": [
+						"idle_3"
+					],
+					"transitions": [
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_sitting||query.is_playing_dead||query.is_roaring||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mendolotl.move": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						{
+							"fly": "math.min(1,query.modified_move_speed*10)"
+						},
+						"look_at_target",
+						"idle"
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"sitting": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"sit"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"sit_idle_1": "math.random(0,2300)<1&&!query.is_angry&&query.is_sitting&&!query.is_roaring&&!query.has_target&&!query.is_alive"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sit_idle_1": {
+					"animations": [
+						"sit_2",
+						"idle"
+					],
+					"transitions": [
+						{
+							"sit_default": "query.all_animations_finished||query.is_angry||!query.is_sitting||query.has_target||query.is_roaring||!query.is_alive"
+						},
+						{
+							"idling": "query.is_angry||!query.is_sitting||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					]
+				},
+				"sit_default": {
+					"animations": [
+						"sit_2_still",
+						"idle"
+					],
+					"transitions": [
+						{
+							"idling": "query.is_angry||!query.is_sitting||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"play_dead": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"play_dead"
+					],
+					"transitions": [
+						{
+							"play_alive": "!query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"play_alive": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"play_alive"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"idle",
+						"idle_hands",
+						"death",
+						"death_cancel"
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.mendolotl.hands": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						{
+							"fly_hands": "math.min(1,query.modified_move_speed*10)"
+						},
+						"idle_hands"
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"attack": "query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.15
+				},
+				"attack": {
+					"animations": [
+						"melee_attack"
+					],
+					"transitions": [
+						{
+							"idling": "query.all_animations_finished"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sitting": {
+					"animations": [
+						"idle_hands"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						},
+						{
+							"play_dead": "query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"play_dead": {
+					"animations": [
+						"idle_hands"
+					],
+					"transitions": [
+						{
+							"idling": "!query.is_playing_dead"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,697 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_vex",
+			"runtime_identifier": "minecraft:vex",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"cooldown": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:movement": {
+					"value": 0.75
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_complete_event": {
+						"event": "can_attack",
+						"target": "self"
+					},
+					"attack_cooldown_time": [
+						3,
+						4
+					]
+				},
+				"minecraft:behavior.charge_attack": {
+					"max_distance": 32,
+					"min_distance": 15,
+					"speed_multiplier": 1.5,
+					"success_rate": 0
+				}
+			},
+			"on_guard": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:movement": {
+					"value": 1.95
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_complete_event": {
+						"event": "can_attack",
+						"target": "self"
+					},
+					"attack_cooldown_time": [
+						3,
+						4
+					]
+				},
+				"minecraft:behavior.charge_attack": {
+					"max_distance": 32,
+					"min_distance": 15,
+					"speed_multiplier": 1.85,
+					"success_rate": 0
+				}
+			},
+			"can_attack": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:movement": {
+					"value": 1.25
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 0.95,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "start_attack",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.charge_attack": {
+					"max_distance": 32,
+					"min_distance": 1,
+					"speed_multiplier": 2,
+					"success_rate": 2
+				}
+			},
+			"smash_attack": {
+				"minecraft:movement": {
+					"value": 0.95
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 2
+						}
+					]
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 1,
+					"attack_time": 0.5,
+					"knockback_damage": 13,
+					"knockback_range": 4,
+					"knockback_height_cap": 1,
+					"knockback_vertical_strength": 1,
+					"knockback_strength": 3,
+					"knockback_horizontal_strength": 3,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mutant_target_thrower"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "vex"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "mutant_target_thrower"
+							}
+						]
+					},
+					"cooldown_time": 30
+				}
+			},
+			"mutant_angry": {
+				"minecraft:movement": {
+					"value": 0.95
+				},
+				"minecraft:on_target_escape": {
+					"event": "minecraft:on_calm",
+					"target": "self"
+				},
+				"minecraft:angry": {
+					"duration": 125,
+					"broadcast_anger": false,
+					"broadcast_anger_on_attack": false,
+					"broadcast_anger_on_being_attacked": false,
+					"broadcast_range": 60,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "other",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"target": "self"
+					}
+				}
+			},
+			"mutant_calm": {
+				"minecraft:movement": {
+					"value": 0.95
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.charge_attack": {
+					"max_distance": 32,
+					"min_distance": 15,
+					"speed_multiplier": 1.85,
+					"success_rate": 0
+				},
+				"minecraft:on_target_acquired": {
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+			},
+			"vex_adult": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:follow_range": {
+				"value": 56,
+				"max": 56
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"operator": "==",
+										"value": "inanimate"
+									}
+								]
+							},
+							"event": "on_calm_play_dead",
+							"target": "other"
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "is_mark_variant",
+										"subject": "self",
+										"value": 1
+									}
+								]
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 4,
+				"within_radius": 56,
+				"reselect_targets": false,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"any_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "irongolem"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "snowgolem"
+										},
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "wandering_trader"
+										}
+									]
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"max_dist": 56
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_baby"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"max_dist": 56
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": 50
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"vex",
+					"illager",
+					"mob",
+					"mutantmonster",
+					"chemical_x",
+					"monster"
+				]
+			},
+			"minecraft:health": {
+				"value": 60,
+				"max": 60
+			},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:collision_box": {
+				"width": 0.9,
+				"height": 1.25
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": false,
+				"avoid_portals": true,
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 9,
+				"look_distance": 6,
+				"probability": 0.02,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 2,
+				"entity_types": {
+					"any_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "illager"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "inanimate"
+						}
+					]
+				}
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": false,
+				"emit_swim": false
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"mutant_calm"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"mutant_calm"
+					]
+				}
+			},
+			"minecraft:become_angry": {
+				"randomize": [
+					{
+						"weight": 90,
+						"remove": {
+							"component_groups": [
+								"mutant_calm"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"mutant_angry",
+								"cooldown"
+							]
+						}
+					},
+					{
+						"weight": 10,
+						"remove": {
+							"component_groups": [
+								"mutant_calm"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"mutant_angry",
+								"on_guard"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:become_angry1": {
+				"remove": {
+					"component_groups": [
+						"mutant_calm"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mutant_angry",
+						"on_guard"
+					]
+				}
+			},
+			"minecraft:on_calm": {
+				"remove": {
+					"component_groups": [
+						"mutant_angry",
+						"on_guard"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mutant_calm"
+					]
+				}
+			},
+			"on_cooldown": {
+				"remove": {
+					"component_groups": [
+						"on_guard",
+						"smash_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"cooldown"
+					]
+				}
+			},
+			"on_guard": {
+				"remove": {
+					"component_groups": [
+						"cooldown",
+						"smash_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"on_guard"
+					]
+				}
+			},
+			"can_attack": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"cooldown",
+								"on_guard",
+								"smash_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"cooldown",
+								"on_guard",
+								"smash_attack",
+								"can_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"start_attack": {
+				"weight": 12,
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						},
+						{
+							"test": "has_target",
+							"subject": "self",
+							"operator": "equals",
+							"value": true
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cooldown",
+						"on_guard",
+						"can_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"smash_attack"
+					]
+				}
+			},
+			"melee_return": {
+				"randomize": [
+					{
+						"weight": 60,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"smash_attack",
+								"on_guard"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"cooldown"
+							]
+						}
+					},
+					{
+						"weight": 40,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"smash_attack",
+								"cooldown"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"on_guard"
+							]
+						}
+					},
+					{
+						"weight": 40,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"smash_attack",
+								"cooldown"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"on_guard"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

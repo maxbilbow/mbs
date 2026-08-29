@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "tungsten_leggings_e74a18ce"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"ACA",
+			"DED"
+		],
+		"key": {
+			"A": {
+				"item": "item:tungsten_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "item:tungsten_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "leggings:silver_leggings",
+				"data": 0
+			},
+			"D": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"E": {
+				"item": "item:white_pearl",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "leggings:tungsten_leggings",
+			"count": 1
+		}
+	}
+}

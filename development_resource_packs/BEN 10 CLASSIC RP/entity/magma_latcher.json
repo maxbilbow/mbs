@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:magma_latcher",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/magma_latcher"
+			},
+			"geometry": {
+				"default": "geometry.magma_latcher"
+			},
+			"animations": {
+				"face_player": "animation.magma_latcher.base"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#411A06",
+				"overlay_color": "#FFBC68"
+			}
+		}
+	}
+}

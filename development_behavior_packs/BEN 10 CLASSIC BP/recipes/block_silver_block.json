@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "silver_block_debf693d"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:silver_block",
+			"count": 1
+		}
+	}
+}

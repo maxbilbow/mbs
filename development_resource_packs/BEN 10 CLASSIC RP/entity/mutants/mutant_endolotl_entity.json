@@ -1,0 +1,78 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_endolotl",
+			"materials": {
+				"default": "enderman",
+				"limbs": "axolotl_limbs",
+				"cube": "entity_static"
+			},
+			"textures": {
+				"vanilla": "textures/mutants/entity/endolotl/endolotl_vanilla",
+				"hive": "textures/mutants/entity/endolotl/endolotl_hive",
+				"cube": "textures/mutants/entity/entities/corrupted_cube"
+			},
+			"geometry": {
+				"default": "geometry.mutant_endolotl",
+				"cube": "geometry.mutant_endolotl_cube"
+			},
+			"animations": {
+				"big_head": "animation.mutant_endolotl.big_head",
+				"look_at_target": "animation.mutant_endolotl.look_at_target",
+				"idle": "animation.mutant_endolotl.general",
+				"idle_1": "animation.mutant_endolotl.idle_1",
+				"idle_2": "animation.mutant_endolotl.idle_2",
+				"idle_3": "animation.mutant_endolotl.idle_3",
+				"sit": "animation.mutant_endolotl.sit",
+				"sit_2": "animation.mutant_endolotl.sit_2",
+				"sit_2_still": "animation.mutant_endolotl.sit_2_still",
+				"fly": "animation.mutant_endolotl.move",
+				"idle_hands": "animation.mutant_endolotl.general_hands",
+				"fly_hands": "animation.mutant_endolotl.move_hands",
+				"play_dead": "animation.mutant_endolotl.play_dead",
+				"play_alive": "animation.mutant_endolotl.play_alive",
+				"death": "animation.mutant_endolotl.death",
+				"death_cancel": "animation.mutant.death_cancel",
+				"melee_attack": "animation.mutant_endolotl.attack",
+				"melee_attack_controller": "controller.animation.warden.melee_attacking",
+				"eating": "animation.mutant_endolotl.eat"
+			},
+			"particle_effects": {
+				"portal": "mutant:end_portal_particle"
+			},
+			"scripts": {
+				"scale": "1.25",
+				"pre_animation": [
+					"variable.mpet_walk_divisor=10.0;",
+					"variable.mpet_walk_multiplier=1;"
+				]
+			},
+			"animation_controllers": [
+				{
+					"particle": "controller.animation.mendolotl.portal"
+				},
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"idle": "controller.animation.mendolotl.idle"
+				},
+				{
+					"move": "controller.animation.mendolotl.move"
+				},
+				{
+					"hands": "controller.animation.mendolotl.hands"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mendolotl",
+				"controller.render.m_the_cube"
+			],
+			"spawn_egg": {
+				"texture": "hive_mutant_spawn_eggs",
+				"texture_index": 1
+			}
+		}
+	}
+}

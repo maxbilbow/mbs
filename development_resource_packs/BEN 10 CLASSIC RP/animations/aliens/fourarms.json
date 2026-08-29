@@ -928,6 +928,40 @@
 					}
 				}
 			}
+		},
+		"animation.fourarms_moblift": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"arm1": {
+					"rotation": [
+						-160,
+						-20,
+						-30
+					]
+				},
+				"arm2": {
+					"rotation": [
+						-160,
+						20,
+						30
+					]
+				},
+				"arm3": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"arm4": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
 		}
 	}
 }

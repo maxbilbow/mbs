@@ -1,0 +1,74 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.bubbaling",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [
+					0,
+					0.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								1,
+								-3
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								0,
+								16
+							]
+						}
+					]
+				},
+				{
+					"name": "leftfin",
+					"parent": "head",
+					"pivot": [
+						4,
+						3,
+						0
+					]
+				},
+				{
+					"name": "rightfin",
+					"parent": "head",
+					"pivot": [
+						-4,
+						3,
+						0
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "head",
+					"pivot": [
+						0,
+						4,
+						4
+					]
+				}
+			]
+		}
+	]
+}

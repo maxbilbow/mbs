@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:dried_lomos_kelp",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.miscFood"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:dried_lomos_kelp"
+			},
+			"minecraft:display_name": {
+				"value": "Dried Lomos Kelp"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 0.6,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 2,
+				"saturation_modifier": 0.5
+			}
+		}
+	}
+}

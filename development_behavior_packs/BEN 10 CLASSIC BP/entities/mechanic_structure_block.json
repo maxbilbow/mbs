@@ -1,0 +1,105 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mechanic:structure_block",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					0.1,
+					0.1
+				],
+				"time_down_event": {
+					"event": "ocean",
+					"target": "self"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"ocean": {
+				"randomize": [
+					{
+						"queue_command": {
+							"command": [
+								"particle structureblockattempt"
+							]
+						},
+						"weight": 50,
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"summon mob:arrow_turrent"
+							]
+						},
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"summon mob:fire_turrent"
+							]
+						},
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"summon mob:ice_turrent"
+							]
+						},
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

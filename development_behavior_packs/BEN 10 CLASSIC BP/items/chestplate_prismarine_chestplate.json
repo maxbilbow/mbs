@@ -1,0 +1,43 @@
+{
+	"format_version": "1.20.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "chestplate:prismarine_chestplate",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.chestplate"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"textures": {
+					"default": "prismarine_chestplate"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_torso"
+			},
+			"minecraft:durability": {
+				"max_durability": 900,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.chest",
+				"protection": 7
+			},
+			"minecraft:display_name": {
+				"value": "Prismarine Chestplate"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bubble_barrier_11a6c86b"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:experience_bottle",
+				"data": 0
+			},
+			"B": {
+				"item": "item:release_bubble",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:bubble_barrier",
+			"count": 1
+		}
+	}
+}

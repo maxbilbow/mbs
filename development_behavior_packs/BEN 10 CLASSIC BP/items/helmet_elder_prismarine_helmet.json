@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "helmet:elder_prismarine_helmet",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.helmet"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "elder_prismarine_helmet"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_head"
+			},
+			"minecraft:durability": {
+				"max_durability": 450
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 3
+			},
+			"minecraft:display_name": {
+				"value": "Elder Prismarine Helmet"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

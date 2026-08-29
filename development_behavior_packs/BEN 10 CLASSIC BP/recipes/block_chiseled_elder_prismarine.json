@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_elder_prismarine_0d273cb9"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:elder_prismarine_brick_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_elder_prismarine",
+			"count": 1
+		}
+	}
+}

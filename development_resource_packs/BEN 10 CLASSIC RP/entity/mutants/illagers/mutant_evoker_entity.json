@@ -1,0 +1,72 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_evoker",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/illagers/mutant_evoker"
+			},
+			"geometry": {
+				"default": "geometry.mutant_evoker"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire",
+				"spell": "mutant:mutant_evoker_spell"
+			},
+			"sound_effects": {
+				"vex": "mob.evocation_illager.prepare_summon",
+				"fangs": "mob.evocation_illager.prepare_attack"
+			},
+			"scripts": {
+				"scale": "1.325"
+			},
+			"animations": {
+				"smash_attack": "animation.mevoker.knockback_casting",
+				"idle": "animation.mzombie.general",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_legs": "animation.mzombie.move_legs",
+				"throw": "animation.mvindicator.throw_target_axe",
+				"throw_success": "animation.mvindicator.throw_target_success_axe",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"cast_vex": "animation.mevoker.casting_vex",
+				"cast_fangs": "animation.mevoker.casting_fangs",
+				"cast_super": "animation.mevoker.casting_super",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.mevoker.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.mevoker.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mevoker"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 25
+			}
+		}
+	}
+}

@@ -68,6 +68,9 @@
       "power_clock_rewind": {
          "textures": "textures/items/powers/clock_rewind"
       },
+      "power_clock_rewind_setting": {
+         "textures": "textures/items/icons/setting"
+      },
       "power_bv_lightning": {
          "textures": "textures/items/powers/bv_lightning"
       },
@@ -116,6 +119,15 @@
       "power_upgrade": {
          "textures": "textures/items/powers/upgrade"
       },
+      "power_electro": {
+         "textures": "textures/items/powers/electro"
+      },
+      "power_absorb": {
+         "textures": "textures/items/powers/absorb"
+      },
+      "power_autobolt": {
+         "textures": "textures/items/powers/autobolt"
+      },
       "setting": {
          "textures": "textures/items/icons/setting"
       },
@@ -128,11 +140,14 @@
       "werewolf": {
          "textures": "textures/entity/fox/werewolf_icon"
       },
+      "power_spell_book": {
+         "textures": "textures/items/powers/spell_book"
+      },
+      "power_spells": {
+         "textures": "textures/items/powers/spells"
+      },
       "spawn_egg_omni_capsule": {
          "textures": "textures/items/spawn_eggs/omni_capsule"
-      },
-      "spawn_egg_omni_heatblast": {
-         "textures": "textures/items/spawn_eggs/omni_heatblast"
       },
       "cso:spawn_egg_prototype_phobos": {
          "textures": "textures/entity/bosses/boss2/items/prototype_phobos_spawn_egg"
@@ -151,6 +166,1077 @@
       },
       "power_hb_flamethrower": {
          "textures": "textures/items/powers/hb_flamethrower"
+      },
+      "js7_mutant:skeleton_head": {
+         "textures": "textures/mutants/items/armors/skeleton_head"
+      },
+      "js7_mutant:skeleton_chestplate": {
+         "textures": "textures/mutants/items/armors/skeleton_chestplate"
+      },
+      "js7_mutant:skeleton_leggings": {
+         "textures": "textures/mutants/items/armors/skeleton_leggings"
+      },
+      "js7_mutant:skeleton_boots": {
+         "textures": "textures/mutants/items/armors/skeleton_boots"
+      },
+      "js7_mutant:wither_skeleton_head": {
+         "textures": "textures/mutants/items/armors/wither_skeleton_head"
+      },
+      "js7_mutant:wither_skeleton_chestplate": {
+         "textures": "textures/mutants/items/armors/wither_skeleton_chestplate"
+      },
+      "js7_mutant:wither_skeleton_leggings": {
+         "textures": "textures/mutants/items/armors/wither_skeleton_leggings"
+      },
+      "js7_mutant:wither_skeleton_boots": {
+         "textures": "textures/mutants/items/armors/wither_skeleton_boots"
+      },
+      "js7_mutant:stray_head": {
+         "textures": "textures/mutants/items/armors/stray_head"
+      },
+      "js7_mutant:stray_chestplate": {
+         "textures": "textures/mutants/items/armors/stray_chestplate"
+      },
+      "js7_mutant:stray_leggings": {
+         "textures": "textures/mutants/items/armors/stray_leggings"
+      },
+      "js7_mutant:stray_boots": {
+         "textures": "textures/mutants/items/armors/stray_boots"
+      },
+      "js7_mutant:bogged_head": {
+         "textures": "textures/mutants/items/armors/bogged_head"
+      },
+      "js7_mutant:bogged_chestplate": {
+         "textures": "textures/mutants/items/armors/bogged_chestplate"
+      },
+      "js7_mutant:bogged_leggings": {
+         "textures": "textures/mutants/items/armors/bogged_leggings"
+      },
+      "js7_mutant:bogged_boots": {
+         "textures": "textures/mutants/items/armors/bogged_boots"
+      },
+      "js7_mutant:skeleton_arms": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_arms"
+      },
+      "js7_mutant:skeleton_limb": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_limb"
+      },
+      "js7_mutant:skeleton_pelvis": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_pelvis"
+      },
+      "js7_mutant:skeleton_rib": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_rib"
+      },
+      "js7_mutant:skeleton_rib_cage": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_rib_cage"
+      },
+      "js7_mutant:skeleton_shoulder_pad": {
+         "textures": "textures/mutants/items/skeleton_bones/skeleton_shoulder_pad"
+      },
+      "js7_mutant:wither_skeleton_arms": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_arms"
+      },
+      "js7_mutant:wither_skeleton_limb": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_limb"
+      },
+      "js7_mutant:wither_skeleton_pelvis": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_pelvis"
+      },
+      "js7_mutant:wither_skeleton_rib": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_rib"
+      },
+      "js7_mutant:wither_skeleton_rib_cage": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_rib_cage"
+      },
+      "js7_mutant:wither_skeleton_shoulder_pad": {
+         "textures": "textures/mutants/items/skeleton_bones/wither_skeleton_shoulder_pad"
+      },
+      "js7_mutant:stray_arms": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_arms"
+      },
+      "js7_mutant:stray_limb": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_limb"
+      },
+      "js7_mutant:stray_pelvis": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_pelvis"
+      },
+      "js7_mutant:stray_rib": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_rib"
+      },
+      "js7_mutant:stray_rib_cage": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_rib_cage"
+      },
+      "js7_mutant:stray_shoulder_pad": {
+         "textures": "textures/mutants/items/skeleton_bones/stray_shoulder_pad"
+      },
+      "js7_mutant:bogged_arms": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_arms"
+      },
+      "js7_mutant:bogged_limb": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_limb"
+      },
+      "js7_mutant:bogged_pelvis": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_pelvis"
+      },
+      "js7_mutant:bogged_rib": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_rib"
+      },
+      "js7_mutant:bogged_rib_cage": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_rib_cage"
+      },
+      "js7_mutant:bogged_shoulder_pad": {
+         "textures": "textures/mutants/items/skeleton_bones/bogged_shoulder_pad"
+      },
+      "mutated_trident": {
+         "textures": "textures/mutants/items/mutated_trident"
+      },
+      "chemical_x": {
+         "textures": "textures/mutants/items/chemical_x"
+      },
+      "endersoul_fragment": {
+         "textures": "textures/mutants/items/endersoul_fragment"
+      },
+      "endersoul_hand": {
+         "textures": "textures/mutants/items/endersoul_hand"
+      },
+      "creeper_shard": {
+         "textures": "textures/mutants/items/creeper_shard"
+      },
+      "creeper_egg": {
+         "textures": "textures/mutants/items/creeper_egg"
+      },
+      "mutated_stone_sword": {
+         "textures": "textures/mutants/items/swords/stone_sword"
+      },
+      "mutated_iron_sword": {
+         "textures": "textures/mutants/items/swords/iron_sword"
+      },
+      "mutated_gold_sword": {
+         "textures": "textures/mutants/items/swords/gold_sword"
+      },
+      "mutated_diamond_sword": {
+         "textures": "textures/mutants/items/swords/diamond_sword"
+      },
+      "mutated_netherite_sword": {
+         "textures": "textures/mutants/items/swords/netherite_sword"
+      },
+      "mutated_iron_axe": {
+         "textures": "textures/mutants/items/axes/iron_axe"
+      },
+      "mutated_gold_axe": {
+         "textures": "textures/mutants/items/axes/gold_axe"
+      },
+      "mutated_diamond_axe": {
+         "textures": "textures/mutants/items/axes/diamond_axe"
+      },
+      "mutated_netherite_axe": {
+         "textures": "textures/mutants/items/axes/netherite_axe"
+      },
+      "og_mutant_spawn_eggs": {
+         "textures": [
+            "textures/mutants/items/og_mutant_items/2016_mzombie",
+            "textures/mutants/items/og_mutant_items/2016_mvillager"
+         ]
+      },
+      "hive_mutant_spawn_eggs": {
+         "textures": [
+            "textures/mutants/items/spawn_eggs/hive/endolotl_hive_egg",
+            "textures/mutants/items/spawn_eggs/hive/mendolotl_hive_egg"
+         ]
+      },
+      "mutant_spawn_eggs": {
+         "textures": [
+            "textures/mutants/items/spawn_eggs/spawn_mcreeper",
+            "textures/mutants/items/spawn_eggs/spawn_mdrowned",
+            "textures/mutants/items/spawn_eggs/spawn_mzombiepig",
+            "textures/mutants/items/spawn_eggs/spawn_mhusk",
+            "textures/mutants/items/spawn_eggs/spawn_mzombie",
+            "textures/mutants/items/spawn_eggs/spawn_mskeleton",
+            "textures/mutants/items/spawn_eggs/spawn_mstray",
+            "textures/mutants/items/spawn_eggs/spawn_mwitherskeleton",
+            "textures/mutants/items/spawn_eggs/spawn_mwolf",
+            "textures/mutants/items/spawn_eggs/spawn_mwolf_skeleton",
+            "textures/mutants/items/spawn_eggs/spawn_msnow_golem",
+            "textures/mutants/items/spawn_eggs/spawn_mspider_pig",
+            "textures/mutants/items/spawn_eggs/spawn_mpiglin",
+            "textures/mutants/items/spawn_eggs/spawn_mpiglin_brute",
+            "textures/mutants/items/spawn_eggs/spawn_mzombiepiglin",
+            "textures/mutants/items/spawn_eggs/spawn_menderman",
+            "textures/mutants/items/spawn_eggs/spawn_maxolotl",
+            "textures/mutants/items/spawn_eggs/spawn_miron_golem",
+            "textures/mutants/items/spawn_eggs/spawn_moceleot",
+            "textures/mutants/items/spawn_eggs/spawn_mboulderingzombie",
+            "textures/mutants/items/spawn_eggs/spawn_mlobberzombie",
+            "textures/mutants/items/spawn_eggs/spawn_mvillager",
+            "textures/mutants/items/spawn_eggs/spawn_mzombie_villager",
+            "textures/mutants/items/spawn_eggs/spawn_mbogged",
+            "textures/mutants/items/spawn_eggs/spawn_mvindicator",
+            "textures/mutants/items/spawn_eggs/spawn_mevoker",
+            "textures/mutants/items/spawn_eggs/spawn_mpillager",
+            "textures/mutants/items/spawn_eggs/spawn_mvex",
+            "textures/mutants/items/spawn_eggs/spawn_mutated_fangs"
+         ]
+      },
+      "block_blue_torch": {
+         "textures": "textures/blocks/block_blue_torch"
+      },
+      "block_green_torch": {
+         "textures": "textures/blocks/block_green_torch"
+      },
+      "block_light_blue_torch": {
+         "textures": "textures/blocks/block_light_blue_torch"
+      },
+      "item:adoption_bracelet": {
+         "textures": "textures/items/item_adoption_bracelet"
+      },
+      "item:abyssal_crate_key": {
+         "textures": "textures/items/item_abyssal_crate_key"
+      },
+      "item:prismarine_gauntlet": {
+         "textures": "textures/items/item_prismarine_gauntlet"
+      },
+      "item:rusty_anchor": {
+         "textures": "textures/items/item_rusty_anchor"
+      },
+      "block_lumenyl_cluster": {
+         "textures": "textures/blocks/block_lumenyl_cluster"
+      },
+      "block_pink_torch": {
+         "textures": "textures/blocks/block_pink_torch"
+      },
+      "block_orange_torch": {
+         "textures": "textures/blocks/block_orange_torch"
+      },
+      "block_underwater_torch": {
+         "textures": "textures/blocks/block_underwater_torch"
+      },
+      "block_purple_torch": {
+         "textures": "textures/blocks/block_purple_torch"
+      },
+      "block_red_torch": {
+         "textures": "textures/blocks/block_red_torch"
+      },
+      "block_white_torch": {
+         "textures": "textures/blocks/block_white_torch"
+      },
+      "block_yellow_torch": {
+         "textures": "textures/blocks/block_yellow_torch"
+      },
+      "lumenyl_boots": {
+         "textures": [
+            "textures/items/boots_lumenyl_boots"
+         ]
+      },
+      "elder_prismarine_boots": {
+         "textures": [
+            "textures/items/boots_elder_prismarine_boots"
+         ]
+      },
+      "prismarine_boots": {
+         "textures": [
+            "textures/items/boots_prismarine_boots"
+         ]
+      },
+      "prismarine_chestplate": {
+         "textures": [
+            "textures/items/chestplate_prismarine_chestplate"
+         ]
+      },
+      "elder_prismarine_chestplate": {
+         "textures": [
+            "textures/items/chestplate_elder_prismarine_chestplate"
+         ]
+      },
+      "lumenyl_chestplate": {
+         "textures": [
+            "textures/items/chestplate_lumenyl_chestplate"
+         ]
+      },
+      "item:cyan_pearl": {
+         "textures": "textures/items/item_cyan_pearl"
+      },
+      "item:bubble_wand": {
+         "textures": "textures/items/item_bubble_wand"
+      },
+      "item:atlantis_key": {
+         "textures": "textures/items/item_atlantis_key"
+      },
+      "diving_helmet": {
+         "textures": [
+            "textures/items/helmet_diving_helmet"
+         ]
+      },
+      "prismarine_helmet": {
+         "textures": [
+            "textures/items/helmet_prismarine_helmet"
+         ]
+      },
+      "elder_prismarine_helmet": {
+         "textures": [
+            "textures/items/helmet_elder_prismarine_helmet"
+         ]
+      },
+      "lumenyl_helmet": {
+         "textures": [
+            "textures/items/helmet_lumenyl_helmet"
+         ]
+      },
+      "item:elder_forging_template": {
+         "textures": "textures/items/item_elder_forging_template"
+      },
+      "item:lumenyl_forging_template": {
+         "textures": "textures/items/item_lumenyl_forging_template"
+      },
+      "item:elder_prismarine_shard": {
+         "textures": "textures/items/item_elder_prismarine_shard"
+      },
+      "item:raw_magnesium": {
+         "textures": "textures/items/item_raw_magnesium"
+      },
+      "item:pink_pearl": {
+         "textures": "textures/items/item_pink_pearl"
+      },
+      "item:magnesium_ingot": {
+         "textures": "textures/items/item_magnesium_ingot"
+      },
+      "item:lumenyl": {
+         "textures": "textures/items/item_lumenyl"
+      },
+      "item:white_pearl": {
+         "textures": "textures/items/item_white_pearl"
+      },
+      "spear:elder_prismarine_spear": {
+         "textures": "textures/items/spear_elder_prismarine_spear"
+      },
+      "spear:lumenyl_spear": {
+         "textures": "textures/items/spear_lumenyl_spear"
+      },
+      "lumenyl_leggings": {
+         "textures": [
+            "textures/items/leggings_lumenyl_leggings"
+         ]
+      },
+      "elder_prismarine_leggings": {
+         "textures": [
+            "textures/items/leggings_elder_prismarine_leggings"
+         ]
+      },
+      "prismarine_leggings": {
+         "textures": [
+            "textures/items/leggings_prismarine_leggings"
+         ]
+      },
+      "sword:copper_cleaver": {
+         "textures": "textures/items/sword_copper_cleaver"
+      },
+      "sword:diamond_cleaver": {
+         "textures": "textures/items/sword_diamond_cleaver"
+      },
+      "spear:prismarine_spear": {
+         "textures": "textures/items/spear_prismarine_spear"
+      },
+      "sword:diamond_harpoon": {
+         "textures": "textures/items/sword_diamond_harpoon"
+      },
+      "sword:elder_prismarine_cleaver": {
+         "textures": "textures/items/sword_elder_prismarine_cleaver"
+      },
+      "sword:elder_prismarine_sword": {
+         "textures": "textures/items/sword_elder_prismarine_sword"
+      },
+      "sword:elder_prismarine_harpoon": {
+         "textures": "textures/items/sword_elder_prismarine_harpoon"
+      },
+      "sword:copper_harpoon": {
+         "textures": "textures/items/sword_copper_harpoon"
+      },
+      "sword:gold_harpoon": {
+         "textures": "textures/items/sword_gold_harpoon"
+      },
+      "sword:iron_cleaver": {
+         "textures": "textures/items/sword_iron_cleaver"
+      },
+      "sword:lumenyl_harpoon": {
+         "textures": "textures/items/sword_lumenyl_harpoon"
+      },
+      "sword:lumenyl_sword": {
+         "textures": "textures/items/sword_lumenyl_sword"
+      },
+      "sword:gold_cleaver": {
+         "textures": "textures/items/sword_gold_cleaver"
+      },
+      "sword:netherite_cleaver": {
+         "textures": "textures/items/sword_netherite_cleaver"
+      },
+      "sword:lumenyl_cleaver": {
+         "textures": "textures/items/sword_lumenyl_cleaver"
+      },
+      "sword:iron_harpoon": {
+         "textures": "textures/items/sword_iron_harpoon"
+      },
+      "sword:netherite_harpoon": {
+         "textures": "textures/items/sword_netherite_harpoon"
+      },
+      "sword:prismarine_harpoon": {
+         "textures": "textures/items/sword_prismarine_harpoon"
+      },
+      "sword:prismarine_sword": {
+         "textures": "textures/items/sword_prismarine_sword"
+      },
+      "sword:stone_cleaver": {
+         "textures": "textures/items/sword_stone_cleaver"
+      },
+      "sword:stone_harpoon": {
+         "textures": "textures/items/sword_stone_harpoon"
+      },
+      "sword:wooden_cleaver": {
+         "textures": "textures/items/sword_wooden_cleaver"
+      },
+      "sword:prismarine_cleaver": {
+         "textures": "textures/items/sword_prismarine_cleaver"
+      },
+      "sword:wooden_harpoon": {
+         "textures": "textures/items/sword_wooden_harpoon"
+      },
+      "tool:elder_prismarine_pickaxe": {
+         "textures": "textures/items/tool_elder_prismarine_pickaxe"
+      },
+      "tool:elder_prismarine_axe": {
+         "textures": "textures/items/tool_elder_prismarine_axe"
+      },
+      "tool:elder_prismarine_shovel": {
+         "textures": "textures/items/tool_elder_prismarine_shovel"
+      },
+      "tool:lumenyl_axe": {
+         "textures": "textures/items/tool_lumenyl_axe"
+      },
+      "tool:lumenyl_hoe": {
+         "textures": "textures/items/tool_lumenyl_hoe"
+      },
+      "tool:lumenyl_pickaxe": {
+         "textures": "textures/items/tool_lumenyl_pickaxe"
+      },
+      "tool:lumenyl_shovel": {
+         "textures": "textures/items/tool_lumenyl_shovel"
+      },
+      "tool:elder_prismarine_hoe": {
+         "textures": "textures/items/tool_elder_prismarine_hoe"
+      },
+      "tool:prismarine_hoe": {
+         "textures": "textures/items/tool_prismarine_hoe"
+      },
+      "tool:prismarine_axe": {
+         "textures": "textures/items/tool_prismarine_axe"
+      },
+      "tool:prismarine_shovel": {
+         "textures": "textures/items/tool_prismarine_shovel"
+      },
+      "tool:prismarine_pickaxe": {
+         "textures": "textures/items/tool_prismarine_pickaxe"
+      },
+      "block_lomos_kelp": {
+         "textures": "textures/items/item_lomos_kelp"
+      },
+      "opal_boots": {
+         "textures": [
+            "textures/items/boots_opal_boots"
+         ]
+      },
+      "scrap_metal_boots": {
+         "textures": [
+            "textures/items/boots_scrap_metal_boots"
+         ]
+      },
+      "silver_boots": {
+         "textures": [
+            "textures/items/boots_silver_boots"
+         ]
+      },
+      "malachite_boots": {
+         "textures": [
+            "textures/items/boots_malachite_boots"
+         ]
+      },
+      "food:cooked_shrimp": {
+         "textures": "textures/items/food_cooked_shrimp"
+      },
+      "food:cooked_squid": {
+         "textures": "textures/items/food_cooked_squid"
+      },
+      "food:dried_lomos_kelp": {
+         "textures": "textures/items/food_dried_lomos_kelp"
+      },
+      "food:gold_kelp": {
+         "textures": "textures/items/food_gold_kelp"
+      },
+      "opal_chestplate": {
+         "textures": [
+            "textures/items/chestplate_opal_chestplate"
+         ]
+      },
+      "silver_chestplate": {
+         "textures": [
+            "textures/items/chestplate_silver_chestplate"
+         ]
+      },
+      "malachite_chestplate": {
+         "textures": [
+            "textures/items/chestplate_malachite_chestplate"
+         ]
+      },
+      "food:enchanted_golden_ocean_berry": {
+         "textures": "textures/items/food_enchanted_golden_ocean_berry"
+      },
+      "food:golden_ocean_berry": {
+         "textures": "textures/items/food_golden_ocean_berry"
+      },
+      "food:ocean_berry": {
+         "textures": "textures/items/food_ocean_berry"
+      },
+      "food:raw_squid": {
+         "textures": "textures/items/food_raw_squid"
+      },
+      "food:raw_shrimp": {
+         "textures": "textures/items/food_raw_shrimp"
+      },
+      "malachite_helmet": {
+         "textures": [
+            "textures/items/helmet_malachite_helmet"
+         ]
+      },
+      "netherite_diving_helmet": {
+         "textures": [
+            "textures/items/helmet_netherite_diving_helmet"
+         ]
+      },
+      "opal_helmet": {
+         "textures": [
+            "textures/items/helmet_opal_helmet"
+         ]
+      },
+      "scrap_metal_chestplate": {
+         "textures": [
+            "textures/items/helmet_scrap_metal_chestplate"
+         ]
+      },
+      "item:lava_release_bubble": {
+         "textures": "textures/items/item_lava_release_bubble"
+      },
+      "item:opal": {
+         "textures": "textures/items/item_opal"
+      },
+      "item:malachite": {
+         "textures": "textures/items/item_malachite"
+      },
+      "item:air_bottle": {
+         "textures": "textures/items/item_air_bottle"
+      },
+      "silver_helmet": {
+         "textures": [
+            "textures/items/helmet_silver_helmet"
+         ]
+      },
+      "item:malachite_forging_template": {
+         "textures": "textures/items/item_malachite_forging_template"
+      },
+      "scrap_metal_helmet": {
+         "textures": [
+            "textures/items/helmet_scrap_metal_helmet"
+         ]
+      },
+      "silver_diving_helmet": {
+         "textures": [
+            "textures/items/helmet_silver_diving_helmet"
+         ]
+      },
+      "item:release_bubble": {
+         "textures": "textures/items/item_release_bubble"
+      },
+      "item:silver_ingot": {
+         "textures": "textures/items/item_silver_ingot"
+      },
+      "item:raw_silver": {
+         "textures": "textures/items/item_raw_silver"
+      },
+      "item:super_absorbent_sponge": {
+         "textures": "textures/items/item_super_absorbent_sponge"
+      },
+      "item:water_release_bubble": {
+         "textures": "textures/items/item_water_release_bubble"
+      },
+      "item:scrap_metal": {
+         "textures": "textures/items/item_scrap_metal"
+      },
+      "malachite_leggings": {
+         "textures": [
+            "textures/items/leggings_malachite_leggings"
+         ]
+      },
+      "opal_leggings": {
+         "textures": [
+            "textures/items/leggings_opal_leggings"
+         ]
+      },
+      "scrap_metal_leggings": {
+         "textures": [
+            "textures/items/leggings_scrap_metal_leggings"
+         ]
+      },
+      "silver_leggings": {
+         "textures": [
+            "textures/items/leggings_silver_leggings"
+         ]
+      },
+      "spear:malachite_spear": {
+         "textures": "textures/items/spear_malachite_spear"
+      },
+      "spear:opal_spear": {
+         "textures": "textures/items/spear_opal_spear"
+      },
+      "spear:scrap_metal_spear": {
+         "textures": "textures/items/spear_scrap_metal_spear"
+      },
+      "sword:malachite_cleaver": {
+         "textures": "textures/items/sword_malachite_cleaver"
+      },
+      "sword:malachite_sword": {
+         "textures": "textures/items/sword_malachite_sword"
+      },
+      "sword:opal_cleaver": {
+         "textures": "textures/items/sword_opal_cleaver"
+      },
+      "sword:opal_sword": {
+         "textures": "textures/items/sword_opal_sword"
+      },
+      "sword:scrap_metal_cleaver": {
+         "textures": "textures/items/sword_scrap_metal_cleaver"
+      },
+      "sword:malachite_harpoon": {
+         "textures": "textures/items/sword_malachite_harpoon"
+      },
+      "spear:silver_spear": {
+         "textures": "textures/items/spear_silver_spear"
+      },
+      "sword:opal_harpoon": {
+         "textures": "textures/items/sword_opal_harpoon"
+      },
+      "sword:silver_cleaver": {
+         "textures": "textures/items/sword_silver_cleaver"
+      },
+      "sword:scrap_metal_sword": {
+         "textures": "textures/items/sword_scrap_metal_sword"
+      },
+      "sword:silver_sword": {
+         "textures": "textures/items/sword_silver_sword"
+      },
+      "sword:scrap_metal_harpoon": {
+         "textures": "textures/items/sword_scrap_metal_harpoon"
+      },
+      "tool:malachite_axe": {
+         "textures": "textures/items/tool_malachite_axe"
+      },
+      "sword:silver_harpoon": {
+         "textures": "textures/items/sword_silver_harpoon"
+      },
+      "tool:malachite_hoe": {
+         "textures": "textures/items/tool_malachite_hoe"
+      },
+      "tool:malachite_pickaxe": {
+         "textures": "textures/items/tool_malachite_pickaxe"
+      },
+      "tool:opal_hoe": {
+         "textures": "textures/items/tool_opal_hoe"
+      },
+      "tool:scrap_metal_hoe": {
+         "textures": "textures/items/tool_scrap_metal_hoe"
+      },
+      "tool:scrap_metal_pickaxe": {
+         "textures": "textures/items/tool_scrap_metal_pickaxe"
+      },
+      "tool:malachite_shovel": {
+         "textures": "textures/items/tool_malachite_shovel"
+      },
+      "tool:scrap_metal_axe": {
+         "textures": "textures/items/tool_scrap_metal_axe"
+      },
+      "tool:opal_shovel": {
+         "textures": "textures/items/tool_opal_shovel"
+      },
+      "tool:opal_pickaxe": {
+         "textures": "textures/items/tool_opal_pickaxe"
+      },
+      "tool:opal_axe": {
+         "textures": "textures/items/tool_opal_axe"
+      },
+      "tool:scrap_metal_shovel": {
+         "textures": "textures/items/tool_scrap_metal_shovel"
+      },
+      "tool:silver_axe": {
+         "textures": "textures/items/tool_silver_axe"
+      },
+      "tool:silver_pickaxe": {
+         "textures": "textures/items/tool_silver_pickaxe"
+      },
+      "tool:silver_shovel": {
+         "textures": "textures/items/tool_silver_shovel"
+      },
+      "tool:silver_hoe": {
+         "textures": "textures/items/tool_silver_hoe"
+      },
+      "block_lomos_seagrass": {
+         "textures": "textures/items/block_lomos_seagrass"
+      },
+      "block_lomos_coral": {
+         "textures": "textures/blocks/block_lomos_coral"
+      },
+      "block_small_abyssal_slag_spike": {
+         "textures": "textures/blocks/block_small_abyssal_slag_spike"
+      },
+      "block_small_thermal_stone_spike": {
+         "textures": "textures/blocks/block_small_thermal_stone_spike"
+      },
+      "block_small_marble_spike": {
+         "textures": "textures/blocks/block_small_marble_spike"
+      },
+      "food:raw_clam": {
+         "textures": "textures/items/food_raw_clam"
+      },
+      "food:cooked_clam": {
+         "textures": "textures/items/food_cooked_clam"
+      },
+      "food:silver_apple": {
+         "textures": "textures/items/food_silver_apple"
+      },
+      "item:abyss_quartz": {
+         "textures": "textures/items/item_abyss_quartz"
+      },
+      "food:silver_ocean_berry": {
+         "textures": "textures/items/food_silver_ocean_berry"
+      },
+      "food:silver_carrot": {
+         "textures": "textures/items/food_silver_carrot"
+      },
+      "item:aqua_strength_potion": {
+         "textures": "textures/items/item_aqua_strength_potion"
+      },
+      "item:aqua_haste_potion": {
+         "textures": "textures/items/item_aqua_haste_potion"
+      },
+      "item:royal_bubble_wand": {
+         "textures": "textures/items/item_royal_bubble_wand"
+      },
+      "item:sea_pendant": {
+         "textures": "textures/items/item_sea_pendant"
+      },
+      "sea_prism_boots": {
+         "textures": [
+            "textures/items/boots_sea_prism_boots"
+         ]
+      },
+      "reidite_chestplate": {
+         "textures": [
+            "textures/items/chestplate_reidite_chestplate"
+         ]
+      },
+      "sea_prism_chestplate": {
+         "textures": [
+            "textures/items/chestplate_sea_prism_chestplate"
+         ]
+      },
+      "reidite_boots": {
+         "textures": [
+            "textures/items/boots_reidite_boots"
+         ]
+      },
+      "reidite_helmet": {
+         "textures": [
+            "textures/items/helmet_reidite_helmet"
+         ]
+      },
+      "reidite_leggings": {
+         "textures": [
+            "textures/items/leggings_reidite_leggings"
+         ]
+      },
+      "sea_prism_helmet": {
+         "textures": [
+            "textures/items/helmet_sea_prism_helmet"
+         ]
+      },
+      "item:splash_mining_fatigue_potion": {
+         "textures": "textures/items/item_splash_mining_fatigue_potion"
+      },
+      "item:reidite": {
+         "textures": "textures/items/item_reidite"
+      },
+      "item:mining_fatigue_potion": {
+         "textures": "textures/items/item_mining_fatigue_potion"
+      },
+      "item:sea_prism": {
+         "textures": "textures/items/item_sea_prism"
+      },
+      "item:sea_prism_forging_template": {
+         "textures": "textures/items/item_sea_prism_forging_template"
+      },
+      "sword:reidite_cleaver": {
+         "textures": "textures/items/sword_reidite_cleaver"
+      },
+      "sea_prism_leggings": {
+         "textures": [
+            "textures/items/leggings_sea_prism_leggings"
+         ]
+      },
+      "sword:reidite_harpoon": {
+         "textures": "textures/items/sword_reidite_harpoon"
+      },
+      "spear:reidite_spear": {
+         "textures": "textures/items/spear_reidite_spear"
+      },
+      "sword:sea_prism_cleaver": {
+         "textures": "textures/items/sword_sea_prism_cleaver"
+      },
+      "spear:sea_prism_spear": {
+         "textures": "textures/items/spear_sea_prism_spear"
+      },
+      "sword:reidite_sword": {
+         "textures": "textures/items/sword_reidite_sword"
+      },
+      "tool:reidite_shovel": {
+         "textures": "textures/items/tool_reidite_shovel"
+      },
+      "tool:reidite_hoe": {
+         "textures": "textures/items/tool_reidite_hoe"
+      },
+      "tool:reidite_pickaxe": {
+         "textures": "textures/items/tool_reidite_pickaxe"
+      },
+      "sword:sea_prism_sword": {
+         "textures": "textures/items/sword_sea_prism_sword"
+      },
+      "sword:sea_prism_harpoon": {
+         "textures": "textures/items/sword_sea_prism_harpoon"
+      },
+      "tool:reidite_axe": {
+         "textures": "textures/items/tool_reidite_axe"
+      },
+      "tool:sea_prism_axe": {
+         "textures": "textures/items/tool_sea_prism_axe"
+      },
+      "tool:sea_prism_hoe": {
+         "textures": "textures/items/tool_sea_prism_hoe"
+      },
+      "tool:sea_prism_pickaxe": {
+         "textures": "textures/items/tool_sea_prism_pickaxe"
+      },
+      "tool:sea_prism_shovel": {
+         "textures": "textures/items/tool_sea_prism_shovel"
+      },
+      "tungsten_boots": {
+         "textures": [
+            "textures/items/boots_tungsten_boots"
+         ]
+      },
+      "tungsten_chestplate": {
+         "textures": [
+            "textures/items/chestplate_tungsten_chestplate"
+         ]
+      },
+      "food:caviar": {
+         "textures": "textures/items/food_caviar"
+      },
+      "item:tungsten_forging_template": {
+         "textures": "textures/items/item_tungsten_forging_template"
+      },
+      "item:raw_tungsten": {
+         "textures": "textures/items/item_raw_tungsten"
+      },
+      "spear:tungsten_spear": {
+         "textures": "textures/items/spear_tungsten_spear"
+      },
+      "tungsten_helmet": {
+         "textures": [
+            "textures/items/helmet_tungsten_helmet"
+         ]
+      },
+      "item:tungsten_ingot": {
+         "textures": "textures/items/item_tungsten_ingot"
+      },
+      "tungsten_leggings": {
+         "textures": [
+            "textures/items/leggings_tungsten_leggings"
+         ]
+      },
+      "sword:tungsten_cleaver": {
+         "textures": "textures/items/sword_tungsten_cleaver"
+      },
+      "sword:tungsten_sword": {
+         "textures": "textures/items/sword_tungsten_sword"
+      },
+      "sword:tungsten_harpoon": {
+         "textures": "textures/items/sword_tungsten_harpoon"
+      },
+      "tool:tungsten_axe": {
+         "textures": "textures/items/tool_tungsten_axe"
+      },
+      "tool:tungsten_hoe": {
+         "textures": "textures/items/tool_tungsten_hoe"
+      },
+      "tool:tungsten_shovel": {
+         "textures": "textures/items/tool_tungsten_shovel"
+      },
+      "tool:tungsten_pickaxe": {
+         "textures": "textures/items/tool_tungsten_pickaxe"
+      },
+      "item:bubble_barrier": {
+         "textures": "textures/items/item_bubble_barrier"
+      },
+      "item:chum_cluster": {
+         "textures": "textures/items/item_chum_cluster"
+      },
+      "item:lomos_keypad": {
+         "textures": "textures/items/item_lomos_keypad"
+      },
+      "item:guardian_grimoire": {
+         "textures": "textures/items/item_guardian_grimoire"
+      },
+      "food:sea_grapes": {
+         "textures": "textures/items/food_sea_grapes"
+      },
+      "item:lomos_pearl": {
+         "textures": "textures/items/item_lomos_pearl"
+      },
+      "item:eidolon_staff": {
+         "textures": "textures/items/item_eidolon_staff"
+      },
+      "item:music_seashell": {
+         "textures": "textures/items/item_music_seashell"
+      },
+      "item:sea_urchin_grimoire": {
+         "textures": "textures/items/item_sea_urchin_grimoire"
+      },
+      "item:pressure_potion": {
+         "textures": "textures/items/item_pressure_potion"
+      },
+      "item:typhoon_potion": {
+         "textures": "textures/items/item_typhoon_potion"
+      },
+      "item:sea_urchin_spine": {
+         "textures": "textures/items/item_sea_urchin_spine"
+      },
+      "item:lumenyl_calibrated_ender_pearl": {
+         "textures": "textures/items/item_lumenyl_calibrated_ender_pearl"
+      },
+      "item:lomos_pearl_bracelet": {
+         "textures": "textures/items/item_lomos_pearl_bracelet"
+      },
+      "item:prismarine_calibrated_ender_pearl": {
+         "textures": "textures/items/item_prismarine_calibrated_ender_pearl"
+      },
+      "item:sea_mine": {
+         "textures": "textures/items/item_sea_mine"
+      },
+      "item:glow_stick": {
+         "textures": "textures/items/item_glow_stick"
+      },
+      "item:boiler_bomb": {
+         "textures": "textures/items/item_boiler_bomb"
+      },
+      "helmet_depth_crown": {
+         "textures": [
+            "textures/items/helmet_depth_crown"
+         ]
+      },
+      "item:urchin_ball": {
+         "textures": "textures/items/item_urchin_ball"
+      },
+      "food:cod_sushi_roll": {
+         "textures": "textures/items/food_cod_sushi_roll"
+      },
+      "food:salmon_sushi_roll": {
+         "textures": "textures/items/food_salmon_sushi_roll"
+      },
+      "food:salmon_roll": {
+         "textures": "textures/items/food_salmon_roll"
+      },
+      "item:lomos_crawler": {
+         "textures": "textures/items/item_lomos_crawler"
+      },
+      "item:milk_release_bubble": {
+         "textures": "textures/items/item_milk_release_bubble"
+      },
+      "item:sponge_ball": {
+         "textures": "textures/items/item_sponge_ball"
+      },
+      "item:typhoon_wind_charge": {
+         "textures": "textures/items/item_typhoon_wind_charge"
+      },
+      "food:bejeweled_apple": {
+         "textures": "textures/items/food_bejeweled_apple"
+      },
+      "food:bejeweled_ocean_berry": {
+         "textures": "textures/items/food_bejeweled_ocean_berry"
+      },
+      "item:filled_air_tank_3": {
+         "textures": "textures/items/item_filled_air_tank_3"
+      },
+      "item:filled_air_tank_4": {
+         "textures": "textures/items/item_filled_air_tank_4"
+      },
+      "item:empty_air_tank": {
+         "textures": "textures/items/item_empty_air_tank"
+      },
+      "item:filled_air_tank_5": {
+         "textures": "textures/items/item_filled_air_tank_5"
+      },
+      "item:filled_air_tank_1": {
+         "textures": "textures/items/item_filled_air_tank_1"
+      },
+      "item:filled_air_tank_2": {
+         "textures": "textures/items/item_filled_air_tank_2"
+      },
+      "nautilus_helmet": {
+         "textures": [
+            "textures/items/helmet_nautilus_helmet"
+         ]
+      },
+      "item:bag_of_winds": {
+         "textures": "textures/items/item_bag_of_winds"
+      },
+      "hb_lift_and_throw": {
+         "textures": "textures/items/powers/hb_lift_and_throw"
+      },
+      "lift_and_throw_settings": {
+         "textures": "textures/items/powers/lift_and_throw_settings"
+      },
+      "smash": {
+         "textures": "textures/items/powers/smash"
+      },
+      "smash_control": {
+         "textures": "textures/items/powers/smash_control"
+      },
+      "supersmash": {
+         "textures": "textures/items/powers/supersmash"
+      },
+      "ultimate_super_smash": {
+         "textures": "textures/items/powers/ultimate_super_smash"
+      },
+      "shield_attack": {
+         "textures": "textures/items/powers/shield_attack"
+      },
+      "spike_attack": {
+         "textures": "textures/items/powers/spike_attack"
+      },
+      "spike_setting": {
+         "textures": "textures/items/powers/spike_setting"
+      },
+      "xlr8_speed_control": {
+         "textures": "textures/items/powers/xlr8_speed_control"
+      },
+      "tornado": {
+         "textures": "textures/items/powers/tornado"
+      },
+      "cannonbolt_speed_control": {
+         "textures": "textures/items/powers/cannonbolt_speed_control"
       }
    }
 }

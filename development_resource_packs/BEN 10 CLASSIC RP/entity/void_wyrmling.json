@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:void_wyrmling",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/baby_abyssal_wyrm"
+			},
+			"geometry": {
+				"default": "geometry.baby_abyss_wyrm"
+			},
+			"animations": {
+				"base": "animation.baby_abyss_wyrm.base",
+				"swim": "animation.baby_abyss_wyrm.swim",
+				"look_at_target": "animation.common.look_at_target_wyrm",
+				"face_player": "controller.animation.juvenile_abyssal_wyrm.move"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"look_at_target",
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.cod"
+			],
+			"spawn_egg": {
+				"base_color": "#0A1132",
+				"overlay_color": "#4C34FF"
+			}
+		}
+	}
+}

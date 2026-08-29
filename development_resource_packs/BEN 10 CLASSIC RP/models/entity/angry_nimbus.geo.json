@@ -1,0 +1,100 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.angry_nimbus",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								-6
+							],
+							"size": [
+								16,
+								11,
+								12
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-8,
+								0,
+								-6
+							],
+							"size": [
+								16,
+								11,
+								12
+							],
+							"inflate": 0.5,
+							"uv": [
+								0,
+								23
+							]
+						}
+					]
+				},
+				{
+					"name": "arms",
+					"parent": "head",
+					"pivot": [
+						0,
+						0,
+						-3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6,
+								-7,
+								-2
+							],
+							"size": [
+								12,
+								10,
+								7
+							],
+							"uv": [
+								0,
+								46
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "silver_hoe_e0289aa9"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			" B",
+			" B"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "tool:silver_hoe",
+			"count": 1
+		}
+	}
+}

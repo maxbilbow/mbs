@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:lumenyl",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:lumenyl"
+			},
+			"minecraft:display_name": {
+				"value": "Lumenyl\n§8Brewing Ingredient"
+			}
+		}
+	}
+}

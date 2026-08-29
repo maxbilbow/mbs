@@ -1,0 +1,45 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sword:lumenyl_sword",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "sword:lumenyl_sword"
+				}
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:glint": false,
+			"minecraft:durability": {
+				"max_durability": 10000
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transformable_items",
+					"minecraft:is_sword",
+					"minecraft:digger",
+					"minecraft:diamond_tier"
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 30
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:damage": 12,
+			"minecraft:use_animation": "bow",
+			"minecraft:display_name": {
+				"value": "Lumenyl Sword"
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:tungsten_grate",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.construction"
+			}
+		},
+		"components": {
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:light_dampening": 0,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 99999999999
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_tungsten_grate",
+					"render_method": "blend_to_opaque"
+				}
+			}
+		},
+		"events": {}
+	}
+}

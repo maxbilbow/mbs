@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:malachite",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:malachite"
+			},
+			"minecraft:display_name": {
+				"value": "Malachite\n§9Can be used to trade with\nMerfolk\n§8Merfolk target you if you dont\nwear Scrap Metal Armor\n§9Can be used to adopt Baby Merfolk"
+			}
+		}
+	}
+}

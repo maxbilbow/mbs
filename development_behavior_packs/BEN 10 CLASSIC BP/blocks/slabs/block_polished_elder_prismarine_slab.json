@@ -1,0 +1,128 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:polished_elder_prismarine_slab",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.slab"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:vertical_half"
+					]
+				}
+			},
+			"states": {
+				"kai:double": [
+					false,
+					true
+				],
+				"kai:waterlogged": [
+					false,
+					true
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('kai:double')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('kai:double')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('kai:double')",
+				"components": {
+					"minecraft:geometry": "minecraft:geometry.full_block"
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 6
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.slab",
+				"bone_visibility": {
+					"bottom_slab": "q.block_state('minecraft:vertical_half') == 'bottom'",
+					"top_slab": "q.block_state('minecraft:vertical_half') == 'top'"
+				}
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_polished_elder_prismarine",
+					"render_method": "opaque",
+					"ambient_occlusion": true,
+					"face_dimming": true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "generation:coolisland4_feature_mcstructure"
+		},
+		"structure_name": "mystructure:coolisland4",
+		"adjustment_radius": 4,
+		"facing_direction": "south",
+		"constraints": {}
+	}
+}

@@ -61,7 +61,7 @@
 			],
 			"part_visibility": [
 				{
-					"*": "variable.is_first_person && variable.omnitrix || variable.omnitrix_off || variable.selecting_omni_alien || variable.omni_destruct"
+					"*": "variable.is_first_person"
 				}
 			]
 		},
@@ -126,6 +126,126 @@
 			"part_visibility": [
 				{
 					"*": "query.skin_id == 51"
+				}
+			]
+		},
+		"controller.render.omnitrix2": {
+			"arrays": {
+				"geometries": {
+					"array.omni2_geo": [
+						"geometry.omnitrix2_3p_player",
+						"geometry.omnitrix2_1p"
+					]
+				}
+			},
+			"geometry": "array.omni2_geo[variable.is_first_person]",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni2"
+			],
+			"part_visibility": [
+				{
+					"*": "(variable.omnitrix2 || query.skin_id == 125 || query.skin_id == 126 || variable.selecting_omni_alien) && !query.is_riding"
+				}
+			]
+		},
+		"controller.render.omnitrix2_off": {
+			"arrays": {
+				"geometries": {
+					"array.omni2_geo": [
+						"geometry.omnitrix2_3p_player",
+						"geometry.omnitrix2_1p"
+					]
+				}
+			},
+			"geometry": "array.omni2_geo[variable.is_first_person]",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni2_off"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.omnitrix2_off && !query.is_riding"
+				}
+			]
+		},
+		"controller.render.omni2_leftarm": {
+			"geometry": "geometry.omni2_leftarm",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.omni_recal_stage1": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omnitrix"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.recal_stage1"
+				}
+			]
+		},
+		"controller.render.omni_recal_stage2": {
+			"geometry": "geometry.omnitrix",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni_recalibrating"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.recal_stage2"
+				}
+			]
+		},
+		"controller.render.omni_recal_stage3": {
+			"arrays": {
+				"geometries": {
+					"array.omni2_geo": [
+						"geometry.omnitrix2_3p_player",
+						"geometry.omnitrix2_1p"
+					]
+				}
+			},
+			"geometry": "array.omni2_geo[variable.is_first_person]",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.omni_recalibrating"
+			],
+			"part_visibility": [
+				{
+					"*": "variable.recal_stage3"
 				}
 			]
 		}

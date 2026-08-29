@@ -1,0 +1,37 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "generation:deadoaktree2_feature_mcstructure"
+		},
+		"structure_name": "mystructure:deadoaktree2",
+		"adjustment_radius": 4,
+		"facing_direction": "east",
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:dirt"
+					},
+					{
+						"name": "minecraft:grass"
+					},
+					{
+						"name": "minecraft:short_grass"
+					},
+					{
+						"name": "minecraft:tall_grass"
+					},
+					{
+						"name": "minecraft:mud"
+					},
+					{
+						"name": "minecraft:air"
+					}
+				]
+			}
+		}
+	}
+}

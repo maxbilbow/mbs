@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_helmet_bc0c1a70"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:scrap_metal_helmet",
+			"count": 1
+		}
+	}
+}

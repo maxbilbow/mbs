@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pink_pansies_feature"
+		},
+		"features": [
+			[
+				"gen:pink_pansies1_feature",
+				1
+			],
+			[
+				"gen:pink_pansies2_feature",
+				1
+			],
+			[
+				"gen:pink_pansies3_feature",
+				1
+			],
+			[
+				"gen:pink_pansies4_feature",
+				1
+			]
+		]
+	}
+}

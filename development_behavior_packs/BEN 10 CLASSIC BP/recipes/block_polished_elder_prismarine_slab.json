@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "polished_elder_prismarine_slab_4b9608be"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:polished_elder_prismarine",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:polished_elder_prismarine_slab",
+			"count": 6
+		}
+	}
+}

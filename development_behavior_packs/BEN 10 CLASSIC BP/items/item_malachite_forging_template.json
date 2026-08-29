@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:malachite_forging_template",
+			"menu_category": {
+				"category": "items",
+				"group": "minecrafT:itemGroup.name.items"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "item:malachite_forging_template"
+				}
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:display_name": {
+				"value": "Forging Template\n§7Sea Green Fury\n\nApplies to:\n§9Opal Equipment\n§7Requires:\n§9Soul Forge"
+			}
+		}
+	}
+}

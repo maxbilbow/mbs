@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_b0e18693"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:malachite_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:malachite",
+			"count": 9
+		}
+	}
+}

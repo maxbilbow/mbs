@@ -1,0 +1,28 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:cave_carver_feature": {
+		"description": {
+			"identifier": "ad:drenched_void_cave_carver_feature"
+		},
+		"fill_with": "minecraft:water",
+		"width_modifier": 13,
+		"skip_carve_chance": 4,
+		"y_scale": [
+			0.5,
+			0.5
+		],
+		"height_limit": 150,
+		"horizontal_radius_multiplier": [
+			3,
+			3
+		],
+		"vertical_radius_multiplier": [
+			1,
+			1
+		],
+		"floor_level": [
+			-0.7,
+			-0.7
+		]
+	}
+}

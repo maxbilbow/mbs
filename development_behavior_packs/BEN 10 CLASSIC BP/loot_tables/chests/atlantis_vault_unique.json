@@ -1,0 +1,40 @@
+//bridge-file-version: #29
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "food:enchanted_ocean_berry",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "item:enchanted_bubble_wand",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:trident",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "item:tungsten_forging_template",
+					"weight": 6
+				},
+				{
+					"type": "item",
+					"name": "item:prismarine_gauntlet",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "item:super_absorbent_sponge",
+					"weight": 3
+				}
+			]
+		}
+	]
+}

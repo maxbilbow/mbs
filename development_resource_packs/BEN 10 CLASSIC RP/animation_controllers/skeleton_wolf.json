@@ -1,0 +1,158 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.skeleton_wolf.sitting": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"wolf_look_at"
+					],
+					"blend_transition": 0.025,
+					"transitions": [
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"cancel_animation": "!query.is_alive"
+						}
+					]
+				},
+				"cancel_animation": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.all_animations_finished"
+						}
+					]
+				},
+				"sitting": {
+					"animations": [
+						"wolf_sitting",
+						"wolf_look_at"
+					],
+					"blend_transition": 0.025,
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						},
+						{
+							"howling": "math.random(0,4000)<1&&!query.is_interested&&!query.is_baby&&!query.is_angry&&query.is_sitting&&query.is_alive&&query.time_of_day<=0.25"
+						}
+					]
+				},
+				"howling": {
+					"animations": [
+						"howl"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"sitting": "query.all_animations_finished||!query.is_alive"
+						},
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.skeleton_wolf.shake": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_water": "query.is_in_water_or_rain"
+						}
+					]
+				},
+				"in_water": {
+					"transitions": [
+						{
+							"shake": "query.is_shaking_wetness"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shake": {
+					"animations": [
+						"shaking"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"in_water": "query.is_in_water_or_rain"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.skeleton_wolf.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"wolf_leg_default"
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"angry": "query.is_angry&&query.is_alive"
+						},
+						{
+							"dead": "!query.is_alive"
+						}
+					]
+				},
+				"sitting": {
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						},
+						{
+							"dead": "!query.is_alive"
+						}
+					]
+				},
+				"dead": {
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					]
+				},
+				"angry": {
+					"animations": [
+						"angry"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_angry"
+						},
+						{
+							"dead": "!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.skeleton_wolf.setup": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"wolf_setup"
+					]
+				}
+			}
+		}
+	}
+}

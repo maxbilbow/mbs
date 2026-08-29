@@ -1,0 +1,105 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ringattack",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						14,
+						-1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-15
+							],
+							"size": [
+								6,
+								28,
+								28
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										39,
+										68
+									],
+									"uv_size": [
+										6,
+										28
+									]
+								},
+								"east": {
+									"uv": [
+										228,
+										228
+									],
+									"uv_size": [
+										28,
+										28
+									]
+								},
+								"south": {
+									"uv": [
+										86,
+										68
+									],
+									"uv_size": [
+										6,
+										28
+									]
+								},
+								"west": {
+									"uv": [
+										228,
+										228
+									],
+									"uv_size": [
+										28,
+										28
+									]
+								},
+								"up": {
+									"uv": [
+										39,
+										40
+									],
+									"uv_size": [
+										6,
+										28
+									]
+								},
+								"down": {
+									"uv": [
+										39,
+										96
+									],
+									"uv_size": [
+										6,
+										-28
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

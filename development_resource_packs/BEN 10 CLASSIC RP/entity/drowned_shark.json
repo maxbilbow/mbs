@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:drowned_shark",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/drowned_shark"
+			},
+			"geometry": {
+				"default": "geometry.drowned_shark"
+			},
+			"animations": {
+				"face_player": "animation.drowned_shark.swim"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#2C5448",
+				"overlay_color": "#BA674C"
+			}
+		}
+	}
+}

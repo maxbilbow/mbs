@@ -1,0 +1,556 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.redstone_golem",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 7,
+				"visible_bounds_height": 7,
+				"visible_bounds_offset": [
+					0,
+					1.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "redstonegolem",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "chest",
+					"parent": "redstonegolem",
+					"pivot": [
+						0,
+						28,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-11,
+								20,
+								-7
+							],
+							"size": [
+								22,
+								8,
+								14
+							],
+							"uv": [
+								120,
+								36
+							]
+						}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "chest",
+					"pivot": [
+						0,
+						27.8,
+						1.6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-20,
+								28,
+								-10
+							],
+							"size": [
+								40,
+								32,
+								20
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "redstone_block",
+					"parent": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								32,
+								0
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": [
+								49,
+								90
+							]
+						}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [
+						0,
+						52,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								44,
+								-22
+							],
+							"size": [
+								16,
+								16,
+								12
+							],
+							"uv": [
+								124,
+								8
+							]
+						}
+					]
+				},
+				{
+					"name": "hand1",
+					"parent": "body",
+					"pivot": [
+						-19.5,
+						50,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-34,
+								34,
+								-6
+							],
+							"size": [
+								14,
+								24,
+								12
+							],
+							"uv": [
+								0,
+								52
+							]
+						}
+					]
+				},
+				{
+					"name": "hand2",
+					"parent": "hand1",
+					"pivot": [
+						-32,
+						33.75,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								26,
+								12,
+								-7.4375
+							],
+							"size": [
+								11,
+								22,
+								12
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								55,
+								124
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "finger1",
+					"parent": "hand2",
+					"pivot": [
+						-34,
+						12,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								32,
+								2,
+								-1.4375
+							],
+							"size": [
+								3,
+								10,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								97,
+								55
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "finger2",
+					"parent": "hand2",
+					"pivot": [
+						-34,
+						12,
+						3.25
+					],
+					"cubes": [
+						{
+							"origin": [
+								32,
+								2,
+								-7.1875
+							],
+							"size": [
+								3,
+								10,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								97,
+								55
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "finger3",
+					"parent": "hand2",
+					"pivot": [
+						-29.25,
+						12,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								27.25,
+								4,
+								-1.4375
+							],
+							"size": [
+								3,
+								8,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								81,
+								57
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "hand3",
+					"parent": "body",
+					"pivot": [
+						20,
+						50,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-34.5,
+								34,
+								-7.4375
+							],
+							"size": [
+								14,
+								24,
+								12
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								3,
+								122
+							]
+						}
+					]
+				},
+				{
+					"name": "hand4",
+					"parent": "hand3",
+					"pivot": [
+						31.5,
+						34,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-37,
+								12,
+								-7.4375
+							],
+							"size": [
+								11,
+								22,
+								12
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								55,
+								124
+							]
+						}
+					]
+				},
+				{
+					"name": "finger4",
+					"parent": "hand4",
+					"pivot": [
+						33,
+						12,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-35,
+								2,
+								-1.4375
+							],
+							"size": [
+								3,
+								10,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								-180,
+								0
+							],
+							"uv": [
+								97,
+								55
+							]
+						}
+					]
+				},
+				{
+					"name": "finger5",
+					"parent": "hand4",
+					"pivot": [
+						33,
+						12,
+						3.25
+					],
+					"cubes": [
+						{
+							"origin": [
+								-35,
+								2,
+								-7.1875
+							],
+							"size": [
+								3,
+								10,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								-180,
+								0
+							],
+							"uv": [
+								97,
+								55
+							]
+						}
+					]
+				},
+				{
+					"name": "finger6",
+					"parent": "hand4",
+					"pivot": [
+						28.25,
+						12,
+						-2.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-30.25,
+								4,
+								-1.4375
+							],
+							"size": [
+								3,
+								8,
+								5
+							],
+							"pivot": [
+								-0.25,
+								22.625,
+								-0.71875
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								81,
+								57
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "leg2",
+					"parent": "redstonegolem",
+					"pivot": [
+						14,
+						20,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								8,
+								0,
+								-6
+							],
+							"size": [
+								12,
+								20,
+								12
+							],
+							"uv": [
+								161,
+								58
+							]
+						}
+					]
+				},
+				{
+					"name": "leg1",
+					"parent": "redstonegolem",
+					"pivot": [
+						-14,
+						20,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-20,
+								0,
+								-6
+							],
+							"size": [
+								12,
+								20,
+								12
+							],
+							"uv": [
+								113,
+								58
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

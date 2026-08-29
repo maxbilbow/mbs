@@ -1,0 +1,77 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutated_trident.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						115,
+						60,
+						-45
+					],
+					"position": [
+						0,
+						20,
+						5
+					]
+				},
+				"trident": {
+					"rotation": [
+						0,
+						-17.5,
+						0
+					]
+				}
+			}
+		},
+		"animation.mutated_trident.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						90,
+						0,
+						0
+					],
+					"position": [
+						0,
+						22.75,
+						-0.5
+					]
+				},
+				"trident": {
+					"rotation": [
+						0,
+						25,
+						5
+					]
+				}
+			}
+		},
+		"animation.mutated_trident.tamed_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						-15,
+						0,
+						-12.5
+					],
+					"position": [
+						-0.5,
+						1.25,
+						-4.5
+					]
+				},
+				"trident": {
+					"rotation": [
+						-25,
+						-90,
+						0
+					]
+				}
+			}
+		}
+	}
+}

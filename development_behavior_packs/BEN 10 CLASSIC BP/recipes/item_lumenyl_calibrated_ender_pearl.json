@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_calibrated_ender_pearl_43db8f7e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:lumenyl",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:ender_pearl",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:lumenyl_calibrated_ender_pearl",
+			"count": 1
+		}
+	}
+}

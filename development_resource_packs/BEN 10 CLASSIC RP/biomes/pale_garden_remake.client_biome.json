@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "nt:pale_garden_remake"
+    },
+    "components": {
+      "minecraft:sky_color": {
+        "sky_color": "#b9b9b9"
+      },
+      "minecraft:fog_appearance": {
+        "fog_identifier": "e:fog_pale_garden"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#76889D"
+      },
+      "minecraft:biome_music": {
+        "volume_multiplier": 0
+      },
+      "minecraft:grass_appearance": {
+        "color": "#778272"
+      }
+    }
+  }
+}
+

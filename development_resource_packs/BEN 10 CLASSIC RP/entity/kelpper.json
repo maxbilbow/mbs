@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:kelpper",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/kelpper"
+			},
+			"geometry": {
+				"default": "geometry.aquatic_creeper"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.wobble = Math.sin(query.swell_amount * 5730) * query.swell_amount * 0.01 + 1.0;",
+					"variable.swelling_scale1 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.4 + 1.0) * variable.wobble;",
+					"variable.swelling_scale2 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.1 + 1.0) / variable.wobble;",
+					"variable.leg_rot = Math.cos(query.modified_distance_moved * 38.17326) * 80.22 * query.modified_move_speed;",
+					"variable.flash = Math.mod(Math.Round(query.swell_amount * 10.0), 2.0);"
+				],
+				"animate": [
+					"creeper_head_controller",
+					"creeper_legs_controller",
+					"creeper_swelling_controller",
+					"water_idle"
+				]
+			},
+			"animations": {
+				"creeper_head": "animation.common.look_at_target",
+				"creeper_head_controller": "controller.animation.creeper.head",
+				"creeper_legs": "animation.aquatic_creeper.swim",
+				"creeper_legs_controller": "controller.animation.creeper.legs",
+				"creeper_swelling": "animation.creeper.swelling",
+				"creeper_swelling_controller": "controller.animation.creeper.swelling",
+				"water_idle": "animation.aquatic_creeper.underwater_idle"
+			},
+			"render_controllers": [
+				"controller.render.skeleton",
+				{
+					"controller.render.creeper_armor": "query.is_powered"
+				}
+			],
+			"spawn_egg": {
+				"base_color": "#32683C",
+				"overlay_color": "#040404"
+			}
+		}
+	}
+}

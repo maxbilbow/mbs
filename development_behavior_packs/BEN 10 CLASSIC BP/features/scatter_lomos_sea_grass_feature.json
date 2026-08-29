@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_lomos_sea_grass_feature"
+		},
+		"iterations": 100,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				-6,
+				6
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-4,
+				4
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				-6,
+				6
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:lomos_sea_grass_feature"
+	}
+}

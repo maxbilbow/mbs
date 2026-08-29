@@ -6,21 +6,22 @@
 				"default": {
 					"transitions": [
 						{
-							"walking": "1"
+							"falling": "1"
 						}
 					]
 				},
-				"walking": {
+				"falling": {
 					"transitions": [
 						{
-							"default": "query.state_time>=0.5"
+							"default": "query.state_time>=0.05"
 						}
 					],
 					"on_entry": [
 						"/effect @s slow_falling 1 1 true",
-						"/particle minecraft:mobflame_single ~ ~2 ~",
-						"/particle minecraft:mobflame_single ~ ~3 ~",
-						"/playsound omni.falling_omni @a[r=50] ~ ~ ~ 1.0 1.0"
+						"/execute as @s at @s unless entity @p[tag=opt_no_particles,r=128] run particle hb_asteriodfire2 ~ ~ ~",
+						"/execute as @s at @s unless entity @p[tag=opt_no_particles,r=128] run particle hb_asteriodfire1 ~ ~1 ~",
+						"/execute as @s at @s unless entity @p[tag=opt_no_particles,r=128] run particle minecraft:basic_flame_particle ~ ~ ~",
+						"/execute as @s at @s if entity @p[tag=opt_no_particles,r=128] run particle minecraft:campfire_tall_smoke_particle ~ ~ ~"
 					]
 				}
 			}

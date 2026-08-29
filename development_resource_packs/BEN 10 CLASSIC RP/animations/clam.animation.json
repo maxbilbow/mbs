@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.clam.open": {
+			"loop": true,
+			"animation_length": 1.25,
+			"bones": {
+				"upperpart": {
+					"rotation": [
+						-57.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.clam.close": {
+			"animation_length": 1.25,
+			"bones": {
+				"upperpart": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

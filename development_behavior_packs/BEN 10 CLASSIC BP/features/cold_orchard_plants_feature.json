@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:cold_orchard_plants_feature"
+		},
+		"features": [
+			[
+				"gen:lavender_feature",
+				1
+			],
+			[
+				"gen:cherry_plant_feature",
+				1
+			]
+		]
+	}
+}

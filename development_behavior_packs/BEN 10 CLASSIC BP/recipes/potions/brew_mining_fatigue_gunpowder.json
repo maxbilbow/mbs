@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "recipe:brew_mining_fatigue_gunpowder"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"input": "item:mining_fatigue_potion",
+		"reagent": "minecraft:gunpowder",
+		"output": "item:splash_mining_fatigue_potion"
+	}
+}

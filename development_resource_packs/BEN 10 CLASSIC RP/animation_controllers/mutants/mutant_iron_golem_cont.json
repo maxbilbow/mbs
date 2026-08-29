@@ -1,0 +1,917 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.miron_golem.flower": {
+			"states": {
+				"default": {
+					"animations": [
+						"stored_flower"
+					],
+					"transitions": [
+						{
+							"offer_flower": "math.random(0,35300)<1&&!query.is_angry&&!query.is_roaring&&!query.is_stunned&&!query.has_target&&!query.is_sitting&&!query.is_interested&&query.is_alive"
+						}
+					],
+					"blend_transition": 0
+				},
+				"offer_flower": {
+					"animations": [
+						"offer_flower"
+					],
+					"transitions": [
+						{
+							"offer_flower_still": "query.all_animations_finished||query.is_angry||query.is_sitting||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0
+				},
+				"offer_flower_still": {
+					"animations": [
+						"offer_flower_still"
+					],
+					"transitions": [
+						{
+							"put_away_flower": "math.random(0,5300)<1||query.is_angry||query.is_sitting||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0
+				},
+				"put_away_flower": {
+					"animations": [
+						"put_away_flower"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		},
+		"controller.animation.miron_golem.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						},
+						{
+							"attack_1": "query.is_alive&&query.is_roaring&&query.mark_variant==1"
+						},
+						{
+							"attack_2": "query.is_alive&&query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						}
+					]
+				},
+				"stunned": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"animations": [
+						"stunned"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_roaring&&!query.is_stunned||!query.is_alive"
+						},
+						{
+							"stunned_loop": "query.all_animations_finished&&query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"stunned_loop": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"animations": [
+						"stunned_loop"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_roaring&&!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"attack_1": {
+					"animations": [
+						"attack_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_roaring&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"attack_2": "query.is_alive&&query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"attack_2": {
+					"animations": [
+						"attack_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_roaring&&query.mark_variant!=2||!query.is_alive"
+						},
+						{
+							"attack_1": "query.is_alive&&query.is_roaring&&query.mark_variant==1"
+						},
+						{
+							"attack_3": "query.is_alive&&query.mark_variant==3"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"attack_3": {
+					"animations": [
+						"attack_3"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_roaring&&query.mark_variant!=3||!query.is_alive"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"casting_mode": {
+					"animations": [
+						"spikes"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_casting&&query.mark_variant!=5||!query.is_alive"
+						},
+						{
+							"attack_1": "query.is_alive&&query.is_roaring&&query.mark_variant==1"
+						},
+						{
+							"attack_2": "query.is_alive&&query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"cannon_mode": {
+					"animations": [
+						"cannon_mode"
+					],
+					"transitions": [
+						{
+							"attack_1": "query.is_alive&&query.is_roaring&&query.mark_variant==1"
+						},
+						{
+							"default": "query.all_animations_finished&&!query.is_alive"
+						},
+						{
+							"cannon_mode_still": "query.all_animations_finished&&query.is_alive"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"cannon_mode_still": {
+					"animations": [
+						"cannon_mode_still"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_alive"
+						},
+						{
+							"cannon_switch": "query.mark_variant!=4||!query.is_alive"
+						},
+						{
+							"shoot_right": "variable.attack_time!=0&&variable.attack_num==1"
+						},
+						{
+							"shoot_left": "variable.attack_time!=0&&variable.attack_num==2"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					]
+				},
+				"cannon_switch": {
+					"animations": [
+						"cannon_switch"
+					],
+					"transitions": [
+						{
+							"attack_1": "query.is_alive&&query.is_roaring&&query.mark_variant==1"
+						},
+						{
+							"default": "query.all_animations_finished&&query.is_alive"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting&&query.mark_variant==5"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"shoot_right": {
+					"animations": [
+						"cannon_shoot_right"
+					],
+					"transitions": [
+						{
+							"cannon_switch": "query.all_animations_finished&&query.mark_variant!=4||!query.is_alive"
+						},
+						{
+							"cannon_mode_still": "query.all_animations_finished"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					]
+				},
+				"shoot_left": {
+					"animations": [
+						"cannon_shoot_left"
+					],
+					"transitions": [
+						{
+							"cannon_switch": "query.all_animations_finished&&query.mark_variant!=4||!query.is_alive"
+						},
+						{
+							"cannon_mode_still": "query.all_animations_finished"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					]
+				},
+				"death_cancel": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		},
+		"controller.animation.miron_golem.walking": {
+			"states": {
+				"default": {
+					"animations": [
+						"general",
+						"look_at_target",
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"run": "query.is_on_ground&&query.ground_speed>6.5"
+						},
+						{
+							"attack_mode": "query.is_alive&&query.is_roaring"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						"general",
+						"look_at_target",
+						{
+							"run": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_on_ground||query.ground_speed<5"
+						},
+						{
+							"attack_mode": "query.is_alive&&query.is_roaring"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack_mode": {
+					"animations": [
+						"general"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"casting_mode": {
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_casting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"stunned": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.miron_golem.walking_arms": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"run": "query.is_on_ground&&query.ground_speed>6.5"
+						},
+						{
+							"attack_mode": "query.is_alive&&query.is_roaring"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						{
+							"run_arms": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_on_ground||query.ground_speed<5"
+						},
+						{
+							"attack_mode": "query.is_alive&&query.is_roaring"
+						},
+						{
+							"casting_mode": "query.is_alive&&query.is_casting"
+						},
+						{
+							"cannon_mode": "query.is_alive&&query.mark_variant==4"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"cannon_mode": {
+					"animations": [
+						"general_cannon"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "query.mark_variant!=4||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack_mode": {
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"casting_mode": {
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_casting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sitting": {
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"stunned": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.miron_golem.walking_particles": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk_steps": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"run": "query.is_on_ground&&query.ground_speed>6.5"
+						},
+						{
+							"still": "query.is_on_ground&&query.ground_speed<0.15"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"still": {
+					"transitions": [
+						{
+							"default": "query.is_on_ground&&query.ground_speed>0.05"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						{
+							"run_steps": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_on_ground||query.ground_speed<5"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sitting": {
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.miron_golem.damage": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"teir_1_recoil": "query.health<=1049&&query.skin_id==0&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"teir_2_recoil": "query.health<=1349&&query.skin_id==1&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"teir_3_recoil": "query.health<=1874&&query.skin_id==2&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"teir_4_recoil": "query.health<=2249&&query.skin_id==3&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"teir_5_recoil": "query.health<=2999&&query.skin_id==4&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_1_recoil": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=0||query.skin_id==0&&query.health>1050||!query.is_alive||query.health<=1349&&query.skin_id==1"
+						},
+						{
+							"teir_1_recoil_2": "query.health<=699&&query.skin_id==0&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_1_recoil_2": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=0||query.skin_id==0&&query.health>1050||!query.is_alive||query.health<=1349&&query.skin_id==1"
+						},
+						{
+							"teir_1_recoil_3": "query.health<=349&&query.skin_id==0&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_1_recoil_3": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=0||query.skin_id==0&&query.health>1050||!query.is_alive||query.health<=1349&&query.skin_id==1"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_2_recoil": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=1||query.skin_id==1&&query.health>1350||!query.is_alive||query.skin_id==2"
+						},
+						{
+							"teir_2_recoil_2": "query.health<=899&&query.skin_id==1&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_2_recoil_2": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=1||query.skin_id==1&&query.health>1350||!query.is_alive||query.skin_id==2"
+						},
+						{
+							"teir_2_recoil_3": "query.health<=449&&query.skin_id==1&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_2_recoil_3": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=1||query.skin_id==1&&query.health>1350||!query.is_alive||query.skin_id==2"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_3_recoil": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=2||query.skin_id==2&&query.health>1875||!query.is_alive||query.skin_id==3"
+						},
+						{
+							"teir_3_recoil_2": "query.health<=1249&&query.skin_id==2&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_3_recoil_2": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=2||query.skin_id==2&&query.health>1875||!query.is_alive||query.skin_id==3"
+						},
+						{
+							"teir_3_recoil_3": "query.health<=624&&query.skin_id==2&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_3_recoil_3": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=2||query.skin_id==2&&query.health>1875||!query.is_alive||query.skin_id==3"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_4_recoil": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=3||query.skin_id==3&&query.health>2250||!query.is_alive||query.skin_id==4"
+						},
+						{
+							"teir_4_recoil_2": "query.health<=1499&&query.skin_id==3&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_4_recoil_2": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=3||query.skin_id==3&&query.health>2250||!query.is_alive||query.skin_id==4"
+						},
+						{
+							"teir_4_recoil_3": "query.health<=749&&query.skin_id==3&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_4_recoil_3": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=3||query.skin_id==3&&query.health>2250||!query.is_alive||query.skin_id==4"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_5_recoil": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=4||query.skin_id==4&&query.health>3000||!query.is_alive"
+						},
+						{
+							"teir_5_recoil_2": "query.health<=2999&&query.skin_id==4&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_5_recoil_2": {
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=4||query.skin_id==4&&query.health>3000||!query.is_alive"
+						},
+						{
+							"teir_5_recoil_3": "query.health<=999&&query.skin_id==4&&query.is_alive&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0
+				},
+				"teir_5_recoil_3": {
+					"particle_effects": [
+						{
+							"effect": "chemical_smoke"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "crack"
+						}
+					],
+					"animations": [
+						"recoil"
+					],
+					"transitions": [
+						{
+							"default": "query.skin_id!=4||query.skin_id==4&&query.health>3000||!query.is_alive"
+						}
+					],
+					"blend_transition": 0
+				}
+			}
+		}
+	}
+}

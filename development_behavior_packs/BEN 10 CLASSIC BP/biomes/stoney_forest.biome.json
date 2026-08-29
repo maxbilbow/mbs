@@ -1,0 +1,83 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:biome": {
+		"description": {
+			"identifier": "nt:stoney_forest"
+		},
+		"components": {
+			"minecraft:climate": {
+				"downfall": 0.8,
+				"snow_accumulation": [
+					0,
+					0.125
+				],
+				"temperature": 0.7
+			},
+			"minecraft:overworld_height": {
+				"noise_type": "lowlands"
+			},
+			"minecraft:surface_builder": {
+				"builder": {
+					"type": "minecraft:mesa",
+					"bryce_pillars": true,
+					"clay_material": "minecraft:stone",
+					"sea_floor_depth": 2,
+					"sea_floor_material": "minecraft:stone",
+					"foundation_material": "minecraft:stone",
+					"hard_clay_material": "minecraft:stone",
+					"has_forest": false,
+					"mid_material": "minecraft:dirt",
+					"top_material": "minecraft:grass",
+					"sea_material": "minecraft:blackstone"
+				}
+			},
+			"minecraft:replace_biomes": {
+				"replacements": [
+					{
+						"dimension": "minecraft:overworld",
+						"targets": [
+							"minecraft:jungle",
+							"minecraft:roofed_forest"
+						],
+						"amount": 0.9,
+						"noise_frequency_scale": 1
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"animal",
+					"forest",
+					"stoneyforest",
+					"monster",
+					"overworld",
+					"bee_habitat"
+				]
+			},
+			"minecraft:surface_material_adjustments": {
+				"adjustments": [
+					{
+						"materials": {
+							"top_material": "minecraft:grass"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							0.212,
+							1
+						]
+					},
+					{
+						"materials": {
+							"top_material": "minecraft:stone"
+						},
+						"noise_frequency_scale": 0.0625,
+						"noise_range": [
+							-0.115,
+							0.212
+						]
+					}
+				]
+			}
+		}
+	}
+}

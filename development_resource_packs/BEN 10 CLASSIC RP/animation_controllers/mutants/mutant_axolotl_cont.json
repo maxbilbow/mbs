@@ -1,0 +1,311 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.attack.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"idle_1": "math.random(0,2300)<1&&!query.is_angry&&query.is_sitting&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"idle_2": "math.random(0,2600)<1&&!query.is_angry&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_1": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_2": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.maxolotl.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking&&!query.is_in_water"
+						},
+						{
+							"attack_water": "query.is_delayed_attacking&&query.is_in_water"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack",
+						"attack_tail_part"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"attack_water": {
+					"animations": [
+						"attack"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.maxolotl.death_cancel": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					]
+				},
+				"death_cancel": {
+					"animations": [
+						"death_cancel"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.maxolotl.move": {
+			"initial_state": "idle",
+			"states": {
+				"sit": {
+					"animations": [
+						{
+							"look_at_target": "query.is_alive"
+						},
+						{
+							"idle_water": "query.is_in_water&&!query.is_playing_dead"
+						},
+						{
+							"sit_float": "query.is_in_water&&!query.is_playing_dead"
+						},
+						{
+							"sit_floor": "!query.is_in_water&&!query.is_playing_dead"
+						}
+					],
+					"blend_transition": 0.25,
+					"transitions": [
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"play_dead_water": "query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead"
+						},
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"dead": "!query.is_alive"
+						},
+						{
+							"moving": "!query.is_sitting&&variable.moving&&!query.is_playing_dead"
+						},
+						{
+							"idle": "!query.is_sitting&&!query.is_playing_dead"
+						}
+					]
+				},
+				"idle": {
+					"animations": [
+						{
+							"idle_water": "query.is_in_water&&!query.is_playing_dead"
+						},
+						{
+							"idle_float": "query.is_in_water&&!query.is_on_ground"
+						},
+						{
+							"idle_floor": "!query.is_in_water"
+						},
+						{
+							"idle_floor_water": "query.is_in_water&&query.is_on_ground"
+						},
+						{
+							"look_at_target": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"play_dead_water": "query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"sit": "query.is_sitting&&!query.is_playing_dead"
+						},
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"dead": "!query.is_alive"
+						},
+						{
+							"moving": "variable.moving&&!query.is_playing_dead"
+						}
+					]
+				},
+				"dead": {
+					"animations": [
+						"play_dead"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"moving": "variable.moving&&query.is_alive"
+						}
+					]
+				},
+				"dead_water": {
+					"animations": [
+						"death_water"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"dead": "!query.is_in_water&&!query.is_alive"
+						},
+						{
+							"sit": "query.is_sitting&&!query.is_playing_dead"
+						},
+						{
+							"moving": "variable.moving&&query.is_alive"
+						}
+					]
+				},
+				"play_dead_water": {
+					"animations": [
+						{
+							"play_dead_water": "query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"dead": "!query.is_in_water&&!query.is_alive"
+						},
+						{
+							"moving": "variable.moving&&!query.is_playing_dead"
+						},
+						{
+							"idle": "!query.is_playing_dead"
+						}
+					]
+				},
+				"play_dead": {
+					"animations": [
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"play_dead_water": "query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"dead": "!query.is_alive"
+						},
+						{
+							"sit": "query.is_sitting&&!query.is_playing_dead"
+						},
+						{
+							"moving": "variable.moving&&!query.is_playing_dead"
+						},
+						{
+							"idle": "!query.is_playing_dead"
+						}
+					]
+				},
+				"moving": {
+					"animations": [
+						{
+							"swim": "query.is_in_water&&!query.is_on_ground&&math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_floor_water": "query.is_in_water&&query.is_on_ground&&math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_floor": "!query.is_in_water&&math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"look_at_target": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"play_dead_water": "query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"play_dead": "!query.is_in_water&&query.is_playing_dead&&query.is_alive"
+						},
+						{
+							"dead_water": "query.is_in_water&&!query.is_alive"
+						},
+						{
+							"sit": "query.is_sitting&&!query.is_playing_dead"
+						},
+						{
+							"dead": "!query.is_alive"
+						},
+						{
+							"idle": "!variable.moving"
+						}
+					]
+				}
+			}
+		}
+	}
+}

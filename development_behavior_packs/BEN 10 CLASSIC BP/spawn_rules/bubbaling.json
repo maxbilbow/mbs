@@ -1,0 +1,62 @@
+//bridge-file-version: #8
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "mob:bubbaling",
+			"population_control": "water_animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:distance_filter": {
+					"min": 12,
+					"max": 32
+				},
+				"minecraft:weight": {
+					"default": 15
+				},
+				"minecraft:density_limit": {
+					"surface": 20
+				},
+				"minecraft:herd": {
+					"min_size": 8,
+					"max_size": 16
+				},
+				"minecraft:biome_filter": [
+					{
+						"test": "has_biome_tag",
+						"operator": "==",
+						"value": "ocean"
+					}
+				]
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:distance_filter": {
+					"min": 12,
+					"max": 32
+				},
+				"minecraft:weight": {
+					"default": 15
+				},
+				"minecraft:density_limit": {
+					"surface": 20
+				},
+				"minecraft:herd": {
+					"min_size": 8,
+					"max_size": 16
+				},
+				"minecraft:biome_filter": [
+					{
+						"test": "has_biome_tag",
+						"operator": "==",
+						"value": "glowing_ocean"
+					}
+				]
+			}
+		]
+	}
+}

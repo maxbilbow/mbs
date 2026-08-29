@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:milk_release_bubble",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 32,
+			"minecraft:icon": {
+				"texture": "item:milk_release_bubble"
+			},
+			"minecraft:display_name": {
+				"value": "Milk Filled Release Bubble"
+			},
+			"minecraft:throwable": {
+				"do_swing_animation": true
+			},
+			"minecraft:cooldown": {
+				"category": "ender_pearl",
+				"duration": 1
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "projectile:milk_release_bubble"
+			}
+		}
+	}
+}

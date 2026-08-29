@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:spell_book",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "power_spell_book"
+			},
+			"minecraft:display_name": {
+				"value": "§rSpell book"
+			},
+			"minecraft:allow_off_hand": true,
+			"minecraft:hand_equipped": true,
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "none"
+		}
+	}
+}

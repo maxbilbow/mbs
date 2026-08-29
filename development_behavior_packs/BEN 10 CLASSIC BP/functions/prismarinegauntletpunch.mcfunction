@@ -1,0 +1,2 @@
+particle gauntletshockwave
+damage @e[r=4,type=!item,type=!xp_orb,family=!inanimate,hasitem={location=slot.weapon.mainhand,item=item:prismarine_gauntlet,quantity=0}] 10 entity_attack entity @p[hasitem={location=slot.weapon.mainhand,quantity=1,item=item:prismarine_gauntlet}]

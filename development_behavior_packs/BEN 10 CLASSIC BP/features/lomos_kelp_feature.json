@@ -1,0 +1,50 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:lomos_kelp_feature"
+		},
+		"features": [
+			[
+				"gen:lomoskelp1_feature",
+				1
+			],
+			[
+				"gen:lomoskelp2_feature",
+				1
+			],
+			[
+				"gen:lomoskelp3_feature",
+				1
+			],
+			[
+				"gen:lomoskelp4_feature",
+				1
+			],
+			[
+				"gen:lomoskelp5_feature",
+				1
+			],
+			[
+				"gen:lomoskelp6_feature",
+				1
+			],
+			[
+				"gen:lomoskelp7_feature",
+				1
+			],
+			[
+				"gen:lomoskelp8_feature",
+				1
+			],
+			[
+				"gen:lomoskelp9_feature",
+				1
+			],
+			[
+				"gen:lomoskelp10_feature",
+				1
+			]
+		]
+	}
+}

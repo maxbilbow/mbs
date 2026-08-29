@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "prismarine_pillar_0fc33c4c"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:prismarine_tile_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:prismarine_pillar",
+			"count": 1
+		}
+	}
+}

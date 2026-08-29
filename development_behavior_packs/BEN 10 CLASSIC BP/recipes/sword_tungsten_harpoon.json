@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "tungsten_harpoon_f9a98263"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"ACA",
+			"DED"
+		],
+		"key": {
+			"A": {
+				"item": "item:tungsten_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "item:tungsten_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "sword:silver_harpoon",
+				"data": 0
+			},
+			"D": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"E": {
+				"item": "item:white_pearl",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:tungsten_harpoon",
+			"count": 1
+		}
+	}
+}

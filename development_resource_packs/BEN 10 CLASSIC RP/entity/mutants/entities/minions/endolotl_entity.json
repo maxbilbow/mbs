@@ -1,0 +1,59 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:endolotl",
+			"materials": {
+				"default": "enderman",
+				"limbs": "axolotl_limbs"
+			},
+			"textures": {
+				"vanilla": "textures/mutants/entity/entities/endolotl/vanilla_endolotl",
+				"hive": "textures/mutants/entity/entities/endolotl/hive_endolotl"
+			},
+			"geometry": {
+				"default": "geometry.wild_endolotl"
+			},
+			"animations": {
+				"big_head": "animation.mob_endolotl.big_head",
+				"look_at_target": "animation.mob_endolotl.look_at_target",
+				"idle": "animation.mob_endolotl.idle",
+				"idle_1": "animation.mob_endolotl.idle_1",
+				"idle_2": "animation.mob_endolotl.idle_2",
+				"idle_3": "animation.mob_endolotl.idle_3",
+				"fly": "animation.mob_endolotl.move",
+				"play_dead": "animation.mob_endolotl.play_dead",
+				"play_alive": "animation.mob_endolotl.play_alive",
+				"death": "animation.mob_endolotl.death",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"particle_effects": {
+				"portal": "mutant:end_portal_particle"
+			},
+			"scripts": {
+				"scale": "1"
+			},
+			"animation_controllers": [
+				{
+					"particle": "controller.animation.mendolotl.portal"
+				},
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"idle": "controller.animation.mob_endolotl.idle"
+				},
+				{
+					"move": "controller.animation.mob_endolotl.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mendolotl"
+			],
+			"spawn_egg": {
+				"texture": "hive_mutant_spawn_eggs",
+				"texture_index": 0
+			}
+		}
+	}
+}

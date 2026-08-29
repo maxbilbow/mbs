@@ -1,0 +1,32 @@
+//bridge-file-version: #14
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:lomoscoral1_feature_rule",
+			"places_feature": "gen:lomoscoral1_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "drenched_void"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"z": 0,
+			"y": {
+				"extent": [
+					-54,
+					40
+				],
+				"distribution": "uniform"
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:ice_block",
+			"materials": {
+				"default": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/blocks/ice"
+			},
+			"geometry": {
+				"default": "geometry.iceblock"
+			},
+			"animations": {
+				"move": "animation.block.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			]
+		}
+	}
+}

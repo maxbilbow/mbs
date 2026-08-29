@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:atlantischambers_feature_rule",
+			"places_feature": "gen:atlantischambers_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "ocean"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 0.1,
+			"x": 0,
+			"z": 0,
+			"y": -27
+		}
+	}
+}

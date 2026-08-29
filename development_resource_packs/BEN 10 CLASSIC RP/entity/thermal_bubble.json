@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "projectile:thermal_bubble",
+			"materials": {
+				"default": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/entity/boiling_bubble"
+			},
+			"geometry": {
+				"default": "geometry.bubblething"
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

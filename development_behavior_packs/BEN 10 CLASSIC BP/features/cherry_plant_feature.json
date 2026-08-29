@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:cherry_plant_feature"
+		},
+		"features": [
+			[
+				"gen:cherry_plant1_feature",
+				1
+			],
+			[
+				"gen:cherry_plant2_feature",
+				1
+			],
+			[
+				"gen:cherry_plant3_feature",
+				1
+			],
+			[
+				"gen:cherry_plant4_feature",
+				1
+			]
+		]
+	}
+}

@@ -1,0 +1,79 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mvex": {
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"Texture.default",
+						"Texture.charging"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.textures[query.is_charging||query.is_roaring||query.mark_variant==2]"
+			],
+			"part_visibility": [
+				{
+					"*": 1
+				},
+				{
+					"rsword": 0
+				}
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.mutant_vex_weapon": {
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"overlay_color": {
+				"r": "(0)",
+				"g": 0,
+				"b": 0,
+				"a": "(0)"
+			},
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"Texture.default",
+						"Texture.charging"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.textures[query.is_charging||query.is_roaring||query.mark_variant==2]"
+			],
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"rsword": 1
+				}
+			],
+			"ignore_lighting": true
+		}
+	}
+}

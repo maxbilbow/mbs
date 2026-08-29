@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:thrown_chemical_x",
+			"materials": {
+				"default": "entity_alphatest",
+				"outer": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/chemcial_x"
+			},
+			"geometry": {
+				"default": "geometry.chemical_x",
+				"outer": "geometry.chemical_x_outer"
+			},
+			"animations": {
+				"move": "animation.chemical_x.move",
+				"moving": "animation.chemical_x.moving"
+			},
+			"scripts": {
+				"animate": [
+					"move",
+					"moving"
+				]
+			},
+			"render_controllers": [
+				"controller.render.chem_x_entity",
+				"controller.render.chem_x_item_outer"
+			]
+		}
+	}
+}

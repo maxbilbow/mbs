@@ -1,0 +1,40 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.maxolotl": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.lucy",
+						"Texture.cyan",
+						"Texture.gold",
+						"Texture.wild",
+						"Texture.blue",
+						"Texture.green",
+						"Texture.marigold"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.lucy",
+						"Geometry.cyan",
+						"Geometry.gold",
+						"Geometry.wild",
+						"Geometry.blue",
+						"Geometry.green",
+						"Geometry.marigold"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		}
+	}
+}

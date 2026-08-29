@@ -1,0 +1,115 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:wither_skull",
+			"runtime_identifier": "minecraft:wither_skull",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 4,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true,
+					"maxResistance": 100
+				}
+			},
+			"despawn": {
+				"minecraft:health": {
+					"value": 0,
+					"max": 0,
+					"min": 0
+				},
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 1.1
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 2.25,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mwitherskeleton",
+					"mskeleton",
+					"mutantundead",
+					"mutantmonster",
+					"monster",
+					"wither"
+				]
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							9,
+							12
+						],
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": false
+					},
+					"mob_effect": {
+						"effect": "wither",
+						"durationeasy": 180,
+						"durationnormal": 320,
+						"durationhard": 880,
+						"amplifier": 10
+					}
+				},
+				"hitSound": "explode",
+				"power": 1.6,
+				"gravity": 0,
+				"uncertaintyBase": 5,
+				"uncertaintyMultiplier": 3,
+				"anchor": 1.3,
+				"inertia": 1,
+				"liquid_inertia": 0.95,
+				"shouldbounce": true,
+				"offset": [
+					0,
+					-0.01,
+					0
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

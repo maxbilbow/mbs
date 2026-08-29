@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "water_release_bubble_38589c1e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:release_bubble",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:water_bucket",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:water_release_bubble",
+			"count": 1
+		}
+	}
+}

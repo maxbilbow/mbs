@@ -1,0 +1,14 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:birch_tree_feature"
+		},
+		"features": [
+			[
+				"gen:birch_tree1_feature",
+				50
+			]
+		]
+	}
+}

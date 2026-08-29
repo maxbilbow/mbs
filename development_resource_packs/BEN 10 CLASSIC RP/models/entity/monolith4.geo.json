@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.monolith4",
+				"texture_width": 210,
+				"texture_height": 210,
+				"visible_bounds_width": 25,
+				"visible_bounds_height": 43,
+				"visible_bounds_offset": [
+					0,
+					4.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [
+						-95,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						-25
+					],
+					"cubes": [
+						{
+							"origin": [
+								-206,
+								-250,
+								0
+							],
+							"size": [
+								210,
+								210,
+								0
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-201,
+								-250,
+								4
+							],
+							"size": [
+								210,
+								210,
+								0
+							],
+							"pivot": [
+								-96,
+								-23,
+								4
+							],
+							"rotation": [
+								0,
+								90,
+								0
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

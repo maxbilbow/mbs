@@ -1,0 +1,19 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "ore:abyssal_quartz_ore_feature"
+		},
+		"count": 12,
+		"replace_rules": [
+			{
+				"places_block": "ore:abyssal_quartz_ore",
+				"may_replace": [
+					{
+						"name": "block:abyssal_slag"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutated_evoker_fangs": {
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"Texture.default",
+						"Texture.worjira"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.worjira"
+					]
+				}
+			},
+			"textures": [
+				"array.textures[query.skin_id]"
+			],
+			"geometry": "array.geos[query.skin_id]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			]
+		},
+		"controller.render.mutated_evoker_fangs_w_glow": {
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 1 "
+				}
+			],
+			"textures": [
+				"texture.worjira_glow"
+			],
+			"geometry": "geometry.worjira",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"ignore_lighting": true
+		}
+	}
+}

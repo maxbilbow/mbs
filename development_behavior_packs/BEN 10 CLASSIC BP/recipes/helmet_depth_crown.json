@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "depth_crown_36d60aad"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"ABA",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:lumenyl",
+				"data": 0
+			},
+			"B": {
+				"item": "item:reidite",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:depth_crown",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:oak_tree_with_optional_beehive_feature"
+		},
+		"features": [
+			[
+				"gen:oak_tree1_feature",
+				50
+			],
+			[
+				"gen:oak_tree_with_optional_beehive_structure_feature",
+				10
+			]
+		]
+	}
+}

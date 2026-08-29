@@ -1,0 +1,30 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:enchanted_golden_ocean_berry",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.crop"
+			}
+		},
+		"components": {
+			"minecraft:glint": true,
+			"minecraft:icon": {
+				"texture": "food:golden_ocean_berry"
+			},
+			"minecraft:display_name": {
+				"value": "Enchanted Ocean Berry"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 1.8,
+				"movement_modifier": 0.5
+			},
+			"minecraft:food": {
+				"nutrition": 4,
+				"saturation_modifier": 1.5
+			}
+		}
+	}
+}

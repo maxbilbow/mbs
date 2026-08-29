@@ -1,0 +1,100 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.orthoceras.target_acquired": {
+			"animation_length": 1,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							-180,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.orthoceras.aggressive": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"head": {
+					"rotation": [
+						0,
+						-180,
+						0
+					]
+				}
+			}
+		},
+		"animation.orthoceras.general": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"tecntacles": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": {
+							"pre": [
+								0,
+								0,
+								0
+							],
+							"post": [
+								0,
+								0,
+								-90
+							]
+						},
+						"1.0": {
+							"pre": [
+								0,
+								0,
+								-90
+							],
+							"post": [
+								0,
+								0,
+								-180
+							]
+						},
+						"1.5": {
+							"pre": [
+								0,
+								0,
+								-180
+							],
+							"post": [
+								0,
+								0,
+								-270
+							]
+						},
+						"2.0": {
+							"pre": [
+								0,
+								0,
+								-270
+							],
+							"post": [
+								0,
+								0,
+								-360
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -7,10 +7,10 @@
 				"default": {
 					"transitions": [
 						{
-							"reverse": "variable.holding_omni_icon&&variable.attack_time>0.1&&query.variant==0"
+							"reverse": "(variable.holding_omni_icon||variable.selecting_omni2_alien)&&variable.attack_time>0.1&&query.variant==0"
 						},
 						{
-							"forward": "variable.holding_omni_icon&&query.is_using_item&&query.variant==0"
+							"forward": "(variable.holding_omni_icon||variable.selecting_omni2_alien)&&query.is_using_item&&query.variant==0"
 						}
 					],
 					"blend_transition": 0

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_leggings_c705daf9"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "leggings:scrap_metal_leggings",
+			"count": 1
+		}
+	}
+}

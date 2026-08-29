@@ -1,0 +1,45 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_55263ce1"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAB",
+			"CDB",
+			"CEE"
+		],
+		"key": {
+			"A": {
+				"item": "item:lomos_pearl",
+				"data": 0
+			},
+			"B": {
+				"item": "item:white_pearl",
+				"data": 0
+			},
+			"C": {
+				"item": "item:cyan_pearl",
+				"data": 0
+			},
+			"D": {
+				"item": "block:giant_pearl",
+				"data": 0
+			},
+			"E": {
+				"item": "item:pink_pearl",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:heart_of_the_sea",
+				"count": 1,
+				"data": 0
+			}
+		]
+	}
+}

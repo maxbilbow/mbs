@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_124a44f0"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:lomos_pearl_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:lomos_pearl",
+				"count": 9
+			}
+		]
+	}
+}

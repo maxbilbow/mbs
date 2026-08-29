@@ -1,0 +1,215 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "sword:gold_harpoon",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"can_pick_up": {
+				"minecraft:entity_sensor": {
+					"subsensors": [
+						{
+							"range": [
+								1,
+								1
+							],
+							"event_filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player",
+								"operator": "=="
+							},
+							"event": "pick_up"
+						}
+					]
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"in_water": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"catch_fire": true,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false,
+							"damage": [
+								10,
+								10
+							]
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "can_pick_up"
+							}
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 2.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"event": "entered_air",
+						"filters": {
+							"test": "is_underwater",
+							"value": false
+						}
+					}
+				}
+			},
+			"in_air": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"catch_fire": true,
+							"damage": [
+								6,
+								6
+							],
+							"knockback": false,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						},
+						"definition_event": {
+							"event_trigger": {
+								"event": "can_pick_up"
+							}
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 2.5,
+					"gravity": 0.2,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"inertia": 0.75
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.35
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 1000,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"pick_up": {
+				"queue_command": {
+					"command": [
+						"give @p[r=5] sword:gold_harpoon",
+						"kill @s"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"can_pick_up": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"can_pick_up"
+							]
+						},
+						"weight": 95
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "is_underwater",
+							"value": true
+						},
+						"add": {
+							"component_groups": [
+								"in_water"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_underwater",
+							"value": false
+						},
+						"add": {
+							"component_groups": [
+								"in_air"
+							]
+						}
+					}
+				]
+			},
+			"entered_air": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"in_water"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"in_air"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

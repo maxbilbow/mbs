@@ -1,0 +1,127 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.big_rock",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6,
+								0,
+								-6
+							],
+							"size": [
+								12,
+								12,
+								12
+							],
+							"uv": [
+								0,
+								76
+							]
+						},
+						{
+							"origin": [
+								2,
+								8,
+								-4
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								118,
+								112
+							]
+						},
+						{
+							"origin": [
+								-8,
+								2,
+								-2
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								122,
+								94
+							]
+						},
+						{
+							"origin": [
+								-5,
+								2,
+								2
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								118,
+								124
+							]
+						},
+						{
+							"origin": [
+								1,
+								-1,
+								-7
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								124,
+								76
+							]
+						},
+						{
+							"origin": [
+								-7,
+								7,
+								-7
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								28,
+								127
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

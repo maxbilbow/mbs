@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pale_leaf_litter_feature"
+		},
+		"features": [
+			[
+				"gen:pale_leaf_litter1_feature",
+				1
+			],
+			[
+				"gen:pale_leaf_litter2_feature",
+				1
+			],
+			[
+				"gen:pale_leaf_litter3_feature",
+				1
+			],
+			[
+				"gen:pale_leaf_litter4_feature",
+				1
+			]
+		]
+	}
+}

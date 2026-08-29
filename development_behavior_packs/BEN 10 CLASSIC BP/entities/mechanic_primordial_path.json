@@ -1,0 +1,85 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mechanic:primordial_path",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:area_attack": {
+				"damage_range": 1,
+				"damage_per_tick": 10,
+				"cause": "contact",
+				"entity_filter": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"value": "player",
+							"subject": "other"
+						}
+					]
+				}
+			},
+			"minecraft:timer": {
+				"time": [
+					2.8,
+					2.8
+				],
+				"time_down_event": {
+					"event": "despawn"
+				},
+				"looping": true
+			},
+			"minecraft:scale": {
+				"value": 3
+			},
+			"minecraft:type_family": {
+				"family": [
+					"bone"
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			}
+		},
+		"events": {
+			"on:hit": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": [
+						"particle primordialpath"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

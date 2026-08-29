@@ -1,0 +1,322 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.bijaws",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-7
+							],
+							"size": [
+								10,
+								10,
+								12
+							],
+							"inflate": 0.1,
+							"uv": [
+								0,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								4,
+								5
+							],
+							"size": [
+								2,
+								2,
+								18
+							],
+							"uv": [
+								0,
+								43
+							]
+						},
+						{
+							"origin": [
+								-2,
+								3,
+								21
+							],
+							"size": [
+								4,
+								4,
+								4
+							],
+							"pivot": [
+								0,
+								5,
+								23
+							],
+							"rotation": [
+								-45,
+								-45,
+								45
+							],
+							"uv": [
+								40,
+								51
+							]
+						}
+					]
+				},
+				{
+					"name": "fins",
+					"parent": "head",
+					"pivot": [
+						0,
+						0,
+						5
+					]
+				},
+				{
+					"name": "fin4",
+					"parent": "fins",
+					"pivot": [
+						0,
+						0,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								-2,
+								5
+							],
+							"size": [
+								0,
+								14,
+								8
+							],
+							"pivot": [
+								5,
+								5,
+								5
+							],
+							"rotation": [
+								0,
+								20,
+								0
+							],
+							"uv": [
+								44,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "fin3",
+					"parent": "fins",
+					"pivot": [
+						0,
+						0,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								-2,
+								5
+							],
+							"size": [
+								0,
+								14,
+								8
+							],
+							"pivot": [
+								-5,
+								5,
+								5
+							],
+							"rotation": [
+								0,
+								-20,
+								0
+							],
+							"uv": [
+								44,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "fin1",
+					"parent": "fins",
+					"pivot": [
+						0,
+						0,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								5
+							],
+							"size": [
+								14,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								0,
+								5
+							],
+							"rotation": [
+								-20,
+								0,
+								0
+							],
+							"uv": [
+								40,
+								43
+							]
+						}
+					]
+				},
+				{
+					"name": "fin2",
+					"parent": "fins",
+					"pivot": [
+						0,
+						0,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								10,
+								5
+							],
+							"size": [
+								14,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								10,
+								5
+							],
+							"rotation": [
+								20,
+								0,
+								0
+							],
+							"uv": [
+								40,
+								43
+							]
+						}
+					]
+				},
+				{
+					"name": "jaw",
+					"parent": "head",
+					"pivot": [
+						0,
+						3,
+						-6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-21
+							],
+							"size": [
+								10,
+								5,
+								16
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "jaw2",
+					"parent": "head",
+					"pivot": [
+						0,
+						8,
+						-6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								5,
+								-21
+							],
+							"size": [
+								10,
+								5,
+								16
+							],
+							"pivot": [
+								0,
+								7.5,
+								-13
+							],
+							"rotation": [
+								0,
+								0,
+								-180
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

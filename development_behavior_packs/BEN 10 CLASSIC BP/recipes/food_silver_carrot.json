@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "silver_carrot_e705f614"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:carrot",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "food:silver_carrot",
+			"count": 1
+		}
+	}
+}

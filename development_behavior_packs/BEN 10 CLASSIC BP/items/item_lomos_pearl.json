@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:lomos_pearl",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:lomos_pearl"
+			},
+			"minecraft:display_name": {
+				"value": "Lomos Pearl\n§8Brewing Ingredient\n§9Can be used to tame Void Wyrmlings"
+			}
+		}
+	}
+}

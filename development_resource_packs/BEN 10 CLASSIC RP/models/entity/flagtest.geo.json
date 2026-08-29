@@ -1,0 +1,110 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.flagmodel",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								7
+							],
+							"size": [
+								16,
+								16,
+								1
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										15,
+										0
+									],
+									"uv_size": [
+										1,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										15,
+										0
+									],
+									"uv_size": [
+										1,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										16,
+										1
+									],
+									"uv_size": [
+										-16,
+										-1
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-1
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

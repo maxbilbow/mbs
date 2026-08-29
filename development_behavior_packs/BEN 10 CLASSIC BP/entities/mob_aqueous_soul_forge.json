@@ -1,0 +1,73 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mob:aqueous_soul_forge",
+			"runtime_identifier": "minecraft:snowball",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:timer": {
+				"time": [
+					0,
+					0
+				],
+				"time_down_event": {
+					"event": "e"
+				}
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			}
+		},
+		"events": {
+			"e": {
+				"randomize": [
+					{
+						"weight": 0,
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"particle aqueousforgefire ~~-0.5~",
+										"particle aqueousforgefire ~~-0.5~",
+										"particle aqueousforgeside1 ~~-0.5~",
+										"particle aqueousforgeside2 ~~-0.5~",
+										"particle aqueousforgeside3 ~~-0.5~",
+										"particle aqueousforgeside4 ~~-0.5~"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 100
+					}
+				]
+			}
+		}
+	}
+}

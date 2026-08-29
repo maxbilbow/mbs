@@ -1,0 +1,178 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mvex.wings": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"wings",
+						{
+							"move": "math.min(1,query.modified_move_speed*8)"
+						}
+					],
+					"transitions": [
+						{
+							"charging": "query.is_charging"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"on_guard": "query.mark_variant==1"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"on_guard": {
+					"animations": [
+						"wings_fast",
+						{
+							"move": "math.min(1,query.modified_move_speed*8)"
+						}
+					],
+					"transitions": [
+						{
+							"charging": "query.is_charging"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.mark_variant==0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"charging": {
+					"animations": [
+						"wings_still",
+						{
+							"charge_move": "math.min(1,query.modified_move_speed)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_charging"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"on_guard": "query.mark_variant==1"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"death": {
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.mvex.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target",
+						"idle"
+					],
+					"transitions": [
+						{
+							"charging": "query.is_charging"
+						},
+						{
+							"swipe_attack": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"on_guard": "query.mark_variant==1"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"on_guard": {
+					"animations": [
+						"look_at_target",
+						"idle",
+						"on_guard"
+					],
+					"transitions": [
+						{
+							"charging": "query.is_charging"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.mark_variant==0||query.mark_variant==2"
+						},
+						{
+							"swipe_attack": "query.is_roaring&&query.mark_variant==2"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"charging": {
+					"animations": [
+						"look_at_target",
+						"charging_idle",
+						"charge"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_charging&&!query.has_target"
+						},
+						{
+							"swipe_attack": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"on_guard": "query.mark_variant==1"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"swipe_attack": {
+					"animations": [
+						"look_at_target",
+						"swipe_attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring&&query.all_animations_finished"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"on_guard": "query.mark_variant==1&&query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

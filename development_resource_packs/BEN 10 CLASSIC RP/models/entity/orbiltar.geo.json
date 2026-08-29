@@ -1,0 +1,196 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.orbiltar",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						7,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								4,
+								-4
+							],
+							"size": [
+								8,
+								8,
+								8
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "ring",
+					"pivot": [
+						0,
+						7,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-12,
+								7,
+								-12
+							],
+							"size": [
+								24,
+								0,
+								24
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "rod",
+					"parent": "ring",
+					"pivot": [
+						0,
+						7,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								2,
+								-11
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								32,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "rod2",
+					"parent": "ring",
+					"pivot": [
+						-10,
+						7,
+						0
+					],
+					"rotation": [
+						0,
+						90,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-11,
+								2,
+								-1
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								32,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "rod3",
+					"parent": "ring",
+					"pivot": [
+						0,
+						7,
+						10
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								2,
+								9
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								32,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "rod4",
+					"parent": "ring",
+					"pivot": [
+						10,
+						7,
+						0
+					],
+					"rotation": [
+						0,
+						-90,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								9,
+								2,
+								-1
+							],
+							"size": [
+								2,
+								10,
+								2
+							],
+							"uv": [
+								32,
+								24
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

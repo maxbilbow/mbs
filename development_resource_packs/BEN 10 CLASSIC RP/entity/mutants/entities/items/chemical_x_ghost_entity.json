@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:chemical_x_ghost",
+			"materials": {
+				"default": "npc"
+			},
+			"geometry": {
+				"default": "geometry.mutant_smash_locator"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/zombie/zombie"
+			},
+			"enable_attachables": false,
+			"particle_effects": {
+				"smash": "mutant:chemical_x_ghost_particle"
+			},
+			"scripts": {
+				"animate": [
+					"particle"
+				]
+			},
+			"animations": {
+				"particle": "animation.mutant.smash_particle"
+			},
+			"render_controllers": [
+				"controller.render.mutant_smash_attack"
+			]
+		}
+	}
+}

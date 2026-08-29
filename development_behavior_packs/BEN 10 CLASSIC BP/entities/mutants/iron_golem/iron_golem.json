@@ -1,0 +1,3207 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_iron_golem",
+			"runtime_identifier": "minecraft:villager",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"knocked",
+					"smash_attack",
+					"melee_attacks"
+				]
+			},
+			"animations": {
+				"knocked": "controller.animation.js7_mutant.iron_golem_knocked",
+				"smash_attack": "controller.animation.mutated_iron_spikes",
+				"melee_attacks": "controller.animation.mutant_iron_golem_throw_attack_stages"
+			}
+		},
+		"component_groups": {
+			"death_health": {
+				"minecraft:health": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:is_stunned": {}
+			},
+			"on_death_timer": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						30,
+						30
+					],
+					"time_down_event": {
+						"event": "js7_mutant:on_death_time_over"
+					}
+				},
+				"minecraft:experience_reward": {
+					"on_death": 500
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem.json"
+				},
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				},
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 6,
+					"speed_multiplier": 0,
+					"xz_dist": 0
+				},
+				"minecraft:is_stunned": {}
+			},
+			"stunned": {
+				"minecraft:transformation": {
+					"into": "mutant:mutant_iron_golem<js7_mutant:on_death_timer>"
+				}
+			},
+			"golem_main": {
+				"minecraft:type_family": {
+					"family": [
+						"irongolem",
+						"mob",
+						"mirongolem",
+						"mutantmonster",
+						"chemical_x"
+					]
+				},
+				"minecraft:behavior.look_at_player": {
+					"priority": 7,
+					"look_distance": 8,
+					"probability": 0.02
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 6,
+					"speed_multiplier": 3,
+					"xz_dist": 16
+				},
+				"minecraft:movement": {
+					"value": 0.075
+				},
+				"minecraft:behavior.look_at_entity": {
+					"priority": 10,
+					"look_distance": 8,
+					"angle_of_view_horizontal": 45,
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "mob"
+					}
+				},
+				"minecraft:rideable": {
+					"family_types": [
+						"player"
+					],
+					"seat_count": 2,
+					"interact_text": "action.interact.mount",
+					"seats": [
+						{
+							"position": [
+								-0.4,
+								3.65,
+								0.1
+							],
+							"min_rider_count": 1,
+							"max_rider_count": 2
+						},
+						{
+							"position": [
+								0.4,
+								3.65,
+								0.1
+							],
+							"min_rider_count": 2,
+							"max_rider_count": 2
+						}
+					]
+				},
+				"minecraft:preferred_path": {
+					"max_fall_blocks": 1,
+					"jump_cost": 5,
+					"default_block_cost": 1.5,
+					"preferred_path_blocks": [
+						{
+							"cost": 0,
+							"blocks": [
+								"grass_path"
+							]
+						},
+						{
+							"cost": 1,
+							"blocks": [
+								"cobblestone",
+								"stone",
+								"stonebrick",
+								"sandstone",
+								"mossy_cobblestone",
+								"stone_slab",
+								"stone_slab2",
+								"stone_slab3",
+								"stone_slab4",
+								"double_stone_slab",
+								"double_stone_slab2",
+								"double_stone_slab3",
+								"double_stone_slab4",
+								"wooden_slab",
+								"double_wooden_slab",
+								"planks",
+								"brick_block",
+								"nether_brick",
+								"red_nether_brick",
+								"end_bricks",
+								"red_sandstone",
+								"stained_glass",
+								"glass",
+								"glowstone",
+								"prismarine",
+								"emerald_block",
+								"diamond_block",
+								"lapis_block",
+								"gold_block",
+								"redstone_block",
+								"purple_glazed_terracotta",
+								"white_glazed_terracotta",
+								"orange_glazed_terracotta",
+								"magenta_glazed_terracotta",
+								"light_blue_glazed_terracotta",
+								"yellow_glazed_terracotta",
+								"lime_glazed_terracotta",
+								"pink_glazed_terracotta",
+								"gray_glazed_terracotta",
+								"silver_glazed_terracotta",
+								"cyan_glazed_terracotta",
+								"blue_glazed_terracotta",
+								"brown_glazed_terracotta",
+								"green_glazed_terracotta",
+								"red_glazed_terracotta",
+								"black_glazed_terracotta"
+							]
+						},
+						{
+							"cost": 50,
+							"blocks": [
+								"bed",
+								"lectern",
+								"composter",
+								"grindstone",
+								"blast_furnace",
+								"smoker",
+								"fletching_table",
+								"cartography_table",
+								"brewing_stand",
+								"smithing_table",
+								"cauldron",
+								"barrel",
+								"loom",
+								"stonecutter"
+							]
+						}
+					]
+				},
+				"minecraft:behavior.target_when_pushed": {
+					"priority": 1,
+					"percent_chance": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "creeper"
+									}
+								]
+							}
+						}
+					]
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 2
+				}
+			},
+			"can_attack": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						1,
+						1
+					],
+					"time_down_event": {
+						"event": "choose_attack"
+					}
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 2.5,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "melee_throw",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 0,
+					"speed_multiplier": 3,
+					"cooldown_time": 1.5,
+					"attack_duration": 1,
+					"hit_delay_pct": 1,
+					"track_target": true
+				}
+			},
+			"melee_mode": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 2.25,
+					"must_see": true,
+					"on_inside_range": {
+						"event": "melee_throw",
+						"target": "self"
+					}
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "target_distance",
+										"subject": "self",
+										"operator": "equals",
+										"value": 2.5
+									}
+								]
+							},
+							"event": "melee_throw"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						6,
+						8
+					],
+					"time_down_event": {
+						"event": "switch_to_range"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 0,
+					"speed_multiplier": 6,
+					"attack_duration": 0.45,
+					"hit_delay_pct": 0,
+					"track_target": true,
+					"sound_event": "attack.strong"
+				}
+			},
+			"attack_1": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1.35,
+					"time_down_event": {
+						"event": "find_attack_2"
+					}
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 1.35,
+					"attack_time": 0.55,
+					"knockback_damage": 16,
+					"knockback_range": 4,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"on_roar_end": {
+						"event": "find_attack_2"
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"attack_1_player": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1.35,
+					"time_down_event": {
+						"event": "find_attack_2"
+					}
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 1.35,
+					"attack_time": 0.55,
+					"knockback_damage": 16,
+					"knockback_range": 4,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "find_attack_2"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"melee_attack_2_mode": {
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 3.25,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "melee_swipe",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 0,
+					"speed_multiplier": 6,
+					"attack_duration": 0.45,
+					"hit_delay_pct": 0,
+					"track_target": true,
+					"sound_event": "attack.strong"
+				}
+			},
+			"attack_2_player": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.85,
+					"time_down_event": {
+						"event": "can_attack_3"
+					}
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 3,
+					"attack_time": 0.6,
+					"knockback_damage": 22,
+					"knockback_range": 5,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				}
+			},
+			"attack_2": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.85,
+					"time_down_event": {
+						"event": "can_attack_3"
+					}
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 3,
+					"attack_time": 0.6,
+					"knockback_damage": 22,
+					"knockback_range": 5,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				}
+			},
+			"find_attack_3_mode": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "slowness",
+							"duration": 2,
+							"amplifier": 50,
+							"ambient": false,
+							"visible": false
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 5.25,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "melee_smash",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 0,
+					"speed_multiplier": 6,
+					"attack_duration": 0.45,
+					"hit_delay_pct": 0,
+					"track_target": true,
+					"sound_event": "attack.strong"
+				}
+			},
+			"attack_3": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 2.25,
+					"attack_time": 1.1,
+					"knockback_damage": 28,
+					"knockback_range": 5,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				}
+			},
+			"attack_3_player": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 2.25,
+					"attack_time": 1.1,
+					"knockback_damage": 28,
+					"knockback_range": 5,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						]
+					},
+					"cooldown_time": 30
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				}
+			},
+			"ranged_mode": {
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"attack_interval_min": 0.85,
+					"attack_interval_max": 1.1,
+					"attack_radius": 35,
+					"speed_multiplier": 3,
+					"swing": true
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "slowness",
+							"duration": 0.75,
+							"amplifier": 50,
+							"ambient": false,
+							"visible": false
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 4
+				},
+				"minecraft:behavior.float_wander": {
+					"xz_dist": 10,
+					"y_dist": 0,
+					"y_offset": 0,
+					"random_reselect": true,
+					"must_reach": false,
+					"float_duration": [
+						0.1,
+						0.35
+					]
+				},
+				"minecraft:shooter": {
+					"def": "mutant:iron_cannon_ball"
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						6,
+						8
+					],
+					"time_down_event": {
+						"event": "switch_to_melee"
+					}
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 2.35,
+					"outside_range": 3,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "switch_to_melee",
+						"target": "self"
+					}
+				}
+			},
+			"spikes_attack": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:mark_variant": {
+					"value": 5
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 2
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						6,
+						8
+					],
+					"time_down_event": {
+						"event": "switch_to_range"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 2,
+					"speed_multiplier": 6,
+					"attack_duration": 0.45,
+					"hit_delay_pct": 0,
+					"track_target": true,
+					"sound_event": "attack.strong"
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 2,
+					"summon_choices": [
+						{
+							"min_activation_range": 0.1,
+							"max_activation_range": 8,
+							"cooldown_time": 30,
+							"weight": 3,
+							"cast_duration": 2.25,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.9,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_type": "mutant:mutated_iron_spikes",
+									"size": 2
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 7,
+									"entity_type": "mutant:mutated_iron_spikes",
+									"size": 3
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"entity_type": "mutant:mutated_iron_spikes",
+									"size": 5
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 12,
+									"entity_type": "mutant:mutated_iron_spikes",
+									"size": 8
+								}
+							]
+						}
+					]
+				}
+			},
+			"spikes_attack_player": {
+				"minecraft:knockback_resistance": {
+					"value": 1
+				},
+				"minecraft:mark_variant": {
+					"value": 5
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 0,
+							"visible": false,
+							"ambient": false,
+							"duration": 2
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						6,
+						8
+					],
+					"time_down_event": {
+						"event": "switch_to_range"
+					}
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"reach_multiplier": 2,
+					"speed_multiplier": 6,
+					"attack_duration": 0.45,
+					"hit_delay_pct": 0,
+					"track_target": true,
+					"sound_event": "attack.strong"
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 2,
+					"summon_choices": [
+						{
+							"min_activation_range": 0.1,
+							"max_activation_range": 8,
+							"cooldown_time": 30,
+							"weight": 3,
+							"cast_duration": 2.25,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.9,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_type": "mutant:mutated_iron_spikes<from_player>",
+									"size": 2
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 7,
+									"entity_type": "mutant:mutated_iron_spikes<from_player>",
+									"size": 3
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"entity_type": "mutant:mutated_iron_spikes<from_player>",
+									"size": 5
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 12,
+									"entity_type": "mutant:mutated_iron_spikes<from_player>",
+									"size": 8
+								}
+							]
+						}
+					]
+				}
+			},
+			"spikes_cooldown": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						15,
+						20
+					],
+					"attack_cooldown_complete_event": {
+						"event": "end_spike_coolodwn",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:player_created": {
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 2,
+					"entity_types": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "player"
+								}
+							]
+						}
+					}
+				}
+			},
+			"minecraft:village_created": {
+				"minecraft:behavior.defend_village_target": {
+					"priority": 1,
+					"must_reach": true,
+					"attack_chance": 0.05,
+					"entity_types": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "mob"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						}
+					}
+				},
+				"minecraft:dweller": {
+					"dwelling_type": "village",
+					"dweller_role": "defender",
+					"update_interval_base": 60,
+					"update_interval_variant": 40,
+					"can_find_poi": true,
+					"can_migrate": true,
+					"first_founding_reward": 0
+				}
+			},
+			"mutant_angry": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 4,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"must_see": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "creeper"
+									}
+								]
+							},
+							"max_dist": 56
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "hoglin"
+									},
+									{
+										"test": "is_difficulty",
+										"operator": "!=",
+										"value": "peaceful"
+									}
+								]
+							},
+							"max_dist": 56
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "zoglin"
+									},
+									{
+										"test": "is_difficulty",
+										"operator": "!=",
+										"value": "peaceful"
+									}
+								]
+							},
+							"max_dist": 56
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:on_target_escape": {
+					"event": "minecraft:on_calm",
+					"target": "self"
+				},
+				"minecraft:angry": {
+					"duration": 125,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 60,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "other",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"target": "self"
+					}
+				}
+			},
+			"mutant_calm": {
+				"minecraft:can_power_jump": {},
+				"minecraft:behavior.mount_pathing": {
+					"priority": 2,
+					"speed_multiplier": 1
+				},
+				"minecraft:horse.jump_strength": {
+					"value": {
+						"range_min": 1,
+						"range_max": 1.2
+					}
+				},
+				"minecraft:input_ground_controlled": {},
+				"minecraft:behavior.controlled_by_player": {
+					"priority": 0
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 4,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"must_see": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "creeper"
+									}
+								]
+							},
+							"max_dist": 56
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "hoglin"
+									},
+									{
+										"test": "is_difficulty",
+										"operator": "!=",
+										"value": "peaceful"
+									}
+								]
+							},
+							"max_dist": 56
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "zoglin"
+									},
+									{
+										"test": "is_difficulty",
+										"operator": "!=",
+										"value": "peaceful"
+									}
+								]
+							},
+							"max_dist": 56
+						}
+					]
+				},
+				"minecraft:on_target_acquired": {
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+			},
+			"plain": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"cherry_blossom": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"glow_berry": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"desert": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"pale": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"iron_tier": {
+				"minecraft:health": {
+					"value": 1400,
+					"max": 1400
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"gold_tier": {
+				"minecraft:health": {
+					"value": 1800,
+					"max": 1800
+				},
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"diamond_tier": {
+				"minecraft:health": {
+					"value": 2500,
+					"max": 2500
+				},
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"emerald_tier": {
+				"minecraft:health": {
+					"value": 3000,
+					"max": 3000
+				},
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"netherite_tier": {
+				"minecraft:health": {
+					"value": 4000,
+					"max": 4000
+				},
+				"minecraft:skin_id": {
+					"value": 4
+				}
+			},
+			"iron_tier_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem/iron_golem.json"
+				}
+			},
+			"gold_tier_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem/iron_golem_gold.json"
+				}
+			},
+			"diamond_tier_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem/iron_golem_diamond.json"
+				}
+			},
+			"emerald_tier_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem/iron_golem_emerald.json"
+				}
+			},
+			"netherite_tier_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/entities/mutants/iron_golem/iron_golem_netherite.json"
+				}
+			}
+		},
+		"components": {
+			"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"oak_log",
+					"birch_log",
+					"spruce_log",
+					"jungle_log",
+					"dark_oak_log",
+					"acacia_log",
+					"cherry_log",
+					"mangrove_log",
+					"stripped_oak_log",
+					"stripped_birch_log",
+					"stripped_spruce_log",
+					"stripped_jungle_log",
+					"stripped_dark_oak_log",
+					"stripped_acacia_log",
+					"stripped_cherry_log",
+					"stripped_mangrove_log",
+					"acacia_leaves",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"birch_leaves",
+					"cherry_leaves",
+					"dark_oak_leaves",
+					"jungle_leaves",
+					"mangrove_leaves",
+					"oak_leaves",
+					"spruce_leaves",
+					"bamboo",
+					"bamboo_sapling",
+					"beetroot",
+					"brown_mushroom",
+					"carrots",
+					"carved_pumpkin",
+					"chorus_flower",
+					"chorus_plant",
+					"deadbush",
+					"double_plant",
+					"leaves",
+					"leaves2",
+					"lit_pumpkin",
+					"melon_block",
+					"melon_stem",
+					"potatoes",
+					"pumpkin",
+					"pumpkin_stem",
+					"red_flower",
+					"red_mushroom",
+					"crimson_fungus",
+					"warped_fungus",
+					"reeds",
+					"sapling",
+					"snow_layer",
+					"sweet_berry_bush",
+					"tallgrass",
+					"turtle_egg",
+					"vine",
+					"waterlily",
+					"wheat",
+					"dandelion",
+					"azalea",
+					"flowering_azalea",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"cave_vines",
+					"cave_vines_body_with_berries",
+					"cave_vines_head_with_berries",
+					"small_dripleaf_block",
+					"big_dripleaf",
+					"spore_blossom",
+					"hanging_roots",
+					"mangrove_leaves"
+				]
+			},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 2.5625,
+				"controlled_value": 2.5625
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 3,
+				"xz_dist": 16
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "equals",
+										"value": 0
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "gold_block"
+									}
+								]
+							},
+							"event": "js7_mutant:tier_iron_to_gold",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 1800,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "equals",
+										"value": 1
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "diamond_block"
+									}
+								]
+							},
+							"event": "js7_mutant:tier_gold_to_diamond",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 2500,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "equals",
+										"value": 2
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "emerald_block"
+									}
+								]
+							},
+							"event": "js7_mutant:tier_diamond_to_emerald",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 3000,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "equals",
+										"value": 3
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "netherite_block"
+									}
+								]
+							},
+							"event": "js7_mutant:tier_emerald_to_netherite",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 4000,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_skin_id",
+										"subject": "self",
+										"operator": "equals",
+										"value": 3
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "netherite_block"
+									},
+									{
+										"test": "is_missing_health",
+										"value": true
+									}
+								]
+							},
+							"event": "js7_mutant:tier_diamond_to_emerald",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 3000,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "equals",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "redstone_block"
+									},
+									{
+										"test": "is_missing_health",
+										"value": true
+									}
+								]
+							},
+							"event": "js7_mutant:on_live",
+							"target": "self"
+						},
+						"use_item": true,
+						"health_amount": 200,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "iron_ingot"
+									},
+									{
+										"test": "is_missing_health",
+										"value": true
+									}
+								]
+							}
+						},
+						"use_item": true,
+						"health_amount": 50,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "iron_nugget"
+									},
+									{
+										"test": "is_missing_health",
+										"value": true
+									}
+								]
+							}
+						},
+						"use_item": true,
+						"health_amount": 15,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "iron_block"
+									},
+									{
+										"test": "is_missing_health",
+										"value": true
+									}
+								]
+							}
+						},
+						"use_item": true,
+						"health_amount": 400,
+						"play_sounds": "irongolem.repair",
+						"interact_text": "action.interact.repair"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_damage",
+										"subject": "self",
+										"operator": "==",
+										"value": "fatal"
+									},
+									{
+										"test": "has_component",
+										"subject": "self",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							}
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"value": "minecraft:behavior.summon_entity"
+									}
+								]
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": {
+					"range_min": 48,
+					"range_max": 67
+				}
+			},
+			"minecraft:movement": {
+				"value": 0.075
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 3,
+				"sound_interval": {
+					"range_min": 2,
+					"range_max": 5
+				},
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "mcreeperblowup"
+								}
+							]
+						},
+						"max_dist": 36,
+						"must_see": false,
+						"walk_speed_multiplier": 1.75,
+						"sprint_speed_multiplier": 1.75
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1.8,
+				"height": 4.15
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:nameable": {},
+			"minecraft:follow_range": {
+				"value": 56,
+				"max": 56
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": false,
+				"avoid_water": true,
+				"avoid_damage_blocks": false
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:type_family": {
+				"family": [
+					"irongolem",
+					"mob",
+					"mirongolem",
+					"mutantmonster",
+					"chemical_x"
+				]
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:leashable": {
+				"soft_distance": 4,
+				"hard_distance": 6,
+				"max_distance": 10
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_transformed": {
+				"randomize": [
+					{
+						"weight": 10,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:dweller"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"plain",
+								"minecraft:player_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "cherry_grove"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"cherry_blossom",
+								"minecraft:player_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "lush_caves"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"glow_berry",
+								"minecraft:player_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "desert"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"desert",
+								"minecraft:player_created"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "pale_garden"
+								}
+							]
+						},
+						"weight": 90,
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"pale",
+								"minecraft:player_created"
+							]
+						}
+					},
+					{
+						"weight": 10,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "==",
+									"value": "minecraft:dweller"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"plain",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "==",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "cherry_grove"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"cherry_blossom",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "==",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "lush_caves"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"glow_berry",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "==",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "desert"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"desert",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "==",
+									"value": "minecraft:dweller"
+								},
+								{
+									"test": "has_biome_tag",
+									"value": "pale_garden"
+								}
+							]
+						},
+						"weight": 90,
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"pale",
+								"minecraft:village_created"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 10,
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"plain",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "cherry_grove"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"cherry_blossom",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "lush_caves"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"glow_berry",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "desert"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"desert",
+								"minecraft:village_created"
+							]
+						}
+					},
+					{
+						"weight": 90,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"value": "pale_garden"
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"iron_tier",
+								"mutant_calm",
+								"pale",
+								"minecraft:village_created"
+							]
+						}
+					}
+				]
+			},
+			"js7_mutant:tier_iron_to_gold": {
+				"remove": {
+					"component_groups": [
+						"iron_tier"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"gold_tier"
+					]
+				}
+			},
+			"js7_mutant:tier_gold_to_diamond": {
+				"remove": {
+					"component_groups": [
+						"gold_tier"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"diamond_tier"
+					]
+				}
+			},
+			"js7_mutant:tier_diamond_to_emerald": {
+				"remove": {
+					"component_groups": [
+						"diamond_tier"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"emerald_tier"
+					]
+				}
+			},
+			"js7_mutant:tier_emerald_to_netherite": {
+				"remove": {
+					"component_groups": [
+						"emerald_tier"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"netherite_tier"
+					]
+				}
+			},
+			"knocked": {
+				"add": {
+					"component_groups": [
+						"stunned"
+					]
+				}
+			},
+			"js7_mutant:on_death_timer": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"on_death_timer"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "other",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"plain"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "other",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"cherry_blossom"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "other",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"glow_berry"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "other",
+									"operator": "==",
+									"value": 3
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"desert"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "other",
+									"operator": "==",
+									"value": 4
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pale"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"subject": "other",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"iron_tier",
+								"iron_tier_loot"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"subject": "other",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"gold_tier",
+								"gold_tier_loot"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"subject": "other",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"diamond_tier",
+								"diamond_tier_loot"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"subject": "other",
+									"operator": "==",
+									"value": 3
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"emerald_tier",
+								"emerald_tier_loot"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"subject": "other",
+									"operator": "==",
+									"value": 4
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"netherite_tier",
+								"netherite_tier_loot"
+							]
+						}
+					}
+				]
+			},
+			"js7_mutant:on_live": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"golem_main",
+								"mutant_calm",
+								"minecraft:player_created"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"on_death_timer",
+								"iron_tier_loot",
+								"gold_tier_loot",
+								"diamond_tier_loot",
+								"emerald_tier_loot",
+								"netherite_tier_loot"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"plain"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"cherry_blossom"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"glow_berry"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 3
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"desert"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 4
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pale"
+							]
+						}
+					}
+				]
+			},
+			"js7_mutant:on_death_time_over": {
+				"add": {
+					"component_groups": [
+						"death_health"
+					]
+				}
+			},
+			"switch_to_range": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 10,
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_attack",
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ranged_mode"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"switch_to_melee": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 10,
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_attack",
+										"can_attack",
+										"ranged_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"melee_mode"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack",
+										"spikes_cooldown"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_cooldown"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"melee_throw": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_1"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"can_attack",
+										"melee_mode",
+										"ranged_mode",
+										"spikes_attack"
+									]
+								}
+							},
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_1_player"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"can_attack",
+										"melee_mode",
+										"ranged_mode",
+										"spikes_attack"
+									]
+								}
+							},
+							{
+								"weight": 25,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack",
+										"spikes_cooldown"
+									]
+								}
+							},
+							{
+								"weight": 25,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_cooldown"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"find_attack_2": {
+				"add": {
+					"component_groups": [
+						"melee_attack_2_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"melee_mode",
+						"ranged_mode",
+						"attack_1",
+						"attack_1_player"
+					]
+				}
+			},
+			"melee_swipe": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_2"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_mode",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode"
+									]
+								}
+							},
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_2_player"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_mode",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"can_attack_3": {
+				"add": {
+					"component_groups": [
+						"find_attack_3_mode"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"melee_mode",
+						"ranged_mode",
+						"attack_1",
+						"melee_attack_2_mode"
+					]
+				}
+			},
+			"melee_smash": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_3"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_mode",
+										"ranged_mode",
+										"attack_1",
+										"attack_2",
+										"attack_1_player",
+										"attack_2_player",
+										"find_attack_3_mode",
+										"melee_attack_2_mode"
+									]
+								}
+							},
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										}
+									]
+								},
+								"weight": 50,
+								"add": {
+									"component_groups": [
+										"attack_3_player"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_mode",
+										"ranged_mode",
+										"attack_1",
+										"attack_2",
+										"attack_1_player",
+										"attack_2_player",
+										"find_attack_3_mode",
+										"melee_attack_2_mode"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"melee_return": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spikes_attack_player",
+								"attack_1_player",
+								"attack_2_player",
+								"attack_3_player",
+								"spikes_attack",
+								"ranged_mode",
+								"attack_1",
+								"melee_attack_2_mode",
+								"attack_2",
+								"find_attack_3_mode",
+								"attack_3",
+								"melee_mode"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"can_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spikes_attack_player",
+								"attack_1_player",
+								"attack_2_player",
+								"attack_3_player",
+								"spikes_attack",
+								"ranged_mode",
+								"attack_1",
+								"melee_attack_2_mode",
+								"attack_2",
+								"find_attack_3_mode",
+								"attack_3",
+								"melee_mode"
+							]
+						}
+					}
+				]
+			},
+			"choose_attack": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 10,
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_attack",
+										"can_attack",
+										"ranged_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"melee_mode"
+									]
+								}
+							},
+							{
+								"weight": 30,
+								"remove": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_attack",
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"spikes_attack",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ranged_mode"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack",
+										"spikes_cooldown"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_tamed"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack",
+										"melee_mode",
+										"attack_1_player",
+										"attack_2_player",
+										"attack_3_player",
+										"ranged_mode",
+										"attack_1",
+										"melee_attack_2_mode",
+										"attack_2",
+										"find_attack_3_mode",
+										"attack_3"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spikes_attack_player",
+										"spikes_cooldown"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"end_spike_coolodwn": {
+				"remove": {
+					"component_groups": [
+						"spikes_cooldown"
+					]
+				}
+			},
+			"minecraft:become_angry": {
+				"remove": {
+					"component_groups": [
+						"spikes_attack_player",
+						"attack_1_player",
+						"attack_2_player",
+						"attack_3_player",
+						"spikes_attack",
+						"ranged_mode",
+						"attack_1",
+						"melee_attack_2_mode",
+						"attack_2",
+						"find_attack_3_mode",
+						"melee_mode",
+						"attack_3",
+						"mutant_calm"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mutant_angry",
+						"can_attack"
+					]
+				}
+			},
+			"minecraft:on_calm": {
+				"remove": {
+					"component_groups": [
+						"spikes_attack_player",
+						"mutant_angry",
+						"attack_1_player",
+						"attack_2_player",
+						"attack_3_player",
+						"spikes_attack",
+						"ranged_mode",
+						"attack_1",
+						"melee_attack_2_mode",
+						"attack_2",
+						"find_attack_3_mode",
+						"can_attack",
+						"melee_mode",
+						"attack_3"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mutant_calm"
+					]
+				}
+			}
+		}
+	}
+}

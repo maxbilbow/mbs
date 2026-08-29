@@ -1,0 +1,20 @@
+//bridge-file-version: #18
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "ad:glowing_ocean"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "ad:glowing_ocean_fog"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#2CB18F"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#66C3FF"
+			}
+		}
+	}
+}

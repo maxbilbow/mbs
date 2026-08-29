@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "abyss_quartz_pillar_29f30f69"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:abyss_quartz_brick_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:abyss_quartz_pillar",
+			"count": 1
+		}
+	}
+}

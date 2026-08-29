@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_boots_4d8b4c80"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "boots:scrap_metal_boots",
+			"count": 1
+		}
+	}
+}

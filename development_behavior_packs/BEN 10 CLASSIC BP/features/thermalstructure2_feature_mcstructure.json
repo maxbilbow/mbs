@@ -1,0 +1,47 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "generation:thermalstructure2_feature_mcstructure"
+		},
+		"structure_name": "mystructure:thermalstructure2",
+		"adjustment_radius": 8,
+		"facing_direction": "south",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_whitelist": [
+					"minecraft:sand",
+					"minecraft:gravel",
+					"minecraft:seagrass",
+					"minecraft:kelp",
+					"block:sea_moss_block",
+					"minecraft:pale_moss_block",
+					"minecraft:stone",
+					"minecraft:granite",
+					"minecraft:diorite",
+					"minecraft:andesite",
+					"block:sea_moss_carpet",
+					"minecraft:sea_pickle",
+					"block:marble",
+					"minecraft:water",
+					"minecraft:dirt",
+					"block:thermal_sand",
+					"block:thermal_sandstone",
+					"block:thermal_stone",
+					"block:thermal_stone_spike",
+					"block:thermal_sandstone_spike",
+					"block:small_thermal_sandstone_spike",
+					"block:small_thermal_stone_spike",
+					"block:thermal_roots",
+					"block:thermal_log",
+					"block:thermal_leaves",
+					"block:thermal_geyser",
+					"minecraft:magma",
+					"minecraft:obsidian",
+					"minecraft:bubble_column"
+				]
+			}
+		}
+	}
+}

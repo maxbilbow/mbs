@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:yellow_petels_feature"
+		},
+		"features": [
+			[
+				"gen:yellow_petels1_feature",
+				1
+			],
+			[
+				"gen:yellow_petels2_feature",
+				1
+			],
+			[
+				"gen:yellow_petels3_feature",
+				1
+			],
+			[
+				"gen:yellow_petels4_feature",
+				1
+			]
+		]
+	}
+}

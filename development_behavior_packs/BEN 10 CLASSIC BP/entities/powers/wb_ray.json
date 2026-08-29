@@ -19,6 +19,15 @@
 		"component_groups": {
 			"despawn": {
 				"minecraft:despawn": {}
+			},
+			"explode_on_hit": {
+				"minecraft:explode": {
+					"fuseLength": 0,
+					"fuseLit": true,
+					"power": 5,
+					"causes_fire": true,
+					"destroyAffectedByGriefing": true
+				}
 			}
 		},
 		"components": {
@@ -28,14 +37,26 @@
 				]
 			},
 			"minecraft:collision_box": {
-				"width": 2,
-				"height": 2
+				"width": 0.5,
+				"height": 0.5
 			},
 			"minecraft:projectile": {
 				"onHit": {
-					"remove_on_hit": {}
+					"impact_damage": {
+						"damage": 10,
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": true
+					},
+					"definition_event": {
+						"affect_projectile": true,
+						"eventTrigger": {
+							"event": "explode_event",
+							"target": "self"
+						}
+					}
 				},
-				"power": 1.5,
+				"power": 8,
 				"gravity": 0,
 				"angleoffset": 0
 			},
@@ -46,6 +67,13 @@
 				"add": {
 					"component_groups": [
 						"despawn"
+					]
+				}
+			},
+			"explode_event": {
+				"add": {
+					"component_groups": [
+						"explode_on_hit"
 					]
 				}
 			}

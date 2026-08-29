@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_zombie_2016": {
+			"arrays": {
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.villager"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.mutant_villager_2016": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

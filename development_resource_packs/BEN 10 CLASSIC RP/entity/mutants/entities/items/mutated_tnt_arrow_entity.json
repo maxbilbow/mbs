@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:boom_arrow",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/arrows/mutated_arrow"
+			},
+			"geometry": {
+				"default": "geometry.mboomarrow"
+			},
+			"animations": {
+				"move": "animation.mweapons.move"
+			},
+			"scripts": {
+				"scale": "1.15",
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			]
+		}
+	}
+}

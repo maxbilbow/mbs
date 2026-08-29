@@ -1,0 +1,163 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.evupul",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						1,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								1,
+								-2
+							],
+							"size": [
+								6,
+								3,
+								16
+							],
+							"uv": [
+								0,
+								8
+							]
+						}
+					],
+					"locators": {
+						"lead": [
+							0,
+							2,
+							-2
+						]
+					}
+				},
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						2,
+						-1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								1,
+								-6
+							],
+							"size": [
+								8,
+								4,
+								4
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					],
+					"parent": "body"
+				},
+				{
+					"name": "tail",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								1.5,
+								14
+							],
+							"size": [
+								2,
+								2,
+								12
+							],
+							"uv": [
+								0,
+								49
+							]
+						}
+					],
+					"parent": "body"
+				},
+				{
+					"name": "wing1",
+					"pivot": [
+						2,
+						2,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								2,
+								2,
+								0
+							],
+							"size": [
+								17,
+								0,
+								22
+							],
+							"uv": [
+								0,
+								27
+							]
+						}
+					],
+					"parent": "body"
+				},
+				{
+					"name": "wing2",
+					"pivot": [
+						-2,
+						2,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-19,
+								2,
+								0
+							],
+							"size": [
+								17,
+								0,
+								22
+							],
+							"uv": [
+								0,
+								27
+							],
+							"mirror": true
+						}
+					],
+					"parent": "body"
+				}
+			]
+		}
+	]
+}

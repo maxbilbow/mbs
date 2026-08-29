@@ -1,0 +1,76 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_zombie_pigman",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/zombie_pigman/zombie_pigman"
+			},
+			"geometry": {
+				"default": "geometry.mzombiepig",
+				"baby": "geometry.mzombiepig_baby"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"sound_effects": {
+				"smash": "mob.mzombiepig.zpigangry",
+				"roar": "mob.zombiepig.zpigdeath"
+			},
+			"scripts": {
+				"scale": "1.35"
+			},
+			"animations": {
+				"big_head": "animation.mzombie.big_head",
+				"smash_attack": "animation.mzombie.swing_right_sword_knockback",
+				"idle": "animation.mzombie.general",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_legs": "animation.mzombie.move_legs",
+				"no_item": "animation.mutant.no_item",
+				"throw": "animation.mzombie.throw_target_rsword",
+				"throw_success": "animation.mzombie.throw_target_success_rsword",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"roaring": "animation.mzombiepig.roar",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mzombiepig.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.jumpable_mzombie.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_zombie_pigman",
+				"controller.render.zombified_mutant_piglin_weapon"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 2
+			}
+		}
+	}
+}

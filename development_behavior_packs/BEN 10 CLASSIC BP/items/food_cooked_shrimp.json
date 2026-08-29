@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:cooked_shrimp",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.cookedFood"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:cooked_shrimp"
+			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.cookedFood"
+			},
+			"minecraft:display_name": {
+				"value": "Cooked Shrimp"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 0.8,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 4,
+				"saturation_modifier": 3
+			}
+		}
+	}
+}

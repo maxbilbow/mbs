@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "boots:malachite_boots",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.boots"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "malachite_boots"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_feet"
+			},
+			"minecraft:durability": {
+				"max_durability": 1200
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.feet",
+				"protection": 4
+			},
+			"minecraft:display_name": {
+				"value": "Malachite Boots"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

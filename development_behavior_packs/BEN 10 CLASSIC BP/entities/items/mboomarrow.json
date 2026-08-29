@@ -1,0 +1,90 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:boom_arrow",
+			"runtime_identifier": "minecraft:arrow",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:type_family": {
+					"family": [
+						"mboom_arrow"
+					]
+				},
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 1.7
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mboom_arrow"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							10,
+							13
+						],
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					},
+					"arrow_effect": {}
+				},
+				"hitSound": "bow.hit",
+				"power": 2.75,
+				"gravity": 0.015,
+				"uncertaintyBase": 10,
+				"uncertaintyMultiplier": 4,
+				"anchor": 1.1,
+				"inertia": 1,
+				"liquid_inertia": 0.95,
+				"shouldbounce": true,
+				"offset": [
+					-0.1,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			}
+		}
+	}
+}

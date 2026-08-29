@@ -1,0 +1,78 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_wither_skeleton",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/skeleton/wither_skeleton",
+				"blaze_rods": "textures/mutants/entity/skeleton/wither_skeleton_blaze_rods"
+			},
+			"geometry": {
+				"default": "geometry.mwitherskeleton"
+			},
+			"particle_effects": {
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:chemical_x_particle",
+				"blaze_smoke_shoulders": "mutant:blaze_smoke_shoulder_particle",
+				"blaze_smoke_legs": "mutant:blaze_smoke_legs_particle",
+				"blaze_flame_shoulders": "mutant:blaze_flame_shoulder_particle",
+				"blaze_small_fire_shoulders": "mutant:blaze_small_flame_shoulder_particle"
+			},
+			"scripts": {
+				"scale": "1.0",
+				"pre_animation": [
+					"variable.attack_num = Math.round(Math.random(1, 2));",
+					"variable.attack_roar_num = Math.round(Math.random(1, 2));"
+				]
+			},
+			"animations": {
+				"idle": "animation.mwither_skeleton.general",
+				"attack": "animation.mskele.swing_right_sword_quick",
+				"attack_2": "animation.mskele.swing_left_sword_quick",
+				"attack_knockback": "animation.mskele.swing_right_sword",
+				"attack_knockback_2": "animation.mskele.swing_left_sword",
+				"look_at_target": "animation.mskeleton.look_at_target",
+				"range_charge": "animation.mwither_skeleton.charge",
+				"range_uncharge": "animation.mwither_skeleton.uncharge",
+				"range_shoot": "animation.mwither_skeleton.shoot",
+				"guard": "animation.mwither_skeleton.on_guard",
+				"walk": "animation.mskeleton.walk",
+				"walk_arms": "animation.mskeleton.walk_arms",
+				"start_swing": "animation.mwither_skeleton.sword_swing_start",
+				"swing_loop": "animation.mwither_skeleton.sword_swing_loop",
+				"swing_end": "animation.mwither_skeleton.sword_swing_end",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mskeleton.death"
+			},
+			"animation_controllers": [
+				{
+					"death": "controller.animation.mskeleton.death"
+				},
+				{
+					"general": "controller.animation.mwither_skeleton.general"
+				},
+				{
+					"move": "controller.animation.mwither_skeleton.walking"
+				},
+				{
+					"range": "controller.animation.mwither_skeleton.walk_arms"
+				},
+				{
+					"particle": "controller.animation.mwither_skeleton.particle"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_wither_skeleton",
+				"controller.render.mutant_wither_skeleton_blaze_rod",
+				"controller.render.mutant_wither_skeleton_weapon"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 7
+			}
+		}
+	}
+}

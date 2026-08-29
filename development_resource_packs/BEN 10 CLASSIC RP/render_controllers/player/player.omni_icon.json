@@ -336,6 +336,86 @@
 					"*": "query.variant == 0 && query.skin_id == 121 && variable.holding_omni_icon"
 				}
 			]
+		},
+		"controller.render.omni.feedback_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.feedback_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 122 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.buzzshock_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.buzzshock_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 123 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.omni.spitter_icon": {
+			"geometry": "geometry.omni_icon",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.spitter_icon"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 0 && query.skin_id == 124 && variable.holding_omni_icon"
+				}
+			]
+		},
+		"controller.render.player.omni2_swampfire": {
+			"geometry": "geometry.omni2_hologram",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.omni2_swampfire"
+			],
+			"part_visibility": [
+				{
+					"*": true
+				}
+			]
+		},
+		"controller.render.player.omni2_swampfire_3p": {
+			"geometry": "geometry.omni2_hologram_3p",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.omni2_swampfire"
+			],
+			"part_visibility": [
+				{
+					"*": true
+				}
+			]
 		}
 	}
 }

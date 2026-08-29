@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:lavender_feature"
+		},
+		"features": [
+			[
+				"gen:lavender_flower_feature",
+				10
+			],
+			[
+				"gen:scatter_purple_petels_feature",
+				1
+			],
+			[
+				"gen:grass2_overworld_feature",
+				1
+			],
+			[
+				"gen:grass3_overworld_feature",
+				1
+			]
+		]
+	}
+}

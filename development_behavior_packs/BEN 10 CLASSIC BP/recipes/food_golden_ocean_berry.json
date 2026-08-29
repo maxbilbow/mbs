@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "golden_ocean_berry_041a6cc4"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"ABA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:gold_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "food:ocean_berry",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "food:golden_ocean_berry",
+			"count": 1
+		}
+	}
+}

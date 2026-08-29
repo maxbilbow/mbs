@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:lobber_flesh_minion",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/mutants/items/rotten_flesh"
+			},
+			"geometry": {
+				"default": "geometry.lobber_zombie_flesh"
+			},
+			"animations": {
+				"move": "animation.mlobber.flesh"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			]
+		}
+	}
+}

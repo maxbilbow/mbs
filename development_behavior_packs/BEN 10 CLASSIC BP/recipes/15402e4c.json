@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_88ce6d68"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" A ",
+			"ABA",
+			" A "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:stick",
+				"data": 0
+			},
+			"B": {
+				"item": "block:dried_sea_sponge",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:sponge",
+				"count": 1,
+				"data": 0
+			}
+		]
+	}
+}

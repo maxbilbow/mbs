@@ -1,0 +1,92 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:glow_stick",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+			"animations": {
+				"walk": "controller.animation.glowstick"
+			},
+			"scripts": {
+				"animate": [
+					"walk"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					}
+				},
+				"power": 1.6,
+				"gravity": 0.1,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 0,
+				"uncertainty_multiplier": 0,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"reflect_on_hurt": true,
+				"catch_fire": true
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					10,
+					20
+				],
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"events": {
+			"water": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

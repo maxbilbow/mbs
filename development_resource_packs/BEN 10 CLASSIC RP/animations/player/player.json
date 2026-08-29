@@ -5,22 +5,34 @@
 			"loop": true,
 			"bones": {
 				"head": {
-					"scale": "(query.variant == 19 || query.variant == 20 || query.variant == 15 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 19 || query.variant == 20 || query.variant == 15 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
 				},
 				"body": {
-					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
+				},
+				"rightArm": {
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
 				},
 				"rightarm": {
-					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27) ? 1.0 : 0.0"
+				},
+				"leftArm": {
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
 				},
 				"leftarm": {
-					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 19 || query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27) ? 1.0 : 0.0"
+				},
+				"rightLeg": {
+					"scale": "(query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
 				},
 				"rightleg": {
-					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27) ? 1.0 : 0.0"
+				},
+				"leftLeg": {
+					"scale": "(query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27 || (query.variant == 10 && query.skin_id >= 200)) ? 1.0 : 0.0"
 				},
 				"leftleg": {
-					"scale": "(query.variant == 21 || query.variant == 23) ? 1.0 : 0.0"
+					"scale": "(query.variant == 21 || query.variant == 23 || query.variant == 24 || query.variant == 25 || query.variant == 27) ? 1.0 : 0.0"
 				}
 			}
 		},

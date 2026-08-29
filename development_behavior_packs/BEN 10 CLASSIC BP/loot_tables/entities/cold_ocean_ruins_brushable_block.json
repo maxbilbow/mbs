@@ -1,0 +1,113 @@
+//bridge-file-version: #3
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 1,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:explorer_pottery_sherd",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:mourner_pottery_sherd",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:plenty_pottery_sherd",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:blade_pottery_sherd",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:iron_axe",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:emerald",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:wheat",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:wooden_hoe",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:coal",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:gold_nugget",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "item:scrap_metal",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "food:sea_grapes",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "item:malachite",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "item:sea_prism",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:salmon",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"weight": 2,
+					"name": "minecraft:fish"
+				},
+				{
+					"type": "item",
+					"name": "minecraft:bone",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "block:fishing_trap",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "item:sea_prism_forging_template",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:sniffer_egg",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

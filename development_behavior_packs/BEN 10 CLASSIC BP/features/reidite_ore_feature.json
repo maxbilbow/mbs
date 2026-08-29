@@ -1,0 +1,19 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "ore:reidite_ore_feature"
+		},
+		"count": 4,
+		"replace_rules": [
+			{
+				"places_block": "ore:reidite_ore",
+				"may_replace": [
+					{
+						"name": "block:thermal_stone"
+					}
+				]
+			}
+		]
+	}
+}

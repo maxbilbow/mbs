@@ -1,0 +1,71 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.endersoul_block",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "block",
+					"parent": "root",
+					"pivot": [
+						0,
+						3.25,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								-4.75,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"inflate": -4.75,
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "rightitem",
+					"parent": "block",
+					"pivot": [
+						4.05,
+						4.4,
+						4.05
+					],
+					"rotation": [
+						-20,
+						45,
+						0
+					]
+				}
+			]
+		}
+	]
+}

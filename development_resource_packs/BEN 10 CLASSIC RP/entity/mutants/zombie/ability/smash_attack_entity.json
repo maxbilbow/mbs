@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:smash_attack",
+			"materials": {
+				"default": "npc"
+			},
+			"geometry": {
+				"default": "geometry.mutant_smash_locator"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/zombie/zombie"
+			},
+			"enable_attachables": false,
+			"particle_effects": {
+				"smash": "mutant:smash_particle"
+			},
+			"scripts": {
+				"animate": [
+					"particle"
+				]
+			},
+			"animations": {
+				"particle": "animation.mutant.smash_particle"
+			},
+			"render_controllers": [
+				"controller.render.mutant_smash_attack"
+			]
+		}
+	}
+}

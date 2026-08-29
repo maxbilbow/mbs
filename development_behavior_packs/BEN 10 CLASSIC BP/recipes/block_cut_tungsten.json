@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "cut_tungsten_1ec07313"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:tungsten_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:cut_tungsten",
+			"count": 4
+		}
+	}
+}

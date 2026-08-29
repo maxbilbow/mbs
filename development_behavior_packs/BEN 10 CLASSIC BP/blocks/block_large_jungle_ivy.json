@@ -1,0 +1,49 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:large_jungle_ivy",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.grass"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "broken"
+					}
+				]
+			},
+			"minecraft:geometry": "geometry.plant_large",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"minecraft:collision_box": false,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4.2
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_large_jungle_ivy",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		},
+		"events": {}
+	}
+}

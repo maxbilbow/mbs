@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sea_mine_bc2f7510"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ABA",
+			"BAB",
+			"ABA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:gunpowder",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:iron_ingot",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:sea_mine",
+			"count": 1
+		}
+	}
+}

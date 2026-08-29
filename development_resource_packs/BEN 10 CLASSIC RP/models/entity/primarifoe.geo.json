@@ -1,0 +1,337 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.primarifoe",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [
+					0,
+					1.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightleg",
+					"pivot": [
+						-3,
+						16,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-3
+							],
+							"size": [
+								5,
+								16,
+								5
+							],
+							"uv": [
+								50,
+								43
+							]
+						},
+						{
+							"origin": [
+								-5,
+								0,
+								-4
+							],
+							"size": [
+								5,
+								2,
+								1
+							],
+							"uv": [
+								70,
+								45
+							]
+						}
+					]
+				},
+				{
+					"name": "leftleg",
+					"pivot": [
+						3,
+						16,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								0,
+								-3
+							],
+							"size": [
+								5,
+								16,
+								5
+							],
+							"uv": [
+								60,
+								21
+							]
+						},
+						{
+							"origin": [
+								0,
+								0,
+								-4
+							],
+							"size": [
+								5,
+								2,
+								1
+							],
+							"uv": [
+								70,
+								42
+							]
+						}
+					]
+				},
+				{
+					"name": "torso",
+					"pivot": [
+						0,
+						17,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								16,
+								-3
+							],
+							"size": [
+								10,
+								16,
+								5
+							],
+							"uv": [
+								0,
+								40
+							]
+						},
+						{
+							"origin": [
+								-5,
+								16,
+								-3
+							],
+							"size": [
+								10,
+								16,
+								5
+							],
+							"inflate": 0.35,
+							"uv": [
+								40,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "leftarm",
+					"parent": "torso",
+					"pivot": [
+						7,
+						30,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								15,
+								-3
+							],
+							"size": [
+								5,
+								17,
+								5
+							],
+							"uv": [
+								30,
+								43
+							]
+						},
+						{
+							"origin": [
+								6.5,
+								27,
+								-3
+							],
+							"size": [
+								5,
+								6,
+								5
+							],
+							"inflate": 0.5,
+							"uv": [
+								50,
+								64
+							]
+						},
+						{
+							"origin": [
+								7,
+								27,
+								-3
+							],
+							"size": [
+								4,
+								5,
+								5
+							],
+							"uv": [
+								70,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "rightarm",
+					"parent": "torso",
+					"pivot": [
+						-7,
+						30,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-10,
+								15,
+								-3
+							],
+							"size": [
+								5,
+								17,
+								5
+							],
+							"uv": [
+								40,
+								21
+							]
+						},
+						{
+							"origin": [
+								-11.5,
+								27,
+								-3
+							],
+							"size": [
+								5,
+								6,
+								5
+							],
+							"inflate": 0.5,
+							"uv": [
+								24,
+								65
+							]
+						},
+						{
+							"origin": [
+								-11,
+								27,
+								-3
+							],
+							"size": [
+								4,
+								5,
+								5
+							],
+							"uv": [
+								70,
+								10
+							]
+						}
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightarm",
+					"pivot": [
+						-7,
+						18,
+						-1
+					]
+				},
+				{
+					"name": "head",
+					"parent": "torso",
+					"pivot": [
+						0,
+						35,
+						0.6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								32,
+								-5.5
+							],
+							"size": [
+								10,
+								10,
+								10
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-5,
+								32,
+								-5.5
+							],
+							"size": [
+								10,
+								10,
+								10
+							],
+							"inflate": 0.35,
+							"uv": [
+								0,
+								20
+							]
+						},
+						{
+							"origin": [
+								-5,
+								27,
+								-5.6
+							],
+							"size": [
+								10,
+								10,
+								2
+							],
+							"uv": [
+								0,
+								61
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

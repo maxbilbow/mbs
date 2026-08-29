@@ -1,0 +1,209 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lilly_litter",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [
+						0,
+						14,
+						0
+					]
+				},
+				{
+					"name": "back_left",
+					"parent": "main",
+					"pivot": [
+						-8,
+						14,
+						8
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								14.99,
+								-8
+							],
+							"size": [
+								8,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								12,
+								0
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": {
+								"up": {
+									"uv": [
+										8,
+										8
+									],
+									"uv_size": [
+										-8,
+										-8
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "front_left",
+					"parent": "main",
+					"pivot": [
+						-8,
+						14,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								15,
+								0
+							],
+							"size": [
+								8,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								14,
+								0
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": {
+								"up": {
+									"uv": [
+										8,
+										16
+									],
+									"uv_size": [
+										-8,
+										-8
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "front_right",
+					"parent": "main",
+					"pivot": [
+						8,
+						14,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								15,
+								0
+							],
+							"size": [
+								8,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								13,
+								0
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": {
+								"up": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-8,
+										-8
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "back_right",
+					"parent": "main",
+					"pivot": [
+						8,
+						14,
+						8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								15,
+								-8
+							],
+							"size": [
+								8,
+								0,
+								8
+							],
+							"pivot": [
+								0,
+								13,
+								0
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": {
+								"up": {
+									"uv": [
+										16,
+										8
+									],
+									"uv_size": [
+										-8,
+										-8
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

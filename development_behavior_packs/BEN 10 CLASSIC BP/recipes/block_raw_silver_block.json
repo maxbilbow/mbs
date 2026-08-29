@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "raw_silver_block_0e55996f"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:raw_silver",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:raw_silver_block",
+			"count": 1
+		}
+	}
+}

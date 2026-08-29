@@ -1,0 +1,39 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:mutant_stray_boots",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.boots"
+			}
+		},
+		"components": {
+			"minecraft:display_name": {
+				"value": "Mutant Stray Boots"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "js7_mutant:stray_boots"
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.feet",
+				"protection": 2
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_feet",
+				"value": 15
+			},
+			"minecraft:durability": {
+				"max_durability": 195
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"minecraft:transformable_items",
+					"minecraft:leather_tier"
+				]
+			}
+		}
+	}
+}

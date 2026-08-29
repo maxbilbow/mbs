@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:sea_pickle_feature"
+		},
+		"features": [
+			[
+				"gen:sea_pickle1_feature",
+				1
+			],
+			[
+				"gen:sea_pickle2_feature",
+				1
+			],
+			[
+				"gen:sea_pickle3_feature",
+				1
+			],
+			[
+				"gen:sea_pickle4_feature",
+				1
+			]
+		]
+	}
+}

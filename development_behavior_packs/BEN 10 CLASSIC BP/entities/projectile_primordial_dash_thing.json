@@ -1,0 +1,66 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:primordial_dash_thing",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.3125,
+				"height": 0.3125
+			},
+			"minecraft:projectile": {
+				"power": 0.7,
+				"gravity": 0,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 5,
+				"uncertainty_multiplier": 4,
+				"reflect_on_hurt": true
+			},
+			"minecraft:physics": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					2,
+					2
+				],
+				"time_down_event": {
+					"event": "effects",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"effects": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

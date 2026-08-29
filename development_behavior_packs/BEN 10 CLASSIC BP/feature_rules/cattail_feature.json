@@ -1,0 +1,61 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "gen:cattail_feature",
+			"places_feature": "gen:scatter_cattail_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "cold"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "ocean"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "beach"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "frozen"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 4,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+     			 "y": 62,
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

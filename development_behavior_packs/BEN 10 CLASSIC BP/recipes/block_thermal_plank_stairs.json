@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_plank_stairs_5633d629"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A  ",
+			"AA ",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_planks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_plank_stairs",
+			"count": 3
+		}
+	}
+}

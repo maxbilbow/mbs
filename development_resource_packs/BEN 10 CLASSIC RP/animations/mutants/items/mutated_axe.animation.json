@@ -1,0 +1,78 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutated_axe.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						112.5,
+						60,
+						-45
+					],
+					"position": [
+						0,
+						25,
+						5
+					]
+				},
+				"axe": {
+					"rotation": [
+						0,
+						-15,
+						5
+					]
+				}
+			}
+		},
+		"animation.mutated_axe.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						95,
+						0,
+						0
+					],
+					"position": [
+						0,
+						23,
+						-1
+					],
+					"scale": 1.15
+				},
+				"axe": {
+					"rotation": [
+						10,
+						2.5,
+						5
+					]
+				}
+			}
+		},
+		"animation.mutated_axe.tamed_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						-25,
+						0,
+						0
+					],
+					"position": [
+						2.5,
+						-0.75,
+						-0.5
+					]
+				},
+				"axe": {
+					"rotation": [
+						-35,
+						-90,
+						0
+					]
+				}
+			}
+		}
+	}
+}

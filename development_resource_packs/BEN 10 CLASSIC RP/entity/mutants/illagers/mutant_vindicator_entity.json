@@ -1,0 +1,75 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_vindicator",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/illagers/mutant_vindicator"
+			},
+			"geometry": {
+				"default": "geometry.mutant_vindicator"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"scripts": {
+				"scale": "1.325"
+			},
+			"animations": {
+				"big_head": "animation.mzombie.big_head",
+				"smash_attack": "animation.mvindicator.swing_axe",
+				"idle": "animation.mvindicator.bob",
+				"idle_axe": "animation.mvindicator.axe_bob",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mvindicator.move_axe",
+				"walk_legs": "animation.mzombie.move_legs",
+				"smash": "animation.mzombie.smash",
+				"throw": "animation.mvindicator.throw_target_axe",
+				"throw_success": "animation.mvindicator.throw_target_success_axe",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"axe_attack": "animation.mvindicator.smash_attack",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"start_axe_swing": "animation.mvindicator.swing_axe_special",
+				"axe_swing_loop": "animation.mvindicator.swing_axe_special_loop",
+				"axe_swing_end": "animation.mvindicator.swing_axe_special_end",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mvindicator.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.mvindicator.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mvindicator",
+				"controller.render.mutant_vindicator_weapon"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 24
+			}
+		}
+	}
+}

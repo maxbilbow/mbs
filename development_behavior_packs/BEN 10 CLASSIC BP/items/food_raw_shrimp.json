@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:raw_shrimp",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.rawFood"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:raw_shrimp"
+			},
+			"minecraft:display_name": {
+				"value": "Raw Shrimp"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 0.8,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 1,
+				"saturation_modifier": 0.3
+			}
+		}
+	}
+}

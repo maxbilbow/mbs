@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "minecraft:prismarine_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:polished_prismarine",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "minecraft:prismarine_bricks",
+			"count": 4
+		}
+	}
+}

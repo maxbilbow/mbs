@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "gen:ocean_berry_tree_feature"
+		},
+		"places_block": "block:ocean_berry_tree",
+		"enforce_survivability_rules": false,
+		"enforce_placement_rules": false,
+		"may_attach_to": {
+			"bottom": [
+				"block:abyssal_moss_block",
+				"block:lomos_abyssal_slag",
+				"block:lomos_moss_block",
+				"block:abyssal_slag"
+			]
+		},
+		"may_replace": [
+			"minecraft:water"
+		]
+	}
+}

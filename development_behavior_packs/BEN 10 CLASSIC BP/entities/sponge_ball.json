@@ -1,0 +1,97 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:sponge_ball",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"event_trigger": {
+							"event": "attacks"
+						}
+					}
+				},
+				"hit_sound": "icebomb.hit",
+				"power": 0.75,
+				"gravity": 0.025,
+				"angle_offset": 0,
+				"inertia": 1,
+				"liquid_inertia": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:timer": {
+				"time": [
+					0,
+					0
+				],
+				"looping": true,
+				"time_down_event": {
+					"event": "timer",
+					"filters": {
+						"all_of": [
+							{
+								"test": "in_water",
+								"value": true
+							}
+						]
+					}
+				}
+			}
+		},
+		"events": {
+			"timer": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"fill ~4~1~4 ~-4~-3~-4 air[] replace water"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"attacks": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"fill ~2~~2 ~-2~-2~-2 ice[] replace water",
+								"execute at @e[type=slime,r=4] run fill ~~~ ~~~ block:ice_slime replace air",
+								"tp @e[type=slime,r=4] ~~~1000000"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

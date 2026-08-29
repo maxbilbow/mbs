@@ -1,0 +1,176 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_enderman_death": {
+			"overlay_color": {
+				"r": "0.5+math.cos(1080*query.anim_time)*0.1+math.min(math.max(0,query.anim_time*0.15),1)",
+				"g": "0",
+				"b": "0.5+math.cos(1080*query.anim_time)*0.1+math.min(math.max(0,query.anim_time*0.15),1)",
+				"a": "0.5+math.cos(1080*query.anim_time)*0.1+math.min(math.max(0,query.anim_time*0.15),1)"
+			},
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(!query.is_powered*0.6)+(!query.is_alive*-0.6)"
+			},
+			"arrays": {
+				"materials": {
+					"Array.materials": [
+						"Material.default",
+						"Material.invisible"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.clone"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.clone"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "array.materials[query.is_invisible]"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		},
+		"controller.render.mutant_enderman": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(!query.is_powered*0.6)+(!query.is_alive*-0.6)"
+			},
+			"arrays": {
+				"materials": {
+					"Array.materials": [
+						"Material.default",
+						"Material.invisible"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.clone"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.clone"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "array.materials[query.is_invisible]"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		},
+		"controller.render.mutant_enderman_eyes": {
+			"overlay_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 0.15
+			},
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(!query.is_powered*0.6)+(!query.is_alive*-0.6)"
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.eyes"
+				}
+			],
+			"textures": [
+				"texture.eyes"
+			],
+			"part_visibility": [
+				{
+					"*": "!query.is_powered"
+				}
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.endersoul_block": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"uv_anim": {
+				"offset": [
+					"query.life_time*.4*.2",
+					"query.life_time*.4*.2"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"overlay_color": {
+				"r": "1",
+				"g": "1",
+				"b": "1",
+				"a": "0"
+			},
+			"ignore_lighting": true
+		},
+		"controller.render.mutant_enderman_screech": {
+			"geometry": "geometry.layer",
+			"materials": [
+				{
+					"*": "material.armor"
+				}
+			],
+			"textures": [
+				"texture.armor"
+			],
+			"overlay_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 1
+			},
+			"part_visibility": [
+				{
+					"*": "query.is_roaring"
+				}
+			],
+			"uv_anim": {
+				"offset": [
+					"(query.is_roaring?(math.cos(query.life_time*10.1)*2):0)",
+					"(query.is_roaring?(math.cos(query.life_time*11.62)*2):0)"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 0.55,
+			"ignore_lighting": true
+		}
+	}
+}

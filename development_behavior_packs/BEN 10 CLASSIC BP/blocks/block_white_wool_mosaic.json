@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:white_wool_mosaic",
+			"menu_category": {
+				"category": "construction",
+				"group": "itemGroup.name.wool"
+			}
+		},
+		"components": {
+			"tag:minecraft:is_shears_item_destructible": {},
+			"minecraft:light_dampening": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			}
+		}
+	}
+}

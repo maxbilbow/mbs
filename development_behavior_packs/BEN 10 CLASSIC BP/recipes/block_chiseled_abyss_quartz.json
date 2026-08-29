@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_abyss_quartz_eed6b315"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:abyss_quartz_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_abyss_quartz",
+			"count": 1
+		}
+	}
+}

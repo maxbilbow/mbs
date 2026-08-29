@@ -1,0 +1,82 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mvillager_base": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.base"
+			]
+		},
+		"controller.render.mvillager_masked": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"arrays": {
+				"textures": {
+					"Array.biomes": [
+						"Texture.plains",
+						"Texture.desert",
+						"Texture.jungle",
+						"Texture.savanna",
+						"Texture.snow",
+						"Texture.swamp",
+						"Texture.taiga"
+					],
+					"Array.professions": [
+						"Texture.unskilled",
+						"Texture.farmer",
+						"Texture.fisherman",
+						"Texture.shepherd",
+						"Texture.fletcher",
+						"Texture.librarian",
+						"Texture.cartographer",
+						"Texture.cleric",
+						"Texture.armorer",
+						"Texture.weapon_smith",
+						"Texture.tool_smith",
+						"Texture.butcher",
+						"Texture.leatherworker",
+						"Texture.stonemason",
+						"Texture.nitwit"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "(query.is_baby||variable.profession_index==0)?material.default:material.masked"
+				}
+			],
+			"textures": [
+				"array.biomes[query.mark_variant]",
+				"array.professions[variable.profession_index]"
+			]
+		}
+	}
+}

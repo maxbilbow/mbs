@@ -1,0 +1,113 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_wolf",
+			"textures": {
+				"pale_default": "textures/mutants/entity/wolf/wolf_v2",
+				"pale_angry": "textures/mutants/entity/wolf/wolf_angry_v2",
+				"ashen_default": "textures/mutants/entity/wolf/wolf_ashen",
+				"ashen_angry": "textures/mutants/entity/wolf/wolf_ashen_angry",
+				"black_default": "textures/mutants/entity/wolf/wolf_black",
+				"black_angry": "textures/mutants/entity/wolf/wolf_black_angry",
+				"chestnut_default": "textures/mutants/entity/wolf/wolf_chestnut",
+				"chestnut_angry": "textures/mutants/entity/wolf/wolf_chestnut_angry",
+				"rusty_default": "textures/mutants/entity/wolf/wolf_rusty",
+				"rusty_angry": "textures/mutants/entity/wolf/wolf_rusty_angry",
+				"snowy_default": "textures/mutants/entity/wolf/wolf_snowy",
+				"snowy_angry": "textures/mutants/entity/wolf/wolf_snowy_angry",
+				"spotted_default": "textures/mutants/entity/wolf/wolf_spotted",
+				"spotted_angry": "textures/mutants/entity/wolf/wolf_spotted_angry",
+				"striped_default": "textures/mutants/entity/wolf/wolf_striped",
+				"striped_angry": "textures/mutants/entity/wolf/wolf_striped_angry",
+				"woods_default": "textures/mutants/entity/wolf/wolf_woods",
+				"woods_angry": "textures/mutants/entity/wolf/wolf_woods_angry",
+				"wolf_tamed": "textures/mutants/entity/wolf/wolf_collar",
+				"wolf_armor": "textures/mutants/entity/wolf/wolf_armor",
+				"dyed_wolf_armor": "textures/mutants/entity/wolf/wolf_armor"
+			},
+			"materials": {
+				"default": "entity_alphatest",
+				"wolf_tamed": "cat",
+				"wolf_armor": "mutant_wolf_armor"
+			},
+			"geometry": {
+				"default": "geometry.mutant_wolf_v2",
+				"wolf_armor": "geometry.mutant_wolf_armor"
+			},
+			"render_controllers": [
+				"controller.render.mwolf",
+				"controller.render.mwolf_tamed",
+				"controller.render.mwolf_armor"
+			],
+			"enable_attachables": true,
+			"hide_armor": true,
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 8
+			},
+			"sound_effects": {
+				"bark": "mob.mwolf.idle",
+				"baby_bark": "mob.mwolf.baby_idle"
+			},
+			"scripts": {
+				"scale": "1.55",
+				"pre_animation": [
+					"variable.attack_num = Math.round(Math.random(1, 2));"
+				]
+			},
+			"animations": {
+				"death": "animation.mwolf.death",
+				"death_cancel": "animation.mwolf.death_cancel",
+				"big_head": "animation.mwolf.baby_scaling",
+				"look_at_target": "animation.mpet.look_at_target",
+				"tail": "animation.mwolf.tail",
+				"angry": "animation.mwolf.angry",
+				"sleep": "animation.mwolf.sleep",
+				"sit": "animation.mwolf.sit",
+				"idle": "animation.mwolf.idle",
+				"walk": "animation.mwolf.walk",
+				"sprint": "animation.mwolf.sprint",
+				"angry_1": "animation.mwolf.eating",
+				"baby_angry_1": "animation.mwolf.baby_eating",
+				"idle_1": "animation.mwolf.idle_1",
+				"idle_2": "animation.mwolf.idle_2",
+				"air": "animation.mwolf.air",
+				"gravity": "animation.mutants.gravity",
+				"begging": "animation.mwolf.begging",
+				"eating": "animation.mwolf.eating_item",
+				"first_attack": "animation.mwolf.first_attack",
+				"ongoing_attack_right": "animation.mwolf.ongoing_attack_right",
+				"ongoing_attack_left": "animation.mwolf.ongoing_attack_left",
+				"attack_slow_return": "animation.mwolf.attack_slow_return",
+				"walk_legs": "animation.mwolf.walk_legs"
+			},
+			"animation_controllers": [
+				{
+					"item": "animation.mwolf.item"
+				},
+				{
+					"death": "controller.animation.mwolf.death"
+				},
+				{
+					"idle": "controller.animation.mwolf.idle"
+				},
+				{
+					"tail": "controller.animation.mwolf.tail"
+				},
+				{
+					"move": "controller.animation.mwolf.walking"
+				},
+				{
+					"general": "controller.animation.mwolf.general"
+				},
+				{
+					"beg": "controller.animation.mwolf.beg"
+				},
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				}
+			]
+		}
+	}
+}

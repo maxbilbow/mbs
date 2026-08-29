@@ -1,0 +1,39 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:aqueous_soul_forge",
+			"menu_category": {
+				"group": "itemGroup.name.items",
+				"category": "items"
+			}
+		},
+		"components": {
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:tick": {
+				"interval_range": [
+					2,
+					2
+				]
+			},
+			"minecraft:custom_components": [
+				"test:aqueous_soul_forge"
+			],
+			"minecraft:crafting_table": {
+				"custom_description": "Soul Forge",
+				"grid_size": 3,
+				"crafting_tags": [
+					"soul_forge"
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:light_emission": 7
+		}
+	}
+}

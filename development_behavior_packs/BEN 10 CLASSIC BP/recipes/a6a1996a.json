@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_4c434d2f"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:tungsten_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:tungsten_ingot",
+				"count": 9
+			}
+		]
+	}
+}

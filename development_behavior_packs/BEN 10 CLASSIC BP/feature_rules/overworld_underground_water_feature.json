@@ -1,0 +1,51 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "gen:overworld_underground_water_feature",
+			"places_feature": "generation:water_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "drenched_void"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "thermal_seas"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "glowing_ocean"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ocean"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 90,
+			"coordinate_eval_order": "zyx",
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-58,
+					30
+				]
+			},
+			"z": 0
+		}
+	}
+}

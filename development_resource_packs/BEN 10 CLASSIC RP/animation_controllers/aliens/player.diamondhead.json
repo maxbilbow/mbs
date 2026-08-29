@@ -64,7 +64,7 @@
 				"sneak": {
 					"animations": [
 						{
-							"diamondhead_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==3"
+							"diamondhead_sneaking": "variable.on_ground&&!variable.is_first_person&&!query.is_moving&&query.variant==3&&query.get_equipped_item_name('main_hand')!='dh_shield'"
 						}
 					],
 					"transitions": [
@@ -146,6 +146,31 @@
 						}
 					],
 					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.diamondhead_shield": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sneak": "query.is_sneaking&&query.variant==3&&query.get_equipped_item_name('main_hand')=='dh_shield'"
+						}
+					],
+					"blend_transition": 0.175
+				},
+				"sneak": {
+					"animations": [
+						{
+							"diamondhead_sheild": "!variable.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sneaking||query.get_equipped_item_name('main_hand')!='dh_shield'"
+						}
+					],
+					"blend_transition": 0.175
 				}
 			}
 		}

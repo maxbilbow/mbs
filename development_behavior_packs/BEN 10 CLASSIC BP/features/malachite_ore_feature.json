@@ -1,0 +1,43 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "ore:malachite_ore_feature"
+		},
+		"count": 5,
+		"replace_rules": [
+			{
+				"places_block": "ore:malachite_ore",
+				"may_replace": [
+					{
+						"name": "minecraft:stone"
+					}
+				]
+			},
+			{
+				"places_block": "ore:deepslate_malachite_ore",
+				"may_replace": [
+					{
+						"name": "minecraft:deepslate"
+					}
+				]
+			},
+			{
+				"places_block": "ore:thermal_malachite_ore",
+				"may_replace": [
+					{
+						"name": "block:thermal_stone"
+					}
+				]
+			},
+			{
+				"places_block": "ore:abyssal_malachite_ore",
+				"may_replace": [
+					{
+						"name": "ore:abyssal_malachite_ore"
+					}
+				]
+			}
+		]
+	}
+}

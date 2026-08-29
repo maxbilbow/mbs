@@ -1,0 +1,29 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:sea_grapes",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.crop"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:sea_grapes"
+			},
+			"minecraft:display_name": {
+				"value": "Sea Grapes"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 1.8,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 4,
+				"saturation_modifier": 1.8
+			}
+		}
+	}
+}

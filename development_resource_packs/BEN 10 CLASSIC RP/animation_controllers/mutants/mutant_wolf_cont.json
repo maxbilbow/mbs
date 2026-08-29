@@ -1,0 +1,438 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mwolf.walking": {
+			"states": {
+				"default": {
+					"animations": [
+						"gravity",
+						{
+							"walk": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"run": "query.ground_speed>5.5"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"air": "!query.is_on_ground&&query.is_alive&&!query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"first_attack": {
+					"animations": [
+						"first_attack",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"attack_slow_return": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack_slow_return": {
+					"animations": [
+						"attack_slow_return",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.all_animations_finished"
+						},
+						{
+							"ongoing_attack_right": "variable.attack_time>0&&variable.attack_num==1"
+						},
+						{
+							"ongoing_attack_left": "variable.attack_time>0&&variable.attack_num==2"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"ongoing_attack_left": {
+					"animations": [
+						"idle",
+						"ongoing_attack_left",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"attack_slow_return": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"ongoing_attack_right": {
+					"animations": [
+						"ongoing_attack_right",
+						{
+							"walk_legs": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"attack_slow_return": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						"gravity",
+						{
+							"sprint": "query.modified_move_speed"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.ground_speed<4.5"
+						},
+						{
+							"sitting": "query.is_sitting&&query.is_alive"
+						},
+						{
+							"air": "!query.is_on_ground&&query.is_alive&&!query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"air": {
+					"animations": [
+						"air"
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground||!query.is_alive||query.is_in_water"
+						},
+						{
+							"first_attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.35
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						},
+						{
+							"sleeping": "math.random(0,2070)<1&&query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"sleeping": {
+					"animations": [
+						"sleep"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting||!query.is_alive"
+						},
+						{
+							"sitting": "math.random(0,8600)<1&&query.is_sitting&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.55
+				}
+			}
+		},
+		"controller.animation.mwolf.death": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"cancel_animation": "!query.is_alive"
+						}
+					]
+				},
+				"cancel_animation": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mwolf.tail": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"tail": "math.random(0,900)<1&&!query.is_angry&&!query.has_target&&!query.is_sitting&&query.is_alive"
+						}
+					]
+				},
+				"tail": {
+					"animations": [
+						"tail"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.has_target||query.is_sitting||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mwolf.idle": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"idle_1": "math.random(0,2300)<1&&!query.is_angry&&!query.is_stunned&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"idle_2": "math.random(0,2600)<1&&!query.is_angry&&!query.is_stunned&&query.is_sitting&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"bark_1": "math.random(0,1000)<1&&!query.is_angry&&!query.is_stunned&&!query.is_baby&&!query.is_roaring&&!query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"baby_bark_1": "math.random(0,500)<1&&!query.is_angry&&!query.is_stunned&&query.is_baby&&!query.is_roaring&&!query.has_target&&query.is_alive"
+						},
+						{
+							"angry_1": "math.random(0,230)<1&&!query.is_roaring&&!query.is_stunned&&!query.is_baby&&query.has_target&&!query.is_interested&&query.is_alive"
+						},
+						{
+							"baby_angry_1": "math.random(0,40)<1&&!query.is_roaring&&!query.is_stunned&&query.is_baby&&query.has_target&&!query.is_interested&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				},
+				"has_item": {
+					"transitions": [
+						{
+							"eat": "query.is_eating"
+						},
+						{
+							"default": "query.is_item_equipped"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"eat": {
+					"animations": [
+						"eating",
+						"tail"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_1": {
+					"animations": [
+						"idle_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"idle_2": {
+					"animations": [
+						"idle_2"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_angry||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"bark_1": {
+					"animations": [
+						"angry_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_interested||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				},
+				"angry_1": {
+					"animations": [
+						"angry_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				},
+				"baby_bark_1": {
+					"animations": [
+						"baby_angry_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				},
+				"baby_angry_1": {
+					"animations": [
+						"baby_angry_1"
+					],
+					"transitions": [
+						{
+							"has_item": "query.is_item_equipped"
+						},
+						{
+							"default": "query.all_animations_finished||query.is_interested||!query.has_target||query.is_roaring||!query.is_alive"
+						}
+					],
+					"blend_transition": 0.01
+				}
+			}
+		},
+		"controller.animation.mwolf.baby_big_head": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"baby": "query.is_baby"
+						}
+					]
+				},
+				"baby": {
+					"animations": [
+						"big_head"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"default": "!query.is_baby"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mwolf.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target",
+						"idle"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"sit": "query.is_sitting"
+						},
+						{
+							"angry": "query.has_target"
+						}
+					]
+				},
+				"angry": {
+					"animations": [
+						"look_at_target",
+						"angry"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"sit": "query.is_sitting"
+						}
+					]
+				},
+				"sit": {
+					"animations": [
+						"look_at_target"
+					],
+					"blend_transition": 0.05,
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mwolf.beg": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"beg": "query.is_interested&&!query.is_item_equipped&&!query.is_angry&&query.is_alive"
+						}
+					]
+				},
+				"beg": {
+					"animations": [
+						"begging"
+					],
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"default": "!query.is_interested||query.is_item_equipped||query.is_angry||!query.is_alive"
+						}
+					]
+				}
+			}
+		}
+	}
+}

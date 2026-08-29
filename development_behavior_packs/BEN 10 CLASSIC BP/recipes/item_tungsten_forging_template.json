@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "tungsten_forging_template_6983908e"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"ACA",
+			"DBD"
+		],
+		"key": {
+			"A": {
+				"item": "item:tungsten_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"C": {
+				"item": "item:tungsten_forging_template",
+				"data": 0
+			},
+			"D": {
+				"item": "minecraft:iron_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:tungsten_forging_template",
+			"count": 2
+		}
+	}
+}

@@ -15,6 +15,10 @@
 			},
 			"minecraft:projectile": {
 				"onHit": {
+					"impact_damage": {
+						"damage": 7,
+						"knockback": true
+					},
 					"remove_on_hit": {}
 				},
 				"power": 4,

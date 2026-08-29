@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "omni:item_marker",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"item_marker",
+					"inanimate"
+				]
+			}
+		}
+	}
+}

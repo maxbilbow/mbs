@@ -1,0 +1,25 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:abyssalslagplate_feature_rule",
+			"places_feature": "gen:abyssalslagplate_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "drenched_void"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"z": 0,
+			"y": -54
+		}
+	}
+}

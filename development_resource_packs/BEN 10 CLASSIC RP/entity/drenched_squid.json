@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:drenched_squid",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/entity/drenched_squid"
+			},
+			"geometry": {
+				"default": "geometry.drenched_squid"
+			},
+			"animations": {
+				"face_player": "animation.shrimp.swim"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#060D16",
+				"overlay_color": "#A1E8DB"
+			}
+		}
+	}
+}

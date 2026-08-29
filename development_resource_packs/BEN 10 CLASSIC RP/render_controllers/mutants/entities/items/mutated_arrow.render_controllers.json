@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutated_arrow": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.stray",
+						"Texture.bogged",
+						"Texture.villager",
+						"Texture.piglin"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			],
+			"part_visibility": [
+				{
+					"tnt": "query.mark_variant == 1"
+				}
+			],
+			"ignore_lighting": false
+		}
+	}
+}

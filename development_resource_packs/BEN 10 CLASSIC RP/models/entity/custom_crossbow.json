@@ -1,0 +1,230 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.custom_crossbow_standby",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [
+						0,
+						14,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"texture_meshes": [
+						{
+							"texture": "bow_standby",
+							"position": [
+								2,
+								1,
+								-2
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.custom_crossbow_pulling_0",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [
+						0,
+						14,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"texture_meshes": [
+						{
+							"texture": "bow_pulling_0",
+							"position": [
+								2,
+								1,
+								-2
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.custom_crossbow_pulling_1",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [
+						0,
+						14,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"texture_meshes": [
+						{
+							"texture": "bow_pulling_1",
+							"position": [
+								2,
+								1,
+								-2
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.custom_crossbow_pulling_2",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [
+						0,
+						14,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"texture_meshes": [
+						{
+							"texture": "bow_pulling_2",
+							"position": [
+								2,
+								1,
+								-2
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.custom_crossbow_ready",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightItem",
+					"pivot": [
+						0,
+						14,
+						0
+					],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)",
+					"texture_meshes": [
+						{
+							"texture": "bow_ready",
+							"position": [
+								2,
+								1,
+								-2
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"local_pivot": [
+								6,
+								0,
+								6
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

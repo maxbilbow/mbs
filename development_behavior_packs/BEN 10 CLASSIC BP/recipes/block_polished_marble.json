@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "polished_marble_4aca5016"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:marble",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:polished_marble",
+			"count": 4
+		}
+	}
+}

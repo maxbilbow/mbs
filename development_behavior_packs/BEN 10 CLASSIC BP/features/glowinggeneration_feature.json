@@ -1,0 +1,34 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:glowinggeneration_feature"
+		},
+		"features": [
+			[
+				"gen:glowinggeneration1_feature",
+				2
+			],
+			[
+				"gen:glowinggeneration2_feature",
+				2
+			],
+			[
+				"gen:glowinggeneration3_feature",
+				2
+			],
+			[
+				"gen:glowinggeneration4_feature",
+				1
+			],
+			[
+				"gen:glowinggeneration5_feature",
+				1
+			],
+			[
+				"gen:glowinggeneration6_feature",
+				1
+			]
+		]
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "js7_mutant:mutant_wither_skeleton_pelvis",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:glint": false,
+			"minecraft:allow_off_hand": false,
+			"minecraft:icon": {
+				"texture": "js7_mutant:wither_skeleton_pelvis"
+			},
+			"minecraft:display_name": {
+				"value": "Mutant Wither Skeleton Pelvis"
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:max_stack_size": 64
+		}
+	}
+}

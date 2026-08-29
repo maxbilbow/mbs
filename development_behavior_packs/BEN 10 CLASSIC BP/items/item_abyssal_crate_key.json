@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:abyssal_crate_key",
+			"menu_category": {
+				"category": "items",
+				"group": "minecraft:itemGroup.name.items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "item:abyssal_crate_key"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Abyssal Crate Key\n\n§7Place on top of \nAbyssal Crate to open it\n\nthe key will shatter if not placed on \ntop of the crate"
+			},
+			"minecraft:entity_placer": {
+				"entity": "item:abyssal_crate_key",
+				"use_on": [
+					"block:abyssal_crate"
+				]
+			}
+		}
+	}
+}

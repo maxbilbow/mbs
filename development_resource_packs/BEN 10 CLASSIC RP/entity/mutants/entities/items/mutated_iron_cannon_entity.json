@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:iron_cannon_ball",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/iron_cannon_ball"
+			},
+			"geometry": {
+				"default": "geometry.mutated_iron_cannon_ball"
+			},
+			"animations": {
+				"move": "animation.mweapons.move"
+			},
+			"scripts": {
+				"scale": "1.25",
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mutated_iron_cannon"
+			]
+		}
+	}
+}

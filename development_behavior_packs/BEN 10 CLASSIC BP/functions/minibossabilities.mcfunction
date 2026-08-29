@@ -1,0 +1,1 @@
+execute as @e[tag=undeadleader] run function undeadleader

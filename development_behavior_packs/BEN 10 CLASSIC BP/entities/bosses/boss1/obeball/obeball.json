@@ -9,7 +9,7 @@
 			"runtime_identifier": "minecraft:snowball"
 		},
 		"component_groups": {
-			"minecraft:exploding": {
+			"exploding_safe": {
 				"minecraft:explode": {
 					"fuseLength": 0,
 					"fuseLit": true,
@@ -17,6 +17,16 @@
 					"fire_affected_by_griefing": false,
 					"destroy_affected_by_griefing": false,
 					"breaks_blocks": false
+				}
+			},
+			"exploding_grief": {
+				"minecraft:explode": {
+					"fuseLength": 0,
+					"fuseLit": true,
+					"power": 10,
+					"fire_affected_by_griefing": false,
+					"destroy_affected_by_griefing": true,
+					"breaks_blocks": true
 				}
 			},
 			"minecraft:decline": {
@@ -109,11 +119,31 @@
 				}
 			},
 			"minecraft:explode": {
-				"add": {
-					"component_groups": [
-						"minecraft:exploding"
-					]
-				}
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"value": "safe_mode"
+						},
+						"add": {
+							"component_groups": [
+								"exploding_safe"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_tag",
+							"operator": "!=",
+							"value": "safe_mode"
+						},
+						"add": {
+							"component_groups": [
+								"exploding_grief"
+							]
+						}
+					}
+				]
 			},
 			"minecraft:decline": {
 				"remove": {

@@ -1,0 +1,349 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.spells": {
+			"initial_state": "reboot",
+			"states": {
+				"reboot": {
+					"transitions": [
+						{
+							"default": "query.state_time>0.1"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_levi",
+						"/clear @s power:spell_fly",
+						"/effect @s clear",
+						"/ability @s mayfly false",
+						"/event entity @s remove_spell_flight",
+						"/scoreboard players set @s spells 1"
+					]
+				},
+				"default": {
+					"transitions": [
+						{
+							"equip_book": "query.get_equipped_item_name('off_hand')=='spell_book'"
+						}
+					]
+				},
+				"equip_book": {
+					"transitions": [
+						{
+							"remove_book": "query.get_equipped_item_name('off_hand')!='spell_book'"
+						},
+						{
+							"spell_1": "query.scoreboard('spells')==1"
+						},
+						{
+							"spell_2": "query.scoreboard('spells')==2"
+						},
+						{
+							"spell_3": "query.scoreboard('spells')==3"
+						},
+						{
+							"spell_4": "query.scoreboard('spells')==4"
+						}
+					],
+					"on_entry": [
+						"/scoreboard objectives add spells dummy",
+						"/scoreboard players add @s spells 0",
+						"/execute as @s[scores={spells=0}] at @s run scoreboard players set @s spells 1",
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_levi",
+						"/clear @s power:spell_fly",
+						"/execute as @s at @s run scriptevent omni:equip_power 8 power:spell_blast"
+					]
+				},
+				"spell_1": {
+					"transitions": [
+						{
+							"remove_book": "query.get_equipped_item_name('off_hand')!='spell_book'"
+						},
+						{
+							"spell_2": "query.scoreboard('spells')==2"
+						},
+						{
+							"spell_3": "query.scoreboard('spells')==3"
+						},
+						{
+							"spell_4": "query.scoreboard('spells')==4"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_levi",
+						"/clear @s power:spell_fly",
+						"/execute as @s at @s run scriptevent omni:equip_power 8 power:spell_blast",
+						"/execute as @s at @s run function spells"
+					]
+				},
+				"spell_2": {
+					"transitions": [
+						{
+							"remove_book": "query.get_equipped_item_name('off_hand')!='spell_book'"
+						},
+						{
+							"spell_1": "query.scoreboard('spells')==1"
+						},
+						{
+							"spell_3": "query.scoreboard('spells')==3"
+						},
+						{
+							"spell_4": "query.scoreboard('spells')==4"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_levi",
+						"/clear @s power:spell_fly",
+						"/execute as @s at @s run scriptevent omni:equip_power 8 power:spell_shield",
+						"/execute as @s at @s run function spells"
+					]
+				},
+				"spell_3": {
+					"transitions": [
+						{
+							"remove_book": "query.get_equipped_item_name('off_hand')!='spell_book'"
+						},
+						{
+							"spell_1": "query.scoreboard('spells')==1"
+						},
+						{
+							"spell_2": "query.scoreboard('spells')==2"
+						},
+						{
+							"spell_4": "query.scoreboard('spells')==4"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_fly",
+						"/execute as @s at @s run scriptevent omni:equip_power 8 power:spell_levi",
+						"/execute as @s at @s run function spells"
+					]
+				},
+				"spell_4": {
+					"transitions": [
+						{
+							"remove_book": "query.get_equipped_item_name('off_hand')!='spell_book'"
+						},
+						{
+							"spell_1": "query.scoreboard('spells')==1"
+						},
+						{
+							"spell_2": "query.scoreboard('spells')==2"
+						},
+						{
+							"spell_3": "query.scoreboard('spells')==3"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_levi",
+						"/execute as @s at @s run scriptevent omni:equip_power 8 power:spell_fly",
+						"/execute as @s at @s run function spells"
+					]
+				},
+				"remove_book": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/clear @s power:spell_blast",
+						"/clear @s power:spell_shield",
+						"/clear @s power:spell_levi",
+						"/clear @s power:spell_fly",
+						"/effect @s speed 0 0",
+						"/effect @s slowness 0 0",
+						"/effect @s slow_falling 0 0",
+						"/effect @s levitation 0 0",
+						"/ability @s mayfly false",
+						"/execute as @s at @s run function player/book_clear",
+						"/event entity @s remove_spell_flight",
+						"/execute as @s at @s run kill @e[r=5,type=alien:fly]",
+						"/function unfly"
+					]
+				}
+			}
+		},
+		"controller.animation.spell_blast": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"fire": "query.get_equipped_item_name('main_hand')=='spell_blast'&&query.is_using_item&&!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/event entity @s remove:spell_blast"
+					]
+				},
+				"fire": {
+					"transitions": [
+						{
+							"cooldown": "query.state_time>=0.1||query.get_equipped_item_name('main_hand')!='spell_blast'"
+						}
+					],
+					"on_entry": [
+						"/event entity @s shoot:spell_blast"
+					]
+				},
+				"cooldown": {
+					"transitions": [
+						{
+							"default": "(query.state_time>=0.4&&!query.is_using_item)||query.get_equipped_item_name('main_hand')!='spell_blast'"
+						},
+						{
+							"fire": "query.state_time>=0.4&&query.is_using_item&&query.get_equipped_item_name('main_hand')=='spell_blast'"
+						}
+					],
+					"on_entry": [
+						"/event entity @s remove:spell_blast"
+					]
+				}
+			}
+		},
+		"controller.animation.spell_shield": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"time1": "query.get_equipped_item_name('off_hand')=='spell_book'&&query.get_equipped_item_name('main_hand')=='spell_shield'&&query.is_using_item&&!query.is_sneaking"
+						},
+						{
+							"time2": "query.get_equipped_item_name('off_hand')=='spell_book'&&query.get_equipped_item_name('main_hand')!='spell_shield'"
+						}
+					]
+				},
+				"time1": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item||query.get_equipped_item_name('main_hand')!='spell_shield'"
+						}
+					],
+					"on_entry": [
+						"/event entity @s spell_shield"
+					],
+					"on_exit": [
+						"/event entity @s spell_shield_remove"
+					]
+				},
+				"time2": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')=='spell_shield'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.spell_levi": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"active": "query.get_equipped_item_name('main_hand')=='spell_levi'&&query.is_using_item&&!query.is_sneaking"
+						}
+					],
+					"on_entry": [
+						"/event entity @s remove_spell_flight",
+						"/ability @s mayfly false",
+						"/effect @s levitation 0 0",
+						"/effect @s slow_falling 1 1 true"
+					]
+				},
+				"active": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='spell_levi'||query.get_equipped_item_name('off_hand')!='spell_book'||!query.is_using_item"
+						},
+						{
+							"active_loop": "query.state_time>=0.01"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s anchored eyes rotated as @s positioned ^ ^ ^5 run tp @e[type=!player, r=6] ~ ~ ~ true"
+					]
+				},
+				"active_loop": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='spell_levi'||query.get_equipped_item_name('off_hand')!='spell_book'||!query.is_using_item"
+						},
+						{
+							"active": "query.state_time>=0.01"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s anchored eyes rotated as @s positioned ^ ^ ^5 run tp @e[type=!player, r=6] ~ ~ ~ true"
+					]
+				}
+			}
+		},
+		"controller.animation.spell_fly": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/ride @s stop_riding",
+						"/execute as @s run kill @e[type=alien:fly,r=3]"
+					],
+					"transitions": [
+						{
+							"jump": "query.is_jumping&&!query.is_on_ground&&!query.is_riding&&query.head_x_rotation(0)<=-10&&query.get_equipped_item_name('off_hand')=='spell_book'&&query.get_equipped_item_name('main_hand')=='spell_fly'"
+						}
+					]
+				},
+				"jump": {
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name('main_hand')!='spell_fly'||query.get_equipped_item_name('off_hand')!='spell_book'||(query.is_on_ground&&query.state_time>=0.5)"
+						}
+					],
+					"on_entry": [
+						"/ride @s summon_ride alien:fly",
+						"/scoreboard objectives add fly dummy",
+						"/scoreboard players add @s fly 1"
+					],
+					"on_exit": [
+						"/ride @s stop_riding",
+						"/execute as @s run kill @e[type=alien:fly,r=3]"
+					]
+				}
+			}
+		},
+		"controller.animation.spell_ch": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.is_using_item&&query.is_sneaking&&(query.get_equipped_item_name('main_hand')=='spell_blast'||query.get_equipped_item_name('main_hand')=='spell_fly'||query.get_equipped_item_name('main_hand')=='spell_levi'||query.get_equipped_item_name('main_hand')=='spell_shield')"
+						}
+					]
+				},
+				"shoot": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					],
+					"on_entry": [
+						"/scoreboard players add @s spells 1",
+						"/execute as @s[scores={spells=5..}] at @s run scoreboard players set @s spells 1",
+						"/playsound random.pop @a ~~~ 1 1.5"
+					]
+				}
+			}
+		}
+	}
+}

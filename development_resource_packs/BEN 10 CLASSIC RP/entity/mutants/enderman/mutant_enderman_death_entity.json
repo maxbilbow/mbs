@@ -1,0 +1,105 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_enderman_explosion",
+			"materials": {
+				"default": "enderman",
+				"eyes": "enderman",
+				"armor": "charged_creeper",
+				"invisible": "enderman_invisible"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/enderman/mutant_enderman",
+				"eyes": "textures/mutants/entity/enderman/mutant_enderman_eyes",
+				"clone": "textures/mutants/entity/entities/minion/clone_enderman",
+				"armor": "textures/mutants/entity/entities/enderglint"
+			},
+			"geometry": {
+				"default": "geometry.mutant_enderman",
+				"clone": "geometry.enderman_clone",
+				"armor": "geometry.enderman_clone_armor",
+				"layer": "geometry.mutant_enderman_layer"
+			},
+			"sound_effects": {
+				"scream": "mob.menderman.roar",
+				"death": "mob.menderman.death"
+			},
+			"particle_effects": {
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:chemical_x_particle",
+				"ender_particle": "mutant:mutant_enderman_particle",
+				"ender_screech": "mutant:mutant_enderman_screech_particle"
+			},
+			"scripts": {
+				"scale": "1.15",
+				"pre_animation": [
+					"variable.attack_num = Math.round(Math.random(1, 4));",
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 28.65;"
+				]
+			},
+			"animations": {
+				"clone_move": "animation.enderman_clone.move",
+				"attack": "animation.menderman.attack",
+				"two_hands": "animation.menderman.2_hands",
+				"no_blocks": "animation.menderman.no_blocks",
+				"blocks": "animation.menderman.holding",
+				"range_right": "animation.menderman.right_throw",
+				"range_left": "animation.menderman.left_throw",
+				"general": "animation.menderman.general",
+				"look_at_target": "animation.menderman.look_at_target",
+				"walk": "animation.menderman.walk",
+				"walk_arm_right": "animation.menderman.walk_rightarm",
+				"walk_arm_left": "animation.menderman.walk_leftarm",
+				"walk_arm_inner_right": "animation.menderman.walk_rightarm_inner",
+				"walk_arm_inner_left": "animation.menderman.walk_leftarm_inner",
+				"run": "animation.menderman.run",
+				"run_arm_right": "animation.menderman.run_rightarm",
+				"run_arm_left": "animation.menderman.run_leftarm",
+				"run_arm_inner_right": "animation.menderman.run_rightarm_inner",
+				"run_arm_inner_left": "animation.menderman.run_leftarm_inner",
+				"rightarm_attack": "animation.menderman.rightarm_attack",
+				"leftarm_attack": "animation.menderman.leftarm_attack",
+				"rightarm_inner_attack": "animation.menderman.rightarm_inner_attack",
+				"leftarm_inner_attack": "animation.menderman.leftarm_inner_attack",
+				"right_holding": "animation.menderman.right_holding",
+				"left_holding": "animation.menderman.left_holding",
+				"right_inner_holding": "animation.menderman.right_inner_holding",
+				"left_inner_holding": "animation.menderman.left_inner_holding",
+				"right_throw": "animation.menderman.right_throw",
+				"left_throw": "animation.menderman.left_throw",
+				"still_inner_arms": "animation.menderman.still_inner_arms",
+				"reveal_inner_arms": "animation.menderman.reveal_inner_arms",
+				"hide_inner_arms": "animation.menderman.hide_inner_arms",
+				"no_inner_arms": "animation.menderman.no_inner_arms",
+				"death": "animation.menderman.death",
+				"stunned": "animation.menderman.stunned",
+				"screech": "animation.menderman.screech",
+				"teleport_damager": "animation.menderman.teleport_damager",
+				"death_cancel": "animation.mutant.death_cancel",
+				"scary_face": "animation.enderman_clone.anger"
+			},
+			"animation_controllers": [
+				{
+					"particle": "controller.animation.menderman.particle"
+				},
+				{
+					"general": "controller.animation.menderman.explosion"
+				},
+				{
+					"death": "controller.animation.menderman.death"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_enderman_death",
+				"controller.render.mutant_enderman_eyes",
+				"controller.render.mutant_enderman_screech",
+				"controller.render.clone_armor"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 15
+			}
+		}
+	}
+}

@@ -1,0 +1,121 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_villager",
+			"materials": {
+				"default": "villager_v2",
+				"masked": "villager_v2_masked"
+			},
+			"textures": {
+				"base": "textures/mutants/entity/villager/villager",
+				"plains": "textures/mutants/entity/villager/biomes/mvillager_plains",
+				"desert": "textures/mutants/entity/villager/biomes/mvillager_desert",
+				"jungle": "textures/mutants/entity/villager/biomes/mvillager_jungle",
+				"savanna": "textures/mutants/entity/villager/biomes/mvillager_savanna",
+				"snow": "textures/mutants/entity/villager/biomes/mvillager_snow",
+				"swamp": "textures/mutants/entity/villager/biomes/mvillager_swamp",
+				"taiga": "textures/mutants/entity/villager/biomes/mvillager_taiga",
+				"armorer": "textures/mutants/entity/villager/professions/armorer",
+				"butcher": "textures/mutants/entity/villager/professions/butcher",
+				"cartographer": "textures/mutants/entity/villager/professions/cartographer",
+				"cleric": "textures/mutants/entity/villager/professions/cleric",
+				"farmer": "textures/mutants/entity/villager/professions/farmer",
+				"fisherman": "textures/mutants/entity/villager/professions/fisherman",
+				"fletcher": "textures/mutants/entity/villager/professions/fletcher",
+				"leatherworker": "textures/mutants/entity/villager/professions/leatherworker",
+				"librarian": "textures/mutants/entity/villager/professions/librarian",
+				"shepherd": "textures/mutants/entity/villager/professions/shepherd",
+				"tool_smith": "textures/mutants/entity/villager/professions/toolsmith",
+				"weapon_smith": "textures/mutants/entity/villager/professions/weaponsmith",
+				"stonemason": "textures/mutants/entity/villager/professions/stonemason",
+				"nitwit": "textures/mutants/entity/villager/professions/nitwit",
+				"unskilled": "textures/mutants/entity/villager/professions/unskilled",
+				"sword": "textures/mutants/entity/entities/weapons/iron_sword",
+				"axe": "textures/mutants/entity/entities/weapons/iron_axe",
+				"crossbow": "textures/mutants/entity/entities/weapons/villager_crossbow"
+			},
+			"geometry": {
+				"default": "geometry.mutant_villager",
+				"sword": "geometry.mutant_villager_iron_sword",
+				"axe": "geometry.mutant_villager_iron_axe",
+				"crossbow": "geometry.mutant_villager_crossbow"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.num_professions = 15;",
+					"variable.profession_index = (query.variant < variable.num_professions ? query.variant : 0);"
+				],
+				"scale": "1.325"
+			},
+			"animations": {
+				"offer": "animation.mvillager.offer_item",
+				"stop_offer": "animation.mvillager.stop_offering",
+				"big_head": "animation.mzombie.big_head",
+				"melee_attack": "animation.mzombie.arm_attack",
+				"axe_attack": "animation.mvindicator.smash_attack",
+				"sword_attack": "animation.mzombie.swing_right_sword_knockback",
+				"aim": "animation.mvillager.crossbow_aim",
+				"aim_still": "animation.mvillager.crossbow_aim_still",
+				"aim_shoot": "animation.mvillager.crossbow_aim_shoot",
+				"uncharge": "animation.mvillager.crossbow_uncharge",
+				"idle": "animation.mzombie.general",
+				"idle_axe": "animation.mvindicator.bob",
+				"idle_bob_axe": "animation.mvindicator.axe_bob",
+				"idle_bob_crossbow": "animation.mvillager.holding_crossbow",
+				"walk_arms_axe": "animation.mvindicator.move_axe",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_one_arm": "animation.mzombie.walk_one_arm",
+				"walk_legs": "animation.mzombie.move_legs",
+				"smash": "animation.mzombie.smash",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"roaring": "animation.mzombie.roar",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mvillager.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.mvillager.walking"
+				},
+				{
+					"move_arms": "controller.animation.mvillager.walking_arms"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mvillager_base",
+				"controller.render.mvillager_masked",
+				"controller.render.mutated_sword",
+				"controller.render.mutated_axe",
+				"controller.render.mutated_crossbow"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 21
+			}
+		}
+	}
+}

@@ -1,0 +1,320 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mob:titan_clam",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"clamthing": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": [
+						1.2,
+						360
+					],
+					"time_down_event": {
+						"event": "open"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.2
+						}
+					]
+				}
+			},
+			"opened": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"event": "chancetoclose"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": [
+						1.2,
+						1.2
+					],
+					"time_down_event": {
+						"event": "openanimation"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.95
+						},
+						{
+							"cause": "projectile",
+							"damage_multiplier": 0.2
+						}
+					]
+				},
+				"minecraft:entity_sensor": {
+					"sensor_range": 1,
+					"relative_range": false,
+					"minimum_count": 1,
+					"event_filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "mob"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "fish"
+							}
+						]
+					},
+					"event": "close"
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/entities/titan_clam.json"
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.4,
+				"height": 0.3
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:scale": {
+				"value": 1.05
+			},
+			"minecraft:type_family": {
+				"family": [
+					"clam"
+				]
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:breathable": {
+				"breathes_air": false,
+				"breathes_water": true,
+				"generates_bubbles": false,
+				"total_supply": 30,
+				"inhale_time": 0,
+				"suffocate_time": 0
+			},
+			"minecraft:despawn": {
+				"despawn_from_chance": true,
+				"despawn_from_inactivity": true,
+				"despawn_from_simulation_edge": true,
+				"remove_child_entities": false,
+				"min_range_inactivity_timer": 30,
+				"min_range_random_chance": 800,
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 32
+				},
+				"filters": {}
+			},
+			"minecraft:healable": {
+				"force_use": false,
+				"items": [
+					{
+						"item": "minecraft:magma",
+						"heal_amount": 10
+					}
+				],
+				"filters": {}
+			},
+			"minecraft:jump.static": {
+				"jump_power": 0.42
+			},
+			"minecraft:leashable": {
+				"can_be_stolen": false,
+				"soft_distance": 4,
+				"hard_distance": 6,
+				"max_distance": 10,
+				"on_leash": {
+					"event": "event:on_leash",
+					"target": "self"
+				},
+				"on_unleash": {
+					"event": "event:on_unleash",
+					"target": "self"
+				}
+			},
+			"minecraft:movement.generic": {
+				"max_turn": 30
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": false,
+				"default_trigger": {
+					"event": "event:on_unnamed",
+					"target": "self"
+				},
+				"name_actions": [
+					{
+						"name_filter": "Named",
+						"on_named": {
+							"event": "event:on_named",
+							"target": "self"
+						}
+					}
+				]
+			},
+			"minecraft:navigation.generic": {
+				"avoid_damage_blocks": false,
+				"avoid_portals": false,
+				"avoid_sun": false,
+				"avoid_water": false,
+				"can_breach": false,
+				"can_break_doors": false,
+				"can_jump": true,
+				"can_open_doors": false,
+				"can_open_iron_doors": false,
+				"can_pass_doors": true,
+				"can_path_from_air": false,
+				"can_path_over_lava": true,
+				"can_path_over_water": true,
+				"can_sink": true,
+				"can_swim": true,
+				"can_walk": true,
+				"can_walk_in_lava": false,
+				"is_amphibious": true
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true,
+				"push_towards_closest_space": false
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?8+(query.equipment_count*math.random(1,3)):0"
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:health": {
+				"value": 80,
+				"max": 80
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"clamthing"
+					]
+				}
+			},
+			"open": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"playanimation @s animation.titan_clam.open"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"clamthing"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"opened"
+							]
+						}
+					}
+				]
+			},
+			"close": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"playanimation @s animation.titan_clam.close",
+								"kill @e[r=2,type=!mob:titan_clam]"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"opened"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"clamthing"
+							]
+						}
+					}
+				]
+			},
+			"chancetoclose": {
+				"randomize": [
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"playanimation @s animation.titan_clam.close",
+										"kill @e[r=2,type=!mob:titan_clam]"
+									]
+								}
+							},
+							{
+								"remove": {
+									"component_groups": [
+										"opened"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"clamthing"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"weight": 1000
+					}
+				]
+			},
+			"openanimation": {
+				"queue_command": {
+					"command": [
+						"playanimation @s animation.titan_clam.opened"
+					]
+				}
+			}
+		}
+	}
+}

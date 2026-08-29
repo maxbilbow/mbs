@@ -1,0 +1,120 @@
+//bridge-file-version: #11
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "sword:malachite_sword",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						},
+						{
+							"function": "enchant_random_gear",
+							"chance": 0.25
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "helmet:malachite_helmet",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						},
+						{
+							"function": "enchant_random_gear",
+							"chance": 0.25
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "chestplate:malachite_chestplate",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						},
+						{
+							"function": "enchant_random_gear",
+							"chance": 0.25
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "leggings:malachite_leggings",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						},
+						{
+							"function": "enchant_random_gear",
+							"chance": 0.25
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "boots:malachite_boots",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "looting_enchant",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						},
+						{
+							"function": "enchant_random_gear",
+							"chance": 0.25
+						}
+					]
+				}
+			]
+		}
+	]
+}

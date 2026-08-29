@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "leggings:lumenyl_leggings.player",
+      "item": {
+        "leggings:ascendant_leggings": "query.owner_identifier == 'minecraft:player'"
+      },
+      "materials": {
+        "default": "armor",
+        "enchanted": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/leggings_lumenyl_leggings",
+        "enchanted": "textures/misc/leggings_lumenyl_leggings"
+      },
+      "geometry": {
+        "default": "geometry.ascendant_leggings"
+      },
+      "scripts": {
+        "parent_setup": "variable.leg_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        "controller.render.armor"
+      ]
+    }
+  }
+}

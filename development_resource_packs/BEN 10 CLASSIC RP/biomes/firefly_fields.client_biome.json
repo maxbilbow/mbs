@@ -1,0 +1,31 @@
+//bridge-file-version: #5
+{
+	"format_version": "1.21.60",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "nt:firefly_fields"
+		},
+		"components": {
+			"minecraft:sky_color": {
+				"sky_color": "#3B92FF"
+			},
+			"minecraft:fog_appearance": {
+				"fog_identifier": "minecraft:fog_forest"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#2372CE"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 1
+			},
+			"minecraft:foliage_appearance": {
+				"color": "#0E4F16"
+			},
+			"minecraft:grass_appearance": {
+				"color": {
+					"color_map": "swamp_grass"
+				}
+			}
+		}
+	}
+}

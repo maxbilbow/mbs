@@ -1,0 +1,124 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:greaterlightningmagiccircle",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					{
+						"random.anim": "true"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"power:charge": {
+				"minecraft:is_tamed": {},
+				"minecraft:geometry": {
+					"identifier": "geometry.lightningmagiccircles"
+				},
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": true,
+					"time_down_event": {
+						"event": "power:bind_mobs"
+					}
+				}
+			},
+			"power:shoot": {
+				"minecraft:geometry": {
+					"identifier": "geometry.lightningmagiccirclel"
+				},
+				"minecraft:areadamage": {
+					"radius": 12,
+					"cause": "magic",
+					"damage_per_tick": 80,
+					"entity_type": "family:monster"
+				},
+				"minecraft:timer": {
+					"time": 0.5,
+					"looping": false,
+					"time_down_event": {
+						"event": "power:despawn"
+					}
+				}
+			},
+			"despawn_group": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"lightning"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"power:charge"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle zk:greatvoltstrikesphere ~~~"
+					]
+				}
+			},
+			"power:release": {
+				"filters": {
+					"test": "has_component",
+					"value": "minecraft:is_tamed"
+				},
+				"remove": {
+					"component_groups": [
+						"power:charge"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"power:shoot"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"particle zk:greatvoltstrikesphereburst ~~~",
+						"summon zk:greatvoltlightningstriker",
+						"summon zk:greatvoltlightningstriker ~5~~5",
+						"summon zk:greatvoltlightningstriker ~-5~~-5",
+						"summon zk:greatvoltlightningstriker ~5~~-5",
+						"summon zk:greatvoltlightningstriker ~-5~~5"
+					]
+				}
+			},
+			"power:bind_mobs": {
+				"queue_command": {
+					"command": [
+						"/tp @e[family=monster,r=15,type=!player] @s",
+						"/effect @e[family=monster,r=15,type=!player] slowness 1 255 true"
+					]
+				}
+			},
+			"power:despawn": {
+				"add": {
+					"component_groups": [
+						"despawn_group"
+					]
+				}
+			}
+		}
+	}
+}

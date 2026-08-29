@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:wither_skull",
+			"materials": {
+				"default": "drowned"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/mutated_wither_skull"
+			},
+			"geometry": {
+				"default": "geometry.mwither_skull"
+			},
+			"animations": {
+				"move": "animation.mweapons.move"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				],
+				"pre_animation": [
+					"variable.is_invulnerable = query.invulnerable_ticks > 0.0;"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mwither_skull"
+			]
+		}
+	}
+}

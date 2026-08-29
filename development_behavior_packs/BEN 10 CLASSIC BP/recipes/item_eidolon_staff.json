@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "eidolon_staff_c5f3a770"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AB",
+			" CA",
+			"D  "
+		],
+		"key": {
+			"A": {
+				"item": "item:lumenyl",
+				"data": 0
+			},
+			"B": {
+				"item": "item:lomos_pearl",
+				"data": 0
+			},
+			"C": {
+				"item": "item:tungsten_ingot",
+				"data": 0
+			},
+			"D": {
+				"item": "block:sea_prism_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:eidolon_staff",
+			"count": 1
+		}
+	}
+}

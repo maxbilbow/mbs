@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:cb_smash_toggle",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "cannonbolt_speed_control"
+			},
+			"minecraft:display_name": {
+				"value": "§eToggle Passive Smash"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"nutrition": 0,
+				"saturation_modifier": 0,
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera"
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:yew_berry_cake_6",
+			"menu_category": {
+				"category": "none"
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					6,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					6,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:geometry": "geometry.cake6",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_yew_berry_cake",
+					"ryew_berry_method": "opaque"
+				}
+			},
+			"minecraft:custom_components": [
+				"test:yew_berry_cake_layer_7"
+			]
+		}
+	}
+}

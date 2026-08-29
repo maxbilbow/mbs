@@ -1,0 +1,77 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:skeleton_wolf",
+			"materials": {
+				"default": "cat"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/skeleton_wolf/skeleton_wolf",
+				"angry": "textures/mutants/entity/entities/skeleton_wolf/skeleton_wolf_angry",
+				"tame": "textures/mutants/entity/entities/skeleton_wolf/skeleton_wolf_tame"
+			},
+			"geometry": {
+				"default": "geometry.skeleton_wolf"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.coaster_pitch = query.head_x_rotation(0) * ((query.distance_from_camera < 3) ? 0.66 : 1);",
+					"variable.body_shake_angle = 0.05 * query.shake_angle;",
+					"variable.body_roll_progress = Math.clamp((variable.body_shake_angle - 0.16) / 1.8, 0, 1);",
+					"variable.body_rot_z = Math.sin(variable.body_roll_progress * 180) * Math.sin(variable.body_roll_progress * 1980) * 27;",
+					"variable.upper_body_roll_progress = Math.clamp((variable.body_shake_angle - 0.08) / 1.8, 0, 1);",
+					"variable.upper_body_rot_z = (Math.sin(variable.upper_body_roll_progress * 180) * Math.sin(variable.upper_body_roll_progress * 1980) * 27) - variable.body_rot_z;",
+					"variable.tail_roll_progress = Math.clamp((variable.body_shake_angle - 0.2) / 1.8, 0, 1);",
+					"variable.tail_rot_z = (Math.sin(variable.tail_roll_progress * 180) * Math.sin(variable.tail_roll_progress * 1980) * 27) - variable.body_rot_z;",
+					"variable.head_roll_progress = Math.clamp(variable.body_shake_angle / 1.8, 0, 1);",
+					"variable.head_rot_z = (Math.sin(variable.head_roll_progress * 180) * Math.sin(variable.head_roll_progress * 1980) * 27) - variable.body_rot_z;"
+				]
+			},
+			"sound_effects": {
+				"howl": "mob.skeleton_wolf.howl"
+			},
+			"animations": {
+				"death": "animation.skeleton_wolf.death",
+				"death_cancel": "animation.mwolf.death_cancel",
+				"wolf_setup": "animation.skeleton_wolf.setup",
+				"wolf_baby_scaling": "animation.wolf.baby_scaling",
+				"wolf_look_at": "animation.common.look_at_target",
+				"begging": "animation.skeleton_wolf.beg",
+				"howl": "animation.skeleton_wolf.howl",
+				"angry": "animation.skeleton_wolf.angry",
+				"wolf_sitting": "animation.skeleton_wolf.sitting",
+				"shaking": "animation.skeleton_wolf.shaking",
+				"wolf_leg_default": "animation.skeleton_wolf.leg_default"
+			},
+			"enable_attachables": true,
+			"animation_controllers": [
+				{
+					"setup": "controller.animation.skeleton_wolf.setup"
+				},
+				{
+					"wolf_baby_scaling": "controller.animation.wolf.baby_scaling"
+				},
+				{
+					"beg": "controller.animation.mwolf.beg"
+				},
+				{
+					"general": "controller.animation.skeleton_wolf.general"
+				},
+				{
+					"wolf_sitting": "controller.animation.skeleton_wolf.sitting"
+				},
+				{
+					"wolf_shaking": "controller.animation.skeleton_wolf.shake"
+				}
+			],
+			"render_controllers": [
+				"controller.render.skeleton_wolf"
+			],
+			"spawn_egg": {
+				"base_color": "#ffffff",
+				"overlay_color": "#989898"
+			}
+		}
+	}
+}

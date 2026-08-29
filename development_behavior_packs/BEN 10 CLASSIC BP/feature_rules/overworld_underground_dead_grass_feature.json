@@ -1,0 +1,73 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "gen:overworld_underground_dead_grass_feature",
+      "places_feature": "generation:dead_grass_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "wasteland"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "cold"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "frozen"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "swamp"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "mangrove_swamp"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "meadow"
+				}
+			]
+		},
+    "distribution": {
+      "iterations": 100,
+      "coordinate_eval_order": "zyx",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [
+          40,
+          200
+        ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      }
+    }
+  }
+}

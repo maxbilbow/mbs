@@ -1,0 +1,21 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "block:ruined_structure_block",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:allow_off_hand": true,
+			"minecraft:block_placer": {
+				"block": "block:ruined_structure_block",
+				"use_on": [
+					"block:ruined_structure_block"
+				],
+				"replace_block_item": true
+			}
+		}
+	}
+}

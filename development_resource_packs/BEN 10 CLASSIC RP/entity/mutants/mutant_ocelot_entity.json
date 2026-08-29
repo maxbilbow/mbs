@@ -1,0 +1,98 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_ocelot",
+			"textures": {
+				"default": "textures/mutants/entity/ocelot/ocelot",
+				"snow": "textures/mutants/entity/ocelot/ocelot_snow",
+				"lush": "textures/mutants/entity/ocelot/ocelot_lush",
+				"dahjacat": "textures/mutants/entity/ocelot/ocelot_joy"
+			},
+			"materials": {
+				"default": "ocelot"
+			},
+			"geometry": {
+				"default": "geometry.mutant_ocelot_v2",
+				"snow": "geometry.mutant_ocelot_v2",
+				"lush": "geometry.mutant_ocelot_v2",
+				"dahjacat": "geometry.mutant_ocelot_v2_joy"
+			},
+			"render_controllers": [
+				"controller.render.mutant_ocelot"
+			],
+			"enable_attachables": true,
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 18
+			},
+			"sound_effects": {
+				"roar": "mob.mocelot.idle",
+				"hiss": "mob.mocelot.angry",
+				"baby_roar": "mob.mocelot.baby_idle",
+				"baby_hiss": "mob.mocelot.baby_angry"
+			},
+			"scripts": {
+				"scale": "1.5",
+				"pre_animation": [
+					"variable.roar_num = Math.round(Math.random(0, 1));",
+					"variable.attack_num = Math.round(Math.random(0, 2));"
+				]
+			},
+			"animations": {
+				"death": "animation.mutant_ocelot.death",
+				"death_cancel": "animation.mutant_ocelot.death_cancel",
+				"big_head": "animation.mutant_ocelot.baby_scaling",
+				"look_at_target": "animation.mpet.look_at_target",
+				"tail": "animation.mutant_ocelot.tail",
+				"angry": "animation.mutant_ocelot.angry",
+				"sleep": "animation.mutant_ocelot.sleep",
+				"sit": "animation.mutant_ocelot.sit",
+				"idle": "animation.mutant_ocelot.idle",
+				"walk": "animation.mutant_ocelot.walk",
+				"sprint": "animation.mutant_ocelot.sprint",
+				"idle_1": "animation.mutant_ocelot.idle_1",
+				"idle_2": "animation.mutant_ocelot.idle_2",
+				"roaring": "animation.mutant_ocelot.roar",
+				"hiss_and_roar": "animation.mutant_ocelot.hiss_and_roar",
+				"hiss": "animation.mutant_ocelot.hiss",
+				"baby_hiss": "animation.mutant_ocelot.baby_hiss",
+				"forget": "animation.mutant_ocelot.forget",
+				"air": "animation.mutant_ocelot.air",
+				"gravity": "animation.mutants.gravity",
+				"begging": "animation.mutant_ocelot.begging",
+				"eating": "animation.mutant_ocelot.eating",
+				"first_attack": "animation.mutant_ocelot.first_attack",
+				"right_attack": "animation.mutant_ocelot.right_attack",
+				"left_attack": "animation.mutant_ocelot.left_attack",
+				"walk_legs": "animation.mutant_ocelot.walk_legs"
+			},
+			"animation_controllers": [
+				{
+					"item": "animation.mutant_ocelot.item"
+				},
+				{
+					"death": "controller.animation.mutant_ocelot.death"
+				},
+				{
+					"idle": "controller.animation.mutant_ocelot.idle"
+				},
+				{
+					"tail": "controller.animation.mutant_ocelot.tail"
+				},
+				{
+					"move": "controller.animation.mutant_ocelot.walking"
+				},
+				{
+					"general": "controller.animation.mutant_ocelot.general"
+				},
+				{
+					"beg": "controller.animation.mutant_ocelot.beg"
+				},
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				}
+			]
+		}
+	}
+}

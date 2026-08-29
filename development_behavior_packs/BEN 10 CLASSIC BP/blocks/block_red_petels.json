@@ -1,0 +1,125 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:red_petels",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.flower"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"block:growth": [
+					0,
+					1,
+					2,
+					3
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:geometry": {
+				"identifier": "geometry.leaf_litter",
+				"bone_visibility": {
+					"front_left": "q.block_state('block:growth') > 0",
+					"back_right": "q.block_state('block:growth') > 1",
+					"back_left": "q.block_state('block:growth') == 3"
+				}
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "broken"
+					}
+				]
+			},
+			"minecraft:flammable": {
+				"catch_chance_modifier": 30,
+				"destroy_chance_modifier": 100
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:item_visual": {
+				"geometry": "geometry.animated_item",
+				"material_instances": {
+					"*": {
+						"texture": "block_red_petels",
+						"render_method": "alpha_test",
+						"ambient_occlusion": false,
+						"face_dimming": false
+					}
+				}
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_red_petels",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			},
+			"minecraft:custom_components": [
+				"test:patch_block"
+			]
+		},
+		"events": {}
+	}
+}

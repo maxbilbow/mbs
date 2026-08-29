@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "silver_helmet_39a63de0"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:silver_helmet",
+			"count": 1
+		}
+	}
+}

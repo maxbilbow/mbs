@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:titan_clam",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/titan_clam"
+			},
+			"geometry": {
+				"default": "geometry.titan_clam"
+			},
+			"render_controllers": [
+				"controller.render.skeleton",
+				{
+					"controller.render.creeper_armor": "query.is_powered"
+				}
+			],
+			"spawn_egg": {
+				"base_color": "#35193F",
+				"overlay_color": "#B2CCE2"
+			}
+		}
+	}
+}

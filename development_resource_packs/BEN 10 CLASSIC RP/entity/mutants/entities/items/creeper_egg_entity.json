@@ -1,0 +1,56 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:creeper_egg_entity",
+			"materials": {
+				"default": "map_decoration",
+				"charged": "charged_creeper"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/creeper_egg",
+				"charged": "textures/mutants/entity/creeper/mutant_creeper_armor"
+			},
+			"geometry": {
+				"default": "geometry.mutant_creeper_egg",
+				"charged": "geometry.charged_mutant_creeper_egg"
+			},
+			"spawn_egg": {
+				"texture": "creeper_egg",
+				"texture_index": 0
+			},
+			"scripts": {
+				"scale": "1.75",
+				"pre_animation": [
+					"variable.wobble = Math.sin(query.swell_amount * 5730) * query.swell_amount * 0.01 + 1.0;",
+					"variable.swelling_scale1 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.4 + 1.0) * variable.wobble;",
+					"variable.swelling_scale2 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.1 + 1.0) / variable.wobble;",
+					"variable.leg_rot = Math.cos(query.modified_distance_moved * 38.17326) * 80.22 * query.modified_move_speed;",
+					"variable.flash = Math.mod(Math.Round(query.swell_amount * 10.0), 2.0);"
+				]
+			},
+			"animations": {
+				"death_cancel": "animation.mutant.death_cancel",
+				"hatching": "animation.mcreeperegg.hatching",
+				"cracked": "animation.mcreeperegg.cracked",
+				"charged": "animation.mcreeperegg.charged",
+				"bump1": "animation.mcreeperegg.bump_1",
+				"bump2": "animation.mcreeperegg.bump_2",
+				"bump3": "animation.mcreeperegg.bump_3",
+				"jump": "animation.mcreeperegg.jump"
+			},
+			"animation_controllers": [
+				{
+					"creeper_egg": "controller.animation.creeper_egg.idle"
+				},
+				{
+					"charged": "controller.animation.creeper_egg.charged"
+				}
+			],
+			"render_controllers": [
+				"controller.render.js7_mutant.creeper_minion",
+				"controller.render.js7_mutant.creeper_minion_charged"
+			]
+		}
+	}
+}

@@ -1,0 +1,193 @@
+{
+	"format_version": "1.8.0",
+	"geometry.sheep.custom": {
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 1.75,
+		"visible_bounds_offset": [
+			0,
+			0.5,
+			0
+		],
+		"bones": [
+			{
+				"name": "sheep_body",
+				"pivot": [
+					0,
+					19,
+					2
+				],
+				"bind_pose_rotation": [
+					90,
+					0,
+					0
+				],
+				"cubes": [
+					{
+						"origin": [
+							-4,
+							13,
+							-5
+						],
+						"size": [
+							8,
+							16,
+							6
+						],
+						"uv": [
+							28,
+							8
+						]
+					}
+				],
+				"locators": {
+					"lead_hold": [
+						0,
+						32,
+						0
+					]
+				}
+			},
+			{
+				"name": "sheep_head",
+				"pivot": [
+					0,
+					18,
+					-8
+				],
+				"locators": {
+					"lead": [
+						0,
+						18,
+						-8
+					]
+				},
+				"cubes": [
+					{
+						"origin": [
+							-3,
+							16,
+							-14
+						],
+						"size": [
+							6,
+							6,
+							8
+						],
+						"uv": [
+							0,
+							0
+						]
+					}
+				]
+			},
+			{
+				"name": "sheep_leg0",
+				"parent": "sheep_body",
+				"pivot": [
+					-3,
+					12,
+					7
+				],
+				"cubes": [
+					{
+						"origin": [
+							-5,
+							0,
+							5
+						],
+						"size": [
+							4,
+							12,
+							4
+						],
+						"uv": [
+							0,
+							16
+						]
+					}
+				]
+			},
+			{
+				"name": "sheep_leg1",
+				"parent": "sheep_body",
+				"pivot": [
+					3,
+					12,
+					7
+				],
+				"cubes": [
+					{
+						"origin": [
+							1,
+							0,
+							5
+						],
+						"size": [
+							4,
+							12,
+							4
+						],
+						"uv": [
+							0,
+							16
+						]
+					}
+				]
+			},
+			{
+				"name": "sheep_leg2",
+				"parent": "sheep_body",
+				"pivot": [
+					-3,
+					12,
+					-5
+				],
+				"cubes": [
+					{
+						"origin": [
+							-5,
+							0,
+							-7
+						],
+						"size": [
+							4,
+							12,
+							4
+						],
+						"uv": [
+							0,
+							16
+						]
+					}
+				]
+			},
+			{
+				"name": "sheep_leg3",
+				"parent": "sheep_body",
+				"pivot": [
+					3,
+					12,
+					-5
+				],
+				"cubes": [
+					{
+						"origin": [
+							1,
+							0,
+							-7
+						],
+						"size": [
+							4,
+							12,
+							4
+						],
+						"uv": [
+							0,
+							16
+						]
+					}
+				]
+			}
+		]
+	}
+}

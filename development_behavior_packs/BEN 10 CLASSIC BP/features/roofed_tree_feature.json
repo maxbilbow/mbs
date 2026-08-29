@@ -1,0 +1,14 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:roofed_tree_feature"
+		},
+		"features": [
+			[
+				"gen:dark_oak_tree1_feature",
+				50
+			]
+		]
+	}
+}

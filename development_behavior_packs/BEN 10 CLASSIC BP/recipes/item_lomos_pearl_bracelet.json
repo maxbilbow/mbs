@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lomos_pearl_bracelet_430213cc"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "item:lomos_pearl",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:lomos_pearl_bracelet",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,26 @@
+//bridge-file-version: #14
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:seaglowstonespike_feature_rule",
+			"places_feature": "gen:seaglowstonespike_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "glowing_ocean"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"y": "query.above_top_solid(variable.worldx, variable.worldz) - 5",
+			"z": 0
+		}
+	}
+}

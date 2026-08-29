@@ -1,0 +1,30 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pale_feature"
+		},
+		"features": [
+			[
+				"gen:pale1_feature",
+				2
+			],
+			[
+				"gen:pale2_feature",
+				5
+			],
+			[
+				"gen:pale3_feature",
+				5
+			],
+			[
+				"gen:pale4_feature",
+				3
+			],
+			[
+				"gen:pale5_feature",
+				1
+			]
+		]
+	}
+}

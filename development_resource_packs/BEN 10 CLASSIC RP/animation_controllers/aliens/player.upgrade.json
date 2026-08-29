@@ -79,7 +79,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "query.variant==10&&query.skin_id==501&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')=='ug_laser'&&query.is_using_item"
+							"shoot": "query.variant==10&&query.skin_id==200&&!variable.is_first_person&&query.get_equipped_item_name('main_hand')=='ug_laser'&&query.is_using_item"
 						}
 					],
 					"blend_transition": 0
@@ -90,7 +90,7 @@
 					],
 					"transitions": [
 						{
-							"default": "query.variant!=10||query.skin_id!=501||variable.is_first_person||query.get_equipped_item_name('main_hand')!='ug_laser'||!query.is_using_item"
+							"default": "query.variant!=10||query.skin_id!=200||variable.is_first_person||query.get_equipped_item_name('main_hand')!='ug_laser'||!query.is_using_item"
 						}
 					],
 					"blend_transition": 0.2
@@ -103,7 +103,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "query.variant==10&&query.skin_id==501&&!variable.is_first_person&&variable.attack_time>0"
+							"shoot": "query.variant==10&&query.skin_id==200&&!variable.is_first_person&&variable.attack_time>0"
 						}
 					],
 					"blend_transition": 0
@@ -114,7 +114,7 @@
 					],
 					"transitions": [
 						{
-							"default": "query.variant!=10||query.skin_id!=501||variable.is_first_person||variable.attack_time<=0"
+							"default": "query.variant!=10||query.skin_id!=200||variable.is_first_person||variable.attack_time<=0"
 						}
 					],
 					"blend_transition": 0
@@ -175,7 +175,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "!variable.is_first_person&&query.skin_id==501&&query.is_on_ground&&query.is_moving"
+							"shoot": "!variable.is_first_person&&query.skin_id==200&&query.is_on_ground&&query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -186,7 +186,7 @@
 					],
 					"transitions": [
 						{
-							"default": "variable.is_first_person||query.skin_id!=501||!query.is_on_ground||!query.is_moving"
+							"default": "variable.is_first_person||query.skin_id!=200||!query.is_on_ground||!query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -223,7 +223,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "(query.skin_id==502||query.skin_id==503||query.skin_id==504||query.skin_id==505||query.skin_id==506)&&query.variant==10&&!variable.is_first_person"
+							"shoot": "(query.skin_id==201||query.skin_id==202||query.skin_id==203||query.skin_id==204||query.skin_id==205)&&query.variant==10&&!variable.is_first_person"
 						}
 					],
 					"blend_transition": 0
@@ -234,7 +234,7 @@
 					],
 					"transitions": [
 						{
-							"default": "query.skin_id!=502&&query.skin_id!=503&&query.skin_id!=504&&query.skin_id!=505&&query.skin_id!=506||query.variant!=10||variable.is_first_person"
+							"default": "query.skin_id!=201&&query.skin_id!=202&&query.skin_id!=203&&query.skin_id!=204&&query.skin_id!=205||query.variant!=10||variable.is_first_person"
 						}
 					],
 					"blend_transition": 0
@@ -247,7 +247,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "!variable.is_first_person&&query.skin_id==506&&query.is_on_ground&&query.is_moving"
+							"shoot": "!variable.is_first_person&&query.skin_id==205&&query.is_on_ground&&query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -258,7 +258,7 @@
 					],
 					"transitions": [
 						{
-							"default": "variable.is_first_person||query.skin_id!=506||!query.is_on_ground||!query.is_moving"
+							"default": "variable.is_first_person||query.skin_id!=205||!query.is_on_ground||!query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -271,7 +271,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "!variable.is_first_person&&query.skin_id==502&&query.is_in_water&&query.is_moving"
+							"shoot": "!variable.is_first_person&&query.skin_id==201&&query.is_in_water&&query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -282,7 +282,7 @@
 					],
 					"transitions": [
 						{
-							"default": "variable.is_first_person||query.skin_id!=502||!query.is_in_water||!query.is_moving"
+							"default": "variable.is_first_person||query.skin_id!=201||!query.is_in_water||!query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -295,7 +295,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "!variable.is_first_person&&query.skin_id==505&&query.is_on_ground&&query.is_moving"
+							"shoot": "!variable.is_first_person&&query.skin_id==204&&query.is_on_ground&&query.is_moving"
 						}
 					],
 					"blend_transition": 0.2
@@ -306,7 +306,7 @@
 					],
 					"transitions": [
 						{
-							"default": "variable.is_first_person||query.skin_id!=505||!query.is_on_ground||!query.is_moving"
+							"default": "variable.is_first_person||query.skin_id!=204||!query.is_on_ground||!query.is_moving"
 						}
 					],
 					"blend_transition": 0.2

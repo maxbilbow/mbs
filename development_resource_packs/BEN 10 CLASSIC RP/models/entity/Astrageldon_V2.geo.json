@@ -1,0 +1,285 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.astrageldon_v2",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [
+					0,
+					1.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "rocky",
+					"parent": "head",
+					"pivot": [
+						23.5,
+						20.5,
+						-11.5
+					],
+					"rotation": [
+						17.377,
+						-21.93857,
+						13.4936
+					],
+					"cubes": [
+						{
+							"origin": [
+								13,
+								17,
+								-22
+							],
+							"size": [
+								21,
+								7,
+								21
+							],
+							"uv": [
+								132,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "rocky2",
+					"parent": "head",
+					"pivot": [
+						-17.5,
+						10.5,
+						-16.5
+					],
+					"rotation": [
+						30.1509,
+						-28.48042,
+						-12.49467
+					],
+					"cubes": [
+						{
+							"origin": [
+								-28,
+								7,
+								-27
+							],
+							"size": [
+								21,
+								7,
+								21
+							],
+							"uv": [
+								84,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "rocky3",
+					"parent": "head",
+					"pivot": [
+						-17.5,
+						35.5,
+						4.5
+					],
+					"rotation": [
+						-145.4093,
+						45.59088,
+						11.69055
+					],
+					"cubes": [
+						{
+							"origin": [
+								-28,
+								32,
+								-6
+							],
+							"size": [
+								21,
+								7,
+								21
+							],
+							"uv": [
+								0,
+								110
+							]
+						}
+					]
+				},
+				{
+					"name": "rocky4",
+					"parent": "head",
+					"pivot": [
+						-16.5,
+						19.5,
+						17.5
+					],
+					"rotation": [
+						-44.42457,
+						-56.85811,
+						39.37461
+					],
+					"cubes": [
+						{
+							"origin": [
+								-27,
+								16,
+								7
+							],
+							"size": [
+								21,
+								7,
+								21
+							],
+							"uv": [
+								84,
+								82
+							]
+						}
+					]
+				},
+				{
+					"name": "rocky5",
+					"parent": "head",
+					"pivot": [
+						14.5,
+						10.5,
+						15.5
+					],
+					"rotation": [
+						39.42457,
+						-56.85811,
+						140.62539
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								7,
+								5
+							],
+							"size": [
+								21,
+								7,
+								21
+							],
+							"uv": [
+								0,
+								82
+							]
+						}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-22,
+								0,
+								-22
+							],
+							"size": [
+								44,
+								38,
+								44
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "slimeparts",
+					"parent": "head",
+					"pivot": [
+						12,
+						21.4,
+						-9
+					]
+				},
+				{
+					"name": "slimeparts2",
+					"parent": "head",
+					"pivot": [
+						12,
+						21.4,
+						-12
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								15.4,
+								-24.7
+							],
+							"size": [
+								8,
+								8,
+								9
+							],
+							"uv": [
+								214,
+								234
+							]
+						},
+						{
+							"origin": [
+								-12,
+								18.4,
+								-24.7
+							],
+							"size": [
+								8,
+								8,
+								9
+							],
+							"uv": [
+								214,
+								234
+							],
+							"mirror": true
+						},
+						{
+							"origin": [
+								-2,
+								5.4,
+								-23.7
+							],
+							"size": [
+								6,
+								6,
+								9
+							],
+							"uv": [
+								226,
+								241
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

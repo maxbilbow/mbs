@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sea_prism_forging_template_6ae4e798"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"EEE"
+		],
+		"key": {
+			"A": {
+				"item": "item:sea_prism",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:diamond_block",
+				"data": 0
+			},
+			"C": {
+				"item": "block:sea_prism_block",
+				"data": 0
+			},
+			"D": {
+				"item": "item:sea_prism_forging_template",
+				"data": 0
+			},
+			"E": {
+				"item": "item:reidite",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:sea_prism_forging_template",
+			"count": 2
+		}
+	}
+}

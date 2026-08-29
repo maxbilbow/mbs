@@ -1,0 +1,110 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutant.no_item": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"scale": [
+						0.001,
+						0.001,
+						0.001
+					]
+				},
+				"ice": {
+					"scale": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftItem": {
+					"rotation": [
+						10,
+						0,
+						-15
+					],
+					"position": [
+						0.5,
+						1,
+						-1
+					]
+				},
+				"rightsword": {
+					"scale": [
+						1.2,
+						1.2,
+						1.2
+					]
+				},
+				"tridentR": {
+					"scale": [
+						0.8,
+						0.8,
+						0.8
+					]
+				}
+			}
+		},
+		"animation.mutant.no_item_skeleton": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"scale": [
+						0.001,
+						0.001,
+						0.001
+					]
+				},
+				"leftItem": {
+					"scale": [
+						0.001,
+						0.001,
+						0.001
+					],
+					"position": [
+						0,
+						0,
+						0.5
+					]
+				},
+				"rightbow": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"scale": [
+						1.3,
+						1.3,
+						1.3
+					]
+				},
+				"rightsword": {
+					"rotation": [
+						0,
+						25,
+						0
+					],
+					"scale": [
+						1.3,
+						1.3,
+						1.3
+					]
+				},
+				"leftsword": {
+					"rotation": [
+						0,
+						-25,
+						0
+					],
+					"scale": [
+						1.3,
+						1.3,
+						1.3
+					]
+				}
+			}
+		}
+	}
+}

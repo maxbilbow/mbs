@@ -1,0 +1,104 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.blizzardshard",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [
+					0,
+					0.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						-2,
+						0,
+						0
+					],
+					"rotation": [
+						-90,
+						0,
+						-90
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4.09234,
+								0,
+								1.06109
+							],
+							"size": [
+								3,
+								5,
+								3
+							],
+							"uv": [
+								0,
+								35
+							]
+						},
+						{
+							"origin": [
+								-2.59234,
+								0,
+								-1.03891
+							],
+							"size": [
+								0,
+								5,
+								7
+							],
+							"pivot": [
+								-2.59234,
+								2,
+								2.56109
+							],
+							"rotation": [
+								0,
+								45,
+								0
+							],
+							"uv": [
+								0,
+								16
+							]
+						},
+						{
+							"origin": [
+								-2.59234,
+								0,
+								-1.03891
+							],
+							"size": [
+								0,
+								5,
+								7
+							],
+							"pivot": [
+								-2.59234,
+								2,
+								2.56109
+							],
+							"rotation": [
+								0,
+								-45,
+								0
+							],
+							"uv": [
+								14,
+								16
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

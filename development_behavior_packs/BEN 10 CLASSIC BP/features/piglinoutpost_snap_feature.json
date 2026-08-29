@@ -1,0 +1,36 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:snap_to_surface_feature": {
+		"description": {
+			"identifier": "generation:piglinoutpost_snap_feature"
+		},
+		"feature_to_snap": "generation:piglinoutpost_feature_mcstructure",
+		"surface": "floor",
+		"vertical_search_range": 3,
+		"allow_air_placement": true,
+		"allow_underwater_placement": true,
+		"allowed_surface_blocks": [
+			{
+				"name": "minecraft:netherrack"
+			},
+			{
+				"name": "minecraft:crimson_nylium"
+			},
+			{
+				"name": "minecraft:warped_nylium"
+			},
+			{
+				"name": "minecraft:soul_sand"
+			},
+			{
+				"name": "minecraft:soul_soil"
+			},
+			{
+				"name": "minecraft:basalt"
+			},
+			{
+				"name": "minecraft:blackstone"
+			}
+		]
+	}
+}

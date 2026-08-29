@@ -1,0 +1,35 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:junglebuilding4_feature_rule",
+			"places_feature": "generation:junglebuilding4_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "jungle"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "bamboo"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 0.07,
+			"x": 0,
+			"y": "query.heightmap(variable.worldx, variable.worldz) + 0",
+			"z": 0
+		}
+	}
+}

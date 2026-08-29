@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "omni:echoecho_clone",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/player/alien/echoecho",
+				"scream": "textures/player/alien/echoecho_screaming",
+				"scream_atk": "textures/entity/alien_atk/ee_sonic_scream"
+			},
+			"geometry": {
+				"default": "geometry.echoecho",
+				"scream": "geometry.echoecho_screaming",
+				"scream_atk": "geometry.ee_sonic_scream"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.p.moving",
+				"scream": "animation.sonic_scream.general",
+				"screaming": "controller.animation.echoecho_clone.screaming",
+				"entity": "controller.animation.entity"
+			},
+			"scripts": {
+				"animate": [
+					"screaming",
+					"entity"
+				]
+			},
+			"render_controllers": [
+				"controller.render.echoecho_clone",
+				"controller.render.echoecho_clone.screaming",
+				"controller.render.echoecho_clone.sonic_scream"
+			],
+			"spawn_egg": {
+				"texture": "null"
+			}
+		}
+	}
+}

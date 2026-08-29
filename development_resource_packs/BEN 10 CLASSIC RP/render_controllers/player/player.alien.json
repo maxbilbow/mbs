@@ -33,6 +33,60 @@
 				}
 			]
 		},
+		"controller.render.spell_book_b": {
+			"geometry": "geometry.spell_book_b",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.spell_book"
+			],
+			"part_visibility": [
+				{
+					"*": "query.get_equipped_item_name('main_hand') == 'spell_book'"
+				}
+			]
+		},
+		"controller.render.spell_book": {
+			"geometry": "geometry.spell_book",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.spell_book"
+			],
+			"part_visibility": [
+				{
+					"*": "query.get_equipped_item_name('main_hand') == 'spell_shield' || query.get_equipped_item_name('main_hand') == 'spell_fly' || query.get_equipped_item_name('main_hand') == 'spell_blast' || query.get_equipped_item_name('main_hand') == 'spell_levi' && query.get_equipped_item_name('off_hand') == 'spell_book'"
+				},
+				{
+					"shield": false
+				}
+			]
+		},
+		"controller.render.spell_shield": {
+			"geometry": "geometry.spell_book",
+			"materials": [
+				{
+					"*": "material.charged"
+				}
+			],
+			"textures": [
+				"texture.magic"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"shield": "query.get_equipped_item_name('main_hand') == 'spell_shield'"
+				}
+			]
+		},
 		"controller.render.wildmutt_fp": {
 			"geometry": "geometry.wildmutt_fp",
 			"materials": [
@@ -103,6 +157,12 @@
 			"part_visibility": [
 				{
 					"*": "query.variant == 3 && variable.is_first_person && variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off'"
+				},
+				{
+					"shield": "query.get_equipped_item_name('main_hand')=='dh_shield' && query.is_sneaking"
+				},
+				{
+					"shield2": "query.get_equipped_item_name('main_hand')=='dh_shield' && query.is_sneaking"
 				}
 			]
 		},
@@ -119,6 +179,12 @@
 			"part_visibility": [
 				{
 					"*": "query.variant == 3 && !variable.is_first_person"
+				},
+				{
+					"shield": "query.get_equipped_item_name('main_hand')=='dh_shield' && query.is_sneaking"
+				},
+				{
+					"shield2": "query.get_equipped_item_name('main_hand')=='dh_shield' && query.is_sneaking"
 				}
 			]
 		},
@@ -150,7 +216,7 @@
 			],
 			"part_visibility": [
 				{
-					"*": "query.variant == 4 && !variable.is_first_person"
+					"*": "query.variant == 4"
 				}
 			]
 		},
@@ -1240,6 +1306,400 @@
 				},
 				{
 					"laser": false
+				}
+			]
+		},
+		"controller.render.ug_laser_fp": {
+			"geometry": "geometry.upgrade_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"laser": "query.variant == 10 && query.skin_id == 0 && (query.get_equipped_item_name('main_hand') == 'ug_laser' || query.get_equipped_item_name('main_hand') == 'ug_laser2') && query.is_using_item && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_laser": {
+			"geometry": "geometry.upgrade",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"laser": "query.variant == 10 && query.skin_id == 0 && (query.get_equipped_item_name('main_hand') == 'ug_laser' || query.get_equipped_item_name('main_hand') == 'ug_laser2') && query.is_using_item && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_golemlaser_fp": {
+			"geometry": "geometry.ug_irongolem_fp",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"laser": "query.variant == 10 && query.skin_id >= 200 && (query.get_equipped_item_name('main_hand') == 'ug_laser' || query.get_equipped_item_name('main_hand') == 'ug_laser2') && query.is_using_item && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_golemlaser": {
+			"geometry": "geometry.ug_irongolem",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.clock_beam"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"laser": "query.variant == 10 && query.skin_id >= 200 && (query.get_equipped_item_name('main_hand') == 'ug_laser' || query.get_equipped_item_name('main_hand') == 'ug_laser2') && query.is_using_item && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_irongolem_fp": {
+			"geometry": "geometry.ug_irongolem_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ug_irongolem"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 200 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				},
+				{
+					"laser": false
+				}
+			]
+		},
+		"controller.render.ug_irongolem": {
+			"geometry": "geometry.ug_irongolem",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ug_irongolem"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 200 && !variable.is_first_person"
+				},
+				{
+					"laser": false
+				}
+			]
+		},
+		"controller.render.ug_boat": {
+			"geometry": "geometry.ug_boat",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.ug_boat"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 201 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_furnace": {
+			"geometry": "geometry.ug_furnace",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.ug_furnace"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 202 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_minecart": {
+			"geometry": "geometry.ug_minecart",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ug_minecart"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 203 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_noteblock": {
+			"geometry": "geometry.ug_noteblock",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ug_noteblock"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 204 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.ug_piston": {
+			"geometry": "geometry.ug_piston",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ug_piston"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 10 && query.skin_id == 205 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.feedback_fp": {
+			"geometry": "geometry.feedback_fp",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.feedback"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 24 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.feedback": {
+			"geometry": "geometry.feedback",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.feedback"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 24 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.feed_lightning": {
+			"geometry": "geometry.feedback",
+			"materials": [
+				{
+					"*": "material.charged"
+				}
+			],
+			"textures": [
+				"texture.feed_lightning"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 24 && query.is_using_item && (query.get_equipped_item_name('main_hand') == 'feed_absorb' || query.get_equipped_item_name('main_hand') == 'feed_electro' || query.get_equipped_item_name('main_hand') == 'feed_zap') && !variable.is_first_person"
+				}
+			],
+			"overlay_color": {
+				"r": 1,
+				"g": 1,
+				"b": 1,
+				"a": 1
+			},
+			"light_color_multiplier": 0.5,
+			"ignore_lighting": true
+		},
+		"controller.render.player.swampfire": {
+			"geometry": "geometry.swampfire_arm",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.swampfire"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 25 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.swampfire": {
+			"geometry": "geometry.swampfire",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.swampfire"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 25 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.player.echoecho": {
+			"geometry": "geometry.echoecho_arm",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.echoecho"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 27 && variable.is_first_person && (variable.holding_nothing || variable.holding_power || query.get_equipped_item_name('main_hand') == 'omni_off')"
+				}
+			]
+		},
+		"controller.render.echoecho": {
+			"geometry": "geometry.echoecho",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.echoecho"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 27 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.echoecho_screaming": {
+			"geometry": "geometry.echoecho_screaming",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.echoecho_screaming"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 27 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.player.echoecho_scream": {
+			"geometry": "geometry.ee_sonic_scream_1p",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ee_sonic_scream"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 27 && variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.player.echoecho_scream_3p": {
+			"geometry": "geometry.ee_sonic_scream",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.ee_sonic_scream"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 27 && !variable.is_first_person"
+				}
+			]
+		},
+		"controller.render.player.omni2_echoecho": {
+			"geometry": "geometry.omni2_hologram",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.omni2_echoecho"
+			],
+			"part_visibility": [
+				{
+					"*": true
+				}
+			]
+		},
+		"controller.render.player.omni2_echoecho_3p": {
+			"geometry": "geometry.omni2_hologram_3p",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.omni2_echoecho"
+			],
+			"part_visibility": [
+				{
+					"*": true
 				}
 			]
 		}

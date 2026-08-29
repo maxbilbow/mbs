@@ -1,0 +1,23 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "nt:rose_garden"
+		},
+		"components": {
+			"minecraft:sky_color": {
+				"sky_color": "#2C78FF"
+			},
+			"minecraft:fog_appearance": {
+				"fog_identifier": "e:fog_rose_garden"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#2589FF"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 1
+			}
+		}
+	}
+}

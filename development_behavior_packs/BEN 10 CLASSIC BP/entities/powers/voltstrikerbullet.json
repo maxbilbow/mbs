@@ -1,0 +1,98 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:voltstrikerbullet",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 10,
+						"destroy_on_hit": false,
+						"semi_random_diff_damage": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0.05
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "onhit"
+						}
+					}
+				},
+				"power": 20,
+				"gravity": 0,
+				"liquid_inertia": 20
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"none",
+					"proj"
+				]
+			},
+			"minecraft:scale": {
+				"value": 0.05
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"time": 3,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"onhit": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"summon zk:lightningmagiccircle ~~-0.65~",
+								"summon zk:lightningmagiccircle ~~-0.65~",
+								"tp @p[tag=voltstriking] ~~~",
+								"tag @p[tag=voltstriking] remove voltstriking"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

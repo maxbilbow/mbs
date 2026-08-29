@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_grate_5ec0ec2a"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" A ",
+			"A A",
+			" A "
+		],
+		"key": {
+			"A": {
+				"item": "block:scrap_metal_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:scrap_metal_grate",
+			"count": 4
+		}
+	}
+}

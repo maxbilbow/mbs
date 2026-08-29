@@ -1,0 +1,134 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.mutant_thrown": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"head": {
+					"rotation": [
+						"-this",
+						0,
+						0
+					]
+				},
+				"leftarm": {
+					"rotation": {
+						"0.0": [
+							36,
+							0,
+							0
+						],
+						"0.0833": [
+							36,
+							0,
+							0
+						],
+						"0.25": [
+							"math.cos(query.anim_time*720)*50+36",
+							0,
+							0
+						],
+						"0.875": [
+							"math.cos(query.anim_time*720)*25+36",
+							0,
+							0
+						],
+						"1.0": [
+							36,
+							0,
+							0
+						]
+					}
+				},
+				"rightarm": {
+					"rotation": {
+						"0.0": [
+							36,
+							0,
+							0
+						],
+						"0.0833": [
+							36,
+							0,
+							0
+						],
+						"0.25": [
+							"math.cos(query.anim_time*720)*-50+36",
+							0,
+							0
+						],
+						"0.875": [
+							"math.cos(query.anim_time*720)*-25+36",
+							0,
+							0
+						],
+						"1.0": [
+							36,
+							0,
+							0
+						]
+					}
+				},
+				"rightleg": {
+					"rotation": {
+						"0.0": [
+							"72-this",
+							"-18-this",
+							0
+						],
+						"0.0833": [
+							"72-this",
+							"-18-this",
+							0
+						],
+						"0.25": [
+							"70*math.cos(query.anim_time*720)+72-this",
+							"-18-this",
+							0
+						],
+						"0.875": [
+							"35*math.cos(query.anim_time*720)+72-this",
+							"-18-this",
+							0
+						],
+						"1.0": [
+							"72-this",
+							"-18-this",
+							0
+						]
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"0.0": [
+							"72-this",
+							"18-this",
+							0
+						],
+						"0.0833": [
+							"72-this",
+							"18-this",
+							0
+						],
+						"0.25": [
+							"-70*math.cos(query.anim_time*720)+72-this",
+							"18-this",
+							0
+						],
+						"0.875": [
+							"-35*math.cos(query.anim_time*720)+72-this",
+							"18-this",
+							0
+						],
+						"1.0": [
+							"72-this",
+							"18-this",
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

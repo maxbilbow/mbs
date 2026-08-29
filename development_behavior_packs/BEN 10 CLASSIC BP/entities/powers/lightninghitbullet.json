@@ -1,0 +1,100 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:lightninghitbullet",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 10,
+						"destroy_on_hit": false,
+						"semi_random_diff_damage": false,
+						"max_critical_damage": 0,
+						"min_critical_damage": 0
+					},
+					"stick_in_ground": {
+						"shake_time": 0.2
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "onhit"
+						}
+					}
+				},
+				"power": 20,
+				"gravity": 0,
+				"liquid_inertia": 40,
+				"destroy_on_hurt": false,
+				"semi_random_diff_damage": false,
+				"hit_sound": "hit",
+				"hit_ground_sound": "hit",
+				"shoot_sound": "shoot"
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"none",
+					"proj"
+				]
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"time": 0.5,
+				"time_down_event": {
+					"event": "despawn"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"onhit": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"summon zk:lightninghitbullett ~3~1~3",
+								"summon zk:lightninghitbullett ~-3~1~-3",
+								"summon zk:lightninghitbullett ~3~1~-3",
+								"summon zk:lightninghitbullett ~~1~"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

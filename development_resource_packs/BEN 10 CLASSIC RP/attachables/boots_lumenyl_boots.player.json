@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "boots:lumenyl_boots.player",
+      "item": {
+        "boots:ascendant_boots": "query.owner_identifier == 'minecraft:player'"
+      },
+      "materials": {
+        "default": "armor",
+        "enchanted": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/entity/helmet_lumenyl_helmet",
+        "enchanted": "textures/misc/helmet_lumenyl_helmet"
+      },
+      "geometry": {
+        "default": "geometry.ascendant_boots"
+      },
+      "scripts": {
+        "parent_setup": "variable.boot_layer_visible = 0.0;"
+      },
+      "render_controllers": [
+        "controller.render.armor"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1598 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutant_creeper",
+			"runtime_identifier": "minecraft:creeper",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"detect_health",
+					{
+						"stunned": "query.is_stunned"
+					}
+				]
+			},
+			"animations": {
+				"stunned": "animation.mutants.mutant_creeper_health_stunned",
+				"detect_health": "controller.animation.mutant_creeper_health"
+			}
+		},
+		"component_groups": {
+			"death": {
+				"minecraft:transformation": {
+					"into": "mutant:mutant_creeper_death"
+				}
+			},
+			"charged": {
+				"minecraft:is_charged": {}
+			},
+			"playing_dead": {
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 4,
+					"ignore_visibility": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 0.9,
+							"sprint_speed_multiplier": 0.9
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.75,
+					"time_down_event": {
+						"event": "on_calm_to_normal"
+					}
+				}
+			},
+			"family": {
+				"minecraft:health": {
+					"value": 120,
+					"max": 120
+				},
+				"minecraft:water_movement": {
+					"drag_factor": 0.98
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 9
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 6,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.float": {
+					"priority": 0
+				},
+				"minecraft:movement": {
+					"value": 0.3
+				},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:type_family": {
+					"family": [
+						"mcreeper",
+						"creeper",
+						"mutantmonster",
+						"chemical_x",
+						"monster"
+					]
+				}
+			},
+			"attackable": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 4,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "ocelot"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "snowgolem"
+											}
+										]
+									},
+									{
+										"test": "is_avoiding_mobs",
+										"subject": "self",
+										"value": false
+									}
+								]
+							},
+							"max_dist": 56
+						}
+					],
+					"must_see": true
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 2,
+					"entity_types": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "inanimate"
+						}
+					}
+				}
+			},
+			"can_attack": {
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						5,
+						7
+					],
+					"time_down_event": {
+						"event": "start_attack"
+					}
+				}
+			},
+			"minion_attack": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "mutant:creeper_minion",
+							"single_use": true,
+							"num_to_spawn": 5,
+							"should_leash": false
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "melee_return"
+					}
+				}
+			},
+			"minion_charged_attack": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "mutant:creeper_minion",
+							"spawn_event": "minecraft:become_charged",
+							"single_use": true,
+							"num_to_spawn": 5,
+							"should_leash": false
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "melee_return"
+					}
+				}
+			},
+			"jump_target": {
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 3.5,
+					"must_see": false,
+					"on_inside_range": {
+						"event": "jump_attack",
+						"target": "self"
+					}
+				}
+			},
+			"jump_attack": {
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.25,
+						0.25
+					],
+					"time_down_event": {
+						"event": "jump_delay"
+					}
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"speed_multiplier": 1.25
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"creeper_ride"
+					],
+					"seats": {
+						"position": [
+							0,
+							1.25,
+							0
+						]
+					}
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "levitation",
+							"amplifier": 40,
+							"visible": false,
+							"ambient": false,
+							"duration": 0.15
+						},
+						{
+							"effect": "resistance",
+							"amplifier": 3,
+							"visible": false,
+							"ambient": false,
+							"duration": 6
+						}
+					]
+				}
+			},
+			"jump_delay": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"ground_explosion": {
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "melee_return"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "mutant:creeper_minion",
+							"single_use": true,
+							"num_to_spawn": 5,
+							"should_leash": false
+						}
+					]
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"creeper_ride"
+					],
+					"seats": {
+						"position": [
+							0,
+							1.25,
+							0
+						]
+					}
+				},
+				"minecraft:addrider": {
+					"entity_type": "mutant:mcreeper_explosion"
+				}
+			},
+			"ground_charged_explosion": {
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "melee_return"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "mutant:creeper_minion",
+							"spawn_event": "minecraft:become_charged",
+							"single_use": true,
+							"num_to_spawn": 5,
+							"should_leash": false
+						}
+					]
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"creeper_ride"
+					],
+					"seats": {
+						"position": [
+							0,
+							1.25,
+							0
+						]
+					}
+				},
+				"minecraft:addrider": {
+					"entity_type": "mutant:mcreeper_explosion<minecraft:become_charged>"
+				}
+			},
+			"minecraft:mutant_angry": {
+				"minecraft:on_target_escape": {
+					"event": "minecraft:on_calm",
+					"target": "self"
+				},
+				"minecraft:angry": {
+					"broadcast_anger": false,
+					"broadcast_anger_on_attack": false,
+					"broadcast_anger_on_being_attacked": false,
+					"broadcast_range": 60,
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "other",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:mutant_calm": {
+				"minecraft:on_target_acquired": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_component",
+								"subject": "self",
+								"operator": "!=",
+								"value": "minecraft:is_stunned"
+							}
+						]
+					},
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+			},
+			"melee_attack": {
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"track_target": false,
+					"reach_multiplier": 2.5,
+					"speed_multiplier": 1.25
+				}
+			},
+			"heal_ability": {
+				"minecraft:behavior.panic": {
+					"priority": 2,
+					"prefer_water": false,
+					"speed_multiplier": 1.5,
+					"ignore_mob_damage": false,
+					"force": false
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 6,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<=",
+								"value": 5
+							},
+							"max_dist": 15,
+							"walk_speed_multiplier": 1.25,
+							"sprint_speed_multiplier": 1.3
+						}
+					]
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 5
+						},
+						{
+							"effect": "regeneration",
+							"amplifier": 3,
+							"visible": false,
+							"ambient": false,
+							"duration": 5
+						}
+					]
+				},
+				"minecraft:is_stunned": {}
+			},
+			"heal_charged_ability": {
+				"minecraft:behavior.panic": {
+					"priority": 2,
+					"prefer_water": false,
+					"speed_multiplier": 1.5,
+					"ignore_mob_damage": false,
+					"force": false
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 6,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<=",
+								"value": 5
+							},
+							"max_dist": 15,
+							"walk_speed_multiplier": 1.25,
+							"sprint_speed_multiplier": 1.3
+						}
+					]
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 2,
+							"visible": false,
+							"ambient": false,
+							"duration": 5
+						},
+						{
+							"effect": "regeneration",
+							"amplifier": 4,
+							"visible": false,
+							"ambient": false,
+							"duration": 5
+						}
+					]
+				},
+				"minecraft:is_stunned": {}
+			},
+			"heal_cooldown": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_complete_event": {
+						"event": "heal_cooldown",
+						"target": "self"
+					},
+					"attack_cooldown_time": [
+						12,
+						12
+					]
+				}
+			},
+			"full_health": {
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"can_heal": {
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"instant_heal": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "strength",
+							"amplifier": 1,
+							"visible": false,
+							"ambient": false,
+							"duration": 20
+						},
+						{
+							"effect": "trial_omen",
+							"amplifier": 4,
+							"visible": true,
+							"ambient": false,
+							"duration": 2
+						},
+						{
+							"effect": "instant_health",
+							"duration": 0.05,
+							"visible": false,
+							"ambient": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"acacia_leaves",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"birch_leaves",
+					"cherry_leaves",
+					"dark_oak_leaves",
+					"jungle_leaves",
+					"mangrove_leaves",
+					"oak_leaves",
+					"spruce_leaves",
+					"bamboo",
+					"bamboo_sapling",
+					"beetroot",
+					"brown_mushroom",
+					"carrots",
+					"carved_pumpkin",
+					"chorus_flower",
+					"chorus_plant",
+					"deadbush",
+					"double_plant",
+					"leaves",
+					"leaves2",
+					"lit_pumpkin",
+					"melon_block",
+					"melon_stem",
+					"potatoes",
+					"pumpkin",
+					"pumpkin_stem",
+					"red_flower",
+					"red_mushroom",
+					"crimson_fungus",
+					"warped_fungus",
+					"reeds",
+					"sapling",
+					"snow_layer",
+					"sweet_berry_bush",
+					"tallgrass",
+					"turtle_egg",
+					"vine",
+					"waterlily",
+					"wheat",
+					"dandelion",
+					"azalea",
+					"flowering_azalea",
+					"azalea_leaves",
+					"azalea_leaves_flowered",
+					"cave_vines",
+					"cave_vines_body_with_berries",
+					"cave_vines_head_with_berries",
+					"small_dripleaf_block",
+					"big_dripleaf",
+					"spore_blossom",
+					"hanging_roots",
+					"mangrove_leaves"
+				]
+			},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"jump_prevented_value": 0.5625
+			},
+			"minecraft:spell_effects": {
+				"add_effects": [
+					{
+						"effect": "resistance",
+						"amplifier": 1,
+						"visible": false,
+						"ambient": false,
+						"duration": 9999999
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 120,
+				"max": 120
+			},
+			"minecraft:attack": {
+				"damage": 14
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_immobile",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"event": "start_death"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": "<=",
+									"value": 3.5
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 2
+								}
+							]
+						},
+						"event": "jump_attack"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:attack_cooldown"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								},
+								{
+									"test": "is_mark_variant",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"event": "start_healing"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"any_of": [
+										{
+											"test": "on_ground",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "in_water",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"event": "ground_explosion"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"any_of": [
+										{
+											"test": "on_ground",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										},
+										{
+											"test": "in_water",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								{
+									"test": "is_skin_id",
+									"subject": "self",
+									"operator": "==",
+									"value": 1
+								}
+							]
+						},
+						"event": "ground_explosion"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "self",
+										"operator": "==",
+										"value": "inanimate"
+									}
+								]
+							},
+							"event": "on_calm_play_dead",
+							"target": "other"
+						},
+						"deals_damage": false
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"all_of": [
+											{
+												"test": "has_damage",
+												"subject": "self",
+												"operator": "equals",
+												"value": "entity_explosion"
+											},
+											{
+												"test": "has_component",
+												"subject": "other",
+												"operator": "!=",
+												"value": "minecraft:behavior.knockback_roar"
+											}
+										]
+									},
+									{
+										"all_of": [
+											{
+												"test": "has_damage",
+												"subject": "self",
+												"operator": "equals",
+												"value": "entity_explosion"
+											},
+											{
+												"test": "has_component",
+												"subject": "other",
+												"operator": "!=",
+												"value": "minecraft:behavior.knockback_roar"
+											}
+										]
+									}
+								]
+							},
+							"event": "instant_heal",
+							"target": "self"
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_component",
+										"subject": "self",
+										"operator": "!=",
+										"value": "minecraft:is_charged"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "==",
+										"value": "lightning"
+									}
+								]
+							},
+							"event": "become_charged",
+							"target": "self"
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": -1,
+				"breathesWater": false
+			},
+			"minecraft:collision_box": {
+				"width": 1.5,
+				"height": 2.75
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:nameable": {},
+			"minecraft:follow_range": {
+				"value": 56,
+				"max": 56
+			},
+			"minecraft:experience_reward": {
+				"on_death": 250
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": false,
+				"avoid_portals": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/mutants/creeper.json"
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.break_door": {
+				"priority": 1
+			},
+			"minecraft:behavior.move_towards_restriction": {
+				"priority": 5
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 98,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"family",
+								"full_health",
+								"attackable",
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"become_charged": {
+				"remove": {},
+				"add": {
+					"component_groups": [
+						"charged"
+					]
+				}
+			},
+			"instant_heal": {
+				"add": {
+					"component_groups": [
+						"instant_heal"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"operator": "==",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"family",
+								"full_health",
+								"attackable",
+								"charged",
+								"minecraft:mutant_calm"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_component",
+							"subject": "other",
+							"operator": "!=",
+							"value": "minecraft:is_charged"
+						},
+						"add": {
+							"component_groups": [
+								"family",
+								"full_health",
+								"attackable",
+								"minecraft:mutant_calm"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:become_angry": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:mutant_calm",
+						"minion_attack",
+						"jump_target",
+						"jump_attack",
+						"jump_delay",
+						"ground_explosion"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:mutant_angry",
+						"melee_attack",
+						"can_attack"
+					]
+				}
+			},
+			"minecraft:on_calm": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_component",
+							"subject": "self",
+							"operator": "!=",
+							"value": "minecraft:is_stunned"
+						}
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:mutant_angry",
+						"melee_attack",
+						"can_attack",
+						"minion_attack",
+						"jump_target",
+						"jump_attack",
+						"jump_delay",
+						"ground_explosion"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:mutant_calm"
+					]
+				}
+			},
+			"start_healing": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_charged"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:attack_cooldown"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"melee_attack",
+								"attackable",
+								"can_attack",
+								"minecraft:mutant_calm",
+								"minecraft:mutant_angry"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"heal_ability"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_charged"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:attack_cooldown"
+								},
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"melee_attack",
+								"attackable",
+								"can_attack",
+								"minecraft:mutant_calm",
+								"minecraft:mutant_angry"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"heal_charged_ability"
+							]
+						}
+					}
+				]
+			},
+			"start_attack": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 25,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_attack",
+										"can_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minion_attack"
+									]
+								}
+							},
+							{
+								"weight": 25,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_attack",
+										"can_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minion_charged_attack"
+									]
+								}
+							},
+							{
+								"weight": 25,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										},
+										{
+											"test": "has_target",
+											"subject": "self",
+											"operator": "equals",
+											"value": true
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"can_attack"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"jump_target",
+										"melee_attack"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_attack",
+										"attackable",
+										"can_attack",
+										"minecraft:mutant_calm",
+										"minecraft:mutant_angry"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"heal_ability"
+									]
+								}
+							},
+							{
+								"weight": 20,
+								"filters": {
+									"all_of": [
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:is_charged"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:attack_cooldown"
+										},
+										{
+											"test": "has_component",
+											"subject": "self",
+											"operator": "!=",
+											"value": "minecraft:is_stunned"
+										}
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"melee_attack",
+										"attackable",
+										"can_attack",
+										"minecraft:mutant_calm",
+										"minecraft:mutant_angry"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"heal_charged_ability"
+									]
+								}
+							}
+						]
+					},
+					{
+						"weight": 54,
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_stunned"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": []
+						},
+						"add": {
+							"component_groups": [
+								"can_attack",
+								"melee_attack"
+							]
+						}
+					}
+				]
+			},
+			"jump_attack": {
+				"remove": {
+					"component_groups": [
+						"jump_target"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"jump_attack"
+					]
+				}
+			},
+			"jump_delay": {
+				"remove": {
+					"component_groups": [
+						"jump_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"jump_delay"
+					]
+				}
+			},
+			"ground_explosion": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "!=",
+									"value": "minecraft:is_charged"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"jump_attack",
+								"jump_delay"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ground_explosion"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"subject": "self",
+									"operator": "==",
+									"value": "minecraft:is_charged"
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"jump_attack",
+								"jump_delay"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ground_charged_explosion"
+							]
+						}
+					}
+				]
+			},
+			"melee_return": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"heal_ability",
+								"minion_attack",
+								"jump_target",
+								"jump_attack",
+								"jump_delay",
+								"ground_explosion",
+								"ground_explosion",
+								"heal_charged_ability",
+								"minion_charged_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"attackable",
+								"melee_attack",
+								"can_attack"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"attackable",
+								"melee_attack"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"can_attack",
+								"heal_ability",
+								"minion_attack",
+								"jump_target",
+								"jump_attack",
+								"jump_delay",
+								"ground_explosion",
+								"heal_charged_ability",
+								"minion_charged_attack"
+							]
+						}
+					}
+				]
+			},
+			"heal_return": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": true
+								}
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"heal_ability",
+								"minion_attack",
+								"jump_target",
+								"jump_attack",
+								"jump_delay",
+								"ground_explosion",
+								"ground_explosion",
+								"heal_charged_ability",
+								"minion_charged_attack"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"attackable",
+								"melee_attack",
+								"can_attack",
+								"minecraft:mutant_angry",
+								"heal_cooldown"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_target",
+									"subject": "self",
+									"operator": "equals",
+									"value": false
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"attackable",
+								"minecraft:mutant_calm",
+								"heal_cooldown"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"melee_attack",
+								"can_attack",
+								"heal_ability",
+								"minion_attack",
+								"jump_target",
+								"jump_attack",
+								"jump_delay",
+								"ground_explosion",
+								"ground_explosion",
+								"heal_charged_ability",
+								"minion_charged_attack"
+							]
+						}
+					}
+				]
+			},
+			"heal_cooldown": {
+				"remove": {
+					"component_groups": [
+						"heal_cooldown"
+					]
+				}
+			},
+			"can_heal": {
+				"add": {
+					"component_groups": [
+						"can_heal"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"full_health"
+					]
+				}
+			},
+			"full_health": {
+				"add": {
+					"component_groups": [
+						"full_health"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"can_heal"
+					]
+				}
+			},
+			"start_death": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"death"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

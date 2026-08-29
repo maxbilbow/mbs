@@ -1,0 +1,21 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "minecraft:plains_eyeblossom_feature_rules",
+      "places_feature": "minecraft:scatter_eyeblossom_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        { "test": "has_biome_tag", "operator": "==", "value": "pale_plains" }
+      ]
+    },
+    "distribution": {
+      "iterations": 10,
+      "x": "math.random(-10, 10)",
+      "y": 0,
+      "z": "math.random(-10, 10)"
+    }
+  }
+}

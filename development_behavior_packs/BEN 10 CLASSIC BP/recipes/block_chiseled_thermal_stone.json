@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_thermal_stone_8375f2fc"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_stone_brick_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_thermal_stone",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mpiglin": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.piglinmafia",
+						"Texture.piglin_technoblade"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.piglinmafia",
+						"Geometry.piglin_technoblade"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			],
+			"ignore_lighting": false
+		}
+	}
+}

@@ -1,0 +1,133 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.solaling",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4.5,
+								0,
+								-7
+							],
+							"size": [
+								9,
+								5,
+								15
+							],
+							"uv": [
+								83,
+								0
+							]
+						},
+						{
+							"origin": [
+								-1,
+								-2,
+								3
+							],
+							"size": [
+								2,
+								10,
+								15
+							],
+							"uv": [
+								82,
+								20
+							]
+						},
+						{
+							"origin": [
+								-0.5,
+								-6,
+								-6
+							],
+							"size": [
+								0,
+								18,
+								41
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "leftwing",
+					"parent": "head",
+					"pivot": [
+						5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								2,
+								-5
+							],
+							"size": [
+								11,
+								1,
+								28
+							],
+							"uv": [
+								0,
+								59
+							]
+						}
+					]
+				},
+				{
+					"name": "rightwing",
+					"parent": "head",
+					"pivot": [
+						-5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-15,
+								2,
+								-5
+							],
+							"size": [
+								11,
+								1,
+								28
+							],
+							"uv": [
+								78,
+								59
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,812 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mcreeperegg.spawned": {
+			"animation_length": 0.36,
+			"bones": {
+				"body": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.12": [
+							0,
+							1.6,
+							0
+						],
+						"0.2": [
+							0,
+							2,
+							0
+						],
+						"0.28": [
+							0,
+							0,
+							0
+						],
+						"0.36": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							0.2,
+							0,
+							0.2
+						],
+						"0.12": [
+							0.8222,
+							0.7111,
+							0.7555
+						],
+						"0.24": [
+							1.1333,
+							1.0667,
+							1.0333
+						],
+						"0.32": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			}
+		},
+		"animation.mcreeperegg.hatching": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						"math.cos(query.life_time*400+100)*3",
+						"math.cos(query.life_time*200-150)*-2",
+						"math.cos(query.life_time*300)*-2.5"
+					],
+					"scale": [
+						1,
+						"1+math.cos(query.life_time*150)*0.01",
+						1
+					]
+				}
+			}
+		},
+		"animation.chemical.wield_main_hand_first_person": {
+			"loop": true,
+			"bones": {
+				"x_item": {
+					"rotation": [
+						86,
+						61,
+						-44
+					],
+					"position": [
+						1,
+						16.5,
+						-1.5
+					],
+					"scale": 0.75
+				}
+			}
+		},
+		"animation.chemical.wield_off_hand_first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						96,
+						61,
+						-34
+					],
+					"position": [
+						-14,
+						10,
+						"(query.get_equipped_item_name=='bow')&&(query.main_hand_item_use_duration>0)?-25:2"
+					],
+					"scale": 0.85
+				}
+			}
+		},
+		"animation.chemical.wield_third_person": {
+			"loop": true,
+			"bones": {
+				"x_item": {
+					"rotation": [
+						-80,
+						-5,
+						0
+					],
+					"position": [
+						"c.item_slot=='main_hand'?0.5:-0.5",
+						-1.5,
+						-2.5
+					],
+					"scale": [
+						0.55,
+						"c.item_slot=='main_hand'?-0.55:0.55",
+						"c.item_slot=='main_hand'?-0.55:0.55"
+					]
+				}
+			}
+		},
+		"animation.creeper_egg.wield_main_hand_first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						86,
+						61,
+						-44
+					],
+					"position": [
+						1,
+						1.5,
+						-1.5
+					],
+					"scale": 1.15
+				}
+			}
+		},
+		"animation.creeper_egg.wield_third_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						-160,
+						-5,
+						0
+					],
+					"position": [
+						"c.item_slot=='main_hand'?0.5:-0.5",
+						-7,
+						-4
+					],
+					"scale": [
+						1.25,
+						"c.item_slot=='main_hand'?-1.25:1.25",
+						"c.item_slot=='main_hand'?-1.25:1.25"
+					]
+				}
+			}
+		},
+		"animation.chemical_x.move": {
+			"loop": true,
+			"bones": {
+				"x_item": {
+					"rotation": [
+						"query.target_x_rotation",
+						"-query.target_y_rotation",
+						0
+					],
+					"scale": [
+						0.85,
+						0.85,
+						0.9
+					]
+				}
+			}
+		},
+		"animation.chemical_x.moving": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"x_item": {
+					"rotation": {
+						"0.0": [
+							0,
+							180,
+							0
+						],
+						"2.0": [
+							360,
+							540,
+							360
+						]
+					}
+				}
+			}
+		},
+		"animation.mhulk_hammer.wield_main_hand_first_person": {
+			"loop": true,
+			"bones": {
+				"hammer": {
+					"rotation": [
+						55,
+						61,
+						-87.5
+					],
+					"position": [
+						3,
+						28.5,
+						1.5
+					],
+					"scale": 1
+				}
+			}
+		},
+		"animation.mhulk_hammer.wield_off_hand_first_person": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						96,
+						61,
+						-34
+					],
+					"position": [
+						-14,
+						10,
+						"(query.get_equipped_item_name=='bow')&&(query.main_hand_item_use_duration>0)?-25:2"
+					],
+					"scale": 1
+				}
+			}
+		},
+		"animation.mhulk_hammer.wield_third_person": {
+			"loop": true,
+			"bones": {
+				"hammer": {
+					"rotation": [
+						-80,
+						-5,
+						0
+					],
+					"position": [
+						"c.item_slot=='main_hand'?0.5:-0.5",
+						22.75,
+						2.5
+					],
+					"scale": [
+						1,
+						"c.item_slot=='main_hand'?-1:1",
+						"c.item_slot=='main_hand'?-1:1"
+					]
+				},
+				"chain_1": {
+					"rotation": [
+						0,
+						75,
+						0
+					]
+				}
+			}
+		},
+		"animation.player.mhulk_power": {
+			"animation_length": 0.48,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							-170,
+							0,
+							0
+						],
+						"0.12": [
+							0.36,
+							0,
+							0
+						],
+						"0.24": [
+							-11.21,
+							0,
+							0
+						],
+						"0.32": [
+							-5,
+							0,
+							0
+						],
+						"0.4": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							2,
+							1
+						],
+						"0.12": [
+							0,
+							-2,
+							-3
+						],
+						"0.32": [
+							0,
+							-0.89,
+							-2.14
+						],
+						"0.4": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							1,
+							1,
+							1
+						],
+						"0.08": [
+							1,
+							1.2,
+							1
+						],
+						"0.24": [
+							1,
+							1.1333,
+							1
+						],
+						"0.32": [
+							1,
+							1,
+							1
+						]
+					}
+				},
+				"rightitem": {
+					"rotation": {
+						"0.0": [
+							65,
+							0,
+							0
+						],
+						"0.12": [
+							17.5,
+							0,
+							0
+						],
+						"0.24": [
+							26,
+							0,
+							0
+						],
+						"0.32": [
+							30,
+							0,
+							0
+						],
+						"0.44": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							1,
+							1,
+							1
+						],
+						"0.08": [
+							1,
+							1.2,
+							1
+						],
+						"0.24": [
+							1,
+							1.1333,
+							1
+						],
+						"0.32": [
+							1,
+							1,
+							1
+						]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [
+							-5,
+							0,
+							0
+						],
+						"0.12": [
+							27.16596,
+							-1.17115,
+							0.08742
+						],
+						"0.28": [
+							17.98,
+							-0.84,
+							0.06
+						],
+						"0.4": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							1
+						],
+						"0.12": [
+							0,
+							-1.5,
+							-5.5
+						],
+						"0.28": [
+							0,
+							-1,
+							-3.57
+						],
+						"0.4": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							-35
+						],
+						"0.08": [
+							0,
+							0,
+							-6.87
+						],
+						"0.12": [
+							0,
+							0,
+							2.5
+						],
+						"0.24": [
+							0,
+							0,
+							2.14
+						],
+						"0.44": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": [
+							-30,
+							0,
+							0
+						],
+						"0.16": [
+							-5,
+							0,
+							0
+						],
+						"0.32": [
+							-3.75,
+							0,
+							0
+						],
+						"0.48": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": [
+							20,
+							0,
+							0
+						],
+						"0.16": [
+							40,
+							0,
+							0
+						],
+						"0.32": [
+							30,
+							0,
+							0
+						],
+						"0.48": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.mcreeperegg.bump_1": {
+			"animation_length": 0.68,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2": {
+							"post": [
+								-12.5,
+								0,
+								-10
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4": {
+							"post": [
+								2.81,
+								0,
+								4.06
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.56": {
+							"post": [
+								1.96,
+								0,
+								-2.59
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.68": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.mcreeperegg.bump_2": {
+			"animation_length": 0.68,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2": {
+							"post": [
+								2.5,
+								0,
+								-17.5
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4": {
+							"post": [
+								-4.69,
+								0,
+								4.06
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.56": {
+							"post": [
+								-3.04,
+								0,
+								-2.59
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.68": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.mcreeperegg.bump_3": {
+			"animation_length": 0.68,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.16": {
+							"post": [
+								10,
+								0,
+								10
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4": {
+							"post": [
+								-4.69,
+								0,
+								-10.94
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.56": {
+							"post": [
+								1.96,
+								0,
+								2.41
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.68": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.mcreeperegg.cracked": {
+			"animation_length": 2.6,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					],
+					"scale": 0
+				}
+			}
+		},
+		"animation.mcreeperegg.charged": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						"math.cos(query.life_time*400)*0.5",
+						"math.cos(query.life_time*800)*-0.5",
+						"math.cos(query.life_time*1200)*-0.5"
+					],
+					"scale": [
+						"1.1+math.cos(query.life_time*300)*0.01",
+						"1.1+math.cos(query.life_time*150)*0.01",
+						"1.1+math.cos(query.life_time*300)*0.01"
+					]
+				}
+			}
+		},
+		"animation.mcreeperegg.jump": {
+			"animation_length": 0.24,
+			"bones": {
+				"root_item": {
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.08": {
+							"post": [
+								0,
+								1.1,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.16": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.24": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.chemical_x.third_person": {
+			"loop": true,
+			"bones": {
+				"x_item": {
+					"rotation": [
+						22.5,
+						-25,
+						-7.5
+					],
+					"position": [
+						0,
+						18,
+						-5
+					],
+					"scale": 0.75
+				}
+			}
+		},
+		"animation.chemical_x.first_person": {
+			"loop": true,
+			"bones": {
+				"x_item": {
+					"rotation": [
+						22.5,
+						-22.5,
+						-135
+					],
+					"position": [
+						1,
+						17,
+						0
+					],
+					"scale": 1.1
+				}
+			}
+		},
+		"animation.mhulk_hammer.third_person": {
+			"loop": true,
+			"bones": {
+				"hammer": {
+					"rotation": [
+						100,
+						0,
+						0
+					],
+					"position": [
+						0,
+						18.5,
+						-1
+					]
+				}
+			}
+		},
+		"animation.mhulk_hammer.first_person": {
+			"loop": true,
+			"bones": {
+				"hammer": {
+					"rotation": [
+						115,
+						60,
+						-45
+					],
+					"position": [
+						0,
+						20,
+						5
+					],
+					"scale": 1.1
+				}
+			}
+		}
+	}
+}

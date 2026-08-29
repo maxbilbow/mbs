@@ -1,0 +1,105 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.veins",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [
+					0,
+					0.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0.01,
+								-8
+							],
+							"size": [
+								16,
+								1,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										119
+									],
+									"uv_size": [
+										128,
+										9
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										119
+									],
+									"uv_size": [
+										128,
+										9
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										119
+									],
+									"uv_size": [
+										128,
+										9
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										119
+									],
+									"uv_size": [
+										128,
+										9
+									]
+								},
+								"up": {
+									"uv": [
+										128,
+										0
+									],
+									"uv_size": [
+										-128,
+										128
+									]
+								},
+								"down": {
+									"uv": [
+										128,
+										0
+									],
+									"uv_size": [
+										-128,
+										128
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

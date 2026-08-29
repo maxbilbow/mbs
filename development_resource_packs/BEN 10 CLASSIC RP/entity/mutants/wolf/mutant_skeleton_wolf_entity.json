@@ -1,0 +1,98 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_skeleton_wolf",
+			"textures": {
+				"default": "textures/mutants/entity/wolf/skeletonwolf_v2",
+				"angry": "textures/mutants/entity/wolf/skeletonwolf_angry_v2",
+				"tame": "textures/mutants/entity/wolf/mskeletonwolf",
+				"wolf_tamed": "textures/mutants/entity/wolf/wolf_collar",
+				"wolf_armor": "textures/mutants/entity/wolf/wolf_armor",
+				"dyed_wolf_armor": "textures/mutants/entity/wolf/wolf_armor"
+			},
+			"materials": {
+				"default": "entity_alphatest",
+				"wolf_tamed": "cat",
+				"wolf_armor": "mutant_wolf_armor"
+			},
+			"geometry": {
+				"default": "geometry.mutant_skeleton_wolf_v2",
+				"wolf_armor": "geometry.mutant_wolf_armor"
+			},
+			"render_controllers": [
+				"controller.render.mskeletonwolf",
+				"controller.render.mwolf_tamed",
+				"controller.render.mwolf_armor"
+			],
+			"enable_attachables": true,
+			"hide_armor": true,
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 9
+			},
+			"sound_effects": {
+				"bark": "mob.skeleton_wolf.bark",
+				"baby_bark": "mob.skeleton_wolf.baby_bark"
+			},
+			"scripts": {
+				"scale": "1.55",
+				"pre_animation": [
+					"variable.attack_num = Math.round(Math.random(1, 2));"
+				]
+			},
+			"animations": {
+				"death": "animation.mwolf.death",
+				"death_cancel": "animation.mwolf.death_cancel",
+				"big_head": "animation.mwolf.baby_scaling",
+				"look_at_target": "animation.mpet.look_at_target",
+				"tail": "animation.mwolf.tail",
+				"angry": "animation.mwolf.angry",
+				"sleep": "animation.mwolf.sleep",
+				"sit": "animation.mwolf.sit",
+				"idle": "animation.mwolf.idle",
+				"walk": "animation.mwolf.walk",
+				"sprint": "animation.mwolf.sprint",
+				"angry_1": "animation.mwolf.eating",
+				"baby_angry_1": "animation.mwolf.baby_eating",
+				"idle_1": "animation.mwolf.idle_1",
+				"idle_2": "animation.mwolf.idle_2",
+				"air": "animation.mwolf.air",
+				"gravity": "animation.mutants.gravity",
+				"begging": "animation.mwolf.begging",
+				"eating": "animation.mwolf.eating_item",
+				"first_attack": "animation.mwolf.first_attack",
+				"ongoing_attack_right": "animation.mwolf.ongoing_attack_right",
+				"ongoing_attack_left": "animation.mwolf.ongoing_attack_left",
+				"attack_slow_return": "animation.mwolf.attack_slow_return",
+				"walk_legs": "animation.mwolf.walk_legs"
+			},
+			"animation_controllers": [
+				{
+					"item": "animation.mwolf.item"
+				},
+				{
+					"death": "controller.animation.mwolf.death"
+				},
+				{
+					"idle": "controller.animation.mwolf.idle"
+				},
+				{
+					"tail": "controller.animation.mwolf.tail"
+				},
+				{
+					"move": "controller.animation.mwolf.walking"
+				},
+				{
+					"general": "controller.animation.mwolf.general"
+				},
+				{
+					"beg": "controller.animation.mwolf.beg"
+				},
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				}
+			]
+		}
+	}
+}

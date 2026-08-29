@@ -1,0 +1,261 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sculk_shrieker",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bb_main2",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								7,
+								-8
+							],
+							"size": [
+								16,
+								1,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										15
+									],
+									"uv_size": [
+										16,
+										1
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										15
+									],
+									"uv_size": [
+										16,
+										1
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										15
+									],
+									"uv_size": [
+										16,
+										1
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										15
+									],
+									"uv_size": [
+										16,
+										1
+									]
+								},
+								"up": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								16,
+								7,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										16,
+										10
+									],
+									"uv_size": [
+										16,
+										6
+									]
+								},
+								"east": {
+									"uv": [
+										16,
+										10
+									],
+									"uv_size": [
+										16,
+										6
+									]
+								},
+								"south": {
+									"uv": [
+										16,
+										10
+									],
+									"uv_size": [
+										16,
+										6
+									]
+								},
+								"west": {
+									"uv": [
+										16,
+										10
+									],
+									"uv_size": [
+										16,
+										6
+									]
+								},
+								"up": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										-16,
+										-16
+									]
+								},
+								"down": {
+									"uv": [
+										32,
+										32
+									],
+									"uv_size": [
+										-16,
+										-16
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-7,
+								8,
+								-7
+							],
+							"size": [
+								14,
+								8,
+								14
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										17,
+										0
+									],
+									"uv_size": [
+										14,
+										9
+									]
+								},
+								"east": {
+									"uv": [
+										17,
+										0
+									],
+									"uv_size": [
+										14,
+										9
+									]
+								},
+								"south": {
+									"uv": [
+										17,
+										0
+									],
+									"uv_size": [
+										14,
+										9
+									]
+								},
+								"west": {
+									"uv": [
+										17,
+										0
+									],
+									"uv_size": [
+										14,
+										9
+									]
+								},
+								"up": {
+									"uv": [
+										15,
+										31
+									],
+									"uv_size": [
+										-14,
+										-14
+									]
+								},
+								"down": {
+									"uv": [
+										8,
+										21
+									],
+									"uv_size": [
+										-1,
+										2
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "bb_main",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				}
+			]
+		}
+	]
+}

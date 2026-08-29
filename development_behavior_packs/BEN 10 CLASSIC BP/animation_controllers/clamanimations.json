@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.clamanimations": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": [
+						"/function clamanimations"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/function clamanimations"
+					]
+				}
+			}
+		}
+	}
+}

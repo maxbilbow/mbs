@@ -1,0 +1,46 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "minecraft:drenched_void_cave_carver_feature",
+      "places_feature": "ad:drenched_void_cave_carver_feature"
+    },
+    "conditions": {
+      "placement_pass": "pregeneration_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "drenched_void"
+            }
+          ]
+        }
+      ],
+		"distribution": {
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-54,
+					50
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+    }
+  }
+}

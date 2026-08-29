@@ -1,0 +1,63 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.21.60",
+	"minecraft:crafting_items_catalog": {
+		"categories": [
+			{
+				"category_name": "equipment",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "sword:wooden_cleaver",
+							"name": "weapons:cleavers"
+						},
+						"items": [
+							"sword:wooden_cleaver",
+							"sword:stone_cleaver",
+							"sword:copper_cleaver",
+							"sword:iron_cleaver",
+							"sword:gold_cleaver",
+							"sword:diamond_cleaver",
+							"sword:netherite_cleaver",
+							"sword:scrap_metal_cleaver",
+							"sword:prismarine_cleaver",
+							"sword:reidite_cleaver",
+							"sword:opal_cleaver",
+							"sword:silver_cleaver",
+							"sword:tungsten_cleaver",
+							"sword:elder_prismarine_cleaver",
+							"sword:sea_prism_cleaver",
+							"sword:malachite_cleaver",
+							"sword:lumenyl_cleaver"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "sword:wooden_harpoon",
+							"name": "weapons:harpoons"
+						},
+						"items": [
+							"sword:wooden_harpoon",
+							"sword:stone_harpoon",
+							"sword:copper_harpoon",
+							"sword:iron_harpoon",
+							"sword:gold_harpoon",
+							"sword:diamond_harpoon",
+							"sword:netherite_harpoon",
+							"sword:scrap_metal_harpoon",
+							"sword:prismarine_harpoon",
+							"sword:reidite_harpoon",
+							"sword:opal_harpoon",
+							"sword:silver_harpoon",
+							"sword:tungsten_harpoon",
+							"sword:elder_prismarine_harpoon",
+							"sword:sea_prism_harpoon",
+							"sword:malachite_harpoon",
+							"sword:lumenyl_harpoon"
+						]
+					}
+				]
+			}
+		]
+	}
+}

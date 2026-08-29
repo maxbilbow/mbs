@@ -61,6 +61,33 @@
 			}
 		},
 		"component_groups": {
+			"rz:easy_stats": {
+				"minecraft:health": {
+					"value": 3001,
+					"max": 3001
+				},
+				"minecraft:attack": {
+					"damage": 15
+				}
+			},
+			"rz:normal_stats": {
+				"minecraft:health": {
+					"value": 5001,
+					"max": 5001
+				},
+				"minecraft:attack": {
+					"damage": 30
+				}
+			},
+			"rz:hard_stats": {
+				"minecraft:health": {
+					"value": 10001,
+					"max": 10001
+				},
+				"minecraft:attack": {
+					"damage": 50
+				}
+			},
 			"cso:instant_despawn": {
 				"minecraft:instant_despawn": {}
 			},
@@ -932,8 +959,8 @@
 			},
 			"minecraft:physics": {},
 			"minecraft:health": {
-				"value": 30001,
-				"max": 30001,
+				"value": 4001,
+				"max": 4001,
 				"min": 1
 			},
 			"minecraft:knockback_resistance": {
@@ -946,6 +973,27 @@
 			}
 		},
 		"events": {
+			"rz:diff_easy": {
+				"add": {
+					"component_groups": [
+						"rz:easy_stats"
+					]
+				}
+			},
+			"rz:diff_normal": {
+				"add": {
+					"component_groups": [
+						"rz:normal_stats"
+					]
+				}
+			},
+			"rz:diff_hard": {
+				"add": {
+					"component_groups": [
+						"rz:hard_stats"
+					]
+				}
+			},
 			"cso:instant_despawn": {
 				"add": {
 					"component_groups": [

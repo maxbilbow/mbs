@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_swamp_feature"
+		},
+		"iterations": 15,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				16
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-2,
+				2
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				16
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:swamp_feature"
+	}
+}

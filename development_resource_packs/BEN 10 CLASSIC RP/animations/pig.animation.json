@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.pig.walk": {
+			"loop": true,
+			"bones": {
+				"leg0": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"leg1": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"leg2": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"leg3": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.pig.look_at_target": {
+			"loop": true,
+			"bones": {
+				"pig_head": {
+					"rotation": [
+						"query.target_x_rotation",
+						"query.target_y_rotation",
+						0
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,211 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mskeleton_bones": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"arrays": {
+				"geometries": {
+					"Array.geos": [
+						"Geometry.head",
+						"Geometry.neck",
+						"Geometry.body",
+						"Geometry.body_2",
+						"Geometry.topbody",
+						"Geometry.topbody_2",
+						"Geometry.topbody_3",
+						"Geometry.right_shoulder",
+						"Geometry.right_arm",
+						"Geometry.right_arm_2",
+						"Geometry.left_shoulder",
+						"Geometry.left_arm",
+						"Geometry.left_arm_2",
+						"Geometry.right_leg",
+						"Geometry.right_leg_2",
+						"Geometry.left_leg",
+						"Geometry.left_leg_2",
+						"Geometry.right_top_rib",
+						"Geometry.right_mid_rib",
+						"Geometry.right_bot_rib",
+						"Geometry.left_top_rib",
+						"Geometry.left_mid_rib",
+						"Geometry.left_bot_rib"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.mwither_skeleton_bones": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"arrays": {
+				"geometries": {
+					"Array.geos": [
+						"Geometry.head",
+						"Geometry.neck",
+						"Geometry.body",
+						"Geometry.body_2",
+						"Geometry.topbody",
+						"Geometry.topbody_2",
+						"Geometry.topbody_3",
+						"Geometry.right_shoulder",
+						"Geometry.right_arm",
+						"Geometry.right_arm_2",
+						"Geometry.left_shoulder",
+						"Geometry.left_arm",
+						"Geometry.left_arm_2",
+						"Geometry.right_leg",
+						"Geometry.right_leg_2",
+						"Geometry.left_leg",
+						"Geometry.left_leg_2",
+						"Geometry.right_top_rib",
+						"Geometry.right_mid_rib",
+						"Geometry.right_bot_rib",
+						"Geometry.left_top_rib",
+						"Geometry.left_mid_rib",
+						"Geometry.left_bot_rib"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.mwither_skeleton_blaze_rod_bones": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"arrays": {
+				"geometries": {
+					"Array.geos": [
+						"Geometry.head",
+						"Geometry.neck",
+						"Geometry.body",
+						"Geometry.body_2",
+						"Geometry.topbody",
+						"Geometry.topbody_2",
+						"Geometry.topbody_3",
+						"Geometry.right_shoulder",
+						"Geometry.right_arm",
+						"Geometry.right_arm_2",
+						"Geometry.left_shoulder",
+						"Geometry.left_arm",
+						"Geometry.left_arm_2",
+						"Geometry.right_leg",
+						"Geometry.right_leg_2",
+						"Geometry.left_leg",
+						"Geometry.left_leg_2",
+						"Geometry.right_top_rib",
+						"Geometry.right_mid_rib",
+						"Geometry.right_bot_rib",
+						"Geometry.left_top_rib",
+						"Geometry.left_mid_rib",
+						"Geometry.left_bot_rib"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.blaze_rods"
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.mbogged_bones": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"arrays": {
+				"geometries": {
+					"Array.geos": [
+						"Geometry.head",
+						"Geometry.neck",
+						"Geometry.body",
+						"Geometry.body_2",
+						"Geometry.topbody",
+						"Geometry.topbody_2",
+						"Geometry.topbody_3",
+						"Geometry.right_shoulder",
+						"Geometry.right_arm",
+						"Geometry.right_arm_2",
+						"Geometry.left_shoulder",
+						"Geometry.left_arm",
+						"Geometry.left_arm_2",
+						"Geometry.right_leg",
+						"Geometry.right_leg_2",
+						"Geometry.left_leg",
+						"Geometry.left_leg_2",
+						"Geometry.right_top_rib",
+						"Geometry.right_mid_rib",
+						"Geometry.right_bot_rib",
+						"Geometry.left_top_rib",
+						"Geometry.left_mid_rib",
+						"Geometry.left_bot_rib"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.bogged",
+						"Texture.bogged_old"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.mark_variant]"
+			]
+		}
+	}
+}

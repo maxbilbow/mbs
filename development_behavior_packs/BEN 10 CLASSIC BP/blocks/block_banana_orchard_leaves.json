@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:banana_orchard_leaves",
+			"menu_category": {
+				"category": "nature",
+				"group": "minecraft:itemGroup.name.leaves"
+			}
+		},
+		"components": {
+			"minecraft:flammable": true,
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:hoe_diggable": {},
+			"tag:minecraft:is_hoe_item_destructible": {},
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:custom_components": [
+				"test:banana_orchard_leaves"
+			],
+			"minecraft:light_dampening": 10,
+			"minecraft:geometry": "geometry.moddedleaves",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_banana_orchard_leaves",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			}
+		}
+	}
+}

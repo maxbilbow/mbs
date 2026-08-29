@@ -1,0 +1,82 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ztp:health_bar",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"terraria_0": "textures/entity/health_bar/terraria_0",
+				"terraria_1": "textures/entity/health_bar/terraria_1",
+				"terraria_2": "textures/entity/health_bar/terraria_2",
+				"terraria_3": "textures/entity/health_bar/terraria_3",
+				"terraria_4": "textures/entity/health_bar/terraria_4",
+				"terraria_5": "textures/entity/health_bar/terraria_5",
+				"terraria_6": "textures/entity/health_bar/terraria_6",
+				"terraria_7": "textures/entity/health_bar/terraria_7",
+				"terraria_8": "textures/entity/health_bar/terraria_8",
+				"terraria_9": "textures/entity/health_bar/terraria_9",
+				"terraria_10": "textures/entity/health_bar/terraria_10",
+				"golden_0": "textures/entity/health_bar/golden_0",
+				"golden_1": "textures/entity/health_bar/golden_1",
+				"golden_2": "textures/entity/health_bar/golden_2",
+				"golden_3": "textures/entity/health_bar/golden_3",
+				"golden_4": "textures/entity/health_bar/golden_4",
+				"golden_5": "textures/entity/health_bar/golden_5",
+				"golden_6": "textures/entity/health_bar/golden_6",
+				"golden_7": "textures/entity/health_bar/golden_7",
+				"golden_8": "textures/entity/health_bar/golden_8",
+				"golden_9": "textures/entity/health_bar/golden_9",
+				"golden_10": "textures/entity/health_bar/golden_10",
+				"bedrock_0": "textures/entity/health_bar/bedrock_0",
+				"bedrock_1": "textures/entity/health_bar/bedrock_1",
+				"bedrock_2": "textures/entity/health_bar/bedrock_2",
+				"bedrock_3": "textures/entity/health_bar/bedrock_3",
+				"bedrock_4": "textures/entity/health_bar/bedrock_4",
+				"bedrock_5": "textures/entity/health_bar/bedrock_5",
+				"bedrock_6": "textures/entity/health_bar/bedrock_6",
+				"bedrock_7": "textures/entity/health_bar/bedrock_7",
+				"bedrock_8": "textures/entity/health_bar/bedrock_8",
+				"bedrock_9": "textures/entity/health_bar/bedrock_9",
+				"bedrock_10": "textures/entity/health_bar/bedrock_10",
+				"classic_0": "textures/entity/health_bar/classic_0",
+				"classic_1": "textures/entity/health_bar/classic_1",
+				"classic_2": "textures/entity/health_bar/classic_2",
+				"classic_3": "textures/entity/health_bar/classic_3",
+				"classic_4": "textures/entity/health_bar/classic_4",
+				"classic_5": "textures/entity/health_bar/classic_5",
+				"classic_6": "textures/entity/health_bar/classic_6",
+				"classic_7": "textures/entity/health_bar/classic_7",
+				"classic_8": "textures/entity/health_bar/classic_8",
+				"classic_9": "textures/entity/health_bar/classic_9",
+				"classic_10": "textures/entity/health_bar/classic_10",
+				"rpg_0": "textures/entity/health_bar/rpg_0",
+				"rpg_1": "textures/entity/health_bar/rpg_1",
+				"rpg_2": "textures/entity/health_bar/rpg_2",
+				"rpg_3": "textures/entity/health_bar/rpg_3",
+				"rpg_4": "textures/entity/health_bar/rpg_4",
+				"rpg_5": "textures/entity/health_bar/rpg_5",
+				"rpg_6": "textures/entity/health_bar/rpg_6",
+				"rpg_7": "textures/entity/health_bar/rpg_7",
+				"rpg_8": "textures/entity/health_bar/rpg_8",
+				"rpg_9": "textures/entity/health_bar/rpg_9",
+				"rpg_10": "textures/entity/health_bar/rpg_10"
+			},
+			"geometry": {
+				"default": "geometry.ztp.health_bar"
+			},
+			"animations": {
+				"billboard": "animation.ztp.health_bar.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"billboard"
+				]
+			},
+			"render_controllers": [
+				"controller.render.ztp.health_bar"
+			]
+		}
+	}
+}

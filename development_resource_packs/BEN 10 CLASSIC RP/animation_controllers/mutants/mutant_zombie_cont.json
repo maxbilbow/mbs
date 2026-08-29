@@ -1,0 +1,1022 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mzombie_lobber.range_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"no_range"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"range_attack": "query.is_charged"
+						}
+					]
+				},
+				"range_attack": {
+					"animations": [
+						"range"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.range_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"range_attack": "query.is_charged"
+						}
+					]
+				},
+				"range_attack": {
+					"animations": [
+						"range"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.general": {
+			"initial_state": "default",
+			"states": {
+				"crouch": {
+					"animations": [
+						"roaring"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.all_animations_finished&&!query.is_casting"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"smash_attack": {
+					"animations": [
+						"look_at_target",
+						"smash_attack"
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.is_casting"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"throw": {
+					"animations": [
+						"look_at_target",
+						"throw"
+					],
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"throw_success": "query.is_roaring==1&&query.mark_variant==4"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.has_target||query.all_animations_finished&&query.is_on_ground"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"throw_success": {
+					"animations": [
+						"look_at_target",
+						"throw_success"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"default": {
+					"animations": [
+						"idle",
+						"look_at_target"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"crouch": "query.is_casting&&query.mark_variant==2"
+						},
+						{
+							"smash_attack": "query.is_casting"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"pounce": "query.is_swimming"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"death": {
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"pounce": {
+					"animations": [
+						"idle",
+						"look_at_target",
+						"swimming"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "!query.is_swimming"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"stuck": {
+					"animations": [
+						"stunned"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.is_stunned==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombiepig.general": {
+			"initial_state": "default",
+			"states": {
+				"crouch": {
+					"animations": [
+						"roaring"
+					],
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.all_animations_finished&&!query.is_casting"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"smash_attack": {
+					"animations": [
+						"look_at_target",
+						"smash_attack"
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.is_roaring"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"throw": {
+					"animations": [
+						"look_at_target",
+						"throw"
+					],
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"throw_success": "query.is_roaring==1&&query.mark_variant==4"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.has_target||query.all_animations_finished&&query.is_on_ground"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"throw_success": {
+					"animations": [
+						"look_at_target",
+						"throw_success"
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"default": {
+					"animations": [
+						"idle",
+						"look_at_target"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"crouch": "query.is_casting&&query.mark_variant==2"
+						},
+						{
+							"smash_attack": "query.is_roaring==1&&query.mark_variant==1"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"pounce": "query.is_swimming"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"death": {
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"pounce": {
+					"animations": [
+						"idle",
+						"look_at_target",
+						"swimming"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.is_swimming"
+						},
+						{
+							"stuck": "query.is_stunned==1"
+						}
+					]
+				},
+				"stuck": {
+					"animations": [
+						"stunned"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.is_stunned==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.walking": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"throw": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "!query.has_target||query.all_animations_finished&&query.is_on_ground"
+						}
+					]
+				},
+				"idle_roar": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_casting": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_stun": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_delay_attack": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.jumpable_mzombie.walking": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"pounce": "query.is_angry&&query.is_interested"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"throw": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.mark_variant==1&&!query.is_roaring==1||query.mark_variant==1&&query.is_on_ground||!query.has_target&&query.is_on_ground"
+						}
+					]
+				},
+				"idle_roar": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_casting": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_stun": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_delay_attack": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"pounce": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"jump": "!query.is_on_ground"
+						},
+						{
+							"idle_roar": "query.is_roaring"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"jump": {
+					"animations": [
+						"jump"
+					],
+					"transitions": [
+						{
+							"delay": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"delay": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						"smash_attack"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"idle_roar": "query.is_roaring"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.mdrowned.walking": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"range_attack": "query.facing_target_to_range_attack&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"range_attack": {
+					"animations": [
+						"range_charge",
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&!query.is_alive"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"range_uncharge": "!query.facing_target_to_range_attack&&!query.is_alive"
+						},
+						{
+							"range_shoot": "variable.attack_time!=0"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"range_uncharge": {
+					"animations": [
+						"range_uncharge",
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.is_alive||query.mark_variant==1"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"range_shoot": {
+					"animations": [
+						"range_shoot"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.is_alive"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"throw": "query.is_roaring==1&&query.mark_variant==3"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"throw": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.mark_variant==1&&!query.is_roaring==1||query.mark_variant==1&&query.is_on_ground||!query.has_target&&query.is_on_ground"
+						}
+					]
+				},
+				"idle_roar": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_casting": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_stun": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_delay_attack": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.mbouldering_zombie.walking": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"climb": "!query.is_on_ground&&query.is_wall_climbing&&query.is_alive&&!query.is_stunned&&!query.is_delayed_attacking"
+						},
+						{
+							"idle_roar": "query.is_roaring&&query.mark_variant==2"
+						},
+						{
+							"idle_casting": "query.is_casting"
+						},
+						{
+							"idle_stun": "query.is_stunned"
+						},
+						{
+							"idle_delay_attack": "query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_roar": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_casting": {
+					"animations": [
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_stun": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"idle_delay_attack": {
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"jump": {
+					"animations": [
+						"jump"
+					],
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"delay": "query.is_on_ground"
+						},
+						{
+							"climb": "!query.is_on_ground&&query.is_wall_climbing&&query.is_alive&&!query.is_stunned&&!query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"delay": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*10)"
+						},
+						"smash_attack"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						},
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"climb": {
+					"animations": [
+						"climb"
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground||!query.is_wall_climbing||!query.is_alive||query.is_stunned||query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

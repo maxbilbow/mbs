@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_dark_prismarine_97c0f146"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:dark_prismarine_brick_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_dark_prismarine",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "reidite_block_3dc01745"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:reidite",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:reidite_block",
+			"count": 1
+		}
+	}
+}

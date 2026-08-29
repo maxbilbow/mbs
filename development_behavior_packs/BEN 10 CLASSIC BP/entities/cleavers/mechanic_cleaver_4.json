@@ -1,0 +1,63 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mechanic:cleaver_4",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"animations": {
+				"walk": "controller.animation.cleaversfunction"
+			},
+			"scripts": {
+				"animate": [
+					"walk"
+				]
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					0.6,
+					0.6
+				],
+				"time_down_event": {
+					"event": "despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"cleaver",
+					"inanimate"
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

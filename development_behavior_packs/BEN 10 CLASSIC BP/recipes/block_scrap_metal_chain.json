@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "scrap_metal_chain_987e70ae"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "item:scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:scrap_metal_chain",
+			"count": 9
+		}
+	}
+}

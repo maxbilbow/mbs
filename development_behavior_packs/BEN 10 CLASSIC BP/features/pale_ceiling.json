@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pale_ceiling"
+		},
+		"features": [
+			[
+				"gen:dripping_pale",
+				1
+			]
+		]
+	}
+}

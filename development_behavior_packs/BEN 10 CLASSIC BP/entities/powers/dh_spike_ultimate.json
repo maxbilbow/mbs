@@ -1,0 +1,135 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "power:dh_spike_ultimate",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:evocation_fang",
+			"scripts": {
+				"animate": [
+					"dh_spike"
+				]
+			},
+			"animations": {
+				"dh_spike": "controller.animation.dh_spike"
+			}
+		},
+		"component_groups": {
+			"despawning": {
+				"minecraft:timer": {
+					"time": 0.35,
+					"time_down_event": {
+						"event": "power:despawn"
+					}
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 1.2,
+				"height": 2
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:area_attack": {
+				"damage_range": 2.5,
+				"damage_per_tick": 20,
+				"cause": "contact",
+				"entity_filter": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "diamondhead"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "mob"
+						}
+					]
+				}
+			},
+			"minecraft:timer": {
+				"time": 3,
+				"time_down_event": {
+					"event": "power:start_despawn"
+				}
+			}
+		},
+		"events": {
+			"despawn": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"event entity @s minecraft:entity_despawn"
+							]
+						}
+					}
+				]
+			},
+			"power:start_despawn": {
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				}
+			},
+			"power:despawn": {
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"event entity @s minecraft:entity_despawn"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_despawn": {
+				"add": {
+					"component_groups": [
+						"despawning"
+					]
+				},
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"kill @s"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

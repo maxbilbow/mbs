@@ -1,0 +1,50 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:vanilla_cake_4",
+			"menu_category": {
+				"category": "none"
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					6,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					6,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:geometry": "geometry.cake4",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_vanilla_cake",
+					"rvanilla_method": "opaque"
+				}
+			},
+			"minecraft:custom_components": [
+				"test:vanilla_cake_layer_5"
+			]
+		}
+	}
+}

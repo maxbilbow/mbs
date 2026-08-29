@@ -1,0 +1,180 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ufoling",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 40,
+				"visible_bounds_height": 29.5,
+				"visible_bounds_offset": [
+					0,
+					14.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "Root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "Root",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-16,
+								0,
+								-16
+							],
+							"size": [
+								32,
+								6,
+								32
+							],
+							"uv": [
+								0,
+								62
+							]
+						},
+						{
+							"origin": [
+								-11,
+								6,
+								-11
+							],
+							"size": [
+								22,
+								11,
+								22
+							],
+							"uv": [
+								0,
+								100
+							]
+						}
+					]
+				},
+				{
+					"name": "hole",
+					"parent": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6,
+								-2,
+								-6
+							],
+							"size": [
+								12,
+								2,
+								12
+							],
+							"uv": [
+								88,
+								124
+							]
+						}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "Root",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								6,
+								-7
+							],
+							"size": [
+								14,
+								10,
+								14
+							],
+							"uv": [
+								88,
+								100
+							]
+						}
+					]
+				},
+				{
+					"name": "antennas",
+					"parent": "head",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								16,
+								0
+							],
+							"size": [
+								14,
+								20,
+								0
+							],
+							"uv": [
+								128,
+								62
+							]
+						}
+					]
+				},
+				{
+					"name": "ring",
+					"parent": "Root",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-31,
+								3,
+								-31
+							],
+							"size": [
+								62,
+								0,
+								62
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

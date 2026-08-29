@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_f313c5b6"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:dark_prismarine_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "minecraft:dark_prismarine",
+			"count": 4,
+			"data": 0
+		}
+	}
+}

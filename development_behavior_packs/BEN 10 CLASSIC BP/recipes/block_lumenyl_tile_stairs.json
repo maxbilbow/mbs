@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_tile_stairs_aa707c92"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A  ",
+			"AA ",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:lumenyl_tiles",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:lumenyl_tile_stairs",
+			"count": 3
+		}
+	}
+}

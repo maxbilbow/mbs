@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutant.air_look": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						"query.target_x_rotation-this",
+						"query.target_y_rotation-this",
+						0
+					]
+				}
+			}
+		},
+		"animation.mutant.death_cancel": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [
+						0,
+						0,
+						"math.min(math.sqrt(12.5*math.max(0,query.anim_time*20-0.5)),1)*-90"
+					]
+				}
+			}
+		},
+		"animation.mutant.death_cancel_spider": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [
+						0,
+						0,
+						"math.min(math.sqrt(12.5*math.max(0,query.anim_time*20-0.5)),1)*-180"
+					]
+				}
+			}
+		}
+	}
+}

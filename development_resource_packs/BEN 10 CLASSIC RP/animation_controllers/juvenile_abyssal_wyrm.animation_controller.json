@@ -1,0 +1,55 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.juvenile_abyssal_wyrm.move": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"base"
+					],
+					"transitions": [
+						{
+							"moving": "q.ground_speed>1"
+						}
+					],
+					"blend_transition": {
+						"0.0": 1,
+						"0.0833": 0.96571,
+						"0.1667": 0.8738,
+						"0.25": 0.74074,
+						"0.3333": 0.58299,
+						"0.4167": 0.41701,
+						"0.5": 0.25926,
+						"0.5833": 0.1262,
+						"0.6667": 0.03429,
+						"0.75": 0
+					}
+				},
+				"moving": {
+					"animations": [
+						"base",
+						"swim"
+					],
+					"transitions": [
+						{
+							"idle": "q.ground_speed<0.5"
+						}
+					],
+					"blend_transition": {
+						"0.0": 1,
+						"0.0833": 0.96571,
+						"0.1667": 0.8738,
+						"0.25": 0.74074,
+						"0.3333": 0.58299,
+						"0.4167": 0.41701,
+						"0.5": 0.25926,
+						"0.5833": 0.1262,
+						"0.6667": 0.03429,
+						"0.75": 0
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.morph_enderman.walk": {
+			"loop": true,
+			"bones": {
+				"enderman_rightArm": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				},
+				"enderman_leftArm": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"enderman_rightLeg": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*-80",
+						0,
+						0
+					]
+				},
+				"enderman_leftLeg": {
+					"rotation": [
+						"math.cos(query.modified_distance_moved*38.17)*80",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.morph_enderman.look_at_target": {
+			"loop": true,
+			"bones": {
+				"enderman_head": {
+					"rotation": [
+						"query.target_x_rotation",
+						"query.target_y_rotation",
+						0
+					]
+				}
+			}
+		}
+	}
+}

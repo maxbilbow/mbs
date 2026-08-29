@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "salmon_sushi_roll_b586ea74"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" A ",
+			"ABA",
+			" A "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:dried_kelp",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:salmon",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "food:salmon_sushi_roll",
+			"count": 2
+		}
+	}
+}

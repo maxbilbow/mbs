@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:orange_petels_feature"
+		},
+		"features": [
+			[
+				"gen:orange_petels1_feature",
+				1
+			],
+			[
+				"gen:orange_petels2_feature",
+				1
+			],
+			[
+				"gen:orange_petels3_feature",
+				1
+			],
+			[
+				"gen:orange_petels4_feature",
+				1
+			]
+		]
+	}
+}

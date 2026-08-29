@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "diamond_cleaver_fe7a53db"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" A ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:diamond_cleaver",
+			"count": 1
+		}
+	}
+}

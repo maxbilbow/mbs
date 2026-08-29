@@ -1,5 +1,5 @@
 {
-	"format_version": "1.8.0",
+	"format_version": "1.16.100",
 	"render_controllers": {
 		"controller.render.player.first_person": {
 			"geometry": "geometry.default",
@@ -9,7 +9,7 @@
 				}
 			],
 			"textures": [
-				"query.variant<=0&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)?texture.ben10_costume:texture.default"
+				"query.variant<=0?(variable.omni2_arm?texture.ben10_costume2:(query.mark_variant!=1&&variable.omni1_arm?texture.ben10_costume:texture.default)):texture.default"
 			],
 			"part_visibility": [
 				{
@@ -49,7 +49,7 @@
 				}
 			],
 			"textures": [
-				"query.variant<=0&&(variable.omnitrix||variable.omnitrix_off||variable.selecting_omni_alien||variable.omni_destruct)?texture.ben10_costume:texture.default"
+				"query.variant<=0?(variable.omni2_arm?texture.ben10_costume2:(query.mark_variant!=1&&variable.omni1_arm?texture.ben10_costume:texture.default)):texture.default"
 			],
 			"part_visibility": [
 				{
@@ -123,6 +123,182 @@
 				},
 				{
 					"jacket": "query.variant <= 0"
+				}
+			]
+		},
+		"controller.render.morph.pig": {
+			"geometry": "geometry.pig",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.pig"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 800"
+				}
+			]
+		},
+		"controller.render.morph.cow": {
+			"geometry": "geometry.cow",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cow"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 801"
+				}
+			]
+		},
+		"controller.render.morph.sheep": {
+			"geometry": "geometry.sheep",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.sheep"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 802"
+				}
+			]
+		},
+		"controller.render.morph.chicken": {
+			"geometry": "geometry.chicken",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.chicken"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 803"
+				}
+			]
+		},
+		"controller.render.morph.zombie": {
+			"geometry": "geometry.zombie",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.zombie"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 804"
+				}
+			]
+		},
+		"controller.render.morph.skeleton": {
+			"geometry": "geometry.skeleton",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.skeleton"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 805"
+				}
+			]
+		},
+		"controller.render.morph.creeper": {
+			"geometry": "geometry.creeper",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.creeper"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 806"
+				}
+			]
+		},
+		"controller.render.morph.enderman": {
+			"geometry": "geometry.enderman",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.enderman"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 807"
+				}
+			]
+		},
+		"controller.render.morph.spider": {
+			"geometry": "geometry.spider",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.spider"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 808"
+				}
+			]
+		},
+		"controller.render.morph.wolf": {
+			"geometry": "geometry.wolf",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wolf"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 809"
+				}
+			]
+		},
+		"controller.render.morph.piglin": {
+			"geometry": "geometry.piglin",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.piglin"
+			],
+			"part_visibility": [
+				{
+					"*": "query.variant == 810"
 				}
 			]
 		}

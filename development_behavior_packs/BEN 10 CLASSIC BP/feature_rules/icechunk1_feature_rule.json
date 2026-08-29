@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "minecraft:icechunk1_feature_rule",
+			"places_feature": "gen:icechunk1_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "iceberg_ocean"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 30,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					56,
+					58
+				]
+			},
+			"z": 0
+		}
+	}
+}

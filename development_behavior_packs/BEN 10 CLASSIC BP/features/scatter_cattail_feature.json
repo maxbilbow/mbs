@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_cattail_feature"
+		},
+		"iterations": 5,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				-7,
+				7
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-2,
+				2
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				-7,
+				7
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:cattail_feature"
+	}
+}

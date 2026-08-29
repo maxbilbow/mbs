@@ -1,0 +1,135 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:lightningmagiccircle",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"first": {
+				"minecraft:timer": {
+					"time": 0.75,
+					"time_down_event": {
+						"event": "firstdone"
+					}
+				}
+			},
+			"end": {
+				"minecraft:timer": {
+					"time": 3,
+					"time_down_event": {
+						"event": "despawn"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0,
+				"width": 0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"max": 1000,
+				"value": 1000
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"none"
+				]
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 10,
+				"event": "areadamage"
+			},
+			"minecraft:scale": {
+				"value": 2
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"first"
+							]
+						}
+					}
+				]
+			},
+			"firstdone": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"first"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"summon zk:voltlightningstriker",
+								"summon zk:voltlightningstriker ~4~~4",
+								"summon zk:voltlightningstriker ~-4~~-4",
+								"summon zk:voltlightningstriker ~4~~-4",
+								"summon zk:voltlightningstriker ~-4~~4"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"end"
+							]
+						}
+					}
+				]
+			},
+			"areadamage": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"damage @e[r=5,tag=!lightning,type=!item,tag=!ally] 3 lightning",
+								"effect @e[r=5,type=!item,type=!xp_orb,tag=!lightning,family=!none,family=!proj] slowness 3 3 true"
+							]
+						}
+					}
+				]
+			},
+			"despawn": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

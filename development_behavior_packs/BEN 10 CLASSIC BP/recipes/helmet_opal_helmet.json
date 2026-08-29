@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "opal_helmet_24401607"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:opal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:opal_helmet",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:reefopod",
+			"materials": {
+				"default": "parrot"
+			},
+			"textures": {
+				"blue": "textures/entity/reefopod_blue",
+				"green": "textures/entity/reefopod_yellow",
+				"red_blue": "textures/entity/reefopod_red",
+				"yellow_blue": "textures/entity/reefopod_magenta",
+				"grey": "textures/entity/reefopod_pink"
+			},
+			"geometry": {
+				"default": "geometry.reefopod"
+			},
+			"animations": {
+				"default_leg_pose": "animation.spider.default_leg_pose",
+				"look_at_target": "animation.reefopod.general",
+				"walk": "animation.reefopod.move"
+			},
+			"render_controllers": [
+				"controller.render.parrot"
+			],
+			"animation_controllers": [
+				{
+					"move": "controller.animation.spider.move"
+				}
+			],
+			"spawn_egg": {
+				"base_color": "#201926",
+				"overlay_color": "#403368"
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "diving_helmet_14ccb8b5"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ABA",
+			"BCB",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:magnesium_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:copper_ingot",
+				"data": 0
+			},
+			"C": {
+				"item": "minecraft:nautilus_shell",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "helmet:diving_helmet",
+			"count": 1
+		}
+	}
+}

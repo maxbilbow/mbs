@@ -1,0 +1,2 @@
+execute as @e[r=4,type=!item:bubble_barrier] run execute at @s[type=!item,type=!xp_orb,type=!player,type=!item:bubble_barrier,family=!boss] run tp @s ^^^ facing @n[type=item:bubble_barrier]
+kill @e[type=projectile:boiling_bubble,r=3]

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "food:salmon_roll",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.miscFood"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "food:salmon_roll"
+			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.cookedFood"
+			},
+			"minecraft:display_name": {
+				"value": "Salmon Nigiri"
+			},
+			"minecraft:use_animation": "eat",
+			"minecraft:use_modifiers": {
+				"use_duration": 0.8,
+				"movement_modifier": 0.35
+			},
+			"minecraft:food": {
+				"nutrition": 8,
+				"saturation_modifier": 1
+			}
+		}
+	}
+}

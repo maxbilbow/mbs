@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:shrimp",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/shrimp_1"
+			},
+			"geometry": {
+				"default": "geometry.shrimp"
+			},
+			"animations": {
+				"face_player": "animation.shrimp.swim"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#CB5D44",
+				"overlay_color": "#AE330B"
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:yellow_litter_feature"
+		},
+		"features": [
+			[
+				"gen:yellow_litter1_feature",
+				1
+			],
+			[
+				"gen:yellow_litter2_feature",
+				1
+			],
+			[
+				"gen:yellow_litter3_feature",
+				1
+			],
+			[
+				"gen:yellow_litter4_feature",
+				1
+			]
+		]
+	}
+}

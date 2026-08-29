@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_143b1fc6"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:white_pearl_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:white_pearl",
+				"count": 9
+			}
+		]
+	}
+}

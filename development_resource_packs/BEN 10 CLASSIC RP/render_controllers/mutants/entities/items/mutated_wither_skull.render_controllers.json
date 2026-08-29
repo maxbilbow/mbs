@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mwither_skull": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"overlay_color": {
+				"r": "1.25+math.min(math.sqrt(10*math.max(0,query.anim_time*16-1)),1)*-1.25",
+				"g": "1.25+math.min(math.sqrt(10*math.max(0,query.anim_time*16-1)),1)*-1.25",
+				"b": "1.25+math.min(math.sqrt(10*math.max(0,query.anim_time*16-1)),1)*-1.25",
+				"a": "1.25+math.min(math.sqrt(10*math.max(0,query.anim_time*16-1)),1)*-1.25"
+			},
+			"ignore_lighting": true
+		}
+	}
+}

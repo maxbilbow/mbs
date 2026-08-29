@@ -1,0 +1,20 @@
+//bridge-file-version: #10
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "ad:drenched_void"
+		},
+		"components": {
+			"minecraft:fog_appearance": {
+				"fog_identifier": "ad:drenched_void_fog"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#0B214F"
+			},
+			"minecraft:sky_color": {
+				"sky_color": "#67BCFF"
+			}
+		}
+	}
+}

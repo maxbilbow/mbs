@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "opal_leggings_d4485800"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:opal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "leggings:opal_leggings",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,430 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sulfurous_flyfish",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 21,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "Skyfin",
+					"pivot": [
+						0,
+						3,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								0,
+								-14
+							],
+							"size": [
+								4,
+								6,
+								14
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								0,
+								6,
+								-12
+							],
+							"size": [
+								0,
+								3,
+								11
+							],
+							"uv": [
+								22,
+								22
+							]
+						},
+						{
+							"origin": [
+								0,
+								-3,
+								-12
+							],
+							"size": [
+								0,
+								3,
+								11
+							],
+							"uv": [
+								35,
+								17
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Segment",
+					"parent": "Skyfin",
+					"pivot": [
+						0,
+						4,
+						-1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								1,
+								-1
+							],
+							"size": [
+								2,
+								5,
+								6
+							],
+							"uv": [
+								23,
+								0
+							]
+						},
+						{
+							"origin": [
+								0,
+								6,
+								-1
+							],
+							"size": [
+								0,
+								3,
+								6
+							],
+							"uv": [
+								0,
+								33
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								-1
+							],
+							"size": [
+								0,
+								3,
+								6
+							],
+							"uv": [
+								0,
+								29
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Tail",
+					"parent": "Skyfin_Segment",
+					"pivot": [
+						0,
+						4,
+						5
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								0,
+								5
+							],
+							"size": [
+								0,
+								7,
+								6
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Wings",
+					"parent": "Skyfin",
+					"pivot": [
+						4,
+						-4,
+						-10
+					]
+				},
+				{
+					"name": "Skyfin_Bottom_Wings",
+					"parent": "Skyfin_Wings",
+					"pivot": [
+						4,
+						-4,
+						-10
+					]
+				},
+				{
+					"name": "Skyfin_Left_Bottom_Wing",
+					"parent": "Skyfin_Bottom_Wings",
+					"pivot": [
+						2,
+						1,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								2,
+								1,
+								-12
+							],
+							"size": [
+								5,
+								0,
+								9
+							],
+							"uv": [
+								15,
+								20
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Right_Bottom_Wing",
+					"parent": "Skyfin_Bottom_Wings",
+					"pivot": [
+						-2,
+						1,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								1,
+								-12
+							],
+							"size": [
+								5,
+								0,
+								9
+							],
+							"uv": [
+								15,
+								20
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Middle_Wing",
+					"parent": "Skyfin_Wings",
+					"pivot": [
+						4,
+						-4,
+						-10
+					]
+				},
+				{
+					"name": "Skyfin_Left_Middle_Wings",
+					"parent": "Skyfin_Middle_Wing",
+					"pivot": [
+						2,
+						3.5,
+						-9
+					]
+				},
+				{
+					"name": "Skyfin_Left_Middle_Wing1",
+					"parent": "Skyfin_Left_Middle_Wings",
+					"pivot": [
+						2,
+						4.5,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								2.1,
+								4,
+								-8
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Left_Middle_Wing2",
+					"parent": "Skyfin_Left_Middle_Wings",
+					"pivot": [
+						2,
+						3.5,
+						-9
+					],
+					"cubes": [
+						{
+							"origin": [
+								2.1,
+								3,
+								-9
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Left_Middle_Wing3",
+					"parent": "Skyfin_Left_Middle_Wings",
+					"pivot": [
+						2,
+						2.5,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								2.1,
+								2,
+								-10
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							]
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Right_Middle_Wings",
+					"parent": "Skyfin_Middle_Wing",
+					"pivot": [
+						-2,
+						3.5,
+						-9
+					]
+				},
+				{
+					"name": "Skyfin_Right_Middle_Wing1",
+					"parent": "Skyfin_Right_Middle_Wings",
+					"pivot": [
+						-2,
+						4.5,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2.1,
+								4,
+								-8
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Right_Middle_Wing2",
+					"parent": "Skyfin_Right_Middle_Wings",
+					"pivot": [
+						-2,
+						3.5,
+						-9
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2.1,
+								3,
+								-9
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "Skyfin_Right_Middle_Wing3",
+					"parent": "Skyfin_Right_Middle_Wings",
+					"pivot": [
+						-2,
+						2.5,
+						-10
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2.1,
+								2,
+								-10
+							],
+							"size": [
+								0,
+								1,
+								5
+							],
+							"uv": [
+								45,
+								10
+							],
+							"mirror": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

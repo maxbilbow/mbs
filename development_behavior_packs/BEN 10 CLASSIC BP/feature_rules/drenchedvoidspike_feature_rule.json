@@ -1,0 +1,39 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "minecraft:drenchedvoidspike_feature_rule",
+			"places_feature": "gen:drenchedvoidspike_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "drenched_void"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					21
+				]
+			},
+			"z": 0
+		}
+	}
+}

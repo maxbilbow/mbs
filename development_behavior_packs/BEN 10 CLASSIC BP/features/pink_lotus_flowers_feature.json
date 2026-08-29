@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:pink_lotus_flowers_feature"
+		},
+		"features": [
+			[
+				"gen:pink_lotus_flowers1_feature",
+				1
+			],
+			[
+				"gen:pink_lotus_flowers2_feature",
+				1
+			],
+			[
+				"gen:pink_lotus_flowers3_feature",
+				1
+			],
+			[
+				"gen:pink_lotus_flowers4_feature",
+				1
+			]
+		]
+	}
+}

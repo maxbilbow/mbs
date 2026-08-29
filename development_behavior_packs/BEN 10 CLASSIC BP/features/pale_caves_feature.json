@@ -1,0 +1,10 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:surface_relative_threshold_feature": {
+		"description": {
+			"identifier": "gen:pale_caves_feature"
+		},
+		"feature_to_place": "gen:pale_caves",
+		"minimum_distance_below_surface": 3
+	}
+}

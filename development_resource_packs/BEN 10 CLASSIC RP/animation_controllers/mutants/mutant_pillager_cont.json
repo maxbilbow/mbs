@@ -1,0 +1,486 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.js7_mpillager.angry": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"angry": "query.has_target&&query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned&&query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"angry": {
+					"animations": [
+						"angry"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target&&query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"stunned": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.js7_mpillager.kick": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_right_kick": "query.is_delayed_attacking&&variable.range_attack_num==1&&query.is_alive&&!query.is_stunned&&query.mark_variant==2"
+						},
+						{
+							"melee_left_kick": "query.is_delayed_attacking&&variable.range_attack_num==2&&query.is_alive&&!query.is_stunned&&query.mark_variant==2"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"melee_right_kick": {
+					"animations": [
+						"right_kick"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"melee_left_kick": {
+					"animations": [
+						"left_kick"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.js7_mpillager.bob": {
+			"states": {
+				"default": {
+					"animations": [
+						"bob",
+						"look_at_target",
+						{
+							"walk": "math.min(1,query.modified_move_speed*2)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*2)"
+						}
+					],
+					"transitions": [
+						{
+							"melee_right_kick": "query.is_delayed_attacking&&variable.range_attack_num==1&&query.is_alive&&!query.is_stunned&&query.mark_variant==2"
+						},
+						{
+							"melee_left_kick": "query.is_delayed_attacking&&variable.range_attack_num==2&&query.is_alive&&!query.is_stunned&&query.mark_variant==2"
+						},
+						{
+							"range_mode": "query.mark_variant==1&&query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"melee_right_kick": {
+					"animations": [
+						"bob",
+						"look_at_target",
+						{
+							"walk": "math.min(0.1,query.modified_move_speed*2)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"melee_left_kick": {
+					"animations": [
+						"bob",
+						"look_at_target",
+						{
+							"walk": "math.min(0.1,query.modified_move_speed*2)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"range_mode": {
+					"animations": [
+						"bob",
+						"dual_aim_bob_arms",
+						"look_at_target",
+						{
+							"walk": "math.min(1,query.modified_move_speed*2)"
+						},
+						{
+							"walk_legs": "math.min(1,query.modified_move_speed*2)"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.mark_variant!=1&&query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"death_cancel": {
+					"animations": [
+						"knocked",
+						"death_cancel"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"stunned": {
+					"animations": [
+						"knocked"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.js7_mpillager.bob_arms": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk_arms": "math.min(1,query.modified_move_speed*2)"
+						},
+						"bob_arms",
+						"no_dual"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_mode_first_time": "query.facing_target_to_range_attack&&query.is_alive&&query.mark_variant==1&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"put_duals_away": {
+					"animations": [
+						"dual_put_away"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"dual_mode": {
+					"animations": [
+						"dual_bob_arms"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"put_duals_away": "math.max(0,1000)<1&&!query.is_angry&&!query.is_roaring&&!query.is_stunned&&!query.has_target&&query.is_alive"
+						},
+						{
+							"range_mode": "query.facing_target_to_range_attack&&query.is_alive&&query.mark_variant==1&&!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"range_mode_first_time": {
+					"animations": [
+						"start_aim_first"
+					],
+					"transitions": [
+						{
+							"dual_mode": "query.all_animations_finished&&!query.is_alive&&!query.is_stunned"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_mode_still": "query.all_animations_finished&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"range_mode": {
+					"animations": [
+						"start_aim"
+					],
+					"transitions": [
+						{
+							"dual_mode": "query.all_animations_finished&&!query.is_alive"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_mode_still": "query.all_animations_finished&&query.is_alive"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"range_mode_still": {
+					"animations": [
+						"lock_aim"
+					],
+					"transitions": [
+						{
+							"dual_mode": "query.all_animations_finished&&!query.is_alive&&!query.is_stunned"
+						},
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.mark_variant!=1||!query.is_alive&&!query.is_stunned"
+						},
+						{
+							"range_fire_right": "variable.attack_time!=0&&variable.range_attack_num==1&&!query.is_stunned"
+						},
+						{
+							"range_fire_left": "variable.attack_time!=0&&variable.range_attack_num==2&&!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					]
+				},
+				"range_cease": {
+					"animations": [
+						"dual_cease_fire"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"dual_mode": "query.all_animations_finished&&query.is_alive&&!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"range_fire_right": {
+					"animations": [
+						"dual_fire_right"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_reload_right": "query.all_animations_finished"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"range_reload_right": {
+					"animations": [
+						"dual_reload_right"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_mode_still": "query.all_animations_finished"
+						},
+						{
+							"range_fire_right_to_left": "variable.attack_time!=0"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"range_fire_right_to_left": {
+					"animations": [
+						"dual_fire_right_to_left"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_reload_left": "query.all_animations_finished"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"range_fire_left": {
+					"animations": [
+						"dual_fire_left"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_reload_left": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"range_reload_left": {
+					"animations": [
+						"dual_reload_left"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_mode_still": "query.all_animations_finished"
+						},
+						{
+							"range_fire_left_to_right": "variable.attack_time!=0"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"range_fire_left_to_right": {
+					"animations": [
+						"dual_fire_left_to_right"
+					],
+					"transitions": [
+						{
+							"stunned": "query.is_stunned"
+						},
+						{
+							"range_cease": "query.all_animations_finished&&query.mark_variant!=1||!query.is_alive"
+						},
+						{
+							"range_reload_right": "query.all_animations_finished"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.05
+				},
+				"death_cancel": {
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"stunned": {
+					"transitions": [
+						{
+							"default": "!query.is_stunned"
+						},
+						{
+							"death_cancel": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

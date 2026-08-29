@@ -55,7 +55,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "variable.on_ground&&query.variant==26&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+							"shoot": "variable.on_ground&&query.variant==26&&query.is_moving&&!query.is_sprinting&&!variable.is_first_person&&!((query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f')&&query.is_using_item)"
 						}
 					],
 					"blend_transition": 0.2
@@ -66,7 +66,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!variable.on_ground||query.variant!=26||!query.is_moving||query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+							"default": "!variable.on_ground||query.variant!=26||!query.is_moving||query.is_sprinting||variable.is_first_person||((query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f')&&query.is_using_item)"
 						}
 					],
 					"blend_transition": 0.2
@@ -79,7 +79,7 @@
 				"default": {
 					"transitions": [
 						{
-							"shoot": "variable.on_ground&&query.variant==26&&query.is_sprinting&&!variable.is_first_person&&!(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+							"shoot": "variable.on_ground&&query.variant==26&&query.is_sprinting&&!variable.is_first_person&&!((query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f')&&query.is_using_item)"
 						}
 					],
 					"blend_transition": 0.2
@@ -90,7 +90,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!variable.on_ground||query.variant!=26||!query.is_sprinting||variable.is_first_person||(query.get_equipped_item_name('main_hand')=='clock_beam'||query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f'&&query.is_using_item)"
+							"default": "!variable.on_ground||query.variant!=26||!query.is_sprinting||variable.is_first_person||((query.get_equipped_item_name('main_hand')=='clock_b'||query.get_equipped_item_name('main_hand')=='clock_f')&&query.is_using_item)"
 						}
 					],
 					"blend_transition": 0.2

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_843ff989"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:scrap_metal_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:scrap_metal",
+				"count": 4
+			}
+		]
+	}
+}

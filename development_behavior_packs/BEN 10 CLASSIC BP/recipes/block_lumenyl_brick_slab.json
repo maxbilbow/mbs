@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_brick_slab_7f6eb174"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:lumenyl_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:lumenyl_brick_slab",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,113 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.endersoul_block.floating": {
+			"loop": true,
+			"bones": {
+				"block": {
+					"rotation": [
+						"query.life_time*90*1.5",
+						"query.life_time*90*1",
+						"query.life_time*45*.5"
+					],
+					"scale": [
+						"1+math.cos(270*query.life_time-150)*0.05",
+						"1+math.cos(270*query.life_time)*0.05",
+						"1+math.cos(270*query.life_time-50)*0.05"
+					]
+				}
+			}
+		},
+		"animation.endersoul_block.grab_block": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.54167,
+			"bones": {
+				"block": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							0,
+							0,
+							0
+						],
+						"0.5417": [
+							"query.life_time*90*1.5",
+							"query.life_time*90*1",
+							"query.life_time*45*.5"
+						]
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								-6.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [
+								0,
+								-6.7,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2083": {
+							"post": [
+								0,
+								-3.27,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [
+								0,
+								1.2,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5417": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							1,
+							1,
+							1
+						],
+						"0.1667": [
+							"1+math.cos(2970*query.life_time-150)*0.05",
+							"1+math.cos(2970*query.life_time)*0.05",
+							"1+math.cos(2970*query.life_time-50)*0.05"
+						],
+						"0.25": [
+							"1+math.cos(2970*query.life_time-150)*0.2",
+							"1+math.cos(2970*query.life_time)*0.2",
+							"1+math.cos(2970*query.life_time-50)*0.2"
+						],
+						"0.4583": [
+							"1+math.cos(270*query.life_time-150)*0.05",
+							"1+math.cos(270*query.life_time)*0.05",
+							"1+math.cos(270*query.life_time-50)*0.05"
+						],
+						"0.5417": [
+							"1+math.cos(270*query.life_time-150)*0.05",
+							"1+math.cos(270*query.life_time)*0.05",
+							"1+math.cos(270*query.life_time-50)*0.05"
+						]
+					}
+				}
+			}
+		}
+	}
+}

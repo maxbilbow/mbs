@@ -1,0 +1,113 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.echoecho_clone": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"rightLeg": "query.variant == 0"
+				},
+				{
+					"leftLeg": "query.variant == 0"
+				},
+				{
+					"rightArm": "query.variant == 0"
+				},
+				{
+					"leftArm": "query.variant == 0"
+				},
+				{
+					"head": "query.variant == 0"
+				},
+				{
+					"alien_body": "query.variant == 0"
+				},
+				{
+					"body_p2": "query.variant == 0"
+				},
+				{
+					"body_p3": "query.variant == 0"
+				},
+				{
+					"alien_head": "query.variant == 0"
+				}
+			]
+		},
+		"controller.render.echoecho_clone.screaming": {
+			"geometry": "geometry.scream",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.scream"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"rightLeg": "query.variant == 1"
+				},
+				{
+					"leftLeg": "query.variant == 1"
+				},
+				{
+					"rightArm": "query.variant == 1"
+				},
+				{
+					"leftArm": "query.variant == 1"
+				},
+				{
+					"head": "query.variant == 1"
+				},
+				{
+					"alien_body": "query.variant == 1"
+				},
+				{
+					"body_p2": "query.variant == 0"
+				},
+				{
+					"body_p3": "query.variant == 0"
+				},
+				{
+					"alien_head": "query.variant == 1"
+				}
+			]
+		},
+		"controller.render.echoecho_clone.sonic_scream": {
+			"geometry": "geometry.scream_atk",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.scream_atk"
+			],
+			"part_visibility": [
+				{
+					"*": false
+				},
+				{
+					"sonic_scream": "query.variant == 1"
+				},
+				{
+					"head": "query.variant == 1"
+				}
+			]
+		}
+	}
+}

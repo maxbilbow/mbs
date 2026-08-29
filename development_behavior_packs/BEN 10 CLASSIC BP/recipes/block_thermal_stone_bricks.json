@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_stone_bricks_9317fbe2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:polished_thermal_stone",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_stone_bricks",
+			"count": 4
+		}
+	}
+}

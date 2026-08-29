@@ -1,0 +1,38 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:dandelion_feature"
+		},
+		"features": [
+			[
+				"gen:dandelion_flower_feature",
+				3
+			],
+			[
+				"gen:dandelion_flower2_feature",
+				3
+			],
+			[
+				"gen:dandelion_flower3_feature",
+				3
+			],
+			[
+				"gen:scatter_yellow_petels_feature",
+				1
+			],
+			[
+				"gen:scatter_yellow_litter_feature",
+				1
+			],
+			[
+				"gen:grass2_overworld_feature",
+				1
+			],
+			[
+				"gen:grass3_overworld_feature",
+				1
+			]
+		]
+	}
+}

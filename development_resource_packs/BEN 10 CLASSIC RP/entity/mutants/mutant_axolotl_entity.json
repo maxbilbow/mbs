@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_axolotl",
+			"materials": {
+				"default": "axolotl",
+				"cube": "entity_static"
+			},
+			"textures": {
+				"marigold": "textures/mutants/entity/axolotl/axolotl_marigold",
+				"green": "textures/mutants/entity/axolotl/axolotl_green",
+				"blue": "textures/mutants/entity/axolotl/axolotl_blue",
+				"cyan": "textures/mutants/entity/axolotl/axolotl_cyan",
+				"gold": "textures/mutants/entity/axolotl/axolotl_gold",
+				"lucy": "textures/mutants/entity/axolotl/axolotl_lucy",
+				"wild": "textures/mutants/entity/axolotl/axolotl_wild",
+				"cube": "textures/mutants/entity/entities/corrupted_cube"
+			},
+			"geometry": {
+				"marigold": "geometry.mutant_axolotl_marigold",
+				"green": "geometry.mutant_axolotl",
+				"blue": "geometry.mutant_axolotl",
+				"cyan": "geometry.mutant_axolotl",
+				"gold": "geometry.mutant_axolotl",
+				"lucy": "geometry.mutant_axolotl",
+				"wild": "geometry.mutant_axolotl",
+				"cube": "geometry.mutants_corrupted_cube"
+			},
+			"animations": {
+				"sit_float": "animation.mutant_axolotl.sit_water",
+				"sit_floor": "animation.mutant_axolotl.sit",
+				"idle_1": "animation.maxolotl.random_idle1",
+				"idle_2": "animation.maxolotl.random_idle2",
+				"idle_float": "animation.mutant_axolotl.idle_water",
+				"idle_floor": "animation.mutant_axolotl.idle",
+				"idle_floor_water": "animation.mutant_axolotl.idle_water_floor",
+				"swim": "animation.mutant_axolotl.swim",
+				"walk_floor": "animation.mutant_axolotl.walk",
+				"walk_floor_water": "animation.mutant_axolotl.swim_walk",
+				"play_dead_water": "animation.mutant_axolotl.play_dead_water",
+				"play_dead": "animation.mutant_axolotl.play_dead",
+				"idle_water": "animation.mutant_axolotl.general_water",
+				"big_head": "animation.mutant_axolotl.big_head",
+				"look_at_target": "animation.common.look_at_target",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death_water": "animation.mutant_axolotl.death_water",
+				"attack": "animation.mutant_axolotl.tail_attack2",
+				"attack_tail_part": "animation.mutant_axolotl.tail_part",
+				"cube_be_hidding": "animation.goldenthecube.hide",
+				"cube_be_like": "animation.goldenthecube.wee",
+				"cube_blevin": "animation.goldenthecube.blevin",
+				"cube_be_golden": "animation.goldenthecube.cube",
+				"cube_be_kevin": "animation.goldenthecube.kevin",
+				"cube_be_dying": "animation.goldenthecube.death",
+				"cube_despawn": "animation.goldenthecube.shrink",
+				"cube_spawn": "animation.goldenthecube.grow"
+			},
+			"scripts": {
+				"scale": "1.25",
+				"pre_animation": [
+					"variable.cube_num = Math.round(Math.random(1, 10));",
+					"variable.moving = query.ground_speed > 0.2 || query.vertical_speed > 0.2;",
+					"variable.pitch = query.body_x_rotation;",
+					"variable.mpet_walk_divisor=8.0;",
+					"variable.mpet_walk_multiplier=1.0;"
+				]
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"death": "controller.animation.maxolotl.death_cancel"
+				},
+				{
+					"idle": "controller.animation.attack.idle"
+				},
+				{
+					"attack": "controller.animation.maxolotl.attack"
+				},
+				{
+					"move": "controller.animation.maxolotl.move"
+				},
+				{
+					"cube_be_like": "controller.animation.cube.stuff"
+				}
+			],
+			"render_controllers": [
+				"controller.render.maxolotl",
+				"controller.render.m_the_cube"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 16
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "release_bubble_c6a0152a"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:magnesium_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:wind_charge",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:release_bubble",
+			"count": 4
+		}
+	}
+}

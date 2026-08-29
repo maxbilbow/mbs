@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "recipe:brew_awkward_typhoon"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"input": "minecraft:potion_type:awkward",
+		"reagent": "item:typhoon_wind_charge",
+		"output": "item:typhoon_potion"
+	}
+}

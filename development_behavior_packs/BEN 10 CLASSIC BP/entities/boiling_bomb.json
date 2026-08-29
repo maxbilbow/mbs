@@ -1,0 +1,272 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:boiler_bomb",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 2,
+					"fire_affected_by_griefing": true,
+					"destroy_affected_by_griefing": true,
+					"breaks_blocks": false,
+					"knockback_scaling": 2
+				}
+			},
+			"air": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "minecraft:explode",
+								"target": "self"
+							}
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						}
+					},
+					"power": 1.6,
+					"gravity": 0.1,
+					"inertia": 1,
+					"liquid_inertia": 1,
+					"uncertainty_base": 0,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"reflect_on_hurt": true,
+					"catch_fire": true
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "is_underwater",
+								"value": true
+							},
+							"event": "water"
+						},
+						{
+							"filters": {
+								"test": "is_underwater",
+								"value": false
+							},
+							"event": "air"
+						},
+						{
+							"event": "is_moving",
+							"filters": {
+								"test": "is_moving",
+								"value": false
+							}
+						}
+					]
+				}
+			},
+			"water": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "spawnbubbles",
+								"target": "self"
+							}
+						}
+					},
+					"power": 1.6,
+					"gravity": 0.02,
+					"inertia": 1,
+					"liquid_inertia": 1,
+					"uncertainty_base": 0,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"reflect_on_hurt": true,
+					"catch_fire": true
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "is_underwater",
+								"value": true
+							},
+							"event": "water"
+						},
+						{
+							"filters": {
+								"test": "is_underwater",
+								"value": false
+							},
+							"event": "air"
+						},
+						{
+							"event": "is_moving",
+							"filters": {
+								"test": "is_moving",
+								"value": false
+							}
+						}
+					]
+				}
+			},
+			"not_moving": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 1.5,
+					"relative_range": false,
+					"minimum_count": 1,
+					"event_filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "mob"
+							},
+							{
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							}
+						]
+					},
+					"event": "spikemode"
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"water": {
+				"add": {
+					"component_groups": [
+						"water"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"air"
+					]
+				}
+			},
+			"air": {
+				"add": {
+					"component_groups": [
+						"air"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"water"
+					]
+				}
+			},
+			"is_moving": {
+				"add": {
+					"component_groups": [
+						"not_moving"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"air"
+							]
+						},
+						"filters": {
+							"test": "is_underwater",
+							"value": false
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"water"
+							]
+						},
+						"filters": {
+							"test": "is_underwater",
+							"value": true
+						}
+					}
+				]
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"spawnbubbles": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"function bubblebomb"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			}
+		}
+	}
+}

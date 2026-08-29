@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "elder_prismarine_tiles_5e91c64b"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:elder_prismarine_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:elder_prismarine_tiles",
+			"count": 4
+		}
+	}
+}

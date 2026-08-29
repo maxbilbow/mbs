@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "stone_harpoon_456f5476"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" B ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:cobblestone",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:stone_harpoon",
+			"count": 1
+		}
+	}
+}

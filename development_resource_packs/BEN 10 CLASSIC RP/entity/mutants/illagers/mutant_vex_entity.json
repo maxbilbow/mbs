@@ -1,0 +1,56 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_vex",
+			"materials": {
+				"default": "vex"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/vex/mutant_vex",
+				"charging": "textures/mutants/entity/vex/mutant_vex_charging"
+			},
+			"geometry": {
+				"default": "geometry.mutant_vex"
+			},
+			"scripts": {
+				"scale": "1.25"
+			},
+			"sound_effects": {
+				"flap": "mob.phantom.flap"
+			},
+			"animations": {
+				"look_at_target": "animation.mutant_vex.look_at_target",
+				"charge": "animation.mutant_vex.charge",
+				"swipe_attack": "animation.mutant_vex.swing_attack",
+				"idle": "animation.mutant_vex.bob",
+				"on_guard": "animation.mutant_vex.on_guard",
+				"move": "animation.mutant_vex.move",
+				"charge_move": "animation.mutant_vex.charge_move",
+				"charging_idle": "animation.mutant_vex.charging_bob",
+				"wings": "animation.mutant_vex.wings",
+				"wings_fast": "animation.mutant_vex.wings_fast",
+				"wings_still": "animation.mutant_vex.wings_still",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mutant_vex.death"
+			},
+			"animation_controllers": [
+				{
+					"wings": "controller.animation.mvex.wings"
+				},
+				{
+					"general": "controller.animation.mvex.general"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mvex",
+				"controller.render.mutant_vex_weapon"
+			],
+			"held_item_ignores_lighting": true,
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 27
+			}
+		}
+	}
+}

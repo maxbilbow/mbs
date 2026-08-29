@@ -1,0 +1,64 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:gen:overworld_underground_tungsten_ore_feature",
+			"places_feature": "ore:tungsten_ore_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ocean"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "thermal_seas"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "dread_reef"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "glowing_ocean"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 6,
+			"coordinate_eval_order": "zyx",
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "triangle",
+				"extent": [
+					-64,
+					64
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

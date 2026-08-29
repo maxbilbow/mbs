@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "marble_tile_slab_bccbb24b"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:marble_tiles",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:marble_tile_slab",
+			"count": 6
+		}
+	}
+}

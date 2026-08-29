@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.js7_mutant.earth_mutant_creatures": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_alive*0.6)+(!query.is_alive*0.6)"
+			},
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*0.6)"
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"flesh": "query.is_charged"
+				}
+			],
+			"ignore_lighting": false
+		},
+		"controller.render.js7_mutant.earth_mobs": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"ignore_lighting": false
+		}
+	}
+}

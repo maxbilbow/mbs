@@ -1,0 +1,14 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:fancy_oak_tree_feature"
+		},
+		"features": [
+			[
+				"gen:oak_tree1_feature",
+				50
+			]
+		]
+	}
+}

@@ -1,0 +1,190 @@
+//bridge-file-version: #5
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 5,
+				"max": 8
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:iron_ingot",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 4
+							}
+						}
+					],
+					"weight": 20
+				},
+				{
+					"type": "item",
+					"name": "minecraft:gold_ingot",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 4
+							}
+						}
+					],
+					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:tnt",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					],
+					"weight": 5
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 1,
+				"max": 3
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "item:malachite",
+					"weight": 5,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 4,
+								"max": 8
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond",
+					"weight": 5,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "item:sea_prism",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 5
+							}
+						}
+					],
+					"weight": 5
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "sword:scrap_metal_cleaver",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "sword:scrap_metal_sword",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "spear:scrap_metal_spear",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"rolls": 2,
+			"entries": [
+				{
+					"type": "item",
+					"name": "food:salmon_sushi_roll",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "food:cod_sushi_roll",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.2
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:copper_nautilus_armor",
+					"weight": 100
+				},
+				{
+					"type": "item",
+					"name": "minecraft:iron_nautilus_armor",
+					"weight": 50
+				},
+				{
+					"type": "item",
+					"name": "minecraft:golden_nautilus_armor",
+					"weight": 25
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_nautilus_armor",
+					"weight": 10
+				}
+			]
+		}
+	]
+}

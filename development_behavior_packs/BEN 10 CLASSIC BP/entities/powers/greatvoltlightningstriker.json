@@ -1,0 +1,135 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zk:greatvoltlightningstriker",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.25,
+				"time_down_event": {
+					"event": "strike"
+				}
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": [
+							{
+								"any_of": [
+									{
+										"subject": "self",
+										"operator": "==",
+										"test": "has_tag",
+										"value": "strikedl"
+									}
+								]
+							}
+						],
+						"event": "despawn"
+					}
+				]
+			},
+			"minecraft:type_family": {
+				"family": [
+					"strikedl"
+				]
+			}
+		},
+		"events": {
+			"strike": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"summon zk:greatvoltbluelightning1 ~~~",
+										"scoreboard players add @s strikedl 1"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"summon zk:greatvoltbluelightning2 ~~~",
+										"scoreboard players add @s strikedl 1"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"summon zk:greatvoltbluelightning3 ~~~",
+										"scoreboard players add @s strikedl 1"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"summon zk:greatvoltbluelightning4 ~~~",
+										"scoreboard players add @s strikedl 1"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"scoreboard players add @s strikedl 1",
+										"summon zk:greatvoltbluelightning5 ~~~"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"despawn": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

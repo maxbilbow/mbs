@@ -1,0 +1,27 @@
+//bridge-file-version: #14
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "generation:islandspike1_feature_rule",
+			"places_feature": "gen:islandspike1_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "island_ocean"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 40,
+			"x": 0,
+			"y": "query.above_top_solid(variable.worldx, variable.worldz)",
+			"z": 0
+		}
+	}
+}

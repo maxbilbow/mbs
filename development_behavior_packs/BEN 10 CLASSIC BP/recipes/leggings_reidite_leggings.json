@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "reidite_leggings_5ab37a3e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "item:reidite",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "leggings:reidite_leggings",
+			"count": 1
+		}
+	}
+}

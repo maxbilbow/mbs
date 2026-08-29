@@ -1,0 +1,92 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_pillager",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/illagers/mutant_pillager",
+				"dual_crossbow": "textures/mutants/entity/entities/weapons/pillager_double_crossbow"
+			},
+			"geometry": {
+				"default": "geometry.mutant_pillager",
+				"dual_crossbow": "geometry.mutant_pillager_double_crossbow"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire",
+				"spell": "mutant:mutant_evoker_spell"
+			},
+			"sound_effects": {
+				"vex": "mob.evocation_illager.prepare_summon",
+				"fangs": "mob.evocation_illager.prepare_attack"
+			},
+			"scripts": {
+				"scale": "1.325",
+				"pre_animation": [
+					"variable.range_attack_num = Math.round(Math.random(1, 2));",
+					"variable.attack_num = Math.round(Math.random(1, 2));"
+				]
+			},
+			"animations": {
+				"bob": "animation.js7.mutant_pillager.bob",
+				"bob_arms": "animation.js7.mutant_pillager.bob_arms",
+				"no_dual": "animation.js7.mutant_pillager.no_dual_crossbows",
+				"dual_put_away": "animation.js7.mutant_pillager.put_away_dual_crossbows",
+				"dual_bob_arms": "animation.js7.mutant_pillager.dual_crossbows_bob",
+				"dual_aim_bob_arms": "animation.js7.mutant_pillager.dual_crossbow_aim_bob",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"angry": "animation.js7.mutant_pillager.angry",
+				"walk": "animation.js7.mutant_pillager.move",
+				"walk_arms": "animation.js7.mutant_pillager.move_arms",
+				"walk_legs": "animation.js7.mutant_pillager.move_legs",
+				"right_kick": "animation.js7.mutant_pillager.right_kick",
+				"left_kick": "animation.js7.mutant_pillager.left_kick",
+				"start_aim_first": "animation.js7.mutant_pillager.dual_crossbow_start_aim_first",
+				"start_aim": "animation.js7.mutant_pillager.dual_crossbow_start_aim",
+				"lock_aim": "animation.js7.mutant_pillager.dual_crossbow_lock_aim",
+				"dual_cease_fire": "animation.js7.mutant_pillager.dual_crossbow_cease_fire",
+				"dual_fire_right": "animation.js7.mutant_pillager.dual_crossbow_fire_right",
+				"dual_reload_right": "animation.js7.mutant_pillager.dual_crossbow_reload_right",
+				"dual_fire_right_to_left": "animation.js7.mutant_pillager.dual_crossbow_fire_right_to_left",
+				"dual_fire_left": "animation.js7.mutant_pillager.dual_crossbow_fire_left",
+				"dual_reload_left": "animation.js7.mutant_pillager.dual_crossbow_reload_left",
+				"dual_fire_left_to_right": "animation.js7.mutant_pillager.dual_crossbow_fire_left_to_right",
+				"knocked": "animation.js7.mutant_pillager.knocked_out",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"animation_controllers": [
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"bob_arms": "controller.animation.js7_mpillager.bob_arms"
+				},
+				{
+					"bob": "controller.animation.js7_mpillager.bob"
+				},
+				{
+					"angry": "controller.animation.js7_mpillager.angry"
+				},
+				{
+					"kick": "controller.animation.js7_mpillager.kick"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mevoker",
+				"controller.render.mutated_dual_crossbow"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 26
+			}
+		}
+	}
+}

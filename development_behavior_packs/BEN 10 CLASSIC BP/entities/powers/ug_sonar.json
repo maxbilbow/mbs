@@ -31,18 +31,12 @@
 				"width": 0.25,
 				"height": 0.25
 			},
-			"minecraft:spawn_entity": [
-				{
-					"min_wait_time": 9,
-					"max_wait_time": 10,
-					"single_use": true,
-					"spawn_entity": "xx:xx",
-					"spawn_sound": "purr",
-					"num_to_spawn": 1
-				}
-			],
 			"minecraft:projectile": {
 				"onHit": {
+					"impact_damage": {
+						"damage": 6,
+						"knockback": true
+					},
 					"definition_event": {
 						"affectProjectile": true,
 						"eventTrigger": {

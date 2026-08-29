@@ -1,0 +1,259 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.miron_golem": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.cherry_blossom",
+						"Texture.glow_berry",
+						"Texture.desert",
+						"Texture.pale"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		},
+		"controller.render.miron_golem_eyes": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.cherry_blossom",
+						"Texture.glow_berry",
+						"Texture.desert",
+						"Texture.pale"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			],
+			"ignore_lighting": true,
+			"part_visibility": [
+				{
+					"*": 0
+				},
+				{
+					"eye": 1
+				},
+				{
+					"eye2": 1
+				},
+				{
+					"glowing_eye": 1
+				}
+			]
+		},
+		"controller.render.miron_golem_tiers": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.no_tier",
+						"Texture.gold_tier",
+						"Texture.diamond_tier",
+						"Texture.emerald_tier",
+						"Texture.netherite_tier"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.skin_id]"
+			],
+			"ignore_lighting": false
+		},
+		"controller.render.miron_golem_tier_1_cracks": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.cracks": [
+						"Texture.cracked_high",
+						"Texture.cracked_med",
+						"Texture.cracked_low",
+						"Texture.cracked_none"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"textures": [
+				"array.cracks[math.clamp(query.health/350,0,3)]"
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 0"
+				}
+			]
+		},
+		"controller.render.miron_golem_tier_2_cracks": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.cracks": [
+						"Texture.cracked_high",
+						"Texture.cracked_med",
+						"Texture.cracked_low",
+						"Texture.cracked_none"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"textures": [
+				"array.cracks[math.clamp(query.health/450,0,3)]"
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 1"
+				}
+			]
+		},
+		"controller.render.miron_golem_tier_3_cracks": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.cracks": [
+						"Texture.cracked_high",
+						"Texture.cracked_med",
+						"Texture.cracked_low",
+						"Texture.cracked_none"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"textures": [
+				"array.cracks[math.clamp(query.health/625,0,3)]"
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 2"
+				}
+			]
+		},
+		"controller.render.miron_golem_tier_4_cracks": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.cracks": [
+						"Texture.cracked_high",
+						"Texture.cracked_med",
+						"Texture.cracked_low",
+						"Texture.cracked_none"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"textures": [
+				"array.cracks[math.clamp(query.health/750,0,3)]"
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 3"
+				}
+			]
+		},
+		"controller.render.miron_golem_tier_5_cracks": {
+			"overlay_color": {
+				"r": "(query.is_stunned)",
+				"g": 0,
+				"b": 0,
+				"a": "(query.is_stunned*(0.45+math.cos(query.life_time*150-100)*0.15))"
+			},
+			"arrays": {
+				"textures": {
+					"Array.cracks": [
+						"Texture.cracked_high",
+						"Texture.cracked_med",
+						"Texture.cracked_low",
+						"Texture.cracked_none"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"textures": [
+				"array.cracks[math.clamp(query.health/1000,0,3)]"
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": "query.skin_id == 4"
+				}
+			]
+		}
+	}
+}

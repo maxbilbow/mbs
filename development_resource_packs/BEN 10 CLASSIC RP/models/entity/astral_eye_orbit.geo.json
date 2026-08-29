@@ -1,0 +1,504 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.astral_eye_orbit",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "AstralEye",
+					"pivot": [
+						0,
+						11.125,
+						-0.875
+					]
+				},
+				{
+					"name": "AstralEyeBiggerCosmicWhirlwinds",
+					"parent": "AstralEye",
+					"pivot": [
+						0,
+						11,
+						1.5
+					]
+				},
+				{
+					"name": "AstralEyeBiggerCosmicWhirlwind",
+					"parent": "AstralEyeBiggerCosmicWhirlwinds",
+					"pivot": [
+						0,
+						11,
+						2
+					],
+					"cubes": [
+						{
+							"origin": [
+								-17,
+								-6,
+								2
+							],
+							"size": [
+								34,
+								34,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										34
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"south": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										-34,
+										34
+									]
+								},
+								"west": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-17,
+								-6,
+								2.1
+							],
+							"size": [
+								34,
+								34,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										34
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"south": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										-34,
+										34
+									]
+								},
+								"west": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-17,
+								-6,
+								2.2
+							],
+							"size": [
+								34,
+								34,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										34
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"south": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										-34,
+										34
+									]
+								},
+								"west": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										0,
+										34
+									]
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										34,
+										0
+									],
+									"uv_size": [
+										34,
+										0
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "AstralEyeSmallerCosmicWhirlwind",
+					"parent": "AstralEyeBiggerCosmicWhirlwinds",
+					"pivot": [
+						0,
+						11,
+						-3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-14,
+								-3,
+								-3
+							],
+							"size": [
+								28,
+								28,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										28
+									]
+								},
+								"east": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"south": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										-28,
+										28
+									]
+								},
+								"west": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"up": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-14,
+								-3,
+								-2.9
+							],
+							"size": [
+								28,
+								28,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										28
+									]
+								},
+								"east": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"south": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										-28,
+										28
+									]
+								},
+								"west": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"up": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-14,
+								-3,
+								-2.8
+							],
+							"size": [
+								28,
+								28,
+								0
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										28
+									]
+								},
+								"east": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"south": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										-28,
+										28
+									]
+								},
+								"west": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										0,
+										28
+									]
+								},
+								"up": {
+									"uv": [
+										61,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								},
+								"down": {
+									"uv": [
+										89,
+										35
+									],
+									"uv_size": [
+										28,
+										0
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

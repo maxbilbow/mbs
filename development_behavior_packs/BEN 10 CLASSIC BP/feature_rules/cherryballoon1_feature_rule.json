@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:cherryballoon1_feature_rule",
+			"places_feature": "generation:cherryballoon1_feature_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "cherry_grove"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 0.08,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					150,
+					190
+				]
+			},
+			"z": 0
+		}
+	}
+}

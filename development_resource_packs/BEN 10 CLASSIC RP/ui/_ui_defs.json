@@ -69,6 +69,7 @@
     "ui/how_to_play_common.json",
     "ui/how_to_play_screen.json",
     "ui/hud_screen.json",
+    "ui/health_bars_server_form.json",
     "ui/host_options_screen.json",
     "ui/in_bed_screen.json",
     "ui/item_detail_description_screen.json",

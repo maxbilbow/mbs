@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.primordialwyrm": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "1"
+						}
+					],
+					"on_entry": [
+						"/function primordialwyrmambience"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/function primordialwyrmambience"
+					]
+				}
+			}
+		}
+	}
+}

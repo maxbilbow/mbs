@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "boss:primordial_wyrm_clone",
+			"materials": {
+				"default": "entity_beam_additive"
+			},
+			"textures": {
+				"default": "textures/entity/jared_clone"
+			},
+			"geometry": {
+				"default": "geometry.jared"
+			},
+			"animations": {
+				"base": "animation.jared.base",
+				"wiggle": "animation.jared.wiggle",
+				"idle": "animation.jared.idle",
+				"face_player": "controller.animation.jared.swimswim",
+				"look_at_target": "animation.humanoid.look_at_target.default"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.cod"
+			],
+			"spawn_egg": {
+				"base_color": "#6A2313",
+				"overlay_color": "#AE330B"
+			}
+		}
+	}
+}

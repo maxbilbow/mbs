@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_776cbdb9"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:cyan_pearl_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:cyan_pearl",
+				"count": 9
+			}
+		]
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "ore:opal_ore_feature"
+		},
+		"count": 4,
+		"replace_rules": [
+			{
+				"places_block": "ore:opal_ore",
+				"may_replace": [
+					{
+						"name": "minecraft:stone"
+					}
+				]
+			},
+			{
+				"places_block": "ore:deepslate_opal_ore",
+				"may_replace": [
+					{
+						"name": "minecraft:deepslate"
+					}
+				]
+			},
+			{
+				"places_block": "ore:thermal_opal_ore",
+				"may_replace": [
+					{
+						"name": "block:thermal_stone"
+					}
+				]
+			}
+		]
+	}
+}

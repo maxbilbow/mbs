@@ -1,0 +1,108 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_iron_golem",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2",
+				"cherry_blossom": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_alt",
+				"glow_berry": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_glow_berry",
+				"desert": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_dead_bush",
+				"pale": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_pale",
+				"cracked_high": "textures/mutants/entity/iron_golem/cracked_high",
+				"cracked_med": "textures/mutants/entity/iron_golem/cracked_medium",
+				"cracked_low": "textures/mutants/entity/iron_golem/cracked_low",
+				"cracked_none": "textures/mutants/entity/iron_golem/none",
+				"no_tier": "textures/mutants/entity/iron_golem/none",
+				"gold_tier": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_gold_tier",
+				"diamond_tier": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_diamond_tier",
+				"emerald_tier": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_emerald_tier",
+				"netherite_tier": "textures/mutants/entity/iron_golem/mutant_iron_golem_v2_netherite_tier"
+			},
+			"geometry": {
+				"default": "geometry.mutant_iron_golem_v2"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"step": "mutant:step_particle",
+				"chemical_smoke": "mutant:chemical_x_particle"
+			},
+			"sound_effects": {
+				"crack": "mob.irongolem.crack"
+			},
+			"scripts": {
+				"scale": "1.25",
+				"pre_animation": [
+					"variable.attack_num = Math.round(Math.random(1, 2));"
+				]
+			},
+			"animations": {
+				"general_cannon": "animation.mutant_iron_golem_v2.bob_cannon",
+				"general": "animation.mutant_iron_golem_v2.bob",
+				"look_at_target": "animation.mutant_iron_golem_v2.look_at_target",
+				"walk": "animation.mutant_iron_golem_v2.walk",
+				"walk_arms": "animation.mutant_iron_golem_v2.walk_arms",
+				"walk_steps": "animation.mutant_iron_golem_v2.walk_steps",
+				"run": "animation.mutant_iron_golem_v2.run",
+				"run_arms": "animation.mutant_iron_golem_v2.run_arms",
+				"run_steps": "animation.mutant_iron_golem_v2.run_steps",
+				"stunned": "animation.mutant_iron_golem_v2.stunned",
+				"stunned_loop": "animation.mutant_iron_golem_v2.stunned_still",
+				"attack_1": "animation.mutant_iron_golem_v2.attack_1",
+				"attack_2": "animation.mutant_iron_golem_v2.attack_2",
+				"attack_3": "animation.mutant_iron_golem_v2.attack_3",
+				"spikes": "animation.mutant_iron_golem_v2.spikes",
+				"recoil": "animation.mutant_iron_golem_v2.recoil",
+				"cannon_mode": "animation.mutant_iron_golem_v2.cannon_mode",
+				"cannon_mode_still": "animation.mutant_iron_golem_v2.cannon_mode_still",
+				"cannon_shoot_right": "animation.mutant_iron_golem_v2.cannon_shoot_right",
+				"cannon_shoot_left": "animation.mutant_iron_golem_v2.cannon_shoot_left",
+				"cannon_switch": "animation.mutant_iron_golem_v2.cannon_switch",
+				"sit": "animation.mutant_iron_golem_v2.sleep",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mutant_iron_golem_v2.death",
+				"stored_flower": "animation.mutant_iron_golem_v2.stored_flower",
+				"offer_flower": "animation.mutant_iron_golem_v2.offer_flower",
+				"offer_flower_still": "animation.mutant_iron_golem_v2.offer_flower_still",
+				"put_away_flower": "animation.mutant_iron_golem_v2.put_away_flower"
+			},
+			"animation_controllers": [
+				{
+					"flower": "controller.animation.miron_golem.flower"
+				},
+				{
+					"general": "controller.animation.miron_golem.general"
+				},
+				{
+					"damage": "controller.animation.miron_golem.damage"
+				},
+				{
+					"move_arms": "controller.animation.miron_golem.walking_arms"
+				},
+				{
+					"move": "controller.animation.miron_golem.walking"
+				},
+				{
+					"move_particles": "controller.animation.miron_golem.walking_particles"
+				}
+			],
+			"render_controllers": [
+				"controller.render.miron_golem",
+				"controller.render.miron_golem_eyes",
+				"controller.render.miron_golem_tiers",
+				"controller.render.miron_golem_tier_1_cracks",
+				"controller.render.miron_golem_tier_2_cracks",
+				"controller.render.miron_golem_tier_3_cracks",
+				"controller.render.miron_golem_tier_4_cracks",
+				"controller.render.miron_golem_tier_5_cracks"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 17
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_lumenyl_27411b51"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:lumenyl_brick_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_lumenyl",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "gen:drenched_void_carpet"
+		},
+		"features": [
+			"gen:scatter_lomos_moss_carpet_feature",
+			"gen:scatter_ocean_berry_tree_feature",
+			"gen:scatter_lomos_sea_grass_feature",
+			"gen:scatter_abyssal_moss_carpet_feature"
+		]
+	}
+}

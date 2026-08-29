@@ -1,0 +1,23 @@
+//bridge-file-version: #6
+{
+	"format_version": "1.21.60",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "nt:lavender_forest"
+		},
+		"components": {
+			"minecraft:sky_color": {
+				"sky_color": "#197FFF"
+			},
+			"minecraft:fog_appearance": {
+				"fog_identifier": "minecraft:fog_forest"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#2372CE"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 1
+			}
+		}
+	}
+}

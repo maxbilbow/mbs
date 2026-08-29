@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "silver_ocean_berry_161f8c09"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"ABA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:silver_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "food:ocean_berry",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "food:silver_ocean_berry",
+			"count": 1
+		}
+	}
+}

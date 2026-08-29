@@ -1,0 +1,62 @@
+[
+   {
+      "flipbook_texture": "textures/blocks/block_resin_lantern",
+      "atlas_tile": "ani_block_resin_lantern",
+      "ticks_per_frame": 42
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_resin_soul_lantern",
+      "atlas_tile": "ani_block_resin_soul_lantern",
+      "ticks_per_frame": 42
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_fireeye_bush",
+      "atlas_tile": "block_fireeye_bush",
+      "ticks_per_frame": 5
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_aqueous_soul_forge_up",
+      "atlas_tile": "block_aqueous_soul_forge_up",
+      "ticks_per_frame": 10
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_sea_glowstone",
+      "atlas_tile": "ani_block_sea_glowstone",
+      "ticks_per_frame": 200
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_glowing_sea_moss_block",
+      "atlas_tile": "block_glowing_sea_moss_block",
+      "ticks_per_frame": 200
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_glowing_sea_moss_carpet",
+      "atlas_tile": "block_glowing_sea_moss_carpet",
+      "ticks_per_frame": 200
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_glowing_kelp",
+      "atlas_tile": "block_glowing_kelp",
+      "ticks_per_frame": 200
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_aqueous_soul_forge_side",
+      "atlas_tile": "block_aqueous_soul_forge_side",
+      "ticks_per_frame": 10
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_lomos_seagrass",
+      "atlas_tile": "block_lomos_seagrass",
+      "ticks_per_frame": 2
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_lomos_abyssal_slag",
+      "atlas_tile": "block_lomos_abyssal_slag",
+      "ticks_per_frame": 4
+   },
+   {
+      "flipbook_texture": "textures/blocks/block_thermal_magma_block",
+      "atlas_tile": "ani_block_thermal_magma_block",
+      "ticks_per_frame": 20
+   }
+]

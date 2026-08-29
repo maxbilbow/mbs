@@ -1,0 +1,1 @@
+execute if block ~~~ air run execute as @a[hasitem=[{item=helmet:silver_diving_helmet,location=slot.armor.head}]] run effect @s water_breathing 150 0

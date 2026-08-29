@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:mud_feature"
+		},
+		"count": 70,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:mud",
+				"may_replace": [
+					"minecraft:grass_block",
+					"minecraft:dirt",
+					"minecraft:coarse_dirt",
+					"minecraft:stone",
+					"minecraft:clay",
+					"minecraft:gravel"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,77 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.ztp.health_bar": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.textures[query.variant]"
+			],
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"Texture.golden_0",
+						"Texture.golden_1",
+						"Texture.golden_2",
+						"Texture.golden_3",
+						"Texture.golden_4",
+						"Texture.golden_5",
+						"Texture.golden_6",
+						"Texture.golden_7",
+						"Texture.golden_8",
+						"Texture.golden_9",
+						"Texture.golden_10",
+						"Texture.terraria_0",
+						"Texture.terraria_1",
+						"Texture.terraria_2",
+						"Texture.terraria_3",
+						"Texture.terraria_4",
+						"Texture.terraria_5",
+						"Texture.terraria_6",
+						"Texture.terraria_7",
+						"Texture.terraria_8",
+						"Texture.terraria_9",
+						"Texture.terraria_10",
+						"Texture.bedrock_0",
+						"Texture.bedrock_1",
+						"Texture.bedrock_2",
+						"Texture.bedrock_3",
+						"Texture.bedrock_4",
+						"Texture.bedrock_5",
+						"Texture.bedrock_6",
+						"Texture.bedrock_7",
+						"Texture.bedrock_8",
+						"Texture.bedrock_9",
+						"Texture.bedrock_10",
+						"Texture.classic_0",
+						"Texture.classic_1",
+						"Texture.classic_2",
+						"Texture.classic_3",
+						"Texture.classic_4",
+						"Texture.classic_5",
+						"Texture.classic_6",
+						"Texture.classic_7",
+						"Texture.classic_8",
+						"Texture.classic_9",
+						"Texture.classic_10",
+						"Texture.rpg_0",
+						"Texture.rpg_1",
+						"Texture.rpg_2",
+						"Texture.rpg_3",
+						"Texture.rpg_4",
+						"Texture.rpg_5",
+						"Texture.rpg_6",
+						"Texture.rpg_7",
+						"Texture.rpg_8",
+						"Texture.rpg_9",
+						"Texture.rpg_10"
+					]
+				}
+			}
+		}
+	}
+}

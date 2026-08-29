@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.chem_x_item": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "variable.is_enchanted?material.enchanted:material.default"
+				}
+			],
+			"textures": [
+				"texture.default",
+				"texture.enchanted"
+			]
+		},
+		"controller.render.chem_x_entity": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.chem_x_item_outer": {
+			"geometry": "geometry.outer",
+			"materials": [
+				{
+					"*": "material.outer"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

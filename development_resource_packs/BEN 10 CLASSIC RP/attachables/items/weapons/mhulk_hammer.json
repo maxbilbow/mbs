@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "mutant:hulk_hammer",
+  
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/mutants/entity/entities/weapons/hulk_hammer",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.mhulk_hammer"
+      },
+      "animations": {
+        "first_person_hold": "animation.mhulk_hammer.first_person",
+  
+        "third_person_hold": "animation.mhulk_hammer.third_person"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"first_person_hold": "c.is_first_person"
+					},
+					{
+						"third_person_hold": "!c.is_first_person"
+					}
+				]
+      },
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

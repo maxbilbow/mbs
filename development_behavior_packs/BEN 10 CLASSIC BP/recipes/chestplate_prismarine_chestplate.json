@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "prismarine_chestplate_539d732e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:prismarine_shard",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "chestplate:prismarine_chestplate",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:sea_urchin_spine",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:sea_urchin_spine"
+			},
+			"minecraft:display_name": {
+				"value": "Sea Urchin Spine"
+			}
+		}
+	}
+}

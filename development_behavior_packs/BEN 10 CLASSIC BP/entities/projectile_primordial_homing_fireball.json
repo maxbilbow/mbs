@@ -1,0 +1,109 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:primordial_homing_fireball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"knockback": false,
+						"semi_random_diff_damage": false
+					},
+					"mob_effect": {
+						"effect": {},
+						"durationeasy": 200,
+						"durationnormal": 200,
+						"durationhard": 200,
+						"amplifier": 1
+					},
+					"arrow_effect": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"eventTrigger": {
+							"event": "on:hit",
+							"target": "self"
+						}
+					}
+				},
+				"liquid_inertia": 1,
+				"power": 0.7,
+				"gravity": 0.08,
+				"angleoffset": 0,
+				"offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"magic",
+					"inanimate"
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					0,
+					0
+				],
+				"time_down_event": {
+					"event": "icespike"
+				}
+			}
+		},
+		"events": {
+			"on:hit": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"damage @e[r=2,family=!boss:primordial_wyrm] 16 contact entity @e[c=1,type=mob:boss:primordial_wyrm]",
+								"summon projectile:primordial_knockback_effect"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"icespike": {
+				"queue_command": {
+					"command": [
+						"particle primordialrainbolt ~~~",
+						"tp ^^^0.3 facing @p"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": "playanimation @e[c=1,type=mob:blastling] animation.ee_blastling.mad"
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:orchard_tree_feature"
+		},
+		"features": [
+			[
+				"gen:orchard_tree1_feature",
+				10
+			],
+			[
+				"gen:orchard_tree2_feature",
+				10
+			],
+			[
+				"gen:orchard_tree3_feature",
+				10
+			],
+			[
+				"gen:orchard_tree4_feature",
+				10
+			],
+			[
+				"gen:orchard_tree5_feature",
+				10
+			],
+			[
+				"gen:orchard_tree6_feature",
+				10
+			],
+			[
+				"gen:orchard_tree7_feature",
+				10
+			]
+		]
+	}
+}

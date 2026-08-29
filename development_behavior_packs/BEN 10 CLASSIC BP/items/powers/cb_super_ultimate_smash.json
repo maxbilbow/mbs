@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:cb_super_ultimate_smash",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "ultimate_super_smash"
+			},
+			"minecraft:display_name": {
+				"value": "§cSuper Ultimate Smash"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"nutrition": 0,
+				"saturation_modifier": 0,
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera"
+		}
+	}
+}

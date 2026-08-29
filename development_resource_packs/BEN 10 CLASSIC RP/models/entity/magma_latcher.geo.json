@@ -1,0 +1,251 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.magma_latcher",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 13,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [
+					0,
+					0.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						1,
+						1
+					]
+				},
+				{
+					"name": "bone4",
+					"parent": "head",
+					"pivot": [
+						0,
+						1,
+						1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1.5,
+								0,
+								-8
+							],
+							"size": [
+								3,
+								2,
+								20
+							],
+							"uv": [
+								0,
+								66
+							]
+						},
+						{
+							"origin": [
+								-1.5,
+								0,
+								0
+							],
+							"size": [
+								3,
+								2,
+								11
+							],
+							"inflate": 0.25,
+							"uv": [
+								9,
+								100
+							]
+						}
+					]
+				},
+				{
+					"name": "teeth",
+					"parent": "bone4",
+					"pivot": [
+						1.5,
+						0,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								0.5,
+								-0.1,
+								-8
+							],
+							"size": [
+								1,
+								1,
+								8
+							],
+							"uv": [
+								72,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "teeth2",
+					"parent": "bone4",
+					"pivot": [
+						-1.5,
+						0,
+						-4
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1.5,
+								-0.1,
+								-8
+							],
+							"size": [
+								1,
+								1,
+								8
+							],
+							"uv": [
+								72,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "segment",
+					"parent": "head",
+					"pivot": [
+						0,
+						1,
+						12
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "segment",
+					"pivot": [
+						0,
+						1,
+						23
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1.5,
+								0,
+								12
+							],
+							"size": [
+								3,
+								2,
+								22
+							],
+							"uv": [
+								0,
+								42
+							]
+						}
+					]
+				},
+				{
+					"name": "segment2",
+					"parent": "segment",
+					"pivot": [
+						0,
+						1,
+						34
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "segment2",
+					"pivot": [
+						0,
+						1,
+						45
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								0,
+								34
+							],
+							"size": [
+								2,
+								2,
+								22
+							],
+							"uv": [
+								50,
+								42
+							]
+						}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "segment2",
+					"pivot": [
+						0,
+						1,
+						56
+					]
+				},
+				{
+					"name": "bone3",
+					"parent": "tail",
+					"pivot": [
+						0,
+						1,
+						66.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-0.5,
+								0,
+								56
+							],
+							"size": [
+								1,
+								2,
+								18
+							],
+							"uv": [
+								46,
+								66
+							]
+						},
+						{
+							"origin": [
+								0,
+								-2,
+								56
+							],
+							"size": [
+								0,
+								6,
+								36
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

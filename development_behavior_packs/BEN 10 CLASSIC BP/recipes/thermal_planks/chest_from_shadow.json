@@ -1,0 +1,27 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:chest_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"~~~",
+			"~ ~",
+			"~~~"
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_planks"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:chest",
+				"count": 1
+			}
+		]
+	}
+}

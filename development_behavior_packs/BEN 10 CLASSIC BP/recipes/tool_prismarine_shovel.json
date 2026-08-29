@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "prismarine_shovel_6a87ea85"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:prismarine_shard",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "tool:prismarine_shovel",
+			"count": 1
+		}
+	}
+}

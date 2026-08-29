@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:dreadgeneration_feature"
+		},
+		"features": [
+			[
+				"gen:oceangeneration1_feature",
+				2
+			],
+			[
+				"gen:oceangeneration2_feature",
+				2
+			],
+			[
+				"gen:oceangeneration3_feature",
+				2
+			]
+		]
+	}
+}

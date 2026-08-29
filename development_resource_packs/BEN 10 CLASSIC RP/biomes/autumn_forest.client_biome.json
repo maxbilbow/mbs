@@ -1,0 +1,23 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.21.40",
+	"minecraft:client_biome": {
+		"description": {
+			"identifier": "nt:autumn_forest"
+		},
+		"components": {
+			"minecraft:sky_color": {
+				"sky_color": "#C1D7FF"
+			},
+			"minecraft:fog_appearance": {
+				"fog_identifier": "e:fog_autumn"
+			},
+			"minecraft:water_appearance": {
+				"surface_color": "#2589FF"
+			},
+			"minecraft:biome_music": {
+				"volume_multiplier": 0.5
+			}
+		}
+	}
+}

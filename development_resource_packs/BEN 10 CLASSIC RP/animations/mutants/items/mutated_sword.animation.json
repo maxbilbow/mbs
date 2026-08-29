@@ -1,0 +1,78 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutated_sword.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						112.5,
+						60,
+						-45
+					],
+					"position": [
+						0,
+						29,
+						5
+					]
+				},
+				"sword": {
+					"rotation": [
+						0,
+						-17.5,
+						0
+					]
+				}
+			}
+		},
+		"animation.mutated_sword.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						90,
+						0,
+						0
+					],
+					"position": [
+						0,
+						23,
+						-1
+					],
+					"scale": 1.15
+				},
+				"sword": {
+					"rotation": [
+						10,
+						2.5,
+						5
+					]
+				}
+			}
+		},
+		"animation.mutated_sword.tamed_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						-20,
+						0,
+						0
+					],
+					"position": [
+						1.5,
+						-1,
+						-2.5
+					]
+				},
+				"sword": {
+					"rotation": [
+						-35,
+						-90,
+						0
+					]
+				}
+			}
+		}
+	}
+}

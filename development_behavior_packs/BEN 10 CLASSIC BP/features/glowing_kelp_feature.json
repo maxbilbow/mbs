@@ -1,0 +1,50 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:glowing_kelp_feature"
+		},
+		"features": [
+			[
+				"gen:glowingkelp1_feature",
+				1
+			],
+			[
+				"gen:glowingkelp2_feature",
+				1
+			],
+			[
+				"gen:glowingkelp3_feature",
+				1
+			],
+			[
+				"gen:glowingkelp4_feature",
+				1
+			],
+			[
+				"gen:glowingkelp5_feature",
+				1
+			],
+			[
+				"gen:glowingkelp6_feature",
+				1
+			],
+			[
+				"gen:glowingkelp7_feature",
+				1
+			],
+			[
+				"gen:glowingkelp8_feature",
+				1
+			],
+			[
+				"gen:glowingkelp9_feature",
+				1
+			],
+			[
+				"gen:glowingkelp10_feature",
+				1
+			]
+		]
+	}
+}

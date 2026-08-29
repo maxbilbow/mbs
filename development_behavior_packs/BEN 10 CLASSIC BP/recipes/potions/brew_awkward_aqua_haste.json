@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "recipe:brew_awkward_aqua_haste"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"input": "minecraft:potion_type:awkward",
+		"reagent": "item:sea_prism",
+		"output": "item:aqua_haste_potion"
+	}
+}

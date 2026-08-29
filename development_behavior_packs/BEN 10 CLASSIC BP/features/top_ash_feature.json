@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:top_ash_feature"
+		},
+		"features": [
+			[
+				"gen:top_ash1_feature",
+				1
+			],
+			[
+				"gen:top_ash2_feature",
+				1
+			],
+			[
+				"gen:top_ash3_feature",
+				1
+			],
+			[
+				"gen:top_ash4_feature",
+				1
+			]
+		]
+	}
+}

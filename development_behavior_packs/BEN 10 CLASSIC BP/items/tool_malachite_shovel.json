@@ -1,0 +1,202 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "tool:malachite_shovel",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.shovel"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "tool:malachite_shovel"
+				}
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:display_name": {
+				"value": "Malachite Shovel\n\n\n§7Crushing I\nMining Speed: 50"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transformable_items",
+					"minecraft:is_tool",
+					"minecraft:digger",
+					"minecraft:is_shovel",
+					"minecraft:diamond_tier"
+				]
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": true,
+			"minecraft:durability": {
+				"max_durability": 2000
+			},
+			"minecraft:damage": 7,
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('minecraft:is_shovel_item_destructible', 'shovel_diggable')"
+						},
+						"speed": 50
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 50
+					},
+					{
+						"block": {
+							"tags": "q.any_tag('sand')"
+						},
+						"speed": 100
+					},
+					{
+						"block": "minecraft:black_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:blue_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:brown_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:clay",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:cyan_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:dirt_with_roots",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:dirt",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:farmland",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:grass_path",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:grass",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:gravel",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:gray_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:green_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:light_blue_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:light_gray_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:lime_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:magenta_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:mud",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:muddy_mangrove_roots",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:mycelium",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:orange_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:pink_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:podzol",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:purple_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:red_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:sand",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:snow_layer",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:snow",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:soul_sand",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:soul_soil",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:suspicious_gravel",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:suspicious_sand",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:white_concrete_powder",
+						"speed": 50
+					},
+					{
+						"block": "minecraft:yellow_concrete_powder",
+						"speed": 50
+					}
+				],
+				"use_efficiency": true
+			},
+			"minecraft:enchantable": {
+				"slot": "shovel",
+				"value": 30
+			}
+		}
+	}
+}

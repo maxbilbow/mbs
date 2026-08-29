@@ -1,0 +1,23 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "gen:pale2_feature"
+		},
+		"places_block": {
+			"name": "minecraft:pale_moss_carpet"
+		},
+		"enforce_survivability_rules": true,
+		"enforce_placement_rules": false,
+		"may_replace": [
+			"minecraft:air"
+		],
+		"may_attach_to": {
+			"bottom": [
+				"minecraft:deepslate",
+				"minecraft:pale_moss_block",
+				"minecraft:stone"
+			]
+		}
+	}
+}

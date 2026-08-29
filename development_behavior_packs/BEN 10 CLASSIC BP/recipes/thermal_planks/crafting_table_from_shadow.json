@@ -1,0 +1,26 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "block:crafting_table_from_thermal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"~~",
+			"~~"
+		],
+		"key": {
+			"~": {
+				"item": "block:thermal_planks"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:crafting_table",
+				"count": 1
+			}
+		]
+	}
+}

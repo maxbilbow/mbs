@@ -1,0 +1,64 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_clone": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"arrays": {
+				"materials": {
+					"Array.materials": [
+						"Material.default",
+						"Material.invisible"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "array.materials[query.is_invisible]"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.clone_armor": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"geometry": "geometry.armor",
+			"materials": [
+				{
+					"*": "material.armor"
+				}
+			],
+			"textures": [
+				"texture.armor"
+			],
+			"part_visibility": [
+				{
+					"*": "query.is_powered"
+				}
+			],
+			"uv_anim": {
+				"offset": [
+					"query.life_time*.4*.2",
+					"query.life_time*.4*.2"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 0.5,
+			"ignore_lighting": true
+		}
+	}
+}

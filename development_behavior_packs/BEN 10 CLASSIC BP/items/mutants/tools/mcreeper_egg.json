@@ -1,0 +1,27 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:creeper_egg",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:allow_off_hand": false,
+			"minecraft:entity_placer": {
+				"entity": "mutant:creeper_egg_entity"
+			},
+			"minecraft:icon": {
+				"texture": "creeper_egg"
+			},
+			"minecraft:display_name": {
+				"value": "§eCreeper Egg§r"
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:max_stack_size": 16
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "gen:dreadfossil5_feature"
+		},
+		"structure_name": "mystructure:dreadfossil5",
+		"adjustment_radius": 4,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_whitelist": [
+					"block:marble",
+					"block:dread_coral",
+					"block:dread_coral_block",
+					"minecraft:water",
+					"minecraft:bone_block",
+					"minecraft:flowing_water",
+					"minecraft:gravel",
+					"minecraft:sand",
+					"minecraft:pale_moss_block",
+					"minecraft:stone"
+				]
+			}
+		}
+	}
+}

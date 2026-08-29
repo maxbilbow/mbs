@@ -1,0 +1,111 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "test:geyser",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					0.1,
+					0.1
+				],
+				"time_down_event": {
+					"event": "ocean",
+					"target": "self"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_underwater",
+									"value": true
+								}
+							]
+						},
+						"event": "ocean"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_underwater",
+									"value": false
+								}
+							]
+						},
+						"event": "land"
+					}
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"ocean": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"summon projectile:boiling_bubble ~~1~"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			},
+			"land": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"particle geyserparticle ~~0.3~"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

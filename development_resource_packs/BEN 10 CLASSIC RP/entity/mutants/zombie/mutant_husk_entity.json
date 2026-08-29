@@ -1,0 +1,75 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_husk",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/zombie/husk",
+				"tmhusky": "textures/mutants/entity/zombie/tmhusky"
+			},
+			"geometry": {
+				"default": "geometry.mhusk"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"sound_effects": {
+				"smash_air": "mob.mzombie.smash_air",
+				"roar": "mob.mzombie.roar"
+			},
+			"scripts": {
+				"scale": "1.35"
+			},
+			"animations": {
+				"big_head": "animation.mzombie.big_head",
+				"smash_attack": "animation.mzombie.smash_attack",
+				"idle": "animation.mzombie.general",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_legs": "animation.mzombie.move_legs",
+				"smash": "animation.mzombie.smash",
+				"throw": "animation.mzombie.throw_target",
+				"throw_success": "animation.mzombie.throw_target_success",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"roaring": "animation.mzombie.roar",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mzombie.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.jumpable_mzombie.walking"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mutant_husk"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 3
+			}
+		}
+	}
+}

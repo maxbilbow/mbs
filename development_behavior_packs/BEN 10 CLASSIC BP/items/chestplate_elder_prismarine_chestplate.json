@@ -1,0 +1,46 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "chestplate:elder_prismarine_chestplate",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.chestplate"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:icon": {
+				"textures": {
+					"default": "elder_prismarine_chestplate"
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 8,
+				"slot": "armor_torso"
+			},
+			"minecraft:durability": {
+				"max_durability": 1000,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.chest",
+				"protection": 8
+			},
+			"minecraft:display_name": {
+				"value": "Elder Prismarine Chestplate"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:trimmable_armors"
+				]
+			}
+		}
+	}
+}

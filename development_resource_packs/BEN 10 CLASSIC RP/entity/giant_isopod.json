@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:giant_isopod",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/giant_isopod"
+			},
+			"geometry": {
+				"default": "geometry.giant_isopod"
+			},
+			"scripts": {
+				"scale": 1
+			},
+			"animations": {
+				"general": "animation.isopod.general",
+				"move": "animation.giant_isopod.swim",
+				"ground_move": "animation.giant_isopod.walk",
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.turtle.general"
+				},
+				{
+					"move": "controller.animation.turtle.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.turtle"
+			],
+			"spawn_egg": {
+				"base_color": "#95829E",
+				"overlay_color": "#56595C"
+			}
+		}
+	}
+}

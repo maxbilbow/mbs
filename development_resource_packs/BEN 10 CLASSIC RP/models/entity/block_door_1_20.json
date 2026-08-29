@@ -1,0 +1,489 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.door_carried",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								0,
+								-1
+							],
+							"size": [
+								8,
+								8,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										16,
+										4
+									],
+									"uv_size": [
+										-16,
+										-4
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										4
+									],
+									"uv_size": [
+										-16,
+										-4
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-4,
+								8,
+								-1
+							],
+							"size": [
+								8,
+								8,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										16,
+										4
+									],
+									"uv_size": [
+										-16,
+										-4
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										4
+									],
+									"uv_size": [
+										-16,
+										-4
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.door_close",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "half_door",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								5
+							],
+							"size": [
+								16,
+								16,
+								3
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										16,
+										0
+									],
+									"uv_size": [
+										-16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"east": {
+									"uv": [
+										13,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										16,
+										3
+									],
+									"uv_size": [
+										-16,
+										-3
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-3
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.door_left_open",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "half_door",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								0,
+								-8
+							],
+							"size": [
+								3,
+								16,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"south": {
+									"uv": [
+										13,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"up": {
+									"uv": [
+										16,
+										3
+									],
+									"uv_size": [
+										-16,
+										-3
+									],
+									"uv_rotation": 90
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-3
+									],
+									"uv_rotation": 90
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.door_right_open",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "half_door",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								3,
+								16,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"south": {
+									"uv": [
+										13,
+										0
+									],
+									"uv_size": [
+										3,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "face"
+								},
+								"up": {
+									"uv": [
+										16,
+										3
+									],
+									"uv_size": [
+										-16,
+										-3
+									],
+									"uv_rotation": 90
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-3
+									],
+									"uv_rotation": 90
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

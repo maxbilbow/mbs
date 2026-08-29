@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:swamp_feature"
+		},
+		"features": [
+			[
+				"gen:swamp1_feature",
+				1
+			],
+			[
+				"gen:swamp2_feature",
+				1
+			],
+			[
+				"gen:swamp3_feature",
+				1
+			]
+		]
+	}
+}

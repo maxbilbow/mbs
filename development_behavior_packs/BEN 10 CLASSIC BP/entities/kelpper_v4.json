@@ -1,0 +1,190 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mob:kelpper",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:creeper"
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"kelpper"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.8,
+				"width": 0.5
+			},
+			"minecraft:health": {
+				"value": 140,
+				"max": 140
+			},
+			"minecraft:breathable": {
+				"breathes_air": false,
+				"breathes_water": true,
+				"generates_bubbles": false,
+				"inhale_time": 0,
+				"suffocate_time": 0,
+				"total_supply": 15
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.1
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": false,
+				"can_path_over_water": false,
+				"can_swim": true,
+				"can_walk": false,
+				"can_breach": false,
+				"can_sink": false,
+				"avoid_damage_blocks": false,
+				"avoid_portals": false,
+				"avoid_sun": false,
+				"avoid_water": false,
+				"blocks_to_avoid": {},
+				"can_break_doors": false,
+				"can_jump": true,
+				"can_open_doors": false,
+				"can_open_iron_doors": false,
+				"can_pass_doors": true,
+				"can_path_from_air": false,
+				"can_path_over_lava": false,
+				"can_walk_in_lava": false
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true,
+				"push_towards_closest_space": false
+			},
+			"minecraft:movement.sway": {
+				"sway_amplitude": 0
+			},
+			"minecraft:behavior.swim_idle": {
+				"priority": 5
+			},
+			"minecraft:behavior.random_swim": {
+				"priority": 3,
+				"speed_multiplier": 1,
+				"xz_dist": 16,
+				"y_dist": 4,
+				"interval": 0
+			},
+			"minecraft:behavior.swim_wander": {
+				"priority": 4,
+				"speed_multiplier": 1,
+				"interval": 10,
+				"look_ahead": 2
+			},
+			"minecraft:attack": {
+				"damage": 5
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "merfolk"
+								}
+							]
+						},
+						"must_see": false,
+						"max_dist": 32
+					}
+				],
+				"must_reach": true,
+				"must_see_forget_duration": 3,
+				"persist_time": 0,
+				"scan_interval": 10,
+				"target_invisible_multiplier": 0.7,
+				"target_search_height": -1,
+				"target_sneak_visibility_multiplier": 0.8,
+				"within_radius": 0
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": false
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/kelpper.json"
+			},
+			"minecraft:on_target_escape": {
+				"event": "minecraft:stop_exploding",
+				"target": "self"
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 1,
+				"speed_multiplier": 1.25,
+				"track_target": false,
+				"reach_multiplier": 0
+			},
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 2.5,
+				"outside_range": 6,
+				"must_see": true,
+				"on_inside_range": {
+					"event": "minecraft:start_exploding",
+					"target": "self"
+				},
+				"on_outside_range": {
+					"event": "minecraft:stop_exploding",
+					"target": "self"
+				},
+				"on_vision_lost_inside_range": {
+					"event": "minecraft:stop_exploding",
+					"target": "self"
+				}
+			},
+			"minecraft:behavior.swell": {
+				"start_distance": 2.5,
+				"stop_distance": 6,
+				"priority": 0
+			}
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 3,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			}
+		},
+		"events": {
+			"minecraft:stop_exploding": {
+				"remove": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"minecraft:start_exploding": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

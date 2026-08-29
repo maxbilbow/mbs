@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "power:dh_spike_ultimate_setting",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "spike_setting"
+			},
+			"minecraft:display_name": {
+				"value": "Ultimate Spike Settings"
+			},
+			"minecraft:use_duration": 32000,
+			"minecraft:max_stack_size": 1,
+			"minecraft:food": {
+				"can_always_eat": true
+			},
+			"minecraft:use_animation": "camera"
+		}
+	}
+}

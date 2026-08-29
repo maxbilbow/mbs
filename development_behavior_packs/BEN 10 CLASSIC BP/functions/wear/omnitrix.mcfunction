@@ -8,3 +8,4 @@ scoreboard objectives add rz_failsafe dummy
 scoreboard players add @s rz_failsafe 0
 replaceitem entity @s[tag=!master_control] slot.hotbar 0 omni:omni_icon 1 0 {"keep_on_death": {},"item_lock": {"mode": "lock_in_slot"}}
 replaceitem entity @s[tag=master_control] slot.hotbar 8 omni:omni_master 1 0 {"keep_on_death": {},"item_lock": {"mode": "lock_in_slot"}}
+tag @s add omni_bootup_trigger

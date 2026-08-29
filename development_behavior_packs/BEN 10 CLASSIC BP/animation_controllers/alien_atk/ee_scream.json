@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.ee_scream": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ee_scream": "query.is_using_item&&query.get_equipped_item_name('main_hand')=='alien_ee_scream'"
+						}
+					]
+				},
+				"ee_scream": {
+					"transitions": [
+						{
+							"default": "!query.is_using_item||query.get_equipped_item_name('main_hand')!='alien_ee_scream'"
+						}
+					],
+					"on_entry": [
+						"/event entity @s omni:alien_ee_scream"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+//bridge-file-version: #22
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "mob:drenched_sunken",
+			"population_control": "monster"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 12,
+					"adjust_for_weather": true
+				},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:weight": {
+					"default": 40
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4,
+					"initial_event": "minecraft:as_rider",
+					"initial_event_count": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "drenched_void"
+				},
+				"minecraft:height_filter": {
+					"min": 0,
+					"max": 64
+				}
+			}
+		]
+	}
+}

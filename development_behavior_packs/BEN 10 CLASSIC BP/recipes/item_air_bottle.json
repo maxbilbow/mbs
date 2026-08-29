@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "air_bottle_ee687aba"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"ABA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:glass_bottle",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:wind_charge",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:air_bottle",
+			"count": 8
+		}
+	}
+}

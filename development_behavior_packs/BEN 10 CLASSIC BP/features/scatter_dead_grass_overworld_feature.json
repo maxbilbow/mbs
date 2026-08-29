@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_dead_grass_overworld_feature"
+		},
+		"iterations": 100,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				16
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-2,
+				2
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				16
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:dead_grass_feature"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:white_pearl",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.items"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:white_pearl"
+			},
+			"minecraft:display_name": {
+				"value": "White Pearl\n§9Can be used to tame Void Wyrmlings"
+			}
+		}
+	}
+}

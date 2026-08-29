@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "prismarine_calibrated_ender_pearl_e163621e"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:prismarine_shard",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:ender_pearl",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:prismarine_calibrated_ender_pearl",
+			"count": 1
+		}
+	}
+}

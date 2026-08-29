@@ -1,0 +1,175 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mutant_endersoul_hand.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"position": [
+						-2,
+						26,
+						1
+					]
+				},
+				"ender_hand": {
+					"rotation": [
+						-17.5,
+						0,
+						20
+					]
+				},
+				"rightthumb": {
+					"rotation": [
+						-17.5,
+						0,
+						0
+					]
+				},
+				"rightthumb2": {
+					"rotation": [
+						0,
+						0,
+						-32.5
+					]
+				},
+				"rightfinger": {
+					"rotation": [
+						-5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart": {
+					"rotation": [
+						0,
+						0,
+						-25
+					]
+				},
+				"rightfinger2": {
+					"rotation": [
+						5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart2": {
+					"rotation": [
+						0,
+						0,
+						-17.5
+					]
+				},
+				"rightfinger3": {
+					"rotation": [
+						7.5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart3": {
+					"rotation": [
+						0,
+						0,
+						-20
+					]
+				},
+				"ender_hand_glint": {
+					"rotation": [
+						-17.5,
+						0,
+						20
+					]
+				}
+			}
+		},
+		"animation.mutant_endersoul_hand.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"position": [
+						0,
+						23,
+						-1
+					],
+					"scale": 1.05
+				},
+				"ender_hand": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"rightthumb": {
+					"rotation": [
+						-17.5,
+						0,
+						0
+					]
+				},
+				"rightthumb2": {
+					"rotation": [
+						0,
+						0,
+						-32.5
+					]
+				},
+				"rightfinger": {
+					"rotation": [
+						-5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart": {
+					"rotation": [
+						0,
+						0,
+						-25
+					]
+				},
+				"rightfinger2": {
+					"rotation": [
+						5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart2": {
+					"rotation": [
+						0,
+						0,
+						-17.5
+					]
+				},
+				"rightfinger3": {
+					"rotation": [
+						7.5,
+						0,
+						0
+					]
+				},
+				"rightfingerpart3": {
+					"rotation": [
+						0,
+						0,
+						-20
+					]
+				},
+				"ender_hand_glint": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

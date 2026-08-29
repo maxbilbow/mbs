@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "chiseled_thermal_sandstone_50fe497f"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:cut_thermal_sandstone",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:chiseled_thermal_sandstone",
+			"count": 2
+		}
+	}
+}

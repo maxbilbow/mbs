@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spear.move": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							"-query.target_x_rotation",
+							"-query.body_y_rotation",
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.spear.new": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							247.5,
+							0,
+							0
+						],
+						"0.5": [
+							190,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

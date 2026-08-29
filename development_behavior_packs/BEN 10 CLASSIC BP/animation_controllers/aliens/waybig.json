@@ -14,13 +14,20 @@
 				"wb_get_rider": {
 					"transitions": [
 						{
-							"default": "!query.has_rider"
+							"riding_state": "query.has_rider"
 						}
 					],
 					"on_entry": [
 						"/execute as @p[c=1,family=waybig] at @s run ride @s start_riding @e[c=1,type=player:waybig_height]",
 						"/effect @s jump_boost 99999 4 true",
-						"/effect @s resistance 99999 255 true"
+						"/effect @s resistance 99999 2 true"
+					]
+				},
+				"riding_state": {
+					"transitions": [
+						{
+							"default": "!query.has_rider"
+						}
 					]
 				}
 			}

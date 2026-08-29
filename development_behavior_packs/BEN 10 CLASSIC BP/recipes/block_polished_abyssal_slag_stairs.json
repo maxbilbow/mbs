@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "polished_abyssal_slag_stairs_ae0bb6cc"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A  ",
+			"AA ",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:polished_abyssal_slag",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:polished_abyssal_slag_stairs",
+			"count": 3
+		}
+	}
+}

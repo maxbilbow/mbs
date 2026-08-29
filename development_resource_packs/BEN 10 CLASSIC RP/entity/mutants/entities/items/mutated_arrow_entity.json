@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:arrow",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/arrows/mutated_arrow",
+				"stray": "textures/mutants/entity/entities/arrows/mutated_stray_arrow",
+				"bogged": "textures/mutants/entity/entities/arrows/mutated_bogged_arrow",
+				"villager": "textures/mutants/entity/entities/arrows/mutated_villager_arrow",
+				"piglin": "textures/mutants/entity/entities/arrows/mutated_piglin_arrow"
+			},
+			"geometry": {
+				"default": "geometry.marrow"
+			},
+			"animations": {
+				"move": "animation.mweapons.move"
+			},
+			"scripts": {
+				"scale": "1.15",
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mutated_arrow"
+			]
+		}
+	}
+}

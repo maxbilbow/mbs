@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "iron_harpoon_f5c734a7"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" B ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:iron_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:iron_harpoon",
+			"count": 1
+		}
+	}
+}

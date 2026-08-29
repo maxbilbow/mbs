@@ -1,0 +1,34 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "bag_of_winds_b7e09df9"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B",
+			"C"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:string",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:wind_charge",
+				"data": 0
+			},
+			"C": {
+				"item": "minecraft:leather",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:bag_of_winds",
+			"count": 1
+		}
+	}
+}

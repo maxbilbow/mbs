@@ -1,0 +1,57 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_snow_golem": {
+			"arrays": {
+				"materials": {
+					"Array.materials": [
+						"Material.default"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.pinkie"
+					]
+				},
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.pinkie"
+					]
+				}
+			},
+			"geometry": "array.geos[query.variant]",
+			"materials": [
+				{
+					"*": "array.materials[query.variant]"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		},
+		"controller.render.mutant_snow_golem_pumpkin": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "(0)+(0)"
+			},
+			"part_visibility": [
+				{
+					"pumpkin*": "query.variant == 0 && query.mark_variant == 1"
+				}
+			],
+			"geometry": "geometry.pumpkin",
+			"materials": [
+				{
+					"*": "material.pumpkin"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

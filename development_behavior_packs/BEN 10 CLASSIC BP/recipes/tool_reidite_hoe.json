@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "reidite_hoe_47751e39"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			" B",
+			" B"
+		],
+		"key": {
+			"A": {
+				"item": "item:reidite",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "tool:reidite_hoe",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:cotton_feature"
+		},
+		"features": [
+			[
+				"gen:cotton_overworld_feature",
+				1
+			],
+			[
+				"gen:grass2_overworld_feature",
+				1
+			],
+			[
+				"gen:grass3_overworld_feature",
+				1
+			]
+		]
+	}
+}

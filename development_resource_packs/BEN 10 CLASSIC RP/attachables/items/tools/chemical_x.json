@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "mutant:chemical_x",
+  
+      "materials": {
+        "default": "entity_alphatest_glint",
+        "outer": "slime_outer",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/mutants/entity/entities/chemcial_x",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.chemical_x",
+        "outer": "geometry.chemical_x_outer"
+      },
+      "animations": {
+        "first_person_hold": "animation.chemical_x.first_person",
+    
+        "third_person_hold": "animation.chemical_x.third_person"
+      },
+      "scripts": {
+    		"animate": [
+					{
+						"first_person_hold": "c.is_first_person"
+					},
+					{
+						"third_person_hold": "!c.is_first_person"
+					}
+				]
+      },
+      "render_controllers": [ "controller.render.chem_x_item", "controller.render.chem_x_item_outer" ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "minecraft:jungle_tree_feature"
+		},
+		"structure_name": "mystructure:newjungletree",
+		"adjustment_radius": 4,
+		"facing_direction": "east",
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {
+				"block_allowlist": [
+					{
+						"name": "minecraft:dirt"
+					},
+					{
+						"name": "minecraft:grass"
+					},
+					{
+						"name": "minecraft:short_grass"
+					},
+					{
+						"name": "minecraft:tall_grass"
+					},
+					{
+						"name": "minecraft:sand"
+					},
+					{
+						"name": "minecraft:mud"
+					},
+					{
+						"name": "block:jungle_fern"
+					},
+					{
+						"name": "block:large_jungle_fern"
+					},
+					{
+						"name": "block:jungle_leaf_litter"
+					},
+					{
+						"name": "block:jungle_ivy"
+					},
+					{
+						"name": "minecraft:melon_block"
+					},
+					{
+						"name": "minecraft:vine"
+					},
+					{
+						"name": "minecraft:bamboo"
+					},
+					{
+						"name": "block:large_jungle_leaf"
+					},
+					{
+						"name": "block:medium_jungle_leaf"
+					},
+					{
+						"name": "block:red_petels"
+					},
+					{
+						"name": "block:zinnia_flowers"
+					},
+					{
+						"name": "block:large_jungle_ivy"
+					},
+					{
+						"name": "minecraft:air"
+					}
+				]
+			}
+		}
+	}
+}

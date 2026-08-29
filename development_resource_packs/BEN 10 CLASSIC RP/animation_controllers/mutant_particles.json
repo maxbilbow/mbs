@@ -1,0 +1,229 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.bouldering_zombie_minion.move": {
+			"states": {
+				"default": {
+					"animations": [
+						"move",
+						"zombie_attack_bare_hand"
+					],
+					"transitions": [
+						{
+							"climb": "!query.is_on_ground&&query.is_wall_climbing&&query.is_alive&&!query.is_stunned&&!query.is_delayed_attacking"
+						}
+					]
+				},
+				"climb": {
+					"animations": [
+						"move",
+						"climb_pose"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_wall_climbing||!query.is_alive"
+						},
+						{
+							"climbing": "query.all_animations_finished&&query.is_wall_climbing||!query.is_alive"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"climbing": {
+					"animations": [
+						"move",
+						"climbing"
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground||!query.is_wall_climbing||!query.is_alive||query.is_stunned||query.is_delayed_attacking"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"death": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.lobber_zombie_minion.move": {
+			"states": {
+				"default": {
+					"animations": [
+						"move",
+						"zombie_attack_bare_hand"
+					],
+					"transitions": [
+						{
+							"throw": "query.is_charged"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"throw": {
+					"animations": [
+						"move",
+						"throw"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.is_alive"
+						},
+						{
+							"death": "!query.is_alive"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"death": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.minion.sit": {
+			"states": {
+				"default": {
+					"animations": [
+						"creeper_legs"
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.particle_minion": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"emerged": "query.skin_id==1"
+						}
+					]
+				},
+				"emerged": {
+					"particle_effects": [
+						{
+							"effect": "charged_flames"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.particle_minion_once": {
+			"initial_state": "emerging",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"default": "query.is_roaring"
+						}
+					]
+				},
+				"emerging": {
+					"particle_effects": [
+						{
+							"effect": "charged_flames"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_roaring"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mminion.drowned_general": {
+			"initial_state": "default",
+			"states": {
+				"emerged": {
+					"particle_effects": [
+						{
+							"effect": "charged_flames"
+						}
+					],
+					"animations": [
+						"roaring"
+					],
+					"blend_transition": 0.6,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished&&query.skin_id==0"
+						}
+					]
+				},
+				"default": {
+					"blend_transition": 0,
+					"transitions": [
+						{
+							"emerged": "query.skin_id==1"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mzombie.chemical": {
+			"initial_state": "default",
+			"states": {
+				"anger": {
+					"particle_effects": [
+						{
+							"effect": "chemical_flame"
+						}
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"default": "query.is_stunned"
+						}
+					]
+				},
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"anger": "query.is_sheared"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+//bridge-file-version: #34
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "gen:pink_pansies_feature",
+			"places_feature": "gen:scatter_pink_pansies_feature"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "cherry_grove"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "mutated"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					64
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz)",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					64
+				]
+			}
+		}
+	}
+}

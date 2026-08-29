@@ -1,0 +1,97 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.mwolf": {
+			"arrays": {
+				"textures": {
+					"Array.default": [
+						"Texture.pale_default",
+						"Texture.ashen_default",
+						"Texture.black_default",
+						"Texture.chestnut_default",
+						"Texture.rusty_default",
+						"Texture.snowy_default",
+						"Texture.spotted_default",
+						"Texture.striped_default",
+						"Texture.woods_default"
+					],
+					"Array.angry": [
+						"Texture.pale_angry",
+						"Texture.ashen_angry",
+						"Texture.black_angry",
+						"Texture.chestnut_angry",
+						"Texture.rusty_angry",
+						"Texture.snowy_angry",
+						"Texture.spotted_angry",
+						"Texture.striped_angry",
+						"Texture.woods_angry"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"query.is_angry?array.angry[query.variant]:array.default[query.variant]"
+			]
+		},
+		"controller.render.mwolf_tamed": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.wolf_tamed"
+				}
+			],
+			"textures": [
+				"texture.wolf_tamed"
+			],
+			"part_visibility": [
+				{
+					"collar": "query.is_tamed"
+				}
+			],
+			"ignore_lighting": false
+		},
+		"controller.render.mwolf_armor": {
+			"part_visibility": [
+				{
+					"*": "query.is_saddled"
+				}
+			],
+			"geometry": "geometry.wolf_armor",
+			"materials": [
+				{
+					"*": "material.wolf_armor"
+				}
+			],
+			"textures": [
+				"texture.wolf_armor"
+			]
+		},
+		"controller.render.mskeletonwolf": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.tame"
+					],
+					"Array.angry": [
+						"Texture.angry"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"query.is_angry?array.angry[query.variant]:array.skins[query.variant]"
+			]
+		}
+	}
+}

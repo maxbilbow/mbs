@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutated_iron_spikes",
+			"materials": {
+				"default": "npc"
+			},
+			"geometry": {
+				"default": "geometry.mutated_iron_spikes"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/iron_spikes"
+			},
+			"enable_attachables": false,
+			"particle_effects": {
+				"spikes": "mutant:smash_particle"
+			},
+			"scripts": {
+				"scale": "1.5",
+				"animate": [
+					"spikes"
+				]
+			},
+			"animations": {
+				"spikes": "animation.mutated_iron_spikes.spikes"
+			},
+			"render_controllers": [
+				"controller.render.mutated_iron_spikes"
+			]
+		}
+	}
+}

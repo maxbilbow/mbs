@@ -1,0 +1,33 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:thermalspike3_feature_rule",
+			"places_feature": "gen:thermalspike1_feature"
+		},
+		"conditions": {
+			"placement_pass": "before_underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "thermal_seas"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"y": "query.above_top_solid(variable.worldx, variable.worldz) - 5",
+			"z": 0
+		}
+	}
+}

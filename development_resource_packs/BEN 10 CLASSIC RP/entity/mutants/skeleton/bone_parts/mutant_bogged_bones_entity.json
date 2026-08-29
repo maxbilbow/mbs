@@ -1,0 +1,70 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mbogged_bones",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"bogged": "textures/mutants/entity/skeleton/bogged",
+				"bogged_old": "textures/mutants/entity/skeleton/bogged_old"
+			},
+			"animations": {
+				"spawned": "animation.mutant_skeleton_bone.spawned",
+				"head": "animation.mutant_skeleton_bone.head",
+				"neck": "animation.mutant_skeleton_bone.head",
+				"topbody": "animation.mutant_skeleton_bone.topbody",
+				"arm": "animation.mutant_skeleton_bone.arm",
+				"rib": "animation.mutant_skeleton_bone.rib",
+				"leg": "animation.mutant_skeleton_bone.leg",
+				"body": "animation.mutant_skeleton_bone.body",
+				"death_cancel": "animation.mutant.death_cancel"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"death_cancel": "!query.is_alive"
+					},
+					"spawned",
+					"head",
+					"neck",
+					"arm",
+					"rib",
+					"leg",
+					"body",
+					"topbody"
+				],
+				"scale": "1.1"
+			},
+			"geometry": {
+				"head": "geometry.mbogged_head",
+				"neck": "geometry.mskeleton_neck_bone",
+				"body": "geometry.mbogged_body_bone",
+				"body_2": "geometry.mskeleton_body_2_bone",
+				"topbody": "geometry.mskeleton_topbody_bone",
+				"topbody_2": "geometry.mskeleton_topbody_2_bone",
+				"topbody_3": "geometry.mskeleton_topbody_3_bone",
+				"right_shoulder": "geometry.mbogged_right_shoulder_bone",
+				"right_arm": "geometry.mbogged_right_arm_bone",
+				"right_arm_2": "geometry.mbogged_right_arm_2_bone",
+				"left_shoulder": "geometry.mbogged_left_shoulder_bone",
+				"left_arm": "geometry.mbogged_left_arm_bone",
+				"left_arm_2": "geometry.mbogged_left_arm_2_bone",
+				"right_leg": "geometry.mbogged_rleg_bone",
+				"right_leg_2": "geometry.mbogged_rleg_2_bone",
+				"left_leg": "geometry.mbogged_lleg_bone",
+				"left_leg_2": "geometry.mbogged_lleg_2_bone",
+				"right_top_rib": "geometry.mbogged_right_top_rib_bone",
+				"right_mid_rib": "geometry.mbogged_right_mid_rib_bone",
+				"right_bot_rib": "geometry.mbogged_right_bot_rib_bone",
+				"left_top_rib": "geometry.mbogged_left_top_rib_bone",
+				"left_mid_rib": "geometry.mbogged_left_mid_rib_bone",
+				"left_bot_rib": "geometry.mbogged_left_bot_rib_bone"
+			},
+			"render_controllers": [
+				"controller.render.mbogged_bones"
+			]
+		}
+	}
+}

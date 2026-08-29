@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:endersoul_block",
+			"materials": {
+				"default": "endersoul_outline"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/enderglint"
+			},
+			"geometry": {
+				"default": "geometry.endersoul_block"
+			},
+			"animations": {
+				"death_cancel": "animation.mutant.death_cancel",
+				"float": "animation.endersoul_block.floating",
+				"grab_block": "animation.endersoul_block.grab_block",
+				"idle": "controller.animation.endersoul.idle"
+			},
+			"enable_attachables": true,
+			"held_item_ignores_lighting": true,
+			"scripts": {
+				"scale": "2.65",
+				"animate": [
+					{
+						"death_cancel": "!query.is_alive"
+					},
+					"idle"
+				]
+			},
+			"render_controllers": [
+				"controller.render.endersoul_block"
+			]
+		}
+	}
+}

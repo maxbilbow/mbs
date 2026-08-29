@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "copper_harpoon_a6d3079a"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" B ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:copper_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:copper_harpoon",
+			"count": 1
+		}
+	}
+}

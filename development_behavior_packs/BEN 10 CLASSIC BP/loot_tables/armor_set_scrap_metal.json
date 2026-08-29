@@ -1,0 +1,62 @@
+//bridge-file-version: #8
+{
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "item",
+					"name": "helmet:scrap_metal_helmet",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "enchant_random_gear",
+							"chance": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "helmet:scrap_metal_chestplate",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "enchant_random_gear",
+							"chance": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "boots:scrap_metal_boots",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "enchant_random_gear",
+							"chance": 1
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "minecraft:air",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "leggings:scrap_metal_leggings",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "enchant_random_gear",
+							"chance": 1
+						}
+					]
+				}
+			],
+			"rolls": {
+				"min": 0,
+				"max": 4
+			}
+		}
+	]
+}

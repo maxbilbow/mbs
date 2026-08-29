@@ -36,32 +36,6 @@
 			"minecraft:scale": {
 				"value": 1.1
 			},
-			"minecraft:damage_sensor": {
-				"triggers": {
-					"cause": "all",
-					"deals_damage": false
-				}
-			},
-			"minecraft:area_attack": {
-				"damage_range": 0.5,
-				"damage_per_tick": 9,
-				"cause": "contact",
-				"entity_filter": {
-					"all_of": [
-						{
-							"test": "is_family",
-							"subject": "other",
-							"operator": "!=",
-							"value": "diamondhead"
-						},
-						{
-							"test": "is_family",
-							"subject": "other",
-							"value": "mob"
-						}
-					]
-				}
-			},
 			"minecraft:physics": {
 				"has_gravity": false,
 				"has_collision": false

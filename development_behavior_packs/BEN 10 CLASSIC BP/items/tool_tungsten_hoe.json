@@ -1,0 +1,146 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "tool:tungsten_hoe",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.hoe"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "tool:tungsten_hoe"
+				}
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:display_name": {
+				"value": "Tungsten Hoe\n\n\n§7Crushing I\nMining Speed: 16"
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transformable_items",
+					"minecraft:is_tool",
+					"minecraft:digger",
+					"minecraft:is_hoe",
+					"minecraft:diamond_tier"
+				]
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 7000
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:damage": 5,
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('hoe_diggable')"
+						},
+						"speed": 16
+					},
+					{
+						"block": "minecraft:azalea_leaves_flowered",
+						"speed": 16
+					},
+					{
+						"block": {
+							"tags": "q.any_tag('minecraft:is_hoe_item_destructible')"
+						},
+						"speed": 32
+					},
+					{
+						"block": "minecraft:azalea_leaves",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:calibrated_sculk_sensor",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:cherry_leaves",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:dried_kelp_block",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:hay_block",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:leaves",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:leaves2",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:mangrove_leaves",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:moss_block",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:moss_carpet",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:nether_wart_block",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sculk_catalyst",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sculk_sensor",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sculk_shrieker",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sculk_vein",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sculk",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:shroomlight",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:sponge",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:target",
+						"speed": 16
+					},
+					{
+						"block": "minecraft:warped_wart_block",
+						"speed": 16
+					}
+				],
+				"use_efficiency": true
+			},
+			"minecraft:enchantable": {
+				"slot": "hoe",
+				"value": 5
+			}
+		}
+	}
+}

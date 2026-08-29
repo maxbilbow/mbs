@@ -1,0 +1,250 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ice_fairy",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [
+						0,
+						8,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								6,
+								-3
+							],
+							"size": [
+								6,
+								6,
+								6
+							],
+							"uv": [
+								0,
+								16
+							]
+						}
+					]
+				},
+				{
+					"name": "thing",
+					"parent": "head",
+					"pivot": [
+						4,
+						6,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								4,
+								-1
+							],
+							"size": [
+								8,
+								3,
+								2
+							],
+							"uv": [
+								24,
+								21
+							]
+						},
+						{
+							"origin": [
+								5,
+								3,
+								0
+							],
+							"size": [
+								12,
+								5,
+								0
+							],
+							"uv": [
+								24,
+								16
+							]
+						}
+					]
+				},
+				{
+					"name": "thing3",
+					"parent": "head",
+					"pivot": [
+						4,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								5,
+								11,
+								-1
+							],
+							"size": [
+								8,
+								3,
+								2
+							],
+							"uv": [
+								24,
+								21
+							]
+						},
+						{
+							"origin": [
+								5,
+								10,
+								0
+							],
+							"size": [
+								12,
+								5,
+								0
+							],
+							"uv": [
+								24,
+								16
+							]
+						}
+					]
+				},
+				{
+					"name": "little",
+					"parent": "head",
+					"pivot": [
+						0,
+						8,
+						3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								1,
+								2
+							],
+							"size": [
+								16,
+								16,
+								0
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "thing2",
+					"parent": "head",
+					"pivot": [
+						-4,
+						6,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-13,
+								4,
+								-1
+							],
+							"size": [
+								8,
+								3,
+								2
+							],
+							"uv": [
+								24,
+								21
+							],
+							"mirror": true
+						},
+						{
+							"origin": [
+								-17,
+								3,
+								0
+							],
+							"size": [
+								12,
+								5,
+								0
+							],
+							"uv": [
+								24,
+								16
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "thing4",
+					"parent": "head",
+					"pivot": [
+						-4,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-13,
+								11,
+								-1
+							],
+							"size": [
+								8,
+								3,
+								2
+							],
+							"uv": [
+								24,
+								21
+							],
+							"mirror": true
+						},
+						{
+							"origin": [
+								-17,
+								10,
+								0
+							],
+							"size": [
+								12,
+								5,
+								0
+							],
+							"uv": [
+								24,
+								16
+							],
+							"mirror": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

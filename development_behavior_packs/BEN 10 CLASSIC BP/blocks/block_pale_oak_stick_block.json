@@ -1,0 +1,122 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:pale_oak_stick_block",
+			"menu_category": {
+				"group": "minecraft:itemGroup.name.log",
+				"category": "nature"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:geometry": "geometry.stickblock",
+			"minecraft:loot": "loot_tables/blocks/block_pale_oak_stick_block.json",
+			"minecraft:light_dampening": 0,
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-1.5
+				],
+				"size": [
+					16,
+					3,
+					3
+				]
+			},
+			"tag:wood": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4.2
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-1.5
+				],
+				"size": [
+					16,
+					3,
+					3
+				]
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "popped"
+					}
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_pale_oak_stick_block",
+					"render_method": "opaque",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		}
+	}
+}

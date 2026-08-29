@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "milk_release_bubble_69dbae34"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"B"
+		],
+		"key": {
+			"A": {
+				"item": "item:release_bubble",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:milk_bucket",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "item:milk_release_bubble",
+			"count": 1
+		}
+	}
+}

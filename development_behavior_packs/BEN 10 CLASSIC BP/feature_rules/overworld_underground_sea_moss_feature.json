@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "gen:overworld_underground_sea_moss_feature",
+			"places_feature": "generation:sea_moss_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"any_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "ocean"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 30,
+			"coordinate_eval_order": "zyx",
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-35,
+					55
+				]
+			},
+			"z": 0
+		}
+	}
+}

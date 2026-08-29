@@ -1,0 +1,55 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ztp.health_bar",
+				"texture_width": 128,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-12,
+								-1.5,
+								0
+							],
+							"size": [
+								24,
+								3,
+								0
+							],
+							"uv": {
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										128,
+										16
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

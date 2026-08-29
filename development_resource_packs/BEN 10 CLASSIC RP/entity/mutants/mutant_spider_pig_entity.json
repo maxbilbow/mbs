@@ -1,0 +1,62 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_spider_pig",
+			"textures": {
+				"default": "textures/mutants/entity/spider_pig/mutant_spider_pig",
+				"classic": "textures/mutants/entity/spider_pig/mutant_spider_pig_classic",
+				"craftedmanny": "textures/mutants/entity/spider_pig/mutant_spider_pig_manny",
+				"turbopiggy": "textures/mutants/entity/spider_pig/mutant_spider_pig_turbo"
+			},
+			"materials": {
+				"default": "spider"
+			},
+			"geometry": {
+				"default": "geometry.mspiderpig",
+				"classic": "geometry.mspiderpig_classic",
+				"craftedmanny": "geometry.mspiderpig",
+				"turbopiggy": "geometry.mspiderpig_turbo"
+			},
+			"render_controllers": [
+				"controller.render.mspiderpig"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 11
+			},
+			"scripts": {
+				"scale": "1.2"
+			},
+			"particle_effects": {
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:chemical_x_particle"
+			},
+			"animations": {
+				"general": "animation.mspiderpig.general",
+				"death": "animation.mspiderpig.death",
+				"death_cancel": "animation.mutant.death_cancel_spider",
+				"look_at_target": "animation.mspiderpig.look_at_target",
+				"air_look": "animation.mutant.air_look",
+				"sit": "animation.mspiderpig.sit",
+				"pounce": "animation.mspiderpig.jump",
+				"walk": "animation.mspiderpig.walk",
+				"attack": "animation.mspiderpig.attack"
+			},
+			"animation_controllers": [
+				{
+					"move": "controller.animation.mspiderpig.walking"
+				},
+				{
+					"general": "controller.animation.mspiderpig.general"
+				},
+				{
+					"death": "controller.animation.mspiderpig.death"
+				},
+				{
+					"attack": "controller.animation.mspiderpig.attack"
+				}
+			]
+		}
+	}
+}

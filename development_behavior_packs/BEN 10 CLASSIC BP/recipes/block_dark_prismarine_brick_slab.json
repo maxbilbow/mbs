@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dark_prismarine_brick_slab_5cf93bed"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:dark_prismarine_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:dark_prismarine_brick_slab",
+			"count": 6
+		}
+	}
+}

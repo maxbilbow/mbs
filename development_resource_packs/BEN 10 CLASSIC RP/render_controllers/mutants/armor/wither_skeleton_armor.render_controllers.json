@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.js7_mutant.wither_skeleton_armor": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "variable.is_enchanted?material.enchanted:material.default"
+				}
+			],
+			"textures": [
+				"texture.default",
+				"texture.enchanted"
+			]
+		},
+		"controller.render.js7_mutant.wither_skeleton_armor_glow": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.glow"
+				}
+			],
+			"textures": [
+				"texture.glow"
+			],
+			"ignore_lighting": true
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "gen:yellow_flower_tree_feature_rule",
+      "places_feature": "gen:yellow_flower_tree_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        { "test": "has_biome_tag", "value": "dandelion_garden" }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			},
+			"y": "query.heightmap(variable.worldx, variable.worldz)",
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					-8,
+					8
+				]
+			}
+    }
+  }
+}

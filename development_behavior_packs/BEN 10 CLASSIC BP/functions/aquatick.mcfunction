@@ -1,0 +1,2 @@
+execute as @r[hasitem=[{item=item:prismarine_gauntlet,location=slot.weapon.offhand}]] run execute at @s run function prismarinegauntletoffhand
+execute as @r[hasitem=[{item=helmet:lumenyl_helmet,location=slot.armor.head},{item=chestplate:lumenyl_chestplate,location=slot.armor.chest},{item=leggings:lumenyl_leggings,location=slot.armor.legs},{item=boots:lumenyl_boots,location=slot.armor.feet}]] run execute at @s run function lumenylarmor

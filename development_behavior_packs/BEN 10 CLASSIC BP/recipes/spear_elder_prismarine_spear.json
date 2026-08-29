@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "elder_prismarine_spear_5485f4f8"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"EEE"
+		],
+		"key": {
+			"A": {
+				"item": "item:elder_prismarine_shard",
+				"data": 0
+			},
+			"B": {
+				"item": "item:elder_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "item:white_pearl",
+				"data": 0
+			},
+			"D": {
+				"item": "spear:prismarine_spear",
+				"data": 0
+			},
+			"E": {
+				"item": "minecraft:diamond",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "spear:elder_prismarine_spear",
+			"count": 1
+		}
+	}
+}

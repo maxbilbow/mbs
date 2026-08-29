@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sword:lumenyl_harpoon",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": {
+				"texture": "sword:lumenyl_harpoon"
+			},
+			"minecraft:display_name": {
+				"value": "Lumenyl Harpoon\n\n\n§914 Throwing damage (In Air)\n§926 Throwing damage (In Water)"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": 9,
+			"minecraft:throwable": {
+				"do_swing_animation": true
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "sword:lumenyl_harpoon"
+			}
+		}
+	}
+}

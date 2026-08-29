@@ -1,0 +1,66 @@
+//bridge-file-version: #8
+{
+	"pools": [
+		{
+			"rolls": {
+				"min": 2,
+				"max": 4
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "food:salmon_roll",
+					"weight": 8,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "food:ocean_berry",
+					"weight": 8,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 6,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					],
+					"name": "food:golden_ocean_berry"
+				},
+				{
+					"type": "item",
+					"name": "item:atlantis_trial_key",
+					"weight": 7,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 1
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:cherry_tree_feature"
+		},
+		"features": [
+			[
+				"gen:cherry_tree1_feature",
+				50
+			],
+			[
+				"gen:cherry_tree2_feature",
+				50
+			]
+		]
+	}
+}

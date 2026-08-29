@@ -1,0 +1,94 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mutant_creeper": {
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "0.6+(!query.is_alive*-0.6)"
+			},
+			"overlay_color": {
+				"r": "query.is_stunned?0.5+math.cos(query.anim_time*360)*0.2:0",
+				"g": "query.is_stunned?0.5+math.cos(query.anim_time*360)*0.2:0",
+				"b": "query.is_stunned?0.5+math.cos(query.anim_time*360)*0.2:0",
+				"a": "query.is_stunned?0.5+math.cos(query.anim_time*360)*0.2:0"
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.mutant_creeper_explode": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"is_hurt_color": {
+				"r": 1,
+				"g": 0,
+				"b": 0,
+				"a": "0.6+(!query.is_alive*-0.6)"
+			},
+			"overlay_color": {
+				"r": "query.swelling_dir?math.min(math.max(0,query.anim_time*0.2),1)*1:0",
+				"g": "query.swelling_dir?math.min(math.max(0,query.anim_time*0.2),1)*1:0",
+				"b": "query.swelling_dir?math.min(math.max(0,query.anim_time*0.2),1)*1:0",
+				"a": "query.swelling_dir?math.min(math.max(0,query.anim_time*0.2),1)*1:0"
+			},
+			"part_visibility": [
+				{
+					"*": "query.swelling_dir"
+				}
+			],
+			"uv_anim": {
+				"offset": [
+					"(query.swelling_dir?(math.cos(query.life_time*11.1)*2):0)",
+					"(query.swelling_dir?(math.cos(query.life_time*10.62)*2):0)"
+				],
+				"scale": [
+					1,
+					1
+				]
+			}
+		},
+		"controller.render.mutant_creeper_charged": {
+			"geometry": "geometry.charged",
+			"materials": [
+				{
+					"*": "material.charged"
+				}
+			],
+			"textures": [
+				"texture.charged"
+			],
+			"part_visibility": [
+				{
+					"*": "query.is_powered"
+				}
+			],
+			"uv_anim": {
+				"offset": [
+					"(query.life_time*0.2)",
+					"(query.life_time*0.25)"
+				],
+				"scale": [
+					1,
+					1
+				]
+			},
+			"light_color_multiplier": 0.5,
+			"ignore_lighting": true
+		}
+	}
+}

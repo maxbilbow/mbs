@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "gold_cleaver_e856f5dd"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" A ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:gold_ingot",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "sword:gold_cleaver",
+			"count": 1
+		}
+	}
+}

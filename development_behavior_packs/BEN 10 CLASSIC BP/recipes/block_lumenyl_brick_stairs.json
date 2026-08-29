@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_brick_stairs_2905cd02"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A  ",
+			"AA ",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:lumenyl_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:lumenyl_brick_stairs",
+			"count": 3
+		}
+	}
+}

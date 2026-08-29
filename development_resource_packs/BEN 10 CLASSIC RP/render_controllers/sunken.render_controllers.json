@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.sunken": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.red_blue",
+						"Texture.blue",
+						"Texture.green",
+						"Texture.yellow_blue",
+						"Texture.gray",
+						"Texture.moss"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			]
+		}
+	}
+}

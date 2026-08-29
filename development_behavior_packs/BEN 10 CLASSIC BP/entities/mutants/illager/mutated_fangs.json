@@ -1,0 +1,751 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mutated_evoker_fangs",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"fang_bite",
+					"fang_breach"
+				]
+			},
+			"animations": {
+				"fang_bite": "controller.animation.mutated_fangs_bite",
+				"fang_breach": "controller.animation.mutated_fangs_breach_attack"
+			}
+		},
+		"component_groups": {
+			"worjira": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"bite": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						0.205,
+						0.205
+					],
+					"attack_cooldown_complete_event": {
+						"event": "fang_bite",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 1
+				},
+				"minecraft:physics": {
+					"has_gravity": false,
+					"has_collision": true
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": false
+						},
+						{
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						1.75,
+						1.75
+					],
+					"time_down_event": {
+						"event": "despawn"
+					}
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"bite_damage": {
+				"minecraft:is_charged": {}
+			},
+			"dig": {
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": false
+						},
+						{
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:is_stunned": {},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 2
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": [
+						0.85,
+						1.15
+					],
+					"time_down_event": {
+						"event": "can_breach"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"can_breach": {
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_complete_event": {
+						"event": "start_breach",
+						"target": "self"
+					},
+					"attack_cooldown_time": [
+						35,
+						40
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": false
+						},
+						{
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 0,
+					"height": 1
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 4,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "villager"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "snowgolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "turtle"
+											}
+										]
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							},
+							"max_dist": 32
+						}
+					],
+					"must_see": true
+				},
+				"minecraft:attack": {
+					"damage": 0
+				},
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": true
+				},
+				"minecraft:movement": {
+					"value": 0.2
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"track_target": false,
+					"reach_multiplier": 0,
+					"speed_multiplier": 0.7,
+					"attack_duration": 0.62,
+					"hit_delay_pct": 0.2
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "target_distance",
+										"subject": "self",
+										"operator": "<=",
+										"value": 2.5
+									}
+								]
+							},
+							"event": "start_breach"
+						}
+					]
+				}
+			},
+			"random_teleport": {
+				"minecraft:type_family": {
+					"family": [
+						"inanimate"
+					]
+				},
+				"minecraft:teleport": {
+					"max_random_teleport_time": 0,
+					"min_random_teleport_time": 0,
+					"random_teleport_cube": [
+						15,
+						15,
+						15
+					],
+					"random_teleports": true,
+					"target_distance": 1,
+					"target_teleport_chance": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.15,
+						0.15
+					],
+					"time_down_event": {
+						"event": "stop_teleport"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"breach": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "invisibility",
+							"duration": 0.15,
+							"amplifier": 2,
+							"visible": false
+						},
+						{
+							"effect": "resistance",
+							"duration": 1,
+							"amplifier": 5,
+							"visible": false
+						},
+						{
+							"effect": "instant_health",
+							"duration": 0.05
+						}
+					],
+					"remove_effects": [
+						"poison",
+						"wither"
+					]
+				},
+				"minecraft:behavior.knockback_roar": {
+					"priority": 1,
+					"duration": 1.4,
+					"attack_time": 0.25,
+					"knockback_damage": 14,
+					"knockback_range": 4,
+					"knockback_height_cap": 0,
+					"knockback_vertical_strength": 0,
+					"knockback_strength": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "illager"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "inanimate"
+									}
+								]
+							}
+						]
+					},
+					"on_roar_end": {
+						"event": "melee_return"
+					},
+					"damage_filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					},
+					"cooldown_time": 30
+				}
+			},
+			"monster": {
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 2,
+					"entity_types": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					}
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"event": "quick_digging"
+							},
+							"deals_damage": true
+						},
+						{
+							"cause": "fall",
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:type_family": {
+					"family": [
+						"illager",
+						"monster",
+						"mutantmonster",
+						"chemical_x"
+					]
+				},
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_complete_event": {
+						"event": "start_digging",
+						"target": "self"
+					},
+					"attack_cooldown_time": [
+						7,
+						10
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						7,
+						10
+					],
+					"time_down_event": {
+						"event": "start_digging"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:follow_range": {
+					"value": 32,
+					"max": 32
+				},
+				"minecraft:collision_box": {
+					"width": 1.5,
+					"height": 5
+				},
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": true
+				},
+				"minecraft:behavior.delayed_attack": {
+					"priority": 4,
+					"track_target": false,
+					"reach_multiplier": 4.75,
+					"speed_multiplier": 0,
+					"attack_duration": 0.62,
+					"hit_delay_pct": 0.2
+				},
+				"minecraft:behavior.look_at_player": {
+					"priority": 9,
+					"look_distance": 6,
+					"probability": 0.02
+				},
+				"minecraft:behavior.look_at_entity": {
+					"priority": 9,
+					"look_distance": 6,
+					"probability": 0.02,
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "mob"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 4,
+					"within_radius": 56,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "villager"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "snowgolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "turtle"
+											}
+										]
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"operator": "!=",
+										"value": "minecraft:is_stunned"
+									}
+								]
+							},
+							"max_dist": 32
+						}
+					],
+					"must_see": true
+				},
+				"minecraft:attack": {
+					"damage": 8
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"cloak": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "invisibility",
+							"duration": 0.15,
+							"amplifier": 2,
+							"visible": false
+						},
+						{
+							"effect": "resistance",
+							"duration": 1,
+							"amplifier": 5,
+							"visible": false
+						},
+						{
+							"effect": "instant_health",
+							"duration": 0.05
+						}
+					],
+					"remove_effects": [
+						"poison",
+						"wither"
+					]
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:skin_id": {
+				"value": 0
+			},
+			"minecraft:variable_max_auto_step": {
+				"base_value": 1.5625,
+				"jump_prevented_value": 0.5625
+			},
+			"minecraft:health": {
+				"value": 55,
+				"max": 55
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": false,
+				"avoid_portals": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:game_event_movement_tracking": {
+				"emit_move": false,
+				"emit_swim": false
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			}
+		},
+		"events": {
+			"evoker_spawned": {
+				"randomize": [
+					{
+						"weight": 10,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"monster",
+								"breach",
+								"cloak"
+							]
+						}
+					},
+					{
+						"weight": 4,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"monster",
+								"breach",
+								"cloak",
+								"worjira"
+							]
+						}
+					},
+					{
+						"weight": 540,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"bite"
+							]
+						}
+					},
+					{
+						"weight": 9,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"bite",
+								"worjira"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 96,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"monster",
+								"breach",
+								"cloak"
+							]
+						}
+					},
+					{
+						"weight": 4,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"monster",
+								"worjira",
+								"breach",
+								"cloak"
+							]
+						}
+					},
+					{
+						"weight": 0,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"bite"
+							]
+						}
+					}
+				]
+			},
+			"quick_digging": {
+				"randomize": [
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"dig"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"monster",
+								"breach"
+							]
+						}
+					},
+					{
+						"weight": 5
+					}
+				]
+			},
+			"melee_return": {
+				"remove": {
+					"component_groups": [
+						"breach"
+					]
+				}
+			},
+			"start_digging": {
+				"add": {
+					"component_groups": [
+						"dig"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"monster",
+						"breach"
+					]
+				}
+			},
+			"can_breach": {
+				"add": {
+					"component_groups": [
+						"random_teleport"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"dig"
+					]
+				}
+			},
+			"start_breach": {
+				"add": {
+					"component_groups": [
+						"monster",
+						"breach"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"can_breach",
+						"random_teleport"
+					]
+				}
+			},
+			"stop_teleport": {
+				"remove": {
+					"component_groups": [
+						"random_teleport"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"can_breach"
+					]
+				}
+			},
+			"fang_bite": {
+				"add": {
+					"component_groups": [
+						"bite_damage"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:autumn_tree_feature"
+		},
+		"features": [
+			[
+				"gen:autumn_tree1_feature",
+				10
+			],
+			[
+				"gen:dead_tree_feature",
+				5
+			],
+			[
+				"gen:autumn_tree2_feature",
+				10
+			],
+			[
+				"gen:autumn_tree3_feature",
+				10
+			]
+		]
+	}
+}

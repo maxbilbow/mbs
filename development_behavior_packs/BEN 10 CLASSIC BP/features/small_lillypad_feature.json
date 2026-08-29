@@ -1,0 +1,30 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:small_lillypad_feature"
+		},
+		"features": [
+			[
+				"gen:small_lillypad1_feature",
+				2
+			],
+			[
+				"gen:small_lillypad2_feature",
+				2
+			],
+			[
+				"gen:small_lillypad3_feature",
+				2
+			],
+			[
+				"gen:small_lillypad4_feature",
+				2
+			],
+			[
+				"gen:small_lillypad5_feature",
+				1
+			]
+		]
+	}
+}

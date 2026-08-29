@@ -1,0 +1,40 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "gen:glowinggeneration1_feature"
+		},
+		"structure_name": "mystructure:glowinggeneration1",
+		"adjustment_radius": 4,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {},
+			"block_intersection": {
+				"block_whitelist": [
+					"minecraft:sand",
+					"minecraft:gravel",
+					"block:glowing_kelp",
+					"block:glowing_sea_moss_block",
+					"block:glowing_sea_moss_carpet",
+					"block:sea_glowstone",
+					"minecraft:bone_block",
+					"block:dread_coral_block",
+					"block:dread_coral",
+					"minecraft:seagrass",
+					"minecraft:kelp",
+					"block:sea_moss_block",
+					"minecraft:pale_moss_block",
+					"minecraft:stone",
+					"minecraft:granite",
+					"minecraft:diorite",
+					"minecraft:andesite",
+					"block:sea_moss_carpet",
+					"minecraft:sea_pickle",
+					"block:marble",
+					"minecraft:water",
+					"minecraft:dirt"
+				]
+			}
+		}
+	}
+}

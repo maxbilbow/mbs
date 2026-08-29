@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "opal_chestplate_cb53fb5f"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "item:opal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "chestplate:opal_chestplate",
+			"count": 1
+		}
+	}
+}

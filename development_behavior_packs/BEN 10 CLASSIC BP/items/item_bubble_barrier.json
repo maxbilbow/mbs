@@ -1,0 +1,20 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:bubble_barrier",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"tag:minecraft:trim_materials": {},
+			"minecraft:icon": {
+				"texture": "item:bubble_barrier"
+			},
+			"minecraft:display_name": {
+				"value": "Bubble Barrier"
+			}
+		}
+	}
+}

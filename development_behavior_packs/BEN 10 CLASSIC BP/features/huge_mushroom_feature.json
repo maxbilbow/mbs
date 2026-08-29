@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "minecraft:huge_mushroom_feature"
+		},
+		"features": [
+			[
+				"gen:red_mushroom_tree_feature",
+				10
+			],
+			[
+				"gen:brown_mushroom_tree_feature",
+				10
+			]
+		]
+	}
+}

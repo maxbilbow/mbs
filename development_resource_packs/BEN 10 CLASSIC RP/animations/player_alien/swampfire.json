@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.swampfire.flying": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"alien_body": {
+					"rotation": [
+						20,
+						0,
+						0
+					]
+				},
+				"rightleg": {
+					"rotation": [
+						2.5,
+						0,
+						0
+					]
+				},
+				"leftleg": {
+					"rotation": [
+						2.5,
+						0,
+						0
+					]
+				},
+				"leftarm": {
+					"rotation": [
+						0,
+						0,
+						-2.5
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						0,
+						0,
+						2.5
+					]
+				}
+			}
+		}
+	}
+}

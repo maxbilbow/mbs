@@ -1,0 +1,18 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:warm_orchard_trees_feature"
+		},
+		"features": [
+			[
+				"gen:red_flower_tree_feature",
+				50
+			],
+			[
+				"gen:yellow_flower_tree_feature",
+				50
+			]
+		]
+	}
+}

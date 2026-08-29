@@ -1,0 +1,161 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cube.stuff": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"cube_be_hidding",
+						"cube_despawn"
+					],
+					"transitions": [
+						{
+							"nothing": "query.is_sitting&&variable.cube_num==5||variable.cube_num==6||variable.cube_num==8||variable.cube_num==9||variable.cube_num==10&&query.variant==6"
+						},
+						{
+							"stuff": "query.is_sitting&&variable.cube_num==2||variable.cube_num==7&&query.variant==6"
+						},
+						{
+							"stuff_2": "query.is_sitting&&variable.cube_num==1&&query.variant==6"
+						},
+						{
+							"stuff_2": "query.is_sitting&&variable.cube_num==3&&query.variant==6"
+						},
+						{
+							"stuff_4": "query.is_sitting&&variable.cube_num==4&&query.variant==6"
+						}
+					]
+				},
+				"nothing": {
+					"animations": [
+						"cube_be_hidding",
+						"cube_despawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"stuff": {
+					"animations": [
+						"cube_be_like",
+						"cube_spawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"stuff_2": {
+					"animations": [
+						"cube_blevin",
+						"cube_spawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead_blue": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"stuff_3": {
+					"animations": [
+						"cube_be_golden",
+						"cube_spawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead_gold": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"stuff_4": {
+					"animations": [
+						"cube_be_kevin",
+						"cube_spawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead_gold": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"stuff_kevin": {
+					"animations": [
+						"cube_be_kevin",
+						"cube_spawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting&&query.variant==6"
+						},
+						{
+							"dead_kevin": "!query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"dead": {
+					"animations": [
+						"cube_be_like",
+						"cube_be_dying"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"dead_kevin": {
+					"animations": [
+						"cube_be_kevin",
+						"cube_be_dying"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"dead_blue": {
+					"animations": [
+						"cube_blevin",
+						"cube_be_dying"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.variant==6"
+						}
+					]
+				},
+				"dead_gold": {
+					"animations": [
+						"cube_be_golden",
+						"cube_be_dying"
+					],
+					"transitions": [
+						{
+							"default": "query.is_alive&&query.variant==6"
+						}
+					]
+				}
+			}
+		}
+	}
+}

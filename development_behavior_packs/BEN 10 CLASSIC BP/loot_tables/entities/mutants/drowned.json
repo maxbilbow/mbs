@@ -1,0 +1,146 @@
+{
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:rotten_flesh",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+          {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:copper_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+          {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:nautilus_shell",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 1
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "random_chance_with_looting",
+                    "chance": 0.51,
+                    "looting_multiplier": 0.01
+                }
+            ],
+            "rolls": 1,
+            "entries": [
+              {
+                "type": "item",
+                "name": "minecraft:trident",
+                "weight": 5,
+                "functions": [
+                  {
+                    "function": "set_damage",
+                    "damage": {
+                      "min": 0.2,
+                      "max": 0.9
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "item",
+                "name": "minecraft:copper_ingot",
+                "weight": 5
+              }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "random_chance_with_looting",
+                    "chance": 0.51,
+                    "looting_multiplier": 0.5
+                }
+            ],
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "mutant:mutated_trident",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                              "min": 0.3,
+                              "max": 0.7
+                            }
+                          },
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

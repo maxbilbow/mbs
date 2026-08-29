@@ -1,0 +1,269 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "projectile:prismarine_blast",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:area_attack": {
+				"damage_range": 0.6,
+				"damage_per_tick": 16,
+				"cause": "contact",
+				"entity_filter": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"value": "guardian",
+							"subject": "other",
+							"operator": "!="
+						},
+						{
+							"test": "is_family",
+							"value": "inanimate",
+							"subject": "other",
+							"operator": "!="
+						}
+					]
+				}
+			},
+			"minecraft:timer": {
+				"time": [
+					0.5,
+					0.5
+				],
+				"time_down_event": {
+					"event": "despawn"
+				},
+				"looping": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"bone"
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			}
+		},
+		"events": {
+			"on:hit": {
+				"queue_command": {
+					"command": [
+						"particle firewall"
+					]
+				}
+			},
+			"despawn": {
+				"randomize": [
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~~~"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~~~0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~-0.3~~"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~0.3~~0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~-0.3~~-0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~-0.3~~0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~0.3~~-0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~~~-0.3"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"queue_command": {
+									"command": [
+										"summon projectile:boiling_bubble ~0.3~~"
+									]
+								}
+							},
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 1
+					},
+					{
+						"sequence": [
+							{
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						],
+						"weight": 10
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": [
+						"particle abyssalguardianlaser"
+					]
+				}
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

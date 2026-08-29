@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "item:lumenyl_forging_template",
+			"menu_category": {
+				"category": "items",
+				"group": "minecraft:itemGroup.name.items"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "item:lumenyl_forging_template"
+				}
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:display_name": {
+				"value": "Forging Template\n§7Primordial Scales\n\nApplies to:\n§9Netherite Equipment\n§7Requires:\n§9Soul Forge"
+			}
+		}
+	}
+}

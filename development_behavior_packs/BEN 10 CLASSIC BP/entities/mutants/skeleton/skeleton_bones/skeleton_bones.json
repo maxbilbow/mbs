@@ -1,0 +1,1078 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:mskeleton_bones",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"timer": {
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": false
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.125
+					],
+					"time_down_event": {
+						"event": "end_timer"
+					}
+				}
+			},
+			"timer_end": {
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			},
+			"head": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "mutant:mutant_skeleton_helmet",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_head.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"neck": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "bone_meal",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_bone_meal.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"body": {
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_pelvis",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_pelvis.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"body_2": {
+				"minecraft:variant": {
+					"value": 3
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "bone",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_bone.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"topbody": {
+				"minecraft:variant": {
+					"value": 4
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "bone",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_bone.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"topbody_2": {
+				"minecraft:variant": {
+					"value": 5
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "bone",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_bone.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"topbody_3": {
+				"minecraft:variant": {
+					"value": 6
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "bone",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_bone.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_shoulder": {
+				"minecraft:variant": {
+					"value": 7
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_shoulder_pad",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_shoulder_pad.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_arm": {
+				"minecraft:variant": {
+					"value": 8
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_arm_2": {
+				"minecraft:variant": {
+					"value": 9
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_shoulder": {
+				"minecraft:variant": {
+					"value": 10
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_shoulder_pad",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_shoulder_pad.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_arm": {
+				"minecraft:variant": {
+					"value": 11
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_arm_2": {
+				"minecraft:variant": {
+					"value": 12
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_leg": {
+				"minecraft:variant": {
+					"value": 13
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_leg_2": {
+				"minecraft:variant": {
+					"value": 14
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_leg": {
+				"minecraft:variant": {
+					"value": 15
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_leg_2": {
+				"minecraft:variant": {
+					"value": 16
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_limb",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_limb.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_top_rib": {
+				"minecraft:variant": {
+					"value": 17
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_mid_rib": {
+				"minecraft:variant": {
+					"value": 18
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"right_bot_rib": {
+				"minecraft:variant": {
+					"value": 19
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_top_rib": {
+				"minecraft:variant": {
+					"value": 20
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_mid_rib": {
+				"minecraft:variant": {
+					"value": 21
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			},
+			"left_bot_rib": {
+				"minecraft:variant": {
+					"value": 22
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 50,
+						"max_wait_time": 60,
+						"spawn_sound": "plop",
+						"spawn_item": "js7_mutant:mutant_skeleton_rib",
+						"spawn_item_event": {
+							"event": "despawn",
+							"target": "self"
+						},
+						"single_use": true
+					}
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "despawn",
+								"target": "self"
+							},
+							"use_item": false,
+							"spawn_items": {
+								"table": "loot_tables/entities/mutants/skeleton_bones/skeleton/skeleton_rib.json"
+							},
+							"play_sounds": "armor.equip_iron",
+							"interact_text": "Pick up"
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.5
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate",
+					"bones"
+				]
+			}
+		},
+		"events": {
+			"end_timer": {
+				"add": {
+					"component_groups": [
+						"timer_end"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"timer"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"head": {
+				"add": {
+					"component_groups": [
+						"head",
+						"timer"
+					]
+				}
+			},
+			"neck": {
+				"add": {
+					"component_groups": [
+						"neck",
+						"timer"
+					]
+				}
+			},
+			"body": {
+				"add": {
+					"component_groups": [
+						"body",
+						"timer"
+					]
+				}
+			},
+			"body_2": {
+				"add": {
+					"component_groups": [
+						"body_2",
+						"timer"
+					]
+				}
+			},
+			"topbody": {
+				"add": {
+					"component_groups": [
+						"topbody",
+						"timer"
+					]
+				}
+			},
+			"topbody_2": {
+				"add": {
+					"component_groups": [
+						"topbody_2",
+						"timer"
+					]
+				}
+			},
+			"topbody_3": {
+				"add": {
+					"component_groups": [
+						"topbody_3",
+						"timer"
+					]
+				}
+			},
+			"right_shoulder": {
+				"add": {
+					"component_groups": [
+						"right_shoulder",
+						"timer"
+					]
+				}
+			},
+			"right_arm": {
+				"add": {
+					"component_groups": [
+						"right_arm",
+						"timer"
+					]
+				}
+			},
+			"right_arm_2": {
+				"add": {
+					"component_groups": [
+						"right_arm_2",
+						"timer"
+					]
+				}
+			},
+			"left_shoulder": {
+				"add": {
+					"component_groups": [
+						"left_shoulder",
+						"timer"
+					]
+				}
+			},
+			"left_arm": {
+				"add": {
+					"component_groups": [
+						"left_arm",
+						"timer"
+					]
+				}
+			},
+			"left_arm_2": {
+				"add": {
+					"component_groups": [
+						"left_arm_2",
+						"timer"
+					]
+				}
+			},
+			"right_leg": {
+				"add": {
+					"component_groups": [
+						"right_leg",
+						"timer"
+					]
+				}
+			},
+			"right_leg_2": {
+				"add": {
+					"component_groups": [
+						"right_leg_2",
+						"timer"
+					]
+				}
+			},
+			"left_leg": {
+				"add": {
+					"component_groups": [
+						"left_leg",
+						"timer"
+					]
+				}
+			},
+			"left_leg_2": {
+				"add": {
+					"component_groups": [
+						"left_leg_2",
+						"timer"
+					]
+				}
+			},
+			"right_top_rib": {
+				"add": {
+					"component_groups": [
+						"right_top_rib",
+						"timer"
+					]
+				}
+			},
+			"right_mid_rib": {
+				"add": {
+					"component_groups": [
+						"right_mid_rib",
+						"timer"
+					]
+				}
+			},
+			"right_bot_rib": {
+				"add": {
+					"component_groups": [
+						"right_bot_rib",
+						"timer"
+					]
+				}
+			},
+			"left_top_rib": {
+				"add": {
+					"component_groups": [
+						"left_top_rib",
+						"timer"
+					]
+				}
+			},
+			"left_mid_rib": {
+				"add": {
+					"component_groups": [
+						"left_mid_rib",
+						"timer"
+					]
+				}
+			},
+			"left_bot_rib": {
+				"add": {
+					"component_groups": [
+						"left_bot_rib",
+						"timer"
+					]
+				}
+			}
+		}
+	}
+}

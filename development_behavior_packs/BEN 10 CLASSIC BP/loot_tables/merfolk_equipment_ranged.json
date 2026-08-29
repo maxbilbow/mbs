@@ -1,0 +1,17 @@
+//bridge-file-version: #6
+{
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "loot_tables/armor_set_scrap_metal.json"
+				}
+			],
+			"rolls": {
+				"min": 1,
+				"max": 1
+			}
+		}
+	]
+}

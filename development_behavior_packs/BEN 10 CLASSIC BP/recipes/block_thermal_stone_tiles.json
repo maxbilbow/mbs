@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_stone_tiles_510dd4c8"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AA",
+			"AA"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_bricks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_stone_tiles",
+			"count": 4
+		}
+	}
+}

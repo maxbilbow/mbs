@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:endersoul_fragment",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:glint": true,
+			"minecraft:allow_off_hand": false,
+			"minecraft:icon": {
+				"texture": "endersoul_fragment"
+			},
+			"minecraft:display_name": {
+				"value": "Endersoul Fragment"
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": true,
+			"minecraft:max_stack_size": 16
+		}
+	}
+}

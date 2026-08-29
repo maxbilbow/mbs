@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "lumenyl_boots_26fda763"
+		},
+		"tags": [
+			"soul_forge"
+		],
+		"pattern": [
+			"ABA",
+			"CDC",
+			"AEA"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:diamond",
+				"data": 0
+			},
+			"B": {
+				"item": "item:lumenyl_forging_template",
+				"data": 0
+			},
+			"C": {
+				"item": "block:lumenyl_block",
+				"data": 0
+			},
+			"D": {
+				"item": "minecraft:netherite_boots",
+				"data": 0
+			},
+			"E": {
+				"item": "minecraft:diamond_block",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "boots:lumenyl_boots",
+			"count": 1
+		}
+	}
+}

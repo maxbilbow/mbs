@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:fishing_trap",
+			"menu_category": {
+				"category": "items",
+				"group": "minecraft:itemGroup.name.items"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"test:fishing_trap"
+			],
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"tag:metal": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:light_dampening": 0,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_fishing_trap",
+					"render_method": "alpha_test"
+				}
+			}
+		},
+		"events": {}
+	}
+}

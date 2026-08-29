@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "cut_scrap_metal_slab_146a3211"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:cut_scrap_metal",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:cut_scrap_metal_slab",
+			"count": 6
+		}
+	}
+}

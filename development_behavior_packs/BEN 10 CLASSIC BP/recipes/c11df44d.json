@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_a3d04db0"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"B"
+		],
+		"key": {
+			"B": {
+				"item": "block:reidite_block",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "item:reidite",
+				"count": 9
+			}
+		]
+	}
+}

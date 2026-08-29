@@ -1,0 +1,17 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "generation:grass_moss_feature"
+		},
+		"count": 40,
+		"replace_rules": [
+			{
+				"places_block": "minecraft:moss_block",
+				"may_replace": [
+					"minecraft:grass_block"
+				]
+			}
+		]
+	}
+}

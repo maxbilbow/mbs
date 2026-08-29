@@ -1,0 +1,88 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "gen:overworld_underground_grass_moss_feature",
+      "places_feature": "generation:grass_moss_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "cold"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "frozen"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "plains"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "savanna"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "meadow"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "plains"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "pale_plains"
+				},
+				{
+					"test": "has_biome_tag",
+					"operator": "!=",
+					"value": "pale_garden"
+				}
+			]
+		},
+    "distribution": {
+      "iterations": 9,
+      "coordinate_eval_order": "zyx",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          320
+        ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+//bridge-file-version: #20
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "mob:adaptive_drowned",
+			"population_control": "monster"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 12,
+					"adjust_for_weather": true
+				},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:weight": {
+					"default": 5
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4,
+					"initial_event": "minecraft:as_rider",
+					"initial_event_count": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "spawns_cold_variant_farm_animals"
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 12,
+					"adjust_for_weather": true
+				},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:weight": {
+					"default": 5
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4,
+					"initial_event": "minecraft:as_rider",
+					"initial_event_count": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "spawns_warm_variant_farm_animals"
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 12,
+					"adjust_for_weather": true
+				},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:weight": {
+					"default": 5
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4,
+					"initial_event": "minecraft:as_rider",
+					"initial_event_count": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "thermal_seas"
+				}
+			},
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:spawns_underwater": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 12,
+					"adjust_for_weather": true
+				},
+				"minecraft:difficulty_filter": {
+					"min": "easy",
+					"max": "hard"
+				},
+				"minecraft:weight": {
+					"default": 60
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 2,
+					"max_size": 4,
+					"initial_event": "minecraft:as_rider",
+					"initial_event_count": 1
+				},
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "drenched_void"
+				},
+				"minecraft:spawns_underground": {},
+				"minecraft:height_filter": {
+					"min": 0,
+					"max": -64
+				}
+			}
+		]
+	}
+}

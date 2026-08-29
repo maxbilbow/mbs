@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "prismarine_boots_9e3caff4"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A A",
+			"A A"
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:prismarine_shard",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "boots:prismarine_boots",
+			"count": 1
+		}
+	}
+}

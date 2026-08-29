@@ -1,0 +1,152 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mspiderpig.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mspiderpig.death": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"death": "!query.is_alive"
+						}
+					]
+				},
+				"death": {
+					"animations": [
+						"death",
+						"death_cancel"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_alive"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mspiderpig.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target",
+						"general"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"pounce": "!query.is_on_ground"
+						},
+						{
+							"death": "!query.is_alive&&query.is_on_ground"
+						},
+						{
+							"death_air": "!query.is_alive&&!query.is_on_ground"
+						}
+					]
+				},
+				"pounce": {
+					"animations": [
+						"pounce",
+						{
+							"air_look": "query.is_alive"
+						}
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						},
+						{
+							"death_air": "!query.is_alive"
+						}
+					]
+				},
+				"death_air": {
+					"animations": [
+						"pounce"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "0"
+						}
+					]
+				},
+				"death": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mspiderpig.walking": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"walk": "math.min(1,query.modified_move_speed*10)"
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						},
+						{
+							"air": "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.35
+				},
+				"air": {
+					"transitions": [
+						{
+							"default": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.35
+				},
+				"sitting": {
+					"animations": [
+						"sit"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

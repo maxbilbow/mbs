@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_trapdoor_5f01e6cb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"AAA"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_planks",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_trapdoor",
+			"count": 2
+		}
+	}
+}

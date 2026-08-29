@@ -1,0 +1,160 @@
+{
+	"format_version": "1.26.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mob:orthoceras",
+			"is_spawnable": true,
+			"is_summonable": true
+		},
+		"components": {
+			"minecraft:offspring": {
+				"offspring_pairs": {
+					"minecraft:nautilus": "minecraft:nautilus"
+				}
+			},
+			"minecraft:spawn_egg_interaction": {},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": false,
+				"breathes_water": true
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player&&!query.is_baby?math.random(1,3):0",
+				"on_bred": "math.random(1,7)"
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/orthoceras.json"
+			},
+			"minecraft:health": {
+				"value": 80,
+				"max": 80
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava"
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:nameable": {},
+			"minecraft:home": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"orthoceras",
+					"mob",
+					"predator"
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 0.3
+			},
+			"minecraft:mob_effect_immunity": {
+				"mob_effects": [
+					"poison"
+				]
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": false,
+				"can_path_over_water": false,
+				"can_swim": true,
+				"can_walk": false,
+				"can_breach": false,
+				"can_sink": false
+			},
+			"minecraft:movement.sway": {
+				"sway_amplitude": 0
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"min_distance": 32,
+					"max_distance": 40
+				}
+			},
+			"minecraft:attack": {
+				"damage": 10
+			},
+			"minecraft:behavior.aquatic_charge_attack": {
+				"priority": 3,
+				"max_charge_distance": 28,
+				"charge_speed": 1.2,
+				"attack_reach": 0,
+				"knockback_force": 6,
+				"charge_overshoot_distance": 10,
+				"charge_cooldown_time": {
+					"min": 1,
+					"max": 8
+				}
+			},
+			"minecraft:behavior.random_swim": {
+				"priority": 6,
+				"speed_multiplier": 1.5,
+				"xz_dist": 16,
+				"y_dist": 4,
+				"interval": 0
+			},
+			"minecraft:behavior.swim_wander": {
+				"priority": 7,
+				"interval": 10,
+				"look_ahead": 2,
+				"speed_multiplier": 1.5,
+				"wander_time": 5
+			},
+			"minecraft:behavior.swim_idle": {
+				"priority": 8,
+				"idle_time": 5,
+				"success_rate": 0.1
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"reselect_targets": true,
+				"must_see": false,
+				"within_radius": 12,
+				"must_see_forget_duration": 17,
+				"persist_time": 0.5,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "nautilus"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "merfolk"
+								}
+							]
+						},
+						"max_dist": 16
+					}
+				]
+			},
+			"minecraft:angry": {
+				"duration": 20,
+				"broadcast_anger": false,
+				"broadcast_range": 16,
+				"broadcast_anger_when_dying": false
+			}
+		},
+		"component_groups": {},
+		"events": {}
+	}
+}

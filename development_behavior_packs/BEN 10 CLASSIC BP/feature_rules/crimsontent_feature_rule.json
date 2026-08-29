@@ -1,0 +1,40 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "morr:crimsontent_feature_rule",
+			"places_feature": "generation:crimsontent_snap_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"all_of": [
+						{
+							"all_of": [
+								{
+									"test": "has_biome_tag",
+									"operator": "==",
+									"value": "crimson_forest"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"scatter_chance": 12,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					35,
+					85
+				]
+			},
+			"z": 0
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.sp": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "query.state_time>=0.05"
+						}
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "query.state_time>=0.05"
+						}
+					],
+					"on_entry": [
+						"/execute as @s at @s run particle spell:blast ^0.3 ^ ^"
+					]
+				}
+			}
+		}
+	}
+}

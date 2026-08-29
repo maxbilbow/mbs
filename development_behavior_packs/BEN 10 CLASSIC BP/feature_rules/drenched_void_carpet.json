@@ -1,0 +1,37 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "gen:drenched_void_carpet",
+			"places_feature": "gen:drenched_void_carpet"
+		},
+		"conditions": {
+			"placement_pass": "after_underground_pass",
+			"minecraft:biome_filter": {
+				"all_of": [
+					{
+						"any_of": [
+									{
+										"test": "has_biome_tag",
+										"operator": "==",
+										"value": "drenched_void"
+									}
+						]
+					}
+				]
+			}
+		},
+		"distribution": {
+			"iterations": 15,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-54,
+					50
+				]
+			},
+			"z": 0
+		}
+	}
+}

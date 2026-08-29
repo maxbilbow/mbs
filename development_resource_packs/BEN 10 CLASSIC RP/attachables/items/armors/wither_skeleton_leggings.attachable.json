@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "mutant:mutant_wither_skeleton_leggings",
+			"render_controllers": ["controller.render.js7_mutant.wither_skeleton_armor","controller.render.js7_mutant.wither_skeleton_armor_glow"],
+			"materials": {
+				"default": "entity_alphatest",
+				"glow": "js7_mutant_wither_skeleton_armor_glow",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/armors/wither_skeleton_leggings",
+				"glow": "textures/mutants/entity/armors/wither_skeleton_leggings_glow",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.mutant.wither_skeleton_armor_leggings"
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "recipes_7397b2d4"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:wind_charge",
+				"data": 0
+			},
+			{
+				"item": "item:empty_air_tank",
+				"data": 0
+			}
+		],
+		"result": {
+			"item": "item:filled_air_tank_5",
+			"count": 1
+		}
+	}
+}

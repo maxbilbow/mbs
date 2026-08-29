@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:mutant_piglin",
+			"materials": {
+				"default": "npc"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/piglin/mutant_piglin",
+				"piglinmafia": "textures/mutants/entity/piglin/mutant_piglin_mafia",
+				"piglin_technoblade": "textures/mutants/entity/piglin/mutant_piglin_technoblade",
+				"sword": "textures/mutants/entity/entities/weapons/gold_sword",
+				"crossbow": "textures/mutants/entity/entities/weapons/piglin_crossbow"
+			},
+			"geometry": {
+				"default": "geometry.mpiglin",
+				"piglinmafia": "geometry.mpiglin_mafia",
+				"piglin_technoblade": "geometry.mpiglin_technoblade",
+				"sword": "geometry.mutant_piglin_sword",
+				"crossbow": "geometry.mutant_piglin_crossbow"
+			},
+			"enable_attachables": true,
+			"particle_effects": {
+				"smash": "mutant:smash_particle",
+				"chemical_flame": "mutant:chemical_x_particle",
+				"mutant_fire": "mutant:fire"
+			},
+			"sound_effects": {
+				"smash_air": "mob.piglin_brute.death",
+				"roar": "mob.piglin_brute.death"
+			},
+			"scripts": {
+				"scale": "1.35"
+			},
+			"animations": {
+				"admire": "animation.mpiglin.admire",
+				"celebrate": "animation.mpiglin.celebrate",
+				"celebrate_special": "animation.mpiglin.celebrate_special",
+				"big_head": "animation.mzombie.big_head",
+				"melee_attack": "animation.mzombie.arm_attack",
+				"axe_attack": "animation.mvindicator.smash_attack",
+				"sword_attack": "animation.mzombie.swing_right_sword_knockback",
+				"aim": "animation.mvillager.crossbow_aim",
+				"aim_still": "animation.mvillager.crossbow_aim_still",
+				"aim_shoot": "animation.mvillager.crossbow_aim_shoot",
+				"uncharge": "animation.mvillager.crossbow_uncharge",
+				"idle": "animation.mzombie.general",
+				"idle_axe": "animation.mvindicator.bob",
+				"idle_bob_axe": "animation.mvindicator.axe_bob",
+				"idle_bob_crossbow": "animation.mvillager.holding_crossbow",
+				"walk_arms_axe": "animation.mvindicator.move_axe",
+				"look_at_target": "animation.mzombie.look_at_target",
+				"walk": "animation.mzombie.move",
+				"walk_arms": "animation.mzombie.move_arms",
+				"walk_one_arm": "animation.mzombie.walk_one_arm",
+				"walk_legs": "animation.mzombie.move_legs",
+				"smash": "animation.mzombie.smash",
+				"swimming": "animation.mzombie.swim",
+				"jump": "animation.mzombie.pounce",
+				"roaring": "animation.mzombie.roar",
+				"stunned": "animation.mzombie.knocked_out",
+				"casting": "animation.mzombie.raise",
+				"death_cancel": "animation.mutant.death_cancel",
+				"death": "animation.mzombie.death",
+				"attack_bare_hand": "animation.mzombie.attack_bare_hand"
+			},
+			"animation_controllers": [
+				{
+					"big_head": "controller.animation.mutant.baby_big_head"
+				},
+				{
+					"general": "controller.animation.mpiglin.general"
+				},
+				{
+					"on_fire": "controller.animation.mzombie.on_fire"
+				},
+				{
+					"chemical": "controller.animation.mzombie.chemical"
+				},
+				{
+					"move": "controller.animation.mpiglin.walking"
+				},
+				{
+					"move_arms": "controller.animation.mpiglin.walking_arms"
+				}
+			],
+			"render_controllers": [
+				"controller.render.mpiglin",
+				"controller.render.mutated_sword",
+				"controller.render.mutated_crossbow"
+			],
+			"spawn_egg": {
+				"texture": "mutant_spawn_eggs",
+				"texture_index": 12
+			}
+		}
+	}
+}

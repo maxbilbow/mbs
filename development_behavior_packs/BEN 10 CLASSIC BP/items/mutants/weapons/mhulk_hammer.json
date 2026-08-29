@@ -1,0 +1,69 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:hulk_hammer",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"mutant_script:hulk_hammer"
+			],
+			"minecraft:durability": {
+				"max_durability": 64,
+				"damage_chance": {
+					"min": 1,
+					"max": 10
+				}
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 14
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "stone",
+						"speed": 15
+					},
+					{
+						"block": "cobblestone",
+						"speed": 15
+					},
+					{
+						"block": "deepslate",
+						"speed": 10
+					}
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"mutant:hulk_hammer"
+						],
+						"repair_amount": 64
+					}
+				]
+			},
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 4,
+			"minecraft:icon": {
+				"textures": {
+					"default": "hulk_hammer"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "§5Hulk Hammer§r"
+			},
+			"minecraft:stacked_by_data": true,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

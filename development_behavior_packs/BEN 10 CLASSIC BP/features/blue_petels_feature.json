@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:blue_petels_feature"
+		},
+		"features": [
+			[
+				"gen:blue_petels1_feature",
+				1
+			],
+			[
+				"gen:blue_petels2_feature",
+				1
+			],
+			[
+				"gen:blue_petels3_feature",
+				1
+			],
+			[
+				"gen:blue_petels4_feature",
+				1
+			]
+		]
+	}
+}

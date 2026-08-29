@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mob:ice_turrent",
+			"materials": {
+				"default": "skeleton"
+			},
+			"textures": {
+				"default": "textures/entity/ice_turrent"
+			},
+			"geometry": {
+				"default": "geometry.turrentthing"
+			},
+			"animations": {
+				"face_player": "animation.humanoid.look_at_target.default"
+			},
+			"scripts": {
+				"scale": 1,
+				"animate": [
+					"face_player"
+				]
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#2B3B4F",
+				"overlay_color": "#11406A"
+			}
+		}
+	}
+}

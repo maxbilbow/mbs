@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "mutant:creeper_shard",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default": "creeper_shard"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "§5Creeper Shard§r"
+			},
+			"minecraft:durability": {
+				"max_durability": 35
+			},
+			"minecraft:custom_components": [
+				"mutant_script:shard_durability"
+			],
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:damage": 2,
+			"minecraft:hand_equipped": true,
+			"minecraft:foil": true,
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

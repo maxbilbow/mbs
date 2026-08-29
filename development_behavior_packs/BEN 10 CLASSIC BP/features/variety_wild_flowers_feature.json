@@ -1,0 +1,26 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:weighted_random_feature": {
+		"description": {
+			"identifier": "gen:variety_wild_flowers_feature"
+		},
+		"features": [
+			[
+				"gen:variety_wild_flowers1_feature",
+				1
+			],
+			[
+				"gen:variety_wild_flowers2_feature",
+				1
+			],
+			[
+				"gen:variety_wild_flowers3_feature",
+				1
+			],
+			[
+				"gen:variety_wild_flowers4_feature",
+				1
+			]
+		]
+	}
+}

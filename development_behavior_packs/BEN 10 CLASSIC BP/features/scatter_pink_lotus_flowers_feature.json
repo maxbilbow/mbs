@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_pink_lotus_flowers_feature"
+		},
+		"iterations": 20,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				5
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-2,
+				2
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				0,
+				5
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:pink_lotus_flowers_feature"
+	}
+}

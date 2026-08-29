@@ -1,0 +1,253 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:endersoul_block",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					{
+						"endersoul_grab_block": "query.variant==1"
+					},
+					{
+						"mount": "query.is_item_equipped"
+					},
+					{
+						"endersoul_setblock": "query.variant==0&&query.is_on_ground"
+					},
+					{
+						"endersoul_hand_throw": "query.variant==2"
+					}
+				]
+			},
+			"animations": {
+				"endersoul_grab_block": "controller.animation.endersoul_grab_block",
+				"mount": "controller.animation.endersoul_find_mount",
+				"endersoul_setblock": "controller.animation.endersoul_setblock",
+				"endersoul_hand_throw": "controller.animation.endersoul_hand_block_type"
+			}
+		},
+		"component_groups": {
+			"endersoul_hand_throw": {
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									},
+									{
+										"test": "is_riding",
+										"subject": "self",
+										"operator": "equals",
+										"value": false
+									}
+								]
+							},
+							"event": "is_on_ground"
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"find_mount": {
+				"minecraft:behavior.find_mount": {
+					"priority": 1,
+					"within_radius": 16,
+					"start_delay": 0,
+					"mount_distance": 16
+				}
+			},
+			"start_grabbing_block": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1.75,
+					"time_down_event": {
+						"event": "gravity"
+					}
+				},
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": false
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"gravity": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "on_ground",
+										"subject": "self",
+										"operator": "equals",
+										"value": true
+									},
+									{
+										"test": "is_riding",
+										"subject": "self",
+										"operator": "equals",
+										"value": false
+									}
+								]
+							},
+							"event": "is_on_ground"
+						}
+					]
+				},
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"variant_0": {
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"left_block": {
+				"minecraft:type_family": {
+					"family": [
+						"endersoul_block",
+						"endersoul_block_left"
+					]
+				},
+				"minecraft:scale": {
+					"value": 1
+				}
+			},
+			"right_block": {
+				"minecraft:type_family": {
+					"family": [
+						"endersoul_block",
+						"endersoul_block_right"
+					]
+				},
+				"minecraft:scale": {
+					"value": 1
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_walk": true,
+				"can_break_doors": true
+			},
+			"minecraft:movement": {
+				"value": 1
+			},
+			"minecraft:type_family": {
+				"family": [
+					"endersoul_block"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"endersoul_hand_throw": {
+				"add": {
+					"component_groups": [
+						"endersoul_hand_throw"
+					]
+				}
+			},
+			"is_on_ground": {
+				"add": {
+					"component_groups": [
+						"variant_0"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"gravity"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"find_mount": {
+				"add": {
+					"component_groups": [
+						"find_mount"
+					]
+				}
+			},
+			"gravity": {
+				"add": {
+					"component_groups": [
+						"gravity"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"start_grabbing_block"
+					]
+				}
+			},
+			"left_block": {
+				"add": {
+					"component_groups": [
+						"left_block",
+						"start_grabbing_block"
+					]
+				}
+			},
+			"right_block": {
+				"add": {
+					"component_groups": [
+						"right_block",
+						"start_grabbing_block"
+					]
+				}
+			}
+		}
+	}
+}

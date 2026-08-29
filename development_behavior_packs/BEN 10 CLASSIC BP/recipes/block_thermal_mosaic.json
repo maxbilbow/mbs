@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "thermal_mosaic_d83dd880"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"A",
+			"A"
+		],
+		"key": {
+			"A": {
+				"item": "block:thermal_plank_slab",
+				"data": 0
+			}
+		},
+		"result": {
+			"item": "block:thermal_mosaic",
+			"count": 1
+		}
+	}
+}

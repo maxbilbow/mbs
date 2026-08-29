@@ -1,0 +1,115 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.icy_spider_armor",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [
+					0,
+					1,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body0",
+					"pivot": [
+						0,
+						9,
+						0
+					]
+				},
+				{
+					"name": "body1",
+					"parent": "body0",
+					"pivot": [
+						0,
+						9,
+						9
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								5,
+								3
+							],
+							"size": [
+								10,
+								8,
+								12
+							],
+							"inflate": 0.8,
+							"uv": {
+								"north": {
+									"uv": [
+										54,
+										24
+									],
+									"uv_size": [
+										10,
+										8
+									]
+								},
+								"east": {
+									"uv": [
+										52,
+										24
+									],
+									"uv_size": [
+										12,
+										8
+									]
+								},
+								"south": {
+									"uv": [
+										54,
+										24
+									],
+									"uv_size": [
+										10,
+										8
+									]
+								},
+								"west": {
+									"uv": [
+										52,
+										24
+									],
+									"uv_size": [
+										12,
+										8
+									]
+								},
+								"up": {
+									"uv": [
+										54,
+										20
+									],
+									"uv_size": [
+										10,
+										12
+									]
+								},
+								"down": {
+									"uv": [
+										54,
+										32
+									],
+									"uv_size": [
+										10,
+										-12
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

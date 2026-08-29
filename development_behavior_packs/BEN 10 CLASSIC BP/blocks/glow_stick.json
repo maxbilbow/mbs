@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:glow_stick"
+		},
+		"components": {
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": false,
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "empty",
+					"render_method": "blend_to_opaque"
+				}
+			},
+			"minecraft:custom_components": [
+				"test:light_block"
+			],
+			"minecraft:tick": {
+				"interval_range": [
+					20,
+					20
+				]
+			},
+			"minecraft:light_emission": 8,
+			"minecraft:destructible_by_mining": false,
+			"minecraft:destructible_by_explosion": false
+		}
+	}
+}

@@ -1,0 +1,227 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.aquatic_creeper",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						9,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [
+						0,
+						9,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								4,
+								-4
+							],
+							"size": [
+								8,
+								8,
+								8
+							],
+							"uv": [
+								0,
+								39
+							]
+						},
+						{
+							"origin": [
+								-6,
+								3,
+								-6
+							],
+							"size": [
+								12,
+								12,
+								12
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [
+						0,
+						-4,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-2
+							],
+							"size": [
+								6,
+								4,
+								4
+							],
+							"uv": [
+								32,
+								39
+							]
+						}
+					]
+				},
+				{
+					"name": "fin",
+					"parent": "root",
+					"pivot": [
+						2.5,
+						0,
+						-2
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								0,
+								-15
+							],
+							"size": [
+								5,
+								0,
+								15
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "fin2",
+					"parent": "root",
+					"pivot": [
+						-2.5,
+						0,
+						-2
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-15
+							],
+							"size": [
+								5,
+								0,
+								15
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "fin3",
+					"parent": "root",
+					"pivot": [
+						-2.5,
+						0,
+						3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								0
+							],
+							"size": [
+								5,
+								0,
+								15
+							],
+							"pivot": [
+								-2.5,
+								0,
+								7.5
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "fin4",
+					"parent": "root",
+					"pivot": [
+						2.5,
+						0,
+						2
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								0,
+								0
+							],
+							"size": [
+								5,
+								0,
+								15
+							],
+							"pivot": [
+								2.5,
+								0,
+								7.5
+							],
+							"rotation": [
+								0,
+								180,
+								0
+							],
+							"uv": [
+								0,
+								24
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

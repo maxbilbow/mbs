@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+		"description": {
+			"identifier": "gen:scatter_glowing_kelp_feature"
+		},
+		"iterations": 160,
+		"x": {
+			"distribution": "triangle",
+			"extent": [
+				-24,
+				24
+			]
+		},
+		"y": {
+			"distribution": "triangle",
+			"extent": [
+				-1,
+				1
+			]
+		},
+		"z": {
+			"distribution": "triangle",
+			"extent": [
+				-24,
+				24
+			]
+		},
+		"coordinate_eval_order": "zxy",
+		"places_feature": "gen:glowing_kelp_feature"
+	}
+}

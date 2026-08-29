@@ -1,0 +1,69 @@
+{
+	"format_version": "1.20.30",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "item:bubble_barrier",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"animations": {
+				"walk": "controller.animation.bubblebarrier"
+			},
+			"scripts": {
+				"animate": [
+					"walk"
+				]
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					10,
+					10
+				],
+				"time_down_event": {
+					"event": "despawn"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:scale": {
+				"value": 3.5
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

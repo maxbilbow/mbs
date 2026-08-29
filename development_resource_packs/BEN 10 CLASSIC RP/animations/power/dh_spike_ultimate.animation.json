@@ -1,0 +1,81 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dh_spike.spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.16,
+			"anim_time_update": "query.anim_time+query.delta_time",
+			"bones": {
+				"spk1": {
+					"position": {
+						"0.0": [
+							0,
+							-3,
+							0
+						],
+						"0.16": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.08": [
+							0.5273,
+							0.5909,
+							0.4182
+						],
+						"0.16": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			}
+		},
+		"animation.dh_spike.despawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.32,
+			"anim_time_update": "query.anim_time+query.delta_time",
+			"bones": {
+				"spk1": {
+					"position": {
+						"0.16": [
+							0,
+							0,
+							0
+						],
+						"0.32": [
+							0,
+							-3,
+							0
+						]
+					},
+					"scale": {
+						"0.16": [
+							1,
+							1,
+							1
+						],
+						"0.24": [
+							0.5273,
+							0.5909,
+							0.4182
+						],
+						"0.32": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

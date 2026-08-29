@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mutant:trident",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/mutants/entity/entities/weapons/mutated_trident"
+			},
+			"geometry": {
+				"default": "geometry.mutated_trident"
+			},
+			"animations": {
+				"move": "animation.mweapons.move"
+			},
+			"scripts": {
+				"scale": "1.25",
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			]
+		}
+	}
+}

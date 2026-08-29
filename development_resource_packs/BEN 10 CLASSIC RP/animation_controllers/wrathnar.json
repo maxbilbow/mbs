@@ -1,0 +1,70 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.wrathnar": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.wrathnar.look_at_target": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target"
+					]
+				}
+			}
+		},
+		"controller.animation.wrathnar.walk": {
+			"initial_state": "walking",
+			"states": {
+				"walking": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idle": "query.ground_speed==0"
+						},
+						{
+							"attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walking": "query.ground_speed>0"
+						},
+						{
+							"attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idle": "variable.attack_time<=0&&query.all_animations_finished"
+						},
+						{
+							"walking": "query.ground_speed>0&&variable.attack_time<=0&&query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		}
+	}
+}

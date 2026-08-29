@@ -1,0 +1,168 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "block:light_blue_torch",
+			"menu_category": {
+				"group": "minecraft:itemGroup.name.items",
+				"category": "items"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							3,
+							3,
+							-2.5
+						],
+						"size": [
+							5,
+							10,
+							5
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							2.5,
+							3,
+							-2.5
+						],
+						"size": [
+							5.5,
+							10,
+							5
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:selection_box": {
+						"origin": [
+							2.5,
+							3,
+							-2.5
+						],
+						"size": [
+							5.5,
+							10,
+							5
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							2.5,
+							3,
+							-2.5
+						],
+						"size": [
+							5.5,
+							10,
+							5
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:item_visual": {
+				"geometry": "geometry.animated_item",
+				"material_instances": {
+					"*": {
+						"texture": "block_light_blue_torch",
+						"render_method": "alpha_test",
+						"ambient_occlusion": false,
+						"face_dimming": false
+					}
+				}
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.torch",
+				"bone_visibility": {
+					"torch": "q.block_state('minecraft:block_face') == 'up' || q.block_state('minecraft:block_face') == 'down'",
+					"torch_wall": "q.block_state('minecraft:block_face') == 'north' || q.block_state('minecraft:block_face') == 'south' || q.block_state('minecraft:block_face') == 'east' || q.block_state('minecraft:block_face') == 'west'"
+				}
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-1.75,
+					0,
+					-1.75
+				],
+				"size": [
+					3.5,
+					10,
+					3.5
+				]
+			},
+			"minecraft:collision_box": false,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 0
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": false,
+						"on_liquid_touches": "popped"
+					}
+				]
+			},
+			"minecraft:light_emission": 14,
+			"minecraft:light_dampening": 0,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_light_blue_torch",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		}
+	}
+}

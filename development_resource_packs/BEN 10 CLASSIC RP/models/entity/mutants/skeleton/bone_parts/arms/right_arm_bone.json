@@ -1,0 +1,263 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mskeleton_right_arm_bone",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					2,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "arm",
+					"parent": "root",
+					"pivot": [
+						0,
+						2,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						90
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								-5,
+								-2
+							],
+							"size": [
+								4,
+								14,
+								4
+							],
+							"uv": [
+								0,
+								28
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.mwither_right_arm_bone",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					2,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "arm",
+					"parent": "root",
+					"pivot": [
+						0,
+						2,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						90
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								-5,
+								-2
+							],
+							"size": [
+								4,
+								14,
+								4
+							],
+							"uv": [
+								0,
+								28
+							]
+						},
+						{
+							"origin": [
+								-2,
+								1,
+								-2
+							],
+							"size": [
+								4,
+								4,
+								4
+							],
+							"inflate": 0.5,
+							"uv": [
+								34,
+								64
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.mstray_right_arm_bone",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					2,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "arm",
+					"parent": "root",
+					"pivot": [
+						0,
+						2,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						90
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								-5,
+								-2
+							],
+							"size": [
+								4,
+								14,
+								4
+							],
+							"uv": [
+								0,
+								28
+							]
+						},
+						{
+							"origin": [
+								-2,
+								-5,
+								-2
+							],
+							"size": [
+								4,
+								14,
+								4
+							],
+							"inflate": 0.5,
+							"uv": [
+								32,
+								46
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.mbogged_right_arm_bone",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [
+					0,
+					2,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "arm",
+					"parent": "root",
+					"pivot": [
+						0,
+						2,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						90
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								-5,
+								-2
+							],
+							"size": [
+								4,
+								14,
+								4
+							],
+							"uv": [
+								0,
+								28
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

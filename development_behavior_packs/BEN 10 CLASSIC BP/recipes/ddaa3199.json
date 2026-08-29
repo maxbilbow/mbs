@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "recipes_3cccb9c5"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" AA",
+			" A ",
+			"B  "
+		],
+		"key": {
+			"A": {
+				"item": "minecraft:oak_planks",
+				"data": 0
+			},
+			"B": {
+				"item": "minecraft:stick",
+				"data": 0
+			}
+		},
+		"result": [
+			{
+				"item": "sword:wooden_cleaver",
+				"count": 1
+			}
+		]
+	}
+}

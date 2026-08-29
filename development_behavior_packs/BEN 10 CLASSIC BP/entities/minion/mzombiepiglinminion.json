@@ -1,0 +1,414 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mutant:zombiepiglin_minion",
+			"runtime_identifier": "minecraft:zombie_pigman",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"playing_dead": {
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 4,
+					"ignore_visibility": true,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate"
+							},
+							"max_dist": 6,
+							"walk_speed_multiplier": 0.9,
+							"sprint_speed_multiplier": 0.9
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 0.75,
+					"time_down_event": {
+						"event": "on_calm_to_normal"
+					}
+				}
+			},
+			"summoned": {
+				"minecraft:attack_cooldown": {
+					"attack_cooldown_time": [
+						2.5,
+						2.5
+					],
+					"attack_cooldown_complete_event": {
+						"event": "minion_idle",
+						"target": "self"
+					}
+				},
+				"minecraft:damage_sensor": {
+					"deals_damage": false
+				},
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"idle": {
+				"minecraft:behavior.follow_target_captain": {
+					"priority": 5,
+					"speed_multiplier": 0.8,
+					"within_radius": 64,
+					"follow_distance": 5
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 7,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.look_at_entity": {
+					"priority": 9,
+					"look_distance": 6,
+					"probability": 0.02,
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "mob"
+					}
+				},
+				"minecraft:behavior.random_look_around": {
+					"priority": 9
+				},
+				"minecraft:skin_id": {
+					"value": 0
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 3,
+					"speed_multiplier": 0.9,
+					"track_target": true
+				},
+				"minecraft:damage_sensor": {
+					"deals_damage": true
+				}
+			},
+			"death": {
+				"minecraft:health": {
+					"value": 0,
+					"max": 0
+				},
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "wither",
+							"amplifier": 200,
+							"visible": false,
+							"ambient": false,
+							"duration": 99999
+						},
+						{
+							"effect": "fatal_poison",
+							"amplifier": 200,
+							"visible": false,
+							"ambient": false,
+							"duration": 99999
+						}
+					]
+				}
+			},
+			"minecraft:pig_zombie_attack": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						15,
+						16
+					],
+					"time_down_event": {
+						"event": "death"
+					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"within_radius": 12,
+					"reselect_targets": true,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"any_of": [
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "snowgolem"
+											},
+											{
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											}
+										]
+									}
+								]
+							},
+							"max_dist": 20
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "baby_turtle"
+									},
+									{
+										"test": "in_water",
+										"subject": "other",
+										"operator": "!=",
+										"value": true
+									}
+								]
+							},
+							"max_dist": 20
+						}
+					],
+					"must_see": true
+				}
+			},
+			"minecraft:pig_zombie_angry": {
+				"minecraft:angry": {
+					"duration": 25,
+					"broadcast_anger": true,
+					"broadcast_range": 20,
+					"calm_event": {
+						"event": "minecraft:on_calm",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:pig_zombie_calm": {
+				"minecraft:on_target_acquired": {
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+			},
+			"minecraft:size_baby": {
+				"minecraft:scale": {
+					"value": 0.5
+				}
+			},
+			"minecraft:mzombie_adult": {
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:movement": {
+					"value": {
+						"range_min": 0.2925,
+						"range_max": 0.3175
+					}
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"minecraft:mzombie_baby": {
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:is_baby": {},
+				"minecraft:movement": {
+					"value": {
+						"range_min": 0.3325,
+						"range_max": 0.3575
+					}
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": -1,
+				"breathesWater": true
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:nameable": {},
+			"minecraft:follow_range": {
+				"value": 56,
+				"max": 56
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_lava": true,
+				"avoid_water": true,
+				"can_sink": false,
+				"can_walk_in_lava": true
+			},
+			"minecraft:lava_movement": {
+				"value": 0.24
+			},
+			"minecraft:behavior.rise_to_liquid_level": {
+				"priority": 0,
+				"liquid_y_offset": 0.25,
+				"rise_delta": 0.01,
+				"sink_delta": 0.01
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"zombie_pigman",
+					"undead",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/zombie_pigman_gear.json"
+			},
+			"minecraft:health": {
+				"value": 25,
+				"max": 25
+			},
+			"minecraft:attack": {
+				"damage": 5
+			},
+			"minecraft:behavior.break_door": {
+				"priority": 1
+			},
+			"minecraft:behavior.move_towards_restriction": {
+				"priority": 5
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"on_calm_play_dead": {
+				"add": {
+					"component_groups": [
+						"playing_dead",
+						"minecraft:mzombie_calm"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:mzombie_angry"
+					]
+				}
+			},
+			"on_calm_to_normal": {
+				"remove": {
+					"component_groups": [
+						"playing_dead"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:mzombie_adult",
+								"idle"
+							]
+						}
+					},
+					{
+						"weight": 7,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:mzombie_baby",
+								"idle"
+							]
+						}
+					}
+				]
+			},
+			"death": {
+				"add": {
+					"component_groups": [
+						"death"
+					]
+				}
+			},
+			"from_mzombiepig": {
+				"randomize": [
+					{
+						"weight": 95,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:pig_zombie_attack",
+								"minecraft:mzombie_adult",
+								"summoned"
+							]
+						}
+					},
+					{
+						"weight": 25,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:pig_zombie_attack",
+								"minecraft:mzombie_baby",
+								"summoned"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:on_calm": {
+				"remove": {
+					"component_groups": [
+						"minecraft:pig_zombie_angry",
+						"minecraft:pig_zombie_attack"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:pig_zombie_calm"
+					]
+				}
+			},
+			"minecraft:become_angry": {
+				"remove": {
+					"component_groups": [
+						"minecraft:pig_zombie_calm"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:pig_zombie_angry"
+					]
+				}
+			},
+			"minion_idle": {
+				"add": {
+					"component_groups": [
+						"idle"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"summoned"
+					]
+				}
+			}
+		}
+	}
+}
