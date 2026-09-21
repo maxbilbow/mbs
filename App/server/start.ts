@@ -62,22 +62,32 @@ function useCors(app: express.Express) {
 }
 
 function copyBuild() {
-    const outputPath = process.env.caddy_output_path;
+    const outputPath = process.env.CADDY_OUTPUT_PATH;
     if (!outputPath) {
         logger.warn("CADDY_OUTPUT_PATH not set, skipping build copy");
         return;
     }
-    spawnSync("esbuild", [
+    runCommand("esbuild", [
         "./App/client/main.tsx",
         "./App/client/auth.ts",
         "--bundle",
         "--outdir=./App/www/js",
         "--loader:.css=global-css",
-    ], {
-        stdio: "inherit",
-    });
+    ]);
     logger.debug(`Copying build to ${outputPath}`);
-    spawnSync("rsync", ["--delete", "-r", "./App/www/", outputPath], {
+    runCommand("rsync", ["--delete", "-r", "./App/www/", outputPath]);
+    logger.info(`Build copied to ${outputPath}`);
+}
+
+function runCommand(command: string, args: string[]) {
+    const result = spawnSync(command, args, {
         stdio: "inherit",
     });
+
+    if (result.error) {
+        throw new Error(`Failed to start ${command}`, { cause: result.error });
+    }
+    if (result.status !== 0) {
+        throw new Error(`${command} exited with status ${result.status}`);
+    }
 }
