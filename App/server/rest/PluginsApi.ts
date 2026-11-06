@@ -1,47 +1,55 @@
 import type { Express } from "express";
-import { activatePlugin, deactivatePlugin, findDevelompentPlugins } from "../data/Plugins.ts";
+import { createPluginStore } from "../data/Plugins.ts";
 
-export function setUpPluginsApi(app: Express) {
+export function setUpPluginsApi(app: Express, store = createPluginStore()) {
+  app.get("/plugins", (_req, res) => {
+    res.json(store.findDevelompentPlugins());
+  });
 
-    app.get("/plugins", (req, res) => {
-        const plugins = findDevelompentPlugins();
-        res.json(plugins);
+  function findVersion(uuid: string, version: string, type?: string) {
+    if (!/^\d+\.\d+\.\d+$/.test(version)) return;
+    return store
+      .findDevelompentPlugins()
+      .filter((plugin) => !type || plugin.type === type)
+      .flatMap((plugin) => plugin.versions)
+      .find((pack) => pack.uuid === uuid && pack.version.join(".") === version);
+  }
+
+  for (const action of ["activate", "deactivate"] as const) {
+    app.post(`/plugins/${action}/:type/:uuid/:version`, (req, res) => {
+      const { type, uuid, version } = req.params;
+      if (
+        (type !== "behaviour" && type !== "resource") ||
+        !/^\d+\.\d+\.\d+$/.test(version)
+      ) {
+        res.status(400).json({ error: "Invalid pack type or version" });
+        return;
+      }
+      const pack = findVersion(uuid, version, type);
+      if (!pack) {
+        res.status(404).json({ error: "Plugin version not found" });
+        return;
+      }
+      if (action === "activate")
+        store.activatePlugin(pack.type, uuid, pack.version);
+      else store.deactivatePlugin(pack.type, uuid);
+      res.json({ success: true });
     });
+  }
 
-    app.post("/plugins/activate/:type/:uuid/:version", (req, res) => {
-        const { type, uuid, version } = req.params;
-        activatePlugin(type as "behaviour" | "resource", uuid, version.split('.').map(Number) as unknown as readonly [number, number, number]);
-        res.json({ success: true });
-    });
-
-    app.post("/plugins/deactivate/:type/:uuid/:version", (req, res) => {
-        const { type, uuid, version } = req.params;
-        deactivatePlugin(type as "behaviour" | "resource", uuid);
-        res.json({ success: true });
-    });
-
-    app.post("/plugins/:uuid/:version/toggle", (req, res) => {
-        const { uuid, version } = req.params;
-        const versionTuple = version.split('.').map(Number) as unknown as readonly [number, number, number];
-        const plugins = findDevelompentPlugins();
-        const plugin = Object.values(plugins).find((plugin) => {
-            return plugin.versions.some((v) => v.uuid === uuid && v.version.every((num, index) => num === versionTuple[index]));
-        });
-        if (!plugin) {
-            res.status(404).json({ error: "Plugin not found" });
-            return;
-        }
-        const isActive = plugin.versions.some((v) => v.uuid === uuid && v.version.every((num, index) => num === versionTuple[index]) && v.active)
-            || plugin.versions.some((v) => v.uuid === uuid && v.version.every((num, index) => num === versionTuple[index]) && v.active);
-
-        if (isActive) {
-            deactivatePlugin(plugin.type, uuid);
-        }
-        else {
-            activatePlugin(plugin.type, uuid, versionTuple);
-        }
-        console.log(`Plugin ${plugin.name} version ${version} is now ${isActive ? "deactivated" : "activated"}`);
-        res.json({ success: true, active: !isActive });
-    });
-
+  app.post("/plugins/:uuid/:version/toggle", (req, res) => {
+    const { uuid, version } = req.params;
+    if (!/^\d+\.\d+\.\d+$/.test(version)) {
+      res.status(400).json({ error: "Invalid pack version" });
+      return;
+    }
+    const pack = findVersion(uuid, version);
+    if (!pack) {
+      res.status(404).json({ error: "Plugin version not found" });
+      return;
+    }
+    if (pack.active) store.deactivatePlugin(pack.type, uuid);
+    else store.activatePlugin(pack.type, uuid, pack.version);
+    res.json({ success: true, active: !pack.active });
+  });
 }

@@ -1,105 +1,177 @@
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { PackVersionInfo, PluginInfo } from "../../model/Plugins.ts";
+import { BEDROCK_ROOT } from "../../../scripts/paths.ts";
+import { Logger } from "tslog";
 
-const BEHAVIOUR_PACKS_DIR = resolve(import.meta.dirname, "../../../development_behavior_packs");
-const RESOURCE_PACKS_DIR = resolve(import.meta.dirname, "../../../development_resource_packs");
-const WORLD_DATA_DIR = resolve(import.meta.dirname, "../../../worlds/Bedrock level");
-
-
-export function activatePlugin(type: "behaviour" | "resource", uuid: string, version: readonly [number, number, number]) {
-    if (isActive({ uuid, version }, type)) {
-        return;
-    }
-    const worldData = getWorldData(type);
-    worldData.push({ pack_id: uuid, version });
-    saveWorldData(type, worldData);
+export function getWorldName(runtimeRoot: string) {
+  const properties = readFileSync(
+    join(runtimeRoot, "server.properties"),
+    "utf8",
+  );
+  const name = /^level-name=(.*)$/m.exec(properties)?.[1].trim();
+  if (!name || name === "." || name === ".." || /[/\\]/.test(name)) {
+    throw new Error("server.properties must contain a valid level-name.");
+  }
+  return name;
 }
 
-export function deactivatePlugin(type: "behaviour" | "resource", uuid: string) {
+export function createPluginStore(
+  runtimeRoot = BEDROCK_ROOT,
+  worldName = getWorldName(runtimeRoot),
+) {
+  const BEHAVIOUR_PACKS_DIR = resolve(
+    runtimeRoot,
+    "development_behavior_packs",
+  );
+  const RESOURCE_PACKS_DIR = resolve(runtimeRoot, "development_resource_packs");
+  const WORLD_DATA_DIR = resolve(runtimeRoot, "worlds", worldName);
+  const logger = new Logger({ name: "Plugins" });
+
+  function activatePlugin(
+    type: "behaviour" | "resource",
+    uuid: string,
+    version: readonly [number, number, number],
+  ) {
+    if (isActive({ uuid, version }, type)) {
+      return;
+    }
+    const worldData = getWorldData(type).filter(
+      (pack) => pack.pack_id !== uuid,
+    );
+    worldData.push({ pack_id: uuid, version });
+    saveWorldData(type, worldData);
+  }
+
+  function deactivatePlugin(type: "behaviour" | "resource", uuid: string) {
     const worldData = getWorldData(type);
     const newWorldData = worldData.filter((pack) => pack.pack_id !== uuid);
     saveWorldData(type, newWorldData);
-}
+  }
 
-export function findDevelompentPlugins() {
-    const behaviourPacks = readdirSync(BEHAVIOUR_PACKS_DIR, { withFileTypes: true }).filter((dirent) => dirent.isDirectory()).map(({ name }) => findPluginInfo(name, "behaviour"));
+  function findDevelompentPlugins() {
+    const behaviourPacks = readdirSync(BEHAVIOUR_PACKS_DIR, {
+      withFileTypes: true,
+    })
+      .filter((dirent) => dirent.isDirectory())
+      .map(({ name }) => findPluginInfo(name, "behaviour"));
 
-    const resourcePacks = readdirSync(RESOURCE_PACKS_DIR, { withFileTypes: true }).filter((dirent) => dirent.isDirectory()).map(({ name }) => findPluginInfo(name, "resource"));
+    const resourcePacks = readdirSync(RESOURCE_PACKS_DIR, {
+      withFileTypes: true,
+    })
+      .filter((dirent) => dirent.isDirectory())
+      .map(({ name }) => findPluginInfo(name, "resource"));
 
-    const groupedPluginVersions = Object.groupBy([...behaviourPacks, ...resourcePacks], (pack) => pack.uuid);
+    const groupedPluginVersions = Object.groupBy(
+      [...behaviourPacks, ...resourcePacks],
+      (pack) => pack.uuid,
+    );
     // Group by uuid
     const groupedPlugins: { [uuid: string]: PluginInfo } = {};
 
     for (const [uuid, versions] of Object.entries(groupedPluginVersions)) {
-        if (!versions) continue;
-        if (!groupedPlugins[uuid]) {
-            const [{ name, description, type }] = versions;
-            groupedPlugins[uuid] = {
-                uuid,
-                name,
-                description,
-                type,
-                versions,
-            }
-        }
-
+      if (!versions) continue;
+      if (!groupedPlugins[uuid]) {
+        const [{ name, description, type }] = versions;
+        groupedPlugins[uuid] = {
+          uuid,
+          name,
+          description,
+          type,
+          versions,
+        };
+      }
     }
-    return Object.values(groupedPlugins).sort((a, b) => a.name.localeCompare(b.name));
-}
+    return Object.values(groupedPlugins).sort((a, b) =>
+      a.name.localeCompare(b.name),
+    );
+  }
 
-function findPluginInfo(name: string, type: "behaviour" | "resource"): PackVersionInfo {
+  function findPluginInfo(
+    name: string,
+    type: "behaviour" | "resource",
+  ): PackVersionInfo {
     const dir = type === "behaviour" ? BEHAVIOUR_PACKS_DIR : RESOURCE_PACKS_DIR;
     const jsonContent = readFileSync(join(dir, name, "manifest.json"), "utf-8");
+    let pack: Omit<PackVersionInfo, "active">;
     try {
-        const { header } = JSON.parse(jsonContent.trim());
-        return {
-            uuid: header.uuid,
-            name: header.name === "pack.name" ? name : header.name,
-            folder: name,
-            version: header.version,
-            description: header.description,
-            active: isActive(header, type),
-            type,
-        } as const;
+      const { header } = JSON.parse(jsonContent.trim());
+      pack = {
+        uuid: header.uuid,
+        name: header.name === "pack.name" ? name : header.name,
+        folder: name,
+        version: header.version,
+        description: header.description,
+        type,
+      } as const;
     } catch (e) {
-        console.error(`Failed to read manifest for ${type} pack "${name}":`, e, jsonContent);
-        return {
-            uuid: `invalid-${type}-${name}-${Date.now()}`,
-            name: `${name} (Invalid Manifest)`,
-            folder: name,
-            version: [0, 0, 0] as const,
-            description: "Failed to read manifest",
-            active: false,
-            type,
-        } as const;
+      console.error(
+        `Failed to read manifest for ${type} pack "${name}":`,
+        e,
+        jsonContent,
+      );
+      return {
+        uuid: `invalid-${type}-${name}-${Date.now()}`,
+        name: `${name} (Invalid Manifest)`,
+        folder: name,
+        version: [0, 0, 0] as const,
+        description: "Failed to read manifest",
+        active: false,
+        type,
+      } as const;
     }
-}
+    return { ...pack, active: isActive(pack, type) };
+  }
 
-function isActive({ uuid, version }: { uuid: string, version: readonly [number, number, number] }, type: "behaviour" | "resource") {
+  function isActive(
+    {
+      uuid,
+      version,
+    }: { uuid: string; version: readonly [number, number, number] },
+    type: "behaviour" | "resource",
+  ) {
     const worldData = getWorldData(type);
-    return worldData.some((pack) => pack.pack_id === uuid && pack.version.join('.') === version.join('.'));
-}
+    return worldData.some(
+      (pack) =>
+        pack.pack_id === uuid && pack.version.join(".") === version.join("."),
+    );
+  }
 
-function getWorldData(type: "behaviour" | "resource") {
-    const filename = type === "behaviour" ? "world_behaviour_packs.json" : "world_resource_packs.json";
+  function getWorldData(type: "behaviour" | "resource") {
+    const filename =
+      type === "behaviour"
+        ? "world_behaviour_packs.json"
+        : "world_resource_packs.json";
     const worldFile = join(WORLD_DATA_DIR, filename);
-    return JSON.parse(readFileSync(worldFile, "utf-8")) as { pack_id: string, version: readonly [number, number, number] }[];
-}
+    if (!existsSync(WORLD_DATA_DIR))
+      throw new Error(`World directory not found: ${WORLD_DATA_DIR}`);
+    // Bedrock does not create pack-list files until packs have been assigned.
+    if (!existsSync(worldFile)) {
+      logger.debug(
+        `No ${type} pack list for ${WORLD_DATA_DIR}; no packs assigned.`,
+      );
+      return [];
+    }
+    return JSON.parse(readFileSync(worldFile, "utf-8")) as {
+      pack_id: string;
+      version: readonly [number, number, number];
+    }[];
+  }
 
-function saveWorldData(type: "behaviour" | "resource", data: { pack_id: string, version: readonly [number, number, number] }[]) {
-    const filename = type === "behaviour" ? "world_behaviour_packs.json" : "world_resource_packs.json";
+  function saveWorldData(
+    type: "behaviour" | "resource",
+    data: { pack_id: string; version: readonly [number, number, number] }[],
+  ) {
+    const filename =
+      type === "behaviour"
+        ? "world_behaviour_packs.json"
+        : "world_resource_packs.json";
     const worldFile = join(WORLD_DATA_DIR, filename);
     writeFileSync(worldFile, JSON.stringify(data, null, 2));
+  }
+  return { activatePlugin, deactivatePlugin, findDevelompentPlugins };
 }
 
-if (import.meta.main) {
-    const activePlugins = findDevelompentPlugins()
-    // .flatMap((plugin) => [...plugin.behaviourPack?.versions.filter((v) => v.active) ?? [], ...plugin.resourcePack?.versions.filter((v) => v.active) ?? []]);
-
-    const groupedPlugins = Object.groupBy(activePlugins, (plugin) => plugin.name);
-    console.log("Active Behaviour Packs:");
-    for (const [name, plugin] of Object.entries(groupedPlugins)) {
-        console.log(`- ${name} (v${plugin?.map((p) => p.versions?.map((v) => v.version.join('.'))).join(', ')})`);
-    }
+export function findDevelompentPlugins() {
+  return createPluginStore().findDevelompentPlugins();
 }

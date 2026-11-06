@@ -7,7 +7,7 @@ import {
 
 system.beforeEvents.startup.subscribe((init) => {
   const helloCommand = {
-    name: "max:hello",          // MUST be namespaced: namespace:name
+    name: "max:hello",
     description: "Confirms the plugin has loaded",
     permissionLevel: CommandPermissionLevel.Any,
   };
