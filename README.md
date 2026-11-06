@@ -159,10 +159,11 @@ it in your Copilot client when needed.
 
 ## Known issues and limitations
 
-- **Current Minecraft connectivity:** the installed `1.26.62` server logs that
-  `transport=raknet` prevents players from connecting and requests
-  `transport=nethernet`. The migration preserved the existing setting; resolve
-  the transport/client compatibility before expecting players to connect.
+- **Minecraft transport:** the installed `1.26.62` server requires
+  `transport=nethernet`, now configured and verified with a client connection.
+  Connect on port **19132**; NetherNet uses `server-port` for TCP signaling and
+  ignores the legacy IPv6 `server-portv6=19133`. Public access also needs
+  reachable negotiated UDP gameplay traffic.
 - **World/pack mismatch:** the API previously edited `Bedrock level`, but
   `server.properties` selects `Island Survival`. This is fixed in the API.
   Existing packs assigned to the old world were not automatically activated in
