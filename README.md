@@ -99,6 +99,19 @@ If `CADDY_OUTPUT_PATH` is set, startup first builds the UI and runs
 `rsync --delete` to that destination. Use a dedicated static-output directory:
 files there that are absent from `App/www/` will be deleted.
 
+The home-server deployment in `../repos/home-server/` protects
+`https://mbs.maxbilbow.com` with Caddy forward authentication. Authentik has an
+`mbs` application, a single-application forward-auth provider for that hostname,
+and an enabled **MBS administrators only** policy. The provider is assigned to
+the embedded outpost, whose Authentik URL is `https://auth.maxbilbow.com`.
+These objects live in Authentik's PostgreSQL volume, not in the Compose file.
+
+Caddy must forward `/outpost.goauthentik.io/*` to Authentik before its auth check;
+all other UI/API requests require authentication. The API on port 8081 itself
+remains unauthenticated: firewall access to that port so external clients cannot
+bypass Caddy. `npm start` is still manually managed and does not automatically
+resume after a host reboot.
+
 `App/server/app.ts` creates the Express app independently of the listening
 process and accepts injected pack/process services for tests.
 `App/server/data/Plugins.ts` discovers manifests, groups versions by UUID, and
