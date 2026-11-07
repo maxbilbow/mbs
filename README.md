@@ -318,6 +318,56 @@ string array, combining distinct authors across installed versions. Add this
 metadata to your own source manifests to make your packs recognizable. Packs
 without author metadata show **Author not specified**.
 
+### Fart
+
+`plugins/fart/` contains **Fart** and **Fart Resources**. The behavior pack adds
+an edible **Tin of Beans** (`mbs:tin_of_beans`), crafted at a crafting table from
+one iron nugget and two beetroots. Eating it, even at full hunger, enables
+damage-triggered farts for 60 seconds; another tin resets the timer. Players
+with Poison or Hunger also qualify. Vanilla rotten flesh causes Hunger, not
+Poison, so its food effect is included. Healthy, bean-free players do not fart.
+
+Positive, nonfatal damage emits vanilla smoke behind the player's waist and
+plays an original positional fart sound, audible to nearby players:
+
+| Damage (health points; 2 = one heart) | Sound/cloud duration | Volume | Poison duration |
+| ------------------------------------- | -------------------- | ------ | --------------- |
+| Up to 2                               | 0.4 seconds          | 0.4    | 2 seconds       |
+| Up to 4                               | 0.8 seconds          | 0.7    | 3 seconds       |
+| Up to 8                               | 1.6 seconds          | 1.0    | 5 seconds       |
+| Over 8                                | 3 seconds            | 1.5    | 7 seconds       |
+
+Clouds follow the player's position, facing, and dimension every four ticks.
+Living entities within three blocks of the emission point receive Poison I,
+including other players and pets, but never the emitting player. Existing poison
+is not replaced or extended; immune mobs follow vanilla poison rules. Poison
+does not kill on its own. Each entity is exposed at most once per burst.
+The cloud's own poison ticks cannot trigger further farts, avoiding endless
+chain reactions; other damage to those poisoned players still qualifies.
+Overlapping hits merge into one burst: equal/weaker hits do not restart it,
+while stronger hits upgrade it. Duration/volume are capped at the largest tier.
+Death/respawn and leaving clear beans and active clouds; server restarts also
+reset these temporary states. Poison status itself remains governed by Minecraft.
+
+Build with `npm run plugins:build`. To install, run `npm run plugins:deploy`,
+activate **both Fart and Fart Resources** for the desired world in the manager,
+then restart Minecraft. The manager does not automatically activate dependencies.
+Clients must accept/download the resource pack for the icon and audio.
+No experimental features are required. With operator permissions and cheats,
+use `/give @s mbs:tin_of_beans` for testing.
+
+Check in-game: eat beans, take small then large hits, and have a second player
+watch/listen from behind and stand in the cloud. Check poison on nearby mobs,
+self-exclusion, bean expiry, rotten-flesh Hunger, normal Poison, respawn, and
+dimension changes. Automated tests cover the mocked Script API, pack assets,
+and build output; actual Bedrock item consumption, rendering, and audio still
+need this in-game verification. This pack has not been activated on the live world.
+
+The included sounds and 16x16 icon are procedurally authored assets, not copied
+from another addon. To regenerate them, run
+`python3 plugins/fart/generate-assets.py` (Python 3 and system `libsndfile` with
+Ogg Vorbis support are required only for regeneration, not build/deployment).
+
 Playwright MCP is configured in `.mcp.json` for browser inspection. Trust/start
 it in your Copilot client when needed.
 
