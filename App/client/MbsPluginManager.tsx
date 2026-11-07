@@ -15,6 +15,7 @@ import { fetchPlugins, togglePluginVersion } from "./api/Plugins.js";
 import { activateWorld, createWorld, fetchWorlds } from "./api/Worlds.js";
 import type { ApiResult } from "./api/request.js";
 import { PluginList } from "./PluginList/PluginList.js";
+import { PluginUpdater } from "./PluginList/PluginUpdater.js";
 import {
   ConfirmDialog,
   type Confirmation,
@@ -321,6 +322,19 @@ export function App() {
           hidden={activeTab !== "Plugins"}
           tabIndex={0}
         >
+          <PluginUpdater
+            plugins={plugins}
+            busy={busy}
+            onRun={run}
+            onConfirm={(preview, action) =>
+              setConfirmation({
+                title: "Install these packs?",
+                detail: `${preview.packs.map((pack) => `${pack.name} v${pack.version.join(".")}`).join(", ")}. If Minecraft is running, connected players will be disconnected while it stops and restarts. Existing files and world pack selections are backed up. Same-version replacements affect every world using that version.`,
+                confirmLabel: "Install packs",
+                action,
+              })
+            }
+          />
           <PluginList
             plugins={plugins}
             worldName={worlds?.activeWorld}

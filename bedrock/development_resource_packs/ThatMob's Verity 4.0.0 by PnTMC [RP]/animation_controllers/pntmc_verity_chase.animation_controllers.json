@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pntmc_verity_chase": {
+			"initial_state": "chase",
+			"states": {
+				"chase": {
+					"animations": ["chase", "look_at_target_body", "look_at_target_head"]
+				}
+			}
+		}
+	}
+}

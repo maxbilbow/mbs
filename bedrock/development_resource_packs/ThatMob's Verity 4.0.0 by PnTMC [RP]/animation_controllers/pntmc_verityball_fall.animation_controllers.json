@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pntmc_verityball_fall": {
+			"initial_state": "falling",
+			"states": {
+				"falling": {
+					"animations": ["fall", "look_at_target"]
+				}
+			}
+		}
+	}
+}

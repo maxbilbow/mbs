@@ -1,0 +1,134 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pntmc_verityball": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["look_at_target"],
+					"transitions": [
+						{
+							"moving": "query.ground_speed > 0.03 || query.property('pntmc:moving')"
+						},
+						{
+							"scold_heavy": "query.property('pntmc:scolding') && query.property('pntmc:talking') && query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_light": "query.property('pntmc:scolding') && query.property('pntmc:talking') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"talking": "query.property('pntmc:talking') && !query.property('pntmc:scolding')"
+						}
+					]
+				},
+				"moving": {
+					"animations": ["look_at_target", "move"],
+					"transitions": [
+						{
+							"scold_moving_heavy": "query.property('pntmc:scolding') && query.property('pntmc:talking') && query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_moving_light": "query.property('pntmc:scolding') && query.property('pntmc:talking') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"talk_moving": "query.property('pntmc:talking') && !query.property('pntmc:scolding')"
+						},
+						{
+							"idle": "query.ground_speed < 0.03 && !query.property('pntmc:moving')"
+						}
+					]
+				},
+				"talking": {
+					"animations": ["look_at_target", "talk_pulse"],
+					"transitions": [
+						{
+							"scold_heavy": "query.property('pntmc:scolding') && query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_light": "query.property('pntmc:scolding') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"talk_moving": "query.ground_speed > 0.03 || query.property('pntmc:moving')"
+						},
+						{
+							"idle": "!query.property('pntmc:talking')"
+						}
+					]
+				},
+				"scold_light": {
+					"animations": ["look_at_target", "talk_pulse_angrylight"],
+					"transitions": [
+						{
+							"scold_heavy": "query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_moving_light": "query.ground_speed > 0.03 || query.property('pntmc:moving')"
+						},
+						{
+							"idle": "!query.property('pntmc:talking')"
+						}
+					]
+				},
+				"scold_heavy": {
+					"animations": ["look_at_target", "talk_pulse_angryheavy"],
+					"transitions": [
+						{
+							"scold_light": "query.property('pntmc:scolding') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_moving_heavy": "query.ground_speed > 0.03 || query.property('pntmc:moving')"
+						},
+						{
+							"idle": "!query.property('pntmc:talking')"
+						}
+					]
+				},
+				"talk_moving": {
+					"animations": ["look_at_target", "move", "talk_pulse"],
+					"transitions": [
+						{
+							"scold_moving_heavy": "query.property('pntmc:scolding') && query.property('pntmc:scold_heavy')"
+						},
+						{
+							"scold_moving_light": "query.property('pntmc:scolding') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"moving": "!query.property('pntmc:talking')"
+						},
+						{
+							"talking": "query.ground_speed < 0.03 && !query.property('pntmc:moving')"
+						}
+					]
+				},
+				"scold_moving_light": {
+					"animations": ["look_at_target", "move", "talk_pulse_angrylight"],
+					"transitions": [
+						{
+							"scold_moving_heavy": "query.property('pntmc:scold_heavy')"
+						},
+						{
+							"moving": "!query.property('pntmc:talking')"
+						},
+						{
+							"scold_light": "query.ground_speed < 0.03 && !query.property('pntmc:moving')"
+						}
+					]
+				},
+				"scold_moving_heavy": {
+					"animations": ["look_at_target", "move", "talk_pulse_angryheavy"],
+					"transitions": [
+						{
+							"scold_moving_light": "query.property('pntmc:scolding') && !query.property('pntmc:scold_heavy')"
+						},
+						{
+							"moving": "!query.property('pntmc:talking')"
+						},
+						{
+							"scold_heavy": "query.ground_speed < 0.03 && !query.property('pntmc:moving')"
+						}
+					]
+				}
+			}
+		}
+	}
+}

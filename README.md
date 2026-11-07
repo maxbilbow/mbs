@@ -152,6 +152,92 @@ Uncheck **Show inactive plugins** to hide wholly inactive groups; inactive
 companion packs and alternative versions of active groups remain available.
 The filter persists during dashboard refreshes/world switches, not page reloads.
 
+### Plugin updates and imports
+
+The **Plugins** tab includes **Link source**, **Check for updates**, and archive
+import. Link a CurseForge Bedrock project or GitHub repository to its installed
+pack UUIDs. Select all behaviour/resource companions from the same project, even
+when their names differ. Each UUID can belong to only one source. Other websites
+are supported through manual download/import, not automated scraping.
+
+For CurseForge, enter the numeric **project ID** shown on the project page.
+Automatic checks require an approved key from
+[CurseForge's API application](https://support.curseforge.com/support/solutions/articles/9000208346-about-the-curseforge-api).
+Set `CURSEFORGE_API_KEY` in the server's ignored `.env` file and restart the
+manager. The key stays server-side; never enter it in the dashboard or commit it.
+Without a key, source links and manual imports still work. Author distribution
+restrictions or unavailable download URLs produce a manual-download fallback.
+API access to the selected Bedrock projects must be available to your key.
+
+GitHub uses the latest non-prerelease release. If it contains multiple supported
+archives, specify an exact asset filename in **Edit source**, or download and
+import the correct archive manually. CurseForge selects the newest available
+stable archive from the latest 50 files, optionally filtered by exact filename.
+This is not a guarantee of Minecraft compatibility.
+
+Tracking uses upstream **release IDs**, not manifest versions: a CurseForge file
+ID or GitHub tag. When linking an existing installation, enter the release only
+if known. Otherwise checks explicitly report that the installed release is
+unknown and offer **Inspect latest release**, rather than claim an update exists.
+Different release IDs are reported for review; manifest downgrades are blocked.
+An associated manual import can record its known release ID. Unassociated imports
+that change linked packs clear their release tracking to avoid false "current"
+results.
+
+**Update** downloads and inspects an archive, then shows the affected UUIDs,
+versions, active selections, and warnings. It does not stop Minecraft until
+**Install packs** is confirmed. Supported imports are ZIP, `.mcpack`, and
+`.mcaddon`, including nested pack archives. The importer finds manifests instead
+of relying on folder names. It refuses ambiguous versions/UUIDs, mixed pack
+types, unsafe paths/links, invalid manifests, missing script entries, unsatisfied
+pack dependencies, declared engine-version mismatches, and manifest downgrades.
+Linked updates must contain exactly their selected pack UUIDs; adjust companion
+selections or use a separate import for bundles that change their contents.
+
+Limits are 64 MiB per upload/download, 256 MiB cumulative expanded data, 10,000
+archive entries, 32 packs, and three nested archive levels. ZIP entry checksums
+are checked; GitHub SHA-256 asset digests are checked when provided. Extracted
+JavaScript is not executed by the manager, but will run inside Minecraft when
+activated. Only install trusted packs. Script API versions, experimental
+toggles, behavior changes, and actual in-game compatibility need manual review.
+
+Installation shares the dashboard's server/world mutation lock. It backs up
+affected existing files and world pack lists, stops a running Minecraft process,
+rechecks the preview against configuration changes, installs, and restores the
+previous running state. New/inactive packs remain inactive. Updated active packs
+switch to the new version in the selected world. Other worlds retain their
+selections and older installed versions are retained. Replacing files with the
+**same manifest version** affects every world using that version; the preview and
+confirmation warn about this.
+
+Failures attempt to restore previous packs, selections, and running state.
+Recovery failures are shown explicitly with a backup location. As with world
+switches, externally changed server configuration leaves Minecraft stopped.
+Do not run CLI deploy/update commands or another manager during installation.
+Take independent world backups: these installation backups do not include world
+databases or undo gameplay changes.
+
+Source links persist in `bedrock/.mbs-plugin-sources.json`. Previews and retained
+backups live under `bedrock/.mbs-plugin-updates/`; both are ignored by Git.
+Previews expire after one hour, with at most five staged per manager process.
+Cancelled/consumed previews are removed; expired ones are removed on the next
+preview operation. Manager restarts invalidate preview tokens, so re-inspect
+before installing. Orphaned staging directories after a restart and retained
+backups need manual cleanup while no installation is running. Each backup has a
+`receipt.json` mapping saved pack directories and metadata to their original
+relative paths. Restore only with Minecraft stopped. Include source links and
+important backups in your private runtime backups.
+
+The API supports `/api/plugins/updates` and proxy-stripped equivalents:
+`GET /plugins/updates`, source `POST/PUT/DELETE /plugins/updates/sources[/<id>]`,
+`POST /plugins/updates/check`, `POST /plugins/updates/sources/<id>/stage`
+(`{ releaseId }`), `POST /plugins/updates/import` (raw archive bytes with
+`application/octet-stream`, optional `sourceId`/`releaseId` query parameters),
+`DELETE /plugins/updates/stages/<token>`, and
+`POST /plugins/updates/stages/<token>/install` (`{ confirmed: true }`).
+Protect these administrative endpoints with the same authentication proxy as
+the rest of the manager; the API itself remains unauthenticated.
+
 Choose **Switch world** to activate an existing world. If Minecraft is running,
 the manager waits for it to stop, changes the configuration, and starts it again.
 If it is already stopped, it stays stopped; use **Start server** when ready.
@@ -237,6 +323,7 @@ activate), and `POST /api/worlds/activate` (name); proxy-stripped routes work to
 ```sh
 npm test
 node --test tests/plugins.test.ts
+node --test tests/plugin-updates.test.ts
 node --test tests/worlds.test.ts tests/plugins.test.ts
 node --test --test-name-pattern="pack activation" tests/plugins.test.ts
 npm run typecheck

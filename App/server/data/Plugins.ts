@@ -34,7 +34,7 @@ export function createPluginStore(
       return;
     }
     const worldData = getWorldData(type).filter(
-      (pack) => pack.pack_id !== uuid,
+      (pack) => pack.pack_id.toLowerCase() !== uuid.toLowerCase(),
     );
     worldData.push({ pack_id: uuid, version });
     saveWorldData(type, worldData);
@@ -42,7 +42,9 @@ export function createPluginStore(
 
   function deactivatePlugin(type: "behaviour" | "resource", uuid: string) {
     const worldData = getWorldData(type);
-    const newWorldData = worldData.filter((pack) => pack.pack_id !== uuid);
+    const newWorldData = worldData.filter(
+      (pack) => pack.pack_id.toLowerCase() !== uuid.toLowerCase(),
+    );
     saveWorldData(type, newWorldData);
   }
 
@@ -95,7 +97,7 @@ export function createPluginStore(
     try {
       const { header, metadata } = JSON.parse(jsonContent.trim());
       pack = {
-        uuid: header.uuid,
+        uuid: header.uuid.toLowerCase(),
         name: header.name === "pack.name" ? name : header.name,
         folder: name,
         version: header.version,
@@ -161,7 +163,8 @@ export function createPluginStore(
     const worldData = getWorldData(type);
     return worldData.some(
       (pack) =>
-        pack.pack_id === uuid && pack.version.join(".") === version.join("."),
+        pack.pack_id.toLowerCase() === uuid.toLowerCase() &&
+        pack.version.join(".") === version.join("."),
     );
   }
 

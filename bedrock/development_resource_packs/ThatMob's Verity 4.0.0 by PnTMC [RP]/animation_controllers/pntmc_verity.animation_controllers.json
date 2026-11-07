@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pntmc_verity": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle", "look_at_target_body", "look_at_target_head"],
+					"transitions": [
+						{
+							"spotted": "query.property('pntmc:chase_state') >= 1"
+						}
+					]
+				},
+				"spotted": {
+					"animations": ["spotted", "look_at_target_body", "look_at_target_head"],
+					"blend_transition": 0.35,
+					"transitions": [
+						{
+							"idle": "query.property('pntmc:chase_state') == 0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

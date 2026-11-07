@@ -11,6 +11,8 @@ import { setUpUsersApi } from "./rest/UsersApi.ts";
 import { createMutationGate } from "./rest/MutationGate.ts";
 import { Logger } from "tslog";
 import { createLogReader } from "./data/Logs.ts";
+import { createPluginUpdateStore } from "./data/PluginUpdates.ts";
+import { setUpPluginUpdatesApi } from "./rest/PluginUpdatesApi.ts";
 
 export function createApp(
   options: {
@@ -18,6 +20,7 @@ export function createApp(
     control?: typeof MbsCtrl;
     worlds?: ReturnType<typeof createWorldStore>;
     logs?: ReturnType<typeof createLogReader>;
+    pluginUpdates?: ReturnType<typeof createPluginUpdateStore>;
   } = {},
 ) {
   const app = express();
@@ -51,6 +54,12 @@ export function createApp(
   });
   const mutate = createMutationGate();
   setUpPluginsApi(routes, options.plugins, mutate);
+  setUpPluginUpdatesApi(
+    routes,
+    options.pluginUpdates ??
+      createPluginUpdateStore(undefined, options.control),
+    mutate,
+  );
   setUpMbsApi(routes, options.control, mutate, options.logs);
   const worlds = options.worlds ?? createWorldStore(undefined, options.control);
   setUpWorldsApi(routes, worlds, mutate);

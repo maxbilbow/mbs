@@ -1,0 +1,21 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pntmc_cardboardbox": {
+			"initial_state": "inside",
+			"states": {
+				"inside": {
+					"animations": ["inside"],
+					"transitions": [
+						{
+							"open": "query.property('pntmc:opened')"
+						}
+					]
+				},
+				"open": {
+					"animations": ["open"]
+				}
+			}
+		}
+	}
+}

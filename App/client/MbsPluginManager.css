@@ -490,6 +490,29 @@ input[type="checkbox"] {
   display: grid;
   gap: 12px;
 }
+.plugin-updater {
+  margin-bottom: 24px;
+}
+.plugin-updater .actions {
+  flex-wrap: wrap;
+}
+.plugin-import {
+  margin-top: 24px;
+}
+.plugin-source-packs {
+  max-height: 360px;
+  overflow-y: auto;
+}
+.plugin-uuid {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+.plugin-updater li,
+.plugin-updater p {
+  overflow-wrap: anywhere;
+}
 .checkbox-label.pack-filter {
   margin: 0 0 18px;
 }
