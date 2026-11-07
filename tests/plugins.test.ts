@@ -94,7 +94,7 @@ function fixture() {
   ]) {
     mkdirSync(join(root, name), { recursive: true });
   }
-  for (const type of ["behaviour", "resource"]) {
+  for (const type of ["behavior", "resource"]) {
     writeFileSync(
       join(root, `worlds/Bedrock level/world_${type}_packs.json`),
       "[]",
@@ -127,7 +127,7 @@ test("pack activation replaces an older version and deactivation persists", () =
     assert.deepEqual(
       JSON.parse(
         readFileSync(
-          join(root, "worlds/Bedrock level/world_behaviour_packs.json"),
+          join(root, "worlds/Bedrock level/world_behavior_packs.json"),
           "utf8",
         ),
       ),
@@ -160,7 +160,7 @@ test("pack state follows the configured world and absent lists represent no pack
     assert.equal(
       JSON.parse(
         readFileSync(
-          join(root, "worlds/Other World/world_behaviour_packs.json"),
+          join(root, "worlds/Other World/world_behavior_packs.json"),
           "utf8",
         ),
       )[0].pack_id,
@@ -168,11 +168,41 @@ test("pack state follows the configured world and absent lists represent no pack
     );
     assert.equal(
       readFileSync(
-        join(root, "worlds/Bedrock level/world_behaviour_packs.json"),
+        join(root, "worlds/Bedrock level/world_behavior_packs.json"),
         "utf8",
       ),
       "[]",
     );
+  } finally {
+    rmSync(root, { recursive: true });
+  }
+});
+
+test("behaviour API state uses Bedrock's behavior filename and ignores legacy phantom activation", () => {
+  const root = fixture();
+  try {
+    const world = join(root, "worlds/Bedrock level");
+    const legacy = join(world, "world_behaviour_packs.json");
+    const canonical = join(world, "world_behavior_packs.json");
+    const legacyData = JSON.stringify([{ pack_id: uuid, version: [1, 0, 2] }]);
+    writeFileSync(legacy, legacyData);
+    rmSync(canonical);
+    const store = createPluginStore(root);
+    assert.ok(
+      store.findDevelompentPlugins()[0].versions.every((pack) => !pack.active),
+    );
+    store.activatePlugin("behaviour", uuid, [1, 0, 1]);
+    assert.deepEqual(JSON.parse(readFileSync(canonical, "utf8")), [
+      { pack_id: uuid, version: [1, 0, 1] },
+    ]);
+    assert.ok(
+      store
+        .findDevelompentPlugins()[0]
+        .versions.find((pack) => pack.version[2] === 1)?.active,
+    );
+    store.deactivatePlugin("behaviour", uuid);
+    assert.deepEqual(JSON.parse(readFileSync(canonical, "utf8")), []);
+    assert.equal(readFileSync(legacy, "utf8"), legacyData);
   } finally {
     rmSync(root, { recursive: true });
   }
@@ -253,7 +283,7 @@ test("API routes work with and without /api and reject invalid pack inputs", asy
     );
     assert.deepEqual(calls, ["restart", "stop"]);
     writeFileSync(
-      join(root, "worlds/Bedrock level/world_behaviour_packs.json"),
+      join(root, "worlds/Bedrock level/world_behavior_packs.json"),
       "invalid JSON",
     );
     const failed = await fetch(`${base}/api/plugins`);
@@ -310,7 +340,7 @@ test("plugin deployment preserves UUID and leaves activation untouched", async (
     );
     assert.equal(
       readFileSync(
-        join(root, "worlds/Bedrock level/world_behaviour_packs.json"),
+        join(root, "worlds/Bedrock level/world_behavior_packs.json"),
         "utf8",
       ),
       "[]",
@@ -442,7 +472,7 @@ test("deployment replaces stale owned files and copies resource packs without ch
       ),
       "fixture asset",
     );
-    for (const kind of ["behaviour", "resource"]) {
+    for (const kind of ["behavior", "resource"]) {
       assert.equal(
         readFileSync(
           join(root, `worlds/Bedrock level/world_${kind}_packs.json`),

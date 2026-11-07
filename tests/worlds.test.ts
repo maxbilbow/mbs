@@ -472,7 +472,7 @@ test("plugin stores follow world switches without API restart while explicit fix
       assert.deepEqual(
         JSON.parse(
           readFileSync(
-            join(f.root, "worlds", name, "world_behaviour_packs.json"),
+            join(f.root, "worlds", name, "world_behavior_packs.json"),
             "utf8",
           ),
         ),
@@ -550,7 +550,7 @@ test("world APIs support both prefixes, return actionable errors, and coordinate
     assert.equal((await post(`/api/plugins/${uuid}/1.0.1/toggle`)).status, 200);
     assert.ok(
       existsSync(
-        join(f.root, "worlds", newWorld.name, "world_behaviour_packs.json"),
+        join(f.root, "worlds", newWorld.name, "world_behavior_packs.json"),
       ),
     );
     const missing = await post("/api/worlds/activate", { name: "Missing" });

@@ -138,7 +138,7 @@ export function createPluginStore(
     const WORLD_DATA_DIR = worldDataDirectory();
     const filename =
       type === "behaviour"
-        ? "world_behaviour_packs.json"
+        ? "world_behavior_packs.json"
         : "world_resource_packs.json";
     const worldFile = join(WORLD_DATA_DIR, filename);
     if (!existsSync(WORLD_DATA_DIR))
@@ -163,7 +163,7 @@ export function createPluginStore(
     const WORLD_DATA_DIR = worldDataDirectory();
     const filename =
       type === "behaviour"
-        ? "world_behaviour_packs.json"
+        ? "world_behavior_packs.json"
         : "world_resource_packs.json";
     const worldFile = join(WORLD_DATA_DIR, filename);
     writeFileSync(worldFile, JSON.stringify(data, null, 2));

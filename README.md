@@ -230,6 +230,15 @@ Deployment does not activate the pack, change the active world, or restart the
 server. In the web manager, activate **TypeScript example** for the configured
 world, then restart Minecraft and join:
 
+Behavior activation must write `worlds/<world>/world_behavior_packs.json`
+(American spelling), even though the API kind is `"behaviour"`. Earlier manager
+versions wrote `world_behaviour_packs.json`, which Bedrock ignores. If you
+activated packs with those versions, restart the management API with `npm start`
+and activate the desired packs again before restarting Minecraft. The old file
+is not treated as active state or migrated automatically, since it may contain
+packs you do not want loaded. Startup logs should list the example in the pack
+stack rather than `Pack Stack - None`.
+
 1. On world startup the pack broadcasts
    `[TypeScript example] Loaded. Run /scriptevent example:ping`. You may miss this
    message if you join after startup.
