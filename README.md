@@ -89,9 +89,16 @@ manual update or restart concurrently with a scheduled update.
 ## Run the web application
 
 ```sh
-npm run build
-npm start
+npm start   # build, publish, then (re)start the manager in the background
+npm stop    # stop the manager
+npm run manager status
 ```
+
+`npm start` builds the UI and publishes it (see below) before stopping any
+existing manager from this checkout and starting a new one. A failed build leaves
+the current manager running. The manager runs detached, logs to
+`logs/web-api.log`, and `npm start` waits until it responds on port 8081.
+Use `npm run serve` to run it in the foreground without building.
 
 Open `http://localhost:8081`. Express serves `App/www/` and the API under `/api`.
 Legacy unprefixed routes remain available for proxies that strip `/api`.
@@ -99,8 +106,8 @@ Starting the API does not start Minecraft.
 The build produces minified production React bundles, without a framework or
 deployment migration.
 
-If `CADDY_OUTPUT_PATH` is set, startup first builds the UI and runs
-`rsync --delete` to that destination. Use a dedicated static-output directory:
+If `CADDY_OUTPUT_PATH` is set, `npm start` also runs `rsync --delete` from
+`App/www/` to that destination. Use a dedicated static-output directory:
 files there that are absent from `App/www/` will be deleted.
 
 The home-server deployment in `../repos/home-server/` protects
@@ -113,7 +120,7 @@ These objects live in Authentik's PostgreSQL volume, not in the Compose file.
 Caddy must forward `/outpost.goauthentik.io/*` to Authentik before its auth check;
 all other UI/API requests require authentication. The API on port 8081 itself
 remains unauthenticated: firewall access to that port so external clients cannot
-bypass Caddy. `npm start` is still manually managed and does not automatically
+bypass Caddy. The manager is started manually and does not automatically
 resume after a host reboot.
 
 ### Dashboard and worlds
