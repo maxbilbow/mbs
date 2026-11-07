@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "start": "node --env-file-if-exists=.env ./App/server/start.ts",
-    "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --outdir=./App/www/js --loader:.css=global-css",
+    "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" --outdir=./App/www/js --loader:.css=global-css",
     "test": "node --test tests/*.test.ts",
     "typecheck": "tsc -p App/server && tsc -p App/client && tsc -p plugins/max",
     "bedrock": "node scripts/bedrock.ts",

@@ -1,23 +1,13 @@
 import type { PluginInfo } from "../../model/Plugins.js";
-import { BASE_URL } from "./config.js";
+import { requestJson } from "./request.js";
 
-
-export async function fetchPlugins() {
-    const response = await fetch(`${BASE_URL}/plugins`)
-
-    if (!response.ok) {
-        return [null, new Error(`Failed to fetch plugins: ${response.statusText}`)] as const;
-    }
-    return [await response.json() as readonly PluginInfo[], null] as const;
+export function fetchPlugins(signal?: AbortSignal) {
+  return requestJson<readonly PluginInfo[]>("/plugins", { signal });
 }
 
-export async function togglePluginVersion(uuid: string, version: string) {
-    const response = await fetch(`${BASE_URL}/plugins/${uuid}/${version}/toggle`, {
-        method: "POST",
-    });
-
-    if (!response.ok) {
-        return [null, new Error(`Failed to toggle plugin version: ${response.statusText}`)] as const;
-    }
-    return [await response.json() as { active: boolean }, null] as const;
+export function togglePluginVersion(uuid: string, version: string) {
+  return requestJson<{ active: boolean }>(
+    `/plugins/${encodeURIComponent(uuid)}/${encodeURIComponent(version)}/toggle`,
+    { method: "POST" },
+  );
 }

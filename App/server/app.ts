@@ -5,12 +5,16 @@ import * as MbsCtrl from "./mbs/MbsCtrl.ts";
 import { createPluginStore } from "./data/Plugins.ts";
 import { setUpMbsApi } from "./rest/MbsApi.ts";
 import { setUpPluginsApi } from "./rest/PluginsApi.ts";
+import { createWorldStore } from "./data/Worlds.ts";
+import { setUpWorldsApi } from "./rest/WorldsApi.ts";
+import { createMutationGate } from "./rest/MutationGate.ts";
 import { Logger } from "tslog";
 
 export function createApp(
   options: {
     plugins?: ReturnType<typeof createPluginStore>;
     control?: typeof MbsCtrl;
+    worlds?: ReturnType<typeof createWorldStore>;
   } = {},
 ) {
   const app = express();
@@ -42,8 +46,14 @@ export function createApp(
     }
     next();
   });
-  setUpPluginsApi(routes, options.plugins);
-  setUpMbsApi(routes, options.control);
+  const mutate = createMutationGate();
+  setUpPluginsApi(routes, options.plugins, mutate);
+  setUpMbsApi(routes, options.control, mutate);
+  setUpWorldsApi(
+    routes,
+    options.worlds ?? createWorldStore(undefined, options.control),
+    mutate,
+  );
   // Support both direct /api requests and proxies that strip /api.
   app.use("/api", routes);
   app.use(routes);
@@ -51,7 +61,7 @@ export function createApp(
   const logger = new Logger({ name: "ApiError" });
   app.use(
     (
-      error: Error & { status?: number },
+      error: Error & { status?: number; expose?: boolean },
       _req: express.Request,
       res: express.Response,
       _next: express.NextFunction,
@@ -62,7 +72,10 @@ export function createApp(
           ? error.status
           : 500;
       res.status(status).json({
-        error: status === 500 ? "Internal server error" : error.message,
+        error:
+          status === 500 && !error.expose
+            ? "Internal server error"
+            : error.message,
       });
     },
   );

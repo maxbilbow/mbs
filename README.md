@@ -8,7 +8,7 @@ and Max's custom Minecraft plugin.
 - `bedrock/` is the live Minecraft installation: executable, server configuration,
   worlds, vendor packs, and deployed development packs. Its working directory is
   significant; do not run the executable from the repository root.
-- `App/` contains the Express API, React/custom-element client, and shared models.
+- `App/` contains the Express API, React dashboard, and shared models.
 - `plugins/max/behavior/` is the editable source for Max's chat-command pack.
 - `scripts/` contains runtime control, the updater, plugin build/deployment, and
   shared paths. Root `mbs`, `update-server.ts`, and `update-server.sh` remain
@@ -48,7 +48,9 @@ for shutdown before a restart or update; startup output goes to
 
 Configure the server in `bedrock/server.properties`. Worlds are under
 `bedrock/worlds/`; the plugin manager follows the configured `level-name`.
-Restart both the Minecraft server and the API after changing the world name.
+The web manager can select and create worlds; it follows the configured world
+without restarting the API. Manual world-name changes still require a Minecraft
+restart.
 Do not edit world pack lists while another tool or Minecraft is writing them.
 Take world/configuration backups before updates: Git does not back up worlds.
 
@@ -94,6 +96,8 @@ npm start
 Open `http://localhost:8081`. Express serves `App/www/` and the API under `/api`.
 Legacy unprefixed routes remain available for proxies that strip `/api`.
 Starting the API does not start Minecraft.
+The build produces minified production React bundles, without a framework or
+deployment migration.
 
 If `CADDY_OUTPUT_PATH` is set, startup first builds the UI and runs
 `rsync --delete` to that destination. Use a dedicated static-output directory:
@@ -112,17 +116,65 @@ remains unauthenticated: firewall access to that port so external clients cannot
 bypass Caddy. `npm start` is still manually managed and does not automatically
 resume after a host reboot.
 
+### Dashboard and worlds
+
+The dashboard shows server process status, the selected world, and world-specific
+pack selections. Status refreshes every 10 seconds. Start, stop, restart, world
+switches, and pack changes show progress and errors without reloading the page.
+Disruptive actions ask for confirmation: connected players are disconnected when
+the server stops or restarts. A running process can still be loading its world.
+
+Choose **Switch world** to activate an existing world. If Minecraft is running,
+the manager waits for it to stop, changes the configuration, and starts it again.
+If it is already stopped, it stays stopped; use **Start server** when ready.
+Selecting the current world does nothing.
+
+**New world** accepts a unique name, an optional seed, game mode, and difficulty.
+Leave the seed blank for random generation; large numeric seeds are kept as
+strings. **Create world** saves a pending world for later. Check **Select this
+world after creation** to activate it immediately, using the same running/stopped
+behavior as switching. Bedrock generates the actual world on its first start
+while selected. **Pending generation** remains visible until a world database
+exists; the manager does not fabricate databases or copy another world's packs.
+
+The manager saves versioned settings in each world's `.mbs-world.json`. Switching
+away saves that world's current configured seed/game mode/difficulty; returning
+restores saved settings. Previously unmanaged worlds use the current server
+defaults on first selection. These are server configuration values, not an
+inspection or rewrite of an existing world's database: a seed does not regenerate
+an existing world, and existing player modes still follow Bedrock's
+`force-gamemode` semantics. Unrelated properties, comments, and world pack lists
+are preserved. The updater already preserves the entire `worlds/` directory.
+
+Concurrent manager mutations receive a conflict error instead of overlapping.
+This gate covers this API process only: do not run CLI start/stop/restart commands,
+another API instance, configuration edits, or scheduled updates during a manager
+operation. Do not edit pack lists while Minecraft or another tool is writing them.
+
+If a switch fails before shutdown completes, the configuration is not changed.
+Later failures trigger an attempt to restore the previous configuration and
+running state. Recovery failures are explicit; check dashboard status,
+`server.properties`, and `logs/bedrock.log` before retrying. If a new world was
+saved but activation failed, its pending directory is retained. Take backups
+before important changes: there is no world deletion, import, or backup UI.
+If configuration changes externally during shutdown, the manager refuses to
+overwrite it and leaves Minecraft stopped rather than starting an unexpected
+world.
+
 `App/server/app.ts` creates the Express app independently of the listening
-process and accepts injected pack/process services for tests.
+process and accepts injected pack/world/process services for tests.
 `App/server/data/Plugins.ts` discovers manifests, groups versions by UUID, and
 persists activation to the configured world's pack lists. One version per pack
-UUID is active. The client calls the API through `[data, error]` result tuples.
+UUID is active. The client calls the API through `[data, error]` result tuples. World management
+uses `GET /api/worlds`, `POST /api/worlds` (name, seed, gameMode, difficulty,
+activate), and `POST /api/worlds/activate` (name); proxy-stripped routes work too.
 
 ## Test and check
 
 ```sh
 npm test
 node --test tests/plugins.test.ts
+node --test tests/worlds.test.ts tests/plugins.test.ts
 node --test --test-name-pattern="pack activation" tests/plugins.test.ts
 npm run typecheck
 npm run build

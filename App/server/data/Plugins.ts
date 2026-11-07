@@ -3,30 +3,27 @@ import { join, resolve } from "node:path";
 import type { PackVersionInfo, PluginInfo } from "../../model/Plugins.ts";
 import { BEDROCK_ROOT } from "../../../scripts/paths.ts";
 import { Logger } from "tslog";
-
-export function getWorldName(runtimeRoot: string) {
-  const properties = readFileSync(
-    join(runtimeRoot, "server.properties"),
-    "utf8",
-  );
-  const name = /^level-name=(.*)$/m.exec(properties)?.[1].trim();
-  if (!name || name === "." || name === ".." || /[/\\]/.test(name)) {
-    throw new Error("server.properties must contain a valid level-name.");
-  }
-  return name;
-}
+import { getWorldName } from "./WorldProperties.ts";
+export { getWorldName } from "./WorldProperties.ts";
 
 export function createPluginStore(
   runtimeRoot = BEDROCK_ROOT,
-  worldName = getWorldName(runtimeRoot),
+  worldName?: string,
 ) {
   const BEHAVIOUR_PACKS_DIR = resolve(
     runtimeRoot,
     "development_behavior_packs",
   );
   const RESOURCE_PACKS_DIR = resolve(runtimeRoot, "development_resource_packs");
-  const WORLD_DATA_DIR = resolve(runtimeRoot, "worlds", worldName);
   const logger = new Logger({ name: "Plugins" });
+
+  function worldDataDirectory() {
+    return resolve(
+      runtimeRoot,
+      "worlds",
+      worldName ?? getWorldName(runtimeRoot),
+    );
+  }
 
   function activatePlugin(
     type: "behaviour" | "resource",
@@ -138,6 +135,7 @@ export function createPluginStore(
   }
 
   function getWorldData(type: "behaviour" | "resource") {
+    const WORLD_DATA_DIR = worldDataDirectory();
     const filename =
       type === "behaviour"
         ? "world_behaviour_packs.json"
@@ -162,6 +160,7 @@ export function createPluginStore(
     type: "behaviour" | "resource",
     data: { pack_id: string; version: readonly [number, number, number] }[],
   ) {
+    const WORLD_DATA_DIR = worldDataDirectory();
     const filename =
       type === "behaviour"
         ? "world_behaviour_packs.json"
