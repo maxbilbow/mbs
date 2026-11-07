@@ -1,15 +1,14 @@
-"""Generate original pack assets with Python 3 and the system libsndfile."""
+"""Convert bundled CC0 recordings and generate the original beans icon."""
 
 import ctypes
 import ctypes.util
-import math
+import hashlib
+import json
 from pathlib import Path
-import random
 import struct
 import zlib
 
 ROOT = Path(__file__).resolve().parent / "resource"
-RATE = 24000
 
 
 class SoundInfo(ctypes.Structure):
@@ -26,10 +25,14 @@ class SoundInfo(ctypes.Structure):
 def generate_sounds():
     library = ctypes.util.find_library("sndfile")
     if not library:
-        raise RuntimeError("Install libsndfile to regenerate the original Ogg sounds.")
+        raise RuntimeError("Install libsndfile with MP3/Vorbis support to convert recordings.")
     encoder = ctypes.CDLL(library)
     encoder.sf_open.argtypes = [ctypes.c_char_p, ctypes.c_int, ctypes.POINTER(SoundInfo)]
     encoder.sf_open.restype = ctypes.c_void_p
+    encoder.sf_read_float.argtypes = [
+        ctypes.c_void_p, ctypes.POINTER(ctypes.c_float), ctypes.c_int64
+    ]
+    encoder.sf_read_float.restype = ctypes.c_int64
     encoder.sf_write_float.argtypes = [
         ctypes.c_void_p, ctypes.POINTER(ctypes.c_float), ctypes.c_int64
     ]
@@ -40,30 +43,47 @@ def generate_sounds():
     encoder.sf_strerror.restype = ctypes.c_char_p
     destination = ROOT / "sounds" / "fart"
     destination.mkdir(parents=True, exist_ok=True)
-    sizes = [("small", 0.4), ("medium", 0.8), ("large", 1.6), ("huge", 3.0)]
-    variants = [("", 95, 40, 9, 23), ("_raspberry", 65, 25, 16, 35), ("_squeak", 180, 90, 6, 12)]
-    for name, duration, seed, frequency_start, frequency_drop, wobble, flutter_rate in [
-        (name + suffix, duration, seed, start, drop, wobble, flutter)
-        for name, duration in sizes
-        for seed, (suffix, start, drop, wobble, flutter) in enumerate(variants, 42)
-    ]:
-        rng = random.Random(seed)
-        count = round(duration * RATE)
+    credits = json.loads((ROOT / "sounds" / "credits.json").read_text())
+    recordings = {}
+    for identifier, recording in credits["recordings"].items():
+        path = ROOT.parent / "audio-sources" / recording["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != recording["sha256"]:
+            raise RuntimeError(f"Source recording checksum mismatch: {path}")
+        info = SoundInfo()
+        handle = encoder.sf_open(str(path).encode(), 0x10, ctypes.byref(info))
+        if not handle:
+            raise RuntimeError(encoder.sf_strerror(None).decode())
+        try:
+            count = info.frames * info.channels
+            samples = (ctypes.c_float * count)()
+            if encoder.sf_read_float(handle, samples, count) != count:
+                raise RuntimeError(f"Could not decode all samples in {path}")
+            recordings[identifier] = (info, samples)
+        finally:
+            if encoder.sf_close(handle) != 0:
+                raise RuntimeError(f"Failed to close {path}")
+
+    for clip in credits["clips"]:
+        source_info, source = recordings[clip["recording"]]
+        rate = source_info.samplerate
+        count = round(clip["duration"] * rate)
+        start = round(clip["start"] * rate)
+        if start < 0 or start + count > source_info.frames:
+            raise RuntimeError(f"Clip is outside source recording: {clip['name']}")
         samples = (ctypes.c_float * count)()
-        phase = 0.0
-        noise = 0.0
+        channels = source_info.channels
         for index in range(count):
-            time = index / RATE
-            progress = time / duration
-            frequency = frequency_start - frequency_drop * progress + 12 * math.sin(2 * math.pi * wobble * time)
-            phase += 2 * math.pi * frequency / RATE
-            noise = 0.65 * noise + 0.35 * rng.uniform(-1, 1)
-            buzz = math.tanh(4 * math.sin(phase))
-            flutter = 0.7 + 0.3 * math.sin(2 * math.pi * flutter_rate * time)
-            envelope = min(1, time / 0.02, (duration - time) / 0.08)
-            samples[index] = 0.65 * envelope * flutter * (0.7 * buzz + 0.3 * noise)
-        info = SoundInfo(0, RATE, 1, 0x200000 | 0x0060, 0, 0)  # Ogg Vorbis, mono
-        path = destination / f"{name}.ogg"
+            offset = (start + index) * channels
+            samples[index] = sum(source[offset + channel] for channel in range(channels)) / channels
+        peak = max(abs(sample) for sample in samples)
+        if peak < 0.001:
+            raise RuntimeError(f"Clip contains no usable audio: {clip['name']}")
+        fade = round(rate * 0.01)
+        for index in range(count):
+            envelope = min(1, index / fade, (count - 1 - index) / fade)
+            samples[index] *= (0.85 / peak) * envelope
+        info = SoundInfo(0, rate, 1, 0x200000 | 0x0060, 0, 0)  # Ogg Vorbis, mono
+        path = destination / f"{clip['name']}.ogg"
         handle = encoder.sf_open(str(path).encode(), 0x20, ctypes.byref(info))
         if not handle:
             raise RuntimeError(encoder.sf_strerror(None).decode())
@@ -73,7 +93,7 @@ def generate_sounds():
         finally:
             if encoder.sf_close(handle) != 0:
                 raise RuntimeError(f"Failed to close {path}")
-        print(f"Generated {path} ({duration}s)")
+        print(f"Converted {path} ({clip['duration']}s)")
 
 
 def generate_texture():

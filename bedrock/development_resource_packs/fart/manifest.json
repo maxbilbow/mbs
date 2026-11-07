@@ -1,10 +1,10 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Fart Resources",
-    "description": "Original fart sounds and a tin-of-beans item texture for Fart.",
+    "name": "Fart",
+    "description": "CC0 recorded fart clips and an original tin-of-beans item texture for Fart.",
     "uuid": "943de106-f0fa-46b9-8f54-cf2eb3658c6f",
-    "version": [1, 0, 0],
+    "version": [1, 1, 1],
     "min_engine_version": [1, 21, 90]
   },
   "metadata": { "authors": ["Max Bilbow"] },
@@ -12,7 +12,7 @@
     {
       "type": "resources",
       "uuid": "f0e1045a-4036-43c5-a218-38ad08716a81",
-      "version": [1, 0, 0]
+      "version": [1, 1, 1]
     }
   ]
 }

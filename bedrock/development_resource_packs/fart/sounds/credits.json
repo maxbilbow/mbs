@@ -1,0 +1,81 @@
+{
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_verified": "2026-11-07",
+  "processing": "Excerpted from public high-quality previews, mixed to mono, peak-normalized to 0.85, and faded at each edge. No synthesis, looping, or pitch changes.",
+  "recordings": {
+    "202528": {
+      "title": "Farts, loud and flabby x7",
+      "author": "peridactyloptrix",
+      "page": "https://freesound.org/people/peridactyloptrix/sounds/202528/",
+      "download": "https://cdn.freesound.org/previews/202/202528_2737063-hq.mp3",
+      "file": "202528.mp3",
+      "sha256": "1b2425a249ae9c5a6e3dfdb1e8a5f24a3b5f93b2a1146a5d316c973c1718c2a5"
+    },
+    "640804": {
+      "title": "2 Part Fart",
+      "author": "DSISStudios",
+      "page": "https://freesound.org/people/DSISStudios/sounds/640804/",
+      "download": "https://cdn.freesound.org/previews/640/640804_2628301-hq.mp3",
+      "file": "640804.mp3",
+      "sha256": "119ed34a90f83cbe27dd39b6f4b42bafb341943b55521be6d532d8c8ea0d3e3a"
+    },
+    "777448": {
+      "title": "Morning fart",
+      "author": "frenkfurth",
+      "page": "https://freesound.org/people/frenkfurth/sounds/777448/",
+      "download": "https://cdn.freesound.org/previews/777/777448_13558226-hq.mp3",
+      "file": "777448.mp3",
+      "sha256": "781626367d71a379b8b698fe1943eee2870d70776f6dac43478777a2751689e8"
+    }
+  },
+  "clips": [
+    {
+      "name": "small_1",
+      "recording": "202528",
+      "start": 0.76,
+      "duration": 0.4
+    },
+    {
+      "name": "small_2",
+      "recording": "640804",
+      "start": 0.38,
+      "duration": 0.4
+    },
+    {
+      "name": "small_3",
+      "recording": "777448",
+      "start": 1.42,
+      "duration": 0.4
+    },
+    {
+      "name": "medium_1",
+      "recording": "202528",
+      "start": 3.15,
+      "duration": 0.8
+    },
+    {
+      "name": "medium_2",
+      "recording": "202528",
+      "start": 18.48,
+      "duration": 0.8
+    },
+    {
+      "name": "medium_3",
+      "recording": "777448",
+      "start": 0.6,
+      "duration": 0.8
+    },
+    { "name": "large_1", "recording": "202528", "start": 6.3, "duration": 1.6 },
+    {
+      "name": "large_2",
+      "recording": "202528",
+      "start": 10.55,
+      "duration": 1.6
+    },
+    { "name": "large_3", "recording": "777448", "start": 3.2, "duration": 1.6 },
+    { "name": "huge_1", "recording": "777448", "start": 3.2, "duration": 3 },
+    { "name": "huge_2", "recording": "777448", "start": 4, "duration": 3 },
+    { "name": "huge_3", "recording": "777448", "start": 4.6, "duration": 3 }
+  ]
+}

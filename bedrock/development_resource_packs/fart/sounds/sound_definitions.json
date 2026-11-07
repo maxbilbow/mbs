@@ -3,19 +3,35 @@
   "sound_definitions": {
     "mbs.fart.1": {
       "category": "player",
-      "sounds": ["sounds/fart/small"]
+      "sounds": [
+        "sounds/fart/small_1",
+        "sounds/fart/small_2",
+        "sounds/fart/small_3"
+      ]
     },
     "mbs.fart.2": {
       "category": "player",
-      "sounds": ["sounds/fart/medium"]
+      "sounds": [
+        "sounds/fart/medium_1",
+        "sounds/fart/medium_2",
+        "sounds/fart/medium_3"
+      ]
     },
     "mbs.fart.3": {
       "category": "player",
-      "sounds": ["sounds/fart/large"]
+      "sounds": [
+        "sounds/fart/large_1",
+        "sounds/fart/large_2",
+        "sounds/fart/large_3"
+      ]
     },
     "mbs.fart.4": {
       "category": "player",
-      "sounds": ["sounds/fart/huge"]
+      "sounds": [
+        "sounds/fart/huge_1",
+        "sounds/fart/huge_2",
+        "sounds/fart/huge_3"
+      ]
     }
   }
 }

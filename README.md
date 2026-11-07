@@ -340,8 +340,8 @@ with Poison or Hunger also qualify. Vanilla rotten flesh causes Hunger, not
 Poison, so its food effect is included. Healthy, bean-free players do not fart.
 
 Positive, nonfatal damage emits vanilla smoke behind the player's waist and
-plays an original positional fart sound, audible to nearby players. Each size
-has three distinct synthesized sounds (rumble, raspberry, squeak); Bedrock
+plays a recorded positional fart sound, audible to nearby players. Each size
+has three distinct excerpts from CC0 recordings; Bedrock
 randomly selects one per fart, with repeats possible. Volume is doubled:
 
 | Damage (health points; 2 = one heart) | Sound/cloud duration | Volume | Poison duration |
@@ -385,10 +385,25 @@ dimension changes. Automated tests cover the mocked Script API, pack assets,
 and build output; actual Bedrock item consumption, rendering, and audio still
 need this in-game verification. This pack has not been activated on the live world.
 
-The included sounds and 16x16 icon are procedurally authored assets, not copied
-from another addon. To regenerate them, run
+The sounds are CC0 recordings from Freesound:
+[Farts, loud and flabby x7 by peridactyloptrix](https://freesound.org/people/peridactyloptrix/sounds/202528/),
+[2 Part Fart by DSISStudios](https://freesound.org/people/DSISStudios/sounds/640804/), and
+[Morning fart by frenkfurth](https://freesound.org/people/frenkfurth/sounds/777448/).
+Source credits, verified license, download links, checksums, and excerpt timing
+are in `plugins/fart/resource/sounds/credits.json`, also shipped in the resource
+pack. High-quality MP3 previews are preserved under `plugins/fart/audio-sources/`
+for offline conversion; Freesound's original WAV downloads require login.
+Excerpts are mixed to mono, peak-normalized with headroom, and edge-faded,
+without synthesis, looping, or pitch changes. Longer variants use different
+windows of the same long recording. The 16x16 beans icon remains original.
+
+Bedrock custom sounds use Ogg Vorbis (`.ogg`), not merely an Ogg file containing
+Opus. Mono provides positional audio; these clips retain the recordings' 48 kHz
+sample rate (24 kHz is not required). To rebuild the audio and icon, run
 `python3 plugins/fart/generate-assets.py` (Python 3 and system `libsndfile` with
-Ogg Vorbis support are required only for regeneration, not build/deployment).
+MP3 decoding and Ogg Vorbis encoding are required only for regeneration, not
+build/deployment). The script verifies bundled source checksums and never
+downloads audio or overwrites sources.
 
 Playwright MCP is configured in `.mcp.json` for browser inspection. Trust/start
 it in your Copilot client when needed.

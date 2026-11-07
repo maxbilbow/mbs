@@ -11,10 +11,11 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { test } from "node:test";
+import { createHash } from "node:crypto";
 import { build } from "esbuild";
 import { buildPlugins } from "../scripts/plugins.ts";
 
-test("Fart packs build with linked item, recipe, original audio, and texture assets", async () => {
+test("Fart packs build with linked item, recipe, CC0 recorded audio, and texture assets", async () => {
   const root = mkdtempSync(join(tmpdir(), "mbs-fart-assets-"));
   try {
     const sourceRoot = join(root, "sources");
@@ -73,6 +74,30 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
     const sounds = json(
       join(resource.output, "sounds/sound_definitions.json"),
     ).sound_definitions;
+    const credits = json(join(resource.output, "sounds/credits.json"));
+    assert.equal(credits.license, "CC0-1.0");
+    assert.equal(
+      credits.license_url,
+      "https://creativecommons.org/publicdomain/zero/1.0/",
+    );
+    for (const recording of Object.values(credits.recordings) as {
+      page: string;
+      file: string;
+      sha256: string;
+    }[]) {
+      assert.match(
+        recording.page,
+        /^https:\/\/freesound\.org\/people\/.+\/sounds\/\d+\/$/,
+      );
+      const source = readFileSync(
+        join(sourceRoot, "fart/audio-sources", recording.file),
+      );
+      assert.equal(
+        createHash("sha256").update(source).digest("hex"),
+        recording.sha256,
+      );
+    }
+    const referencedClips = new Set<string>();
     for (const [index, seconds] of [0.4, 0.8, 1.6, 3].entries()) {
       const definition = sounds[`mbs.fart.${index + 1}`];
       assert.equal(definition.category, "player");
@@ -83,6 +108,14 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
       );
       const fingerprints = new Set<string>();
       for (const sound of definition.sounds) {
+        const name = sound.split("/").at(-1);
+        const clip = credits.clips.find(
+          (clip: { name: string }) => clip.name === name,
+        );
+        assert.ok(clip, "each sound has recording provenance");
+        assert.ok(credits.recordings[clip.recording]);
+        assert.equal(clip.duration, seconds);
+        referencedClips.add(name);
         const ogg = readFileSync(join(resource.output, `${sound}.ogg`));
         assert.equal(ogg.subarray(0, 4).toString(), "OggS");
         const identification = ogg.indexOf(Buffer.from("\x01vorbis"));
@@ -93,6 +126,7 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
           "positional audio must be mono",
         );
         const rate = ogg.readUInt32LE(identification + 12);
+        assert.equal(rate, 48000, "retain the recordings' sample rate");
         const lastPage = ogg.lastIndexOf(Buffer.from("OggS"));
         const frames = Number(ogg.readBigUInt64LE(lastPage + 6));
         assert.equal(
@@ -108,6 +142,12 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
         "variants contain different encoded audio",
       );
     }
+    assert.equal(referencedClips.size, 12);
+    assert.equal(
+      credits.clips.length,
+      referencedClips.size,
+      "no unreferenced recorded clips",
+    );
     assert.match(
       readFileSync(join(behavior.output, "scripts/main.js"), "utf8"),
       /@minecraft\/server/,

@@ -11,14 +11,15 @@ var beanTicks = 60 * 20;
 var intervalTicks = 4;
 var poisonRadius = 3;
 var tiers = [
-  { maxDamage: 2, ticks: 8, volume: 0.4, poisonTicks: 40 },
-  { maxDamage: 4, ticks: 16, volume: 0.7, poisonTicks: 60 },
-  { maxDamage: 8, ticks: 32, volume: 1, poisonTicks: 100 },
-  { maxDamage: Infinity, ticks: 60, volume: 1.5, poisonTicks: 140 }
+  { maxDamage: 2, ticks: 8, volume: 0.8, poisonTicks: 40 },
+  { maxDamage: 4, ticks: 16, volume: 1.4, poisonTicks: 60 },
+  { maxDamage: 8, ticks: 32, volume: 2, poisonTicks: 100 },
+  { maxDamage: Infinity, ticks: 60, volume: 3, poisonTicks: 140 }
 ];
 var beans = /* @__PURE__ */ new Map();
 var bursts = /* @__PURE__ */ new Map();
 var gasPoison = /* @__PURE__ */ new Map();
+var grounded = /* @__PURE__ */ new Map();
 function withEntity(entity, action) {
   if (!entity.isValid) return;
   try {
@@ -70,12 +71,42 @@ function emit(burst) {
     });
   }
 }
+function isGassy(player, includeHunger) {
+  return (beans.get(player.id) ?? 0) > system.currentTick || !!player.getEffect("poison") || includeHunger && !!player.getEffect("hunger");
+}
+function startBurst(player, tier) {
+  const health = player.getComponent("minecraft:health");
+  if (!health || health.currentValue <= 0) return;
+  const now = system.currentTick;
+  const previous = bursts.get(player.id);
+  if (previous && previous.end > now && previous.tier >= tier) return;
+  const burst = {
+    player,
+    tier,
+    end: now + tiers[tier].ticks,
+    poisoned: previous && previous.end > now ? previous.poisoned : /* @__PURE__ */ new Set()
+  };
+  bursts.set(player.id, burst);
+  player.dimension.playSound(`mbs.fart.${tier + 1}`, backside(player), {
+    volume: tiers[tier].volume,
+    pitch: 1
+  });
+  emit(burst);
+}
+function grantHealthEffect(player, name, duration, amplifier) {
+  const existing = player.getEffect(name);
+  if (existing && (existing.amplifier > amplifier || existing.amplifier === amplifier && existing.duration >= duration))
+    return;
+  player.addEffect(name, duration, { amplifier });
+}
 world.afterEvents.itemCompleteUse.subscribe(({ source, itemStack }) => {
   if (itemStack.typeId !== "mbs:tin_of_beans") return;
   withEntity(source, () => {
     beans.set(source.id, system.currentTick + beanTicks);
+    grantHealthEffect(source, "regeneration", 5 * 20, 1);
+    grantHealthEffect(source, "absorption", 120 * 20, 0);
     source.sendMessage(
-      "[Fart] Beans eaten: getting hurt makes you gassy for 60 seconds."
+      "[Fart] Beans eaten: health boosted! Hits and jumps make you gassy for 60 seconds."
     );
   });
 });
@@ -87,28 +118,23 @@ world.afterEvents.entityHurt.subscribe(
       const now = system.currentTick;
       if (damageSource.cause === EntityDamageCause.magic && (gasPoison.get(player.id) ?? 0) > now)
         return;
-      const health = player.getComponent("minecraft:health");
-      if (!health || health.currentValue <= 0) return;
-      if ((beans.get(player.id) ?? 0) <= now && !player.getEffect("poison") && !player.getEffect("hunger"))
-        return;
+      if (!isGassy(player, true)) return;
       const tier = tiers.findIndex((settings) => damage <= settings.maxDamage);
-      const previous = bursts.get(player.id);
-      if (previous && previous.end > now && previous.tier >= tier) return;
-      const burst = {
-        player,
-        tier,
-        end: now + tiers[tier].ticks,
-        poisoned: previous && previous.end > now ? previous.poisoned : /* @__PURE__ */ new Set()
-      };
-      bursts.set(player.id, burst);
-      player.dimension.playSound(`mbs.fart.${tier + 1}`, backside(player), {
-        volume: tiers[tier].volume,
-        pitch: 1
-      });
-      emit(burst);
+      startBurst(player, tier);
     });
   }
 );
+system.runInterval(() => {
+  for (const player of world.getAllPlayers()) {
+    withEntity(player, () => {
+      const wasGrounded = grounded.get(player.id);
+      const isOnGround = player.isOnGround;
+      grounded.set(player.id, isOnGround);
+      if (wasGrounded && !isOnGround && player.isJumping && !player.isFlying && !player.isGliding && !player.isSwimming && isGassy(player, false))
+        startBurst(player, 0);
+    });
+  }
+}, 1);
 system.runInterval(() => {
   const now = system.currentTick;
   for (const entries of [beans, gasPoison]) {
@@ -134,6 +160,7 @@ system.runInterval(() => {
 function clearPlayer(id) {
   beans.delete(id);
   bursts.delete(id);
+  grounded.delete(id);
 }
 world.afterEvents.playerLeave.subscribe(
   ({ playerId }) => clearPlayer(playerId)

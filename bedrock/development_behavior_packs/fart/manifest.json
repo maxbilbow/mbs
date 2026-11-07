@@ -2,9 +2,9 @@
   "format_version": 2,
   "header": {
     "name": "Fart",
-    "description": "Beans, poison, and hunger turn painful hits into smoky, poisonous farts.",
+    "description": "Healing beans, poison, and hunger turn hits and jumps into smoky, poisonous farts.",
     "uuid": "adb79023-3cbe-4ee0-b7f6-832af153b142",
-    "version": [1, 0, 0],
+    "version": [1, 1, 1],
     "min_engine_version": [1, 21, 90]
   },
   "metadata": { "authors": ["Max Bilbow"] },
@@ -12,21 +12,21 @@
     {
       "type": "data",
       "uuid": "62a1b2e5-e3c5-4a94-ab46-71a9d02f2147",
-      "version": [1, 0, 0]
+      "version": [1, 1, 1]
     },
     {
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js",
       "uuid": "d0ea0a96-b4c6-467f-995f-2ae2ddccf571",
-      "version": [1, 0, 0]
+      "version": [1, 1, 1]
     }
   ],
   "dependencies": [
     { "module_name": "@minecraft/server", "version": "2.0.0" },
     {
       "uuid": "943de106-f0fa-46b9-8f54-cf2eb3658c6f",
-      "version": [1, 0, 0]
+      "version": [1, 1, 1]
     }
   ]
 }
