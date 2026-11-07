@@ -14,11 +14,12 @@
     "manager": "node --env-file-if-exists=.env scripts/manager.ts",
     "build": "esbuild ./App/client/main.tsx ./App/client/auth.ts --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" --outdir=./App/www/js --loader:.css=global-css",
     "test": "node --test tests/*.test.ts",
-    "typecheck": "tsc -p App/server && tsc -p App/client && tsc -p plugins/max",
+    "typecheck": "tsc -p App/server && tsc -p App/client && npm run plugins:typecheck",
     "bedrock": "node scripts/bedrock.ts",
     "bedrock:update": "node update-server.ts",
-    "plugins:build": "node scripts/plugins.ts build",
-    "plugins:deploy": "node scripts/plugins.ts deploy"
+    "plugins:typecheck": "tsc -p plugins",
+    "plugins:build": "npm run plugins:typecheck && node scripts/plugins.ts build",
+    "plugins:deploy": "npm run plugins:typecheck && node scripts/plugins.ts deploy"
   },
   "author": "Max Bilbow",
   "license": "ISC",

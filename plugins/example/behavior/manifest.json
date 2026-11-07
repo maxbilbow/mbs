@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "TypeScript example",
+    "description": "Announces startup and responds to /scriptevent example:ping",
+    "uuid": "e7bfa9d8-b941-4d7d-9718-b4cafc39e535",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "uuid": "203cabea-4802-4a03-bfa5-2d07bc4de859",
+      "version": [1, 0, 0],
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0"
+    }
+  ]
+}

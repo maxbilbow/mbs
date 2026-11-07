@@ -1,7 +1,7 @@
 # MBS
 
 A private Minecraft Bedrock dedicated server, a web-based server/pack manager,
-and Max's custom Minecraft plugin.
+and TypeScript Minecraft plugin sources.
 
 ## Repository layout
 
@@ -9,7 +9,8 @@ and Max's custom Minecraft plugin.
   worlds, vendor packs, and deployed development packs. Its working directory is
   significant; do not run the executable from the repository root.
 - `App/` contains the Express API, React dashboard, and shared models.
-- `plugins/max/behavior/` is the editable source for Max's chat-command pack.
+- `plugins/` contains editable TypeScript packs and shared type-checking configuration.
+  `plugins/example/behavior/` is a minimal, verifiable example.
 - `scripts/` contains runtime control, the updater, plugin build/deployment, and
   shared paths. Root `mbs`, `update-server.ts`, and `update-server.sh` remain
   compatibility entry points.
@@ -192,26 +193,60 @@ Tests use temporary Minecraft installations, injected process controls, and a
 temporary Git repository. They do not stop the live server, alter live worlds,
 or push commits. Minecraft Script API behavior itself needs an in-game check.
 
-## Develop and deploy Max's plugin
+## Develop and deploy TypeScript plugins
 
-Edit `plugins/max/behavior/manifest.json` and
-`plugins/max/behavior/scripts/main.js`, then:
+Edit `plugins/example/behavior/manifest.json` and
+`plugins/example/behavior/scripts/main.ts`, then:
 
 ```sh
-npm run plugins:build   # bundles into .build/plugins/max/behavior/
-npm run plugins:deploy  # builds and copies into bedrock/development_behavior_packs/__Max/
+npm run plugins:typecheck # checks all source plugins without emitting files
+npm run plugins:build     # checks and bundles into .build/plugins/<name>/<kind>/
+npm run plugins:deploy    # checks, builds, and copies packs into Bedrock
 ```
 
+The commands discover all `plugins/<name>/behavior/` and optional
+`plugins/<name>/resource/` directories. Each pack needs a `manifest.json`.
+Behavior packs deploy to `bedrock/development_behavior_packs/<name>/`; resource
+packs deploy to `bedrock/development_resource_packs/<name>/`. Resource-only and
+data-only packs copy assets without compiling scripts.
+
+Script manifests still declare JavaScript: an entry such as `scripts/main.js`
+is built from `scripts/main.ts`. Local TypeScript imports are bundled, and
 `@minecraft/*` imports remain external so Minecraft supplies the Script API.
-Deployment preserves the pack UUID and refuses to overwrite another pack's
-UUID. Keep the header/module versions consistent and use a Script API dependency
-version supported by the installed Minecraft release.
+All declared script entries are built. Manifests and runtime assets are copied;
+TypeScript files and `tsconfig*.json` files are excluded. Build output and owned
+deployment folders are replaced on subsequent runs so stale scripts are removed.
+
+To add a plugin, copy the example into a new `plugins/<name>/behavior/` folder
+and assign fresh header and module UUIDs. Keep each pack's header/module versions
+consistent and use a Script API dependency supported by the installed Minecraft
+release. The example uses stable `@minecraft/server` API `2.0.0` and requires
+Bedrock `1.21.90` or newer. All source plugins share `plugins/tsconfig.json`.
+Build/deploy commands stop on TypeScript errors. Deployment preserves manifest
+UUIDs and preflights every destination, refusing to replace a different pack or
+a directory without a readable manifest.
 
 Deployment does not activate the pack, change the active world, or restart the
-server. In the web manager, activate **Max chat commands** for the configured
-world, then restart Minecraft. Use `/max:hello` in-game to verify it loaded.
-The deployed pack is ignored by Git; edit and commit the source, not the runtime
-copy.
+server. In the web manager, activate **TypeScript example** for the configured
+world, then restart Minecraft and join:
+
+1. On world startup the pack broadcasts
+   `[TypeScript example] Loaded. Run /scriptevent example:ping`. You may miss this
+   message if you join after startup.
+2. With cheats enabled and operator/command permissions, run
+   `/scriptevent example:ping`. Expect
+   `[TypeScript example] Pong! TypeScript is running.`
+
+The example replaces the non-working Max source pack, not its installed copy.
+It has fresh UUIDs and deploys to `example/`; any old `__Max` packs remain
+untouched. Deactivate the old **Max chat commands** pack through the web manager
+if it is still active. If no pong appears, check the Bedrock content log for
+script or dependency errors and confirm the example is active in the correct
+world. Automated tests verify compilation and mocked event callbacks; an actual
+in-game check is still required after deployment.
+
+Deployed packs are runtime copies; edit and commit the source under `plugins/`,
+not the generated packs.
 
 Playwright MCP is configured in `.mcp.json` for browser inspection. Trust/start
 it in your Copilot client when needed.
