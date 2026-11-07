@@ -27,6 +27,7 @@ export function App() {
   const [worlds, setWorlds] = useState<WorldList | null>(null);
   const [users, setUsers] = useState<UserList | null>(null);
   const [plugins, setPlugins] = useState<readonly PluginInfo[]>([]);
+  const [showInactivePlugins, setShowInactivePlugins] = useState(true);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [pending, setPending] = useState<string | null>(null);
@@ -267,6 +268,8 @@ export function App() {
           worldName={worlds?.activeWorld}
           busy={busy}
           loaded={!!worlds}
+          showInactive={showInactivePlugins}
+          onShowInactiveChange={setShowInactivePlugins}
           onToggle={(uuid, version) =>
             void run(
               "Updating pack...",

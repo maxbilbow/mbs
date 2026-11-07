@@ -207,9 +207,10 @@ test("plugin selector renders authors safely and identifies missing attribution"
           import { createElement } from "react";
           import { renderToStaticMarkup } from "react-dom/server";
           import { PluginList } from "./App/client/PluginList/PluginList.tsx";
-          export function render(plugins) {
+          export function render(plugins, showInactive = true) {
             return renderToStaticMarkup(createElement(PluginList, {
-              plugins, busy: false, loaded: true, onToggle() {}
+              plugins, busy: false, loaded: true, showInactive,
+              onShowInactiveChange() {}, onToggle() {}
             }));
           }
         `,
@@ -236,6 +237,48 @@ test("plugin selector renders authors safely and identifies missing attribution"
     assert.match(html, /By Max Bilbow, &lt;script&gt;/);
     assert.doesNotMatch(html, /<script>/);
     assert.match(html, /Activate Test version 1\.0\.1/);
+    assert.match(html, /Show inactive plugins/);
+    assert.match(render(plugins, false), /No active plugins/);
+    assert.doesNotMatch(render(plugins, false), /<h3>Test<\/h3>/);
+    const resource = {
+      ...plugins[0],
+      uuid: "resource",
+      type: "resource",
+      authors: ["Resource author"],
+      versions: plugins[0].versions.map((version) => ({
+        ...version,
+        uuid: "resource",
+        type: "resource",
+        active: true,
+      })),
+    };
+    const inactive = {
+      ...plugins[0],
+      name: "A inactive",
+      uuid: "inactive",
+    };
+    const secondActive = { ...resource, name: "Z active", uuid: "z-active" };
+    const grouped = render([inactive, secondActive, plugins[0], resource]);
+    assert.equal((grouped.match(/<h3>Test<\/h3>/g) ?? []).length, 1);
+    assert.match(grouped, /Behaviour &amp; resource packs/);
+    assert.match(grouped, /Activate Test behaviour pack version 1\.0\.1/);
+    assert.match(grouped, /Deactivate Test resource pack version 1\.0\.1/);
+    assert.match(grouped, /By Max Bilbow, &lt;script&gt;, Resource author/);
+    assert.ok(
+      grouped.indexOf("<h3>Test</h3>") < grouped.indexOf("<h3>Z active</h3>"),
+    );
+    assert.ok(
+      grouped.indexOf("<h3>Z active</h3>") <
+        grouped.indexOf("<h3>A inactive</h3>"),
+    );
+    const filtered = render([inactive, plugins[0], resource], false);
+    assert.match(filtered, /<h3>Test<\/h3>/);
+    assert.match(filtered, /Activate Test behaviour pack/);
+    assert.doesNotMatch(filtered, /<h3>A inactive<\/h3>/);
+    assert.ok(
+      plugins[0].versions.every((version) => !version.active),
+      "rendering does not mutate pack state",
+    );
   } finally {
     rmSync(root, { recursive: true });
   }

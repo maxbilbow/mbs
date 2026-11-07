@@ -132,6 +132,13 @@ switches, and pack changes show progress and errors without reloading the page.
 Disruptive actions ask for confirmation: connected players are disconnected when
 the server stops or restarts. A running process can still be loading its world.
 
+The plugin list groups packs with exactly matching manifest names into one card,
+with separate behaviour/resource activation buttons. Groups with any active
+version appear first, alphabetically within active and inactive groups.
+Uncheck **Show inactive plugins** to hide wholly inactive groups; inactive
+companion packs and alternative versions of active groups remain available.
+The filter persists during dashboard refreshes/world switches, not page reloads.
+
 Choose **Switch world** to activate an existing world. If Minecraft is running,
 the manager waits for it to stop, changes the configuration, and starts it again.
 If it is already stopped, it stays stopped; use **Start server** when ready.
@@ -320,7 +327,8 @@ without author metadata show **Author not specified**.
 
 ### Fart
 
-`plugins/fart/` contains **Fart** and **Fart Resources**. The behavior pack adds
+`plugins/fart/` contains behavior and resource packs both named **Fart**, grouped
+into one card in the manager. The behavior pack adds
 an edible **Tin of Beans** (`mbs:tin_of_beans`), crafted at a crafting table from
 one iron nugget and two beetroots. Eating it, even at full hunger, enables
 damage- and jump-triggered farts for 60 seconds; another tin resets the timer.
@@ -363,7 +371,7 @@ Death/respawn and leaving clear beans and active clouds; server restarts also
 reset these temporary states. Poison status itself remains governed by Minecraft.
 
 Build with `npm run plugins:build`. To install, run `npm run plugins:deploy`,
-activate **both Fart and Fart Resources** for the desired world in the manager,
+activate **both Behaviour and Resource buttons under Fart** for the desired world in the manager,
 then restart Minecraft. The manager does not automatically activate dependencies.
 Clients must accept/download the resource pack for the icon and audio.
 No experimental features are required. With operator permissions and cheats,

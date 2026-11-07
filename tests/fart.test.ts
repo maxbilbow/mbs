@@ -33,6 +33,10 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
     const resource = packs.find((pack) => pack.kind === "resource")!;
     const json = (path: string) => JSON.parse(readFileSync(path, "utf8"));
     const manifest = json(join(behavior.output, "manifest.json"));
+    assert.equal(
+      manifest.header.name,
+      json(join(resource.output, "manifest.json")).header.name,
+    );
     assert.ok(
       manifest.modules.some(
         (module: { type: string }) => module.type === "data",
@@ -163,7 +167,20 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
     }[] = [];
     const queries: { location: Location; maxDistance: number }[] = [];
     const targets: ReturnType<typeof entity>[] = [];
-    function dimension(name: string) {
+    interface TestDimension {
+      error: Error | undefined;
+      spawnParticle(effect: string, position: Location): void;
+      playSound(
+        name: string,
+        position: Location,
+        options: { volume: number; pitch: number },
+      ): void;
+      getEntities(query: {
+        location: Location;
+        maxDistance: number;
+      }): { dimension: TestDimension; location: Location }[];
+    }
+    function dimension(name: string): TestDimension {
       return {
         error: undefined as Error | undefined,
         spawnParticle(effect: string, position: Location) {
@@ -422,7 +439,7 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
     for (const effect of ["poison", "hunger"]) {
       reset();
       player.effects.set(effect, { duration: 100, amplifier: 0 });
-      const count = sounds.length;
+      const count: number = sounds.length;
       hurt(1, player, effect === "poison" ? "magic" : "entityAttack");
       assert.equal(
         sounds.length,

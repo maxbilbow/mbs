@@ -452,6 +452,9 @@ input[type="checkbox"] {
   display: grid;
   gap: 12px;
 }
+.checkbox-label.pack-filter {
+  margin: 0 0 18px;
+}
 .user-list {
   display: grid;
   gap: 12px;
