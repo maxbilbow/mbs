@@ -2,13 +2,18 @@ import type { Express } from "express";
 import * as MbsCtrl from "../mbs/MbsCtrl.ts";
 import { Logger } from "tslog";
 import { createMutationGate } from "./MutationGate.ts";
+import { createLogReader } from "../data/Logs.ts";
 
 export function setUpMbsApi(
   app: Express,
   control = MbsCtrl,
   mutate = createMutationGate(),
+  readLogs = createLogReader(),
 ) {
   const logger = new Logger({ name: "MbsApi" });
+  app.get("/mbs/logs", async (_req, res) => {
+    res.set("Cache-Control", "no-store").json(await readLogs());
+  });
   app.get("/mbs/status", (req, res) => {
     const status = control.getStatus();
     logger.debug("Fetched server status:", status);

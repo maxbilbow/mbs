@@ -21,8 +21,12 @@ import {
 } from "./components/ConfirmDialog.js";
 import { ServerPanel } from "./components/ServerPanel.js";
 import { WorldManager } from "./components/WorldManager.js";
+import { LogViewer } from "./components/LogViewer.js";
+
+const tabs = ["Worlds", "Plugins", "Users", "Logs"] as const;
 
 export function App() {
+  const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("Worlds");
   const [status, setStatus] = useState<ServerStatus | null>(null);
   const [worlds, setWorlds] = useState<WorldList | null>(null);
   const [users, setUsers] = useState<UserList | null>(null);
@@ -257,40 +261,112 @@ export function App() {
             })
           }
         />
-        <WorldManager
-          data={worlds}
-          busy={busy}
-          onSwitch={switchWorld}
-          onCreate={submitWorld}
-        />
-        <PluginList
-          plugins={plugins}
-          worldName={worlds?.activeWorld}
-          busy={busy}
-          loaded={!!worlds}
-          showInactive={showInactivePlugins}
-          onShowInactiveChange={setShowInactivePlugins}
-          onToggle={(uuid, version) =>
-            void run(
-              "Updating pack...",
-              () => togglePluginVersion(uuid, version),
-              "Pack selection saved. Restart the server to apply pack changes.",
-            )
-          }
-        />
-        <UserManager
-          data={users}
-          busy={busy}
-          onSave={(input, onSuccess) => {
-            void run(
-              "Saving user...",
-              () => updateUser(input),
-              "User saved. Permissions apply on the next server start/restart or world switch.",
-            ).then((success) => {
-              if (success) onSuccess();
-            });
-          }}
-        />
+        <div className="config-tabs" role="tablist" aria-label="Manager areas">
+          {tabs.map((tab, index) => (
+            <button
+              key={tab}
+              type="button"
+              role="tab"
+              id={`tab-${tab}`}
+              aria-controls={`panel-${tab}`}
+              aria-selected={activeTab === tab}
+              tabIndex={activeTab === tab ? 0 : -1}
+              className="button config-tab"
+              onClick={() => setActiveTab(tab)}
+              onKeyDown={(event) => {
+                let next: number;
+                switch (event.key) {
+                  case "ArrowRight":
+                    next = (index + 1) % tabs.length;
+                    break;
+                  case "ArrowLeft":
+                    next = (index + tabs.length - 1) % tabs.length;
+                    break;
+                  case "Home":
+                    next = 0;
+                    break;
+                  case "End":
+                    next = tabs.length - 1;
+                    break;
+                  default:
+                    return;
+                }
+                event.preventDefault();
+                setActiveTab(tabs[next]);
+                document.getElementById(`tab-${tabs[next]}`)?.focus();
+              }}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div
+          role="tabpanel"
+          id="panel-Worlds"
+          aria-labelledby="tab-Worlds"
+          hidden={activeTab !== "Worlds"}
+          tabIndex={0}
+        >
+          <WorldManager
+            data={worlds}
+            busy={busy}
+            onSwitch={switchWorld}
+            onCreate={submitWorld}
+          />
+        </div>
+        <div
+          role="tabpanel"
+          id="panel-Plugins"
+          aria-labelledby="tab-Plugins"
+          hidden={activeTab !== "Plugins"}
+          tabIndex={0}
+        >
+          <PluginList
+            plugins={plugins}
+            worldName={worlds?.activeWorld}
+            busy={busy}
+            loaded={!!worlds}
+            showInactive={showInactivePlugins}
+            onShowInactiveChange={setShowInactivePlugins}
+            onToggle={(uuid, version) =>
+              void run(
+                "Updating pack...",
+                () => togglePluginVersion(uuid, version),
+                "Pack selection saved. Restart the server to apply pack changes.",
+              )
+            }
+          />
+        </div>
+        <div
+          role="tabpanel"
+          id="panel-Users"
+          aria-labelledby="tab-Users"
+          hidden={activeTab !== "Users"}
+          tabIndex={0}
+        >
+          <UserManager
+            data={users}
+            busy={busy}
+            onSave={(input, onSuccess) => {
+              void run(
+                "Saving user...",
+                () => updateUser(input),
+                "User saved. Permissions apply on the next server start/restart or world switch.",
+              ).then((success) => {
+                if (success) onSuccess();
+              });
+            }}
+          />
+        </div>
+        <div
+          role="tabpanel"
+          id="panel-Logs"
+          aria-labelledby="tab-Logs"
+          hidden={activeTab !== "Logs"}
+          tabIndex={0}
+        >
+          <LogViewer active={activeTab === "Logs"} />
+        </div>
       </main>
       <footer className="footer">
         <span>MBS / Minecraft Bedrock</span>

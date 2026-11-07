@@ -126,6 +126,19 @@ resume after a host reboot.
 
 ### Dashboard and worlds
 
+The manager separates **Worlds**, **Plugins**, **Users**, and **Logs** into
+keyboard-accessible tabs. Server status and controls remain visible in every
+tab, and switching tabs preserves unsaved forms and plugin filters.
+
+**Logs** displays Bedrock stdout/stderr from `logs/bedrock.log`, polling
+`/api/mbs/logs` every two seconds only while the tab is open and not paused.
+Use **Pause logs** to inspect output and disable **Auto-scroll** to read earlier
+lines. Each refresh reads at most the latest 64 KiB (the first line may be
+partial); full history remains on disk. File replacement/truncation is picked
+up on the next refresh. Missing logs are shown explicitly, and read/network
+failures show an error with a retry action. Like the other APIs, this endpoint
+must be protected by the deployment's authentication proxy.
+
 The dashboard shows server process status, the selected world, and world-specific
 pack selections. Status refreshes every 10 seconds. Start, stop, restart, world
 switches, and pack changes show progress and errors without reloading the page.

@@ -195,6 +195,44 @@ h3 {
 .server-panel {
   border-top-color: #678152;
 }
+.config-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+.config-tab {
+  color: var(--muted);
+  background: transparent;
+}
+.config-tab[aria-selected="true"] {
+  color: var(--accent);
+  background: #304029;
+  border-color: #52653e;
+}
+.config-tab:hover {
+  background: #29372d;
+}
+.log-toolbar {
+  align-items: center;
+}
+.log-toolbar .checkbox-label {
+  margin: 0;
+}
+.log-output {
+  height: min(55vh, 560px);
+  min-height: 240px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #101813;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 18px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
 .section-heading {
   display: flex;
   justify-content: space-between;
