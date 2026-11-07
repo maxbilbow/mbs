@@ -3,19 +3,35 @@
   "sound_definitions": {
     "mbs.fart.1": {
       "category": "player",
-      "sounds": ["sounds/fart/small"]
+      "sounds": [
+        "sounds/fart/small",
+        "sounds/fart/small_raspberry",
+        "sounds/fart/small_squeak"
+      ]
     },
     "mbs.fart.2": {
       "category": "player",
-      "sounds": ["sounds/fart/medium"]
+      "sounds": [
+        "sounds/fart/medium",
+        "sounds/fart/medium_raspberry",
+        "sounds/fart/medium_squeak"
+      ]
     },
     "mbs.fart.3": {
       "category": "player",
-      "sounds": ["sounds/fart/large"]
+      "sounds": [
+        "sounds/fart/large",
+        "sounds/fart/large_raspberry",
+        "sounds/fart/large_squeak"
+      ]
     },
     "mbs.fart.4": {
       "category": "player",
-      "sounds": ["sounds/fart/huge"]
+      "sounds": [
+        "sounds/fart/huge",
+        "sounds/fart/huge_raspberry",
+        "sounds/fart/huge_squeak"
+      ]
     }
   }
 }

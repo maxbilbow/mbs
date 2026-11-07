@@ -1,0 +1,21 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "mbs.fart.1": {
+      "category": "player",
+      "sounds": ["sounds/fart/small"]
+    },
+    "mbs.fart.2": {
+      "category": "player",
+      "sounds": ["sounds/fart/medium"]
+    },
+    "mbs.fart.3": {
+      "category": "player",
+      "sounds": ["sounds/fart/large"]
+    },
+    "mbs.fart.4": {
+      "category": "player",
+      "sounds": ["sounds/fart/huge"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mbs:tin_of_beans",
+      "menu_category": { "category": "items" }
+    },
+    "components": {
+      "minecraft:display_name": { "value": "Tin of Beans" },
+      "minecraft:icon": "mbs_tin_of_beans",
+      "minecraft:max_stack_size": 16,
+      "minecraft:use_animation": "eat",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation_modifier": 0.6,
+        "can_always_eat": true
+      }
+    }
+  }
+}

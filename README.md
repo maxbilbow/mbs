@@ -323,19 +323,32 @@ without author metadata show **Author not specified**.
 `plugins/fart/` contains **Fart** and **Fart Resources**. The behavior pack adds
 an edible **Tin of Beans** (`mbs:tin_of_beans`), crafted at a crafting table from
 one iron nugget and two beetroots. Eating it, even at full hunger, enables
-damage-triggered farts for 60 seconds; another tin resets the timer. Players
+damage- and jump-triggered farts for 60 seconds; another tin resets the timer.
+Beans also grant Regeneration II for 5 seconds and Absorption I (two temporary
+hearts) for 2 minutes, like a regular golden apple. Stronger or longer
+same-strength existing health effects are preserved; eating another tin refreshes
+shorter effects rather than stacking them. Players
 with Poison or Hunger also qualify. Vanilla rotten flesh causes Hunger, not
 Poison, so its food effect is included. Healthy, bean-free players do not fart.
 
 Positive, nonfatal damage emits vanilla smoke behind the player's waist and
-plays an original positional fart sound, audible to nearby players:
+plays an original positional fart sound, audible to nearby players. Each size
+has three distinct synthesized sounds (rumble, raspberry, squeak); Bedrock
+randomly selects one per fart, with repeats possible. Volume is doubled:
 
 | Damage (health points; 2 = one heart) | Sound/cloud duration | Volume | Poison duration |
 | ------------------------------------- | -------------------- | ------ | --------------- |
-| Up to 2                               | 0.4 seconds          | 0.4    | 2 seconds       |
-| Up to 4                               | 0.8 seconds          | 0.7    | 3 seconds       |
-| Up to 8                               | 1.6 seconds          | 1.0    | 5 seconds       |
-| Over 8                                | 3 seconds            | 1.5    | 7 seconds       |
+| Up to 2                               | 0.4 seconds          | 0.8    | 2 seconds       |
+| Up to 4                               | 0.8 seconds          | 1.4    | 3 seconds       |
+| Up to 8                               | 1.6 seconds          | 2.0    | 5 seconds       |
+| Over 8                                | 3 seconds            | 3.0    | 7 seconds       |
+
+Jumping while on beans or Poison emits the smallest fart, including its normal
+poison cloud. Hunger alone still qualifies for damage farts but not jump farts.
+Takeoff is checked every tick: holding jump does not repeat while airborne,
+but a fresh takeoff after landing can fart again. Walking off ledges, flying,
+gliding, and swimming do not trigger jump farts. Jump farts merge with active
+damage bursts rather than interrupting a larger fart.
 
 Clouds follow the player's position, facing, and dimension every four ticks.
 Living entities within three blocks of the emission point receive Poison I,
@@ -358,7 +371,8 @@ use `/give @s mbs:tin_of_beans` for testing.
 
 Check in-game: eat beans, take small then large hits, and have a second player
 watch/listen from behind and stand in the cloud. Check poison on nearby mobs,
-self-exclusion, bean expiry, rotten-flesh Hunger, normal Poison, respawn, and
+self-exclusion, bean expiry, rotten-flesh Hunger, normal Poison, health benefits,
+jumps (including holding jump and landing), sound variety, respawn, and
 dimension changes. Automated tests cover the mocked Script API, pack assets,
 and build output; actual Bedrock item consumption, rendering, and audio still
 need this in-game verification. This pack has not been activated on the live world.

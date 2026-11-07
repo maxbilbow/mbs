@@ -40,8 +40,14 @@ def generate_sounds():
     encoder.sf_strerror.restype = ctypes.c_char_p
     destination = ROOT / "sounds" / "fart"
     destination.mkdir(parents=True, exist_ok=True)
-    for name, duration in [("small", 0.4), ("medium", 0.8), ("large", 1.6), ("huge", 3.0)]:
-        rng = random.Random(42)
+    sizes = [("small", 0.4), ("medium", 0.8), ("large", 1.6), ("huge", 3.0)]
+    variants = [("", 95, 40, 9, 23), ("_raspberry", 65, 25, 16, 35), ("_squeak", 180, 90, 6, 12)]
+    for name, duration, seed, frequency_start, frequency_drop, wobble, flutter_rate in [
+        (name + suffix, duration, seed, start, drop, wobble, flutter)
+        for name, duration in sizes
+        for seed, (suffix, start, drop, wobble, flutter) in enumerate(variants, 42)
+    ]:
+        rng = random.Random(seed)
         count = round(duration * RATE)
         samples = (ctypes.c_float * count)()
         phase = 0.0
@@ -49,11 +55,11 @@ def generate_sounds():
         for index in range(count):
             time = index / RATE
             progress = time / duration
-            frequency = 95 - 40 * progress + 12 * math.sin(2 * math.pi * 9 * time)
+            frequency = frequency_start - frequency_drop * progress + 12 * math.sin(2 * math.pi * wobble * time)
             phase += 2 * math.pi * frequency / RATE
             noise = 0.65 * noise + 0.35 * rng.uniform(-1, 1)
             buzz = math.tanh(4 * math.sin(phase))
-            flutter = 0.7 + 0.3 * math.sin(2 * math.pi * 23 * time)
+            flutter = 0.7 + 0.3 * math.sin(2 * math.pi * flutter_rate * time)
             envelope = min(1, time / 0.02, (duration - time) / 0.08)
             samples[index] = 0.65 * envelope * flutter * (0.7 * buzz + 0.3 * noise)
         info = SoundInfo(0, RATE, 1, 0x200000 | 0x0060, 0, 0)  # Ogg Vorbis, mono

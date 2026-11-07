@@ -72,21 +72,37 @@ test("Fart packs build with linked item, recipe, original audio, and texture ass
     for (const [index, seconds] of [0.4, 0.8, 1.6, 3].entries()) {
       const definition = sounds[`mbs.fart.${index + 1}`];
       assert.equal(definition.category, "player");
-      const ogg = readFileSync(
-        join(resource.output, `${definition.sounds[0]}.ogg`),
-      );
-      assert.equal(ogg.subarray(0, 4).toString(), "OggS");
-      const identification = ogg.indexOf(Buffer.from("\x01vorbis"));
-      assert.ok(identification > 0);
       assert.equal(
-        ogg[identification + 11],
-        1,
-        "positional audio must be mono",
+        definition.sounds.length,
+        3,
+        "each tier has three randomly selectable variants",
       );
-      const rate = ogg.readUInt32LE(identification + 12);
-      const lastPage = ogg.lastIndexOf(Buffer.from("OggS"));
-      const frames = Number(ogg.readBigUInt64LE(lastPage + 6));
-      assert.equal(frames / rate, seconds, "audio matches the cloud duration");
+      const fingerprints = new Set<string>();
+      for (const sound of definition.sounds) {
+        const ogg = readFileSync(join(resource.output, `${sound}.ogg`));
+        assert.equal(ogg.subarray(0, 4).toString(), "OggS");
+        const identification = ogg.indexOf(Buffer.from("\x01vorbis"));
+        assert.ok(identification > 0);
+        assert.equal(
+          ogg[identification + 11],
+          1,
+          "positional audio must be mono",
+        );
+        const rate = ogg.readUInt32LE(identification + 12);
+        const lastPage = ogg.lastIndexOf(Buffer.from("OggS"));
+        const frames = Number(ogg.readBigUInt64LE(lastPage + 6));
+        assert.equal(
+          frames / rate,
+          seconds,
+          "every variant matches the cloud duration",
+        );
+        fingerprints.add(ogg.subarray(lastPage + 27).toString("hex"));
+      }
+      assert.equal(
+        fingerprints.size,
+        3,
+        "variants contain different encoded audio",
+      );
     }
     assert.match(
       readFileSync(join(behavior.output, "scripts/main.js"), "utf8"),
@@ -109,11 +125,15 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
       export class LocationOutOfWorldBoundariesError extends Error {}
       export const EntityDamageCause = { magic: "magic", entityAttack: "entityAttack" };
       export const callbacks = {};
+      export const players = [];
       export const system = {
         currentTick: 0,
-        runInterval(callback, ticks) { callbacks.update = callback; callbacks.ticks = ticks; }
+        runInterval(callback, ticks) {
+          if (ticks === 1) { callbacks.jump = callback; callbacks.jumpTicks = ticks; }
+          else { callbacks.update = callback; callbacks.ticks = ticks; }
+        }
       };
-      export const world = { afterEvents: Object.fromEntries(
+      export const world = { getAllPlayers() { return players; }, afterEvents: Object.fromEntries(
         ["itemCompleteUse", "entityHurt", "playerLeave", "playerSpawn"].map(name =>
           [name, { subscribe(callback) { callbacks[name] = callback; } }])
       ) };
@@ -178,6 +198,11 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
         id,
         typeId,
         isValid: true,
+        isOnGround: true,
+        isJumping: false,
+        isFlying: false,
+        isGliding: false,
+        isSwimming: false,
         dimension: overworld,
         location: { x: 10, y: 64, z: 20 },
         direction: { x: 0, y: 0, z: 1 },
@@ -241,6 +266,32 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
     assert.equal(sounds.length, 0);
     eat();
     assert.match(player.messages[0], /60 seconds/);
+    assert.deepEqual(player.applications, [
+      { effect: "regeneration", duration: 100, amplifier: 1 },
+      { effect: "absorption", duration: 2400, amplifier: 0 },
+    ]);
+    eat();
+    assert.equal(
+      player.applications.length,
+      2,
+      "equal/longer health effects do not stack",
+    );
+    player.effects.set("regeneration", { duration: 20, amplifier: 2 });
+    player.effects.set("absorption", { duration: 20, amplifier: 1 });
+    eat();
+    assert.equal(
+      player.applications.length,
+      2,
+      "stronger existing health effects are not downgraded",
+    );
+    player.effects.set("regeneration", { duration: 20, amplifier: 1 });
+    player.effects.set("absorption", { duration: 20, amplifier: 0 });
+    eat();
+    assert.equal(
+      player.applications.length,
+      4,
+      "shorter equal-strength effects refresh",
+    );
     for (const damage of [0, -1, NaN, Infinity]) hurt(damage);
     assert.equal(sounds.length, 0);
     const mob = entity("mob", "minecraft:zombie");
@@ -273,7 +324,10 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
     assert.equal(nearby.applications[0].duration, 40);
     assert.equal(pet.applications.length, 1);
     for (const who of [player, far, otherDimension, item, alreadyPoisoned])
-      assert.equal(who.applications.length, 0);
+      assert.equal(
+        who.applications.filter(({ effect }) => effect === "poison").length,
+        0,
+      );
     hurt(1, nearby, "magic");
     assert.equal(
       sounds.length,
@@ -301,7 +355,7 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
       const initialParticles = particles.length;
       hurt(damage);
       assert.equal(sounds.at(-1)?.name, `mbs.fart.${index + 1}`);
-      assert.equal(sounds.at(-1)?.volume, [0.4, 0.7, 1, 1.5][index]);
+      assert.equal(sounds.at(-1)?.volume, [0.8, 1.4, 2, 3][index]);
       assert.equal(particles.length - initialParticles, index + 1);
       assert.equal(victim.applications[0].duration, poisonDurations[index]);
       update(start + durations[index] - 4);
@@ -442,6 +496,154 @@ test("Fart gameplay gates, scales, follows players, and bounds poison feedback",
     eat();
     overworld.error = new Error("Unknown particle");
     assert.throws(() => hurt(1), /Unknown particle/);
+    overworld.error = undefined;
+
+    api.players.push(player);
+    assert.equal(
+      api.callbacks.jumpTicks,
+      1,
+      "takeoff detection checks every tick",
+    );
+    const sampleJump = () => {
+      api.system.currentTick++;
+      api.callbacks.jump();
+    };
+    const land = () => {
+      player.isOnGround = true;
+      sampleJump();
+    };
+    const jump = () => {
+      player.isOnGround = false;
+      player.isJumping = true;
+      sampleJump();
+    };
+    reset();
+    player.effects.clear();
+    land();
+    let jumpSounds = sounds.length;
+    jump();
+    assert.equal(sounds.length, jumpSounds, "healthy jumps do not fart");
+    land();
+    eat();
+    jump();
+    assert.equal(sounds.length, ++jumpSounds);
+    assert.equal(sounds.at(-1)?.name, "mbs.fart.1");
+    assert.equal(sounds.at(-1)?.volume, 0.8);
+    const jumpParticles = particles.length;
+    for (let tick = 0; tick < 10; tick++) sampleJump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "holding jump in midair does not retrigger",
+    );
+    assert.equal(particles.length, jumpParticles);
+    land();
+    jump();
+    assert.equal(
+      sounds.length,
+      ++jumpSounds,
+      "holding jump can trigger a fresh takeoff after landing",
+    );
+    reset();
+    player.effects.clear();
+    player.effects.set("poison", { duration: 100, amplifier: 0 });
+    land();
+    const jumpVictim = entity("jump-victim");
+    targets.push(jumpVictim);
+    jump();
+    assert.equal(
+      sounds.length,
+      ++jumpSounds,
+      "poison alone enables jump farts",
+    );
+    assert.equal(
+      jumpVictim.applications[0].duration,
+      40,
+      "jump farts retain the small poison cloud",
+    );
+    targets.length = 0;
+    reset();
+    player.effects.clear();
+    player.effects.set("hunger", { duration: 100, amplifier: 0 });
+    land();
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "hunger alone does not enable jump farts",
+    );
+    reset();
+    player.effects.clear();
+    eat();
+    land();
+    player.isJumping = false;
+    player.isOnGround = false;
+    sampleJump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "walking off a ledge does not fart",
+    );
+    for (const state of ["isFlying", "isGliding", "isSwimming"] as const) {
+      land();
+      player[state] = true;
+      jump();
+      assert.equal(sounds.length, jumpSounds, `${state} is not a jump`);
+      player[state] = false;
+    }
+    reset();
+    player.effects.clear();
+    eat();
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "first airborne observation after spawn is not a takeoff",
+    );
+    land();
+    hurt(9);
+    jumpSounds++;
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "jump cannot interrupt a larger active fart",
+    );
+    assert.equal(sounds.at(-1)?.name, "mbs.fart.4");
+    reset();
+    player.effects.clear();
+    eat();
+    update(api.system.currentTick + 1200);
+    land();
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "expired beans no longer enable jumps",
+    );
+    land();
+    eat();
+    player.isValid = false;
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "invalid players cannot trigger jumps",
+    );
+    player.isValid = true;
+    player.health = 0;
+    land();
+    jump();
+    assert.equal(
+      sounds.length,
+      jumpSounds,
+      "dead players cannot trigger jumps",
+    );
+    player.health = 20;
+    api.callbacks.playerLeave({ playerId: player.id });
+    land();
+    jump();
+    assert.equal(sounds.length, jumpSounds, "leaving clears jump eligibility");
   } finally {
     rmSync(root, { recursive: true });
   }
