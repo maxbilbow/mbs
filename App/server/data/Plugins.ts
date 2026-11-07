@@ -74,6 +74,7 @@ export function createPluginStore(
           uuid,
           name,
           description,
+          authors: [...new Set(versions.flatMap((pack) => pack.authors))],
           type,
           versions,
         };
@@ -92,13 +93,14 @@ export function createPluginStore(
     const jsonContent = readFileSync(join(dir, name, "manifest.json"), "utf-8");
     let pack: Omit<PackVersionInfo, "active">;
     try {
-      const { header } = JSON.parse(jsonContent.trim());
+      const { header, metadata } = JSON.parse(jsonContent.trim());
       pack = {
         uuid: header.uuid,
         name: header.name === "pack.name" ? name : header.name,
         folder: name,
         version: header.version,
         description: header.description,
+        authors: readAuthors(metadata, name),
         type,
       } as const;
     } catch (e) {
@@ -113,11 +115,40 @@ export function createPluginStore(
         folder: name,
         version: [0, 0, 0] as const,
         description: "Failed to read manifest",
+        authors: [],
         active: false,
         type,
       } as const;
     }
     return { ...pack, active: isActive(pack, type) };
+  }
+
+  function readAuthors(metadata: unknown, name: string): string[] {
+    if (metadata === undefined) return [];
+    if (
+      typeof metadata !== "object" ||
+      metadata === null ||
+      Array.isArray(metadata)
+    ) {
+      logger.warn(`Invalid metadata for pack "${name}"; authors unavailable.`);
+      return [];
+    }
+    if (!("authors" in metadata)) return [];
+    if (!Array.isArray(metadata.authors)) {
+      logger.warn(`Invalid authors for pack "${name}"; expected an array.`);
+      return [];
+    }
+    const authors: string[] = [];
+    for (const author of metadata.authors) {
+      if (typeof author !== "string" || !author.trim()) {
+        logger.warn(
+          `Invalid author entry for pack "${name}"; expected a name.`,
+        );
+        continue;
+      }
+      authors.push(author.trim());
+    }
+    return [...new Set(authors)];
   }
 
   function isActive(

@@ -118,6 +118,282 @@ function fixture() {
   return root;
 }
 
+test("manifest authors survive discovery and API responses for both pack kinds", async () => {
+  const root = fixture();
+  const server = createApp({ plugins: createPluginStore(root) }).listen(
+    0,
+    "127.0.0.1",
+  );
+  try {
+    const manifestPath = join(
+      root,
+      "development_behavior_packs/pack2/manifest.json",
+    );
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    manifest.metadata = {
+      authors: [" Max Bilbow ", "Max Bilbow", "Co-author"],
+    };
+    writeFileSync(manifestPath, JSON.stringify(manifest));
+    const resource = join(root, "development_resource_packs/resource");
+    mkdirSync(resource);
+    writeFileSync(
+      join(resource, "manifest.json"),
+      JSON.stringify({
+        header: {
+          uuid: randomUUID(),
+          name: "Resource",
+          version: [1, 0, 0],
+          description: "Resource pack",
+        },
+        metadata: { authors: ["Rohan"] },
+      }),
+    );
+    await once(server, "listening");
+    const address = server.address();
+    assert.ok(address && typeof address !== "string");
+    for (const prefix of ["", "/api"]) {
+      const response = await fetch(
+        `http://127.0.0.1:${address.port}${prefix}/plugins`,
+      );
+      assert.equal(response.status, 200);
+      const plugins = await response.json();
+      assert.ok(Array.isArray(plugins));
+      assert.deepEqual(
+        plugins.map((pack: { authors: string[] }) => pack.authors),
+        [["Rohan"], ["Max Bilbow", "Co-author"]],
+      );
+    }
+    const plugin = createPluginStore(root)
+      .findDevelompentPlugins()
+      .find((pack) => pack.uuid === uuid);
+    assert.ok(plugin);
+    assert.deepEqual(
+      plugin.versions.map((pack) => pack.authors),
+      [[], ["Max Bilbow", "Co-author"]],
+    );
+    for (const metadata of [
+      null,
+      [],
+      { authors: "Not an array" },
+      { authors: [null, 42, "", "  ", "Valid"] },
+    ]) {
+      manifest.metadata = metadata;
+      writeFileSync(manifestPath, JSON.stringify(manifest));
+      const pack = createPluginStore(root)
+        .findDevelompentPlugins()
+        .find((pack) => pack.uuid === uuid);
+      assert.ok(pack);
+      assert.equal(pack.name, "Test");
+      assert.deepEqual(
+        pack.authors,
+        metadata && "authors" in metadata && Array.isArray(metadata.authors)
+          ? ["Valid"]
+          : [],
+      );
+    }
+  } finally {
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+    rmSync(root, { recursive: true });
+  }
+});
+
+test("plugin selector renders authors safely and identifies missing attribution", async () => {
+  const root = fixture();
+  try {
+    const harness = join(root, "selector.mjs");
+    await build({
+      stdin: {
+        contents: `
+          import { createElement } from "react";
+          import { renderToStaticMarkup } from "react-dom/server";
+          import { PluginList } from "./App/client/PluginList/PluginList.tsx";
+          export function render(plugins) {
+            return renderToStaticMarkup(createElement(PluginList, {
+              plugins, busy: false, loaded: true, onToggle() {}
+            }));
+          }
+        `,
+        resolveDir: resolve(import.meta.dirname, ".."),
+      },
+      outfile: harness,
+      bundle: true,
+      platform: "node",
+      format: "esm",
+      jsx: "automatic",
+      banner: {
+        js: 'import { createRequire } from "node:module"; const require = createRequire(import.meta.url);',
+      },
+    });
+    const { render } = await import(pathToFileURL(harness).href);
+    const plugins = createPluginStore(root).findDevelompentPlugins();
+    assert.match(render(plugins), /Author not specified/);
+    assert.match(
+      render(plugins.map(({ authors, ...pack }) => pack)),
+      /Author not specified/,
+    );
+    plugins[0].authors = ["Max Bilbow", "<script>"];
+    const html = render(plugins);
+    assert.match(html, /By Max Bilbow, &lt;script&gt;/);
+    assert.doesNotMatch(html, /<script>/);
+    assert.match(html, /Activate Test version 1\.0\.1/);
+  } finally {
+    rmSync(root, { recursive: true });
+  }
+});
+
+test("Creative Aura tracks current player modes, locations, and transient errors", async (t) => {
+  const project = sourceFixture();
+  try {
+    cpSync(
+      resolve(import.meta.dirname, "../plugins/creative-aura"),
+      join(project.sourceRoot, "creative-aura"),
+      { recursive: true },
+    );
+    const packs = await buildPlugins(project);
+    const pack = packs.find((pack) => pack.name === "creative-aura");
+    assert.ok(pack);
+    const manifest = JSON.parse(
+      readFileSync(join(pack.output, "manifest.json"), "utf8"),
+    );
+    assert.equal(manifest.header.name, "Creative Aura");
+    assert.deepEqual(manifest.metadata.authors, ["Max Bilbow"]);
+    const stub = join(project.root, "minecraft.mjs");
+    writeFileSync(
+      stub,
+      `
+        export const players = [];
+        export const callbacks = {};
+        export const GameMode = {
+          Creative: "Creative", Survival: "Survival",
+          Adventure: "Adventure", Spectator: "Spectator"
+        };
+        export class InvalidEntityError extends Error {}
+        export class LocationInUnloadedChunkError extends Error {}
+        export class LocationOutOfWorldBoundariesError extends Error {}
+        export const world = { getAllPlayers() { return players; } };
+        export const system = {
+          runInterval(callback, ticks) {
+            callbacks.update = callback;
+            callbacks.ticks = ticks;
+          }
+        };
+      `,
+    );
+    const harness = join(project.root, "aura.mjs");
+    await build({
+      stdin: {
+        contents: `import ${JSON.stringify(join(pack.output, "scripts/main.js"))}; export * from ${JSON.stringify(stub)};`,
+        resolveDir: project.root,
+      },
+      alias: { "@minecraft/server": stub },
+      outfile: harness,
+      bundle: true,
+      platform: "node",
+      format: "esm",
+    });
+    const api = await import(pathToFileURL(harness).href);
+    type Location = { x: number; y: number; z: number };
+    const particles: {
+      effect: string;
+      location: Location;
+      dimension: string;
+    }[] = [];
+    function dimension(name: string) {
+      return {
+        error: undefined as Error | undefined,
+        spawnParticle(effect: string, location: Location) {
+          if (this.error) throw this.error;
+          particles.push({ effect, location, dimension: name });
+        },
+      };
+    }
+    const overworld = dimension("overworld");
+    const creative = {
+      id: "creative-player",
+      isValid: true,
+      mode: api.GameMode.Creative,
+      location: { x: 10, y: 64, z: -20 },
+      dimension: overworld,
+      getGameMode() {
+        return this.mode;
+      },
+    };
+    api.players.push(
+      creative,
+      ...["Survival", "Adventure", "Spectator"].map((mode) => ({
+        ...creative,
+        id: mode,
+        mode: api.GameMode[mode],
+      })),
+      { ...creative, id: "invalid", isValid: false },
+    );
+    assert.equal(api.callbacks.ticks, 10);
+    api.callbacks.update();
+    assert.equal(particles.length, 6);
+    for (const particle of particles) {
+      assert.equal(particle.effect, "minecraft:endrod");
+      assert.equal(particle.location.y, 65);
+      assert.equal(particle.dimension, "overworld");
+      assert.ok(
+        Math.abs(
+          Math.hypot(particle.location.x - 10, particle.location.z + 20) - 0.65,
+        ) < 1e-10,
+      );
+    }
+    const firstLocation = particles[0].location;
+    particles.length = 0;
+    api.callbacks.update();
+    assert.notDeepEqual(particles[0].location, firstLocation);
+    creative.mode = api.GameMode.Survival;
+    particles.length = 0;
+    api.callbacks.update();
+    assert.equal(particles.length, 0);
+    creative.mode = api.GameMode.Creative;
+    creative.dimension = dimension("nether");
+    creative.location = { x: -30, y: 90, z: 40 };
+    api.callbacks.update();
+    assert.equal(particles.length, 6);
+    assert.ok(
+      particles.every(
+        (particle) =>
+          particle.dimension === "nether" && particle.location.y === 91,
+      ),
+    );
+    creative.isValid = false;
+    particles.length = 0;
+    api.callbacks.update();
+    assert.equal(particles.length, 0);
+    creative.isValid = true;
+    const warnings: string[] = [];
+    t.mock.method(console, "warn", (message: string) => warnings.push(message));
+    api.players.push({ ...creative, id: "another", dimension: overworld });
+    for (const ErrorType of [
+      api.InvalidEntityError,
+      api.LocationInUnloadedChunkError,
+      api.LocationOutOfWorldBoundariesError,
+    ]) {
+      particles.length = 0;
+      creative.dimension.error = new ErrorType("Transient");
+      api.callbacks.update();
+      assert.equal(particles.length, 6);
+      assert.match(warnings.at(-1) ?? "", /\[Creative Aura\].*creative-player/);
+    }
+    assert.equal(warnings.length, 3);
+    creative.dimension.error = new Error("Unknown particle");
+    assert.throws(() => api.callbacks.update(), /Unknown particle/);
+    creative.dimension.error = undefined;
+    api.players.length = 0;
+    particles.length = 0;
+    api.callbacks.update();
+    assert.equal(particles.length, 0);
+    api.players.push({ ...creative, id: "rejoined", dimension: overworld });
+    api.callbacks.update();
+    assert.equal(particles.length, 6);
+  } finally {
+    rmSync(project.root, { recursive: true });
+  }
+});
+
 test("pack activation replaces an older version and deactivation persists", () => {
   const root = fixture();
   try {

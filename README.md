@@ -257,6 +257,32 @@ in-game check is still required after deployment.
 Deployed packs are runtime copies; edit and commit the source under `plugins/`,
 not the generated packs.
 
+### Creative Aura
+
+`plugins/creative-aura/behavior/` contains **Creative Aura**, authored by
+**Max Bilbow**. It emits a rotating ring of six vanilla end-rod sparkles around
+each creative player every 10 ticks (about half a second). It checks the player's
+actual game mode, so personal `/gamemode` overrides take precedence over the
+world default. Joining, respawning, and dimension changes are picked up on the
+next check. Survival, adventure, and spectator players receive no aura.
+
+Run `npm run plugins:deploy`, activate **Creative Aura** for the desired world
+in the web manager, and restart Minecraft. No resource pack is needed. This is
+a particle effect, not a through-wall outline or a source of world lighting.
+Existing sparkles fade over roughly 3-4 seconds after leaving creative mode;
+moving players may leave a short sparkle trail.
+
+Verify in-game with two players: watch a creative player's aura, switch that
+player to survival and back, then check respawning and travel between dimensions.
+Also test a creative-default world with a player explicitly in survival.
+Automated tests use a mocked Script API; actual multiplayer rendering still
+requires this in-game check.
+
+The pack selector displays authors from each manifest's `metadata.authors`
+string array, combining distinct authors across installed versions. Add this
+metadata to your own source manifests to make your packs recognizable. Packs
+without author metadata show **Author not specified**.
+
 Playwright MCP is configured in `.mcp.json` for browser inspection. Trust/start
 it in your Copilot client when needed.
 

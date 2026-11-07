@@ -46,6 +46,11 @@ export function PluginList({
                     : "Resource pack"}
                 </span>
                 <h3>{plugin.name}</h3>
+                <p className="pack-authors">
+                  {plugin.authors?.length
+                    ? `By ${plugin.authors.join(", ")}`
+                    : "Author not specified"}
+                </p>
                 <p>{plugin.description}</p>
               </div>
               <div
