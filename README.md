@@ -159,6 +159,41 @@ This gate covers this API process only: do not run CLI start/stop/restart comman
 another API instance, configuration edits, or scheduled updates during a manager
 operation. Do not edit pack lists while Minecraft or another tool is writing them.
 
+### Minecraft users and world permissions
+
+The **Users** panel discovers XUIDs from `bedrock/permissions.json`, the allowlist,
+saved world assignments, and `logs/bedrock.log`. The dashboard refreshes discovery
+every 10 seconds while open; reopening it also imports players seen since the last
+visit. Connection logs include usernames alongside XUIDs, so no external Xbox
+lookup or credentials are needed. Unknown usernames remain visible by XUID.
+Editable aliases are independent of discovered names, survive name changes, and
+can be cleared. **Add user** also accepts an XUID before that player connects.
+
+Select any world in the Users panel to assign **visitor**, **member**, or
+**operator**, or **Server default** to remove an explicit assignment. Unassigned
+players inherit `default-player-permission-level` (Bedrock defaults to member).
+These are Minecraft permissions, not web-manager access or an allowlist:
+operator permits administrative game commands; visitor does not block joining.
+Existing `permissions.json` assignments are imported into the initially selected
+world only. Other existing and new worlds start without explicit assignments.
+
+Bedrock's `permissions.json` is server-wide, so the manager stores inactive-world
+assignments in each world's `.mbs-permissions.json` and applies the selected
+world's assignments during a switch. Active-world saves update `permissions.json`
+without stopping Minecraft; use **Restart server** to apply them to the running
+server. A failed world switch attempts to restore both configuration and the
+previous permissions. Switching away saves the current assignments, including
+manual edits to `permissions.json`. Do not manually change `level-name` or operate
+another manager during a switch; CLI world changes bypass this coordination.
+
+Aliases and discovered identities persist in `bedrock/.mbs-users.json`. Both the
+registry and world permission files are private runtime state, ignored by Git and
+preserved by updates. Include them in backups. The API exposes `GET /api/users`
+and `PUT /api/users` (also available without `/api`); updates accept
+`{ xuid, alias, world, permission }`, where XUID stays a string and permission is
+one of the three roles or `null` for the server default. Protect these endpoints
+with the same reverse-proxy authentication as the rest of the manager.
+
 If a switch fails before shutdown completes, the configuration is not changed.
 Later failures trigger an attempt to restore the previous configuration and
 running state. Recovery failures are explicit; check dashboard status,

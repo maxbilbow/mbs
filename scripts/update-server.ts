@@ -19,6 +19,7 @@ const DOWNLOAD_LIST_URL =
   "https://raw.githubusercontent.com/kittizz/bedrock-server-downloads/main/bedrock-server-downloads.json";
 const PRESERVED = new Set([
   "permissions.json",
+  ".mbs-users.json",
   "allowlist.json",
   "server.properties",
   "worlds",

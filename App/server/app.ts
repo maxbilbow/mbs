@@ -7,6 +7,7 @@ import { setUpMbsApi } from "./rest/MbsApi.ts";
 import { setUpPluginsApi } from "./rest/PluginsApi.ts";
 import { createWorldStore } from "./data/Worlds.ts";
 import { setUpWorldsApi } from "./rest/WorldsApi.ts";
+import { setUpUsersApi } from "./rest/UsersApi.ts";
 import { createMutationGate } from "./rest/MutationGate.ts";
 import { Logger } from "tslog";
 
@@ -49,11 +50,9 @@ export function createApp(
   const mutate = createMutationGate();
   setUpPluginsApi(routes, options.plugins, mutate);
   setUpMbsApi(routes, options.control, mutate);
-  setUpWorldsApi(
-    routes,
-    options.worlds ?? createWorldStore(undefined, options.control),
-    mutate,
-  );
+  const worlds = options.worlds ?? createWorldStore(undefined, options.control);
+  setUpWorldsApi(routes, worlds, mutate);
+  setUpUsersApi(routes, worlds.users, worlds, mutate);
   // Support both direct /api requests and proxies that strip /api.
   app.use("/api", routes);
   app.use(routes);

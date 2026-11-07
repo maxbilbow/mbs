@@ -2,6 +2,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./MbsPluginManager.css";
 import type { PluginInfo } from "../model/Plugins.js";
 import type { CreateWorldInput, WorldList } from "../model/Worlds.js";
+import type { UserList } from "../model/Users.js";
+import { fetchUsers, updateUser } from "./api/Users.js";
+import { UserManager } from "./components/UserManager.js";
 import {
   getServerStatus,
   startServer,
@@ -22,6 +25,7 @@ import { WorldManager } from "./components/WorldManager.js";
 export function App() {
   const [status, setStatus] = useState<ServerStatus | null>(null);
   const [worlds, setWorlds] = useState<WorldList | null>(null);
+  const [users, setUsers] = useState<UserList | null>(null);
   const [plugins, setPlugins] = useState<readonly PluginInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -42,20 +46,24 @@ export function App() {
     const controller = new AbortController();
     currentRequest.current = controller;
     if (!background) setLoading(true);
-    const [serverResult, worldResult, pluginResult] = await Promise.all([
-      getServerStatus(controller.signal),
-      fetchWorlds(controller.signal),
-      fetchPlugins(controller.signal),
-    ]);
+    const [serverResult, worldResult, pluginResult, userResult] =
+      await Promise.all([
+        getServerStatus(controller.signal),
+        fetchWorlds(controller.signal),
+        fetchPlugins(controller.signal),
+        fetchUsers(controller.signal),
+      ]);
     if (!mounted.current || id !== requestId.current) return;
     const failures = [
       serverResult[1] && `Server: ${serverResult[1].message}`,
       worldResult[1] && `Worlds: ${worldResult[1].message}`,
       pluginResult[1] && `Packs: ${pluginResult[1].message}`,
+      userResult[1] && `Users: ${userResult[1].message}`,
     ].filter(Boolean);
     if (serverResult[0]) setStatus(serverResult[0]);
     if (worldResult[0]) setWorlds(worldResult[0]);
     if (pluginResult[0]) setPlugins(pluginResult[0]);
+    if (userResult[0]) setUsers(userResult[0]);
     setLoadError(failures.length ? failures.join(" ") : null);
     setLoading(false);
   }, []);
@@ -266,6 +274,19 @@ export function App() {
               "Pack selection saved. Restart the server to apply pack changes.",
             )
           }
+        />
+        <UserManager
+          data={users}
+          busy={busy}
+          onSave={(input, onSuccess) => {
+            void run(
+              "Saving user...",
+              () => updateUser(input),
+              "User saved. Permissions apply on the next server start/restart or world switch.",
+            ).then((success) => {
+              if (success) onSuccess();
+            });
+          }}
         />
       </main>
       <footer className="footer">

@@ -7,3 +7,5 @@ node_modules
 /.build
 /.env
 **/*.tsbuildinfo
+/bedrock/.mbs-users.json
+/bedrock/worlds/*/.mbs-permissions.json

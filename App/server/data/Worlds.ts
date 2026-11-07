@@ -10,6 +10,7 @@ import {
 import { join } from "node:path";
 import { Logger } from "tslog";
 import { BEDROCK_ROOT } from "../../../scripts/paths.ts";
+import { createUserStore } from "./Users.ts";
 import * as MbsCtrl from "../mbs/MbsCtrl.ts";
 import type {
   CreateWorldInput,
@@ -37,6 +38,7 @@ export function createWorldStore(
   const worldsRoot = join(runtimeRoot, "worlds");
   const propertiesFile = join(runtimeRoot, "server.properties");
   const logger = new Logger({ name: "Worlds" });
+  const users = createUserStore(runtimeRoot);
 
   function worldPath(name: string) {
     validateWorldName(name);
@@ -129,6 +131,7 @@ export function createWorldStore(
     if (!settings && !generated(target))
       throw new WorldError("World has no generated data or manager settings.");
     const next = updateProperties(previous, name, settings ?? previousSettings);
+    const permissions = users.prepareSwitch(previousName, name);
     const running = control.getStatus().status === "active";
     let stopped = false;
     let writeAttempted = false;
@@ -146,6 +149,7 @@ export function createWorldStore(
           409,
         );
       saveSettings(outgoing, previousSettings);
+      permissions.apply();
       writeAttempted = true;
       atomicWrite(propertiesFile, next);
       if (running) {
@@ -160,6 +164,7 @@ export function createWorldStore(
       try {
         if (writeAttempted) {
           await control.stop();
+          permissions.restore();
           atomicWrite(propertiesFile, previous);
           recovery = "Previous configuration was restored.";
         }
@@ -231,5 +236,5 @@ export function createWorldStore(
     return list();
   }
 
-  return { list, activate, create };
+  return { list, activate, create, users };
 }

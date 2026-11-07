@@ -452,6 +452,24 @@ input[type="checkbox"] {
   display: grid;
   gap: 12px;
 }
+.user-list {
+  display: grid;
+  gap: 12px;
+}
+.user-card {
+  background: #17221a;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  margin-top: 16px;
+}
+.user-card h3,
+.user-identity {
+  overflow-wrap: anywhere;
+}
+.user-card .actions {
+  margin-top: 22px;
+}
 .pack-card {
   display: flex;
   align-items: center;
