@@ -6,19 +6,27 @@ import {
   type WorldList,
   type WorldSettings,
 } from "../../model/Worlds.js";
+import {
+  WorldPropertyEditor,
+  type SaveProperties,
+} from "./WorldPropertyEditor.js";
 
 export function WorldManager({
   data,
   busy,
   onSwitch,
   onCreate,
+  onSaveProperties,
 }: {
   data: WorldList | null;
   busy: boolean;
   onSwitch: (name: string) => void;
   onCreate: (input: CreateWorldInput, onSuccess: () => void) => void;
+  onSaveProperties: SaveProperties;
 }) {
   const [creating, setCreating] = useState(false);
+  const [editing, setEditing] = useState<string | null>(null);
+  const editButton = useRef<HTMLButtonElement | null>(null);
   const createButton = useRef<HTMLButtonElement>(null);
   const closeForm = () => {
     setCreating(false);
@@ -48,6 +56,18 @@ export function WorldManager({
         Switch adventures without leaving the manager. Running servers restart
         when you switch.
       </p>
+      {editing && (
+        <WorldPropertyEditor
+          key={editing}
+          name={editing}
+          busy={busy}
+          onSave={onSaveProperties}
+          onClose={() => {
+            setEditing(null);
+            editButton.current?.focus();
+          }}
+        />
+      )}
       {creating && data && (
         <NewWorldForm
           defaults={data.defaults}
@@ -92,6 +112,18 @@ export function WorldManager({
                 }
               >
                 {world.active ? "Current world" : "Switch world"}
+              </button>
+              <button
+                type="button"
+                className="button ghost"
+                disabled={busy}
+                aria-label={`Edit properties for ${world.name}`}
+                onClick={(event) => {
+                  editButton.current = event.currentTarget;
+                  setEditing(world.name);
+                }}
+              >
+                Edit properties
               </button>
             </article>
           ))}

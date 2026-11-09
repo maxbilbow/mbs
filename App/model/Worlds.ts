@@ -24,3 +24,11 @@ export type CreateWorldInput = WorldSettings & {
   name: string;
   activate: boolean;
 };
+
+export type WorldProperties = {
+  name: string;
+  defaults: Record<string, string>;
+  overrides: Record<string, string>;
+  templateAvailable: boolean;
+  revision: string;
+};

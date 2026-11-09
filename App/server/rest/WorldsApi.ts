@@ -27,4 +27,19 @@ export function setUpWorldsApi(
       res.json(await store.activate(name));
     }),
   );
+
+  app.get("/worlds/properties", (req, res) => {
+    const name: unknown = req.query.name;
+    validateWorldName(name);
+    res.json(store.getProperties(name));
+  });
+
+  app.put(
+    "/worlds/properties",
+    mutate(async (req, res) => {
+      const name: unknown = req.body?.name;
+      validateWorldName(name);
+      res.json(store.saveProperties(name, req.body));
+    }),
+  );
 }

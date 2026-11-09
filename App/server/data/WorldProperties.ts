@@ -112,7 +112,7 @@ export function updateProperties(
   return text;
 }
 
-export function atomicWrite(file: string, content: string) {
+export function atomicWrite(file: string, content: string | Uint8Array) {
   const temporary = `${file}.${randomUUID()}.tmp`;
   const mode = (() => {
     try {

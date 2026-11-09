@@ -47,8 +47,13 @@ executable, not every process named `bedrock_server`. Stop sends SIGINT and wait
 for shutdown before a restart or update; startup output goes to
 `logs/bedrock.log`.
 
-Configure the server in `bedrock/server.properties`. Worlds are under
-`bedrock/worlds/`; the plugin manager follows the configured `level-name`.
+The generated `bedrock/server.properties` selects the active world. Each world's
+customisations live in `bedrock/worlds/<name>/server.properties`; omitted keys
+inherit from `bedrock/server.properties.template`. The manager rebuilds the
+runtime file from this template and the selected world's overrides on selection.
+Do not customise the template: updates replace it with the archive's exact file,
+including its comments and line endings. Worlds are under `bedrock/worlds/`;
+the plugin manager follows the configured `level-name`.
 The web manager can select and create worlds; it follows the configured world
 without restarting the API. Manual world-name changes still require a Minecraft
 restart.
@@ -66,8 +71,20 @@ npm run bedrock:update            # download, install, restart, runtime-only com
 The updater looks up Linux releases using
 [bedrock-server-downloads](https://github.com/kittizz/bedrock-server-downloads).
 It downloads and checks the archive before stopping Minecraft, overlays files
-inside `bedrock/`, and preserves `server.properties`, permissions, allowlist,
-worlds, `config/`, and development behavior/resource/skin packs.
+inside `bedrock/`, and preserves permissions, allowlist, worlds, `config/`, and
+development behavior/resource/skin packs. Server customisations are retained
+through world overrides rather than by keeping the generated file unchanged.
+It saves the archive's untouched `server.properties` as
+`bedrock/server.properties.template`, then rebuilds the active configuration
+using that world's overrides before restarting Minecraft.
+
+On the first world mutation or update, existing configuration values are saved
+as overrides for existing worlds, including old `.mbs-world.json` settings.
+Until the first update, the current configuration is used as the template
+baseline; it is not claimed to be a pristine vendor file. Legacy values are
+intentionally pinned to avoid losing customisations. Reset individual properties
+in the web editor to inherit new vendor defaults. Newly created worlds only pin
+their seed, game mode, and difficulty; other properties inherit the template.
 
 Automatic commits contain only already-tracked files overwritten by that
 update, plus `bedrock/current_version.txt`. Unrelated staged or unstaged
@@ -262,14 +279,37 @@ behavior as switching. Bedrock generates the actual world on its first start
 while selected. **Pending generation** remains visible until a world database
 exists; the manager does not fabricate databases or copy another world's packs.
 
-The manager saves versioned settings in each world's `.mbs-world.json`. Switching
-away saves that world's current configured seed/game mode/difficulty; returning
-restores saved settings. Previously unmanaged worlds use the current server
-defaults on first selection. These are server configuration values, not an
+Choose **Edit properties** on any world to configure all template properties,
+including optional commented-out properties. Properties are grouped into
+gameplay, players/access, networking, performance, packs/scripting, diagnostics,
+and other settings. Use the category selector and property-name search to navigate.
+**Customise** enables an override;
+**Reset to default** removes it, and **Reset all to template** clears all overrides
+when saved. `level-name` is controlled by world selection, not the editor.
+Saving an inactive world changes only that world's file. Saving the selected
+world also rebuilds the runtime configuration, but never restarts Minecraft:
+use **Restart** to apply it. The editor detects stale saves and asks you to reload
+instead of overwriting newer changes. Fields accept single-line values; follow
+Bedrock's documented allowed values and ranges.
+
+World overrides are plain `key=value` files in each world's `server.properties`.
+Existing `.mbs-world.json` settings are migrated and retained for compatibility;
+the properties file takes precedence. After migration, treat the runtime file
+as generated: direct edits to it are replaced on selection, save, or update.
+To apply manual changes to an inactive world's file, select that world. Prefer
+the editor for the active world so the runtime file is rebuilt immediately.
+These are server configuration values, not an
 inspection or rewrite of an existing world's database: a seed does not regenerate
 an existing world, and existing player modes still follow Bedrock's
-`force-gamemode` semantics. Unrelated properties, comments, and world pack lists
-are preserved. The updater already preserves the entire `worlds/` directory.
+`force-gamemode` semantics. Template comments and world pack lists are preserved.
+The updater preserves the entire `worlds/` directory. Back up these files and
+the template alongside world data.
+
+The administrative API supports `GET /api/worlds/properties?name=<world>` and
+`PUT /api/worlds/properties` with `{ name, overrides, revision }`. The GET response
+includes template defaults, world overrides, and a revision for conflict checks.
+Omitted override keys reset to the template. Proxy-stripped routes work as well;
+these endpoints require the same authentication proxy as the rest of the manager.
 
 Concurrent manager mutations receive a conflict error instead of overlapping.
 This gate covers this API process only: do not run CLI start/stop/restart commands,

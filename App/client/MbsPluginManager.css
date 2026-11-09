@@ -520,6 +520,18 @@ input[type="checkbox"] {
   display: grid;
   gap: 12px;
 }
+.property-list {
+  display: grid;
+  gap: 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 8px;
+}
+.property-row {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  overflow-wrap: anywhere;
+}
 .user-card {
   background: #17221a;
   border: 1px solid var(--border);

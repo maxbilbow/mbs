@@ -11,6 +11,10 @@ import { join } from "node:path";
 import { Logger } from "tslog";
 import { BEDROCK_ROOT } from "../../../scripts/paths.ts";
 import { createUserStore } from "./Users.ts";
+import {
+  createPropertyStore,
+  WORLD_PROPERTIES_FILE,
+} from "./ServerProperties.ts";
 import * as MbsCtrl from "../mbs/MbsCtrl.ts";
 import type {
   CreateWorldInput,
@@ -23,7 +27,6 @@ import {
   getWorldName,
   readProperties,
   settingsFromProperties,
-  updateProperties,
   validateSettings,
   validateWorldName,
   WorldError,
@@ -39,6 +42,7 @@ export function createWorldStore(
   const propertiesFile = join(runtimeRoot, "server.properties");
   const logger = new Logger({ name: "Worlds" });
   const users = createUserStore(runtimeRoot);
+  const properties = createPropertyStore(runtimeRoot);
 
   function worldPath(name: string) {
     validateWorldName(name);
@@ -52,8 +56,12 @@ export function createWorldStore(
   }
 
   function savedSettings(path: string): WorldSettings | null {
+    const name = path.slice(worldsRoot.length + 1);
     const file = join(path, METADATA);
-    if (!existsSync(file)) return null;
+    if (!existsSync(file))
+      return properties.has(name)
+        ? settingsFromProperties(properties.render(name))
+        : null;
     if (!lstatSync(file).isFile())
       throw new WorldError("World metadata must be a regular file.", 500);
     const value: unknown = JSON.parse(readFileSync(file, "utf8"));
@@ -66,7 +74,10 @@ export function createWorldStore(
     ) {
       throw new WorldError("Unsupported world metadata.", 500);
     }
-    return validateSettings(value.settings);
+    const settings = validateSettings(value.settings);
+    return properties.has(name)
+      ? settingsFromProperties(properties.render(name))
+      : settings;
   }
 
   function saveSettings(path: string, settings: WorldSettings) {
@@ -130,7 +141,8 @@ export function createWorldStore(
     const settings = savedSettings(target);
     if (!settings && !generated(target))
       throw new WorldError("World has no generated data or manager settings.");
-    const next = updateProperties(previous, name, settings ?? previousSettings);
+    properties.migrate();
+    const next = properties.render(name);
     const permissions = users.prepareSwitch(previousName, name);
     const running = control.getStatus().status === "active";
     let stopped = false;
@@ -148,6 +160,8 @@ export function createWorldStore(
           "Server configuration changed during switching.",
           409,
         );
+      if (properties.render(name) !== next)
+        throw new WorldError("World properties changed during switching.", 409);
       saveSettings(outgoing, previousSettings);
       permissions.apply();
       writeAttempted = true;
@@ -204,6 +218,7 @@ export function createWorldStore(
     };
     // Validate configuration and storage before reserving a new directory.
     list();
+    properties.migrate();
     const path = join(worldsRoot, input.name);
     try {
       mkdirSync(path);
@@ -214,10 +229,17 @@ export function createWorldStore(
     }
     try {
       saveSettings(path, settings);
+      properties.save(input.name, {
+        "level-seed": settings.seed,
+        gamemode: settings.gameMode,
+        difficulty: settings.difficulty,
+      });
     } catch (error) {
       const files = readdirSync(path);
-      if (files.length === 1 && files[0] === METADATA)
-        unlinkSync(join(path, METADATA));
+      for (const file of files) {
+        if (file === METADATA || file === WORLD_PROPERTIES_FILE)
+          unlinkSync(join(path, file));
+      }
       if (readdirSync(path).length === 0) rmdirSync(path);
       throw error;
     }
@@ -236,5 +258,61 @@ export function createWorldStore(
     return list();
   }
 
-  return { list, activate, create, users };
+  function getProperties(name: string) {
+    worldPath(name);
+    return properties.describe(name);
+  }
+
+  function saveProperties(name: string, value: unknown) {
+    worldPath(name);
+    if (!value || typeof value !== "object")
+      throw new WorldError("Property overrides and revision are required.");
+    const fields = value as Record<string, unknown>;
+    const current = properties.describe(name);
+    if (fields.revision !== current.revision)
+      throw new WorldError(
+        "Properties changed. Reload the editor and retry.",
+        409,
+      );
+    if (
+      !fields.overrides ||
+      typeof fields.overrides !== "object" ||
+      Array.isArray(fields.overrides)
+    )
+      throw new WorldError("Property overrides must be an object.");
+    const values: Record<string, string> = Object.create(null);
+    for (const [key, value] of Object.entries(fields.overrides)) {
+      if (
+        key === "level-name" ||
+        (!Object.hasOwn(current.defaults, key) &&
+          !Object.hasOwn(current.overrides, key)) ||
+        typeof value !== "string" ||
+        value.length > 4096 ||
+        /[\x00-\x1f\x7f]/.test(value)
+      )
+        throw new WorldError(`Invalid property: ${key}.`);
+      const defaultValue = current.defaults[key];
+      if (
+        (defaultValue === "true" || defaultValue === "false") &&
+        value !== "true" &&
+        value !== "false"
+      )
+        throw new WorldError(`${key} must be true or false.`);
+      values[key] = value;
+    }
+    const next = properties.render(name, values);
+    properties.migrate();
+    const previous = properties.overrides(name);
+    const active = name === getWorldName(runtimeRoot);
+    properties.save(name, values);
+    try {
+      if (active) atomicWrite(propertiesFile, next);
+    } catch (error) {
+      properties.save(name, previous);
+      throw error;
+    }
+    return properties.describe(name);
+  }
+
+  return { list, activate, create, users, getProperties, saveProperties };
 }

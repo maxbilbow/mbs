@@ -17,6 +17,7 @@ test("updates preserve local configuration, worlds and development packs", () =>
     "allowlist.json",
     "permissions.json",
     "server.properties",
+    "server.properties.template",
     "worlds/level/db/file",
     "development_behavior_packs/__Max/scripts/main.js",
     "development_resource_packs/pack/manifest.json",
@@ -80,6 +81,16 @@ test("release selection sorts versions semantically", () => {
     "1.10.0",
   );
   assert.throws(() => latestRelease({}), /No valid/);
+});
+
+test("the template is an update output but the generated runtime configuration is not", () => {
+  assert.deepEqual(
+    trackedUpdatePaths(
+      ["bedrock/server.properties", "bedrock/server.properties.template"],
+      ["server.properties", "server.properties.template"],
+    ),
+    ["bedrock/server.properties.template"],
+  );
 });
 
 test("update commits exclude unrelated staged changes and never add untracked files", () => {

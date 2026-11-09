@@ -17,7 +17,12 @@ import {
   setPluginFavourite,
   togglePluginVersion,
 } from "./api/Plugins.js";
-import { activateWorld, createWorld, fetchWorlds } from "./api/Worlds.js";
+import {
+  activateWorld,
+  createWorld,
+  fetchWorlds,
+  saveWorldProperties,
+} from "./api/Worlds.js";
 import type { ApiResult } from "./api/request.js";
 import { PluginList } from "./PluginList/PluginList.js";
 import { PluginUpdater } from "./PluginList/PluginUpdater.js";
@@ -318,6 +323,13 @@ export function App() {
             busy={busy}
             onSwitch={switchWorld}
             onCreate={submitWorld}
+            onSaveProperties={(name, overrides, revision) =>
+              run(
+                "Saving world properties...",
+                () => saveWorldProperties(name, overrides, revision),
+                `Properties saved for ${name}. Restart Minecraft to apply changes to the selected world.`,
+              )
+            }
           />
         </div>
         <div

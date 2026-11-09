@@ -144,6 +144,7 @@ test("creation reserves a pending world without changing properties or pack list
     assert.deepEqual(f.calls, []);
     assert.deepEqual(readdirSync(join(f.root, "worlds", newWorld.name)), [
       ".mbs-world.json",
+      "server.properties",
     ]);
     await assert.rejects(() => f.store.create(newWorld), { status: 409 });
     assert.deepEqual(result, f.store.list());
@@ -531,6 +532,20 @@ test("world APIs support both prefixes, return actionable errors, and coordinate
     );
     const switching = post("/worlds/activate", { name: newWorld.name });
     await enteredStop;
+    const propertySave = await fetch(`${base}/api/worlds/properties`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: "Original",
+        overrides: {},
+        revision: "stale",
+      }),
+    });
+    assert.equal(propertySave.status, 409);
+    assert.match(
+      ((await propertySave.json()) as { error: string }).error,
+      /in progress/,
+    );
     for (const path of [
       "/api/mbs/start",
       "/mbs/stop",

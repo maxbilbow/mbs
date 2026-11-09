@@ -14,6 +14,12 @@ import { dirname, join, posix } from "node:path";
 import { compare, gt, valid } from "semver";
 import { stop, start } from "./bedrock.ts";
 import { BEDROCK_ROOT, REPO_ROOT, VERSION_FILE } from "./paths.ts";
+import {
+  createPropertyStore,
+  parseProperties,
+  TEMPLATE_FILE,
+} from "../App/server/data/ServerProperties.ts";
+import { settingsFromProperties } from "../App/server/data/WorldProperties.ts";
 
 const DOWNLOAD_LIST_URL =
   "https://raw.githubusercontent.com/kittizz/bedrock-server-downloads/main/bedrock-server-downloads.json";
@@ -22,6 +28,7 @@ const PRESERVED = new Set([
   ".mbs-users.json",
   "allowlist.json",
   "server.properties",
+  TEMPLATE_FILE,
   "worlds",
   "development_resource_packs",
   "development_behavior_packs",
@@ -83,6 +90,8 @@ export function trackedUpdatePaths(
     updatedEntries.filter(isUpdateFile).map((entry) => `bedrock/${entry}`),
   );
   updated.add("bedrock/current_version.txt");
+  if (updatedEntries.includes("server.properties"))
+    updated.add(`bedrock/${TEMPLATE_FILE}`);
   return tracked.filter((file) => updated.has(file));
 }
 
@@ -187,6 +196,9 @@ export async function update({ checkOnly = false } = {}) {
         throw new Error(`Archive contains a symbolic link: ${entry}`);
       }
     }
+    const vendorProperties = readFileSync(join(extracted, "server.properties"));
+    parseProperties(vendorProperties.toString("utf8"));
+    settingsFromProperties(vendorProperties.toString("utf8"));
     await stop();
     for (const entry of entries.filter(
       (entry) => !entry.endsWith("/") && isUpdateFile(entry),
@@ -196,6 +208,7 @@ export async function update({ checkOnly = false } = {}) {
         recursive: true,
       });
     }
+    createPropertyStore(BEDROCK_ROOT).installTemplate(vendorProperties);
     chmodSync(join(BEDROCK_ROOT, "bedrock_server"), 0o755);
     await start();
     writeFileSync(VERSION_FILE, version, "utf8");
