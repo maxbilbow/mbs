@@ -547,6 +547,55 @@ input[type="checkbox"] {
 .pack-info {
   min-width: 0;
 }
+.pack-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.pack-icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  background: #243129;
+}
+.pack-icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.favourite-toggle[aria-pressed="true"] {
+  color: #f3cf64;
+}
+.favourite-toggle[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+.drag-handle:not(:disabled) {
+  cursor: grab;
+}
+.load-order {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.pack-card.dragging {
+  opacity: 0.5;
+}
+.pack-card.drop-before {
+  box-shadow: 0 -3px var(--accent);
+}
+.pack-card.drop-after {
+  box-shadow: 0 3px var(--accent);
+}
 .pack-info h3 {
   margin: 7px 0;
   overflow-wrap: anywhere;

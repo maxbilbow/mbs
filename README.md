@@ -147,7 +147,18 @@ the server stops or restarts. A running process can still be loading its world.
 
 The plugin list groups packs with exactly matching manifest names into one card,
 with separate behaviour/resource activation buttons. Groups with any active
-version appear first, alphabetically within active and inactive groups.
+version appear first in load order. Drag an active card's handle to reorder it,
+or use its move-up/down buttons (also available for keyboard and touch users).
+The displayed order is saved to the active world's behaviour/resource pack lists;
+each kind follows its relative order in the list. Restart Minecraft to apply it.
+Mixed cards move their active companions together. A world-local
+`world_plugin_order.json` keeps the combined display order across pack kinds.
+Uninstalled packs already present in world lists are preserved.
+
+Toggle a card's star to mark it as a favourite. Inactive favourites appear before
+other inactive cards, alphabetically within each group. Favourites are shared
+across worlds and persisted in `App/server/data/PluginMetadata.json`; they do not
+change activation or load order.
 Uncheck **Show inactive plugins** to hide wholly inactive groups; inactive
 companion packs and alternative versions of active groups remain available.
 The filter persists during dashboard refreshes/world switches, not page reloads.

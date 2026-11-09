@@ -11,8 +11,9 @@ import type { PluginInfo } from "../../model/Plugins.ts";
 import { Logger } from "tslog";
 import { findDevelompentPlugins } from "./Plugins.ts";
 
-export function getPluginMetadata() {
-  const metadataPath = path.join(import.meta.dirname, "PluginMetadata.json");
+export function getPluginMetadata(
+  metadataPath = path.join(import.meta.dirname, "PluginMetadata.json"),
+) {
   if (!existsSync(metadataPath)) {
     throw new Error("PluginMetadata.json not found");
   }
@@ -21,8 +22,10 @@ export function getPluginMetadata() {
   ) as readonly PluginMetadata[];
 }
 
-export function savePluginMetadata(metadata: readonly PluginMetadata[]) {
-  const metadataPath = path.join(import.meta.dirname, "PluginMetadata.json");
+export function savePluginMetadata(
+  metadata: readonly PluginMetadata[],
+  metadataPath = path.join(import.meta.dirname, "PluginMetadata.json"),
+) {
   writeFileSync(metadataPath, JSON.stringify(metadata, null, 2), "utf-8");
 }
 

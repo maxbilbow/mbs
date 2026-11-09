@@ -17,4 +17,6 @@ export type PluginInfo = {
   authors: string[];
   type: "behaviour" | "resource";
   versions: PackVersionInfo[];
+  favourite: boolean;
+  activeOrder?: number;
 };

@@ -11,7 +11,12 @@ import {
   stopServer,
   type ServerStatus,
 } from "./api/MbsCtrl.js";
-import { fetchPlugins, togglePluginVersion } from "./api/Plugins.js";
+import {
+  fetchPlugins,
+  reorderPlugins,
+  setPluginFavourite,
+  togglePluginVersion,
+} from "./api/Plugins.js";
 import { activateWorld, createWorld, fetchWorlds } from "./api/Worlds.js";
 import type { ApiResult } from "./api/request.js";
 import { PluginList } from "./PluginList/PluginList.js";
@@ -342,6 +347,20 @@ export function App() {
             loaded={!!worlds}
             showInactive={showInactivePlugins}
             onShowInactiveChange={setShowInactivePlugins}
+            onReorder={(uuids) =>
+              void run(
+                "Saving plugin load order...",
+                () => reorderPlugins(uuids),
+                "Plugin load order saved. Restart the server to apply it.",
+              )
+            }
+            onFavourite={(uuids, favourite) =>
+              void run(
+                "Saving favourite...",
+                () => setPluginFavourite(uuids, favourite),
+                "Plugin favourite saved.",
+              )
+            }
             onToggle={(uuid, version) =>
               void run(
                 "Updating pack...",

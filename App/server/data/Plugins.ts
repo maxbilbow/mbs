@@ -4,11 +4,16 @@ import type { PackVersionInfo, PluginInfo } from "../../model/Plugins.ts";
 import { BEDROCK_ROOT } from "../../../scripts/paths.ts";
 import { Logger } from "tslog";
 import { getWorldName } from "./WorldProperties.ts";
+import { getPluginMetadata, savePluginMetadata } from "./PluginMetadata.ts";
 export { getWorldName } from "./WorldProperties.ts";
 
 export function createPluginStore(
   runtimeRoot = BEDROCK_ROOT,
   worldName?: string,
+  metadataPath = resolve(
+    runtimeRoot === BEDROCK_ROOT ? import.meta.dirname : runtimeRoot,
+    "PluginMetadata.json",
+  ),
 ) {
   const BEHAVIOUR_PACKS_DIR = resolve(
     runtimeRoot,
@@ -33,10 +38,12 @@ export function createPluginStore(
     if (isActive({ uuid, version }, type)) {
       return;
     }
-    const worldData = getWorldData(type).filter(
-      (pack) => pack.pack_id.toLowerCase() !== uuid.toLowerCase(),
+    const worldData = getWorldData(type);
+    const index = worldData.findIndex(
+      (pack) => pack.pack_id.toLowerCase() === uuid.toLowerCase(),
     );
-    worldData.push({ pack_id: uuid, version });
+    if (index < 0) worldData.push({ pack_id: uuid, version });
+    else worldData[index] = { ...worldData[index], pack_id: uuid, version };
     saveWorldData(type, worldData);
   }
 
@@ -49,6 +56,10 @@ export function createPluginStore(
   }
 
   function findDevelompentPlugins() {
+    const metadata = existsSync(metadataPath)
+      ? getPluginMetadata(metadataPath)
+      : [];
+    const activeOrder = getActiveOrder();
     const behaviourPacks = readdirSync(BEHAVIOUR_PACKS_DIR, {
       withFileTypes: true,
     })
@@ -79,12 +90,98 @@ export function createPluginStore(
           authors: [...new Set(versions.flatMap((pack) => pack.authors))],
           type,
           versions,
+          favourite: metadata.some(
+            (entry) =>
+              entry.favourite && (entry.bp === uuid || entry.rp === uuid),
+          ),
+          activeOrder: versions.some((pack) => pack.active)
+            ? activeOrder.indexOf(uuid)
+            : undefined,
         };
       }
     }
     return Object.values(groupedPlugins).sort((a, b) =>
       a.name.localeCompare(b.name),
     );
+  }
+
+  function getActiveOrder(): string[] {
+    const active = (["behaviour", "resource"] as const).flatMap((type) =>
+      getWorldData(type).map((pack) => pack.pack_id.toLowerCase()),
+    );
+    const orderPath = join(worldDataDirectory(), "world_plugin_order.json");
+    const saved: unknown = existsSync(orderPath)
+      ? JSON.parse(readFileSync(orderPath, "utf8"))
+      : [];
+    if (!Array.isArray(saved) || !saved.every((id) => typeof id === "string")) {
+      throw new Error(`Invalid plugin order in ${orderPath}`);
+    }
+    return [
+      ...new Set([...saved.filter((id) => active.includes(id)), ...active]),
+    ];
+  }
+
+  function reorderPlugins(uuids: readonly string[]) {
+    const active = findDevelompentPlugins().filter((plugin) =>
+      plugin.versions.some((pack) => pack.active),
+    );
+    if (
+      uuids.length !== active.length ||
+      new Set(uuids).size !== uuids.length ||
+      uuids.some((uuid) => !active.some((plugin) => plugin.uuid === uuid))
+    ) {
+      throw Object.assign(
+        new Error(
+          "Order must contain every installed active pack exactly once. Refresh and try again.",
+        ),
+        { status: 409 },
+      );
+    }
+    const lists = (["behaviour", "resource"] as const).map((type) => {
+      const current = getWorldData(type);
+      const ordered = uuids.flatMap((uuid) =>
+        current.filter((pack) => pack.pack_id.toLowerCase() === uuid),
+      );
+      let index = 0;
+      return {
+        type,
+        data: current.map((pack) =>
+          uuids.includes(pack.pack_id.toLowerCase()) ? ordered[index++] : pack,
+        ),
+      };
+    });
+    for (const { type, data } of lists) saveWorldData(type, data);
+    writeFileSync(
+      join(worldDataDirectory(), "world_plugin_order.json"),
+      JSON.stringify(uuids, null, 2),
+    );
+  }
+
+  function setFavourite(uuids: readonly string[], favourite: boolean) {
+    const plugins = findDevelompentPlugins();
+    if (uuids.some((uuid) => !plugins.some((plugin) => plugin.uuid === uuid))) {
+      throw Object.assign(new Error("Plugin not found"), { status: 404 });
+    }
+    const metadata = existsSync(metadataPath)
+      ? [...getPluginMetadata(metadataPath)]
+      : [];
+    for (const uuid of uuids) {
+      const entries = metadata.filter(
+        (entry) => entry.bp === uuid || entry.rp === uuid,
+      );
+      if (entries.length) {
+        for (const entry of entries) entry.favourite = favourite;
+      } else {
+        const plugin = plugins.find((plugin) => plugin.uuid === uuid)!;
+        metadata.push({
+          name: plugin.name,
+          order: 0,
+          [plugin.type === "behaviour" ? "bp" : "rp"]: uuid,
+          favourite,
+        });
+      }
+    }
+    savePluginMetadata(metadata, metadataPath);
   }
 
   function findPluginInfo(
@@ -202,7 +299,13 @@ export function createPluginStore(
     const worldFile = join(WORLD_DATA_DIR, filename);
     writeFileSync(worldFile, JSON.stringify(data, null, 2));
   }
-  return { activatePlugin, deactivatePlugin, findDevelompentPlugins };
+  return {
+    activatePlugin,
+    deactivatePlugin,
+    findDevelompentPlugins,
+    reorderPlugins,
+    setFavourite,
+  };
 }
 
 export function findDevelompentPlugins() {

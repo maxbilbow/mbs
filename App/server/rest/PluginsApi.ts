@@ -11,6 +11,30 @@ export function setUpPluginsApi(
     res.json(store.findDevelompentPlugins());
   });
 
+  for (const action of ["order", "favourite"] as const) {
+    app.post(
+      `/plugins/${action}`,
+      mutate((req, res) => {
+        const { uuids, favourite } = req.body ?? {};
+        if (
+          !Array.isArray(uuids) ||
+          !uuids.every((uuid) => typeof uuid === "string" && uuid.length > 0) ||
+          new Set(uuids).size !== uuids.length ||
+          (action === "favourite" &&
+            (!uuids.length || typeof favourite !== "boolean"))
+        ) {
+          res
+            .status(400)
+            .json({ error: "Invalid plugin UUIDs or favourite state" });
+          return;
+        }
+        if (action === "order") store.reorderPlugins(uuids);
+        else store.setFavourite(uuids, favourite);
+        res.json({ success: true });
+      }),
+    );
+  }
+
   function findVersion(uuid: string, version: string, type?: string) {
     if (!/^\d+\.\d+\.\d+$/.test(version)) return;
     return store

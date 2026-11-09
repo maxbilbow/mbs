@@ -118,6 +118,224 @@ function fixture() {
   return root;
 }
 
+function addInstalledPack(
+  root: string,
+  name: string,
+  type: "behavior" | "resource",
+) {
+  const uuid = randomUUID();
+  const directory = join(root, `development_${type}_packs`, uuid);
+  mkdirSync(directory);
+  writeFileSync(
+    join(directory, "manifest.json"),
+    JSON.stringify({
+      header: { uuid, name, version: [1, 0, 0], description: name },
+    }),
+  );
+  return uuid;
+}
+
+test("plugin order persists per world, preserves uninstalled packs and survives version changes", () => {
+  const root = fixture();
+  try {
+    const second = addInstalledPack(root, "Second", "behavior");
+    const resource = addInstalledPack(root, "Resource", "resource");
+    const otherResource = addInstalledPack(root, "Second", "resource");
+    const store = createPluginStore(root);
+    store.activatePlugin("behaviour", uuid, [1, 0, 1]);
+    store.activatePlugin("behaviour", second, [1, 0, 0]);
+    store.activatePlugin("resource", resource, [1, 0, 0]);
+    store.activatePlugin("resource", otherResource, [1, 0, 0]);
+    const world = join(root, "worlds/Bedrock level");
+    const path = join(world, "world_behavior_packs.json");
+    const unknown = { pack_id: randomUUID(), version: [3, 2, 1], extra: true };
+    const before = JSON.parse(readFileSync(path, "utf8"));
+    before.splice(1, 0, unknown);
+    writeFileSync(path, JSON.stringify(before));
+    const order = [second, otherResource, resource, uuid];
+    store.reorderPlugins(order);
+    assert.deepEqual(JSON.parse(readFileSync(path, "utf8")), [
+      { pack_id: second, version: [1, 0, 0] },
+      unknown,
+      { pack_id: uuid, version: [1, 0, 1] },
+    ]);
+    assert.deepEqual(
+      JSON.parse(
+        readFileSync(join(world, "world_resource_packs.json"), "utf8"),
+      ),
+      [
+        { pack_id: otherResource, version: [1, 0, 0] },
+        { pack_id: resource, version: [1, 0, 0] },
+      ],
+    );
+    const reloaded = createPluginStore(root);
+    assert.deepEqual(
+      reloaded
+        .findDevelompentPlugins()
+        .sort((a, b) => a.activeOrder! - b.activeOrder!)
+        .map((plugin) => plugin.uuid),
+      order,
+    );
+    reloaded.activatePlugin("behaviour", second, [1, 0, 1]);
+    assert.equal(JSON.parse(readFileSync(path, "utf8"))[0].pack_id, second);
+    reloaded.activatePlugin("behaviour", uuid, [1, 0, 2]);
+    assert.equal(JSON.parse(readFileSync(path, "utf8"))[2].pack_id, uuid);
+    const saved = readFileSync(path, "utf8");
+    for (const invalid of [
+      [uuid],
+      [uuid, uuid, resource, otherResource],
+      [...order, "missing"],
+    ]) {
+      assert.throws(
+        () => store.reorderPlugins(invalid),
+        /every installed active pack/,
+      );
+      assert.equal(readFileSync(path, "utf8"), saved);
+    }
+    mkdirSync(join(root, "worlds/Other World"));
+    writeFileSync(join(root, "server.properties"), "level-name=Other World\n");
+    assert.ok(
+      store
+        .findDevelompentPlugins()
+        .every((plugin) => plugin.activeOrder === undefined),
+    );
+    store.activatePlugin("resource", resource, [1, 0, 0]);
+    store.reorderPlugins([resource]);
+    assert.deepEqual(
+      JSON.parse(readFileSync(join(world, "world_plugin_order.json"), "utf8")),
+      order,
+    );
+  } finally {
+    rmSync(root, { recursive: true });
+  }
+});
+
+test("plugin favourites and order APIs validate input and persist through refreshes", async () => {
+  const root = fixture();
+  const resource = addInstalledPack(root, "Test", "resource");
+  const metadataPath = join(root, "PluginMetadata.json");
+  const original = { name: "Test", bp: uuid, rp: resource, order: -1 };
+  writeFileSync(metadataPath, JSON.stringify([original]));
+  const server = createApp({ plugins: createPluginStore(root) }).listen(
+    0,
+    "127.0.0.1",
+  );
+  try {
+    await once(server, "listening");
+    const address = server.address();
+    assert.ok(address && typeof address !== "string");
+    const base = `http://127.0.0.1:${address.port}`;
+    const post = (path: string, body: unknown) =>
+      fetch(`${base}${path}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+    for (const prefix of ["", "/api"]) {
+      assert.equal(
+        (
+          await post(`${prefix}/plugins/favourite`, {
+            uuids: [uuid, resource],
+            favourite: true,
+          })
+        ).status,
+        200,
+      );
+      const plugins = await (await fetch(`${base}${prefix}/plugins`)).json();
+      assert.ok(Array.isArray(plugins));
+      assert.ok(
+        plugins.every((plugin: { favourite: boolean }) => plugin.favourite),
+      );
+      assert.deepEqual(JSON.parse(readFileSync(metadataPath, "utf8")), [
+        { ...original, favourite: true },
+      ]);
+      assert.equal(
+        (
+          await post(`${prefix}/plugins/favourite`, {
+            uuids: [uuid, resource],
+            favourite: false,
+          })
+        ).status,
+        200,
+      );
+      assert.ok(
+        createPluginStore(root)
+          .findDevelompentPlugins()
+          .every((plugin) => !plugin.favourite),
+      );
+      assert.equal(
+        (await post(`${prefix}/plugins/order`, { uuids: [] })).status,
+        200,
+      );
+    }
+    for (const body of [
+      null,
+      {},
+      { uuids: "bad" },
+      { uuids: [1] },
+      { uuids: [uuid, uuid], favourite: true },
+      { uuids: [], favourite: true },
+      { uuids: [uuid], favourite: "true" },
+    ]) {
+      assert.equal((await post("/api/plugins/favourite", body)).status, 400);
+    }
+    assert.equal(
+      (
+        await post("/api/plugins/favourite", {
+          uuids: ["missing"],
+          favourite: true,
+        })
+      ).status,
+      404,
+    );
+    assert.equal(
+      (await post("/api/plugins/order", { uuids: [uuid] })).status,
+      409,
+    );
+    assert.equal(
+      (await post("/api/plugins/order", { uuids: [uuid, uuid] })).status,
+      400,
+    );
+    await fetch(`${base}/api/plugins/${uuid}/1.0.1/toggle`, { method: "POST" });
+    assert.equal((await post("/api/plugins/order", { uuids: [] })).status, 409);
+    assert.equal(
+      (await post("/api/plugins/order", { uuids: [uuid] })).status,
+      200,
+    );
+    // Unpaired packs receive their own persistent metadata without losing existing entries.
+    const unpaired = addInstalledPack(root, "Unpaired", "resource");
+    assert.equal(
+      (
+        await post("/api/plugins/favourite", {
+          uuids: [unpaired],
+          favourite: true,
+        })
+      ).status,
+      200,
+    );
+    const fresh = createPluginStore(root);
+    assert.equal(
+      fresh.findDevelompentPlugins().find((plugin) => plugin.uuid === unpaired)
+        ?.favourite,
+      true,
+    );
+    mkdirSync(join(root, "worlds/Other World"));
+    writeFileSync(join(root, "server.properties"), "level-name=Other World\n");
+    assert.equal(
+      fresh.findDevelompentPlugins().find((plugin) => plugin.uuid === unpaired)
+        ?.favourite,
+      true,
+    );
+    assert.deepEqual(JSON.parse(readFileSync(metadataPath, "utf8"))[0], {
+      ...original,
+      favourite: false,
+    });
+  } finally {
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+    rmSync(root, { recursive: true });
+  }
+});
+
 test("manifest authors survive discovery and API responses for both pack kinds", async () => {
   const root = fixture();
   const server = createApp({ plugins: createPluginStore(root) }).listen(
@@ -210,7 +428,7 @@ test("plugin selector renders authors safely and identifies missing attribution"
           export function render(plugins, showInactive = true) {
             return renderToStaticMarkup(createElement(PluginList, {
               plugins, busy: false, loaded: true, showInactive,
-              onShowInactiveChange() {}, onToggle() {}
+              onShowInactiveChange() {}, onToggle() {}, onReorder() {}, onFavourite() {}
             }));
           }
         `,
@@ -279,6 +497,31 @@ test("plugin selector renders authors safely and identifies missing attribution"
       plugins[0].versions.every((version) => !version.active),
       "rendering does not mutate pack state",
     );
+    const favourite = { ...inactive, name: "Z favourite", favourite: true };
+    const ordered = render([
+      { ...secondActive, activeOrder: 0 },
+      { ...resource, activeOrder: 1 },
+      inactive,
+      favourite,
+    ]);
+    assert.ok(
+      ordered.indexOf("<h3>Z active</h3>") < ordered.indexOf("<h3>Test</h3>"),
+    );
+    assert.ok(
+      ordered.indexOf("<h3>Test</h3>") <
+        ordered.indexOf("<h3>Z favourite</h3>"),
+    );
+    assert.ok(
+      ordered.indexOf("<h3>Z favourite</h3>") <
+        ordered.indexOf("<h3>A inactive</h3>"),
+    );
+    assert.match(
+      ordered,
+      /aria-pressed="true" aria-label="Unfavourite Z favourite"/,
+    );
+    assert.match(ordered, /draggable="true" aria-label="Drag to reorder Test"/);
+    assert.match(ordered, /Move Test up/);
+    assert.doesNotMatch(ordered, /Drag to reorder Z favourite/);
   } finally {
     rmSync(root, { recursive: true });
   }
