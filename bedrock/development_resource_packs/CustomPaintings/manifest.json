@@ -1,18 +1,23 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Max's Stuff",
+        "name": "Max's Custom Paintings",
         "description": "Max's resources",
         "uuid": "019d97dc-ae90-7742-88e4-c77f60e0cfdf",
         "version": [
             0,
-            0,
+            1,
             0
         ],
         "min_engine_version": [
             1,
             20,
             0
+        ]
+    },
+    "metadata": {
+        "authors": [
+            "Max Bilbow"
         ]
     },
     "modules": [
