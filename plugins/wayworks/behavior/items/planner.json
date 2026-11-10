@@ -1,0 +1,20 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wayworks:planner",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "minecraft:display_name": { "value": "Wayworks Planner" },
+      "minecraft:icon": "wayworks_planner",
+      "minecraft:max_stack_size": 1,
+      "minecraft:interact_button": true,
+      "minecraft:use_modifiers": {
+        "use_duration": 0.1,
+        "movement_modifier": 1
+      },
+      "minecraft:use_animation": "none"
+    }
+  }
+}

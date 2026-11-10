@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wayworks:worker",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/worker" },
+      "geometry": { "default": "geometry.wayworks.worker" },
+      "render_controllers": ["controller.render.wayworks.worker"]
+    }
+  }
+}

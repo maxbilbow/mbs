@@ -450,6 +450,16 @@ in-game check is still required after deployment.
 Deployed packs are runtime copies; edit and commit the source under `plugins/`,
 not the generated packs.
 
+### Wayworks
+
+[Wayworks](plugins/wayworks/README.md) is a new road, railway and bus-route
+prototype. Recruit workers, supply them in survival (or build freely in creative),
+and order straight, level construction. Craft bus-stop blocks, assign named
+routes and send workers between ordered stops. Passenger buses are planned, not
+implemented. Both behavior and resource packs must be activated; Bedrock
+1.21.100+ is required. See the plugin README for controls, destructive terrain
+limits, deployment, development plans and the outstanding in-game checklist.
+
 ### Creative Aura
 
 `plugins/creative-aura/behavior/` contains **Creative Aura**, authored by

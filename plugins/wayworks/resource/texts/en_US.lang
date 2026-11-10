@@ -1,0 +1,3 @@
+entity.wayworks:worker.name=Wayworks Worker
+tile.wayworks:bus_stop.name=Wayworks Bus Stop
+item.wayworks:planner.name=Wayworks Planner

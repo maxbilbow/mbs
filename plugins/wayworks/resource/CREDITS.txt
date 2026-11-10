@@ -1,0 +1,12 @@
+Wayworks artwork
+===============
+
+The worker model and the worker, planner and bus-stop pixel-art textures are
+original procedural artwork created for this plugin. They are dedicated to the
+public domain under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Texture source: ../generate-assets.ts in the Wayworks source folder.
+No third-party artwork or sound recordings are included.
+Minecraft supplies its own built-in block geometry and rendering materials;
+no Minecraft asset files have been copied into this pack.

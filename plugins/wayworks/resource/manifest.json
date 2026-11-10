@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Wayworks",
+    "description": "Original CC0 worker model and pixel-art textures for Wayworks.",
+    "uuid": "3534be33-2ea4-40e9-a5b1-d75a2d042b72",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 21, 100]
+  },
+  "metadata": { "authors": ["Max Bilbow"] },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "44e6e1d0-bf6e-4d8c-a82a-b64b57b77b64",
+      "version": [0, 1, 0]
+    }
+  ]
+}
