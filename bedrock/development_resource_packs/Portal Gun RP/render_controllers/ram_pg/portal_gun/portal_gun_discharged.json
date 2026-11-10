@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10",
+	"render_controllers": {
+		"controller.render.portal_gun_discharged": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default",
+					"tube": "material.tube"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

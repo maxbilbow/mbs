@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.portal_projectile.shoot": {
+			"loop": true,
+			"animation_length": 0.2917,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2917": [360, 360, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "fluid_drop"
+				}
+			}
+		},
+		"animation.portal_projectile.scale": {
+			"animation_length": 0.5,
+			"bones": {
+				"root": {
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.5": [1, 1, 1]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "portal_shot",
+					"locator": "locator"
+				}
+			}
+		}
+	}
+}

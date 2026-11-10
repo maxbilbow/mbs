@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "ram_pg:prototype_portal_gun_discharged",
+      "render_controllers": ["controller.render.portal_gun_discharged"],
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "tube": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/ram_pg/attachable/portal_gun/prototype/prototype_portal_gun_discharged"
+      },
+      "geometry": {
+        "default": "geometry.ram_pg_prototype_portal_gun_discharged"
+      },
+      "animations": {
+        "gun_controller": "controller.animation.ram_pg.portal_gun",
+        "first_person_hold": "animation.prototype_portal_gun.first_person_hold",
+        "third_person_hold": "animation.prototype_portal_gun.third_person_hold",
+        "first_person_shoot": "animation.prototype_portal_gun.first_person_shoot",
+        "ray": "animation.ram_pg.portal_gun.prototype.ray",
+        "bubbles": "animation.ram_pg.portal_gun.prototype.bubbles"
+      },
+      "scripts": {
+        "animate": ["gun_controller"]
+      }
+    }
+  }
+}

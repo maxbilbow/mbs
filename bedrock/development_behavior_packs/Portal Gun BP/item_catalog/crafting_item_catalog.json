@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "ram_pg:standard_portal_gun",
+              "name": "ram_pg:portal_gun_group"
+            },
+            "items": ["ram_pg:standard_portal_gun", "ram_pg:blue_standard_portal_gun", "ram_pg:yellow_standard_portal_gun", "ram_pg:standard_portal_gun_discharged", "ram_pg:prototype_portal_gun", "ram_pg:blue_prototype_portal_gun", "ram_pg:yellow_prototype_portal_gun", "ram_pg:prototype_portal_gun_discharged", "ram_pg:evil_morty_portal_gun", "ram_pg:blue_evil_morty_portal_gun", "ram_pg:green_evil_morty_portal_gun", "ram_pg:evil_morty_portal_gun_discharged", "ram_pg:prime.portal_gun", "ram_pg:blue_prime.portal_gun", "ram_pg:yellow_prime.portal_gun", "ram_pg:prime.portal_gun_discharged"]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "ram_pg:rick_hair",
+              "name": "ram_pg:head_accessories_group"
+            },
+            "items": ["ram_pg:rick_hair", "ram_pg:homesteader_rick_hair", "ram_pg:memory_rick_hair"]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "ram_pg:green_portal_fluid",
+              "name": "ram_pg:portal_fluid_group"
+            },
+            "items": ["ram_pg:green_portal_fluid", "ram_pg:blue_portal_fluid", "ram_pg:yellow_portal_fluid"]
+          }
+        ]
+      }
+    ]
+  }
+}

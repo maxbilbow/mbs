@@ -1,0 +1,48 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:evil_morty_portal_gun_base"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:gold_ingot"
+            },
+            {
+                "item": "minecraft:netherite_ingot"
+            },
+            {
+                "item": "ram_pg:chip"
+            },
+            {
+                "item": "minecraft:dispenser"
+            }
+        ],
+        "pattern": [
+            "gng",
+            "gRD",
+            "g  "
+        ],
+        "key": {
+            "g": {
+                "item": "minecraft:gold_ingot"
+            },
+            "n": {
+                "item": "minecraft:netherite_ingot"
+            },
+            "R": {
+                "item": "ram_pg:chip"
+            },
+            "D": {
+                "item": "minecraft:dispenser"
+            }
+        },
+        "result": {
+            "item": "ram_pg:evil_morty_portal_gun_base",
+            "count": 1
+        }
+    }
+}

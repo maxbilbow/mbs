@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "interdimensional_solution_full",
+		"metalness_emissive_roughness": "travel_solution_full_mer"
+	}
+}

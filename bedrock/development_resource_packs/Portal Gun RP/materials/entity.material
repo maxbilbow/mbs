@@ -1,0 +1,25 @@
+{
+    "materials": {
+        "version": "1.0.0",
+        "portal_material:entity_nocull": {
+            "+defines": [
+                "ALPHA_TEST",
+                "USE_EMISSIVE",
+                "USE_UV_ANIM"
+                ]
+        },
+        "portal_blood_spiral:entity_alphablend": {
+            "+defines": [
+                "USE_UV_ANIM"
+            ],
+            "+states": [
+                "DisableCulling"
+            ]
+        },
+        "ram_pg_shock_glow:entity_beam_additive": {
+            "-states": [
+                "DisableCulling"
+            ]
+        }
+    }
+}

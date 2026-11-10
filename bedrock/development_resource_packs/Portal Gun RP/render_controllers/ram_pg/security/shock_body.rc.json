@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.ram_pg.shock_body": {
+            "arrays": {
+                "materials": {
+                    "Array.glow": [ "Material.default", "Material.deferred" ]
+                }
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                { "*": "Array.glow[query.graphics_mode_is_any('deferred')]" },
+                { "skeleton_*": "Material.skeleton" }
+            ],
+            "textures": [
+                "Texture.default"
+            ]
+        }
+    }
+}

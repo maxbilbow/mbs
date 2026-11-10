@@ -1,0 +1,19 @@
+{
+  "texture_data": {
+    "ram_pg:interdimensional_solution_block": {
+      "textures": "textures/ram_pg/blocks/interdimensional_solution_block"
+    },
+    "ram_pg:interspatial_solution_block": {
+      "textures": "textures/ram_pg/blocks/interspatial_solution_block"
+    },
+    "ram_pg:extradimensional_solution_block": {
+      "textures": "textures/ram_pg/blocks/extradimensional_solution_block"
+    },
+    "ram_pg:quantum_solution_block": {
+      "textures": "textures/ram_pg/blocks/quantum_isotope_block"
+    },
+    "ram_pg:beaker_particles": {
+      "textures": "textures/ram_pg/particles/beaker_particles"
+    }
+  }
+}

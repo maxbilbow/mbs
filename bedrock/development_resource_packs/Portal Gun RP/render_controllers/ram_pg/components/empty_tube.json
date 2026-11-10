@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10",
+	"render_controllers": {
+		"controller.render.empty_tube": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default",
+					"tube": "material.tube"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

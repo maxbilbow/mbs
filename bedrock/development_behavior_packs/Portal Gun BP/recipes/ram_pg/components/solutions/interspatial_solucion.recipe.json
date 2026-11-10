@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_brewing_mix": {
+    "description": {
+      "identifier": "ram_pg:interspatial_solution_recipe"
+    },
+
+    "tags": [ "brewing_stand" ],
+
+    "input": "ram_pg:quantum_isotope",
+    "reagent": "ram_pg:phase_matter",
+    "output": "ram_pg:interspatial_solution_full"
+  }
+}

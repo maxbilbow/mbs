@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "ram_pg:evil_morty_portal_gun",
+      "render_controllers": ["controller.render.ram_pg.portal_gun.evil_morty"],
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "transparent": "entity_alphablend",
+        "outline": "entity_emissive_alpha_one_sided"
+      },
+      "textures": {
+        "default": "textures/ram_pg/attachable/portal_gun/evil_morty/evil_morty_portal_gun"
+      },
+      "geometry": {
+        "default": "geometry.ram_pg_evil_morty_portal_gun"
+      },
+      "animations": {
+        "gun_controller": "controller.animation.ram_pg.portal_gun",
+        "first_person_hold": "animation.evil_morty_portal_gun.first_person_hold",
+        "third_person_hold": "animation.evil_morty_portal_gun.third_person_hold",
+        "first_person_shoot": "animation.evil_morty_portal_gun.first_person_shoot",
+        "ray": "animation.ram_pg.portal_gun.evil_morty.ray",
+        "bubbles": "animation.ram_pg.portal_gun.evil_morty.bubbles"
+      },
+      "scripts": {
+        "animate": ["gun_controller"]
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ram_pg.blender.vanish": {
+			"animation_length": 3.4,
+			"bones": {
+				"root": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.4": {
+							"pre": [1, 1, 1],
+							"post": [0, 0, 0]
+						}
+					}
+				},
+				"helmet": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.4": {
+							"pre": [1, 1, 1],
+							"post": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ram_pg.blender.hidden": {
+			"animation_length": 3,
+			"bones": {
+				"root": {
+					"scale": [0, 0, 0]
+				},
+				"helmet": {
+					"scale": [0, 0, 0]
+				}
+			}
+		}
+	}
+}

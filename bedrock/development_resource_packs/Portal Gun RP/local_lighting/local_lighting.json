@@ -1,0 +1,41 @@
+{
+  "format_version": "1.21.120",
+  "minecraft:local_light_settings": {
+    "ram_pg:interdimensional_solution_full": {
+      "light_color": "#5EFC03",
+      "light_type": "point_light"
+    },
+    "ram_pg:interdimensional_solution_mid": {
+      "light_color": "#5EFC03",
+      "light_type": "point_light"
+    },
+    "ram_pg:interdimensional_solution_low": {
+      "light_color": "#5EFC03",
+      "light_type": "point_light"
+    },
+    "ram_pg:interspatial_solution_full": {
+      "light_color": "#0703fc",
+      "light_type": "point_light"
+    },
+    "ram_pg:interspatial_solution_mid": {
+      "light_color": "#0703fc",
+      "light_type": "point_light"
+    },
+    "ram_pg:interspatial_solution_low": {
+      "light_color": "#0703fc",
+      "light_type": "point_light"
+    },
+    "ram_pg:extradimensional_solution_full": {
+      "light_color": "#fcef03",
+      "light_type": "point_light"
+    },
+    "ram_pg:extradimensional_solution_mid": {
+      "light_color": "#fcef03",
+      "light_type": "point_light"
+    },
+    "ram_pg:extradimensional_solution_low": {
+      "light_color": "#fcef03",
+      "light_type": "point_light"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "ram_pg:blue_portal_fluid",
+            "render_controllers": [
+                "controller.render.charged_tube"
+            ],
+            "materials": {
+                "default": "entity_alphatest",
+                "tube": "entity_alphablend",
+                "fluid": "entity_emissive_alpha",
+                "fluid_outline": "entity_emissive_alpha_one_sided"
+            },
+            "textures": {
+                "default": "textures/ram_pg/attachable/components/portal_fluid/blue_portal_fluid"
+            },
+            "geometry": {
+                "default": "geometry.ram_pg_portal_fluid"
+            },
+            "animations": {
+                "first_person_hold": "animation.charged_tube.first_person_hold",
+                "first_person_hold_offhand": "animation.charged_tube.first_person_hold_offhand",
+                "third_person_hold": "animation.charged_tube.third_person_hold"
+            },
+            "scripts": {
+                "pre_animation": [
+					"v.main_hand = c.item_slot == 'main_hand';",
+					"v.off_hand = c.item_slot == 'off_hand';"
+				],
+                "animate": [
+                    {
+						"first_person_hold": "v.main_hand && c.is_first_person"
+					},
+					{
+						"first_person_hold_offhand": "v.off_hand && c.is_first_person"
+					},
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

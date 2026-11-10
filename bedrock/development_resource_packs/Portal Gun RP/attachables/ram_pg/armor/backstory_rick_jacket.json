@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.30",
+    "minecraft:attachable": {
+      "description": {
+        "identifier": "ram_pg:backstory_rick_jacket",
+        "item": { "ram_pg:backstory_rick_jacket": "query.is_owner_identifier_any('minecraft:player')" },
+        "materials": {
+          "default": "armor",
+          "enchanted": "armor_enchanted"
+        },
+        "textures": {
+          "default": "textures/ram_pg/attachable/armor/backstory_rick_jacket",
+          "enchanted": "textures/misc/enchanted_item_glint"
+        },
+        "geometry": {
+          "default": "geometry.ram_pg.backstory_rick_jacket"
+        },
+        "render_controllers": ["controller.render.armor"]
+      }
+    }
+  }

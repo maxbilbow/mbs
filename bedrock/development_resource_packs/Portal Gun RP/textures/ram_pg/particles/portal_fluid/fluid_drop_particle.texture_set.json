@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "fluid_drop_particle",
+		"metalness_emissive_roughness": "fluid_drop_particle_mer"
+	}
+}

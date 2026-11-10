@@ -1,0 +1,19 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "ram_pg:dark_matter_dust"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": ["minecraft:crying_obsidian"],
+    "unlock": [
+      {
+        "item": "minecraft:crying_obsidian"
+      }
+    ],
+    "result": {
+      "item": "ram_pg:dark_matter_dust",
+      "count": 9
+    }
+  }
+}

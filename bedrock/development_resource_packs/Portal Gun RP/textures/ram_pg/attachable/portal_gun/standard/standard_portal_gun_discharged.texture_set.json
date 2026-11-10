@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "standard_portal_gun_discharged",
+		"metalness_emissive_roughness": "standard_portal_gun_discharged_mer"
+	}
+}

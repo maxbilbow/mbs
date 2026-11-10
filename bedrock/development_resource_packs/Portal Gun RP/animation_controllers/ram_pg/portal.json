@@ -1,0 +1,95 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.ram_pg.portal.orientation": {
+      "states": {
+        "up": {
+          "animations": ["up"],
+          "transitions": [
+            { "default": "v.orientation != 1" },
+            { "close_up": "v.close" }
+          ]
+        },
+        "default": {
+          "animations": ["default"],
+          "particle_effects": [
+            {
+              "effect": "dot"
+            }
+          ],
+          "transitions": [
+            { "up": "v.orientation == 1" },
+            { "down": "v.orientation == 2" },
+            { "close": "v.close" }
+          ]
+        },
+        "down": {
+          "animations": ["down"],
+          "transitions": [
+            { "default": "v.orientation != 2" },
+            { "close_down": "v.close" }
+          ]
+        },
+        "close": {
+          "animations": ["close"],
+          "particle_effects": [
+            {
+              "effect": "fluid_close",
+              "pre_effect_script": "variable.back_x = -math.sin(query.property('ram_pg:rotation') * 90); variable.back_z = math.cos(query.property('ram_pg:rotation') * 90); variable.center_y = 1;"
+            }
+          ],
+          "transitions": [{ "default": "!v.close" }]
+        },
+        "close_up": {
+          "animations": ["close_up"],
+          "particle_effects": [
+            {
+              "effect": "fluid_close",
+              "pre_effect_script": "variable.back_x = 0; variable.back_z = 0; variable.center_y = 0.9;"
+            }
+          ],
+          "transitions": [{ "default": "!v.close" }]
+        },
+        "close_down": {
+          "animations": ["close_down"],
+          "particle_effects": [
+            {
+              "effect": "fluid_close",
+              "pre_effect_script": "variable.back_x = 0; variable.back_z = 0; variable.center_y = 0.3;"
+            }
+          ],
+          "transitions": [{ "default": "!v.close" }]
+        }
+      }
+    },
+    "controller.animation.ram_pg.portal.touch": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "touched_flat": "v.touched && v.orientation == 2" },
+            { "touched": "v.touched" }
+          ]
+        },
+        "touched": {
+          "animations": ["pass"],
+          "particle_effects": [
+            {
+              "effect": "fluid_loop",
+              "pre_effect_script": "variable.normal_y = query.property('ram_pg:orientation') == 1; variable.normal_x = variable.normal_y ? 0 : math.mod(query.property('ram_pg:rotation'), 2); variable.normal_z = variable.normal_y ? 0 : 1 - variable.normal_x; variable.back_x = variable.normal_y ? 0 : -math.sin(query.property('ram_pg:rotation') * 90); variable.back_z = variable.normal_y ? 0 : math.cos(query.property('ram_pg:rotation') * 90);"
+            }
+          ],
+          "transitions": [{ "default": "!v.touched" }]
+        },
+        "touched_flat": {
+          "animations": ["pass"],
+          "particle_effects": [
+            {
+              "effect": "fluid_loop_flat"
+            }
+          ],
+          "transitions": [{ "default": "!v.touched" }]
+        }
+      }
+    }
+  }
+}

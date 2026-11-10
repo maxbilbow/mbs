@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10",
+	"render_controllers": {
+		"controller.render.charged_tube": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default",
+					"tube": "material.tube",
+					"fluid": "material.fluid",
+					"fluid_outline": "material.fluid_outline"
+					
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		}
+	}
+}

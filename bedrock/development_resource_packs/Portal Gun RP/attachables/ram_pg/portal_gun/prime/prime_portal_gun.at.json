@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "ram_pg:prime.portal_gun",
+      "render_controllers": ["controller.render.ram_pg.portal_gun.prime"],
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "transparent": "entity_alphablend",
+        "outline": "entity_emissive_alpha_one_sided"
+      },
+      "textures": {
+        "default": "textures/ram_pg/attachable/portal_gun/prime/prime-portal_gun"
+      },
+      "geometry": {
+        "default": "geometry.ram_pg.prime.portal_gun_base"
+      },
+      "animations": {
+        "root": "controller.animation.ram_pg.prime_portal_gun",
+        "first_person_hold": "animation.ram_pg.prime_pg.first_person_hold",
+        "third_person_hold": "animation.ram_pg.prime_pg.third_person_hold",
+        "ray": "animation.ram_pg.prime_pg.ray",
+        "bubbles": "animation.ram_pg.prime_pg.bubbles",
+        "first_person_shoot": "animation.ram_pg.prime_pg.first_person_shoot"
+      },
+      "scripts": {
+        "animate": ["root"]
+      }
+    }
+  }
+}

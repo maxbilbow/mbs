@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ram_pg:prime.portal_gun",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:interact_button": true,
+      "minecraft:tags": {
+        "tags": ["ram_pg:portal_gun"]
+      },
+      "minecraft:display_name": {
+        "value": "item.ram_pg:prime.portal_gun.name"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:cooldown": {
+        "category": "prime.portal_gun_cooldown",
+        "duration": 1
+      },
+      "minecraft:use_animation": "none",
+      "minecraft:use_modifiers": {
+        "use_duration": 0,
+        "movement_modifier": 1.0
+      },
+      "minecraft:icon": "ram_pg:prime.portal_gun",
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:can_destroy_in_creative": false
+    }
+  }
+}

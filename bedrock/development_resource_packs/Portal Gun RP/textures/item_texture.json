@@ -1,0 +1,154 @@
+{
+  "texture_data": {
+    // Portal Gun Textures
+    "ram_pg_standard_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/standard/standard_portal_gun"
+    },
+    "ram_pg_yellow_standard_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/standard/yellow_standard_portal_gun"
+    },
+    "ram_pg_blue_standard_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/standard/blue_standard_portal_gun"
+    },
+    "ram_pg_standard_portal_gun_base": {
+      "textures": "textures/ram_pg/items/portal_gun/standard/standard_portal_gun_base"
+    },
+    "ram_pg_standard_portal_gun_discharged": {
+      "textures": "textures/ram_pg/items/portal_gun/standard/standard_portal_gun_discharged"
+    },
+    "ram_pg_prototype_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prototype/prototype_portal_gun"
+    },
+    "ram_pg_yellow_prototype_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prototype/yellow_prototype_portal_gun"
+    },
+    "ram_pg_prototype_portal_gun_discharged": {
+      "textures": "textures/ram_pg/items/portal_gun/prototype/prototype_portal_gun_discharged"
+    },
+    "ram_pg_prototype_portal_gun_base": {
+      "textures": "textures/ram_pg/items/portal_gun/prototype/prototype_portal_gun_base"
+    },
+    "ram_pg_blue_prototype_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prototype/blue_prototype_portal_gun"
+    },
+    "ram_pg_evil_morty_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/evil_morty/evil_morty_portal_gun"
+    },
+    "ram_pg_green_evil_morty_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/evil_morty/green_evil_morty_portal_gun"
+    },
+    "ram_pg_blue_evil_morty_portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/evil_morty/blue_evil_morty_portal_gun"
+    },
+    "ram_pg_evil_morty_portal_gun_discharged": {
+      "textures": "textures/ram_pg/items/portal_gun/evil_morty/evil_morty_portal_gun_discharged"
+    },
+    "ram_pg_evil_morty_portal_gun_base": {
+      "textures": "textures/ram_pg/items/portal_gun/evil_morty/evil_morty_portal_gun_base"
+    },
+    "ram_pg:prime.portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prime/prime-portal_gun"
+    },
+    "ram_pg:yellow_prime.portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prime/yellow_prime-portal_gun"
+    },
+    "ram_pg:blue_prime.portal_gun": {
+      "textures": "textures/ram_pg/items/portal_gun/prime/blue_prime-portal_gun"
+    },
+    "ram_pg:prime.portal_gun_base": {
+      "textures": "textures/ram_pg/items/portal_gun/prime/prime-portal_gun_base"
+    },
+    "ram_pg:prime.portal_gun_discharged": {
+      "textures": "textures/ram_pg/items/portal_gun/prime/prime-portal_gun_discharged"
+    },
+    
+    // Solution Textures
+    "ram_pg_interdimensional_solution_full": {
+      "textures": "textures/ram_pg/items/components/solutions/interdimensional_solution_full"
+    },
+    "ram_pg_interdimensional_solution_mid": {
+      "textures": "textures/ram_pg/items/components/solutions/interdimensional_solution_mid"
+    },
+    "ram_pg_interdimensional_solution_low": {
+      "textures": "textures/ram_pg/items/components/solutions/interdimensional_solution_low"
+    },
+    "ram_pg_interspatial_solution_full": {
+      "textures": "textures/ram_pg/items/components/solutions/interspatial_solution_full"
+    },
+    "ram_pg_interspatial_solution_mid": {
+      "textures": "textures/ram_pg/items/components/solutions/interspatial_solution_mid"
+    },
+    "ram_pg_interspatial_solution_low": {
+      "textures": "textures/ram_pg/items/components/solutions/interspatial_solution_low"
+    },
+    "ram_pg_extradimensional_solution_full": {
+      "textures": "textures/ram_pg/items/components/solutions/extradimensional_solution_full"
+    },
+    "ram_pg_extradimensional_solution_mid": {
+      "textures": "textures/ram_pg/items/components/solutions/extradimensional_solution_mid"
+    },
+    "ram_pg_extradimensional_solution_low": {
+      "textures": "textures/ram_pg/items/components/solutions/extradimensional_solution_low"
+    },
+    "ram_pg_quantum_isotope": {
+      "textures": "textures/ram_pg/items/components/solutions/quantum_isotope"
+    },
+
+    // Portal Fluid Textures
+    "ram_pg_green_portal_fluid": {
+      "textures": "textures/ram_pg/items/components/portal_fluid/green_portal_fluid"
+    },
+    "ram_pg_blue_portal_fluid": {
+      "textures": "textures/ram_pg/items/components/portal_fluid/blue_portal_fluid"
+    },
+    "ram_pg_yellow_portal_fluid": {
+      "textures": "textures/ram_pg/items/components/portal_fluid/yellow_portal_fluid"
+    },
+
+    // Component Textures
+    "ram_pg_empty_tube": {
+      "textures": "textures/ram_pg/items/components/empty_tube"
+    },
+    "ram_pg_basic_chip": {
+      "textures": "textures/ram_pg/items/components/basic_chip"
+    },
+    "ram_pg_chip": {
+      "textures": "textures/ram_pg/items/components/chip"
+    },
+    "ram_pg_beaker": {
+      "textures": "textures/ram_pg/items/components/beaker"
+    },
+    "ram_pg:dark_matter_dust": {
+      "textures": "textures/ram_pg/items/components/dark_matter_dust"
+    },
+    "ram_pg:phase_matter": {
+      "textures": "textures/ram_pg/items/components/phase_matter"
+    },
+
+    // Armor Textures
+    "ram_pg_rick_hair": {
+      "textures": "textures/ram_pg/items/armor/rick_hair"
+    },
+    "ram_pg_homesteader_rick_hair": {
+      "textures": "textures/ram_pg/items/armor/homesteader_rick_hair"
+    },
+    "ram_pg_memory_rick_hair": {
+      "textures": "textures/ram_pg/items/armor/memory_rick_hair"
+    },
+    "ram_pg:lab_coat": {
+      "textures": "textures/ram_pg/items/armor/lab_coat"
+    },
+    "ram_pg:backstory_rick_jacket": {
+      "textures": "textures/ram_pg/items/armor/backstory_rick_jacket"
+    },
+    "ram_pg:rick_prime_suit": {
+      "textures": "textures/ram_pg/items/armor/rick_prime_suit"
+    },
+    "ram_pg:eye_patch": {
+      "textures": "textures/ram_pg/items/armor/eye_patch"
+    }
+
+    // Miscellanous Textures
+
+  }
+}

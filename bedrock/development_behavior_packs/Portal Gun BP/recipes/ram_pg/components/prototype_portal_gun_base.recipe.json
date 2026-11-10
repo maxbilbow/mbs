@@ -1,0 +1,57 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:prototype_portal_gun_base"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:glass"
+            },
+            {
+                "item": "minecraft:iron_ingot"
+            },
+            {
+                "item": "ram_pg:basic_chip"
+            },
+            {
+                "item": "minecraft:dispenser"
+            },
+            {
+                "item": "minecraft:oak_slab"
+            }
+        ],
+        "pattern": [
+            "nnn",
+            "#RD",
+            "p  "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:glass"
+            },
+            "i": {
+                "item": "minecraft:iron_ingot"
+            },
+            "n": {
+                "item": "minecraft:oak_slab"
+            },
+            "p": {
+                "item": "minecraft:oak_planks"
+            },
+            "R": {
+                "item": "ram_pg:basic_chip"
+            },
+            "D": {
+                "item": "minecraft:dispenser"
+            }
+        },
+        "result": {
+            "item": "ram_pg:prototype_portal_gun_base",
+            "count": 1
+        }
+    }
+}

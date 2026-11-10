@@ -1,0 +1,93 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ram_pg:gun_display",
+            "materials": {
+                "default": "entity_emissive_alpha",
+                "transparent": "entity_alphablend",
+                "outline": "entity_emissive_alpha_one_sided"
+            },
+            "textures": {
+                "standard": "textures/ram_pg/attachable/portal_gun/standard/standard_portal_gun",
+                "blue_standard": "textures/ram_pg/attachable/portal_gun/standard/blue_standard_portal_gun",
+                "prototype": "textures/ram_pg/attachable/portal_gun/prototype/prototype_portal_gun",
+                "blue_prototype": "textures/ram_pg/attachable/portal_gun/prototype/blue_prototype_portal_gun",
+                "evil_morty": "textures/ram_pg/attachable/portal_gun/evil_morty/evil_morty_portal_gun",
+                "blue_evil_morty": "textures/ram_pg/attachable/portal_gun/evil_morty/blue_evil_morty_portal_gun",
+                "prime": "textures/ram_pg/attachable/portal_gun/prime/prime-portal_gun",
+                "standard_discharged": "textures/ram_pg/attachable/portal_gun/standard/standard_portal_gun_discharged",
+                "prototype_discharged": "textures/ram_pg/attachable/portal_gun/prototype/prototype_portal_gun_discharged",
+                "evil_morty_discharged": "textures/ram_pg/attachable/portal_gun/evil_morty/evil_morty_portal_gun_discharged",
+                "prime_discharged": "textures/ram_pg/attachable/portal_gun/prime/prime-portal_gun_discharged",
+                "yellow_standard": "textures/ram_pg/attachable/portal_gun/standard/yellow_standard_portal_gun",
+                "yellow_prototype": "textures/ram_pg/attachable/portal_gun/prototype/yellow_prototype_portal_gun",
+                "green_evil_morty": "textures/ram_pg/attachable/portal_gun/evil_morty/green_evil_morty_portal_gun",
+                "blue_prime": "textures/ram_pg/attachable/portal_gun/prime/blue_prime-portal_gun",
+                "yellow_prime": "textures/ram_pg/attachable/portal_gun/prime/yellow_prime-portal_gun"
+            },
+            "geometry": {
+                "standard": "geometry.ram_pg_standard_portal_gun",
+                "prototype": "geometry.ram_pg_prototype_portal_gun",
+                "evil_morty": "geometry.ram_pg_evil_morty_portal_gun",
+                "prime": "geometry.ram_pg.prime.portal_gun_base",
+                "standard_discharged": "geometry.ram_pg_standard_portal_gun_discharged",
+                "prototype_discharged": "geometry.ram_pg_prototype_portal_gun_discharged",
+                "evil_morty_discharged": "geometry.ram_pg_evil_morty_portal_gun_discharged"
+            },
+            "animations": {
+                "pose_standard": "animation.ram_pg.gun_display.standard",
+                "pose_prototype": "animation.ram_pg.gun_display.prototype",
+                "pose_evil_morty": "animation.ram_pg.gun_display.evil_morty",
+                "pose_prime": "animation.ram_pg.gun_display.prime",
+                "float": "animation.ram_pg.gun_display.float",
+                "ray_standard": "animation.portal_gun.standard.ray",
+                "bubbles_standard": "animation.portal_gun.standard.bubbles",
+                "ray_prototype": "animation.ram_pg.portal_gun.prototype.ray",
+                "bubbles_prototype": "animation.ram_pg.portal_gun.prototype.bubbles",
+                "ray_evil_morty": "animation.ram_pg.portal_gun.evil_morty.ray",
+                "bubbles_evil_morty": "animation.ram_pg.portal_gun.evil_morty.bubbles",
+                "ray_prime": "animation.ram_pg.prime_pg.ray",
+                "bubbles_prime": "animation.ram_pg.prime_pg.bubbles"
+            },
+            "scripts": {
+                "initialize": [
+                    "v.gun = 0;",
+                    "v.model = 0;",
+                    "v.debug = 0;",
+                    "v.yaw_base = 0;",
+                    "v.yaw_sign = 1;",
+                    "v.ui_yaw = 0;",
+                    "v.ui_s = 0;",
+                    "v.ui_c = 1;"
+                ],
+                "pre_animation": [
+                    "v.gun = q.property('ram_pg:gun');",
+                    "v.model = (v.gun <= 1 || v.gun == 7 || v.gun == 11) ? 0 : ((v.gun <= 3 || v.gun == 8 || v.gun == 12) ? 1 : ((v.gun <= 5 || v.gun == 9 || v.gun == 13) ? 2 : 3));",
+                    "v.debug = q.property('ram_pg:debug');",
+                    "v.ui_yaw = q.is_in_ui ? (q.body_y_rotation - v.yaw_base) * v.yaw_sign : 0;",
+                    "v.ui_s = math.sin(v.ui_yaw);",
+                    "v.ui_c = math.cos(v.ui_yaw);"
+                ],
+                "animate": [
+                    { "pose_standard": "v.model == 0" },
+                    { "pose_prototype": "v.model == 1" },
+                    { "pose_evil_morty": "v.model == 2" },
+                    { "pose_prime": "v.model == 3" },
+                    "float",
+                    { "ray_standard": "v.model == 0" },
+                    { "bubbles_standard": "v.model == 0" },
+                    { "ray_prototype": "v.model == 1" },
+                    { "bubbles_prototype": "v.model == 1" },
+                    { "ray_evil_morty": "v.model == 2" },
+                    { "bubbles_evil_morty": "v.model == 2" },
+                    { "ray_prime": "v.model == 3" },
+                    { "bubbles_prime": "v.model == 3" }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.ram_pg.gun_display"
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "shock_body",
+		"metalness_emissive_roughness": "shock_body_mer"
+	}
+}

@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.30",
+    "minecraft:attachable": {
+      "description": {
+        "identifier": "ram_pg:rick_prime_suit",
+        "item": { "ram_pg:rick_prime_suit": "query.is_owner_identifier_any('minecraft:player')" },
+        "materials": {
+          "default": "armor",
+          "enchanted": "armor_enchanted"
+        },
+        "textures": {
+          "default": "textures/ram_pg/attachable/armor/rick_prime_suit",
+          "enchanted": "textures/misc/enchanted_item_glint"
+        },
+        "geometry": {
+          "default": "geometry.ram_pg.rick_prime_suit"
+        },
+        "render_controllers": ["controller.render.armor"]
+      }
+    }
+  }

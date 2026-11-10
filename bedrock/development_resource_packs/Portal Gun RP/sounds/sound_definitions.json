@@ -1,0 +1,247 @@
+{
+  "format_version": "1.20.20",
+  "sound_definitions": {
+    "ram_pg:error_sound": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_gun_error",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_enter": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_enter",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_close": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/close_portal",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_spawn": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_spawn",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:fire_portal": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/fire_portal_gun",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:open_menu": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/open_menu_portal_gun",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:button_click": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/click",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:selection": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/selection",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_gun_plug": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_gun_plug",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_gun_unplug": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_gun_unplug",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:empty_portal_gun": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/empty_portal_gun",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:power_off_portal_gun": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/power_off_portal_gun",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:fluid_burn": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/fluid_burn",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_spawn_yellow": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_spawn_yellow",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_enter_yellow": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_enter_yellow",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_close_yellow": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/close_portal_yellow",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_idle": {
+      "category": "neutral",
+      "max_distance": 16,
+      "min_distance": 2,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_idle",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:portal_idle_yellow": {
+      "category": "neutral",
+      "max_distance": 16,
+      "min_distance": 2,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/portal_idle_yellow",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:fire_portal_yellow": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/fire_portal_gun_yellow",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:blender": {
+      "category": "neutral",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/blender",
+          "volume": 1
+        }
+      ]
+    },
+    "ram_pg:ui_scan": {
+      "category": "ui",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/ui_scan",
+          "volume": 0.4
+        }
+      ]
+    },
+    "ram_pg:gun_shock": {
+      "category": "player",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        {
+          "name": "sounds/ram_pg/gun_shock",
+          "volume": 0.8
+        }
+      ]
+    }
+  }
+}

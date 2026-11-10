@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_brewing_mix": {
+    "description": {
+      "identifier": "ram_pg:extradimensional_solution_recipe"
+    },
+
+    "tags": [ "brewing_stand" ],
+
+    "input": "ram_pg:interdimensional_solution_full",
+    "reagent": "minecraft:raw_gold",
+    "output": "ram_pg:extradimensional_solution_full"
+  }
+}

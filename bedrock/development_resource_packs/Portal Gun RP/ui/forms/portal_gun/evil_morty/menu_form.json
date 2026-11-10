@@ -1,0 +1,247 @@
+{
+  "namespace": "evil_morty_menu_form",
+  "charge_bar_animation": {
+    "anim_type": "flip_book",
+    "initial_uv": [0, 0],
+    "frame_count": 8,
+    "frame_step": 100,
+    "fps": 8,
+    "looping": true
+  },
+
+  "custom_button@standard_menu_form.custom_button": {
+    "$default_button_background_texture": "textures/ram_pg/ui/presets/yellow_ore-ui_style/yellow_default_button",
+    "$hover_button_background_texture": "textures/ram_pg/ui/presets/yellow_ore-ui_style/yellow_hover_button",
+    "$pressed_button_background_texture": "textures/ram_pg/ui/presets/yellow_ore-ui_style/yellow_hover_button"
+  },
+
+  "holo_animation_init": {
+    "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "scale_from_starting_alpha": true,
+    "duration": 1.0,
+    "from": 0.0,
+    "to": 1.0
+  },
+
+  "menu": {
+    "type": "panel",
+    "bindings": [],
+    "controls": [
+      {
+        "bg_image": {
+          "offset": [0, 0],
+          "size": [10000, 10000],
+          "type": "image",
+          "texture": "textures/ram_pg/ui/pg_ui/menu/black_bg",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "bindings": [],
+          "controls": [
+            {
+              "gun_image": {
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "type": "image",
+                "layer": 1,
+                "offset": [0, -20],
+                "size": [560, 560],
+                "texture": "#texture",
+                "bindings": [
+                  {
+                    "binding_name": "#form_text"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "((%.100s * (#form_text - (%.0s * #form_text))) - '\t')",
+                    "target_property_name": "#texture"
+                  }
+                ],
+                "controls": [
+                  {
+                    "holo_image": {
+                      "type": "image",
+                      "layer": 2,
+                      "texture": "textures/ram_pg/ui/pg_ui/menu/holo_panel",
+                      "offset": [0, 10],
+                      "size": ["50%", "50%"],
+                      "propagate_alpha": true,
+                      "animation_reset_name": "screen_animation_reset",
+                      "disable_anim_fast_forward": true,
+                      "anims": ["@evil_morty_menu_form.holo_animation_init"],
+                      "controls": [
+                        {
+                          "menu_collection_panel": {
+                            "offset": [0, -15],
+                            "size": [250, 110],
+                            "layer": 4,
+                            "type": "collection_panel",
+                            "anchor_from": "center",
+                            "anchor_to": "center",
+                            "collection_name": "form_buttons",
+                            "bindings": [],
+                            "controls": [
+                              {
+                                "saved_locations_button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [35, 10],
+                                  "$button_size": [85, 90],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 0,
+                                  "$icon_offset": [3.5, 1],
+                                  "$icon_size": [80, 80],
+                                  "$font_size": 0.9,
+                                  "$text_offset": [7.4, 75],
+                                  "$font_type": "MinecraftRegular",
+                                  "$shadow": true,
+                                  "$text_alignment": "center",
+                                  "$show_hover_text": false,
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "set-coordinates-button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [120, 10],
+                                  "$button_size": [100, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 1,
+                                  "$icon_offset": [3.5, 3],
+                                  "$icon_size": [20, 20],
+                                  "$font_size": 0.9,
+                                  "$text_offset": [25, 10],
+                                  "$font_type": "MinecraftRegular",
+                                  "$shadow": true,
+                                  "$text_alignment": "center",
+                                  "$show_hover_text": false,
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "select-mode-button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [120, 40],
+                                  "$button_size": [100, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 2,
+                                  "$font_size": 0.9,
+                                  "$icon_offset": [3.5, 1],
+                                  "$icon_size": [20, 25],
+                                  "$text_offset": [30, 10],
+                                  "$font_type": "MinecraftRegular",
+                                  "$shadow": true,
+                                  "$text_alignment": "center",
+                                  "$show_hover_text": false,
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "settings-button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [120, 70],
+                                  "$button_size": [30, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 3,
+                                  "$icon_offset": [4.7, 3.2],
+                                  "$icon_size": [20, 20],
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "behavior-settings-button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [155, 70],
+                                  "$button_size": [30, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 4,
+                                  "$icon_offset": [4.7, 3.2],
+                                  "$icon_size": [20, 20],
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "history-button@evil_morty_menu_form.custom_button": {
+                                  "$button_offset": [190, 70],
+                                  "$button_size": [30, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "collection_index": 5,
+                                  "$icon_offset": [4.7, 3.2],
+                                  "$icon_size": [20, 20],
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "charge_bar": {
+                                  "type": "image",
+                                  "texture": "#texture",
+                                  "size": [100, 9],
+                                  "uv_size": [100, 9],
+                                  "uv": "@evil_morty_menu_form.charge_bar_animation",
+                                  "disable_anim_fast_forward": true,
+                                  "offset": [123, 101],
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "layer": 8,
+                                  "bindings": [
+                                    { "binding_name": "#form_text" },
+                                    {
+                                      "binding_type": "view",
+                                      "source_property_name": "((%.100s * (#form_text - (%.100s * #form_text))) - '\t')",
+                                      "target_property_name": "#texture"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "close-button@evil_morty_menu_form.custom_button": {
+                                  "$default_button_background_texture": "textures/ram_pg/ui/presets/red_ore-ui_style/red_default_button",
+                                  "$hover_button_background_texture": "textures/ram_pg/ui/presets/red_ore-ui_style/red_hover_button",
+                                  "$pressed_button_background_texture": "textures/ram_pg/ui/presets/red_ore-ui_style/red_pressed_button",
+                                  "$button_offset": [70, -10],
+                                  "$button_size": [30, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "collection_index": 6,
+                                  "$icon_offset": [4.7, 3.2],
+                                  "$icon_size": [20, 20],
+                                  "bindings": []
+                                }
+                              },
+                              {
+                                "unplug-tube-button@evil_morty_menu_form.custom_button": {
+                                  "$default_button_background_texture": "textures/ram_pg/ui/presets/turquoise_ore-ui_style/turquoise_default_button",
+                                  "$hover_button_background_texture": "textures/ram_pg/ui/presets/turquoise_ore-ui_style/turquoise_hover_button",
+                                  "$button_offset": [70, -40],
+                                  "$button_size": [30, 30],
+                                  "layer": 6,
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "collection_index": 7,
+                                  "$icon_offset": [4.7, 3.2],
+                                  "$icon_size": [20, 20],
+                                  "bindings": []
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

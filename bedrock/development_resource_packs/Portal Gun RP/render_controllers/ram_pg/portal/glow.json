@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.glow": {
+            "geometry": "geometry.green_portal",
+            "materials": [
+                {
+                    "*": "material.glow"
+                }
+            ],
+            "textures": [
+				"texture.glow"
+			],
+            "part_visibility": [
+                {"*": false},
+                {"bone10": true},
+                {"bone11": true}
+            ],
+			"ignore_lighting": true
+		}
+	}
+}

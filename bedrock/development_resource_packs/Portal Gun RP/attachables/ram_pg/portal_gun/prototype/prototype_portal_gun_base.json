@@ -1,0 +1,34 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "ram_pg:prototype_portal_gun_base",
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "materials": {
+                "default": "entity_alphablend"
+            },
+            "textures": {
+                "default": "textures/ram_pg/attachable/portal_gun/prototype/prototype_portal_gun_base"
+            },
+            "geometry": {
+                "default": "geometry.ram_pg_prototype_portal_gun_base"
+            },
+            "animations": {
+                "first_person_hold": "animation.prototype_portal_gun.first_person_hold",
+                "third_person_hold": "animation.prototype_portal_gun.third_person_hold"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "first_person_hold": "c.is_first_person"
+                    },
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

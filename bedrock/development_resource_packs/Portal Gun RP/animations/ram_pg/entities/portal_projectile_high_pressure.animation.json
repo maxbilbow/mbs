@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.portal_projectile_high_pressure.move": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": ["-query.target_x_rotation", "-query.target_y_rotation", 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "fluid_drop"
+				}
+			}
+		},
+		"animation.portal_projectile_high_pressure.shoot": {
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"scale": {
+						"0.0": [2.3, 2.1, 0.1],
+						"0.2083": [1, 1, 1]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "portal_shot"
+				}
+			}
+		}
+	}
+}

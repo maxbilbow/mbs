@@ -1,0 +1,42 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:phase_matter"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:ender_pearl"
+            },
+            {
+                "item": "minecraft:blaze_powder"
+            },
+            {
+                "item": "ram_pg:dark_matter_dust"
+            }
+        ],
+        "pattern": [
+            "BDB",
+            "DED",
+            "BDB"
+        ],
+        "key": {
+            "D": {
+                "item": "ram_pg:dark_matter_dust"
+            },
+            "E": {
+                "item": "minecraft:ender_pearl"
+            },
+            "B": {
+                "item": "minecraft:blaze_powder"
+            }
+        },
+        "result": {
+            "item": "ram_pg:phase_matter",
+            "count": 1
+        }
+    }
+}

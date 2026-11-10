@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.portal": {
+            "geometry": "geometry.green_portal",
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": ["texture.default"],
+            "uv_anim": {
+				"scale": [1, "1 / 75"],
+				"offset": [0, "Math.mod(Math.floor(query.life_time * 10), 75) / 75"]
+			},
+            "part_visibility": [
+                {"*": true},
+                {"bone10": false},
+                {"bone11": false}
+            ],
+			"ignore_lighting": true
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:beaker"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:glass"
+            }
+        ],
+        "pattern": [
+            "G G",
+            "G G",
+            "GGG"
+        ],
+        "key": {
+            "G": {
+                "item": "minecraft:glass"
+            }
+        },
+        "result": {
+            "item": "ram_pg:beaker",
+            "count": 1
+        }
+    }
+}

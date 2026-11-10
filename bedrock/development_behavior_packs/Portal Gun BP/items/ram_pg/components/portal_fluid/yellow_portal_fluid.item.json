@@ -1,0 +1,26 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ram_pg:yellow_portal_fluid",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:allow_off_hand": true,
+			"minecraft:tags":{
+				"tags":[
+					"ram_pg:components"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "item.ram_pg:yellow_portal_fluid.name"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "ram_pg_yellow_portal_fluid"
+			}
+		}
+	}
+}

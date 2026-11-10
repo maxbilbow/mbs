@@ -1,0 +1,35 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:empty_tube"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:green_stained_glass"
+            },
+            {
+                "item": "minecraft:iron_ingot"
+            }
+        ],
+        "pattern": [
+            "#",
+            "i"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:green_stained_glass"
+            },
+            "i": {
+                "item": "minecraft:iron_ingot"
+            }
+        },
+        "result": {
+            "item": "ram_pg:empty_tube",
+            "count": 1
+        }
+    }
+}

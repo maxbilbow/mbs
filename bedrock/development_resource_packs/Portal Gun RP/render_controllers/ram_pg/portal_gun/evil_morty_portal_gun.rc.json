@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.ram_pg.portal_gun.evil_morty": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        },
+        {
+          "tube": "material.transparent"
+        },
+        {
+          "tube_outline": "material.outline"
+        },
+        {
+          "tube_outline_bg": "material.outline"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 1
+        }
+      ]
+    },
+    "controller.render.ram_pg.portal_gun.evil_morty.base": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 1
+        },
+        {
+          "tube": 0
+        },
+        {
+          "string": 0
+        },
+        {
+          "string1": 0
+        },
+        {
+          "string2": 0
+        },
+        {
+          "string3": 0
+        },
+        {
+          "string4": 0
+        },
+        {
+          "string5": 0
+        }
+      ]
+    }
+  }
+}

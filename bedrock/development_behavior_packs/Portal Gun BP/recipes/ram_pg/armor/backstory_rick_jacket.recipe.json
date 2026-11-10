@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "ram_pg:backstory_rick_jacket"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": [
+			{
+				"item": "minecraft:leather"
+			}
+		],
+		"pattern": [
+			"L L",
+			"LBL",
+			"LBL"
+		],
+		"key": {
+			"L": {
+				"item": "minecraft:leather"
+			},
+			"B": {
+				"item": "minecraft:brown_wool"
+			}
+		},
+		"result": {
+			"item": "ram_pg:backstory_rick_jacket"
+		}
+	}
+}

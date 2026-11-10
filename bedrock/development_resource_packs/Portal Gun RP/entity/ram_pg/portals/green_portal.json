@@ -1,0 +1,82 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ram_pg:green_portal",
+            "materials": {
+                "default": "portal_material",
+                "glow": "entity_beam_additive",
+                "blood_spiral": "portal_blood_spiral"
+            },
+            "textures": {
+                "default": "textures/ram_pg/entity/portal/green_portal_animated_texture",
+                "glow": "textures/ram_pg/entity/portal/green_glow",
+                "blood_spiral": "textures/ram_pg/entity/portal/blood_spiral"
+            },
+            "geometry": {
+                "green_portal": "geometry.ram_pg_green_portal",
+                "blood_spiral": "geometry.ram_pg_portal_blood_spiral"
+            },
+            "render_controllers": [
+                "controller.render.portal",
+                "controller.render.glow",
+                { "controller.render.portal_blood_spiral": "query.life_time - variable.blood_spiral_start < 4" }
+            ],
+            "particle_effects": {
+                "fluid_drop": "ram_pg:green_fluid_drop_particle",
+                "fluid_loop": "ram_pg:green_fluid_loop_particle",
+                "fluid_loop_flat": "ram_pg:green_fluid_loop_flat_particle",
+                "fluid_close": "ram_pg:green_fluid_close_particle",
+                "dot": "ram_pg:green_portal_dot_particle",
+                "ray": "ram_pg:green_portal_ray_particle"
+            },
+            "sound_effects": {
+                "open_portal": "ram_pg:portal_spawn",
+                "close_portal": "ram_pg:portal_close",
+                "pass_through_portal": "ram_pg:portal_enter",
+                "idle": "ram_pg:portal_idle"
+            },
+            "scripts": {
+                "initialize": [
+                    "variable.was_blending = 0.0;",
+                    "variable.blood_spiral_start = -10.0;"
+                ],
+                "pre_animation": [
+                    "variable.is_linked = query.property('ram_pg:is_linked');",
+                    "variable.orientation = query.property('ram_pg:orientation');",
+                    "variable.rotation = query.property('ram_pg:rotation');",
+                    "variable.close = query.property('ram_pg:close');",
+                    "variable.scale = query.property('ram_pg:portal_scale');",
+                    "variable.touched = query.property('ram_pg:touched');",
+                    "variable.blending = query.property('ram_pg:blending');",
+                    "variable.blood_spiral_start = (variable.blending && !variable.was_blending) ? query.life_time : variable.blood_spiral_start;",
+                    "variable.was_blending = variable.blending;"
+                ],
+                "animate": [
+                    "open",
+                    "orientation",
+                    "rotation",
+                    "pass",
+                    "scale",
+                    "touch",
+                    { "idle_sound": "!v.close" }
+                ]
+            },
+            "animations": {
+                "orientation": "controller.animation.ram_pg.portal.orientation",
+                "touch": "controller.animation.ram_pg.portal.touch",
+                "idle_sound": "animation.ram_pg.portal.idle_sound",
+                "default": "animation.ram_pg.portal.default",
+                "up": "animation.ram_pg.portal.up",
+                "down": "animation.ram_pg.portal.down",
+                "rotation": "animation.ram_pg.portal.rotation",
+                "pass": "animation.ram_pg.portal.pass",
+                "open": "animation.ram_pg.portal.open",
+                "close": "animation.ram_pg.portal.close",
+                "close_up": "animation.ram_pg.portal.close_up",
+                "close_down": "animation.ram_pg.portal.close_down",
+                "scale": "animation.ram_pg.portal.scale"
+            }
+        }
+    }
+}

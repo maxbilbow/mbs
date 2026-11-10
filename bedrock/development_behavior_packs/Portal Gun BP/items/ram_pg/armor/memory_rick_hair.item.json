@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ram_pg:memory_rick_hair",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": "ram_pg_memory_rick_hair",
+      "minecraft:display_name": {
+        "value": "item.ram_pg:memory_rick_hair.name"
+      },
+      "minecraft:max_stack_size": { "value": 1 },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head"
+      },
+      "minecraft:can_destroy_in_creative": false
+    }
+  }
+}

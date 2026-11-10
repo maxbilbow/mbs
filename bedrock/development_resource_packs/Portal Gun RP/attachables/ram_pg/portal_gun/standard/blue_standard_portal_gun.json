@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "ram_pg:blue_standard_portal_gun",
+            "render_controllers": [
+                "controller.render.ram_pg.portal_gun.standard"
+            ],
+            "materials": {
+                "default": "entity_emissive_alpha",
+                "transparent": "entity_alphablend",
+                "outline": "entity_emissive_alpha_one_sided"
+            },
+            "textures": {
+                "default": "textures/ram_pg/attachable/portal_gun/standard/blue_standard_portal_gun"
+            },
+            "geometry": {
+                "default": "geometry.ram_pg_standard_portal_gun"
+            },
+            "animations": {
+                "gun_controller": "controller.animation.ram_pg.portal_gun",
+                "first_person_hold": "animation.portal_gun.first_person_hold",
+                "third_person_hold": "animation.portal_gun.third_person_hold",
+                "first_person_shoot": "animation.portal_gun.first_person_shoot",
+                "ray": "animation.portal_gun.standard.ray",
+                "bubbles": "animation.portal_gun.standard.bubbles"
+            },
+            "scripts": {
+                "animate": [
+                    "gun_controller"
+                ]
+            }
+        }
+    }
+}

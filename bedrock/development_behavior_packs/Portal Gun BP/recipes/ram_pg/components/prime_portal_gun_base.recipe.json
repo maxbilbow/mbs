@@ -1,0 +1,60 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:prime.portal_gun_base"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:red_stained_glass"
+            },
+            {
+                "item": "minecraft:iron_ingot"
+            },
+                        {
+                "item": "minecraft:iron_block"
+            },
+            {
+                "item": "ram_pg:chip"
+            },
+            {
+                "item": "minecraft:dispenser"
+            },
+            {
+                "item": "minecraft:netherite_ingot"
+            }
+        ],
+        "pattern": [
+            "inI",
+            "#RD",
+            "i  "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:red_stained_glass"
+            },
+            "i": {
+                "item": "minecraft:iron_ingot"
+            },
+            "I": {
+                "item": "minecraft:iron_block"
+            },
+            "n": {
+                "item": "minecraft:netherite_ingot"
+            },
+            "R": {
+                "item": "ram_pg:chip"
+            },
+            "D": {
+                "item": "minecraft:dispenser"
+            }
+        },
+        "result": {
+            "item": "ram_pg:prime.portal_gun_base",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "ui_defs": [
+    "ui/animated_bar.json",
+    "ui/forms/portal_gun/standard/menu_form.json",
+    "ui/forms/portal_gun/prototype/menu_form.json",
+    "ui/forms/portal_gun/evil_morty/menu_form.json",
+    "ui/forms/portal_gun/themed_forms.json",
+    "ui/forms/portal_gun/standard/themed_forms.json",
+    "ui/forms/portal_gun/prototype/themed_forms.json",
+    "ui/forms/portal_gun/evil_morty/themed_forms.json"
+  ]
+}

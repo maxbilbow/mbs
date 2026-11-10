@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ram_pg:blue_fluid_projectile",
+      "materials": {
+        "default": "entity_beam_additive"
+      },
+      "textures": {
+        "default": "textures/ram_pg/entity/projectile/blue_fluid_projectile"
+      },
+      "geometry": {
+        "default": "geometry.ram_pg_portal_projectile"
+      },
+      "animations": {
+        "portal_fluid_shoot": "animation.portal_projectile.shoot",
+        "portal_fluid_scale": "animation.portal_projectile.scale"
+      },
+      "scripts": {
+        "animate": [
+          "portal_fluid_scale",
+          "portal_fluid_shoot"
+        ]
+      },
+      "particle_effects": {
+        "fluid_drop": "ram_pg:blue_fluid_dropfall_particle",
+        "portal_shot": "ram_pg:blue_glowcircle_particle"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

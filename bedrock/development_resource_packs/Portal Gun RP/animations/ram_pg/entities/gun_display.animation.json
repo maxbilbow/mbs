@@ -1,0 +1,90 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ram_pg.gun_display.standard": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "(math.abs((0.021291 * v.ui_c + -0.500642 * v.ui_s)) > 0.999999 ? 0 : -math.atan2((0.007503 * v.ui_c + -0.865484 * v.ui_s), (0.999745 * v.ui_c + 0.017158 * v.ui_s)))",
+            "math.asin(math.clamp(-(0.021291 * v.ui_c + -0.500642 * v.ui_s), -1, 1))",
+            "(math.abs((0.021291 * v.ui_c + -0.500642 * v.ui_s)) > 0.999999 ? -math.atan2(-(0.865484 * v.ui_c + 0.007503 * v.ui_s), 0.50088) : -math.atan2(-0.865393, (0.500642 * v.ui_c + 0.021291 * v.ui_s)))"
+          ],
+          "position": [
+            "(-6.796 * v.ui_c + -0.141 * v.ui_s) - 0",
+            "4.124",
+            "(-0.141 * v.ui_c + 6.796 * v.ui_s) - 0"
+          ],
+          "scale": 1.3625
+        }
+      }
+    },
+    "animation.ram_pg.gun_display.prototype": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "(math.abs((-0.999995 * v.ui_c)) > 0.999999 ? 0 : -math.atan2((0.003139 * v.ui_c + -0.043619 * v.ui_s), (-0.000137 * v.ui_c + -0.999048 * v.ui_s)))",
+            "math.asin(math.clamp(-(-0.999995 * v.ui_c), -1, 1))",
+            "(math.abs((-0.999995 * v.ui_c)) > 0.999999 ? -math.atan2(-(0.043619 * v.ui_c + 0.003139 * v.ui_s), 0.999043) : -math.atan2(0.003142, (-0.999995 * v.ui_s)))"
+          ],
+          "position": [
+            "(-4.184 * v.ui_c + 0.128 * v.ui_s) - 1",
+            "-0.079",
+            "(0.128 * v.ui_c + 4.184 * v.ui_s) - -6"
+          ],
+          "scale": 0.7888
+        }
+      }
+    },
+    "animation.ram_pg.gun_display.evil_morty": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "(math.abs((0.999949 * v.ui_c + 0.007991 * v.ui_s)) > 0.999999 ? 0 : -math.atan2((0.005488 * v.ui_c + 0.087873 * v.ui_s), (-0.008506 * v.ui_c + 0.9961 * v.ui_s)))",
+            "math.asin(math.clamp(-(0.999949 * v.ui_c + 0.007991 * v.ui_s), -1, 1))",
+            "(math.abs((0.999949 * v.ui_c + 0.007991 * v.ui_s)) > 0.999999 ? -math.atan2(-(-0.087873 * v.ui_c + 0.005488 * v.ui_s), 0.996117) : -math.atan2(-0.006214, (-0.007991 * v.ui_c + 0.999949 * v.ui_s)))"
+          ],
+          "position": [
+            "(-3.949 * v.ui_c + -0.11 * v.ui_s) - 0",
+            "-2.591",
+            "(-0.11 * v.ui_c + 3.949 * v.ui_s) - 0"
+          ],
+          "scale": 0.7911
+        }
+      }
+    },
+    "animation.ram_pg.gun_display.prime": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "(math.abs((1 * v.ui_c)) > 0.999999 ? 0 : -math.atan2((0.173648 * v.ui_s), (0.984808 * v.ui_s)))",
+            "math.asin(math.clamp(-(1 * v.ui_c), -1, 1))",
+            "(math.abs((1 * v.ui_c)) > 0.999999 ? -math.atan2(-(-0.173648 * v.ui_c), 0.984808) : -math.atan2(0, (1 * v.ui_s)))"
+          ],
+          "position": [
+            "(-6.877 * v.ui_c) - 0",
+            "-8.424",
+            "(6.877 * v.ui_s) - 0"
+          ],
+          "scale": 2.1831
+        }
+      }
+    },
+    "animation.ram_pg.gun_display.float": {
+      "loop": true,
+      "animation_length": 3,
+      "bones": {
+        "root": {
+          "position": [
+            0,
+            "math.sin(q.anim_time * 120) * 0.4",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

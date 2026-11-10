@@ -1,0 +1,84 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.ram_pg.gun_display": {
+      "arrays": {
+        "geometries": {
+          "Array.guns": [
+            "Geometry.standard",
+            "Geometry.standard",
+            "Geometry.prototype",
+            "Geometry.prototype",
+            "Geometry.evil_morty",
+            "Geometry.evil_morty",
+            "Geometry.prime",
+            "Geometry.standard_discharged",
+            "Geometry.prototype_discharged",
+            "Geometry.evil_morty_discharged",
+            "Geometry.prime",
+            "Geometry.standard",
+            "Geometry.prototype",
+            "Geometry.evil_morty",
+            "Geometry.prime",
+            "Geometry.prime"
+          ]
+        },
+        "textures": {
+          "Array.skins": [
+            "Texture.standard",
+            "Texture.blue_standard",
+            "Texture.prototype",
+            "Texture.blue_prototype",
+            "Texture.evil_morty",
+            "Texture.blue_evil_morty",
+            "Texture.prime",
+            "Texture.standard_discharged",
+            "Texture.prototype_discharged",
+            "Texture.evil_morty_discharged",
+            "Texture.prime_discharged",
+            "Texture.yellow_standard",
+            "Texture.yellow_prototype",
+            "Texture.green_evil_morty",
+            "Texture.blue_prime",
+            "Texture.yellow_prime"
+          ]
+        }
+      },
+      "geometry": "Array.guns[v.gun]",
+      "materials": [
+        {
+          "*": "Material.default"
+        },
+        {
+          "tube": "Material.transparent"
+        },
+        {
+          "tube_outline": "Material.outline"
+        },
+        {
+          "tube_outline_bg": "Material.outline"
+        }
+      ],
+      "textures": [
+        "Array.skins[v.gun]"
+      ],
+      "part_visibility": [
+        {
+          "*": "(q.is_in_ui || v.debug) && v.gun != 10"
+        },
+        {
+          "base": "q.is_in_ui || v.debug"
+        },
+        {
+          "tube": "q.is_in_ui || v.debug"
+        },
+        {
+          "emitter": "q.is_in_ui || v.debug"
+        },
+        {
+          "plug": "(q.is_in_ui || v.debug) && v.model != 3"
+        }
+      ]
+    }
+  }
+}

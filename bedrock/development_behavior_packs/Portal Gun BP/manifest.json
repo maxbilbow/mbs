@@ -1,0 +1,43 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§aPortal Gun§r BP V1.3.1",
+    "description": "pack.description",
+    "uuid": "610ea4ac-ce32-4d02-b55c-79c4319a2b4e",
+    "version": [1, 3, 1],
+    "min_engine_version": [1, 26, 40]
+  },
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["JhonFX"]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [1, 0, 0],
+      "uuid": "6913f46f-85db-4d4f-80d1-25a774cf563e",
+      "type": "data"
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "d57f0b5e-b7e5-4749-bcda-dcd80080bbae",
+      "entry": "scripts/main.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "41ce5e06-7daa-4169-9e9b-9e32b835c4de",
+      "version": [1, 3, 1]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.9.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    }
+  ]
+}

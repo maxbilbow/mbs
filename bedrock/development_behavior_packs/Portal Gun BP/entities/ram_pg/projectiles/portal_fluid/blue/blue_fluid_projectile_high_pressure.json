@@ -1,0 +1,42 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "ram_pg:blue_fluid_projectile_high_pressure",
+      "runtime_identifier": "minecraft:arrow",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+          "family": [
+              "ram_pg:projectile"
+          ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_simulation_edge": true,
+        "despawn_from_distance": {
+          "min_distance": 256,
+          "max_distance": 256
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "remove_on_hit": {}
+        },
+        "gravity": 0.0,
+        "inertia": 1.0,
+        "liquid_inertia": 1
+      },
+       "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      }
+    }
+  }
+}

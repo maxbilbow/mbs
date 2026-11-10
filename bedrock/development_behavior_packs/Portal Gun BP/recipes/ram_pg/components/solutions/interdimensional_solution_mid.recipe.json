@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_brewing_mix": {
+    "description": {
+      "identifier": "ram_pg:interdimensional_solution_mid_recipe"
+    },
+
+    "tags": [ "brewing_stand" ],
+
+    "input": "ram_pg:interspatial_solution_mid",
+    "reagent": "minecraft:ender_eye",
+    "output": "ram_pg:interdimensional_solution_mid"
+  }
+}

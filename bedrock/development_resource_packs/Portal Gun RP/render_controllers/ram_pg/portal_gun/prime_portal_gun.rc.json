@@ -1,0 +1,82 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.ram_pg.portal_gun.prime": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        },
+        {
+          "tube": "material.transparent"
+        },
+        {
+          "tube_outline": "material.outline"
+        },
+        {
+          "tube_outline_bg": "material.outline"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 1
+        },
+        {
+          "plug": 0
+        }
+      ]
+    },
+
+    "controller.render.ram_pg.portal_gun.prime.base": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 0
+        },
+        {
+          "emitter": 1
+        },
+        {
+          "base": 1
+        },
+        {
+          "plug": 1
+        }
+      ]
+    },
+
+    "controller.render.ram_pg.portal_gun.prime.discharged": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        },
+        {
+          "tube": "material.transparent"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 0
+        },
+        {
+          "base": 1
+        },
+        {
+          "tube": 1
+        },
+        {
+          "emitter": 1
+        }
+      ]
+    }
+  }
+}

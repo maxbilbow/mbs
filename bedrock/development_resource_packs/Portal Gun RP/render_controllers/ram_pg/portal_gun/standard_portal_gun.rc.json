@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.ram_pg.portal_gun.standard": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        },
+        {
+          "tube": "material.transparent"
+        },
+        {
+          "tube_outline": "material.outline"
+        },
+        {
+          "tube_outline_bg": "material.outline"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "*": 1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "namespace": "pg_evil",
+  "button@pg_forms.button": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ],
+    "$pg_button_text_color": [
+      0.9,
+      0.95,
+      1
+    ],
+    "$default_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_default_evil",
+    "$hover_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_hover_evil",
+    "$pressed_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_pressed_evil"
+  },
+  "list_icon_button@pg_forms.list_icon_button": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ],
+    "$pg_button_text_color": [
+      0.9,
+      0.95,
+      1
+    ],
+    "$default_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_default_evil",
+    "$hover_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_hover_evil",
+    "$pressed_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_pressed_evil"
+  },
+  "buttons_panel": {
+    "type": "stack_panel",
+    "size": [
+      "100% - 4px",
+      "100%c"
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "factory": {
+      "name": "buttons",
+      "control_ids": {
+        "button": "pg_evil.button",
+        "label": "@server_form.dynamic_label",
+        "header": "@server_form.dynamic_header",
+        "divider": "@settings_common.option_group_section_divider"
+      }
+    },
+    "collection_name": "form_buttons",
+    "bindings": [
+      {
+        "binding_name": "#form_button_contents",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+  "action_form@pg_forms.action_form": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ],
+    "$pg_text_color": [
+      0.82,
+      0.89,
+      0.96
+    ],
+    "$pg_button_text_color": [
+      0.9,
+      0.95,
+      1
+    ],
+    "$pg_buttons_panel": "pg_evil.buttons_panel",
+    "$pg_panel_texture": "textures/ram_pg/ui/pg_ui/scifi/panel_bg_evil",
+    "$pg_viewport_texture": "textures/ram_pg/ui/pg_ui/scifi/viewport_bg_evil",
+    "$default_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_default_evil",
+    "$hover_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_hover_evil",
+    "$pressed_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_pressed_evil"
+  },
+  "list_form@pg_evil.action_form": {
+    "$pg_hide_viewport": true,
+    "$pg_buttons_panel": "pg_forms.list_panel",
+    "$pg_list_button": "pg_evil.button",
+    "$pg_list_icon_button": "pg_evil.list_icon_button"
+  },
+  "custom_form@pg_forms.custom_form": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ],
+    "$pg_text_color": [
+      0.82,
+      0.89,
+      0.96
+    ],
+    "$pg_button_text_color": [
+      0.9,
+      0.95,
+      1
+    ],
+    "$pg_buttons_panel": "pg_evil.buttons_panel",
+    "$pg_panel_texture": "textures/ram_pg/ui/pg_ui/scifi/panel_bg_evil",
+    "$pg_viewport_texture": "textures/ram_pg/ui/pg_ui/scifi/viewport_bg_evil",
+    "$default_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_default_evil",
+    "$hover_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_hover_evil",
+    "$pressed_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_pressed_evil"
+  },
+  "terminal_form@pg_forms.terminal_form": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ],
+    "$pg_text_color": [
+      0.82,
+      0.89,
+      0.96
+    ],
+    "$pg_button_text_color": [
+      0.9,
+      0.95,
+      1
+    ],
+    "$pg_buttons_panel": "pg_evil.buttons_panel",
+    "$pg_panel_texture": "textures/ram_pg/ui/pg_ui/scifi/panel_bg_evil",
+    "$pg_viewport_texture": "textures/ram_pg/ui/pg_ui/scifi/viewport_bg_evil",
+    "$default_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_default",
+    "$hover_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_hover_evil",
+    "$pressed_button_texture": "textures/ram_pg/ui/pg_ui/scifi/button_pressed_evil",
+    "$pg_term_contents": "pg_evil.term_contents"
+  },
+  "term_line@pg_forms.term_line": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ]
+  },
+  "term_input@pg_forms.term_input": {
+    "$pg_accent": [
+      1,
+      0.82,
+      0.28
+    ]
+  },
+  "term_contents@pg_forms.term_contents": {
+    "factory": {
+      "name": "buttons",
+      "control_ids": {
+        "label": "@pg_evil.term_line",
+        "toggle": "@server_form.custom_toggle",
+        "slider": "@server_form.custom_slider",
+        "step_slider": "@server_form.custom_step_slider",
+        "dropdown": "@server_form.custom_dropdown",
+        "input": "@pg_evil.term_input",
+        "header": "@pg_forms.hidden_entry",
+        "divider": "@settings_common.option_group_section_divider",
+        "multiselect": "@server_form.custom_multiselect"
+      }
+    }
+  }
+}

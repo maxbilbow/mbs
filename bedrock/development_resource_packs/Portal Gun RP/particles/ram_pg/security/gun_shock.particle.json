@@ -1,0 +1,82 @@
+{
+	"format_version": "1.21.10",
+	"particle_effect": {
+		"description": {
+			"identifier": "ram_pg:gun_shock",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/ram_pg/particles/security/shock"
+			}
+		},
+		"events": {
+			"burst": {
+				"sequence": [
+					{
+						"particle_effect": {
+							"effect": "ram_pg:gun_shock_flash",
+							"type": "emitter"
+						}
+					},
+					{
+						"particle_effect": {
+							"effect": "ram_pg:gun_shock_spark",
+							"type": "emitter"
+						}
+					}
+				]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 45,
+				"max_particles": 16
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.3
+			},
+			"minecraft:emitter_lifetime_events": {
+				"creation_event": "burst"
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [
+					"0.42 * math.cos(360 * variable.particle_random_1)",
+					"1.7 * variable.particle_random_2 - 0.85",
+					"0.42 * math.sin(360 * variable.particle_random_1)"
+				]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "0.1 + 0.12 * variable.particle_random_3"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "360 * variable.particle_random_4"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					"0.26 + 0.22 * variable.particle_random_3",
+					"0.26 + 0.22 * variable.particle_random_3"
+				],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 64,
+					"uv": [
+						"32 * math.floor(math.mod(variable.particle_random_1 * 4 + variable.particle_age * 25, 4))",
+						0
+					],
+					"uv_size": [
+						32,
+						32
+					]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [
+					1,
+					1,
+					1,
+					"(math.random(0, 1) > 0.3 ? 1 : 0.35) * (1 - math.pow((variable.particle_age / variable.particle_lifetime), 2))"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ram_pg:green_evil_morty_portal_gun",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:interact_button": true,
+      "minecraft:icon": "ram_pg_green_evil_morty_portal_gun",
+      "minecraft:display_name": {
+        "value": "item.ram_pg:green_evil_morty_portal_gun.name"
+      },
+      "minecraft:tags": {
+        "tags": ["ram_pg:portal_gun"]
+      },
+      "minecraft:max_stack_size": { "value": 1 },
+      "minecraft:cooldown": {
+        "category": "green_evil_morty_portal_gun_cooldown",
+        "duration": 1
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 0,
+        "movement_modifier": 1.0
+      },
+      "minecraft:use_animation": "none",
+      "minecraft:fire_resistant": {
+        "value": true
+      },
+      "minecraft:can_destroy_in_creative": false
+    }
+  }
+}

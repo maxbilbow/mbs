@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ram_pg:shock_body",
+            "materials": {
+                "default": "entity_emissive_alpha_one_sided",
+                "deferred": "entity_emissive_alpha_one_sided",
+                "skeleton": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/ram_pg/entity/shock_body"
+            },
+            "geometry": {
+                "default": "geometry.ram_pg.shock_body"
+            },
+            "animations": {
+                "shocked": "animation.ram_pg.player.shocked"
+            },
+            "scripts": {
+                "animate": [
+                    "shocked"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.ram_pg.shock_body"
+            ]
+        }
+    }
+}

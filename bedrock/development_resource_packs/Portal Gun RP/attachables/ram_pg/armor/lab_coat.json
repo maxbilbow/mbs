@@ -1,0 +1,21 @@
+{
+    "format_version": "1.20.30",
+    "minecraft:attachable": {
+      "description": {
+        "identifier": "ram_pg:lab_coat",
+        "item": { "ram_pg:lab_coat": "query.is_owner_identifier_any('minecraft:player')" },
+        "materials": {
+          "default": "armor",
+          "enchanted": "armor_enchanted"
+        },
+        "textures": {
+          "default": "textures/ram_pg/attachable/armor/lab_coat",
+          "enchanted": "textures/misc/enchanted_item_glint"
+        },
+        "geometry": {
+          "default": "geometry.ram_pg.lab_coat"
+        },
+        "render_controllers": ["controller.render.armor"]
+      }
+    }
+  }

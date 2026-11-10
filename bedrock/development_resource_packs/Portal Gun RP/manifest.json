@@ -1,0 +1,46 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§aPortal Gun§r RP V1.3.1",
+    "description": "pack.description",
+    "uuid": "41ce5e06-7daa-4169-9e9b-9e32b835c4de",
+    "version": [1, 3, 1],
+    "min_engine_version": [1, 26, 40]
+  },
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["JhonFX"]
+  },
+  "capabilities": ["pbr"],
+  "modules": [
+    {
+      "description": "Portal Gun",
+      "type": "resources",
+      "uuid": "494f96ea-7ac5-43bd-96ed-484d410633c0",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "610ea4ac-ce32-4d02-b55c-79c4319a2b4e",
+      "version": [1, 3, 1]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "Default",
+      "name": "§aPortal 75 FPS§r\n§7Best quality - switch down if portals look black",
+      "memory_tier": 16
+    },
+    {
+      "folder_name": "MediumFrameCount",
+      "name": "§ePortal 40 FPS§r\n§7Balanced quality and performance",
+      "memory_tier": 8
+    },
+    {
+      "folder_name": "LowFrameCount",
+      "name": "§cPortal 20 FPS§r\n§7Best performance - recommended for low-end devices",
+      "memory_tier": 0
+    }
+  ]
+}

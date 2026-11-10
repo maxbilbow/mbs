@@ -1,0 +1,121 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "ram_pg:blue_portal",
+
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      
+      "properties": {
+        "ram_pg:is_linked": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "ram_pg:orientation": {
+          "type": "int",
+          "range": [0, 2],
+          "default": 0,
+          "client_sync": true
+        },
+        "ram_pg:rotation": {
+          "type": "int",
+          "range": [0, 3],
+          "default": 0,
+          "client_sync": true
+        },
+        "ram_pg:close": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "ram_pg:portal_scale": {
+          "type": "float",
+          "default": 1.0,
+          "range": [0.5, 2.0],
+          "client_sync": true
+        },
+        "ram_pg:touched": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "ram_pg:blending": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["ram_pg:portal", "inanimate"]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.5,
+            "height": 1.9,
+            "pivot": [0, 0.65, -0.4]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:color": {
+        "value": 0
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 4
+      },
+      "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:mark_variant": {
+        "value": 0
+      },
+      "minecraft:skin_id": {
+        "value": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:navigation.generic": {
+        "can_path_over_water": false,
+        "can_sink": false
+      },
+      "minecraft:water_movement": {
+        "drag_factor": 1
+      },
+      "minecraft:persistent": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "subject": "self",
+                "operator": "not",
+                "value": "void"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:tick_world": {
+        "never_despawn": true
+      }
+    }
+  }
+}

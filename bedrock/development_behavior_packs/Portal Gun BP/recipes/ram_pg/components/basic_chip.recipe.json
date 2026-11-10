@@ -1,0 +1,36 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ram_pg:basic_chip"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:copper_ingot"
+            },
+            {
+                "item": "minecraft:redstone"
+            }
+        ],
+        "pattern": [
+            "c c",
+            " R ",
+            "c c"
+        ],
+        "key": {
+            "c": {
+                "item": "minecraft:copper_ingot"
+            },
+            "R": {
+                "item": "minecraft:redstone"
+            }
+        },
+        "result": {
+            "item": "ram_pg:basic_chip",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_brewing_mix": {
+    "description": {
+      "identifier": "ram_pg:quantum_isotope_recipe"
+    },
+
+    "tags": [ "brewing_stand" ],
+
+    "input": "ram_pg:beaker",
+    "reagent": "minecraft:amethyst_shard",
+    "output": "ram_pg:quantum_isotope"
+  }
+}

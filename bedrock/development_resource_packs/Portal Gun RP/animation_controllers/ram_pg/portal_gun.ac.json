@@ -1,0 +1,57 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.ram_pg.portal_gun": {
+			"states": {
+				"default": {
+					"animations": [
+						{"first_person_hold": "c.is_first_person"},
+						{"third_person_hold": "!c.is_first_person"},
+						"ray",
+						"bubbles"
+					],
+					"transitions": [
+						{"gun_shoot": "q.cooldown_time_remaining"}
+					]
+				},
+				"gun_shoot": {
+					"animations": [
+						{"first_person_shoot": "c.is_first_person"},
+						{"third_person_hold": "!c.is_first_person"},
+						"ray",
+						"bubbles"
+					],
+					"transitions": [
+						{"default": "!q.cooldown_time_remaining"}
+					]
+				}
+			}
+		},
+		"controller.animation.ram_pg.prime_portal_gun": {
+			"states": {
+				"default": {
+					"animations": [
+						{"first_person_hold": "c.is_first_person"},
+						{"third_person_hold": "!c.is_first_person"},
+						"ray",
+						"bubbles"
+					],
+					"transitions": [
+						{"shoot": "q.cooldown_time_remaining"}
+					]
+				},
+				"shoot": {
+					"animations": [
+						{"first_person_shoot": "c.is_first_person"},
+						{"third_person_hold": "!c.is_first_person"},
+						"ray",
+						"bubbles"
+					],
+					"transitions": [
+						{"default": "!q.cooldown_time_remaining"}
+					]
+				}
+			}
+		}
+	}
+}

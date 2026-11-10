@@ -1,0 +1,18 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ram_pg:dark_matter_dust",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": "ram_pg:dark_matter_dust",
+      "minecraft:display_name": {
+        "value": "item.ram_pg:dark_matter_dust.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}
