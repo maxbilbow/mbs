@@ -17,9 +17,12 @@ import {
   canSpawn,
   darkStorm,
   fullArmor,
+  ghostCollision,
+  hoverHeight,
   ids,
-  platformTop,
+  nearbySpecterTarget,
   spectralTool,
+  type Gear,
 } from "../plugins/ghosts/behavior/scripts/model.ts";
 import type * as API from "./fixtures/ghosts-api.ts";
 
@@ -52,36 +55,66 @@ test("Ghosts combat requires visor, either body piece, and the sword; stealth re
   assert.equal(spectralTool(), false);
 });
 
-test("Ghosts platforms catch downward crossings and edges, not ascent, warps, or blocks above", () => {
+test("Ghosts blocks stop all faces, slide along walls, and prevent short-step tunneling", () => {
   const block = [{ x: 0, y: 4, z: 0 }];
   const previous = { x: 0.5, y: 5.1, z: 0.5 };
   const current = { ...previous, y: 4.9 };
-  assert.equal(platformTop(previous, current, -0.2, block), 5);
+  assert.equal(ghostCollision(previous, current, block).y, 5);
   assert.equal(
-    platformTop({ ...previous, y: 5 }, { ...current, x: 1.2 }, 0, block),
+    ghostCollision({ ...previous, y: 5 }, { ...current, x: 1.2 }, block).y,
     5,
   );
   assert.equal(
-    platformTop(previous, { ...current, x: 1.3 }, -0.2, block),
-    undefined,
-  );
-  assert.equal(platformTop(previous, current, 0.2, block), undefined);
-  assert.equal(
-    platformTop({ ...previous, y: 4 }, current, -0.2, block),
-    undefined,
+    ghostCollision(previous, { ...current, x: 1.31 }, block).y,
+    current.y,
   );
   assert.equal(
-    platformTop({ ...previous, x: 20 }, current, -0.2, block),
-    undefined,
-  );
-  assert.equal(
-    platformTop({ ...previous, y: 20 }, current, -0.2, block),
-    undefined,
-  );
-  assert.equal(
-    platformTop(previous, current, -0.2, [...block, { x: 0, y: 3, z: 0 }]),
+    ghostCollision(previous, current, [...block, { x: 0, y: 3, z: 0 }]).y,
     5,
   );
+  const wall = [{ x: 0, y: 0, z: 0 }];
+  for (const axis of ["x", "z"] as const) {
+    for (const [from, to, stop] of [
+      [-0.4, 1.4, -0.3],
+      [1.4, -0.4, 1.3],
+    ]) {
+      const start = { x: 0.5, y: 0, z: 0.5, [axis]: from };
+      assert.equal(
+        ghostCollision(start, { ...start, [axis]: to }, wall)[axis],
+        stop,
+      );
+    }
+  }
+  assert.deepEqual(
+    ghostCollision({ x: -0.4, y: 0, z: 0.4 }, { x: 0.4, y: 0, z: 0.7 }, wall),
+    { x: -0.3, y: 0, z: 0.7 },
+  );
+  assert.ok(
+    Math.abs(
+      ghostCollision({ x: 0.5, y: 0, z: 0.5 }, { x: 0.5, y: 0.5, z: 0.5 }, [
+        { x: 0, y: 2, z: 0 },
+      ]).y - 0.2,
+    ) < 1e-10,
+  );
+  assert.deepEqual(
+    ghostCollision({ ...previous, x: 20 }, current, block),
+    current,
+  );
+  assert.deepEqual(
+    ghostCollision({ ...previous, y: 20 }, current, block),
+    current,
+  );
+  const embedded = { x: 0.5, y: 0, z: 0.5 };
+  assert.equal(ghostCollision(embedded, { ...embedded, x: 2 }, wall).x, 2);
+});
+
+test("Ghosts hover is surface-bound, allows normal ascent, and does not lift players up walls or over voids", () => {
+  assert.equal(hoverHeight(1, 0, 1), 1.25);
+  assert.equal(hoverHeight(1.25, -0.08, 1), 1.25);
+  assert.equal(hoverHeight(1.3, -0.08, 1), 1.25);
+  assert.equal(hoverHeight(1.25, 0.2, 1), undefined);
+  assert.equal(hoverHeight(1, 0, 2), undefined);
+  assert.equal(hoverHeight(1.25, 0, -3), undefined);
 });
 
 test("Ghosts storm spawning enforces night, darkness, open sky, mob rule and exact population caps", () => {
@@ -162,7 +195,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
       format: "esm",
     });
     const api: typeof API = await import(pathToFileURL(output).href);
-    const equip = (player: API.Player, gear = armor) => {
+    const equip = (player: API.Player, gear: Gear = armor) => {
       player.equipment.clear();
       for (const [slot, type] of Object.entries(gear))
         if (type) player.equipment.set(slot, new api.ItemStack(type));
@@ -236,7 +269,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
       () => {
         const { player, dimension } = api.reset();
         dimension.getBlock({ x: 0, y: 0, z: 0 }).setType(ids.block);
-        equip(player);
+        equip(player, { ...armor, chest: undefined });
         tick(1);
         player.location.y = 0.9;
         player.velocity.y = -0.1;
@@ -254,6 +287,199 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         player.equipment.delete("feet");
         tick(1);
         assert.equal(player.location.y, 0.9);
+      },
+    );
+
+    await t.test(
+      "boots stop side and underside entry, while sneak and removing boots permit passage",
+      () => {
+        const { player, dimension } = api.reset();
+        dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
+        equip(player);
+        player.location = { x: 0.5, y: 0, z: 0.5 };
+        tick(1);
+        player.location.x = 1.5;
+        player.velocity.x = 0.4;
+        tick(1);
+        assert.equal(player.location.x, 0.7);
+        assert.equal(player.velocity.x, 0);
+        player.isSneaking = true;
+        player.location.x = 1.5;
+        tick(1);
+        assert.equal(player.location.x, 1.5);
+        player.isSneaking = false;
+        player.equipment.delete("feet");
+        player.location.x = 2.5;
+        tick(1);
+        assert.equal(player.location.x, 2.5);
+        dimension.getBlock({ x: 2, y: 2, z: 0 }).setType(ids.block);
+        equip(player, { ...armor, chest: undefined });
+        tick(1);
+        player.location.y = 0.5;
+        player.velocity.y = 0.3;
+        tick(1);
+        assert.ok(Math.abs(player.location.y - 0.2) < 1e-10);
+      },
+    );
+
+    await t.test(
+      "full armor climbs within ghost blocks, holds still, descends and stops immediately on armor loss",
+      () => {
+        const { player, dimension } = api.reset();
+        for (let y = 0; y < 4; y++)
+          dimension.getBlock({ x: 0, y, z: 0 }).setType(ids.block);
+        equip(player);
+        player.location.y = 0;
+        tick(1);
+        player.isJumping = true;
+        tick(1);
+        assert.equal(player.location.y, 0.12);
+        player.isJumping = false;
+        player.location.y -= 0.08;
+        player.velocity.y = -0.08;
+        tick(1);
+        assert.equal(player.location.y, 0.12);
+        player.isSneaking = true;
+        tick(1);
+        assert.equal(player.location.y, 0);
+        player.equipment.delete("legs");
+        player.isSneaking = false;
+        player.location.y = -0.08;
+        tick(1);
+        assert.equal(player.location.y, -0.08);
+      },
+    );
+
+    await t.test(
+      "full armor hovers above ground, partial blocks, water and lava without granting flight or fire immunity",
+      () => {
+        for (const type of [
+          "minecraft:stone",
+          "minecraft:water",
+          "minecraft:flowing_water",
+          "minecraft:lava",
+          "minecraft:flowing_lava",
+          "minecraft:stone_slab",
+        ]) {
+          const { player, dimension } = api.reset();
+          const floor = dimension.getBlock({ x: 0, y: 0, z: 0 });
+          floor.setType(type);
+          floor.surfaceHeight = type.endsWith("slab") ? 0.5 : 1;
+          player.location.y = floor.surfaceHeight;
+          equip(player);
+          tick(1);
+          tick(1);
+          assert.equal(player.location.y, floor.surfaceHeight + 0.25, type);
+          const hurt = {
+            hurtEntity: player,
+            damageSource: { cause: "lava" },
+            cancel: false,
+          };
+          api.world.beforeEvents.entityHurt.emit(hurt);
+          assert.equal(hurt.cancel, type.includes("lava"));
+          if (type.includes("lava")) {
+            assert.ok(player.extinguished > 0);
+            player.isSneaking = true;
+            hurt.cancel = false;
+            api.world.beforeEvents.entityHurt.emit(hurt);
+            assert.equal(hurt.cancel, false);
+            player.isSneaking = false;
+            player.location.x += 1;
+            api.world.beforeEvents.entityHurt.emit(hurt);
+            assert.equal(hurt.cancel, false);
+            player.location.x -= 1;
+          }
+          player.equipment.delete("legs");
+          hurt.cancel = false;
+          api.world.beforeEvents.entityHurt.emit(hurt);
+          assert.equal(hurt.cancel, false);
+          player.location.y -= 0.08;
+          tick(1);
+          assert.ok(player.location.y < floor.surfaceHeight + 0.25);
+        }
+        const { player, dimension } = api.reset();
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
+        equip(player);
+        tick(1);
+        player.canTeleport = false;
+        tick(1);
+        assert.equal(player.location.y, 1);
+        player.canTeleport = true;
+        player.isSneaking = true;
+        tick(1);
+        assert.equal(player.location.y, 1);
+        player.isSneaking = false;
+        player.location = { x: 1.5, y: 1, z: 0.5 };
+        tick(1);
+        assert.equal(player.location.y, 1);
+        player.velocity.y = 0.3;
+        player.location.x = 0.5;
+        tick(1);
+        assert.equal(player.location.y, 1);
+        player.velocity.y = 0;
+        player.isJumping = true;
+        tick(1);
+        assert.equal(player.location.y, 1.25);
+        assert.equal(player.velocity.y, 0.42);
+        player.location.y = 1.6;
+        tick(1);
+        assert.equal(player.location.y, 1.6);
+      },
+    );
+
+    await t.test(
+      "outdoors has a daytime baseline and a higher nighttime target, independent of storms",
+      () => {
+        const { player, dimension } = api.reset();
+        api.setTime(6000);
+        for (let check = 0; check < 5; check++) tick(200);
+        assert.equal(dimension.getEntities({ type: ids.specter }).length, 1);
+        assert.equal(nearbySpecterTarget(12999), 1);
+        assert.equal(nearbySpecterTarget(13000), 3);
+        assert.equal(nearbySpecterTarget(22999), 3);
+        assert.equal(nearbySpecterTarget(23000), 1);
+        api.setTime(18000);
+        for (let check = 0; check < 5; check++) tick(200);
+        assert.equal(dimension.getEntities({ type: ids.specter }).length, 3);
+        dimension.entities[0].remove();
+        tick(200);
+        assert.equal(dimension.getEntities({ type: ids.specter }).length, 3);
+        assert.equal(player.equipment.size, 0);
+        assert.equal(dimension.drops.length, 0);
+      },
+    );
+
+    await t.test(
+      "outdoor spawning honors roofs, mob rules, nearby/global caps and unavailable chunks",
+      () => {
+        for (const condition of [
+          "roof",
+          "mob-rule",
+          "nearby",
+          "global",
+          "unloaded",
+        ]) {
+          const { player, dimension } = api.reset();
+          if (condition === "roof")
+            dimension.getBlock({ x: 0, y: 4, z: 0 }).setType("minecraft:stone");
+          if (condition === "mob-rule")
+            api.world.gameRules.doMobSpawning = false;
+          const count =
+            condition === "nearby" ? 4 : condition === "global" ? 24 : 0;
+          for (let index = 0; index < count; index++)
+            dimension.spawnEntity(ids.specter, {
+              x: condition === "global" ? 100 : player.location.x,
+              y: 1,
+              z: 0,
+            });
+          if (condition === "unloaded") dimension.unloaded = true;
+          tick(200);
+          assert.equal(
+            dimension.getEntities({ type: ids.specter }).length,
+            count,
+            condition,
+          );
+        }
       },
     );
 

@@ -17,7 +17,13 @@ export const EntityDamageCause = {
   entityAttack: "entityAttack",
   selfDestruct: "selfDestruct",
   void: "void",
+  lava: "lava",
+  fire: "fire",
+  fireTick: "fireTick",
 };
+export const Direction = { Up: "Up" };
+export const ButtonState = { Pressed: "Pressed", Released: "Released" };
+export const InputButton = { Jump: "Jump" };
 export class LocationInUnloadedChunkError extends Error {}
 export class LocationOutOfWorldBoundariesError extends Error {}
 export class ItemStack {
@@ -55,6 +61,7 @@ class Block {
   isValid = true;
   typeId = "minecraft:air";
   light = 0;
+  surfaceHeight = 1;
   constructor(public location: Point) {}
   get isAir() {
     return this.typeId === "minecraft:air";
@@ -107,10 +114,47 @@ export class Dimension {
       .filter(
         (block) =>
           !block.isAir &&
-          block.location.x === point.x &&
-          block.location.z === point.z,
+          block.location.x === Math.floor(point.x) &&
+          block.location.z === Math.floor(point.z),
       )
       .sort((a, b) => b.location.y - a.location.y)[0];
+  }
+  getBlockFromRay(
+    origin: Point,
+    _direction: Point,
+    options: { maxDistance: number; includePassableBlocks: boolean },
+  ) {
+    for (
+      let y = Math.floor(origin.y);
+      y >= Math.floor(origin.y - options.maxDistance);
+      y--
+    ) {
+      const block = this.getBlock({ x: origin.x, y, z: origin.z });
+      if (
+        !options.includePassableBlocks &&
+        [
+          "minecraft:water",
+          "minecraft:flowing_water",
+          "minecraft:lava",
+          "minecraft:flowing_lava",
+        ].includes(block.typeId)
+      )
+        continue;
+      if (
+        block.isAir ||
+        block.typeId === "ghosts:ghost_block" ||
+        block.typeId === "ghosts:ectoplasm"
+      )
+        continue;
+      const top = y + block.surfaceHeight;
+      if (top <= origin.y && top >= origin.y - options.maxDistance)
+        return {
+          block,
+          face: Direction.Up,
+          faceLocation: { x: 0.5, y: block.surfaceHeight % 1, z: 0.5 },
+        };
+    }
+    return undefined;
   }
   spawnEntity(type: string, point: Point) {
     const entity = new Entity(type, this, point);
@@ -152,10 +196,17 @@ export class Player extends Entity {
   damage = 0;
   velocity = { x: 0, y: 0, z: 0 };
   isFlying = false;
+  isGliding = false;
+  isSwimming = false;
   isSneaking = false;
   isInWater = false;
   isJumping = false;
   canTeleport = true;
+  extinguished = 0;
+  inputInfo = {
+    getButtonState: () =>
+      this.isJumping ? ButtonState.Pressed : ButtonState.Released,
+  };
   constructor(dimension: Dimension) {
     super("minecraft:player", dimension, { x: 0.5, y: 1, z: 0.5 });
   }
@@ -194,6 +245,9 @@ export class Player extends Entity {
   }
   applyDamage(amount: number) {
     this.damage += amount;
+  }
+  extinguishFire() {
+    this.extinguished++;
   }
 }
 
@@ -262,4 +316,7 @@ export function reset() {
   const player = new Player(dimension);
   players = [player];
   return { player, dimension };
+}
+export function setTime(value: number) {
+  time = value;
 }

@@ -31,6 +31,94 @@ export interface Point {
   z: number;
 }
 
+export function nearbySpecterTarget(time: number): number {
+  return time >= 13000 && time < 23000 ? 3 : 1;
+}
+
+export function insideGhost(point: Point, block: Point): boolean {
+  return (
+    point.x + 0.3 > block.x + 0.0001 &&
+    point.x - 0.3 < block.x + 1 - 0.0001 &&
+    point.y + 1.8 > block.y + 0.0001 &&
+    point.y < block.y + 1 - 0.0001 &&
+    point.z + 0.3 > block.z + 0.0001 &&
+    point.z - 0.3 < block.z + 1 - 0.0001
+  );
+}
+
+export function localMovement(previous: Point, current: Point): boolean {
+  return (
+    Math.hypot(current.x - previous.x, current.z - previous.z) <= 2 &&
+    Math.abs(current.y - previous.y) <= 4
+  );
+}
+
+export function ghostCollision(
+  previous: Point,
+  current: Point,
+  blocks: Point[],
+): Point {
+  if (!localMovement(previous, current)) return { ...current };
+  // Equipping boots while inside a block must still allow an exit.
+  const obstacles = blocks.filter((block) => !insideGhost(previous, block));
+  const result = { ...previous };
+  for (const axis of ["x", "z"] as const) {
+    let value = current[axis];
+    for (const block of obstacles) {
+      const other = axis === "x" ? "z" : "x";
+      if (
+        result.y >= block.y + 1 - 0.0001 ||
+        result.y + 1.8 <= block.y + 0.0001 ||
+        result[other] + 0.3 <= block[other] + 0.0001 ||
+        result[other] - 0.3 >= block[other] + 1 - 0.0001
+      )
+        continue;
+      if (
+        previous[axis] + 0.3 <= block[axis] + 0.0001 &&
+        value + 0.3 > block[axis]
+      )
+        value = Math.min(value, block[axis] - 0.3);
+      if (
+        previous[axis] - 0.3 >= block[axis] + 1 - 0.0001 &&
+        value - 0.3 < block[axis] + 1
+      )
+        value = Math.max(value, block[axis] + 1.3);
+    }
+    result[axis] = value;
+  }
+  result.y = current.y;
+  for (const block of obstacles) {
+    if (
+      result.x + 0.3 <= block.x + 0.0001 ||
+      result.x - 0.3 >= block.x + 1 - 0.0001 ||
+      result.z + 0.3 <= block.z + 0.0001 ||
+      result.z - 0.3 >= block.z + 1 - 0.0001
+    )
+      continue;
+    if (previous.y >= block.y + 1 - 0.02 && result.y < block.y + 1)
+      result.y = Math.max(result.y, block.y + 1);
+    if (previous.y + 1.8 <= block.y + 0.0001 && result.y + 1.8 > block.y)
+      result.y = Math.min(result.y, block.y - 1.8);
+  }
+  return result;
+}
+
+export function hoverHeight(
+  feetY: number,
+  velocityY: number,
+  surfaceY: number,
+): number | undefined {
+  const target = surfaceY + 0.25;
+  if (
+    velocityY > 0 ||
+    surfaceY > feetY + 0.02 ||
+    target - feetY > 0.3 ||
+    feetY - target > 0.08
+  )
+    return undefined;
+  return target;
+}
+
 export function attuned(gear: Gear): boolean {
   return (
     gear.head === ids.visor &&
@@ -89,33 +177,4 @@ export function ectoplasmSurface(type: string): boolean {
     "minecraft:mud",
     "minecraft:deepslate",
   ].includes(type);
-}
-
-// Only downward crossings count: never lift players through a block from below.
-export function platformTop(
-  previous: Point,
-  current: Point,
-  velocityY: number,
-  blocks: Point[],
-): number | undefined {
-  if (
-    velocityY > 0 ||
-    Math.hypot(current.x - previous.x, current.z - previous.z) > 2 ||
-    previous.y - current.y > 4
-  )
-    return undefined;
-  return blocks
-    .filter(
-      (block) =>
-        current.x + 0.29 > block.x &&
-        current.x - 0.29 < block.x + 1 &&
-        current.z + 0.29 > block.z &&
-        current.z - 0.29 < block.z + 1 &&
-        previous.y >= block.y + 1 - 0.02 &&
-        current.y <= block.y + 1 &&
-        current.y >= block.y - 3,
-    )
-    .reduce<
-      number | undefined
-    >((top, block) => Math.max(top ?? -Infinity, block.y + 1), undefined);
 }

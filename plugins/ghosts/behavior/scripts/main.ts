@@ -1,8 +1,11 @@
 import {
+  ButtonState,
+  Direction,
   EntityDamageCause,
   EquipmentSlot,
   GameMode,
   ItemStack,
+  InputButton,
   LocationInUnloadedChunkError,
   LocationOutOfWorldBoundariesError,
   Player,
@@ -19,8 +22,12 @@ import {
   darkStorm,
   ectoplasmSurface,
   fullArmor,
+  ghostCollision,
+  hoverHeight,
   ids,
-  platformTop,
+  insideGhost,
+  localMovement,
+  nearbySpecterTarget,
   spectralTool,
   type Gear,
   type Point,
@@ -31,7 +38,12 @@ declare const console: { warn(message: string): void };
 const positions = new Map<string, { point: Point; dimension: string }>();
 const attacks = new Map<string, number>();
 const notices = new Map<string, number>();
+const hovering = new Map<
+  string,
+  { point: Point; dimension: string; tick: number }
+>();
 let spawnCursor = 0;
+let ambientCursor = 0;
 
 function report(context: string, error: unknown) {
   console.warn(
@@ -85,8 +97,20 @@ function notify(player: Player, text: string) {
 }
 
 world.beforeEvents.entityHurt.subscribe((event) => {
+  const hurt = event.hurtEntity;
+  const cause = event.damageSource.cause;
+  if (
+    hurt instanceof Player &&
+    (cause === EntityDamageCause.lava ||
+      cause === EntityDamageCause.fire ||
+      cause === EntityDamageCause.fireTick) &&
+    hoveringAboveLava(hurt)
+  ) {
+    event.cancel = true;
+    return;
+  }
   if (event.hurtEntity.typeId !== ids.specter) return;
-  const { damagingEntity, cause } = event.damageSource;
+  const { damagingEntity } = event.damageSource;
   if (
     cause === EntityDamageCause.selfDestruct ||
     cause === EntityDamageCause.void
@@ -149,15 +173,74 @@ world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
 world.afterEvents.playerLeave.subscribe(({ playerId }) => {
   positions.delete(playerId);
   notices.delete(playerId);
+  hovering.delete(playerId);
 });
 
 world.afterEvents.entityRemove.subscribe(({ removedEntityId }) => {
   attacks.delete(removedEntityId);
 });
 
+function lava(type?: string): boolean {
+  return type === "minecraft:lava" || type === "minecraft:flowing_lava";
+}
+
+function hoveringAboveLava(player: Player): boolean {
+  const support = hovering.get(player.id);
+  return (
+    support !== undefined &&
+    system.currentTick - support.tick <= 1 &&
+    support.dimension === player.dimension.id &&
+    !player.isSneaking &&
+    playable(player) &&
+    fullArmor(gear(player)) &&
+    Math.abs(player.location.y - support.point.y) <= 0.1 &&
+    Math.hypot(
+      player.location.x - support.point.x,
+      player.location.z - support.point.z,
+    ) <= 0.4 &&
+    lava(
+      blockAt(player.dimension, {
+        x: player.location.x,
+        y: support.point.y - 0.26,
+        z: player.location.z,
+      })?.typeId,
+    )
+  );
+}
+
+function ghostBlocks(
+  dimension: Dimension,
+  previous: Point,
+  current: Point,
+): Point[] {
+  const blocks: Point[] = [];
+  for (
+    let x = Math.floor(Math.min(previous.x, current.x) - 0.3);
+    x <= Math.floor(Math.max(previous.x, current.x) + 0.3);
+    x++
+  ) {
+    for (
+      let z = Math.floor(Math.min(previous.z, current.z) - 0.3);
+      z <= Math.floor(Math.max(previous.z, current.z) + 0.3);
+      z++
+    ) {
+      for (
+        let y = Math.floor(Math.min(previous.y, current.y)) - 1;
+        y <= Math.floor(Math.max(previous.y, current.y) + 1.8);
+        y++
+      ) {
+        const point = { x, y, z };
+        if (blockAt(dimension, point)?.typeId === ids.block) blocks.push(point);
+      }
+    }
+  }
+  return blocks;
+}
+
 function footing(player: Player, equipment: Gear) {
   const current = player.location;
   const previous = positions.get(player.id);
+  hovering.delete(player.id);
   positions.set(player.id, {
     point: { ...current },
     dimension: player.dimension.id,
@@ -165,57 +248,108 @@ function footing(player: Player, equipment: Gear) {
   if (
     !previous ||
     previous.dimension !== player.dimension.id ||
+    !localMovement(previous.point, current) ||
     equipment.feet !== ids.boots ||
     !playable(player) ||
     player.isFlying ||
-    player.isSneaking ||
+    player.isGliding ||
+    player.isSwimming ||
     player.isInWater
   )
     return;
-  const blocks: Point[] = [];
-  for (
-    let x = Math.floor(current.x - 0.29);
-    x <= Math.floor(current.x + 0.29);
-    x++
-  ) {
-    for (
-      let z = Math.floor(current.z - 0.29);
-      z <= Math.floor(current.z + 0.29);
-      z++
-    ) {
-      for (
-        let y = Math.floor(current.y) - 1;
-        y <= Math.floor(previous.point.y);
-        y++
-      ) {
-        if (previous.point.y - current.y > 4) break;
-        const point = { x, y, z };
-        if (blockAt(player.dimension, point)?.typeId === ids.block)
-          blocks.push(point);
+  const blocks = ghostBlocks(player.dimension, previous.point, current);
+  const complete = fullArmor(equipment);
+  const climbing =
+    complete && blocks.some((block) => insideGhost(previous.point, block));
+  const velocity = player.getVelocity();
+  const jump =
+    player.inputInfo.getButtonState(InputButton.Jump) === ButtonState.Pressed;
+  let target = { ...current };
+  let supported = false;
+  let hover = false;
+  if (climbing) {
+    target.y = previous.point.y + (player.isSneaking ? -0.12 : jump ? 0.12 : 0);
+    supported = true;
+  } else if (player.isSneaking) {
+    return;
+  } else {
+    target = ghostCollision(previous.point, current, blocks);
+    supported = target.y > current.y && velocity.y <= 0;
+    if (complete) {
+      const surfaces = blocks
+        .filter(
+          (block) =>
+            Math.abs(target.x - (block.x + 0.5)) < 0.8 &&
+            Math.abs(target.z - (block.z + 0.5)) < 0.8 &&
+            target.y >= block.y + 1 - 0.02,
+        )
+        .map((block) => block.y + 1);
+      for (const [x, z] of [
+        [0, 0],
+        [-0.28, -0.28],
+        [-0.28, 0.28],
+        [0.28, -0.28],
+        [0.28, 0.28],
+      ]) {
+        const origin = { x: target.x + x, y: target.y + 0.02, z: target.z + z };
+        if (!blockAt(player.dimension, origin)) continue;
+        const hit = player.dimension.getBlockFromRay(
+          origin,
+          { x: 0, y: -1, z: 0 },
+          {
+            maxDistance: Math.min(
+              1.5,
+              origin.y - player.dimension.heightRange.min,
+            ),
+            includeLiquidBlocks: true,
+            includePassableBlocks: true,
+          },
+        );
+        if (hit?.face === Direction.Up) {
+          // Bedrock 1.26 reports integer top-face heights as local Y=0, not 1.
+          const height = hit.faceLocation.y === 0 ? 1 : hit.faceLocation.y;
+          surfaces.push(hit.block.location.y + height);
+        }
+      }
+      const heights = surfaces
+        .map((surface) => hoverHeight(target.y, velocity.y, surface))
+        .filter((height): height is number => height !== undefined);
+      if (heights.length) {
+        target.y = Math.max(...heights);
+        supported = hover = true;
       }
     }
   }
-  const velocity = player.getVelocity();
-  const top = platformTop(previous.point, current, velocity.y, blocks);
-  if (top === undefined) return;
+  const moved =
+    target.x !== current.x || target.y !== current.y || target.z !== current.z;
+  if (!moved && !supported) return;
   if (
-    !player.tryTeleport(
-      { ...current, y: top },
-      { checkForBlocks: true, keepVelocity: true },
-    )
+    moved &&
+    !player.tryTeleport(target, { checkForBlocks: true, keepVelocity: true })
   ) {
-    notify(player, "There is not enough space to stand on this ghost block.");
+    notify(player, "There is not enough clear space for spectral movement.");
     return;
   }
   positions.set(player.id, {
-    point: { ...current, y: top },
+    point: { ...target },
     dimension: player.dimension.id,
   });
   player.applyImpulse({
-    x: 0,
-    y: -velocity.y + (player.isJumping ? 0.42 : 0),
-    z: 0,
+    x: target.x !== current.x ? -velocity.x : 0,
+    y:
+      target.y !== current.y || supported
+        ? -velocity.y + (supported && !climbing && jump ? 0.42 : 0)
+        : 0,
+    z: target.z !== current.z ? -velocity.z : 0,
   });
+  if (hover) {
+    hovering.set(player.id, {
+      point: { ...target },
+      dimension: player.dimension.id,
+      tick: system.currentTick,
+    });
+    if (hoveringAboveLava(player)) player.extinguishFire();
+  }
 }
 
 function specters(dimension: Dimension): Entity[] {
@@ -318,6 +452,68 @@ system.runInterval(() => {
     }
   }
 }, 2);
+
+function outdoorSpecter(player: Player) {
+  const dimension = player.dimension;
+  if (
+    dimension.id !== "minecraft:overworld" ||
+    !playable(player) ||
+    !world.gameRules.doMobSpawning ||
+    (dimension.getTopmostBlock(player.location)?.location.y ?? -Infinity) >=
+      player.location.y
+  )
+    return;
+  const nearby = dimension.getEntities({
+    type: ids.specter,
+    location: player.location,
+    maxDistance: 32,
+  }).length;
+  if (
+    nearby >= nearbySpecterTarget(world.getTimeOfDay()) ||
+    !canSpawn(
+      dimension.getEntities({
+        type: ids.specter,
+        location: player.location,
+        maxDistance: 48,
+      }).length,
+      specters(dimension).length,
+      true,
+    )
+  )
+    return;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 12 + Math.random() * 12;
+    const location = {
+      x: Math.floor(player.location.x + Math.cos(angle) * distance) + 0.5,
+      y: Math.floor(player.location.y),
+      z: Math.floor(player.location.z + Math.sin(angle) * distance) + 0.5,
+    };
+    if (
+      blockAt(dimension, location)?.isAir &&
+      blockAt(dimension, { ...location, y: location.y + 1 })?.isAir &&
+      (dimension.getTopmostBlock(location)?.location.y ?? -Infinity) <
+        location.y
+    ) {
+      dimension.spawnEntity(ids.specter, location);
+      return;
+    }
+  }
+}
+
+system.runInterval(() => {
+  const players = world.getAllPlayers();
+  for (let count = 0; count < Math.min(4, players.length); count++) {
+    try {
+      outdoorSpecter(players[(ambientCursor + count) % players.length]);
+    } catch (error) {
+      report("maintaining outdoor specters", error);
+    }
+  }
+  if (players.length)
+    ambientCursor =
+      (ambientCursor + Math.min(4, players.length)) % players.length;
+}, 200);
 
 // A data-driven weather probe also works when enabling the pack mid-storm.
 function stormAttempt(player: Player) {
