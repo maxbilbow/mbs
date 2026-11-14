@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Wayworks",
+    "description": "Supply workers to build roads and railways, and run named bus-stop routes.",
+    "uuid": "f0299f3f-646c-439b-9b9f-1530d7d2ce87",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 21, 100]
+  },
+  "metadata": { "authors": ["Max Bilbow"] },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "65f9c280-e485-4f85-831b-a0a04526e648",
+      "version": [0, 1, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "1dc68b3c-c2da-4465-8672-14b43a43425a",
+      "version": [0, 1, 0]
+    }
+  ],
+  "dependencies": [
+    { "module_name": "@minecraft/server", "version": "2.0.0" },
+    { "module_name": "@minecraft/server-ui", "version": "2.0.0" },
+    { "uuid": "3534be33-2ea4-40e9-a5b1-d75a2d042b72", "version": [0, 1, 0] }
+  ]
+}

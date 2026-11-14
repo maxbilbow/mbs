@@ -1,0 +1,4 @@
+tile.ghosts:ectoplasm.name=Ectoplasm
+tile.ghosts:ghost_block.name=Ghost Block
+entity.ghosts:specter.name=Specter
+item.spawn_egg.entity.ghosts:specter.name=Spawn Specter

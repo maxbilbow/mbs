@@ -1,0 +1,7 @@
+{
+  "resource_pack_name": "wayworks",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "wayworks_planner": { "textures": "textures/items/planner" }
+  }
+}

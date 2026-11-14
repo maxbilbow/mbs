@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "ghosts:spectral_shovel" },
+    "tags": ["crafting_table"],
+    "unlock": [{ "item": "ghosts:ectoplasm" }],
+    "pattern": ["E", "S", "S"],
+    "key": {
+      "E": { "item": "ghosts:ectoplasm" },
+      "S": { "item": "minecraft:stick" }
+    },
+    "result": { "item": "ghosts:spectral_shovel" }
+  }
+}

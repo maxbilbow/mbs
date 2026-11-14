@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "wayworks:bus_stop" },
+    "tags": ["crafting_table"],
+    "pattern": [" Y ", " I ", "SSS"],
+    "key": {
+      "Y": { "item": "minecraft:yellow_dye" },
+      "I": { "item": "minecraft:iron_ingot" },
+      "S": { "item": "minecraft:cobblestone" }
+    },
+    "result": { "item": "wayworks:bus_stop", "count": 1 }
+  }
+}

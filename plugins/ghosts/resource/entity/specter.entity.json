@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ghosts:specter",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/invisible" },
+      "geometry": { "default": "geometry.ghosts.invisible" },
+      "render_controllers": ["controller.render.ghosts.invisible"],
+      "spawn_egg": { "base_color": "#b6ffe8", "overlay_color": "#406f78" }
+    }
+  }
+}

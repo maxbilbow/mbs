@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "wayworks:bus_stop",
+      "menu_category": { "category": "construction" }
+    },
+    "components": {
+      "minecraft:display_name": "Wayworks Bus Stop",
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": { "texture": "wayworks_bus_stop", "render_method": "opaque" }
+      },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 1.5 },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:movable": { "movement_type": "immovable" },
+      "minecraft:loot": "loot_tables/blocks/bus_stop.json",
+      "minecraft:map_color": "#e8b52d"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wayworks:worker",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["wayworks_worker"] },
+      "minecraft:health": { "value": 20, "max": 20 },
+      "minecraft:collision_box": { "width": 0.6, "height": 1.8 },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:persistent": {},
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:inventory": {
+        "inventory_size": 27,
+        "container_type": "inventory",
+        "private": false,
+        "can_be_siphoned_from": false
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "Manage Wayworks worker",
+            "on_interact": { "event": "wayworks:interact", "target": "self" }
+          }
+        ]
+      }
+    },
+    "events": { "wayworks:interact": {} }
+  }
+}

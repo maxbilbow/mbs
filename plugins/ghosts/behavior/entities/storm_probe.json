@@ -1,0 +1,45 @@
+{
+  "format_version": "1.26.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "ghosts:storm_probe",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "properties": { "ghosts:storm": { "type": "bool", "default": false } }
+    },
+    "components": {
+      "minecraft:collision_box": { "width": 0, "height": 0 },
+      "minecraft:physics": { "has_gravity": false, "has_collision": false },
+      "minecraft:damage_sensor": { "triggers": [{ "deals_damage": "no" }] },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": { "test": "weather", "value": "thunderstorm" },
+            "event": "ghosts:thunder"
+          },
+          {
+            "filters": {
+              "test": "weather",
+              "operator": "!=",
+              "value": "thunderstorm"
+            },
+            "event": "ghosts:clear"
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "time": 2,
+        "looping": false,
+        "time_down_event": { "event": "ghosts:despawn", "target": "self" }
+      }
+    },
+    "component_groups": {
+      "ghosts:despawn": { "minecraft:instant_despawn": {} }
+    },
+    "events": {
+      "ghosts:thunder": { "set_property": { "ghosts:storm": true } },
+      "ghosts:clear": { "set_property": { "ghosts:storm": false } },
+      "ghosts:despawn": { "add": { "component_groups": ["ghosts:despawn"] } }
+    }
+  }
+}

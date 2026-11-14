@@ -11,6 +11,8 @@ and TypeScript Minecraft plugin sources.
 - `App/` contains the Express API, React dashboard, and shared models.
 - `plugins/` contains editable TypeScript packs and shared type-checking configuration.
   `plugins/example/behavior/` is a minimal, verifiable example.
+  [Ghosts](plugins/ghosts/README.md) adds equipment-gated specters, spectral gear,
+  snow-like ectoplasm and boot-only ghost platforms (prototype).
 - `scripts/` contains runtime control, the updater, plugin build/deployment, and
   shared paths. Root `mbs`, `update-server.ts`, and `update-server.sh` remain
   compatibility entry points.

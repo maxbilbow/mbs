@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ghosts:ghost_block",
+      "menu_category": { "category": "construction" }
+    },
+    "components": {
+      "minecraft:display_name": "Ghost Block",
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": {
+        "*": { "texture": "ghosts_ghost_block", "render_method": "blend" }
+      },
+      "minecraft:collision_box": false,
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 1 },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:movable": { "movement_type": "immovable" },
+      "minecraft:loot": "loot_tables/blocks/ghost_block.json",
+      "minecraft:map_color": "#72cdb8"
+    }
+  }
+}

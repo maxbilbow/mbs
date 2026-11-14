@@ -1,0 +1,20 @@
+{
+  "resource_pack_name": "Ghosts",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "ghosts_spectral_visor": { "textures": "textures/items/spectral_visor" },
+    "ghosts_spectral_chestplate": {
+      "textures": "textures/items/spectral_chestplate"
+    },
+    "ghosts_spectral_leggings": {
+      "textures": "textures/items/spectral_leggings"
+    },
+    "ghosts_spectral_boots": { "textures": "textures/items/spectral_boots" },
+    "ghosts_spectral_sword": { "textures": "textures/items/spectral_sword" },
+    "ghosts_spectral_pickaxe": {
+      "textures": "textures/items/spectral_pickaxe"
+    },
+    "ghosts_spectral_axe": { "textures": "textures/items/spectral_axe" },
+    "ghosts_spectral_shovel": { "textures": "textures/items/spectral_shovel" }
+  }
+}

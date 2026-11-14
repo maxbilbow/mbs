@@ -1,0 +1,9 @@
+{
+  "resource_pack_name": "wayworks",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "wayworks_bus_stop": { "textures": "textures/blocks/bus_stop" }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ghosts:spectral_shovel",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "minecraft:display_name": { "value": "Spectral Shovel" },
+      "minecraft:icon": "ghosts_spectral_shovel",
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:damage": 3,
+      "minecraft:durability": { "max_durability": 500 },
+      "minecraft:enchantable": { "slot": "shovel", "value": 10 },
+      "minecraft:tags": { "tags": ["minecraft:is_shovel"] },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          { "block": "ghosts:ghost_block", "speed": 6 },
+          { "block": "ghosts:ectoplasm", "speed": 8 },
+          {
+            "block": {
+              "tags": "query.any_tag('dirt', 'sand', 'gravel', 'snow')"
+            },
+            "speed": 6
+          }
+        ]
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          { "items": ["ghosts:ectoplasm"], "repair_amount": 125 }
+        ]
+      }
+    }
+  }
+}

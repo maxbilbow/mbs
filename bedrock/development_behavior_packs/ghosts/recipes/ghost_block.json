@@ -1,0 +1,11 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "ghosts:ghost_block" },
+    "tags": ["crafting_table"],
+    "unlock": [{ "item": "ghosts:ectoplasm" }],
+    "pattern": ["EE", "EE"],
+    "key": { "E": { "item": "ghosts:ectoplasm" } },
+    "result": { "item": "ghosts:ghost_block", "count": 4 }
+  }
+}

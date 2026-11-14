@@ -1,0 +1,28 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Ghosts",
+    "description": "Discover specters, gather ectoplasm, and craft equipment for the spectral world.",
+    "uuid": "f70c542c-2671-4842-ac64-3ebd68981da3",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 26, 60]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "b9de982f-0c84-44e1-9cbe-e94c17ea3b8c",
+      "version": [0, 1, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "d44bfdae-f433-44ae-abab-365725bfc84a",
+      "version": [0, 1, 0]
+    }
+  ],
+  "dependencies": [
+    { "module_name": "@minecraft/server", "version": "2.8.0" },
+    { "uuid": "564992b2-6d3e-4128-8049-d0a748d83e29", "version": [0, 1, 0] }
+  ]
+}

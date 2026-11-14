@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ghosts:ectoplasm",
+      "menu_category": { "category": "nature" }
+    },
+    "components": {
+      "minecraft:display_name": "Ectoplasm",
+      "minecraft:geometry": "geometry.ghosts.ectoplasm",
+      "minecraft:material_instances": {
+        "*": { "texture": "ghosts_ectoplasm", "render_method": "opaque" }
+      },
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [16, 2, 16] },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 0.15 },
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 0 },
+      "minecraft:placement_filter": {
+        "conditions": [{ "allowed_faces": ["up"] }]
+      },
+      "minecraft:loot": "loot_tables/blocks/ectoplasm.json",
+      "minecraft:map_color": "#b6ffe8"
+    }
+  }
+}
