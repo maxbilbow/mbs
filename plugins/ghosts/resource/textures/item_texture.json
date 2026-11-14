@@ -2,6 +2,7 @@
   "resource_pack_name": "Ghosts",
   "texture_name": "atlas.items",
   "texture_data": {
+    "ghosts_ghost_block": { "textures": "textures/blocks/ghost_block" },
     "ghosts_spectral_visor": { "textures": "textures/items/spectral_visor" },
     "ghosts_spectral_chestplate": {
       "textures": "textures/items/spectral_chestplate"

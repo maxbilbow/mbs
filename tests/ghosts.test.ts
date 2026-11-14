@@ -10,6 +10,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { test } from "node:test";
+import { inflateSync } from "node:zlib";
 import { build } from "esbuild";
 import {
   attuned,
@@ -176,6 +177,63 @@ test("Ghosts crafting has a bootstrap path and all custom assets resolve", () =>
     ectoplasm["minecraft:destructible_by_mining"].seconds_to_destroy,
     0.15,
   );
+  const ghostBlock = json("behavior/blocks/ghost_block.json")["minecraft:block"]
+    .components;
+  const worldTexture = json("resource/textures/terrain_texture.json")
+    .texture_data[ghostBlock["minecraft:material_instances"]["*"].texture]
+    .textures;
+  const image = readFileSync(join(root, "resource", worldTexture + ".png"));
+  const chunks: Buffer[] = [];
+  for (let offset = 8; offset < image.length; ) {
+    const length = image.readUInt32BE(offset);
+    if (image.toString("ascii", offset + 4, offset + 8) === "IDAT")
+      chunks.push(image.subarray(offset + 8, offset + 8 + length));
+    offset += length + 12;
+  }
+  const pixels = inflateSync(Buffer.concat(chunks));
+  for (let y = 0; y < 16; y++)
+    for (let x = 0; x < 16; x++)
+      assert.equal(
+        pixels[y * 65 + 1 + x * 4 + 3],
+        0,
+        "placed block must be fully transparent",
+      );
+  assert.notEqual(
+    json("resource/textures/item_texture.json").texture_data.ghosts_ghost_block
+      .textures,
+    worldTexture,
+  );
+  assert.equal(ghostBlock["minecraft:light_dampening"], 0);
+  assert.equal(
+    json("behavior/items/ghost_block.json")["minecraft:item"].components[
+      "minecraft:block_placer"
+    ].replace_block_item,
+    true,
+  );
+  for (const plane of ["xy", "xz", "yz"]) {
+    const effect = json(
+      `resource/particles/block_${plane}.json`,
+    ).particle_effect;
+    assert.equal(effect.description.identifier, `ghosts:block_${plane}`);
+    assert.equal(
+      effect.components["minecraft:particle_appearance_billboard"]
+        .facing_camera_mode,
+      `emitter_transform_${plane}`,
+    );
+    assert.equal(
+      effect.components["minecraft:particle_lifetime_expression"].max_lifetime,
+      0.26,
+    );
+    assert.ok(
+      existsSync(
+        join(
+          root,
+          "resource",
+          effect.description.basic_render_parameters.texture + ".png",
+        ),
+      ),
+    );
+  }
 });
 
 test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and deposits", async (t) => {
@@ -203,7 +261,310 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     const tick = (period: number) => api.intervals.get(period)!();
 
     await t.test(
-      "unauthorized damage is canceled, authorized melee and admin kill work; only kills drop ectoplasm",
+      "sword killing blows release ghosts despite provisional zero health or a broken sword, without armor or natural spawning",
+      () => {
+        for (const name of ["overworld", "nether", "the_end"]) {
+          const { player } = api.reset();
+          const dimension = api.dimensions.get(name)!;
+          player.dimension = dimension;
+          equip(player, { hand: ids.sword });
+          api.world.gameRules.doMobSpawning = false;
+          const mob = dimension.spawnEntity(
+            name === "overworld" ? "minecraft:cow" : "minecraft:salmon",
+            player.location,
+          );
+          if (mob.typeId === "minecraft:salmon")
+            mob.families = new Set(["salmon", "aquatic", "fish"]);
+          const damageSource = {
+            damagingEntity: player,
+            cause: "entityAttack",
+          };
+          mob.health = 0;
+          api.world.beforeEvents.entityHurt.emit({
+            hurtEntity: mob,
+            damageSource,
+            cancel: false,
+          });
+          player.equipment.clear();
+          api.world.afterEvents.entityDie.emit({
+            deadEntity: mob,
+            damageSource,
+          });
+          const ghosts = dimension.getEntities({ type: ids.specter });
+          assert.equal(ghosts.length, 1, name);
+          assert.deepEqual(ghosts[0].location, mob.location);
+          assert.equal(dimension.drops.length, 0);
+        }
+      },
+    );
+
+    await t.test(
+      "sword conversion excludes non-mobs, indirect kills, canceled hits and stale or replaced strikes",
+      () => {
+        for (const condition of [
+          "player",
+          "stand",
+          "specter",
+          "probe",
+          "item",
+          "no-health",
+          "no-family",
+          "vehicle",
+          "ordinary-sword",
+          "projectile",
+          "fire-death",
+          "canceled",
+          "expired",
+          "replaced",
+          "other-killer",
+        ]) {
+          const { player, dimension } = api.reset();
+          equip(player, {
+            hand:
+              condition === "ordinary-sword"
+                ? "minecraft:iron_sword"
+                : ids.sword,
+          });
+          const types: Record<string, string> = {
+            player: "minecraft:player",
+            stand: "minecraft:armor_stand",
+            specter: ids.specter,
+            probe: ids.probe,
+            item: "minecraft:item",
+          };
+          const mob = dimension.spawnEntity(
+            types[condition] ?? "minecraft:pig",
+            player.location,
+          );
+          if (condition === "item" || condition === "no-health")
+            mob.health = undefined;
+          if (condition === "no-family") mob.families.clear();
+          if (condition === "vehicle") mob.families.add("inanimate");
+          let damageSource = {
+            damagingEntity: player,
+            cause: condition === "projectile" ? "projectile" : "entityAttack",
+          };
+          api.world.beforeEvents.entityHurt.emit({
+            hurtEntity: mob,
+            damageSource,
+            cancel: condition === "canceled",
+          });
+          if (condition === "expired") {
+            api.system.currentTick = 2;
+            api.deferred.splice(0).forEach((callback) => callback());
+          }
+          if (condition === "replaced") {
+            player.equipment.clear();
+            api.world.beforeEvents.entityHurt.emit({
+              hurtEntity: mob,
+              damageSource,
+              cancel: false,
+            });
+          }
+          if (condition === "fire-death")
+            damageSource = { ...damageSource, cause: "fire" };
+          if (condition === "other-killer")
+            damageSource = {
+              ...damageSource,
+              damagingEntity: new api.Player(dimension),
+            };
+          api.world.afterEvents.entityDie.emit({
+            deadEntity: mob,
+            damageSource,
+          });
+          assert.equal(
+            dimension.getEntities({ type: ids.specter }).length,
+            condition === "specter" ? 1 : 0,
+            condition,
+          );
+        }
+      },
+    );
+
+    await t.test(
+      "sword releases enforce exact nearby and per-dimension caps and report blocked releases",
+      () => {
+        for (const [count, near, expected] of [
+          [3, true, 4],
+          [4, true, 4],
+          [23, false, 24],
+          [24, false, 24],
+        ] as const) {
+          const { player, dimension } = api.reset();
+          equip(player, { hand: ids.sword });
+          for (let i = 0; i < count; i++)
+            dimension.spawnEntity(ids.specter, {
+              x: near ? 1 : 100,
+              y: 1,
+              z: 0,
+            });
+          const mob = dimension.spawnEntity(
+            "minecraft:zombie",
+            player.location,
+          );
+          const damageSource = {
+            damagingEntity: player,
+            cause: "entityAttack",
+          };
+          api.world.beforeEvents.entityHurt.emit({
+            hurtEntity: mob,
+            damageSource,
+            cancel: false,
+          });
+          api.world.afterEvents.entityDie.emit({
+            deadEntity: mob,
+            damageSource,
+          });
+          api.deferred.splice(0).forEach((callback) => callback());
+          assert.equal(
+            dimension.getEntities({ type: ids.specter }).length,
+            expected,
+          );
+          assert.equal(
+            player.messages.some((text) => text.includes("population is full")),
+            expected === count,
+          );
+        }
+      },
+    );
+
+    await t.test(
+      "damage drops use actual damage, the exact 35% boundary and a successful-drop cooldown",
+      (t) => {
+        const { player, dimension } = api.reset();
+        const ghost = dimension.spawnEntity(ids.specter, player.location);
+        let roll = 0.35;
+        t.mock.method(Math, "random", () => roll);
+        const damage = {
+          hurtEntity: ghost,
+          damage: 2,
+          damageSource: { damagingEntity: player, cause: "entityAttack" },
+        };
+        api.world.afterEvents.entityHurt.emit(damage);
+        assert.equal(dimension.drops.length, 0);
+        roll = 0.349999;
+        api.world.afterEvents.entityHurt.emit({ ...damage, damage: 0 });
+        api.world.afterEvents.entityHurt.emit({
+          ...damage,
+          damageSource: { cause: "selfDestruct" },
+        });
+        assert.equal(dimension.drops.length, 0);
+        api.world.afterEvents.entityHurt.emit(damage);
+        assert.equal(dimension.drops.length, 1);
+        api.system.currentTick = 39;
+        api.world.afterEvents.entityHurt.emit(damage);
+        assert.equal(dimension.drops.length, 1);
+        api.system.currentTick = 40;
+        ghost.health = 0;
+        api.world.afterEvents.entityHurt.emit(damage);
+        assert.equal(dimension.drops.length, 2);
+        assert.ok(
+          dimension.drops.every(
+            (item) => item.typeId === ids.ectoplasm && item.amount === 1,
+          ),
+        );
+        api.world.afterEvents.entityDie.emit({
+          deadEntity: ghost,
+          damageSource: damage.damageSource,
+        });
+        assert.equal(dimension.drops.length, 3);
+        assert.ok(
+          dimension.drops[2].amount >= 1 && dimension.drops[2].amount <= 3,
+        );
+      },
+    );
+
+    await t.test(
+      "idle shedding uses the exact 10% boundary for living loaded ghosts in every dimension",
+      (t) => {
+        api.reset();
+        for (const dimension of api.dimensions.values()) {
+          dimension.spawnEntity(ids.specter, { x: 0, y: 1, z: 0 });
+          dimension.spawnEntity("minecraft:cow", { x: 0, y: 1, z: 0 });
+          dimension.spawnEntity(ids.specter, { x: 0, y: 1, z: 0 }).health = 0;
+        }
+        let roll = 0.1;
+        t.mock.method(Math, "random", () => roll);
+        tick(400);
+        for (const dimension of api.dimensions.values())
+          assert.equal(dimension.drops.length, 0);
+        roll = 0.099999;
+        tick(400);
+        for (const dimension of api.dimensions.values()) {
+          assert.equal(dimension.drops.length, 1);
+          assert.equal(dimension.drops[0].typeId, ids.ectoplasm);
+          assert.equal(dimension.drops[0].amount, 1);
+        }
+      },
+    );
+
+    await t.test(
+      "block outlines are visor-only, six-faced, nearest-first and bounded to 32 blocks within eight blocks",
+      () => {
+        const { player, dimension } = api.reset();
+        const bystander = new api.Player(dimension);
+        api.players.push(bystander);
+        const nearest = { x: 0, y: 0, z: 0 };
+        for (let x = -4; x <= 4; x++)
+          for (let z = -4; z <= 4; z++)
+            dimension.getBlock({ x, y: 0, z }).setType(ids.block);
+        dimension.getBlock({ x: 12, y: 0, z: 0 }).setType(ids.block);
+        tick(5);
+        assert.equal(player.particles.length, 0);
+        equip(player, { head: ids.visor });
+        tick(5);
+        assert.equal(player.particles.length, 32 * 6);
+        assert.equal(bystander.particles.length, 0);
+        assert.deepEqual(player.particlePoints.slice(0, 6), [
+          { type: "ghosts:block_yz", point: { x: 0, y: 0.5, z: 0.5 } },
+          { type: "ghosts:block_yz", point: { x: 1, y: 0.5, z: 0.5 } },
+          { type: "ghosts:block_xz", point: { x: 0.5, y: 0, z: 0.5 } },
+          { type: "ghosts:block_xz", point: { x: 0.5, y: 1, z: 0.5 } },
+          { type: "ghosts:block_xy", point: { x: 0.5, y: 0.5, z: 0 } },
+          { type: "ghosts:block_xy", point: { x: 0.5, y: 0.5, z: 1 } },
+        ]);
+        assert.ok(player.particlePoints.every(({ point }) => point.x < 9));
+        dimension.getBlock(nearest).setType("minecraft:air");
+        tick(5);
+        assert.equal(player.particles.length, 63 * 6);
+        player.equipment.clear();
+        tick(5);
+        assert.equal(player.particles.length, 63 * 6);
+        equip(player, { head: ids.visor });
+        player.dimension = api.dimensions.get("nether")!;
+        tick(5);
+        assert.equal(player.particles.length, 63 * 6);
+        player.dimension = dimension;
+        player.location = { x: 12.5, y: 1, z: 0.5 };
+        tick(5);
+        assert.equal(player.particles.length, 64 * 6);
+        player.location.y = 400;
+        tick(5);
+        assert.equal(player.particles.length, 64 * 6);
+        const fresh = api.reset();
+        fresh.player.location.y = 0.5;
+        equip(fresh.player, { head: ids.visor });
+        for (const x of [7, 8, 9])
+          fresh.dimension.getBlock({ x, y: 0, z: 0 }).setType(ids.block);
+        tick(5);
+        assert.equal(
+          fresh.player.particles.length,
+          12,
+          "include exactly eight blocks away, exclude farther",
+        );
+        api.system.currentTick = 20;
+        fresh.dimension.unloaded = true;
+        tick(5);
+        assert.equal(
+          fresh.player.particles.length,
+          12,
+          "ignore unloaded terrain",
+        );
+      },
+    );
+
+    await t.test(
+      "unauthorized damage is canceled, authorized melee works, and combat death loot excludes admin kills",
       () => {
         const { player, dimension } = api.reset();
         const specter = dimension.spawnEntity(ids.specter, player.location);

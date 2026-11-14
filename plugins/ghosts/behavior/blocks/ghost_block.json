@@ -12,6 +12,7 @@
         "*": { "texture": "ghosts_ghost_block", "render_method": "blend" }
       },
       "minecraft:collision_box": false,
+      "minecraft:light_dampening": 0,
       "minecraft:destructible_by_mining": { "seconds_to_destroy": 1 },
       "minecraft:destructible_by_explosion": false,
       "minecraft:movable": { "movement_type": "immovable" },

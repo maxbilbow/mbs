@@ -32,6 +32,12 @@ export class ItemStack {
     public amount = 1,
   ) {}
 }
+export class BlockVolume {
+  constructor(
+    public from: Point,
+    public to: Point,
+  ) {}
+}
 
 function signal<T>() {
   const callbacks: ((event: T) => void)[] = [];
@@ -109,6 +115,24 @@ export class Dimension {
           ) <= (options.maxDistance ?? Infinity)),
     );
   }
+  getBlocks(volume: BlockVolume, options: { includeTypes: string[] }) {
+    const blocks = this.unloaded
+      ? []
+      : [...this.blocks.values()].filter(
+          (block) =>
+            options.includeTypes.includes(block.typeId) &&
+            (["x", "y", "z"] as const).every(
+              (axis) =>
+                block.location[axis] >= volume.from[axis] &&
+                block.location[axis] <= volume.to[axis],
+            ),
+        );
+    return {
+      getBlockLocationIterator: function* () {
+        for (const block of blocks) yield { ...block.location };
+      },
+    };
+  }
   getTopmostBlock(point: Point) {
     return [...this.blocks.values()]
       .filter(
@@ -171,6 +195,9 @@ export class Entity {
   id = String(++nextId);
   isValid = true;
   properties = new Map<string, boolean>();
+  health: number | undefined = 20;
+  families = new Set(["mob"]);
+  equipment = new Map<string, ItemStack>();
   constructor(
     public typeId: string,
     public dimension: Dimension,
@@ -178,6 +205,17 @@ export class Entity {
   ) {}
   getProperty(key: string) {
     return this.properties.get(key);
+  }
+  getComponent(type: string) {
+    if (type === "minecraft:health" && this.health === undefined)
+      return undefined;
+    if (type === "minecraft:type_family" && this.families.size === 0)
+      return undefined;
+    return {
+      currentValue: this.health,
+      hasTypeFamily: (family: string) => this.families.has(family),
+      getEquipment: (slot: string) => this.equipment.get(slot),
+    };
   }
   teleport(point: Point) {
     this.location = { ...point };
@@ -189,9 +227,9 @@ export class Entity {
 
 export class Player extends Entity {
   mode = GameMode.Survival;
-  equipment = new Map<string, ItemStack>();
   effects = new Map<string, { duration: number }>();
   particles: string[] = [];
+  particlePoints: { type: string; point: Point }[] = [];
   messages: string[] = [];
   damage = 0;
   velocity = { x: 0, y: 0, z: 0 };
@@ -209,9 +247,6 @@ export class Player extends Entity {
   };
   constructor(dimension: Dimension) {
     super("minecraft:player", dimension, { x: 0.5, y: 1, z: 0.5 });
-  }
-  getComponent() {
-    return { getEquipment: (slot: string) => this.equipment.get(slot) };
   }
   getGameMode() {
     return this.mode;
@@ -240,8 +275,9 @@ export class Player extends Entity {
       z: this.velocity.z + point.z,
     };
   }
-  spawnParticle(type: string) {
+  spawnParticle(type: string, point: Point) {
     this.particles.push(type);
+    this.particlePoints.push({ type, point: { ...point } });
   }
   applyDamage(amount: number) {
     this.damage += amount;
@@ -289,6 +325,7 @@ export const world = {
     playerInteractWithBlock: signal<BlockEvent>(),
   },
   afterEvents: {
+    entityHurt: signal<Omit<Damage, "cancel"> & { damage: number }>(),
     entityDie: signal<{
       deadEntity: Entity;
       damageSource: Damage["damageSource"];

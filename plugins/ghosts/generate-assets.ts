@@ -91,6 +91,10 @@ png("blocks/ghost_block.png", (x, y) =>
     ? [182, 255, 232, 180]
     : [82, 171, 166, (x + y) % 5 === 0 ? 80 : 25],
 );
+png("blocks/ghost_block_invisible.png", () => clear);
+png("particle/ghost_block_outline.png", (x, y) =>
+  x === 0 || y === 0 || x === 15 || y === 15 ? [182, 255, 232, 180] : clear,
+);
 png("entity/invisible.png", () => clear);
 png("particle/specter.png", (x, y) => {
   if (y < 2 || x < 3 || x > 12 || (y < 5 && (x < 5 || x > 10))) return clear;

@@ -1,6 +1,6 @@
 # Ghosts
 
-Version **0.2.0**, a playable prototype of an equipment-gated spectral world.
+Version **0.3.0**, a playable prototype of an equipment-gated spectral world.
 Requires Bedrock **1.26.60+**, stable `@minecraft/server` **2.8.0**, and **both**
 Ghosts packs. No vanilla entity/player definitions are replaced.
 
@@ -15,12 +15,24 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
   piece, including fully armored players. Unattuned players are left alone.
   Specters have 24 health, deal 3 base damage every 1.5 seconds at close range,
   pass through walls, and drop **1-3 ectoplasm** when killed in combat.
+- A direct spectral-sword killing blow on a living non-player mob releases a
+  specter at its death location, even without armor. Players, armor stands,
+  existing specters and weather probes do not qualify; projectiles, fire and
+  other indirect kills do not count. Normal mob loot is unchanged.
+- Loaded specters each have a **10% chance every 20 seconds** to shed one
+  ectoplasm item. Actual damaging player melee hits have a **35% chance** to
+  shed another, with a **two-second cooldown after a successful damage drop**.
+  Canceled or zero-damage hits do not count. Death loot remains independent.
 - Four spectral armor pieces, sword, pickaxe, axe, shovel and craftable ghost
   blocks. Gear has durability, enchantment slots and ectoplasm anvil repairs.
 - Spectral Boots make ghost blocks solid-like on **all faces** for the wearer,
   including their sides and undersides. Sneak to pass through. Boots enable
   block-use interactions; **any spectral tool**, including the sword, allows
   harvesting without boots.
+- Placed ghost blocks are invisible without a visor. Visor wearers see
+  short-lived cube outlines of the **nearest 32 blocks within eight blocks**.
+  Inventory icons remain visible; boots and tools still control tangibility
+  and harvesting independently of the visor.
 - Ectoplasm is a pale mint, snow-like **1/8-block layer**. It is always visible
   and harvestable by hand, requires no spectral gear, and can be placed again.
   It does not stack into deeper layers or melt in this version.
@@ -50,6 +62,10 @@ Roofs, unloaded terrain, rapid travel, and these limits can delay or prevent a
 replacement; this is not an instantaneous spawn guarantee. Nighttime extras
 are not forcibly removed at sunrise. Unattuned players are still left alone.
 **Ectoplasm deposition remains restricted to dark thunderstorms.**
+
+Sword-released specters work in all three dimensions, independently of
+`doMobSpawning`. They respect the same **four within 48 blocks** and **24 loaded
+specters per dimension** caps; a rate-limited message reports a blocked release.
 
 ## Progression and recipes
 
@@ -109,9 +125,14 @@ of ticking time or when no player is within 64 blocks.
   can remain visible, some mobs still detect players, and existing aggro may
   persist. Specters ignore this camouflage. 90% player transparency is deferred;
   no global player-rendering override is installed.
-- Ghost blocks are faintly visible to everyone in this first version. Only mob
-  visibility is visor-gated. Specter particles disappear within 0.12 seconds of
-  visor removal and are normal depth-tested sprites, not through-wall outlines.
+- Per-viewer block materials are unavailable: placed ghost blocks use a fully
+  transparent texture, with player-specific particle outlines for visor wearers.
+  Outlines refresh every five ticks, scanning loaded terrain once per second
+  (or after moving over two blocks/changing dimension). Newly placed blocks can
+  take one second to appear. Outlines expire within 0.26 seconds of visor removal;
+  specter particles expire within 0.12 seconds. Both are depth-tested, not
+  through-wall indicators. Normal targeting/selection outlines can still reveal
+  a directly targeted block without a visor.
 - Armor has inventory icons and equipment behavior but no worn armor mesh yet.
   Axes/shovels dig their material groups; strip-log/path secondary actions are
   not implemented. Spectral pickaxes are intended as iron-tier tools.
@@ -141,6 +162,13 @@ restart the live server. Start with a disposable test world.
       Remove the visor, reconnect, and cross a dimension boundary.
 - [ ] With `/summon ghosts:specter`, verify all armor/weapon combinations,
       projectile/explosion immunity, damage, death loot, and `/kill` cleanup.
+- [ ] Kill ordinary mobs with a spectral sword, including its last durability
+      point. Check no conversion for players, armor stands, indirect kills or
+      specters. Test both caps, different dimensions and `doMobSpawning false`.
+      Observe idle/damage ectoplasm, cooldowns and unchanged death/vanilla loot.
+- [ ] Two clients: placed ghost blocks are invisible without a visor and outlined
+      only for the wearer within eight blocks, nearest 32 only. Test visor removal,
+      placing/breaking, chunk boundaries, dimension changes and visible item icons.
 - [ ] Place `/give @s ghosts:ghost_block` over a safe floor; test boot-only
       collision on every face, sliding, standing, edges, jumps, sneaking,
       boot removal, obstructions, latency, and landing after falls.
@@ -173,6 +201,12 @@ verified quarter-block hover clearance above stone, slabs, water and lava,
 side-collision correction, ghost-column climbing, and the daytime/nighttime
 population targets. Both native raycast filtering for liquids and integer
 top-face coordinates are reflected in the regression simulator.
+
+For **0.3.0**, an isolated native world verified the replacement block item,
+filtered loaded-block scans, six-face outline emission and removal, living-mob
+eligibility (including fish), inanimate exclusions, and same-tick lethal
+damage/death ordering. Lethal before-events can already report zero health;
+the simulator covers that behavior and sword-break attribution.
 
 Headless tests cannot certify rendering, native movement prediction, item wear,
 or AI behavior in a connected Bedrock client. The checklist is a release gate.

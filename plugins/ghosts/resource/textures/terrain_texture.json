@@ -5,6 +5,8 @@
   "num_mip_levels": 4,
   "texture_data": {
     "ghosts_ectoplasm": { "textures": "textures/blocks/ectoplasm" },
-    "ghosts_ghost_block": { "textures": "textures/blocks/ghost_block" }
+    "ghosts_ghost_block": {
+      "textures": "textures/blocks/ghost_block_invisible"
+    }
   }
 }

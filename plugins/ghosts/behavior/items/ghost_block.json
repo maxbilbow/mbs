@@ -1,0 +1,17 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "ghosts:ghost_block",
+      "menu_category": { "category": "construction" }
+    },
+    "components": {
+      "minecraft:display_name": { "value": "Ghost Block" },
+      "minecraft:icon": "ghosts_ghost_block",
+      "minecraft:block_placer": {
+        "block": "ghosts:ghost_block",
+        "replace_block_item": true
+      }
+    }
+  }
+}

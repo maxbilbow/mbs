@@ -1,4 +1,5 @@
 import {
+  BlockVolume,
   ButtonState,
   Direction,
   EntityDamageCause,
@@ -41,6 +42,12 @@ const notices = new Map<string, number>();
 const hovering = new Map<
   string,
   { point: Point; dimension: string; tick: number }
+>();
+const swordStrikes = new Map<string, { attacker: string; tick: number }>();
+const damageDrops = new Map<string, number>();
+const outlines = new Map<
+  string,
+  { dimension: string; center: Point; tick: number; blocks: Point[] }
 >();
 let spawnCursor = 0;
 let ambientCursor = 0;
@@ -96,9 +103,39 @@ function notify(player: Player, text: string) {
   });
 }
 
+function ordinaryMob(entity: Entity): boolean {
+  // Lethal before-events may already report zero health; fish lack "mob".
+  return (
+    entity.typeId !== "minecraft:player" &&
+    entity.typeId !== "minecraft:armor_stand" &&
+    entity.typeId !== ids.specter &&
+    entity.typeId !== ids.probe &&
+    entity.getComponent("minecraft:health") !== undefined &&
+    entity.getComponent("minecraft:type_family")?.hasTypeFamily("inanimate") ===
+      false
+  );
+}
+
 world.beforeEvents.entityHurt.subscribe((event) => {
   const hurt = event.hurtEntity;
   const cause = event.damageSource.cause;
+  swordStrikes.delete(hurt.id);
+  const attacker = event.damageSource.damagingEntity;
+  if (
+    !event.cancel &&
+    cause === EntityDamageCause.entityAttack &&
+    attacker instanceof Player &&
+    playable(attacker) &&
+    gear(attacker).hand === ids.sword &&
+    ordinaryMob(hurt)
+  ) {
+    // Capture the weapon before the killing blow can break it or the player swaps.
+    const strike = { attacker: attacker.id, tick: system.currentTick };
+    swordStrikes.set(hurt.id, strike);
+    system.run(() => {
+      if (swordStrikes.get(hurt.id) === strike) swordStrikes.delete(hurt.id);
+    });
+  }
   if (
     hurt instanceof Player &&
     (cause === EntityDamageCause.lava ||
@@ -157,6 +194,35 @@ world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
 });
 
 world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
+  const strike = swordStrikes.get(deadEntity.id);
+  swordStrikes.delete(deadEntity.id);
+  if (
+    strike &&
+    damageSource.damagingEntity instanceof Player &&
+    damageSource.damagingEntity.id === strike.attacker &&
+    damageSource.cause === EntityDamageCause.entityAttack &&
+    system.currentTick - strike.tick <= 1
+  ) {
+    const dimension = deadEntity.dimension;
+    if (
+      canSpawn(
+        dimension.getEntities({
+          type: ids.specter,
+          location: deadEntity.location,
+          maxDistance: 48,
+        }).length,
+        specters(dimension).length,
+        true,
+      )
+    )
+      dimension.spawnEntity(ids.specter, deadEntity.location);
+    else
+      notify(
+        damageSource.damagingEntity,
+        "The nearby spectral population is full; no ghost was released.",
+      );
+    return;
+  }
   if (
     deadEntity.typeId !== ids.specter ||
     !(damageSource.damagingEntity instanceof Player) ||
@@ -170,15 +236,124 @@ world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
   );
 });
 
+world.afterEvents.entityHurt.subscribe(
+  ({ hurtEntity, damage, damageSource }) => {
+    if (
+      hurtEntity.typeId !== ids.specter ||
+      !hurtEntity.isValid ||
+      damage <= 0 ||
+      damageSource.cause !== EntityDamageCause.entityAttack ||
+      !(damageSource.damagingEntity instanceof Player) ||
+      system.currentTick - (damageDrops.get(hurtEntity.id) ?? -40) < 40 ||
+      Math.random() >= 0.35
+    )
+      return;
+    hurtEntity.dimension.spawnItem(
+      new ItemStack(ids.ectoplasm),
+      hurtEntity.location,
+    );
+    damageDrops.set(hurtEntity.id, system.currentTick);
+  },
+);
+
 world.afterEvents.playerLeave.subscribe(({ playerId }) => {
   positions.delete(playerId);
   notices.delete(playerId);
   hovering.delete(playerId);
+  outlines.delete(playerId);
 });
 
 world.afterEvents.entityRemove.subscribe(({ removedEntityId }) => {
   attacks.delete(removedEntityId);
+  swordStrikes.delete(removedEntityId);
+  damageDrops.delete(removedEntityId);
 });
+
+function revealBlocks(player: Player) {
+  if (gear(player).head !== ids.visor) {
+    outlines.delete(player.id);
+    return;
+  }
+  const center = player.location;
+  const minY = Math.max(
+    player.dimension.heightRange.min,
+    Math.floor(center.y) - 8,
+  );
+  const maxY = Math.min(
+    player.dimension.heightRange.max - 1,
+    Math.floor(center.y) + 8,
+  );
+  if (minY > maxY) {
+    outlines.delete(player.id);
+    return;
+  }
+  let cached = outlines.get(player.id);
+  if (
+    !cached ||
+    cached.dimension !== player.dimension.id ||
+    system.currentTick - cached.tick >= 20 ||
+    Math.hypot(
+      center.x - cached.center.x,
+      center.y - cached.center.y,
+      center.z - cached.center.z,
+    ) > 2
+  ) {
+    const volume = new BlockVolume(
+      { x: Math.floor(center.x) - 8, y: minY, z: Math.floor(center.z) - 8 },
+      { x: Math.floor(center.x) + 8, y: maxY, z: Math.floor(center.z) + 8 },
+    );
+    const distance = (point: Point) =>
+      Math.hypot(
+        point.x + 0.5 - center.x,
+        point.y + 0.5 - center.y,
+        point.z + 0.5 - center.z,
+      );
+    const blocks = [
+      ...player.dimension
+        .getBlocks(volume, { includeTypes: [ids.block] }, true)
+        .getBlockLocationIterator(),
+    ]
+      .filter((point) => distance(point) <= 8)
+      .sort((a, b) => distance(a) - distance(b))
+      .slice(0, 32);
+    cached = {
+      dimension: player.dimension.id,
+      center: { ...center },
+      tick: system.currentTick,
+      blocks,
+    };
+    outlines.set(player.id, cached);
+  }
+  for (const block of cached.blocks) {
+    if (
+      Math.hypot(
+        block.x + 0.5 - center.x,
+        block.y + 0.5 - center.y,
+        block.z + 0.5 - center.z,
+      ) > 8
+    )
+      continue;
+    if (blockAt(player.dimension, block)?.typeId !== ids.block) continue;
+    for (const axis of ["x", "y", "z"] as const) {
+      const plane = axis === "x" ? "yz" : axis === "y" ? "xz" : "xy";
+      for (const side of [0, 1]) {
+        const face = { x: block.x + 0.5, y: block.y + 0.5, z: block.z + 0.5 };
+        face[axis] = block[axis] + side;
+        player.spawnParticle(`ghosts:block_${plane}`, face);
+      }
+    }
+  }
+}
+
+system.runInterval(() => {
+  for (const player of world.getAllPlayers()) {
+    try {
+      revealBlocks(player);
+    } catch (error) {
+      report(`revealing ghost blocks for ${player.id}`, error);
+    }
+  }
+}, 5);
 
 function lava(type?: string): boolean {
   return type === "minecraft:lava" || type === "minecraft:flowing_lava";
@@ -599,6 +774,23 @@ function stormAttempt(player: Player) {
 
 system.runInterval(() => {
   const players = world.getAllPlayers();
+  for (const name of ["overworld", "nether", "the_end"]) {
+    for (const ghost of specters(world.getDimension(name))) {
+      try {
+        if (
+          ghost.isValid &&
+          (ghost.getComponent("minecraft:health")?.currentValue ?? 0) > 0 &&
+          Math.random() < 0.1
+        )
+          ghost.dimension.spawnItem(
+            new ItemStack(ids.ectoplasm),
+            ghost.location,
+          );
+      } catch (error) {
+        report(`dropping ectoplasm from ${ghost.id}`, error);
+      }
+    }
+  }
   if (players.length === 0) return;
   // Bound surface scans to four players per interval, rotating fairly.
   for (let count = 0; count < Math.min(4, players.length); count++) {
