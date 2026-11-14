@@ -38,11 +38,8 @@ declare const console: { warn(message: string): void };
 
 const positions = new Map<string, { point: Point; dimension: string }>();
 const attacks = new Map<string, number>();
+const provoked = new Map<string, string>();
 const notices = new Map<string, number>();
-const hovering = new Map<
-  string,
-  { point: Point; dimension: string; tick: number }
->();
 const swordStrikes = new Map<string, { attacker: string; tick: number }>();
 const damageDrops = new Map<string, number>();
 const outlines = new Map<
@@ -136,15 +133,18 @@ world.beforeEvents.entityHurt.subscribe((event) => {
       if (swordStrikes.get(hurt.id) === strike) swordStrikes.delete(hurt.id);
     });
   }
-  if (
-    hurt instanceof Player &&
-    (cause === EntityDamageCause.lava ||
-      cause === EntityDamageCause.fire ||
-      cause === EntityDamageCause.fireTick) &&
-    hoveringAboveLava(hurt)
-  ) {
-    event.cancel = true;
-    return;
+  if (hurt instanceof Player && playable(hurt)) {
+    const equipment = gear(hurt);
+    if (
+      (cause === EntityDamageCause.fall && equipment.feet === ids.boots) ||
+      (equipment.chest === ids.chest &&
+        (cause === EntityDamageCause.lava ||
+          cause === EntityDamageCause.fire ||
+          cause === EntityDamageCause.fireTick))
+    ) {
+      event.cancel = true;
+      return;
+    }
   }
   if (event.hurtEntity.typeId !== ids.specter) return;
   const { damagingEntity } = event.damageSource;
@@ -194,6 +194,8 @@ world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
 });
 
 world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
+  provoked.delete(deadEntity.id);
+  if (deadEntity.typeId === "minecraft:player") calmGhosts(deadEntity.id);
   const strike = swordStrikes.get(deadEntity.id);
   swordStrikes.delete(deadEntity.id);
   if (
@@ -243,7 +245,15 @@ world.afterEvents.entityHurt.subscribe(
       !hurtEntity.isValid ||
       damage <= 0 ||
       damageSource.cause !== EntityDamageCause.entityAttack ||
-      !(damageSource.damagingEntity instanceof Player) ||
+      !(damageSource.damagingEntity instanceof Player)
+    )
+      return;
+    if (
+      damageSource.damagingEntity.getGameMode() === GameMode.Survival &&
+      (hurtEntity.getComponent("minecraft:health")?.currentValue ?? 0) > 0
+    )
+      provoked.set(hurtEntity.id, damageSource.damagingEntity.id);
+    if (
       system.currentTick - (damageDrops.get(hurtEntity.id) ?? -40) < 40 ||
       Math.random() >= 0.35
     )
@@ -256,15 +266,22 @@ world.afterEvents.entityHurt.subscribe(
   },
 );
 
+function calmGhosts(playerId: string) {
+  for (const [ghostId, target] of provoked) {
+    if (target === playerId) provoked.delete(ghostId);
+  }
+}
+
 world.afterEvents.playerLeave.subscribe(({ playerId }) => {
   positions.delete(playerId);
   notices.delete(playerId);
-  hovering.delete(playerId);
+  calmGhosts(playerId);
   outlines.delete(playerId);
 });
 
 world.afterEvents.entityRemove.subscribe(({ removedEntityId }) => {
   attacks.delete(removedEntityId);
+  provoked.delete(removedEntityId);
   swordStrikes.delete(removedEntityId);
   damageDrops.delete(removedEntityId);
 });
@@ -355,34 +372,6 @@ system.runInterval(() => {
   }
 }, 5);
 
-function lava(type?: string): boolean {
-  return type === "minecraft:lava" || type === "minecraft:flowing_lava";
-}
-
-function hoveringAboveLava(player: Player): boolean {
-  const support = hovering.get(player.id);
-  return (
-    support !== undefined &&
-    system.currentTick - support.tick <= 1 &&
-    support.dimension === player.dimension.id &&
-    !player.isSneaking &&
-    playable(player) &&
-    fullArmor(gear(player)) &&
-    Math.abs(player.location.y - support.point.y) <= 0.1 &&
-    Math.hypot(
-      player.location.x - support.point.x,
-      player.location.z - support.point.z,
-    ) <= 0.4 &&
-    lava(
-      blockAt(player.dimension, {
-        x: player.location.x,
-        y: support.point.y - 0.26,
-        z: player.location.z,
-      })?.typeId,
-    )
-  );
-}
-
 function ghostBlocks(
   dimension: Dimension,
   previous: Point,
@@ -415,7 +404,6 @@ function ghostBlocks(
 function footing(player: Player, equipment: Gear) {
   const current = player.location;
   const previous = positions.get(player.id);
-  hovering.delete(player.id);
   positions.set(player.id, {
     point: { ...current },
     dimension: player.dimension.id,
@@ -441,7 +429,6 @@ function footing(player: Player, equipment: Gear) {
     player.inputInfo.getButtonState(InputButton.Jump) === ButtonState.Pressed;
   let target = { ...current };
   let supported = false;
-  let hover = false;
   if (climbing) {
     target.y = previous.point.y + (player.isSneaking ? -0.12 : jump ? 0.12 : 0);
     supported = true;
@@ -491,7 +478,7 @@ function footing(player: Player, equipment: Gear) {
         .filter((height): height is number => height !== undefined);
       if (heights.length) {
         target.y = Math.max(...heights);
-        supported = hover = true;
+        supported = true;
       }
     }
   }
@@ -517,14 +504,6 @@ function footing(player: Player, equipment: Gear) {
         : 0,
     z: target.z !== current.z ? -velocity.z : 0,
   });
-  if (hover) {
-    hovering.set(player.id, {
-      point: { ...target },
-      dimension: player.dimension.id,
-      tick: system.currentTick,
-    });
-    if (hoveringAboveLava(player)) player.extinguishFire();
-  }
 }
 
 function specters(dimension: Dimension): Entity[] {
@@ -532,24 +511,27 @@ function specters(dimension: Dimension): Entity[] {
 }
 
 function haunt(ghost: Entity, players: Player[]) {
-  const candidates = players
-    .filter(
-      (player) =>
-        player.getGameMode() === GameMode.Survival && attuned(gear(player)),
-    )
-    .map((player) => ({
-      player,
-      distance: Math.hypot(
-        player.location.x - ghost.location.x,
-        player.location.y - ghost.location.y,
-        player.location.z - ghost.location.z,
-      ),
-    }))
-    .filter(({ distance }) => distance < 20)
-    .sort((a, b) => a.distance - b.distance);
-  const target = candidates[0];
+  const target = provoked.get(ghost.id);
   if (!target) return;
-  const { player, distance } = target;
+  const player = players.find(
+    (candidate) =>
+      candidate.id === target &&
+      candidate.getGameMode() === GameMode.Survival &&
+      (candidate.getComponent("minecraft:health")?.currentValue ?? 0) > 0,
+  );
+  if (!player) {
+    provoked.delete(ghost.id);
+    return;
+  }
+  const distance = Math.hypot(
+    player.location.x - ghost.location.x,
+    player.location.y - ghost.location.y,
+    player.location.z - ghost.location.z,
+  );
+  if (distance >= 20) {
+    provoked.delete(ghost.id);
+    return;
+  }
   if (distance > 1.8) {
     const from = ghost.location;
     const to = player.location;
@@ -567,20 +549,27 @@ function haunt(ghost: Entity, players: Player[]) {
   }
 }
 
+function armorEffects(player: Player, equipment: Gear) {
+  if (!playable(player)) return;
+  if (equipment.feet === ids.boots) {
+    const effect = player.getEffect("slow_falling");
+    if (!effect || (effect.duration <= 5 && effect.amplifier === 0))
+      player.addEffect("slow_falling", 10, { showParticles: false });
+  }
+  if (equipment.chest === ids.chest) player.extinguishFire();
+  if (system.currentTick % 20 === 0 && fullArmor(equipment)) {
+    const effect = player.getEffect("invisibility");
+    if (!effect || effect.duration <= 20)
+      player.addEffect("invisibility", 40, { showParticles: false });
+  }
+}
+
 system.runInterval(() => {
   for (const player of world.getAllPlayers()) {
     try {
       const equipment = gear(player);
       footing(player, equipment);
-      if (
-        system.currentTick % 20 === 0 &&
-        fullArmor(equipment) &&
-        playable(player)
-      ) {
-        const effect = player.getEffect("invisibility");
-        if (!effect || effect.duration <= 20)
-          player.addEffect("invisibility", 40, { showParticles: false });
-      }
+      armorEffects(player, equipment);
     } catch (error) {
       report(`updating player ${player.id}`, error);
     }

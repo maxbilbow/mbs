@@ -1,6 +1,6 @@
 # Ghosts
 
-Version **0.3.0**, a playable prototype of an equipment-gated spectral world.
+Version **0.4.0**, a playable prototype of an equipment-gated spectral world.
 Requires Bedrock **1.26.60+**, stable `@minecraft/server` **2.8.0**, and **both**
 Ghosts packs. No vanilla entity/player definitions are replaced.
 
@@ -11,10 +11,15 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
 - Visor + **either** spectral body armor or pants + spectral sword is required
   to damage specters. Ordinary weapons, projectiles, explosions and environmental
   damage cannot farm them. Administrative `/kill` still works without drops.
-- Specters pursue and attack survival players wearing a visor and either body
-  piece, including fully armored players. Unattuned players are left alone.
+- Specters are **neutral by default**. A successful damaging melee hit provokes
+  only that specter against the attacking survival player, not nearby bystanders.
+  Removing armor or becoming invisible does not erase its anger. The most recent
+  damaging survival attacker becomes its target. Canceled and zero-damage hits
+  do not provoke it; retaliation is independent of ectoplasm drops/cooldowns.
   Specters have 24 health, deal 3 base damage every 1.5 seconds at close range,
   pass through walls, and drop **1-3 ectoplasm** when killed in combat.
+  They calm down if their target dies, leaves, changes dimension/game mode, or
+  reaches **20 blocks away**. Reloading the script also resets their anger.
 - A direct spectral-sword killing blow on a living non-player mob releases a
   specter at its death location, even without armor. Players, armor stands,
   existing specters and weather probes do not qualify; projectiles, fire and
@@ -29,6 +34,14 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
   including their sides and undersides. Sneak to pass through. Boots enable
   block-use interactions; **any spectral tool**, including the sword, allows
   harvesting without boots.
+- Spectral Boots also prevent **all fall damage** and refresh vanilla **Slow
+  Falling**, without needing other armor. Slow Falling expires within half a
+  second of boot removal; longer or stronger potion effects are preserved.
+- The spectral chestplate grants **lava, fire and burning immunity**, including
+  while submerged or sneaking, and extinguishes flames. Other armor is not
+  required. Removing the chestplate stops immunity immediately. These armor
+  perks apply in survival/creative and do not protect against void damage,
+  suffocation, drowning or attacks.
 - Placed ghost blocks are invisible without a visor. Visor wearers see
   short-lived cube outlines of the **nearest 32 blocks within eight blocks**.
   Inventory icons remain visible; boots and tools still control tangibility
@@ -60,7 +73,7 @@ Specters can float over water and do not require natural ground or darkness.
 existing cap of four within 48 blocks, and 24 loaded Overworld specters overall.
 Roofs, unloaded terrain, rapid travel, and these limits can delay or prevent a
 replacement; this is not an instantaneous spawn guarantee. Nighttime extras
-are not forcibly removed at sunrise. Unattuned players are still left alone.
+are not forcibly removed at sunrise. Unprovoked specters leave players alone.
 **Ectoplasm deposition remains restricted to dark thunderstorms.**
 
 Sword-released specters work in all three dimensions, independently of
@@ -113,13 +126,11 @@ of ticking time or when no player is within 64 blocks.
   allows an exit rather than trapping the player.
   Large per-tick moves (>2 horizontal / >4 vertical blocks), teleports, swimming,
   gliding, flight and dimension changes bypass movement correction.
-  Do not rely on ghost blocks as fall-arrest gear.
+  Collision alone is not fall-arrest gear; wear the boots for fall immunity.
 - **Hovering is local surface support, not flight.** It uses actual raycast
   surface heights, including partial blocks and liquids, and requires clear
   headroom. It does not rescue submerged players or stop high-speed falls.
-  Lava/fire damage is suppressed and flames extinguished only while full armor
-  is actively supporting the player above lava, not while immersed, sneaking,
-  standing elsewhere, or after armor removal. It grants no general fire immunity.
+  Lava/fire immunity comes from the chestplate, independently of hover support.
   Movement smoothness and fall-distance behavior need multiplayer client testing.
 - **Vanilla invisibility is not universal mob immunity.** Worn armor/held items
   can remain visible, some mobs still detect players, and existing aggro may
@@ -162,6 +173,15 @@ restart the live server. Start with a disposable test world.
       Remove the visor, reconnect, and cross a dimension boundary.
 - [ ] With `/summon ghosts:specter`, verify all armor/weapon combinations,
       projectile/explosion immunity, damage, death loot, and `/kill` cleanup.
+- [ ] Approach a specter with and without armor: it remains neutral. Damage it
+      successfully and check attacker-only pursuit, cooldowns, last-attacker
+      retargeting and continued retaliation after visor/armor removal.
+      Test calming after death, disconnect, dimension/game-mode changes and
+      escape beyond 20 blocks; nearby unprovoked specters must stay neutral.
+- [ ] With boots alone, fall from height and check slow descent/no fall damage.
+      Remove boots mid-fall over a safe landing, and test alongside existing
+      Slow Falling potions. With chestplate alone, enter lava and fire, sneak
+      and submerge; confirm burning stops and immunity ends on chestplate removal.
 - [ ] Kill ordinary mobs with a spectral sword, including its last durability
       point. Check no conversion for players, armor stands, indirect kills or
       specters. Test both caps, different dimensions and `doMobSpawning false`.
@@ -178,7 +198,8 @@ restart the live server. Start with a disposable test world.
       Verify ordinary blocks remain solid.
 - [ ] Hover above solid ground, slabs, still/flowing water and lava; test jumps,
       low ceilings, edges, voids, swimming, sneaking, armor removal and reconnects.
-      Confirm lava protection stops immediately when support or armor is lost.
+      Confirm hover support needs a full set, while lava immunity needs only
+      the chestplate.
 - [ ] Only spectral tools harvest ghost blocks; hand mining ectoplasm works.
       Craft every recipe, repair, enchant, and verify actual equipment wear.
 - [ ] With `/time set midnight` and `/weather thunder`, find deposits and ghosts
@@ -207,6 +228,10 @@ filtered loaded-block scans, six-face outline emission and removal, living-mob
 eligibility (including fish), inanimate exclusions, and same-tick lethal
 damage/death ordering. Lethal before-events can already report zero health;
 the simulator covers that behavior and sword-break attribution.
+
+For **0.4.0**, isolated native actor proxies confirmed reduced descent under
+Slow Falling, extinguishing, neutral idling, provoked pursuit/melee and calming
+after target loss.
 
 Headless tests cannot certify rendering, native movement prediction, item wear,
 or AI behavior in a connected Bedrock client. The checklist is a release gate.

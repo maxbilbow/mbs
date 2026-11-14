@@ -605,10 +605,11 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "only visor wearers see particles; ghosts do not attack unattuned players or ignore full armor",
-      () => {
+      "ghosts are neutral until damaged, retaliate only against their attacker and remember them without armor",
+      (t) => {
         const { player, dimension } = api.reset();
-        dimension.spawnEntity(ids.specter, player.location);
+        const ghost = dimension.spawnEntity(ids.specter, player.location);
+        t.mock.method(Math, "random", () => 0);
         const bystander = new api.Player(dimension);
         api.players.push(bystander);
         tick(2);
@@ -618,10 +619,190 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         tick(2);
         assert.equal(player.particles.length, 1);
         assert.equal(bystander.particles.length, 0);
+        assert.equal(player.damage, 0);
+        assert.deepEqual(ghost.location, player.location);
+        const hit = {
+          hurtEntity: ghost,
+          damage: 1,
+          damageSource: { damagingEntity: player, cause: "entityAttack" },
+        };
+        api.world.afterEvents.entityHurt.emit({ ...hit, damage: 0 });
+        const canceled = { ...hit, cancel: true };
+        api.world.beforeEvents.entityHurt.emit(canceled);
+        assert.equal(canceled.cancel, true);
+        tick(2);
+        assert.equal(player.damage, 0);
+        api.world.afterEvents.entityHurt.emit(hit);
+        tick(2);
         assert.equal(player.damage, 3);
         assert.equal(bystander.damage, 0);
         tick(2);
         assert.equal(player.damage, 3);
+        player.equipment.clear();
+        api.system.currentTick = 30;
+        tick(2);
+        assert.equal(player.damage, 6);
+        equip(bystander);
+        api.world.afterEvents.entityHurt.emit({
+          ...hit,
+          damageSource: { ...hit.damageSource, damagingEntity: bystander },
+        });
+        assert.equal(
+          dimension.drops.length,
+          1,
+          "drop cooldown does not prevent retaliation",
+        );
+        api.system.currentTick = 60;
+        tick(2);
+        assert.equal(player.damage, 6);
+        assert.equal(bystander.damage, 3);
+      },
+    );
+
+    await t.test(
+      "ghosts pursue only their attacker and calm down when the target is lost, dies or leaves",
+      () => {
+        for (const condition of [
+          "range",
+          "dimension",
+          "mode",
+          "death",
+          "leave",
+          "removed",
+        ]) {
+          const { player, dimension } = api.reset();
+          equip(player);
+          const ghost = dimension.spawnEntity(ids.specter, {
+            ...player.location,
+          });
+          api.world.afterEvents.entityHurt.emit({
+            hurtEntity: ghost,
+            damage: 1,
+            damageSource: { damagingEntity: player, cause: "entityAttack" },
+          });
+          player.location.x = 5.5;
+          const bystander = new api.Player(dimension);
+          equip(bystander);
+          api.players.push(bystander);
+          tick(2);
+          assert.ok(Math.abs(ghost.location.x - 0.62) < 1e-10, condition);
+          assert.equal(bystander.damage, 0, condition);
+          ghost.teleport({ ...player.location });
+          if (condition === "range") {
+            player.location.x += 20;
+            tick(2);
+            player.location.x -= 20;
+          } else if (condition === "dimension") {
+            player.dimension = api.dimensions.get("nether")!;
+            tick(2);
+            player.dimension = dimension;
+          } else if (condition === "mode") {
+            player.mode = api.GameMode.Creative;
+            tick(2);
+            player.mode = api.GameMode.Survival;
+          } else if (condition === "death") {
+            api.world.afterEvents.entityDie.emit({
+              deadEntity: player,
+              damageSource: { cause: "fall" },
+            });
+          } else if (condition === "leave") {
+            api.world.afterEvents.playerLeave.emit({ playerId: player.id });
+          } else {
+            api.world.afterEvents.entityRemove.emit({
+              removedEntityId: ghost.id,
+            });
+          }
+          api.system.currentTick = 30;
+          tick(2);
+          assert.equal(player.damage, 0, condition);
+          assert.equal(bystander.damage, 0, condition);
+        }
+      },
+    );
+
+    await t.test(
+      "boots prevent fall damage and chestplates prevent lava and burning without a full set",
+      () => {
+        const { player } = api.reset();
+        player.isSneaking = true;
+        player.isInWater = true;
+        const combinations: Gear[] = [
+          {},
+          { feet: ids.boots },
+          { chest: ids.chest },
+          armor,
+          { legs: ids.pants },
+        ];
+        for (const equipment of combinations) {
+          equip(player, equipment);
+          for (const cause of [
+            "fall",
+            "lava",
+            "fire",
+            "fireTick",
+            "void",
+            "selfDestruct",
+            "entityAttack",
+            "drowning",
+          ]) {
+            const hurt = {
+              hurtEntity: player,
+              damageSource: { cause },
+              cancel: false,
+            };
+            api.world.beforeEvents.entityHurt.emit(hurt);
+            assert.equal(
+              hurt.cancel,
+              (cause === "fall" && equipment.feet === ids.boots) ||
+                (["lava", "fire", "fireTick"].includes(cause) &&
+                  equipment.chest === ids.chest),
+              JSON.stringify({ equipment, cause }),
+            );
+          }
+        }
+        equip(player, { chest: ids.chest });
+        tick(1);
+        assert.equal(player.extinguished, 1);
+        player.equipment.clear();
+        tick(1);
+        assert.equal(player.extinguished, 1);
+        const hurt = {
+          hurtEntity: player,
+          damageSource: { cause: "lava" },
+          cancel: false,
+        };
+        api.world.beforeEvents.entityHurt.emit(hurt);
+        assert.equal(
+          hurt.cancel,
+          false,
+          "removing the chestplate stops immunity immediately",
+        );
+      },
+    );
+
+    await t.test(
+      "boots refresh short slow falling without shortening or weakening potions, and stop on removal",
+      () => {
+        const { player } = api.reset();
+        equip(player, { feet: ids.boots });
+        tick(1);
+        assert.equal(player.effects.get("slow_falling")?.duration, 10);
+        player.effects.set("slow_falling", { duration: 5, amplifier: 0 });
+        tick(1);
+        assert.equal(player.effects.get("slow_falling")?.duration, 10);
+        player.effects.set("slow_falling", { duration: 600, amplifier: 0 });
+        tick(1);
+        assert.equal(player.effects.get("slow_falling")?.duration, 600);
+        player.effects.set("slow_falling", { duration: 5, amplifier: 2 });
+        tick(1);
+        assert.deepEqual(player.effects.get("slow_falling"), {
+          duration: 5,
+          amplifier: 2,
+        });
+        player.equipment.clear();
+        player.effects.clear();
+        tick(1);
+        assert.equal(player.effects.has("slow_falling"), false);
       },
     );
 
@@ -712,7 +893,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "full armor hovers above ground, partial blocks, water and lava without granting flight or fire immunity",
+      "full armor hovers above ground, partial blocks, water and lava without granting flight",
       () => {
         for (const type of [
           "minecraft:stone",
@@ -731,29 +912,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           tick(1);
           tick(1);
           assert.equal(player.location.y, floor.surfaceHeight + 0.25, type);
-          const hurt = {
-            hurtEntity: player,
-            damageSource: { cause: "lava" },
-            cancel: false,
-          };
-          api.world.beforeEvents.entityHurt.emit(hurt);
-          assert.equal(hurt.cancel, type.includes("lava"));
-          if (type.includes("lava")) {
-            assert.ok(player.extinguished > 0);
-            player.isSneaking = true;
-            hurt.cancel = false;
-            api.world.beforeEvents.entityHurt.emit(hurt);
-            assert.equal(hurt.cancel, false);
-            player.isSneaking = false;
-            player.location.x += 1;
-            api.world.beforeEvents.entityHurt.emit(hurt);
-            assert.equal(hurt.cancel, false);
-            player.location.x -= 1;
-          }
           player.equipment.delete("legs");
-          hurt.cancel = false;
-          api.world.beforeEvents.entityHurt.emit(hurt);
-          assert.equal(hurt.cancel, false);
           player.location.y -= 0.08;
           tick(1);
           assert.ok(player.location.y < floor.surfaceHeight + 0.25);
@@ -883,7 +1042,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         player.effects.clear();
         player.equipment.delete("legs");
         tick(1);
-        assert.equal(player.effects.size, 0);
+        assert.equal(player.effects.has("invisibility"), false);
       },
     );
 

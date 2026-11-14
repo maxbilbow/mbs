@@ -20,6 +20,7 @@ export const EntityDamageCause = {
   lava: "lava",
   fire: "fire",
   fireTick: "fireTick",
+  fall: "fall",
 };
 export const Direction = { Up: "Up" };
 export const ButtonState = { Pressed: "Pressed", Released: "Released" };
@@ -227,7 +228,7 @@ export class Entity {
 
 export class Player extends Entity {
   mode = GameMode.Survival;
-  effects = new Map<string, { duration: number }>();
+  effects = new Map<string, { duration: number; amplifier?: number }>();
   particles: string[] = [];
   particlePoints: { type: string; point: Point }[] = [];
   messages: string[] = [];
@@ -258,7 +259,7 @@ export class Player extends Entity {
     return this.effects.get(type);
   }
   addEffect(type: string, duration: number) {
-    this.effects.set(type, { duration });
+    this.effects.set(type, { duration, amplifier: 0 });
   }
   getVelocity() {
     return this.velocity;
