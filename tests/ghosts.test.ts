@@ -56,57 +56,84 @@ test("Ghosts combat requires visor, either body piece, and the sword; stealth re
   assert.equal(spectralTool(), false);
 });
 
-test("Ghosts blocks stop all faces, slide along walls, and prevent short-step tunneling", () => {
+test("Ghosts boots anchor vertically while leggings resist horizontal entry, traversal and short-step tunneling", () => {
   const block = [{ x: 0, y: 4, z: 0 }];
   const previous = { x: 0.5, y: 5.1, z: 0.5 };
   const current = { ...previous, y: 4.9 };
-  assert.equal(ghostCollision(previous, current, block).y, 5);
+  const boots = { feet: ids.boots };
+  const pants = { legs: ids.pants };
+  assert.equal(ghostCollision(previous, current, block, boots).y, 5);
+  assert.equal(ghostCollision(previous, current, block, pants).y, current.y);
   assert.equal(
-    ghostCollision({ ...previous, y: 5 }, { ...current, x: 1.2 }, block).y,
+    ghostCollision({ ...previous, y: 5 }, { ...current, x: 1.2 }, block, boots)
+      .y,
     5,
   );
+  assert.deepEqual(
+    ghostCollision({ ...previous, y: 5 }, { ...current, x: 1.2 }, block, armor),
+    { ...current, x: 1.2, y: 5 },
+  );
   assert.equal(
-    ghostCollision(previous, { ...current, x: 1.31 }, block).y,
+    ghostCollision(previous, { ...current, x: 1.31 }, block, boots).y,
     current.y,
   );
   assert.equal(
-    ghostCollision(previous, current, [...block, { x: 0, y: 3, z: 0 }]).y,
+    ghostCollision(previous, current, [...block, { x: 0, y: 3, z: 0 }], boots)
+      .y,
     5,
   );
   const wall = [{ x: 0, y: 0, z: 0 }];
   for (const axis of ["x", "z"] as const) {
-    for (const [from, to, stop] of [
-      [-0.4, 1.4, -0.3],
-      [1.4, -0.4, 1.3],
+    for (const [from, to] of [
+      [-0.4, 1.4],
+      [1.4, -0.4],
     ]) {
       const start = { x: 0.5, y: 0, z: 0.5, [axis]: from };
       assert.equal(
-        ghostCollision(start, { ...start, [axis]: to }, wall)[axis],
-        stop,
+        ghostCollision(start, { ...start, [axis]: to }, wall, pants)[axis],
+        from + (to - from) * 0.02,
+      );
+      assert.equal(
+        ghostCollision(start, { ...start, [axis]: to }, wall, boots)[axis],
+        to,
       );
     }
   }
-  assert.deepEqual(
-    ghostCollision({ x: -0.4, y: 0, z: 0.4 }, { x: 0.4, y: 0, z: 0.7 }, wall),
-    { x: -0.3, y: 0, z: 0.7 },
-  );
   assert.ok(
     Math.abs(
-      ghostCollision({ x: 0.5, y: 0, z: 0.5 }, { x: 0.5, y: 0.5, z: 0.5 }, [
-        { x: 0, y: 2, z: 0 },
-      ]).y - 0.2,
+      ghostCollision(
+        { x: 0.5, y: 0, z: 0.5 },
+        { x: 0.5, y: 0.5, z: 0.5 },
+        [{ x: 0, y: 2, z: 0 }],
+        boots,
+      ).y - 0.2,
     ) < 1e-10,
   );
   assert.deepEqual(
-    ghostCollision({ ...previous, x: 20 }, current, block),
+    ghostCollision({ ...previous, x: 20 }, current, block, armor),
     current,
   );
   assert.deepEqual(
-    ghostCollision({ ...previous, y: 20 }, current, block),
+    ghostCollision({ ...previous, y: 20 }, current, block, armor),
     current,
   );
   const embedded = { x: 0.5, y: 0, z: 0.5 };
-  assert.equal(ghostCollision(embedded, { ...embedded, x: 2 }, wall).x, 2);
+  const falling = { x: 1, y: -0.2, z: 1 };
+  assert.deepEqual(ghostCollision(embedded, falling, wall, armor), {
+    x: 0.51,
+    y: 0,
+    z: 0.51,
+  });
+  assert.deepEqual(ghostCollision(embedded, falling, wall, pants), {
+    x: 0.51,
+    y: -0.2,
+    z: 0.51,
+  });
+  assert.equal(
+    ghostCollision(embedded, { ...embedded, x: 2 }, wall, boots).x,
+    2,
+  );
+  assert.deepEqual(ghostCollision(embedded, falling, wall, {}), falling);
 });
 
 test("Ghosts hover is surface-bound, allows normal ascent, and does not lift players up walls or over voids", () => {
@@ -234,6 +261,17 @@ test("Ghosts crafting has a bootstrap path and all custom assets resolve", () =>
       ),
     );
   }
+  const release = json("resource/particles/release.json").particle_effect;
+  assert.equal(release.description.identifier, "ghosts:release");
+  assert.ok(
+    existsSync(
+      join(
+        root,
+        "resource",
+        release.description.basic_render_parameters.texture + ".png",
+      ),
+    ),
+  );
 });
 
 test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and deposits", async (t) => {
@@ -294,6 +332,12 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           assert.equal(ghosts.length, 1, name);
           assert.deepEqual(ghosts[0].location, mob.location);
           assert.equal(dimension.drops.length, 0);
+          assert.deepEqual(dimension.particles, [
+            {
+              type: "ghosts:release",
+              point: { ...mob.location, y: mob.location.y + 0.75 },
+            },
+          ]);
         }
       },
     );
@@ -424,6 +468,193 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
             player.messages.some((text) => text.includes("population is full")),
             expected === count,
           );
+          assert.equal(dimension.particles.length, expected - count);
+        }
+      },
+    );
+
+    await t.test(
+      "monster kills roll exactly 10% hostile releases for melee and projectiles, with one guaranteed sword fallback",
+      (t) => {
+        let roll = 0;
+        t.mock.method(Math, "random", () => roll);
+        for (const scenario of [
+          {
+            sword: true,
+            cause: "entityAttack",
+            roll: 0.099999,
+            monster: true,
+            count: 1,
+            hostile: true,
+          },
+          {
+            sword: true,
+            cause: "entityAttack",
+            roll: 0.1,
+            monster: true,
+            count: 1,
+            hostile: false,
+          },
+          {
+            sword: false,
+            cause: "entityAttack",
+            roll: 0.099999,
+            monster: true,
+            count: 1,
+            hostile: true,
+          },
+          {
+            sword: false,
+            cause: "entityAttack",
+            roll: 0.1,
+            monster: true,
+            count: 0,
+            hostile: false,
+          },
+          {
+            sword: true,
+            cause: "projectile",
+            roll: 0.1,
+            monster: true,
+            count: 0,
+            hostile: false,
+          },
+          {
+            sword: false,
+            cause: "projectile",
+            roll: 0.099999,
+            monster: true,
+            count: 1,
+            hostile: true,
+          },
+          {
+            sword: false,
+            cause: "magic",
+            roll: 0,
+            monster: true,
+            count: 1,
+            hostile: true,
+          },
+          {
+            sword: true,
+            cause: "entityAttack",
+            roll: 0,
+            monster: false,
+            count: 1,
+            hostile: false,
+          },
+          {
+            sword: false,
+            cause: "entityAttack",
+            roll: 0,
+            monster: false,
+            count: 0,
+            hostile: false,
+          },
+        ]) {
+          const { player, dimension } = api.reset();
+          equip(player, {
+            hand: scenario.sword ? ids.sword : "minecraft:iron_sword",
+          });
+          api.world.gameRules.doMobSpawning = false;
+          const mob = dimension.spawnEntity(
+            scenario.monster ? "minecraft:zombie" : "minecraft:cow",
+            { ...player.location },
+          );
+          if (scenario.monster) mob.families.add("monster");
+          const damageSource = {
+            damagingEntity: player,
+            cause: scenario.cause,
+          };
+          mob.health = 0;
+          api.world.beforeEvents.entityHurt.emit({
+            hurtEntity: mob,
+            damageSource,
+            cancel: false,
+          });
+          roll = scenario.roll;
+          api.world.afterEvents.entityDie.emit({
+            deadEntity: mob,
+            damageSource,
+          });
+          assert.equal(
+            dimension.getEntities({ type: ids.specter }).length,
+            scenario.count,
+            JSON.stringify(scenario),
+          );
+          assert.equal(dimension.particles.length, scenario.count);
+          tick(2);
+          assert.equal(
+            player.damage,
+            scenario.hostile ? 3 : 0,
+            JSON.stringify(scenario),
+          );
+        }
+      },
+    );
+
+    await t.test(
+      "hostile releases reject canceled, expired, mismatched and non-player kills, and respect caps without false particles",
+      (t) => {
+        t.mock.method(Math, "random", () => 0);
+        for (const condition of [
+          "canceled",
+          "expired",
+          "other-cause",
+          "other-killer",
+          "non-player",
+          "nearby-cap",
+          "dimension-cap",
+        ]) {
+          const { player, dimension } = api.reset();
+          const mob = dimension.spawnEntity("minecraft:skeleton", {
+            ...player.location,
+          });
+          mob.families.add("monster");
+          const damageSource = {
+            damagingEntity:
+              condition === "non-player"
+                ? new api.Entity("minecraft:wolf", dimension, player.location)
+                : player,
+            cause: "projectile",
+          };
+          api.world.beforeEvents.entityHurt.emit({
+            hurtEntity: mob,
+            damageSource,
+            cancel: condition === "canceled",
+          });
+          if (condition === "expired") {
+            api.system.currentTick = 2;
+            api.deferred.splice(0).forEach((callback) => callback());
+          }
+          const count =
+            condition === "nearby-cap"
+              ? 4
+              : condition === "dimension-cap"
+                ? 24
+                : 0;
+          for (let i = 0; i < count; i++)
+            dimension.spawnEntity(ids.specter, {
+              x: condition === "dimension-cap" ? 100 : 1,
+              y: 1,
+              z: 0,
+            });
+          const finalSource =
+            condition === "other-cause"
+              ? { ...damageSource, cause: "fire" }
+              : condition === "other-killer"
+                ? { ...damageSource, damagingEntity: new api.Player(dimension) }
+                : damageSource;
+          api.world.afterEvents.entityDie.emit({
+            deadEntity: mob,
+            damageSource: finalSource,
+          });
+          assert.equal(
+            dimension.getEntities({ type: ids.specter }).length,
+            count,
+            condition,
+          );
+          assert.equal(dimension.particles.length, 0, condition);
         }
       },
     );
@@ -820,6 +1051,13 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         assert.equal(player.location.y, 1);
         assert.ok(Math.abs(player.velocity.y - 0.42) < 1e-10);
         player.isJumping = false;
+        player.velocity.y = -0.1;
+        tick(1);
+        assert.equal(
+          player.velocity.y,
+          0,
+          "standing support cancels downward velocity before sinking",
+        );
         player.isSneaking = true;
         player.velocity.y = -0.1;
         player.location.y = 0.9;
@@ -833,29 +1071,45 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "boots stop side and underside entry, while sneak and removing boots permit passage",
+      "boots support vertically while leggings alone resist horizontally; sneak and gear removal release resistance",
       () => {
+        const combinations: Gear[] = [
+          { feet: ids.boots },
+          { legs: ids.pants },
+          { feet: ids.boots, legs: ids.pants },
+        ];
+        for (const equipment of combinations) {
+          const { player, dimension } = api.reset();
+          dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
+          equip(player, equipment);
+          player.location = { x: 0.5, y: 0, z: 0.5 };
+          tick(1);
+          player.location.x = 1.5;
+          player.location.y = -0.1;
+          player.velocity = { x: 0.4, y: -0.1, z: 0 };
+          tick(1);
+          assert.equal(player.location.x, equipment.legs ? 0.52 : 1.5);
+          assert.equal(
+            player.location.y,
+            equipment.feet && !equipment.legs ? 0 : -0.1,
+          );
+          assert.equal(player.velocity.x, equipment.legs ? 0 : 0.4);
+          player.isSneaking = true;
+          player.location.x = 1.5;
+          player.location.y = -0.2;
+          tick(1);
+          assert.equal(player.location.x, 1.5);
+          assert.equal(player.location.y, -0.2);
+          player.isSneaking = false;
+          player.equipment.clear();
+          player.location.x = 2.5;
+          tick(1);
+          assert.equal(player.location.x, 2.5);
+        }
         const { player, dimension } = api.reset();
-        dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
-        equip(player);
+        dimension.getBlock({ x: 0, y: 2, z: 0 }).setType(ids.block);
+        equip(player, { feet: ids.boots });
         player.location = { x: 0.5, y: 0, z: 0.5 };
-        tick(1);
-        player.location.x = 1.5;
-        player.velocity.x = 0.4;
-        tick(1);
-        assert.equal(player.location.x, 0.7);
-        assert.equal(player.velocity.x, 0);
-        player.isSneaking = true;
-        player.location.x = 1.5;
-        tick(1);
-        assert.equal(player.location.x, 1.5);
-        player.isSneaking = false;
-        player.equipment.delete("feet");
-        player.location.x = 2.5;
-        tick(1);
-        assert.equal(player.location.x, 2.5);
-        dimension.getBlock({ x: 2, y: 2, z: 0 }).setType(ids.block);
-        equip(player, { ...armor, chest: undefined });
         tick(1);
         player.location.y = 0.5;
         player.velocity.y = 0.3;
@@ -865,7 +1119,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "full armor climbs within ghost blocks, holds still, descends and stops immediately on armor loss",
+      "full armor climbs and descends while boot anchoring persists until boots are removed",
       () => {
         const { player, dimension } = api.reset();
         for (let y = 0; y < 4; y++)
@@ -886,6 +1140,10 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         assert.equal(player.location.y, 0);
         player.equipment.delete("legs");
         player.isSneaking = false;
+        player.location.y = -0.08;
+        tick(1);
+        assert.equal(player.location.y, 0);
+        player.equipment.delete("feet");
         player.location.y = -0.08;
         tick(1);
         assert.equal(player.location.y, -0.08);

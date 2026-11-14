@@ -57,20 +57,20 @@ export function ghostCollision(
   previous: Point,
   current: Point,
   blocks: Point[],
+  gear: Gear,
 ): Point {
   if (!localMovement(previous, current)) return { ...current };
-  // Equipping boots while inside a block must still allow an exit.
   const obstacles = blocks.filter((block) => !insideGhost(previous, block));
-  const result = { ...previous };
+  const boundary = { ...previous };
   for (const axis of ["x", "z"] as const) {
     let value = current[axis];
     for (const block of obstacles) {
       const other = axis === "x" ? "z" : "x";
       if (
-        result.y >= block.y + 1 - 0.0001 ||
-        result.y + 1.8 <= block.y + 0.0001 ||
-        result[other] + 0.3 <= block[other] + 0.0001 ||
-        result[other] - 0.3 >= block[other] + 1 - 0.0001
+        boundary.y >= block.y + 1 - 0.0001 ||
+        boundary.y + 1.8 <= block.y + 0.0001 ||
+        boundary[other] + 0.3 <= block[other] + 0.0001 ||
+        boundary[other] - 0.3 >= block[other] + 1 - 0.0001
       )
         continue;
       if (
@@ -84,9 +84,35 @@ export function ghostCollision(
       )
         value = Math.max(value, block[axis] + 1.3);
     }
-    result[axis] = value;
+    boundary[axis] = value;
   }
-  result.y = current.y;
+  const result = { ...current };
+  if (
+    gear.legs === ids.pants &&
+    (boundary.x !== current.x ||
+      boundary.z !== current.z ||
+      blocks.some(
+        (block) =>
+          insideGhost(previous, block) ||
+          (insideGhost(current, block) &&
+            !(
+              gear.feet === ids.boots &&
+              previous.y >= block.y + 1 - 0.02 &&
+              current.y <= previous.y
+            )),
+      ))
+  ) {
+    result.x = previous.x + (current.x - previous.x) * 0.02;
+    result.z = previous.z + (current.z - previous.z) * 0.02;
+  }
+  if (gear.feet !== ids.boots) return result;
+  if (
+    current.y <= previous.y &&
+    blocks.some((block) => insideGhost({ ...result, y: previous.y }, block))
+  ) {
+    result.y = previous.y;
+    return result;
+  }
   for (const block of obstacles) {
     if (
       result.x + 0.3 <= block.x + 0.0001 ||

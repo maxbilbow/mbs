@@ -86,6 +86,7 @@ export class Dimension {
   blocks = new Map<string, Block>();
   entities: Entity[] = [];
   drops: ItemStack[] = [];
+  particles: { type: string; point: Point }[] = [];
   unloaded = false;
   constructor(public id: string) {}
   getBlock(point: Point) {
@@ -188,6 +189,9 @@ export class Dimension {
   }
   spawnItem(item: ItemStack) {
     this.drops.push(item);
+  }
+  spawnParticle(type: string, point: Point) {
+    this.particles.push({ type, point: { ...point } });
   }
 }
 
@@ -344,6 +348,7 @@ export function reset() {
     dimension.entities = [];
     dimension.blocks.clear();
     dimension.drops = [];
+    dimension.particles = [];
     dimension.unloaded = false;
   }
   deferred.length = 0;

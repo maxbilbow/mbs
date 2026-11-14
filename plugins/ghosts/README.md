@@ -1,6 +1,6 @@
 # Ghosts
 
-Version **0.4.0**, a playable prototype of an equipment-gated spectral world.
+Version **0.5.0**, a playable prototype of an equipment-gated spectral world.
 Requires Bedrock **1.26.60+**, stable `@minecraft/server` **2.8.0**, and **both**
 Ghosts packs. No vanilla entity/player definitions are replaced.
 
@@ -11,7 +11,7 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
 - Visor + **either** spectral body armor or pants + spectral sword is required
   to damage specters. Ordinary weapons, projectiles, explosions and environmental
   damage cannot farm them. Administrative `/kill` still works without drops.
-- Specters are **neutral by default**. A successful damaging melee hit provokes
+- Naturally spawned specters are **neutral by default**. A successful damaging melee hit provokes
   only that specter against the attacking survival player, not nearby bystanders.
   Removing armor or becoming invisible does not erase its anger. The most recent
   damaging survival attacker becomes its target. Canceled and zero-damage hits
@@ -23,15 +23,32 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
 - A direct spectral-sword killing blow on a living non-player mob releases a
   specter at its death location, even without armor. Players, armor stands,
   existing specters and weather probes do not qualify; projectiles, fire and
-  other indirect kills do not count. Normal mob loot is unchanged.
+  other indirect kills do not qualify for the sword guarantee. Normal mob loot
+  is unchanged.
+- Any player-attributed killing blow on a **hostile mob** has a **10% chance**
+  to release a ghost already hostile toward its killer, including melee,
+  projectiles and other damage with a player damage source. Hostile means the
+  mob has Bedrock's `monster` type-family tag, captured before death.
+  A direct spectral-sword kill still guarantees one ghost: hostile on the 10%
+  roll, neutral otherwise. No kill creates more than one ghost. Passive mobs
+  killed without the spectral sword do not release ghosts.
+- Successful kill releases produce a short mint-green **ghostly particle burst**
+  around the dead entity, visible without a visor. Blocked releases produce
+  no misleading burst. The ghost itself still requires a visor to see; an
+  initially hostile ghost can attack its killer even without spectral armor.
 - Loaded specters each have a **10% chance every 20 seconds** to shed one
   ectoplasm item. Actual damaging player melee hits have a **35% chance** to
   shed another, with a **two-second cooldown after a successful damage drop**.
   Canceled or zero-damage hits do not count. Death loot remains independent.
 - Four spectral armor pieces, sword, pickaxe, axe, shovel and craftable ghost
   blocks. Gear has durability, enchantment slots and ectoplasm anvil repairs.
-- Spectral Boots make ghost blocks solid-like on **all faces** for the wearer,
-  including their sides and undersides. Sneak to pass through. Boots enable
+- Spectral Boots give ghost blocks **vertical support**: stand on their tops,
+  stop at undersides, or hold height while inside. Jumping is still allowed.
+  Boots alone no longer block horizontal passage. Spectral leggings apply
+  **98% horizontal movement resistance** when entering or moving through a
+  ghost block, but do not stop falling. Wearing both combines these effects;
+  walking across block tops remains unimpeded. Sneak to bypass resistance
+  and vertical support. Boots enable
   block-use interactions; **any spectral tool**, including the sword, allows
   harvesting without boots.
 - Spectral Boots also prevent **all fall damage** and refresh vanilla **Slow
@@ -76,7 +93,7 @@ replacement; this is not an instantaneous spawn guarantee. Nighttime extras
 are not forcibly removed at sunrise. Unprovoked specters leave players alone.
 **Ectoplasm deposition remains restricted to dark thunderstorms.**
 
-Sword-released specters work in all three dimensions, independently of
+Kill-released specters work in all three dimensions, independently of
 `doMobSpawning`. They respect the same **four within 48 blocks** and **24 loaded
 specters per dimension** caps; a rate-limited message reports a blocked release.
 
@@ -118,12 +135,13 @@ of ticking time or when no player is within 64 blocks.
 
 ## Engine compromises
 
-- **Tangibility is scripted, not per-player native collision.** All-face
-  collision handles ordinary standing-player movement and sliding along faces.
-  It does not stop mobs/items or provide native sneak-edge protection.
-  Sneaking phases through; full-set climbing starts only after entering a ghost
-  block, not simply by walking into its side. Equipping armor while embedded
-  allows an exit rather than trapping the player.
+- **Tangibility is scripted, not per-player native collision.** Boots anchor
+  downward motion and cancel vertical velocity while supported, instead of
+  merely slowing a fall that would eventually sink through. Leggings reduce
+  horizontal steps to 2% at contact/inside blocks; they are soft resistance,
+  not an impenetrable wall. Sneaking bypasses these restrictions; with full
+  armor inside a block, it retains the existing controlled descent.
+  This does not stop mobs/items or provide native sneak-edge protection.
   Large per-tick moves (>2 horizontal / >4 vertical blocks), teleports, swimming,
   gliding, flight and dimension changes bypass movement correction.
   Collision alone is not fall-arrest gear; wear the boots for fall immunity.
@@ -134,7 +152,10 @@ of ticking time or when no player is within 64 blocks.
   Movement smoothness and fall-distance behavior need multiplayer client testing.
 - **Vanilla invisibility is not universal mob immunity.** Worn armor/held items
   can remain visible, some mobs still detect players, and existing aggro may
-  persist. Specters ignore this camouflage. 90% player transparency is deferred;
+  persist. True AI stealth for full spectral armor is **deferred**: implementing
+  it requires mob-definition overrides, which were explicitly declined to retain
+  behavior-pack compatibility. Damage cancellation is not used as a substitute.
+  Specters ignore this camouflage. 90% player transparency is deferred;
   no global player-rendering override is installed.
 - Per-viewer block materials are unavailable: placed ghost blocks use a fully
   transparent texture, with player-specific particle outlines for visor wearers.
@@ -183,16 +204,20 @@ restart the live server. Start with a disposable test world.
       Slow Falling potions. With chestplate alone, enter lava and fire, sneak
       and submerge; confirm burning stops and immunity ends on chestplate removal.
 - [ ] Kill ordinary mobs with a spectral sword, including its last durability
-      point. Check no conversion for players, armor stands, indirect kills or
-      specters. Test both caps, different dimensions and `doMobSpawning false`.
-      Observe idle/damage ectoplasm, cooldowns and unchanged death/vanilla loot.
+      point. Check no conversion for players, armor stands or specters. Test
+      monster kills with normal melee weapons and bows: 10% hostile releases,
+      versus the sword's guaranteed single release. Watch for the public burst
+      with/without visors, hostility and unchanged vanilla loot. Test both caps,
+      different dimensions, canceled/indirect unattributed kills and
+      `doMobSpawning false`; blocked releases must not show a burst.
 - [ ] Two clients: placed ghost blocks are invisible without a visor and outlined
       only for the wearer within eight blocks, nearest 32 only. Test visor removal,
       placing/breaking, chunk boundaries, dimension changes and visible item icons.
-- [ ] Place `/give @s ghosts:ghost_block` over a safe floor; test boot-only
-      collision on every face, sliding, standing, edges, jumps, sneaking,
-      boot removal, obstructions, latency, and landing after falls.
-      A player without boots passes through.
+- [ ] Place `/give @s ghosts:ghost_block` over a safe floor. Boots alone provide
+      vertical support but allow horizontal passage; leggings alone strongly
+      resist horizontal movement but allow falls. Test both together, walking
+      across tops, support while inside, jumps, sneaking, each armor piece's
+      removal, obstructions, latency and landing. Without either piece, pass through.
 - [ ] With full armor, sneak into a column of ghost blocks; test jump-to-climb,
       sneak-to-descend, holding position, leaving the column and removing armor.
       Verify ordinary blocks remain solid.
@@ -232,6 +257,11 @@ the simulator covers that behavior and sword-break attribution.
 For **0.4.0**, isolated native actor proxies confirmed reduced descent under
 Slow Falling, extinguishing, neutral idling, provoked pursuit/melee and calming
 after target loss.
+
+For **0.5.0**, an isolated native world checked representative vanilla monster
+family tags, neutral/hostile releases and particle-emission calls, immediate
+hostile targeting, boots-only vertical support and horizontal passage,
+leggings-only resistance, combined anchoring and sneak bypass using actor proxies.
 
 Headless tests cannot certify rendering, native movement prediction, item wear,
 or AI behavior in a connected Bedrock client. The checklist is a release gate.

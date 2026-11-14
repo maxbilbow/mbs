@@ -40,7 +40,16 @@ const positions = new Map<string, { point: Point; dimension: string }>();
 const attacks = new Map<string, number>();
 const provoked = new Map<string, string>();
 const notices = new Map<string, number>();
-const swordStrikes = new Map<string, { attacker: string; tick: number }>();
+const killStrikes = new Map<
+  string,
+  {
+    attacker: string;
+    tick: number;
+    cause: EntityDamageCause;
+    sword: boolean;
+    hostile: boolean;
+  }
+>();
 const damageDrops = new Map<string, number>();
 const outlines = new Map<
   string,
@@ -116,21 +125,29 @@ function ordinaryMob(entity: Entity): boolean {
 world.beforeEvents.entityHurt.subscribe((event) => {
   const hurt = event.hurtEntity;
   const cause = event.damageSource.cause;
-  swordStrikes.delete(hurt.id);
+  killStrikes.delete(hurt.id);
   const attacker = event.damageSource.damagingEntity;
   if (
     !event.cancel &&
-    cause === EntityDamageCause.entityAttack &&
     attacker instanceof Player &&
     playable(attacker) &&
-    gear(attacker).hand === ids.sword &&
     ordinaryMob(hurt)
   ) {
     // Capture the weapon before the killing blow can break it or the player swaps.
-    const strike = { attacker: attacker.id, tick: system.currentTick };
-    swordStrikes.set(hurt.id, strike);
+    const strike = {
+      attacker: attacker.id,
+      tick: system.currentTick,
+      cause,
+      sword:
+        cause === EntityDamageCause.entityAttack &&
+        gear(attacker).hand === ids.sword,
+      hostile:
+        hurt.getComponent("minecraft:type_family")?.hasTypeFamily("monster") ===
+        true,
+    };
+    killStrikes.set(hurt.id, strike);
     system.run(() => {
-      if (swordStrikes.get(hurt.id) === strike) swordStrikes.delete(hurt.id);
+      if (killStrikes.get(hurt.id) === strike) killStrikes.delete(hurt.id);
     });
   }
   if (hurt instanceof Player && playable(hurt)) {
@@ -193,36 +210,50 @@ world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
   }
 });
 
+function releaseGhost(victim: Entity, killer: Player, hostile: boolean) {
+  const dimension = victim.dimension;
+  if (
+    !canSpawn(
+      dimension.getEntities({
+        type: ids.specter,
+        location: victim.location,
+        maxDistance: 48,
+      }).length,
+      specters(dimension).length,
+      true,
+    )
+  ) {
+    notify(
+      killer,
+      "The nearby spectral population is full; no ghost was released.",
+    );
+    return;
+  }
+  const ghost = dimension.spawnEntity(ids.specter, victim.location);
+  if (hostile && killer.getGameMode() === GameMode.Survival)
+    provoked.set(ghost.id, killer.id);
+  dimension.spawnParticle("ghosts:release", {
+    ...victim.location,
+    y: victim.location.y + 0.75,
+  });
+  return ghost;
+}
+
 world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
   provoked.delete(deadEntity.id);
   if (deadEntity.typeId === "minecraft:player") calmGhosts(deadEntity.id);
-  const strike = swordStrikes.get(deadEntity.id);
-  swordStrikes.delete(deadEntity.id);
+  const strike = killStrikes.get(deadEntity.id);
+  killStrikes.delete(deadEntity.id);
   if (
     strike &&
     damageSource.damagingEntity instanceof Player &&
     damageSource.damagingEntity.id === strike.attacker &&
-    damageSource.cause === EntityDamageCause.entityAttack &&
+    damageSource.cause === strike.cause &&
     system.currentTick - strike.tick <= 1
   ) {
-    const dimension = deadEntity.dimension;
-    if (
-      canSpawn(
-        dimension.getEntities({
-          type: ids.specter,
-          location: deadEntity.location,
-          maxDistance: 48,
-        }).length,
-        specters(dimension).length,
-        true,
-      )
-    )
-      dimension.spawnEntity(ids.specter, deadEntity.location);
-    else
-      notify(
-        damageSource.damagingEntity,
-        "The nearby spectral population is full; no ghost was released.",
-      );
+    const hostile = strike.hostile && Math.random() < 0.1;
+    if (!strike.sword && !hostile) return;
+    releaseGhost(deadEntity, damageSource.damagingEntity, hostile);
     return;
   }
   if (
@@ -282,7 +313,7 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
 world.afterEvents.entityRemove.subscribe(({ removedEntityId }) => {
   attacks.delete(removedEntityId);
   provoked.delete(removedEntityId);
-  swordStrikes.delete(removedEntityId);
+  killStrikes.delete(removedEntityId);
   damageDrops.delete(removedEntityId);
 });
 
@@ -412,7 +443,7 @@ function footing(player: Player, equipment: Gear) {
     !previous ||
     previous.dimension !== player.dimension.id ||
     !localMovement(previous.point, current) ||
-    equipment.feet !== ids.boots ||
+    (equipment.feet !== ids.boots && equipment.legs !== ids.pants) ||
     !playable(player) ||
     player.isFlying ||
     player.isGliding ||
@@ -427,7 +458,9 @@ function footing(player: Player, equipment: Gear) {
   const velocity = player.getVelocity();
   const jump =
     player.inputInfo.getButtonState(InputButton.Jump) === ButtonState.Pressed;
-  let target = { ...current };
+  let target = player.isSneaking
+    ? { ...current }
+    : ghostCollision(previous.point, current, blocks, equipment);
   let supported = false;
   if (climbing) {
     target.y = previous.point.y + (player.isSneaking ? -0.12 : jump ? 0.12 : 0);
@@ -435,8 +468,13 @@ function footing(player: Player, equipment: Gear) {
   } else if (player.isSneaking) {
     return;
   } else {
-    target = ghostCollision(previous.point, current, blocks);
-    supported = target.y > current.y && velocity.y <= 0;
+    supported =
+      equipment.feet === ids.boots &&
+      velocity.y <= 0 &&
+      (target.y > current.y ||
+        blocks.some((block) =>
+          insideGhost({ ...target, y: target.y - 0.02 }, block),
+        ));
     if (complete) {
       const surfaces = blocks
         .filter(
