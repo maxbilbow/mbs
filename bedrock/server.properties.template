@@ -1,8 +1,8 @@
-server-name=Kingdom of Smudge
+server-name=Dedicated Server
 # Used as the server name
 # Allowed values: Any string without semicolon symbol.
 
-gamemode=creative
+gamemode=survival
 # Sets the game mode for new players.
 # Allowed values: "survival", "creative", or "adventure"
 
@@ -20,7 +20,7 @@ difficulty=easy
 # Sets the difficulty of the world.
 # Allowed values: "peaceful", "easy", "normal", or "hard"
 
-allow-cheats=true
+allow-cheats=false
 # If true then cheats like commands can be used.
 # Allowed values: "true" or "false"
 
@@ -34,7 +34,7 @@ online-mode=true
 # If the server accepts connections from the Internet, then it's highly recommended to enable online-mode.
 # Allowed values: "true" or "false"
 
-allow-list=false
+allow-list=true
 # If true then all connected players must be listed in the separate allowlist.json file.
 # Allowed values: "true" or "false"
 
@@ -86,7 +86,7 @@ view-distance=32
 # The maximum allowed view distance in number of chunks.
 # Allowed values: Positive integer equal to 5 or greater.
 
-tick-distance=8
+tick-distance=4
 # The world will be ticked this many chunks away from any player.
 # Allowed values: Integers in the range [4, 12]
 
@@ -115,14 +115,14 @@ player-idle-timeout=30
 # Allowed values: true, false
 # Default: true
 
-max-threads=0
+max-threads=8
 # Maximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible.
 # Allowed values: Any positive integer.
 
-level-name=Test
+level-name=Bedrock level
 # Allowed values: Any string without semicolon symbol or symbols illegal for file name: /\n\r\t\f`?*\\<>|\":
 
-level-seed=2026
+level-seed=
 # Use to randomize the world
 # Allowed values: Any string
 
@@ -130,7 +130,7 @@ default-player-permission-level=member
 # Permission level for new players joining for the first time.
 # Allowed values: "visitor", "member", "operator"
 
-texturepack-required=true
+texturepack-required=false
 # Force clients to use texture packs in the current world
 # Allowed values: "true" or "false"
 
