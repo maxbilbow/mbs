@@ -3,9 +3,9 @@
   "minecraft:recipe_shaped": {
     "description": { "identifier": "ghosts:spectral_boots" },
     "tags": ["crafting_table"],
-    "unlock": [{ "item": "ghosts:ectoplasm" }],
+    "unlock": [{ "item": "ghosts:ectoplasm_ball" }],
     "pattern": ["E E", "E E"],
-    "key": { "E": { "item": "ghosts:ectoplasm" } },
+    "key": { "E": { "item": "ghosts:ectoplasm_ball" } },
     "result": { "item": "ghosts:spectral_boots" }
   }
 }

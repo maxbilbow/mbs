@@ -2,6 +2,9 @@ export const ids = {
   specter: "ghosts:specter",
   probe: "ghosts:storm_probe",
   ectoplasm: "ghosts:ectoplasm",
+  ectoplasmBall: "ghosts:ectoplasm_ball",
+  ectoplasmBallProjectile: "ghosts:ectoplasm_ball_projectile",
+  guide: "ghosts:guide_book",
   block: "ghosts:ghost_block",
   visor: "ghosts:spectral_visor",
   chest: "ghosts:spectral_chestplate",
@@ -133,11 +136,12 @@ export function hoverHeight(
   feetY: number,
   velocityY: number,
   surfaceY: number,
+  shallowLiquid = false,
 ): number | undefined {
-  const target = surfaceY + 0.25;
+  const target = surfaceY + 0.125;
   if (
     velocityY > 0 ||
-    surfaceY > feetY + 0.02 ||
+    surfaceY > feetY + (shallowLiquid ? 0.16 : 0.02) ||
     target - feetY > 0.3 ||
     feetY - target > 0.08
   )

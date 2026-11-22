@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "ghosts:ectoplasm_ball",
+          "functions": [{ "function": "set_count", "count": 3 }]
+        }
+      ]
+    }
+  ]
+}

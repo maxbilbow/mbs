@@ -137,12 +137,15 @@ test("Ghosts boots anchor vertically while leggings resist horizontal entry, tra
 });
 
 test("Ghosts hover is surface-bound, allows normal ascent, and does not lift players up walls or over voids", () => {
-  assert.equal(hoverHeight(1, 0, 1), 1.25);
-  assert.equal(hoverHeight(1.25, -0.08, 1), 1.25);
-  assert.equal(hoverHeight(1.3, -0.08, 1), 1.25);
-  assert.equal(hoverHeight(1.25, 0.2, 1), undefined);
+  assert.equal(hoverHeight(1, 0, 1), 1.125);
+  assert.equal(hoverHeight(1.125, -0.08, 1), 1.125);
+  assert.equal(hoverHeight(1.175, -0.08, 1), 1.125);
+  assert.equal(hoverHeight(1.125, 0.2, 1), undefined);
   assert.equal(hoverHeight(1, 0, 2), undefined);
-  assert.equal(hoverHeight(1.25, 0, -3), undefined);
+  assert.equal(hoverHeight(1.125, 0, -3), undefined);
+  assert.equal(hoverHeight(0.9, -0.08, 1), undefined);
+  assert.equal(hoverHeight(0.9, -0.08, 1, true), 1.125);
+  assert.equal(hoverHeight(0.8, -0.08, 1, true), undefined);
 });
 
 test("Ghosts storm spawning enforces night, darkness, open sky, mob rule and exact population caps", () => {
@@ -188,22 +191,64 @@ test("Ghosts crafting has a bootstrap path and all custom assets resolve", () =>
     }
   for (const file of readdirSync(join(root, "behavior/recipes"))) {
     const recipe = json(`behavior/recipes/${file}`)["minecraft:recipe_shaped"];
-    assert.deepEqual(recipe.unlock, [{ item: ids.ectoplasm }]);
+    assert.ok(
+      JSON.stringify(recipe.unlock) ===
+        JSON.stringify([{ item: ids.ectoplasmBall }]) ||
+        JSON.stringify(recipe.unlock) ===
+          JSON.stringify([{ item: "minecraft:book" }]),
+    );
     assert.ok(custom.has(recipe.result.item));
     for (const ingredient of Object.values(recipe.key) as { item: string }[])
       assert.ok(
         ingredient.item === "minecraft:stick" ||
-          ingredient.item === ids.ectoplasm,
+          ingredient.item === "minecraft:book" ||
+          ingredient.item === ids.ectoplasmBall,
       );
   }
   const ectoplasm = json("behavior/blocks/ectoplasm.json")["minecraft:block"]
     .components;
+  assert.deepEqual(
+    json("resource/manifest.json").header.version,
+    json("behavior/manifest.json").dependencies.find(
+      (dependency: { uuid?: string }) =>
+        dependency.uuid === json("resource/manifest.json").header.uuid,
+    ).version,
+  );
   assert.equal(ectoplasm["minecraft:collision_box"], false);
   assert.equal(ectoplasm["minecraft:selection_box"].size[1], 2);
   assert.equal(
     ectoplasm["minecraft:destructible_by_mining"].seconds_to_destroy,
     0.15,
   );
+  const definition = json("behavior/blocks/ectoplasm.json")["minecraft:block"];
+  assert.deepEqual(
+    definition.description.states["ghosts:layers"],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+  );
+  const bones = json("resource/models/blocks/ectoplasm.geo.json")[
+    "minecraft:geometry"
+  ][0].bones;
+  for (let layer = 2; layer <= 8; layer++) {
+    const permutation = definition.permutations[layer - 2];
+    assert.equal(
+      permutation.condition,
+      `query.block_state('ghosts:layers') == ${layer}`,
+    );
+    assert.equal(
+      permutation.components["minecraft:selection_box"].size[1],
+      layer * 2,
+    );
+    assert.equal(
+      permutation.components["minecraft:collision_box"].size[1],
+      (layer - 1) * 2,
+    );
+    const loot = json(`behavior/${permutation.components["minecraft:loot"]}`);
+    assert.equal(loot.pools[0].entries[0].functions[0].count, layer);
+    assert.equal(loot.pools[0].entries[0].name, ids.ectoplasmBall);
+    assert.ok(
+      bones.some((bone: { name: string }) => bone.name === `layer${layer}`),
+    );
+  }
   const ghostBlock = json("behavior/blocks/ghost_block.json")["minecraft:block"]
     .components;
   const worldTexture = json("resource/textures/terrain_texture.json")
@@ -284,7 +329,10 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         contents: `import ${JSON.stringify(resolve("plugins/ghosts/behavior/scripts/main.ts"))}; export * from ${JSON.stringify(stub)};`,
         resolveDir: process.cwd(),
       },
-      alias: { "@minecraft/server": stub },
+      alias: {
+        "@minecraft/server": stub,
+        "@minecraft/server-ui": stub,
+      },
       outfile: output,
       bundle: true,
       platform: "node",
@@ -660,9 +708,11 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "damage drops use actual damage, the exact 35% boundary and a successful-drop cooldown",
+      "damage sheds layers at the exact 35% boundary and respects the successful-deposit cooldown",
       (t) => {
         const { player, dimension } = api.reset();
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
+        const deposit = dimension.getBlock({ x: 0, y: 1, z: 0 });
         const ghost = dimension.spawnEntity(ids.specter, player.location);
         let roll = 0.35;
         t.mock.method(Math, "random", () => roll);
@@ -681,27 +731,20 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         });
         assert.equal(dimension.drops.length, 0);
         api.world.afterEvents.entityHurt.emit(damage);
-        assert.equal(dimension.drops.length, 1);
+        assert.equal(deposit.permutation.getAllStates()["ghosts:layers"], 1);
         api.system.currentTick = 39;
         api.world.afterEvents.entityHurt.emit(damage);
-        assert.equal(dimension.drops.length, 1);
+        assert.equal(deposit.permutation.getAllStates()["ghosts:layers"], 1);
         api.system.currentTick = 40;
         ghost.health = 0;
         api.world.afterEvents.entityHurt.emit(damage);
-        assert.equal(dimension.drops.length, 2);
-        assert.ok(
-          dimension.drops.every(
-            (item) => item.typeId === ids.ectoplasm && item.amount === 1,
-          ),
-        );
+        assert.equal(deposit.permutation.getAllStates()["ghosts:layers"], 2);
         api.world.afterEvents.entityDie.emit({
           deadEntity: ghost,
           damageSource: damage.damageSource,
         });
-        assert.equal(dimension.drops.length, 3);
-        assert.ok(
-          dimension.drops[2].amount >= 1 && dimension.drops[2].amount <= 3,
-        );
+        assert.equal(deposit.permutation.getAllStates()["ghosts:layers"], 4);
+        assert.equal(dimension.drops.length, 0);
       },
     );
 
@@ -710,6 +753,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
       (t) => {
         api.reset();
         for (const dimension of api.dimensions.values()) {
+          dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
           dimension.spawnEntity(ids.specter, { x: 0, y: 1, z: 0 });
           dimension.spawnEntity("minecraft:cow", { x: 0, y: 1, z: 0 });
           dimension.spawnEntity(ids.specter, { x: 0, y: 1, z: 0 }).health = 0;
@@ -722,10 +766,46 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         roll = 0.099999;
         tick(400);
         for (const dimension of api.dimensions.values()) {
-          assert.equal(dimension.drops.length, 1);
-          assert.equal(dimension.drops[0].typeId, ids.ectoplasm);
-          assert.equal(dimension.drops[0].amount, 1);
+          assert.equal(
+            dimension.getBlock({ x: 0, y: 1, z: 0 }).permutation.getAllStates()[
+              "ghosts:layers"
+            ],
+            1,
+          );
+          assert.equal(dimension.drops.length, 0);
         }
+      },
+    );
+
+    await t.test(
+      "ghost deposits accumulate to eight layers without replacing obstacles or dropping items",
+      (t) => {
+        t.mock.method(Math, "random", () => 0);
+        const { dimension } = api.reset();
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
+        dimension.spawnEntity(ids.specter, { x: 0, y: 4, z: 0 });
+        for (let layer = 1; layer <= 9; layer++) {
+          tick(400);
+          assert.equal(
+            dimension.getBlock({ x: 0, y: 1, z: 0 }).permutation.getAllStates()[
+              "ghosts:layers"
+            ],
+            Math.min(layer, 8),
+          );
+        }
+        assert.equal(dimension.drops.length, 0);
+        const other = api.reset();
+        other.dimension.spawnEntity(ids.specter, { x: 0, y: 4, z: 0 });
+        const partial = other.dimension.getBlock({ x: 0, y: 1, z: 0 });
+        partial.setType("minecraft:stone_slab");
+        partial.surfaceHeight = 0.5;
+        tick(400);
+        assert.equal(partial.typeId, "minecraft:stone_slab");
+        assert.equal(
+          other.dimension.getBlock({ x: 0, y: 2, z: 0 }).isAir,
+          true,
+        );
+        assert.equal(other.dimension.drops.length, 0);
       },
     );
 
@@ -798,6 +878,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
       "unauthorized damage is canceled, authorized melee works, and combat death loot excludes admin kills",
       () => {
         const { player, dimension } = api.reset();
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
         const specter = dimension.spawnEntity(ids.specter, player.location);
         const hurt = {
           hurtEntity: specter,
@@ -828,10 +909,10 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           deadEntity: specter,
           damageSource: hurt.damageSource,
         });
-        assert.equal(dimension.drops[0].typeId, ids.ectoplasm);
-        assert.ok(
-          dimension.drops[0].amount >= 1 && dimension.drops[0].amount <= 3,
-        );
+        const layers = dimension
+          .getBlock({ x: 0, y: 1, z: 0 })
+          .permutation.getAllStates()["ghosts:layers"];
+        assert.ok(typeof layers === "number" && layers >= 1 && layers <= 3);
       },
     );
 
@@ -839,6 +920,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
       "ghosts are neutral until damaged, retaliate only against their attacker and remember them without armor",
       (t) => {
         const { player, dimension } = api.reset();
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
         const ghost = dimension.spawnEntity(ids.specter, player.location);
         t.mock.method(Math, "random", () => 0);
         const bystander = new api.Player(dimension);
@@ -879,7 +961,9 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           damageSource: { ...hit.damageSource, damagingEntity: bystander },
         });
         assert.equal(
-          dimension.drops.length,
+          dimension.getBlock({ x: 0, y: 1, z: 0 }).permutation.getAllStates()[
+            "ghosts:layers"
+          ],
           1,
           "drop cooldown does not prevent retaliation",
         );
@@ -1038,25 +1122,73 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
+      "spectral pants grant Speed II without replacing existing potions",
+      () => {
+        const { player } = api.reset();
+        tick(1);
+        assert.equal(player.getEffect("speed"), undefined);
+        equip(player, { legs: ids.pants });
+        tick(1);
+        assert.deepEqual(player.getEffect("speed"), {
+          duration: 10,
+          amplifier: 1,
+        });
+        for (const effect of [
+          { duration: 600, amplifier: 0 },
+          { duration: 5, amplifier: 0 },
+          { duration: 600, amplifier: 1 },
+          { duration: 5, amplifier: 2 },
+        ]) {
+          player.effects.set("speed", effect);
+          tick(1);
+          assert.deepEqual(player.getEffect("speed"), effect);
+        }
+        player.effects.set("speed", { duration: 5, amplifier: 1 });
+        tick(1);
+        assert.deepEqual(player.getEffect("speed"), {
+          duration: 10,
+          amplifier: 1,
+        });
+        player.effects.delete("speed");
+        tick(1);
+        assert.equal(player.getEffect("speed")?.amplifier, 1);
+        player.equipment.clear();
+        player.effects.delete("speed");
+        tick(1);
+        assert.equal(player.getEffect("speed"), undefined);
+        equip(player, { legs: ids.pants });
+        player.mode = api.GameMode.Spectator;
+        tick(1);
+        assert.equal(player.getEffect("speed"), undefined);
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        player.mode = api.GameMode.Creative;
+        tick(1);
+        assert.equal(player.getEffect("speed")?.amplifier, 1);
+      },
+    );
+
+    await t.test(
       "boots catch a landing and permit jumping; removing boots or sneaking permits passage",
       () => {
         const { player, dimension } = api.reset();
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
         dimension.getBlock({ x: 0, y: 0, z: 0 }).setType(ids.block);
         equip(player, { ...armor, chest: undefined });
         tick(1);
         player.location.y = 0.9;
-        player.velocity.y = -0.1;
+        player.velocity = { x: 0.2, y: -0.1, z: -0.15 };
         player.isJumping = true;
         tick(1);
         assert.equal(player.location.y, 1);
         assert.ok(Math.abs(player.velocity.y - 0.42) < 1e-10);
+        assert.equal(player.velocity.x, 0.2);
+        assert.equal(player.velocity.z, -0.15);
         player.isJumping = false;
         player.velocity.y = -0.1;
         tick(1);
-        assert.equal(
-          player.velocity.y,
-          0,
-          "standing support cancels downward velocity before sinking",
+        assert.ok(
+          Math.abs(player.velocity.y - 0.08) < 1e-10,
+          "standing support offsets gravity before the next tick",
         );
         player.isSneaking = true;
         player.velocity.y = -0.1;
@@ -1080,6 +1212,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         ];
         for (const equipment of combinations) {
           const { player, dimension } = api.reset();
+          api.world.setDynamicProperty("ghosts:experimental_features", true);
           dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
           equip(player, equipment);
           player.location = { x: 0.5, y: 0, z: 0.5 };
@@ -1107,6 +1240,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           assert.equal(player.location.x, 2.5);
         }
         const { player, dimension } = api.reset();
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
         dimension.getBlock({ x: 0, y: 2, z: 0 }).setType(ids.block);
         equip(player, { feet: ids.boots });
         player.location = { x: 0.5, y: 0, z: 0.5 };
@@ -1119,9 +1253,260 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
+      "horizontal collision preserves uncorrected vertical velocity",
+      () => {
+        const { player, dimension } = api.reset();
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
+        equip(player, { legs: ids.pants });
+        player.location = { x: 0.5, y: 0, z: 0.5 };
+        tick(1);
+        player.location.x = 1.1;
+        player.velocity = { x: 0.3, y: -0.12, z: 0.2 };
+        tick(1);
+        assert.equal(player.location.x, 0.512);
+        assert.deepEqual(player.velocity, { x: 0, y: -0.12, z: 0.2 });
+      },
+    );
+
+    await t.test(
+      "tiny ghost-block corrections do not teleport the player",
+      () => {
+        const { player, dimension } = api.reset();
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType(ids.block);
+        equip(player, { legs: ids.pants });
+        player.location.y = 0;
+        tick(1);
+        player.location.x += 0.00001;
+        player.velocity.x = 0.2;
+        tick(1);
+        assert.equal(player.location.x, 0.50001);
+        assert.equal(player.velocity.x, 0.2);
+      },
+    );
+
+    await t.test(
+      "ghost-block movement is disabled when experimental features are off",
+      () => {
+        for (const equipment of [
+          { feet: ids.boots },
+          { legs: ids.pants },
+          armor,
+        ]) {
+          const { player, dimension } = api.reset();
+          dimension.getBlock({ x: 1, y: 0, z: 0 }).setType(ids.block);
+          equip(player, equipment);
+          player.location = { x: 0.5, y: 0, z: 0.5 };
+          tick(1);
+          player.location = { x: 1.1, y: -0.1, z: 0.5 };
+          player.velocity = { x: 0.3, y: -0.1, z: 0 };
+          tick(1);
+          assert.deepEqual(player.location, { x: 1.1, y: -0.1, z: 0.5 });
+          assert.deepEqual(player.velocity, { x: 0.3, y: -0.1, z: 0 });
+          player.isJumping = true;
+          tick(1);
+          assert.equal(player.location.y, -0.1);
+        }
+      },
+    );
+
+    await t.test(
+      "operator guide setting controls hovering for the world",
+      async () => {
+        const { player, dimension } = api.reset();
+        const other = new api.Player(dimension);
+        other.location.x = 2.5;
+        api.players.push(other);
+        for (const x of [0, 2])
+          dimension.getBlock({ x, y: 0, z: 0 }).setType("minecraft:water");
+        equip(player);
+        equip(other);
+        tick(1);
+        tick(1);
+        assert.equal(player.location.y, 1);
+        assert.equal(other.location.y, 1);
+
+        const openGuide = async () => {
+          api.world.afterEvents.itemUse.emit({
+            source: player,
+            itemStack: new api.ItemStack(ids.guide),
+          });
+          api.deferred.shift()!();
+          await new Promise<void>((resolve) => setImmediate(resolve));
+        };
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        await openGuide();
+        assert.deepEqual(api.shownForms[0].buttons, []);
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          undefined,
+        );
+
+        player.commandPermissionLevel =
+          api.CommandPermissionLevel.GameDirectors;
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        api.modalResponses.push({ canceled: false, formValues: [true] });
+        await openGuide();
+        assert.deepEqual(api.shownForms.at(-2)?.buttons, ["Settings"]);
+        assert.equal(api.shownForms.at(-1)?.defaultValue, false);
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          true,
+        );
+        tick(1);
+        assert.equal(player.location.y, 1.125);
+        assert.equal(other.location.y, 1.125);
+
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        api.modalResponses.push({ canceled: true });
+        await openGuide();
+        assert.equal(api.shownForms.at(-1)?.defaultValue, true);
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          true,
+        );
+
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        api.modalResponses.push({ canceled: false, formValues: [false] });
+        await openGuide();
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          false,
+        );
+        player.location.y = 1;
+        other.location.y = 1;
+        tick(1);
+        assert.equal(player.location.y, 1);
+        assert.equal(other.location.y, 1);
+
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType(ids.block);
+        player.location.y = 0.9;
+        player.velocity.y = -0.1;
+        tick(1);
+        assert.equal(
+          player.location.y,
+          0.9,
+          "ghost-block support is disabled with experimental features",
+        );
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        player.equipment.clear();
+        player.location.y = 1;
+        tick(1);
+        equip(player);
+        player.location.y = 0.9;
+        player.velocity.y = -0.1;
+        tick(1);
+        assert.equal(player.location.y, 1, "ghost-block support is enabled");
+      },
+    );
+
+    await t.test(
+      "settings cannot be saved after operator permission is removed",
+      async (t) => {
+        const { player } = api.reset();
+        player.commandPermissionLevel =
+          api.CommandPermissionLevel.GameDirectors;
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        let finish!: (value: {
+          canceled: boolean;
+          formValues: boolean[];
+        }) => void;
+        t.mock.method(
+          api.ModalFormData.prototype,
+          "show",
+          () =>
+            new Promise((resolve) => {
+              finish = resolve;
+            }),
+        );
+        api.world.afterEvents.itemUse.emit({
+          source: player,
+          itemStack: new api.ItemStack(ids.guide),
+        });
+        api.deferred.shift()!();
+        await new Promise<void>((resolve) => setImmediate(resolve));
+        player.commandPermissionLevel = api.CommandPermissionLevel.Any;
+        finish({ canceled: false, formValues: [true] });
+        await new Promise<void>((resolve) => setImmediate(resolve));
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          undefined,
+        );
+        assert.ok(
+          player.messages.some((message) => message.includes("Only operators")),
+        );
+      },
+    );
+
+    await t.test(
+      "stale settings cannot overwrite another operator's change",
+      async (t) => {
+        const { player } = api.reset();
+        player.commandPermissionLevel =
+          api.CommandPermissionLevel.GameDirectors;
+        api.actionResponses.push({ canceled: false, selection: 0 });
+        let finish!: (value: {
+          canceled: boolean;
+          formValues: boolean[];
+        }) => void;
+        t.mock.method(
+          api.ModalFormData.prototype,
+          "show",
+          () =>
+            new Promise((resolve) => {
+              finish = resolve;
+            }),
+        );
+        api.world.afterEvents.itemUse.emit({
+          source: player,
+          itemStack: new api.ItemStack(ids.guide),
+        });
+        api.deferred.shift()!();
+        await new Promise<void>((resolve) => setImmediate(resolve));
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        finish({ canceled: false, formValues: [false] });
+        await new Promise<void>((resolve) => setImmediate(resolve));
+        assert.equal(
+          api.world.getDynamicProperty("ghosts:experimental_features"),
+          true,
+        );
+        assert.ok(
+          player.messages.some((message) =>
+            message.includes("Settings changed"),
+          ),
+        );
+      },
+    );
+
+    await t.test("hover offsets gravity without repeated teleports", (t) => {
+      const { player, dimension } = api.reset();
+      api.world.setDynamicProperty("ghosts:experimental_features", true);
+      dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:water");
+      equip(player);
+      const teleport = t.mock.method(player, "tryTeleport");
+      tick(1);
+      tick(1);
+      assert.equal(player.location.y, 1.125);
+      assert.equal(teleport.mock.callCount(), 1);
+      for (let i = 0; i < 20; i++) {
+        player.velocity.y = (player.velocity.y - 0.08) * 0.98;
+        player.location.y += player.velocity.y;
+        tick(1);
+      }
+      assert.equal(teleport.mock.callCount(), 1);
+      assert.ok(Math.abs(player.location.y - 1.125) < 0.001);
+      player.location.y = 1.122;
+      player.velocity.y = -0.08;
+      tick(1);
+      assert.equal(teleport.mock.callCount(), 1);
+    });
+
+    await t.test(
       "full armor climbs and descends while boot anchoring persists until boots are removed",
       () => {
         const { player, dimension } = api.reset();
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
         for (let y = 0; y < 4; y++)
           dimension.getBlock({ x: 0, y, z: 0 }).setType(ids.block);
         equip(player);
@@ -1151,7 +1536,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
     );
 
     await t.test(
-      "full armor hovers above ground, partial blocks, water and lava without granting flight",
+      "full armor hovers above liquids but not solid blocks without granting flight",
       () => {
         for (const type of [
           "minecraft:stone",
@@ -1162,6 +1547,7 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           "minecraft:stone_slab",
         ]) {
           const { player, dimension } = api.reset();
+          api.world.setDynamicProperty("ghosts:experimental_features", true);
           const floor = dimension.getBlock({ x: 0, y: 0, z: 0 });
           floor.setType(type);
           floor.surfaceHeight = type.endsWith("slab") ? 0.5 : 1;
@@ -1169,14 +1555,16 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           equip(player);
           tick(1);
           tick(1);
-          assert.equal(player.location.y, floor.surfaceHeight + 0.25, type);
+          const height = floor.surfaceHeight + (floor.isLiquid ? 0.125 : 0);
+          assert.equal(player.location.y, height, type);
           player.equipment.delete("legs");
           player.location.y -= 0.08;
           tick(1);
-          assert.ok(player.location.y < floor.surfaceHeight + 0.25);
+          assert.ok(player.location.y < height);
         }
         const { player, dimension } = api.reset();
-        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
+        api.world.setDynamicProperty("ghosts:experimental_features", true);
+        dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:water");
         equip(player);
         tick(1);
         player.canTeleport = false;
@@ -1197,11 +1585,70 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         player.velocity.y = 0;
         player.isJumping = true;
         tick(1);
-        assert.equal(player.location.y, 1.25);
+        assert.equal(player.location.y, 1.125);
         assert.equal(player.velocity.y, 0.42);
         player.location.y = 1.6;
         tick(1);
         assert.equal(player.location.y, 1.6);
+      },
+    );
+
+    await t.test(
+      "nearby or covered liquids do not lift players above solid ground",
+      () => {
+        for (const condition of ["adjacent", "covered"] as const) {
+          const { player, dimension } = api.reset();
+          api.world.setDynamicProperty("ghosts:experimental_features", true);
+          dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:stone");
+          if (condition === "adjacent") {
+            dimension.getBlock({ x: 1, y: 0, z: 0 }).setType("minecraft:water");
+            player.location.x = 0.9;
+          } else {
+            dimension
+              .getBlock({ x: 0, y: -1, z: 0 })
+              .setType("minecraft:water");
+          }
+          equip(player);
+          tick(1);
+          tick(1);
+          assert.equal(player.location.y, 1, condition);
+        }
+      },
+    );
+
+    await t.test(
+      "hover recovers from shallow water contact but not swimming or immersion",
+      () => {
+        for (const condition of [
+          "shallow",
+          "deep",
+          "swimming",
+          "sneaking",
+          "partial",
+          "covered",
+        ] as const) {
+          const { player, dimension } = api.reset();
+          api.world.setDynamicProperty("ghosts:experimental_features", true);
+          dimension.getBlock({ x: 0, y: 0, z: 0 }).setType("minecraft:water");
+          if (condition === "covered")
+            dimension.getBlock({ x: 0, y: 1, z: 0 }).setType("minecraft:water");
+          equip(
+            player,
+            condition === "partial" ? { ...armor, legs: undefined } : armor,
+          );
+          tick(1);
+          player.isInWater = true;
+          player.isSwimming = condition === "swimming";
+          player.isSneaking = condition === "sneaking";
+          player.location.y = condition === "deep" ? 0.8 : 0.9;
+          player.velocity.y = -0.08;
+          tick(1);
+          assert.equal(
+            player.location.y,
+            condition === "shallow" ? 1.125 : condition === "deep" ? 0.8 : 0.9,
+            condition,
+          );
+        }
       },
     );
 
@@ -1279,9 +1726,22 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
         assert.equal(tool.cancel, false);
         api.world.beforeEvents.playerInteractWithBlock.emit(event);
         assert.equal(event.cancel, true);
+        event.cancel = false;
+        equip(player, { feet: ids.boots });
+        api.world.beforeEvents.playerInteractWithBlock.emit(event);
+        assert.equal(event.cancel, false);
         block.setType(ids.ectoplasm);
         event.cancel = false;
         api.world.beforeEvents.playerBreakBlock.emit(event);
+        assert.equal(event.cancel, true);
+        const ectoplasmTool = {
+          ...event,
+          cancel: false,
+          itemStack: new api.ItemStack("minecraft:iron_shovel"),
+        };
+        api.world.beforeEvents.playerBreakBlock.emit(ectoplasmTool);
+        assert.equal(ectoplasmTool.cancel, false);
+        event.cancel = false;
         api.world.beforeEvents.playerInteractWithBlock.emit(event);
         assert.equal(event.cancel, false);
       },
@@ -1327,6 +1787,30 @@ test("Ghosts simulated runtime gates combat, platforms, rendering, stealth and d
           assert.equal(probe.isValid, false);
         } finally {
           Math.random = originalRandom;
+        }
+      },
+    );
+
+    await t.test(
+      "storm deposits add to an existing layer and respect the cap",
+      (t) => {
+        t.mock.method(Math, "random", () => 0);
+        const { dimension } = api.reset();
+        api.world.gameRules.doMobSpawning = false;
+        dimension
+          .getBlock({ x: 8, y: 0, z: 0 })
+          .setType("minecraft:grass_block");
+        const site = dimension.getBlock({ x: 8, y: 1, z: 0 });
+        for (let layer = 1; layer <= 9; layer++) {
+          tick(400);
+          const probe = dimension.getEntities({ type: ids.probe })[0];
+          assert.ok(probe);
+          probe.properties.set("ghosts:storm", true);
+          api.deferred.splice(0).forEach((callback) => callback());
+          assert.equal(
+            site.permutation.getAllStates()["ghosts:layers"],
+            Math.min(layer, 8),
+          );
         }
       },
     );

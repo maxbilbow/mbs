@@ -13,7 +13,9 @@
       "minecraft:durability": { "max_durability": 320 },
       "minecraft:enchantable": { "slot": "armor_torso", "value": 10 },
       "minecraft:repairable": {
-        "repair_items": [{ "items": ["ghosts:ectoplasm"], "repair_amount": 80 }]
+        "repair_items": [
+          { "items": ["ghosts:ectoplasm_ball"], "repair_amount": 80 }
+        ]
       }
     }
   }

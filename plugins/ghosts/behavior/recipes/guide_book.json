@@ -1,0 +1,14 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "ghosts:guide_book" },
+    "tags": ["crafting_table"],
+    "unlock": [{ "item": "minecraft:book" }],
+    "pattern": ["B", "E"],
+    "key": {
+      "B": { "item": "minecraft:book" },
+      "E": { "item": "ghosts:ectoplasm_ball" }
+    },
+    "result": { "item": "ghosts:guide_book" }
+  }
+}

@@ -23,7 +23,7 @@
       },
       "minecraft:repairable": {
         "repair_items": [
-          { "items": ["ghosts:ectoplasm"], "repair_amount": 125 }
+          { "items": ["ghosts:ectoplasm_ball"], "repair_amount": 125 }
         ]
       }
     }

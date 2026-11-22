@@ -1,6 +1,6 @@
 # Ghosts
 
-Version **0.5.0**, a playable prototype of an equipment-gated spectral world.
+Version **0.6.2**, a playable prototype of an equipment-gated spectral world.
 Requires Bedrock **1.26.60+**, stable `@minecraft/server` **2.8.0**, and **both**
 Ghosts packs. No vanilla entity/player definitions are replaced.
 
@@ -9,15 +9,16 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
 - One intangible specter type, revealed only to Spectral Visor wearers within
   32 blocks, using short-lived player-specific ghost-shaped particles.
 - Visor + **either** spectral body armor or pants + spectral sword is required
-  to damage specters. Ordinary weapons, projectiles, explosions and environmental
-  damage cannot farm them. Administrative `/kill` still works without drops.
+  for melee damage to specters; ectoplasm balls are also effective. Ordinary
+  weapons, other projectiles, explosions and environmental damage cannot farm
+  them. Administrative `/kill` still works without deposits.
 - Naturally spawned specters are **neutral by default**. A successful damaging melee hit provokes
   only that specter against the attacking survival player, not nearby bystanders.
   Removing armor or becoming invisible does not erase its anger. The most recent
   damaging survival attacker becomes its target. Canceled and zero-damage hits
   do not provoke it; retaliation is independent of ectoplasm drops/cooldowns.
   Specters have 24 health, deal 3 base damage every 1.5 seconds at close range,
-  pass through walls, and drop **1-3 ectoplasm** when killed in combat.
+  pass through walls, and deposit **1-3 ectoplasm layers** when killed in combat.
   They calm down if their target dies, leaves, changes dimension/game mode, or
   reaches **20 blocks away**. Reloading the script also resets their anger.
 - A direct spectral-sword killing blow on a living non-player mob releases a
@@ -37,20 +38,30 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
   no misleading burst. The ghost itself still requires a visor to see; an
   initially hostile ghost can attack its killer even without spectral armor.
 - Loaded specters each have a **10% chance every 20 seconds** to shed one
-  ectoplasm item. Actual damaging player melee hits have a **35% chance** to
-  shed another, with a **two-second cooldown after a successful damage drop**.
-  Canceled or zero-damage hits do not count. Death loot remains independent.
+  ectoplasm layer. Actual damaging player melee hits have a **35% chance** to
+  shed another, with a **two-second cooldown after a successful damage deposit**.
+  Canceled or zero-damage hits do not count. Death deposits remain independent.
+  Deposits settle on the first full-height surface within 32 blocks below the
+  specter, in any dimension, without replacing existing blocks. Partial
+  surfaces, liquids, unloaded terrain and full deposits prevent deposition.
 - Four spectral armor pieces, sword, pickaxe, axe, shovel and craftable ghost
   blocks. Gear has durability, enchantment slots and ectoplasm anvil repairs.
-- Spectral Boots give ghost blocks **vertical support**: stand on their tops,
-  stop at undersides, or hold height while inside. Jumping is still allowed.
+- With experimental features enabled, Spectral Boots give ghost blocks
+  **vertical support**: stand on their tops, stop at undersides, or hold height
+  while inside. Jumping is still allowed.
   Boots alone no longer block horizontal passage. Spectral leggings apply
   **98% horizontal movement resistance** when entering or moving through a
   ghost block, but do not stop falling. Wearing both combines these effects;
   walking across block tops remains unimpeded. Sneak to bypass resistance
   and vertical support. Boots enable
   block-use interactions; **any spectral tool**, including the sword, allows
-  harvesting without boots.
+  harvesting without boots. Using and harvesting ghost blocks do not require
+  experimental features.
+- Spectral leggings refresh **Speed II** (40% faster) without other armor or
+  experimental features. Existing Speed effects are preserved: a weaker
+  potion takes precedence until it expires, and longer or stronger effects
+  are not shortened. The gear's short effect expires within half a second
+  of removing the leggings.
 - Spectral Boots also prevent **all fall damage** and refresh vanilla **Slow
   Falling**, without needing other armor. Slow Falling expires within half a
   second of boot removal; longer or stronger potion effects are preserved.
@@ -61,21 +72,33 @@ Ghosts packs. No vanilla entity/player definitions are replaced.
   suffocation, drowning or attacks.
 - Placed ghost blocks are invisible without a visor. Visor wearers see
   short-lived cube outlines of the **nearest 32 blocks within eight blocks**.
-  Inventory icons remain visible; boots and tools still control tangibility
+  Inventory icons remain visible; boots and tools still control block use
   and harvesting independently of the visor.
-- Ectoplasm is a pale mint, snow-like **1/8-block layer**. It is always visible
-  and harvestable by hand, requires no spectral gear, and can be placed again.
-  It does not stack into deeper layers or melt in this version.
+- Ectoplasm is pale mint and builds up in **1/8-block layers**, up to eight
+  layers per block. It is always visible, requires a shovel to harvest, and
+  drops one ectoplasm ball per layer. Spectral and vanilla shovels can collect
+  it. Deposits do not melt or stack above a full block.
+- Ectoplasm balls are throwable items. A direct hit deals 4 damage to specters
+  and does not give them the melee-only player authorization used by spectral
+  swords.
+- The Ghosts Guide is a craftable in-game item. It lists spectral gear effects,
+  ectoplasm ball use and every Ghosts recipe.
+- Operators can open **Ghosts Guide > Settings** and toggle **Enable
+  experimental features**. It is off by default, applies immediately to all
+  players in the world, and persists across restarts. It controls liquid
+  hovering and ghost-block movement, not block use or harvesting.
 - A complete armor set refreshes ordinary invisibility, without shortening an
   existing potion effect. It expires within two seconds of removing armor.
-- With full armor, **sneak into a ghost block** to phase inside it. Once inside,
-  hold jump to climb, sneak to descend, or release both to hold your height.
-  Leave the ghost blocks to resume normal movement. Ordinary terrain stays solid;
-  no blocks are replaced and no game-mode changes are made.
-- Full armor automatically hovers about **1/4 block above nearby ground, water
-  and lava**. Walk normally or jump for a surface-supported hop; you cannot
-  ascend freely, hover across deep voids, or climb solid walls. Sneak suppresses
-  hovering. Armor removal stops these movement perks immediately.
+- With experimental features and full armor, **sneak into a ghost block** to
+  phase inside it. Once inside, hold jump to climb, sneak to descend, or release
+  both to hold your height. Leave the ghost blocks to resume normal movement.
+  Ordinary terrain stays solid; no blocks are replaced and no game-mode changes
+  are made.
+- With experimental features enabled, full armor hovers about **1/8 block above
+  water and lava** directly beneath the player, not above ordinary blocks.
+  Jump for a surface-supported hop; you cannot ascend freely, hover across deep
+  voids, or climb solid walls. Sneak suppresses hovering. Armor removal stops
+  these movement perks immediately.
 
 ## Outdoor specters
 
@@ -91,7 +114,8 @@ existing cap of four within 48 blocks, and 24 loaded Overworld specters overall.
 Roofs, unloaded terrain, rapid travel, and these limits can delay or prevent a
 replacement; this is not an instantaneous spawn guarantee. Nighttime extras
 are not forcibly removed at sunrise. Unprovoked specters leave players alone.
-**Ectoplasm deposition remains restricted to dark thunderstorms.**
+Storm-generated ectoplasm deposits remain restricted to dark thunderstorms;
+specters can shed ectoplasm in any weather.
 
 Kill-released specters work in all three dimensions, independently of
 `doMobSpawning`. They respect the same **four within 48 blocks** and **24 loaded
@@ -103,18 +127,19 @@ Find ectoplasm outdoors on dark thunderstorms, craft a visor and either body
 armor or pants, then a sword. Hunt specters to speed up progression.
 
 Use the usual vanilla armor/tool crafting-table shapes, substituting
-**ectoplasm** for the material. Tools also require ordinary sticks.
+**ectoplasm balls** for the material. Tools also require ordinary sticks.
 
-| Recipe                   | Ectoplasm | Sticks | Output |
-| ------------------------ | --------: | -----: | -----: |
-| Visor                    |         5 |      0 |      1 |
-| Body armor               |         8 |      0 |      1 |
-| Pants                    |         7 |      0 |      1 |
-| Boots                    |         4 |      0 |      1 |
-| Sword                    |         2 |      1 |      1 |
-| Pickaxe / axe            |         3 |      2 |      1 |
-| Shovel                   |         1 |      2 |      1 |
-| Ghost block (2x2 square) |         4 |      0 |      4 |
+| Recipe                   | Ectoplasm balls | Sticks | Output |
+| ------------------------ | --------------: | -----: | -----: |
+| Visor                    |               5 |      0 |      1 |
+| Body armor               |               8 |      0 |      1 |
+| Pants                    |               7 |      0 |      1 |
+| Boots                    |               4 |      0 |      1 |
+| Sword                    |               2 |      1 |      1 |
+| Pickaxe / axe            |               3 |      2 |      1 |
+| Shovel                   |               1 |      2 |      1 |
+| Ghost block (2x2 square) |               4 |      0 |      4 |
+| Guide book (plus a book) |               1 |      0 |      1 |
 
 ### Storm deposits and bonus specters
 
@@ -136,7 +161,7 @@ of ticking time or when no player is within 64 blocks.
 ## Engine compromises
 
 - **Tangibility is scripted, not per-player native collision.** Boots anchor
-  downward motion and cancel vertical velocity while supported, instead of
+  downward motion and counter gravity while supported, instead of
   merely slowing a fall that would eventually sink through. Leggings reduce
   horizontal steps to 2% at contact/inside blocks; they are soft resistance,
   not an impenetrable wall. Sneaking bypasses these restrictions; with full
@@ -145,11 +170,14 @@ of ticking time or when no player is within 64 blocks.
   Large per-tick moves (>2 horizontal / >4 vertical blocks), teleports, swimming,
   gliding, flight and dimension changes bypass movement correction.
   Collision alone is not fall-arrest gear; wear the boots for fall immunity.
-- **Hovering is local surface support, not flight.** It uses actual raycast
-  surface heights, including partial blocks and liquids, and requires clear
-  headroom. It does not rescue submerged players or stop high-speed falls.
+- **Hovering is local liquid-surface support, not flight.** It uses raycast
+  liquid-surface heights and requires clear
+  headroom. It can recover from a shallow dip at a water surface, but does not
+  rescue deeply submerged or swimming players or stop high-speed falls.
   Lava/fire immunity comes from the chestplate, independently of hover support.
-  Movement smoothness and fall-distance behavior need multiplayer client testing.
+  Connected-client testing has shown jitter and impaired movement; this is not
+  yet a smooth substitute for native collision. Fall-distance behavior also
+  needs multiplayer client testing.
 - **Vanilla invisibility is not universal mob immunity.** Worn armor/held items
   can remain visible, some mobs still detect players, and existing aggro may
   persist. True AI stealth for full spectral armor is **deferred**: implementing
@@ -185,7 +213,9 @@ regenerate it with `node plugins/ghosts/generate-assets.ts`.
 When ready, back up your world, run `npm run plugins:deploy`, activate **both
 Ghosts packs** in the web manager, and restart Minecraft separately. Build and
 deploy commands process **all** source packs. Development does not activate or
-restart the live server. Start with a disposable test world.
+restart the live server. After upgrading, update both activated
+pack versions to 0.6.2; the resource pack version change also prompts clients to
+download the updated icons. Start with a disposable test world.
 
 ## In-game acceptance checklist
 
@@ -193,7 +223,8 @@ restart the live server. Start with a disposable test world.
 - [ ] Two clients side by side: only the visor wearer sees a summoned specter.
       Remove the visor, reconnect, and cross a dimension boundary.
 - [ ] With `/summon ghosts:specter`, verify all armor/weapon combinations,
-      projectile/explosion immunity, damage, death loot, and `/kill` cleanup.
+      ectoplasm-ball damage, other projectile/explosion immunity, death
+      deposits, and `/kill` cleanup.
 - [ ] Approach a specter with and without armor: it remains neutral. Damage it
       successfully and check attacker-only pursuit, cooldowns, last-attacker
       retargeting and continued retaliation after visor/armor removal.
@@ -213,7 +244,8 @@ restart the live server. Start with a disposable test world.
 - [ ] Two clients: placed ghost blocks are invisible without a visor and outlined
       only for the wearer within eight blocks, nearest 32 only. Test visor removal,
       placing/breaking, chunk boundaries, dimension changes and visible item icons.
-- [ ] Place `/give @s ghosts:ghost_block` over a safe floor. Boots alone provide
+- [ ] Enable experimental features and place `/give @s ghosts:ghost_block`
+      over a safe floor. Boots alone provide
       vertical support but allow horizontal passage; leggings alone strongly
       resist horizontal movement but allow falls. Test both together, walking
       across tops, support while inside, jumps, sneaking, each armor piece's
@@ -221,12 +253,22 @@ restart the live server. Start with a disposable test world.
 - [ ] With full armor, sneak into a column of ghost blocks; test jump-to-climb,
       sneak-to-descend, holding position, leaving the column and removing armor.
       Verify ordinary blocks remain solid.
-- [ ] Hover above solid ground, slabs, still/flowing water and lava; test jumps,
-      low ceilings, edges, voids, swimming, sneaking, armor removal and reconnects.
+- [ ] Confirm there is no hovering above solid ground or slabs, including near
+      water; hover above still/flowing water and lava. Test jumps, low ceilings,
+      walking from shore onto water, shallow dips, edges, voids, swimming,
+      sneaking, armor removal and reconnects.
       Confirm hover support needs a full set, while lava immunity needs only
       the chestplate.
-- [ ] Only spectral tools harvest ghost blocks; hand mining ectoplasm works.
-      Craft every recipe, repair, enchant, and verify actual equipment wear.
+- [ ] As an operator, use the guide's Settings button to enable and disable
+      experimental features; confirm liquid hovering and ghost-block movement
+      change for all players, the setting persists after restart, and block
+      use and harvesting remain available. Non-operators cannot change it.
+- [ ] With leggings alone, test Speed II, armor removal and weaker, equal and
+      stronger existing Speed potions, with experimental features off and on.
+- [ ] Only spectral tools harvest ghost blocks; ectoplasm requires a shovel.
+      Verify ghost and storm deposits accumulate to eight layers and yield one
+      ball per layer, without replacing other blocks. Craft every recipe,
+      repair, enchant, and verify actual equipment wear.
 - [ ] With `/time set midnight` and `/weather thunder`, find deposits and ghosts
       on dark open ground. Test pack reload during a storm, roofs, torches,
       clear weather, population caps, and `doMobSpawning false`.

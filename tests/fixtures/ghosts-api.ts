@@ -25,6 +25,7 @@ export const EntityDamageCause = {
 export const Direction = { Up: "Up" };
 export const ButtonState = { Pressed: "Pressed", Released: "Released" };
 export const InputButton = { Jump: "Jump" };
+export const CommandPermissionLevel = { Any: 0, GameDirectors: 1 };
 export class LocationInUnloadedChunkError extends Error {}
 export class LocationOutOfWorldBoundariesError extends Error {}
 export class ItemStack {
@@ -38,6 +39,66 @@ export class BlockVolume {
     public from: Point,
     public to: Point,
   ) {}
+}
+
+export class BlockPermutation {
+  constructor(
+    public typeId: string,
+    private states: Record<string, string | boolean | number> = {},
+  ) {}
+  static resolve(
+    type: string,
+    states: Record<string, string | boolean | number> = {},
+  ) {
+    return new BlockPermutation(type, states);
+  }
+  getAllStates() {
+    return { ...this.states };
+  }
+}
+
+export const actionResponses: { canceled: boolean; selection?: number }[] = [];
+export const modalResponses: {
+  canceled: boolean;
+  formValues?: (boolean | number | string | undefined)[];
+}[] = [];
+export const shownForms: {
+  kind: "action" | "modal";
+  buttons?: string[];
+  defaultValue?: boolean;
+}[] = [];
+
+export class ActionFormData {
+  buttons: string[] = [];
+  title(_title: string) {
+    return this;
+  }
+  body(_body: string) {
+    return this;
+  }
+  button(text: string) {
+    this.buttons.push(text);
+    return this;
+  }
+  async show(_player: Player) {
+    shownForms.push({ kind: "action", buttons: [...this.buttons] });
+    return actionResponses.shift() ?? { canceled: true };
+  }
+}
+
+export class ModalFormData {
+  defaultValue?: boolean;
+  title(_title: string) {
+    return this;
+  }
+  toggle(_label: string, options: { defaultValue?: boolean }) {
+    this.defaultValue = options.defaultValue;
+    return this;
+  }
+  async show(_player: Player) {
+    shownForms.push({ kind: "modal", defaultValue: this.defaultValue });
+    return modalResponses.shift() ?? { canceled: true };
+  }
 }
 
 function signal<T>() {
@@ -67,17 +128,35 @@ type BlockEvent = {
 class Block {
   isValid = true;
   typeId = "minecraft:air";
+  permutation = BlockPermutation.resolve("minecraft:air");
   light = 0;
   surfaceHeight = 1;
   constructor(public location: Point) {}
   get isAir() {
     return this.typeId === "minecraft:air";
   }
+  get isLiquid() {
+    return [
+      "minecraft:water",
+      "minecraft:flowing_water",
+      "minecraft:lava",
+      "minecraft:flowing_lava",
+    ].includes(this.typeId);
+  }
+  isWaterlogged = false;
   getLightLevel() {
     return this.light;
   }
   setType(type: string) {
     this.typeId = type;
+    this.permutation = BlockPermutation.resolve(
+      type,
+      type === "ghosts:ectoplasm" ? { "ghosts:layers": 1 } : {},
+    );
+  }
+  setPermutation(permutation: BlockPermutation) {
+    this.typeId = permutation.typeId;
+    this.permutation = permutation;
   }
 }
 
@@ -231,6 +310,7 @@ export class Entity {
 }
 
 export class Player extends Entity {
+  commandPermissionLevel = CommandPermissionLevel.Any;
   mode = GameMode.Survival;
   effects = new Map<string, { duration: number; amplifier?: number }>();
   particles: string[] = [];
@@ -262,15 +342,23 @@ export class Player extends Entity {
   getEffect(type: string) {
     return this.effects.get(type);
   }
-  addEffect(type: string, duration: number) {
-    this.effects.set(type, { duration, amplifier: 0 });
+  addEffect(type: string, duration: number, options?: { amplifier?: number }) {
+    this.effects.set(type, { duration, amplifier: options?.amplifier ?? 0 });
   }
   getVelocity() {
     return this.velocity;
   }
-  tryTeleport(point: Point) {
+  tryTeleport(
+    point: Point,
+    options?: { checkForBlocks?: boolean; keepVelocity?: boolean },
+  ) {
+    if (options?.keepVelocity)
+      throw new Error(
+        "keepVelocity is not supported for player teleportation.",
+      );
     if (!this.canTeleport) return false;
     this.teleport(point);
+    this.velocity = { x: 0, y: 0, z: 0 };
     return true;
   }
   applyImpulse(point: Point) {
@@ -314,8 +402,12 @@ export const dimensions = new Map(
 );
 export let players: Player[] = [];
 export let time = 18000;
+export const worldProperties = new Map<string, boolean | number | string>();
 export const world = {
   gameRules: { doMobSpawning: true },
+  getDynamicProperty: (key: string) => worldProperties.get(key),
+  setDynamicProperty: (key: string, value: boolean | number | string) =>
+    worldProperties.set(key, value),
   getAllPlayers: () => players,
   getDimension: (name: string) => dimensions.get(name)!,
   getTimeOfDay: () => time,
@@ -335,6 +427,7 @@ export const world = {
       deadEntity: Entity;
       damageSource: Damage["damageSource"];
     }>(),
+    itemUse: signal<{ source: Player; itemStack: ItemStack }>(),
     playerLeave: signal<{ playerId: string }>(),
     entityRemove: signal<{ removedEntityId: string }>(),
   },
@@ -352,6 +445,10 @@ export function reset() {
     dimension.unloaded = false;
   }
   deferred.length = 0;
+  actionResponses.length = 0;
+  modalResponses.length = 0;
+  shownForms.length = 0;
+  worldProperties.clear();
   system.currentTick = 0;
   time = 18000;
   world.gameRules.doMobSpawning = true;

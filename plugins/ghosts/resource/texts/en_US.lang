@@ -1,4 +1,6 @@
 tile.ghosts:ectoplasm.name=Ectoplasm
 tile.ghosts:ghost_block.name=Ghost Block
+item.ghosts:ectoplasm_ball.name=Ectoplasm Ball
+item.ghosts:guide_book.name=Ghosts Guide
 entity.ghosts:specter.name=Specter
 item.spawn_egg.entity.ghosts:specter.name=Spawn Specter

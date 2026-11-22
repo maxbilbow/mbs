@@ -3,11 +3,23 @@
   "minecraft:block": {
     "description": {
       "identifier": "ghosts:ectoplasm",
+      "states": { "ghosts:layers": [1, 2, 3, 4, 5, 6, 7, 8] },
       "menu_category": { "category": "nature" }
     },
     "components": {
       "minecraft:display_name": "Ectoplasm",
-      "minecraft:geometry": "geometry.ghosts.ectoplasm",
+      "minecraft:geometry": {
+        "identifier": "geometry.ghosts.ectoplasm",
+        "bone_visibility": {
+          "layer2": "query.block_state('ghosts:layers') >= 2",
+          "layer3": "query.block_state('ghosts:layers') >= 3",
+          "layer4": "query.block_state('ghosts:layers') >= 4",
+          "layer5": "query.block_state('ghosts:layers') >= 5",
+          "layer6": "query.block_state('ghosts:layers') >= 6",
+          "layer7": "query.block_state('ghosts:layers') >= 7",
+          "layer8": "query.block_state('ghosts:layers') >= 8"
+        }
+      },
       "minecraft:material_instances": {
         "*": { "texture": "ghosts_ectoplasm", "render_method": "opaque" }
       },
@@ -20,6 +32,106 @@
       },
       "minecraft:loot": "loot_tables/blocks/ectoplasm.json",
       "minecraft:map_color": "#b6ffe8"
-    }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('ghosts:layers') == 2",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 4, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 2, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_2.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 3",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 6, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 4, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_3.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 4",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 8, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 6, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_4.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 5",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 10, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 8, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_5.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 6",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 12, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 10, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_6.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 7",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 14, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 12, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_7.json"
+        }
+      },
+      {
+        "condition": "query.block_state('ghosts:layers') == 8",
+        "components": {
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 16, 16]
+          },
+          "minecraft:collision_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 14, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/ectoplasm_8.json"
+        }
+      }
+    ]
   }
 }

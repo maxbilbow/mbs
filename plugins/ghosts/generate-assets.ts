@@ -41,6 +41,14 @@ const mint = [182, 255, 232, 255];
 const dark = [44, 99, 108, 255];
 const handle = [95, 119, 131, 255];
 const shapes: Record<string, (x: number, y: number) => boolean> = {
+  ectoplasm_ball: (x, y) =>
+    (x - 7.5) * (x - 7.5) + (y - 7.5) * (y - 7.5) <= 42,
+  guide_book: (x, y) =>
+    x >= 3 &&
+    x <= 12 &&
+    y >= 2 &&
+    y <= 13 &&
+    !(x >= 7 && x <= 8),
   visor: (x, y) =>
     x >= 2 &&
     x <= 13 &&
@@ -72,7 +80,9 @@ const shapes: Record<string, (x: number, y: number) => boolean> = {
     (Math.abs(x + y - 16) <= 1 && x >= 3 && x <= 11) ||
     (x >= 9 && x <= 13 && y >= 2 && y <= 6),
 };
-for (const [name, shape] of Object.entries(shapes))
+for (const [name, shape] of Object.entries(shapes).filter(
+  ([name]) => !["ectoplasm_ball", "guide_book"].includes(name),
+))
   png(`items/spectral_${name}.png`, (x, y) =>
     shape(x, y)
       ? y >= 10 && ["sword", "axe", "pickaxe", "shovel"].includes(name)
@@ -82,6 +92,21 @@ for (const [name, shape] of Object.entries(shapes))
           : mint
       : clear,
   );
+
+png("items/ectoplasm_ball.png", (x, y) =>
+  shapes.ectoplasm_ball(x, y)
+    ? (x + y) % 4 === 0
+      ? dark
+      : mint
+    : clear,
+);
+png("items/guide_book.png", (x, y) =>
+  shapes.guide_book(x, y)
+    ? x < 7
+      ? [120, 170, 220, 255]
+      : [205, 235, 255, 255]
+    : clear,
+);
 
 png("blocks/ectoplasm.png", (x, y) =>
   (x * 7 + y * 3) % 11 < 3 ? [140, 226, 205, 255] : mint,

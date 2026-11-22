@@ -1,11 +1,13 @@
+import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import {
   BlockVolume,
+  BlockPermutation,
   ButtonState,
+  CommandPermissionLevel,
   Direction,
   EntityDamageCause,
   EquipmentSlot,
   GameMode,
-  ItemStack,
   InputButton,
   LocationInUnloadedChunkError,
   LocationOutOfWorldBoundariesError,
@@ -51,6 +53,17 @@ const killStrikes = new Map<
   }
 >();
 const damageDrops = new Map<string, number>();
+const experimentalKey = "ghosts:experimental_features";
+const shovels = new Set([
+  "minecraft:wooden_shovel",
+  "minecraft:stone_shovel",
+  "minecraft:copper_shovel",
+  "minecraft:iron_shovel",
+  "minecraft:golden_shovel",
+  "minecraft:diamond_shovel",
+  "minecraft:netherite_shovel",
+  "ghosts:spectral_shovel",
+]);
 const outlines = new Map<
   string,
   { dimension: string; center: Point; tick: number; blocks: Point[] }
@@ -82,6 +95,63 @@ function blockAt(dimension: Dimension, point: Point): Block | undefined {
   }
 }
 
+function addEctoplasm(block: Block, amount = 1): boolean {
+  if (block.isAir) {
+    block.setPermutation(
+      BlockPermutation.resolve(ids.ectoplasm, {
+        "ghosts:layers": Math.min(amount, 8),
+      }),
+    );
+    return true;
+  }
+  if (block.typeId !== ids.ectoplasm) return false;
+  const layers = block.permutation.getAllStates()["ghosts:layers"];
+  if (typeof layers !== "number")
+    throw new Error("Missing ectoplasm layer state.");
+  if (layers >= 8) return false;
+  block.setPermutation(
+    BlockPermutation.resolve(ids.ectoplasm, {
+      "ghosts:layers": Math.min(layers + amount, 8),
+    }),
+  );
+  return true;
+}
+
+function shedEctoplasm(
+  dimension: Dimension,
+  point: Point,
+  amount = 1,
+): boolean {
+  const x = Math.floor(point.x);
+  const z = Math.floor(point.z);
+  const start = Math.min(Math.floor(point.y), dimension.heightRange.max - 1);
+  for (
+    let y = start;
+    y >= Math.max(start - 32, dimension.heightRange.min);
+    y--
+  ) {
+    const block = blockAt(dimension, { x, y, z });
+    if (!block) return false;
+    if (block.isAir) continue;
+    if (block.typeId === ids.ectoplasm) return addEctoplasm(block, amount);
+    const above = blockAt(dimension, { x, y: y + 1, z });
+    if (!above?.isAir) return false;
+    const hit = dimension.getBlockFromRay(
+      { x: x + 0.5, y: y + 1.01, z: z + 0.5 },
+      { x: 0, y: -1, z: 0 },
+      { maxDistance: 1.01, includePassableBlocks: false },
+    );
+    if (
+      hit?.block.location.y !== y ||
+      hit.face !== Direction.Up ||
+      (hit.faceLocation.y !== 0 && hit.faceLocation.y < 0.999)
+    )
+      return false;
+    return addEctoplasm(above, amount);
+  }
+  return false;
+}
+
 function gear(player: Player): Gear {
   const equipment = player.getComponent("minecraft:equippable");
   if (!equipment) throw new Error("Player equipment is unavailable.");
@@ -107,6 +177,17 @@ function notify(player: Player, text: string) {
   system.run(() => {
     if (player.isValid) player.sendMessage(`[Ghosts] ${text}`);
   });
+}
+
+function experimentalEnabled(): boolean {
+  const value = world.getDynamicProperty(experimentalKey);
+  if (value !== undefined && typeof value !== "boolean")
+    throw new Error("Invalid Ghosts experimental features setting.");
+  return value === true;
+}
+
+function isOperator(player: Player): boolean {
+  return player.commandPermissionLevel >= CommandPermissionLevel.GameDirectors;
 }
 
 function ordinaryMob(entity: Entity): boolean {
@@ -171,10 +252,12 @@ world.beforeEvents.entityHurt.subscribe((event) => {
   )
     return;
   const allowed =
-    damagingEntity instanceof Player &&
-    playable(damagingEntity) &&
-    cause === EntityDamageCause.entityAttack &&
-    canFight(gear(damagingEntity));
+    (damagingEntity instanceof Player &&
+      playable(damagingEntity) &&
+      cause === EntityDamageCause.entityAttack &&
+      canFight(gear(damagingEntity))) ||
+    (cause === EntityDamageCause.projectile &&
+      damagingEntity?.typeId === ids.ectoplasmBallProjectile);
   if (!allowed) event.cancel = true;
   if (!allowed && damagingEntity instanceof Player) {
     notify(
@@ -192,6 +275,13 @@ world.beforeEvents.playerInteractWithEntity.subscribe((event) => {
 });
 
 world.beforeEvents.playerBreakBlock.subscribe((event) => {
+  if (event.block.typeId === ids.ectoplasm) {
+    if (!shovels.has(event.itemStack?.typeId ?? "")) {
+      event.cancel = true;
+      notify(event.player, "Use a shovel to collect ectoplasm.");
+    }
+    return;
+  }
   if (event.block.typeId !== ids.block) return;
   if (!spectralTool(event.itemStack?.typeId)) {
     event.cancel = true;
@@ -208,6 +298,81 @@ world.beforeEvents.playerInteractWithBlock.subscribe((event) => {
     event.cancel = true;
     notify(event.player, "Wear Spectral Boots to use ghost blocks.");
   }
+});
+
+async function openGuide(player: Player) {
+  const form = new ActionFormData()
+    .title("Ghosts Guide")
+    .body(
+      [
+        "ECTOPLASM",
+        "Ghosts shed ectoplasm in snow-like layers; deposits also form during dark thunderstorms.",
+        "Break it with any shovel to collect ectoplasm balls.",
+        "Throw ectoplasm balls to damage specters.",
+        "",
+        "SPECTRAL GEAR",
+        "Visor: reveals nearby specters and ghost block outlines.",
+        "Chestplate: fire, lava and burning immunity.",
+        "Leggings: Speed II; experimental resistance inside ghost blocks.",
+        "Boots: fall immunity and support on ghost block tops.",
+        "Sword: damage specters, and guarantee a ghost on a direct mob-kill blow.",
+        "Experimental ghost-block movement and liquid hovering can be enabled in Ghosts settings.",
+        "",
+        "CRAFTING",
+        "Visor: 5 ectoplasm balls",
+        "Chestplate: 8 ectoplasm balls",
+        "Leggings: 7 ectoplasm balls",
+        "Boots: 4 ectoplasm balls",
+        "Sword: 2 ectoplasm balls + 1 stick",
+        "Pickaxe/Axe: 3 ectoplasm balls + 2 sticks",
+        "Shovel: 1 ectoplasm ball + 2 sticks",
+        "Ghost block: 4 ectoplasm balls (4 blocks)",
+        "Guide book: 1 ectoplasm ball + 1 book",
+      ].join("\n"),
+    );
+  if (isOperator(player)) form.button("Settings");
+  const guide = await form.show(player);
+  if (guide.canceled || guide.selection !== 0 || !player.isValid) return;
+  if (!isOperator(player)) {
+    player.sendMessage("[Ghosts] Only operators can change Ghosts settings.");
+    return;
+  }
+  const current = experimentalEnabled();
+  const settings = await new ModalFormData()
+    .title("Ghosts Settings")
+    .toggle("Enable experimental features", {
+      defaultValue: current,
+      tooltip:
+        "Enables liquid hovering and ghost-block movement for everyone. Movement may be jittery.",
+    })
+    .show(player);
+  if (settings.canceled || !player.isValid) return;
+  if (!isOperator(player)) {
+    player.sendMessage("[Ghosts] Only operators can change Ghosts settings.");
+    return;
+  }
+  const value = settings.formValues?.[0];
+  if (typeof value !== "boolean")
+    throw new Error("Ghosts settings form returned an invalid toggle value.");
+  if (experimentalEnabled() !== current) {
+    player.sendMessage("[Ghosts] Settings changed; reopen the guide to retry.");
+    return;
+  }
+  world.setDynamicProperty(experimentalKey, value);
+  player.sendMessage(
+    `[Ghosts] Experimental features ${value ? "enabled" : "disabled"} for this world.`,
+  );
+}
+
+world.afterEvents.itemUse.subscribe(({ source, itemStack }) => {
+  if (itemStack.typeId !== ids.guide) return;
+  system.run(() => {
+    openGuide(source).catch((error: unknown) => {
+      report("opening Ghosts guide", error);
+      if (source.isValid)
+        source.sendMessage("[Ghosts] Could not open or save Ghosts settings.");
+    });
+  });
 });
 
 function releaseGhost(victim: Entity, killer: Player, hostile: boolean) {
@@ -263,9 +428,10 @@ world.afterEvents.entityDie.subscribe(({ deadEntity, damageSource }) => {
   )
     return;
   // Authorization was checked before damage; do not re-read gear after death.
-  deadEntity.dimension.spawnItem(
-    new ItemStack(ids.ectoplasm, 1 + Math.floor(Math.random() * 3)),
+  shedEctoplasm(
+    deadEntity.dimension,
     deadEntity.location,
+    1 + Math.floor(Math.random() * 3),
   );
 });
 
@@ -289,11 +455,8 @@ world.afterEvents.entityHurt.subscribe(
       Math.random() >= 0.35
     )
       return;
-    hurtEntity.dimension.spawnItem(
-      new ItemStack(ids.ectoplasm),
-      hurtEntity.location,
-    );
-    damageDrops.set(hurtEntity.id, system.currentTick);
+    if (shedEctoplasm(hurtEntity.dimension, hurtEntity.location))
+      damageDrops.set(hurtEntity.id, system.currentTick);
   },
 );
 
@@ -435,6 +598,7 @@ function ghostBlocks(
 function footing(player: Player, equipment: Gear) {
   const current = player.location;
   const previous = positions.get(player.id);
+  const complete = fullArmor(equipment);
   positions.set(player.id, {
     point: { ...current },
     dimension: player.dimension.id,
@@ -448,11 +612,13 @@ function footing(player: Player, equipment: Gear) {
     player.isFlying ||
     player.isGliding ||
     player.isSwimming ||
-    player.isInWater
+    (player.isInWater && !complete) ||
+    !experimentalEnabled()
   )
     return;
-  const blocks = ghostBlocks(player.dimension, previous.point, current);
-  const complete = fullArmor(equipment);
+  const blocks = player.isInWater
+    ? []
+    : ghostBlocks(player.dimension, previous.point, current);
   const climbing =
     complete && blocks.some((block) => insideGhost(previous.point, block));
   const velocity = player.getVelocity();
@@ -476,23 +642,12 @@ function footing(player: Player, equipment: Gear) {
           insideGhost({ ...target, y: target.y - 0.02 }, block),
         ));
     if (complete) {
-      const surfaces = blocks
-        .filter(
-          (block) =>
-            Math.abs(target.x - (block.x + 0.5)) < 0.8 &&
-            Math.abs(target.z - (block.z + 0.5)) < 0.8 &&
-            target.y >= block.y + 1 - 0.02,
-        )
-        .map((block) => block.y + 1);
-      for (const [x, z] of [
-        [0, 0],
-        [-0.28, -0.28],
-        [-0.28, 0.28],
-        [0.28, -0.28],
-        [0.28, 0.28],
-      ]) {
-        const origin = { x: target.x + x, y: target.y + 0.02, z: target.z + z };
-        if (!blockAt(player.dimension, origin)) continue;
+      const origin = {
+        x: target.x,
+        y: target.y + (player.isInWater ? 0.18 : 0.02),
+        z: target.z,
+      };
+      if (blockAt(player.dimension, origin)) {
         const hit = player.dimension.getBlockFromRay(
           origin,
           { x: 0, y: -1, z: 0 },
@@ -505,28 +660,41 @@ function footing(player: Player, equipment: Gear) {
             includePassableBlocks: true,
           },
         );
-        if (hit?.face === Direction.Up) {
+        if (hit?.face === Direction.Up && hit.block.isLiquid) {
+          let exposed = true;
+          if (player.isInWater) {
+            const above = blockAt(player.dimension, {
+              ...hit.block.location,
+              y: hit.block.location.y + 1,
+            });
+            exposed = !!above && !above.isLiquid && !above.isWaterlogged;
+          }
           // Bedrock 1.26 reports integer top-face heights as local Y=0, not 1.
           const height = hit.faceLocation.y === 0 ? 1 : hit.faceLocation.y;
-          surfaces.push(hit.block.location.y + height);
+          const hover = exposed
+            ? hoverHeight(
+                target.y,
+                velocity.y,
+                hit.block.location.y + height,
+                player.isInWater,
+              )
+            : undefined;
+          if (hover !== undefined) {
+            target.y = hover;
+            supported = true;
+          }
         }
       }
-      const heights = surfaces
-        .map((surface) => hoverHeight(target.y, velocity.y, surface))
-        .filter((height): height is number => height !== undefined);
-      if (heights.length) {
-        target.y = Math.max(...heights);
-        supported = true;
-      }
     }
+  }
+  for (const axis of ["x", "y", "z"] as const) {
+    if (Math.abs(target[axis] - current[axis]) < (axis === "y" ? 0.005 : 0.001))
+      target[axis] = current[axis];
   }
   const moved =
     target.x !== current.x || target.y !== current.y || target.z !== current.z;
   if (!moved && !supported) return;
-  if (
-    moved &&
-    !player.tryTeleport(target, { checkForBlocks: true, keepVelocity: true })
-  ) {
+  if (moved && !player.tryTeleport(target, { checkForBlocks: true })) {
     notify(player, "There is not enough clear space for spectral movement.");
     return;
   }
@@ -534,14 +702,25 @@ function footing(player: Player, equipment: Gear) {
     point: { ...target },
     dimension: player.dimension.id,
   });
-  player.applyImpulse({
-    x: target.x !== current.x ? -velocity.x : 0,
-    y:
-      target.y !== current.y || supported
-        ? -velocity.y + (supported && !climbing && jump ? 0.42 : 0)
-        : 0,
-    z: target.z !== current.z ? -velocity.z : 0,
-  });
+  const desiredVelocity = {
+    x: target.x !== current.x ? 0 : velocity.x,
+    y: supported
+      ? !climbing && jump
+        ? 0.42
+        : 0.08
+      : target.y !== current.y
+        ? 0
+        : velocity.y,
+    z: target.z !== current.z ? 0 : velocity.z,
+  };
+  const actualVelocity = moved ? player.getVelocity() : velocity;
+  const impulse = {
+    x: desiredVelocity.x - actualVelocity.x,
+    y: desiredVelocity.y - actualVelocity.y,
+    z: desiredVelocity.z - actualVelocity.z,
+  };
+  if (impulse.x !== 0 || impulse.y !== 0 || impulse.z !== 0)
+    player.applyImpulse(impulse);
 }
 
 function specters(dimension: Dimension): Entity[] {
@@ -589,6 +768,11 @@ function haunt(ghost: Entity, players: Player[]) {
 
 function armorEffects(player: Player, equipment: Gear) {
   if (!playable(player)) return;
+  if (equipment.legs === ids.pants) {
+    const effect = player.getEffect("speed");
+    if (!effect || (effect.duration <= 5 && effect.amplifier === 1))
+      player.addEffect("speed", 10, { amplifier: 1, showParticles: false });
+  }
   if (equipment.feet === ids.boots) {
     const effect = player.getEffect("slow_falling");
     if (!effect || (effect.duration <= 5 && effect.amplifier === 0))
@@ -735,7 +919,12 @@ function stormAttempt(player: Player) {
   ) {
     const block = blockAt(dimension, { x, y, z });
     if (block && !block.isAir) {
-      if (ectoplasmSurface(block.typeId)) surface = block;
+      if (block.typeId === ids.ectoplasm) {
+        const below = blockAt(dimension, { x, y: y - 1, z });
+        if (below && ectoplasmSurface(below.typeId)) {
+          surface = below;
+        }
+      } else if (ectoplasmSurface(block.typeId)) surface = block;
       break;
     }
   }
@@ -743,7 +932,8 @@ function stormAttempt(player: Player) {
   const location = { x, y: surface.location.y + 1, z };
   const above = blockAt(dimension, location);
   if (
-    !above?.isAir ||
+    !above ||
+    (!above.isAir && above.typeId !== ids.ectoplasm) ||
     !blockAt(dimension, { ...location, y: location.y + 1 })?.isAir
   )
     return;
@@ -762,7 +952,8 @@ function stormAttempt(player: Player) {
       probe.remove();
       const block = blockAt(dimension, location);
       if (
-        !block?.isAir ||
+        !block ||
+        (!block.isAir && block.typeId !== ids.ectoplasm) ||
         !surface.isValid ||
         !ectoplasmSurface(surface.typeId) ||
         !darkStorm(
@@ -770,11 +961,11 @@ function stormAttempt(player: Player) {
           thunder,
           block.getLightLevel(),
           dimension.getTopmostBlock(location)?.location.y ===
-            surface.location.y,
+            (block.isAir ? surface.location.y : location.y),
         )
       )
         return;
-      if (ectoplasm) block.setType(ids.ectoplasm);
+      if (ectoplasm) addEctoplasm(block);
       if (
         ghost &&
         canSpawn(
@@ -809,10 +1000,7 @@ system.runInterval(() => {
           (ghost.getComponent("minecraft:health")?.currentValue ?? 0) > 0 &&
           Math.random() < 0.1
         )
-          ghost.dimension.spawnItem(
-            new ItemStack(ids.ectoplasm),
-            ghost.location,
-          );
+          shedEctoplasm(ghost.dimension, ghost.location);
       } catch (error) {
         report(`dropping ectoplasm from ${ghost.id}`, error);
       }
